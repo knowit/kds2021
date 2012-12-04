@@ -8,5 +8,9 @@ body {
 }
 
 a {
-  color: #2382C3;
+  color: #009682;
+}
+  
+#home {
+  line-height: 2;
 }
