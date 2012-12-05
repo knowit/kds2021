@@ -43,6 +43,10 @@ a {
     text-decoration: none;
 }
 
-#footer img {
-    float: right;
+.nor p {
+    padding-top: 35px;
+}
+
+.f32 {
+    display: inline;
 }
