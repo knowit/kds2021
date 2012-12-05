@@ -1,0 +1,52 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.subhead h1 {
+    font-size: 54px;
+}
+
+a {
+    color: #009682;
+}
+
+#home {
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.date {
+    display: inline;
+    font-weight: bold;
+    color: white;
+}
+
+.important {
+}
+
+.button {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: #009682
+}
+.button p {
+    padding-top: 25px;
+    line-height: 30px;
+}
+.button a:hover {
+    text-decoration: none;
+}
+
+.nor p {
+    padding-top: 35px;
+}
+
+.f32 {
+    display: inline;
+}
