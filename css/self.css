@@ -50,3 +50,8 @@ a {
 .f32 {
     display: inline;
 }
+
+social_icon {
+    height: 32px;
+    width: 32px;
+}
