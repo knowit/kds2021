@@ -55,3 +55,15 @@ a {
     height: 32px;
     width: 32px;
 }
+
+.title {
+    color: #cccccc;
+}
+
+.speaker {
+    font-size: 13px;
+}
+
+td {
+    vertical-align: top;
+}
