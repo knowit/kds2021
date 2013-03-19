@@ -17,6 +17,7 @@ a {
 }
 
 .date {
+    display: inline;
     display: inlinex;
     font-weight: bold;
     color: white;
@@ -77,4 +78,17 @@ a {
   line-height: 20px;
   color: #ffffff;
   text-rendering: optimizelegibility;
+}
+}
+
+.title {
+    color: #cccccc;
+}
+
+.speaker {
+    font-size: 13px;
+}
+
+td {
+    vertical-align: top;
 }
