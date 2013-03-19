@@ -57,30 +57,6 @@ a {
     width: 32px;
 }
 
-.talk {
-  margin-bottom: 70px;
-}
-
-.title {
-  margin: 10px 0;
-  font-family: inherit;
-  font-weight: normal;
-  line-height: 44px;
-  color: #ffffff;
-  text-rendering: optimizelegibility;
-  font-size: 31.5px;
-}
-
-.speaker {
-  margin: 10px 0;
-  font-family: inherit;
-  font-weight: normal;
-  line-height: 20px;
-  color: #ffffff;
-  text-rendering: optimizelegibility;
-}
-}
-
 .title {
     color: #cccccc;
 }
@@ -91,4 +67,27 @@ a {
 
 td {
     vertical-align: top;
+}
+
+.talk {
+  margin-bottom: 70px;
+}
+
+.talk .title {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: normal;
+  line-height: 44px;
+  color: #ffffff;
+  text-rendering: optimizelegibility;
+  font-size: 31.5px;
+}
+
+.talk .speaker {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: normal;
+  line-height: 20px;
+  color: #ffffff;
+  text-rendering: optimizelegibility;
 }
