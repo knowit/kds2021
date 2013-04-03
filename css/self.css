@@ -57,6 +57,10 @@ a {
     width: 32px;
 }
 
+.title {
+    color: #cccccc;
+}
+
 .title a {
     color: #cccccc;
 }
