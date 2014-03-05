@@ -10,14 +10,55 @@ body, html{
   box-sizing: border-box;
 }
 
-dt {
-  font-weight: bold;
+dt, .important {
   font-weight: bold;
 }
 
 dd {
   margin-left: 0;
   margin-bottom: 10px;
+}
+
+.important,.subtext {
+  font-style: italic;
+}
+
+a {
+  color: #85d6cb;
+}
+
+.btn {
+  border-radius: 5px;
+  background: #85d6cb;
+  color: #fff;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.lead {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Layout */
+.language-picker {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.language-picker a {
+  display: inline-block;
+}
+
+.language-picker a.active {
+  color: #fff;
+  background: #85d6cb;
+  padding: 5px;
+  text-decoration:none;
 }
 
 .section {
@@ -27,25 +68,25 @@ dd {
   padding-bottom: 100px;
 }
 
-.top {
+.intro {
   position: relative;
   background: #fff;
 }
 
-.top .center {
+.intro .wrapper {
   text-align: center;
 }
 
-.top .center img {
+.intro img {
   width: 70%;
   margin: 30px 0;
 }
 
-.top .center .txt {
+.intro .content {
   color: #999;
 }
 
-.top .center .txt h1 {
+.intro .content h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
   font-size: 55px;
@@ -54,7 +95,7 @@ dd {
   width: 280px;
 }
 
-.top .center .txt h3 {
+.intro .content h3 {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 25px;
@@ -64,7 +105,8 @@ dd {
 
 .two {
   background: #fafafa;
-  padding: 85px 20px 0 20px;
+  color: #666;
+  padding: 85px 20px 40px;
 }
 
 .two::before {
@@ -87,13 +129,14 @@ dd {
   pointer-events: none;
 }
 
-.two .center .txt h1 {
+.two .content h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
   font-size: 55px;
   margin: 0 0 20px 0;
   padding: 0;
   text-align: center;
+  line-height: 1;
 }
 
 @media (min-width: 760px) {
@@ -103,7 +146,6 @@ dd {
     float: left;
     width: 165px;
     font-weight: bold;
-    font-weight: bold;
   }
 
   dd {
@@ -111,14 +153,14 @@ dd {
     margin-bottom: 10px;
   }
 
-  .top .center img {
+  .intro img {
     width: 300px;
     height: 300px;
     margin: 0;
     float: left;
   }
 
-  .top .center .txt {
+  .intro .content {
     float: left;
     width: 340px;
     border-left: 1px dotted #999;
@@ -127,11 +169,11 @@ dd {
     text-align: left;
   }
 
-  .top .center .txt h1 {
+  .intro .content h1 {
     margin: 0;
   }
 
-  .top .center {
+  .intro .wrapper {
     width: 690px;
     height: 300px;
     top: 50%;
@@ -151,15 +193,12 @@ dd {
     margin-top: -25px;
   }
 
-  .two .center img {
-    width: 300px;
-    height: 300px;
-    float: left;
+  .two .content h1 {
+    line-height: 1.3;
   }
 
-  .two .center .txt {
-    float: left;
-    color: #999;
-    width: 100%;
+  .two .content {
+    margin: 0 auto;
+    width: 760px;
   }
 }
