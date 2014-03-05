@@ -61,7 +61,7 @@ a {
   text-decoration:none;
 }
 
-.section {
+section {
   width: 100%;
   min-height: 100%;
   position: relative;
@@ -184,7 +184,7 @@ a {
   }
 
   .two {
-    padding: 100px;
+    padding: 100px 0;
   }
 
   .two .center {
@@ -199,6 +199,6 @@ a {
 
   .two .content {
     margin: 0 auto;
-    width: 760px;
+    width: 700px;
   }
 }
