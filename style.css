@@ -86,16 +86,16 @@ section {
   color: #999;
 }
 
-.intro .content h1 {
+.content h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
   font-size: 55px;
-  margin: 0 auto 20px auto;
+  margin: 0 0 20px 0;
   padding: 0;
-  width: 280px;
+  line-height: 1;
 }
 
-.intro .content h3 {
+.content h3 {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 25px;
@@ -130,13 +130,29 @@ section {
 }
 
 .two .content h1 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  font-size: 55px;
-  margin: 0 0 20px 0;
-  padding: 0;
   text-align: center;
-  line-height: 1;
+}  
+
+.location {
+  padding-bottom: 0;
+}
+
+.location .wrapper {
+  height: 100%;
+}
+
+.location .content {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+}
+
+.blocker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 @media (min-width: 760px) {
@@ -181,6 +197,17 @@ section {
     position: absolute;
     margin-top: -150px;
     margin-left: -345px;
+  }
+
+  .location .content {
+    width: 350px;
+    height: 200px;
+    padding: 20px;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    text-align: left;
+    background: white;
   }
 
   .two {
