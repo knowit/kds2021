@@ -63,7 +63,7 @@ a {
 
 section {
   width: 100%;
-  min-height: 90%;
+  min-height: 100%;
   position: relative;
   padding-bottom: 100px;
 }
@@ -134,7 +134,13 @@ section {
 }  
 
 .location {
+  height: 100%;
   padding-bottom: 0;
+  overflow: hidden;
+}
+
+.location iframe {
+  margin-top: 90px;
 }
 
 .location .wrapper {
@@ -143,8 +149,14 @@ section {
 
 .location .content {
   position: absolute;
-  top: 40%;
-  right: 10%;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  background: white;
+}
+
+.location h3 {
+  font-size: 20px;
 }
 
 .blocker {
@@ -202,12 +214,10 @@ section {
   .location .content {
     width: 350px;
     height: 200px;
-    padding: 20px;
     top: 10px;
     left: 10px;
     position: absolute;
     text-align: left;
-    background: white;
   }
 
   .two {
