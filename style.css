@@ -157,6 +157,40 @@ h3.schedule-all-tracks {
 h3.schedule-all-tracks.session {
   background: #85d6cb;
 }
+
+table, th, td,  tr{
+  border: 1px solid black;
+  
+}
+table{
+   width: 100%;
+}
+
+td, th{
+  padding: 10px;
+}
+.time{
+  vertical-align: top;
+  width: 1em;
+  white-space:nowrap;
+}
+.program_entry{
+  vertical-align: top;
+}
+
+table{
+    border-radius: 20px;
+}
+
+tr:nth-child(odd){ 
+  background-color: #85d6cb; 
+}
+
+tr:nth-child(even){
+  background-color:#fff; 
+}
+
+
 .location {
   height: 100%;
   padding-bottom: 0;
