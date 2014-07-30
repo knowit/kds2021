@@ -150,8 +150,9 @@ section {
   margin-top: 20px;
 }
 h3.schedule-all-tracks {
+  clear: both;
   padding: 5px;
-  margin: 20px;
+  margin: 20px 0;
   background: #fafafa;
 }
 h3.schedule-all-tracks.session {
@@ -174,22 +175,32 @@ td, th{
   width: 1em;
   white-space:nowrap;
 }
-.program_entry{
-  vertical-align: top;
+
+.schedule-collection {
+  clear: both;
 }
 
-table{
-    border-radius: 20px;
+.schedule-entry {
+  margin-bottom: 20px;
+  background: #fafafa;
 }
 
-tr:nth-child(odd){ 
-  background-color: #85d6cb; 
+.schedule-entry h5 {
+  background: #85d6cb;
+  color: white;
+  font-weight: normal;
+  padding: 5px;
+  margin: 0;
 }
 
-tr:nth-child(even){
-  background-color:#fff; 
+.schedule-entry p {
+  font-weight: bold;
+  margin: 10px 10px 0 10px;
 }
 
+.schedule-entry address {
+  margin: 0px 10px 10px 10px;
+}
 
 .location {
   height: 100%;
@@ -301,5 +312,15 @@ tr:nth-child(even){
   .two .content, .schedule .content {
     margin: 0 auto;
     width: 700px;
+  }
+
+  .schedule-entry {
+    max-width: 31.3333333%;
+    float: left;
+    margin-right: 2%;
+  }
+
+  .schedule-entry:last-child {
+    margin-left: 0;
   }
 }
