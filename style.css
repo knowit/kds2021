@@ -315,7 +315,7 @@ td, th{
   }
 
   .schedule-entry {
-    max-width: 31.3333333%;
+    width: 31.3333333%;
     float: left;
     margin-right: 2%;
   }
