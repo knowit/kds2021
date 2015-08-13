@@ -176,6 +176,19 @@ td, th{
   white-space:nowrap;
 }
 
+.topics {
+    line-height: 2em;
+}
+
+.topic::after {
+  content: ' ◆ ';
+  color: #85d6cb;
+}
+
+.topic:last-of-type::after {
+  content: '';
+}
+
 .schedule-collection {
   clear: both;
 }
