@@ -53,22 +53,6 @@ a {
 }
 
 /* Layout */
-.language-picker {
-  margin-top: 5px;
-  text-align: center;
-}
-
-.language-picker a {
-  display: inline-block;
-}
-
-.language-picker a.active {
-  color: #fff;
-  background: #85d6cb;
-  padding: 5px;
-  text-decoration:none;
-}
-
 section {
   width: 100%;
   min-height: 100%;
@@ -138,7 +122,7 @@ section {
 
 .two .content h1 {
   text-align: center;
-}  
+}
 
 .schedule {
   padding-top: 100px;
@@ -161,7 +145,6 @@ h3.schedule-all-tracks.session {
 
 table, th, td,  tr{
   border: 1px solid black;
-  
 }
 table{
    width: 100%;
