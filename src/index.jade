@@ -17,55 +17,58 @@ html(lang='en')
 
     section.two
       .content
-        h1 Registration
-        p.lead
-          | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
+        .content-pane
+          h1 Registration
 
-        p
-          | We are working on the programm and we have not accepted
-          | (or rejected) any submissions yet. Meanwhile have a
-          | look at some of topics your fellow colleauges
-          | submitted:
+          p: a.btn(href=registration.registrationUrl target='_blank')
+            | Register as a participant
 
-        each submissionSet in cfp.submissions
-          p.topics
-            each submissionTitle in submissionSet
-              span.topic= submissionTitle
+          p.lead
+            | Registration closes on #{registration.registrationDeadline}.
 
-        h3 Register today!
-        p Registration closes on #{registration.registrationDeadline}.
-        p: a.btn(href=registration.registrationUrl target='_blank')
-          | Register here!
+          p
+            | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
 
-    section.schedule
-      .content
-        h1 Call for papers
-        p.lead
-          | The last day for submitting a talk is #{cfp.submissionDeadline}.
-        p.important We are seeking motivated developers to speak at the conference about topics such as:
-        dl.dl-horizontal
-          each topics, topic in cfp.topics
-            dt= topic
-            dd= topics
-        p.subtext ...and more!
-        p: em
-          | We are open to suggestion on workshops, full presentations (60
-          | min), shorter presentations (30 min), and lightning talks (10 min).
-        p
-          | We are interested in talks and contributions that will captivate
-          | and inspire the participants!
-        p
-          | Your audience? Passionate and truly interested developers within
-          | the Knowit organization, mainly programming on the Java and .NET
-          | platforms for the web.
-        p
-          | More information about the venue, registration and other
-          | practicalities will be announced later.  If you have any questions
-          | contact us at <a href="mailto:kds@knowit.no">kds@knowit.no</a>.
-        h3 Submit today!
-        p: a.btn(href=cfp.submissionUrl target='_blank')
-          | Submit your presentation
+          p.important
+            | We are working on the program and we have not accepted
+            | (or rejected) any submissions yet. Meanwhile have a
+            | look at some of topics your fellow colleauges
+            | submitted:
 
+          each submissionSet in cfp.submissions
+            p.topics
+              each submissionTitle in submissionSet
+                span.topic= submissionTitle
+
+        .content-pane
+          h1 Call for papers
+
+          p: a.btn(href=cfp.submissionUrl target='_blank')
+            | Submit your presentation
+
+          p.lead
+            | The last day for submitting a talk is #{cfp.submissionDeadline}.
+          p.important
+            | We are seeking motivated developers to speak at the conference
+            | about topics such as:
+          dl.dl-horizontal
+            each topics, topic in cfp.topics
+              dt= topic
+              dd= topics
+          p.subtext ...and more!
+          p: em
+            | We are open to suggestion on workshops, full presentations (60
+            | min), shorter presentations (30 min), and lightning talks (10 min).
+          p
+            | We are interested in talks and contributions that will captivate
+            | and inspire the participants!
+          p
+            | Your audience? Passionate and truly interested developers within
+            | the Knowit organization, mainly programming on the Java and .NET
+            | platforms for the web.
+          p
+            | If you have any questions contact us at <a
+            | href="mailto:kds@knowit.no">kds@knowit.no</a>.
 
 
     section.location

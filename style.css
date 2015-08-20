@@ -41,6 +41,7 @@ a {
   color: #fff;
   display: block;
   font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
   margin: 30px auto;
   max-width: 400px;
   padding: 20px;
@@ -318,5 +319,20 @@ td, th{
 
   .schedule-entry:last-child {
     margin-left: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .two .content {
+    width: 1400px;
+    display: flex;
+  }
+
+  .content-pane {
+    width: 500px;
+    flex: 1 1 auto;
+  }
+  .content-pane:first-of-type {
+    margin-right: 200px;
   }
 }
