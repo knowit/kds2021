@@ -1,0 +1,78 @@
+{
+  "title": "Knowit Developer Summit",
+  "event": {
+    "date": "November 13.-14. 2015",
+    "longDate": "13th-14th of November 2015",
+    "venue": "Radisson Blu Waterfront",
+    "city": "Stockholm",
+    "country": "Sweden",
+    "gmapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.1851871275999!2d18.056061999999997!3d59.329861999999885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d604f482201%3A0x858ff8c54ed4011b!2sRadisson+Blu+Waterfront+Hotel!5e0!3m2!1sno!2sno!4v1396439444495"
+  },
+  "cfp": {
+    "submissionDeadline": "August 20th, 2015",
+    "submissionUrl": "https://docs.google.com/forms/d/13bf7QFAFAMBqsebA2GNf2v4moLLK_6bmvywutFBY6Qw/viewform?usp=send_form",
+    "topics": {
+      "Architecture": "Microservices, DDD, containere (Docker, Rocket...), event-sourcing, asynchronous services, fault tolerant systems, REST, dependency injection, web services without frameworks, web services without app servers, in-memory computing",
+      "Mobile": "Mobile first design, testing tools, multi-platform development, Apple Watch, iOS, Android, Windows Mobile",
+      "Devops": "Infrastructure as code, provisioning, continuous deployment",
+      "Persistence": "NoSQL, SQL, big data, cloud, grid",
+      "Web": "*.js, responsive design, HTML5, Less/Sass",
+      "Test code": "Writing good tests, testing tools, continuous testing, TDD, BDD",
+      "Programming": "Paradigms, parallelism, typing, languages (C#, F#, Scala, Elixir, Clojure, etc.)",
+      "Tools": "Version control, build systems, SaaS, analysis (Sonar, R, etc.)",
+      "Platforms and other": "Cloud, Internet of Things, CMS, CRM, Office 365, EPiServer"
+    },
+    "submissions": [
+      [
+        "A farewell to JavaScript? Looking at Scala.js",
+        "Building Front-end using Yeoman, Gulp & More!",
+        "Building Universal Windows Apps using the Unity game engine and Visual Studio",
+        "Continous WordPress maintenance",
+        "Cool new features with the ASP.NET 5 Framework",
+        "Cross-platform mobile development with Xamarin Forms",
+        "Dapper.NET",
+        "Developing applications with Ember.js",
+        "Do students require grunt to knockout jasmine?",
+        "Entity Framework – conventions deep dive! ",
+        "Exploratory testing basics and experiences",
+        "Fancy Input Elements with Web Components",
+        "Hardware simulations at CERN",
+        "How stuff works - Big data metrics at CERN",
+        "How to apply design patterns in reality?",
+        "Instant, automated test feedback using NCrunch in Visual Studio",
+        "iOS, Swift and Reactive-Cocoa",
+        "IoT á la Microsoft - Windows 10 on Raspberry PI",
+        "Learning MongoDB",
+        "Mobile version of Estonian state portal eesti.ee",
+        "Monoliths, Self-Contained Systems and Microservices",
+        "Negation Scope Detection for Twitter Sentiment Analysis",
+        "Quality challenges in digitalized world – testing is needed",
+        "Retrofit - easy peasy API consumpsion",
+        "Style Guide Driven Development",
+        "The browser is the new fat client",
+        "Tips & tricks in Atom",
+        "vNext and Omnisharp",
+        "Web Performance ",
+        "What is Cloud Native?",
+        "Why you should learn Regular Expressions",
+        "Worst integration project ever",
+        "Yet another boring F# intro"
+      ], [
+      "Arkitektenes tid er over",
+      "DevOps og kontinuerlige leveranser i Oslo kommune",
+      "En @#erstatning## til EPiServer",
+      "En Identity Management løsning for å håndtere 1,4 million medlemer og kunder for Coop",
+      "Hvordan gi en server et ansikt",
+      "Introduksjon til C# 6.0",
+      "Knowit Academy - Arkitektskolen",
+      "Mine containere er lettere enn dine. Enklere uviklingsmiljø med Boot2Docker og Docker Compose.",
+      "NServiceBus och en Saga",
+      "Windows uten Microsoft"
+      ]
+    ]
+  },
+  "registration": {
+    "registrationDeadline": "September 7th, 2015",
+    "registrationUrl": "https://docs.google.com/forms/d/1_sBsjTvAzqHak7CX3pqEkJjM29WpvNSg7ifVS1epKeY/viewform?usp=send_form"
+  }
+}

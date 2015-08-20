@@ -12,76 +12,73 @@ html(lang='en')
       .wrapper
         img(src='kds.svg')
         .content
-          h1 Knowt Developer Summit
-          h3 November 13.-14. 2015<br>Stockholm
+          h1 Knowit Developer Summit
+          h3 #{event.date}<br>#{event.city}
 
     section.two
       .content
-        h1 Call for papers
-        p.lead We are planning Knowit's yearly company-wide software developer conference! It will be held on the 13th - 14th of November 2015 in Stockholm, Sweden. The last day for submitting a talk is August 20th, 2015.
-        p.important We are seeking motivated developers to speak at the conference about topics such as:
-        dl.dl-horizontal
-          dt Architecture
-          dd Microservices, DDD, containere (Docker, Rocket...), event-sourcing, asynchronous services, fault tolerant systems, REST, dependency injection, web services without frameworks, web services without app servers, in-memory computing
-          dt Mobile
-          dd Mobile first design, testing tools, multi-platform development, Apple Watch, iOS, Android, Windows Mobile
-          dt Devops
-          dd Infrastructure as code, provisioning, continuous deployment
-          dt Persistence
-          dd NoSQL, SQL, big data, cloud, grid
-          dt Web
-          dd *.js, responsive design, HTML5, Less/Sass
-          dt Test code
-          dd Writing good tests, testing tools, continuous testing, TDD, BDD
-          dt Programming
-          dd Paradigms, parallelism, typing, languages (C#, F#, Scala, Elixir, Clojure, etc.)
-          dt Tools
-          dd Version control, build systems, SaaS, analysis (Sonar, R, etc.)
-          dt Platforms and other
-          dd Cloud, Internet of Things, CMS, CRM, Office 365, EPiServer
-        p.subtext ... and more!
+        h1 Registration
+        p.lead
+          | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
+
         p
-          | Your audience? Passionate and truly interested developers within the Knowit organization, mainly
-          | programming on the Java and .NET platforms for the web.
-        h3 Register today! Registration closes on ../..-2015
-        p
-          a.btn(href='https://docs.google.com/forms/d/1Jx2Op9btb-3wh_zswwp5Ti9HFDVAb9wWiTqI4mj_AzM/viewform' target='_blank')
-            | Register here!
-        h3 Bla
-        p: em
-          | We are open to suggestion on workshops, full presentations (60 min), shorter presentations (30 min), and lightning
-          | talks (10 min).
-        p
-          | We are interested in talks and contributions that will captivate and inspire the
-          | participants!
-        p
-          | More information about the venue, registration and other practicalities will be announced later.
-          | If you have any questions contact us at <a href="mailto:kds@knowit.no">kds@knowit.no</a>.
-        p
-          a.btn(href='https://docs.google.com/forms/d/13bf7QFAFAMBqsebA2GNf2v4moLLK_6bmvywutFBY6Qw/viewform?usp=send_form' target='_blank')
-            | Submit your presentation
+          | We are working on the programm and we have not accepted
+          | (or rejected) any submissions yet. Meanwhile have a
+          | look at some of topics your fellow colleauges
+          | submitted:
+
+        each submissionSet in cfp.submissions
+          p.topics
+            each submissionTitle in submissionSet
+              span.topic= submissionTitle
+
+        h3 Register today!
+        p Registration closes on #{registration.registrationDeadline}.
+        p: a.btn(href=registration.registrationUrl target='_blank')
+          | Register here!
 
     section.schedule
       .content
-        h1 Schedule
-        p So far, so good:
-        p.topics
-          span.topic A farewell to JavaScript? Looking at Scala.js
-        p.topics
-          span.topic Arkitektenes tid er over
+        h1 Call for papers
+        p.lead
+          | The last day for submitting a talk is #{cfp.submissionDeadline}.
+        p.important We are seeking motivated developers to speak at the conference about topics such as:
+        dl.dl-horizontal
+          each topics, topic in cfp.topics
+            dt= topic
+            dd= topics
+        p.subtext ...and more!
+        p: em
+          | We are open to suggestion on workshops, full presentations (60
+          | min), shorter presentations (30 min), and lightning talks (10 min).
+        p
+          | We are interested in talks and contributions that will captivate
+          | and inspire the participants!
+        p
+          | Your audience? Passionate and truly interested developers within
+          | the Knowit organization, mainly programming on the Java and .NET
+          | platforms for the web.
+        p
+          | More information about the venue, registration and other
+          | practicalities will be announced later.  If you have any questions
+          | contact us at <a href="mailto:kds@knowit.no">kds@knowit.no</a>.
+        h3 Submit today!
+        p: a.btn(href=cfp.submissionUrl target='_blank')
+          | Submit your presentation
+
 
 
     section.location
       .wrapper
         iframe(
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.1851871275999!2d18.056061999999997!3d59.329861999999885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d604f482201%3A0x858ff8c54ed4011b!2sRadisson+Blu+Waterfront+Hotel!5e0!3m2!1sno!2sno!4v1396439444495"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style="border:0"
+          src=event.gmapsUrl
+          width='100%'
+          height='100%'
+          frameborder='0'
+          style='border:0'
         )
         .blocker
         .content
           h1 Location
-          h3 Radisson Blu Waterfront
-          h3 Stockholm
+          h3= event.venue
+          h3= event.city
