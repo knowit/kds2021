@@ -58,16 +58,16 @@
         "Worst integration project ever",
         "Yet another boring F# intro"
       ], [
-      "Arkitektenes tid er over",
-      "DevOps og kontinuerlige leveranser i Oslo kommune",
-      "En @#erstatning## til EPiServer",
-      "En Identity Management løsning for å håndtere 1,4 million medlemer og kunder for Coop",
-      "Hvordan gi en server et ansikt",
-      "Introduksjon til C# 6.0",
-      "Knowit Academy - Arkitektskolen",
-      "Mine containere er lettere enn dine. Enklere uviklingsmiljø med Boot2Docker og Docker Compose.",
-      "NServiceBus och en Saga",
-      "Windows uten Microsoft"
+        "Arkitektenes tid er over",
+        "DevOps og kontinuerlige leveranser i Oslo kommune",
+        "En @#erstatning## til EPiServer",
+        "En Identity Management løsning for å håndtere 1,4 million medlemer og kunder for Coop",
+        "Hvordan gi en server et ansikt",
+        "Introduksjon til C# 6.0",
+        "Knowit Academy - Arkitektskolen",
+        "Mine containere er lettere enn dine. Enklere uviklingsmiljø med Boot2Docker og Docker Compose.",
+        "NServiceBus och en Saga",
+        "Windows uten Microsoft"
       ]
     ]
   },

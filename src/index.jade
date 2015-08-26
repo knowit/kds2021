@@ -43,33 +43,12 @@ html(lang='en')
         .content-pane
           h1 Call for papers
 
-          p: a.btn(href=cfp.submissionUrl target='_blank')
-            | Submit your presentation
-
           p.lead
-            | The last day for submitting a talk is #{cfp.submissionDeadline}.
-          p.important
-            | We are seeking motivated developers to speak at the conference
-            | about topics such as:
-          dl.dl-horizontal
-            each topics, topic in cfp.topics
-              dt= topic
-              dd= topics
-          p.subtext ...and more!
-          p: em
-            | We are open to suggestion on workshops, full presentations (60
-            | min), shorter presentations (30 min), and lightning talks (10 min).
-          p
-            | We are interested in talks and contributions that will captivate
-            | and inspire the participants!
-          p
-            | Your audience? Passionate and truly interested developers within
-            | the Knowit organization, mainly programming on the Java and .NET
-            | platforms for the web.
-          p
-            | If you have any questions contact us at <a
-            | href="mailto:kds@knowit.no">kds@knowit.no</a>.
-
+            | The last day for submitting a talk was #{cfp.submissionDeadline}.
+            | However, if you have something really important to tell your
+            | collegues, feel free to contact us at
+            | <a href="mailto:kds@knowit.no">kds@knowit.no</a>. We might be
+            | able to squeeze you in!
 
     section.location
       .wrapper
