@@ -133,6 +133,7 @@ section {
 }
 .schedule-day {
   margin-top: 20px;
+  clear: both;
 }
 h3.schedule-all-tracks {
   clear: both;

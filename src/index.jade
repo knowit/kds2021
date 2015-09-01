@@ -28,23 +28,39 @@ html(lang='en')
         p
           | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
 
-        p.important
-          | We are working on the program and we have not accepted
-          | (or rejected) any submissions yet. Meanwhile have a
-          | look at some of topics your fellow colleagues
-          | submitted:
-
-        each submissionSet in cfp.submissions
-          p.topics
-            each submissionTitle in submissionSet
-              span.topic= submissionTitle
-
-        p.important
+        p
           | The last day for submitting a talk was #{cfp.submissionDeadline}.
           | However, if you have something really important to tell your
           | collegues, feel free to contact us at
           | <a href="mailto:kds@knowit.no">kds@knowit.no</a>. We might be
           | able to squeeze you in!
+
+
+    section#schedule.schedule
+      .content
+        h1 Preliminary Schedule
+
+        p.lead
+          | The final schedule is still work in progress and we are still
+          | selecting talks from the great submission we received, so the
+          | schedule is very likely to change.
+
+        each schedule in schedules
+          .schedule-day
+            h2= schedule.day
+            each collection in schedule.collections
+              if collection.entries
+                .schedule-collection
+                  h4= collection.time
+                  each entry in collection.entries
+                    .schedule-entry
+                      //h5= entry.room
+                      each slot in entry.slots
+                        .schedule-slot
+                          p= talks[slot].title
+                          address= talks[slot].speaker
+              else
+                h3.schedule-all-tracks= collection.time
 
     section.location
       .wrapper
