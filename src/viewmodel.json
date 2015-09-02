@@ -79,7 +79,7 @@
     {
       "day": "Friday, 13th",
       "collections": [
-        { "time": "11:20-11:50 Kick-off" },
+        { "time": "11:20-11:50 Kick-off / meet and greet" },
         { "time": "12:00-13:00 Lunch" },
         {
           "time": "13:05-14:05 Long talks",
@@ -90,11 +90,11 @@
             },
             {
               "room": "24/25",
-              "slots": [ "tba" ]
+              "slots": [ "entity_framework_conventions_deep_dive_" ]
             },
             {
               "room": "23",
-              "slots": [ "tba" ]
+              "slots": [ "building_front_end_using_yeoman_gulp_more_" ]
             }
           ]
         },
@@ -133,18 +133,21 @@
             {
               "room": "C4",
               "slots": [
+                "introduksjon_til_c_6_0",
                 "monoliths_self_contained_systems_and_microservices"
               ]
             },
             {
               "room": "24/25",
               "slots": [
-                "worst_integration_project_ever"
+                "worst_integration_project_ever",
+                "iot_la_microsoft_windows_10_on_raspberry_pi"
               ]
             },
             {
               "room": "23",
               "slots": [
+                "do_students_require_grunt_to_knockout_jasmine_",
                 "exploratory_testing_basics_and_experiences"
               ]
             }
@@ -182,8 +185,12 @@
               "slots": [ "cross_platform_mobile_development_with_xamarin_forms" ]
             },
             {
-              "room": "24/25",
+              "room": "25",
               "slots": [ "a_farewell_to_javascript_looking_at_scala_js" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "moving_from_waterfall_to_agile" ]
             },
             {
               "room": "23",
@@ -199,8 +206,12 @@
               "slots": [ "what_is_cloud_native_" ]
             },
             {
-              "room": "24/25",
+              "room": "25",
               "slots": [ "ios_swift_and_reactive_cocoa" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "devops_erfaringer_fra_oslo_kommune" ]
             },
             {
               "room": "23",
@@ -216,8 +227,12 @@
               "slots": [ "nservicebus_och_en_saga" ]
             },
             {
-              "room": "24/25",
+              "room": "25",
               "slots": [ "fancy_input_elements_with_web_components" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "serverless_architecture_in_the_cloud" ]
             },
             {
               "room": "23",
@@ -227,36 +242,33 @@
         },
         { "time": "13:45-12:40 Conference lunch" },
         {
-          "time": "13:50-14:20 Long talks",
+          "time": "13:50-15:00 Short talks",
           "entries": [
             {
               "room": "C4",
-              "slots": [ "mobile_version_of_estonian_state_portal_eesti_ee" ]
+              "slots": [
+                "mobile_version_of_estonian_state_portal_eesti_ee",
+                "quality_challenges_in_digitalized_world_testing_is_needed"
+              ]
             },
             {
-              "room": "24/25",
-              "slots": [ "en_erstatning_til_episerver" ]
+              "room": "25",
+              "slots": [
+                "en_erstatning_til_episerver",
+                "en_identity_management_l_sning_for_h_ndtere_1_4_million_medlemer_og_kunder_for_coop"
+              ]
             },
             {
-              "room": "23",
-              "slots": [ "tba" ]
-            }
-          ]
-        },
-        {
-          "time": "14:30-15:00 Short talks",
-          "entries": [
-            {
-              "room": "C4",
-              "slots": [ "quality_challenges_in_digitalized_world_testing_is_needed" ]
-            },
-            {
-              "room": "24/25",
-              "slots": [ "en_identity_management_l_sning_for_h_ndtere_1_4_million_medlemer_og_kunder_for_coop" ]
+              "room": "24",
+              "slots": [
+                "automatisk_innholdsanalyse_p_web",
+                "cool_new_features_with_the_asp_net_5_framework"
+              ]
             },
             {
               "room": "23",
               "slots": [
+                "hvordan_gi_en_server_et_ansikt",
                 "how_stuff_works_big_data_metrics_at_cern",
                 "hardware_simulations_at_cern"
               ]
@@ -272,12 +284,16 @@
               "slots": [ "developing_applications_with_ember_js" ]
             },
             {
-              "room": "24/25",
-              "slots": [ "entity_framework_conventions_deep_dive_" ]
+              "room": "25",
+              "slots": [ "the_browser_is_the_new_fat_client" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "best_mulig_for_flest_mulig_p_nett" ]
             },
             {
               "room": "23",
-              "slots": [ "tba" ]
+              "slots": [ "continous_wordpress_maintenance" ]
             }
           ]
         }
@@ -346,7 +362,7 @@
     "building_front_end_using_yeoman_gulp_more_": {
       "speaker": "Richard Lilja",
       "type": "Long talk (60 min)",
-      "title": "Building Front-end using Yeoman, Gulp & More!",
+      "title": "Building Front-end using Yeoman, Gulp & PostCSS!",
       "description": "A talk about building front-end for web applications using Node-based tools such as Yeoman, Gulp, Bower and what not. The talk is practical in its nature, which means that we won’t dive very deep into theory and code. Instead I will keep it simple by exploring key-concepts, workflow, and potential benefits from using these kind of tools.",
       "language": "English",
       "languageCode": "en",
@@ -398,7 +414,7 @@
       "notes": "Beginner level is perfect"
     },
     "mine_containere_er_lettere_enn_dine_enklere_uviklingsmilj_med_boot2docker_og_docker_compose_": {
-      "speaker": "Anders BReivik",
+      "speaker": "Anders Breivik",
       "type": "Lightning talk (10 min)",
       "title": "Mine containere er lettere enn dine. Enklere uviklingsmiljø med Boot2Docker og Docker Compose.",
       "description": " Består løsningen din av flere moduler? Vil du under utvikling og testing styre hvilke moduler og databaser du kjører opp på egen maskin og hvilke du lar gå mot eksterne miljøer? I denne lyntalen får du se hvordan et prosjekt benyttet Boot2Docker og Docker Compose til å lage et lettvekts og orkestrerbart utviklingsmiljø av Docker-containere.",
@@ -425,6 +441,7 @@
       "notes": "Beginner to Medium Level!  Code examples in Visualstudio 2013, C# and EF 6.1"
     },
     "how_to_apply_design_patterns_in_reality_": {
+      "rejected": true,
       "speaker": "Magnus Backeus",
       "type": "Long talk (60 min)",
       "title": "How to apply design patterns in reality?",
@@ -515,6 +532,7 @@
       "notes": "Foredraget passer for de som er interresert i å se mulighetene innen moderne frontend og ønsker å lage selvstendige moduler som kan plugges inn i andre løsninger uten å skape fullstendig kaos.  Bio: Roger er senior utvikler og fagansvarlig i Knowit Reaktor Oslo. Han har skapt liv og røre på prosjekter for kunder som OBOS-Banken, BankID og DNB.   Johan er frontendutvikler i Knowit Reaktor Oslo og har skrevet mye smashing kode for blant annet OBOS-Banken, Fornebulandet, LDO og VOX."
     },
     "hvordan_gi_en_server_et_ansikt": {
+      "pending": true,
       "speaker": "Peter Tollnes Flem & Håvard Fjær",
       "type": "Short talk (30 min)",
       "title": "Hvordan gi en server et ansikt",
@@ -587,8 +605,8 @@
       "notes": "keynote type presentation for all audiences. I gave this as a keynote in Czech Test in June."
     },
     "ios_swift_and_reactive_cocoa": {
-      "speaker": "Hans Olav Nome",
-      "type": "Short talk (30 min), Long talk (60 min)",
+      "speaker": "Hans Olav Nome og Christian Askeland",
+      "type": "Long talk (60 min)",
       "title": "iOS, Swift and Reactive-Cocoa",
       "description": "Hvordan vi laget RuterReise - reiseplanlegger-app for en halv million mennesker. Våre erfaringer med Swift og Reactive Cocoa, hva vi likte og hva vi ikke likte.",
       "language": "Norwegian",
@@ -668,6 +686,7 @@
       "notes": "Presentasjonen er mest for windows-brukere som er på utkikk etter nye verktøy."
     },
     "knowit_academy_arkitektskolen": {
+      "rejected": true,
       "speaker": "Svein Aandahl",
       "type": "Lightning talk (10 min)",
       "title": "Knowit Academy - Arkitektskolen",
@@ -722,6 +741,7 @@
       "notes": "Everyone"
     },
     "best_mulig_for_flest_mulig_p_nett": {
+      "pending": true,
       "speaker": "Siv Tunold",
       "type": "Short talk (30 min), Long talk (60 min)",
       "title": "Best mulig for flest mulig på nett",
@@ -747,6 +767,16 @@
       "language": "English",
       "languageCode": "en",
       "notes": "beginner, developer"
+    },
+    "automatisk_innholdsanalyse_p_web": {
+      "speaker": "Anders Brenna",
+      "type": "Short talk (30 min)",
+      "title": "Automatisk innholdsanalyse på web",
+      "description": "Automatisert webanalyse som ved hjelp av NodeJS, PhantomJS og diverse web API samler mest mulig informasjon om ett eller flere nettsteder i et felles dataset som indekseres og analyseres med Elasticsearch. Løsningen egner seg godt til å avdekke hva som må gjøres på migreringsprosjekter, analyse av webtekster og annet innhold, samt til å sammenligne et nettsted med nærliggende konkurrenter. Alt håndteres med NodeJS scripts som er fleksible og gjenbrukbare.",
+      "language": "Norwegian",
+      "languageCode": "no",
+
+      "notes": "Should be interesting for webdevelopers, designers and project managers."
     }
   }
 }

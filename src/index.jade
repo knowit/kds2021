@@ -19,14 +19,14 @@ html(lang='en')
       .content
         h1 Registration
 
+        p.lead
+          | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
+
         p: a.btn(href=registration.registrationUrl target='_blank')
           | Register as a participant
 
-        p.lead
-          | Registration closes on #{registration.registrationDeadline}.
-
         p
-          | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
+          | Registration closes on #{registration.registrationDeadline}.
 
         p
           | The last day for submitting a talk was #{cfp.submissionDeadline}.
@@ -50,15 +50,19 @@ html(lang='en')
             h2= schedule.day
             each collection in schedule.collections
               if collection.entries
-                .schedule-collection
+                .schedule-collection(class="with-#{collection.entries.length}-entries")
                   h4= collection.time
                   each entry in collection.entries
                     .schedule-entry
-                      //h5= entry.room
+                      //h5 Room #{entry.room}
                       each slot in entry.slots
-                        .schedule-slot
-                          p= talks[slot].title
-                          address= talks[slot].speaker
+                        - var talk = talks[slot]
+                        .schedule-slot(class={pending: talk.pending, rejected: talk.rejected})
+                          if talk.pending
+                            p tba
+                          else
+                            p= talk.title
+                            address= talk.speaker
               else
                 h3.schedule-all-tracks= collection.time
 
