@@ -301,10 +301,6 @@
     }
   ],
   "talks": {
-    "tba": {
-      "title": "tba",
-      "speaker": ""
-    },
     "a_farewell_to_javascript_looking_at_scala_js": {
       "speaker": "Sigmund Marius Nilssen",
       "type": "Short talk (30 min)",
@@ -324,6 +320,7 @@
       "notes": "Basic Microsoft knowledge "
     },
     "git_for_dummies_snabbstart_git_och_github": {
+      "rejected": true,
       "speaker": "David Vujic",
       "type": "Lightning talk (10 min)",
       "title": "Git for dummies / Snabbstart: git och GitHub",
@@ -333,6 +330,7 @@
       "notes": "Beginner"
     },
     "what_would_bruce_lee_do_vad_hade_bruce_lee_gjort_": {
+      "rejected": true,
       "speaker": "David Vujic",
       "type": "Lightning talk (10 min)",
       "title": "What would Bruce Lee do? / Vad hade Bruce Lee gjort?",
@@ -342,6 +340,7 @@
       "notes": "Basic knowledge about agile ideas and methods. "
     },
     "ecmascript_7_back_to_the_future_tillbaka_till_framtiden": {
+      "rejected": true,
       "speaker": "David Vujic",
       "type": "Short talk (30 min)",
       "title": "ECMAScript 7 - back to the future / tillbaka till framtiden",
@@ -351,6 +350,7 @@
       "notes": "Basic or advanced beginner JavaScript knowledge."
     },
     "windows_no_i_m_a_net_developer_windows_nej_jag_r_net_utvecklare_": {
+      "rejected": true,
       "speaker": "David Vujic",
       "type": "Short talk (30 min)",
       "title": "Windows? No, I'm a .NET developer. / Windows? Nej, jag är .NET-utvecklare.",
@@ -532,7 +532,6 @@
       "notes": "Foredraget passer for de som er interresert i å se mulighetene innen moderne frontend og ønsker å lage selvstendige moduler som kan plugges inn i andre løsninger uten å skape fullstendig kaos.  Bio: Roger er senior utvikler og fagansvarlig i Knowit Reaktor Oslo. Han har skapt liv og røre på prosjekter for kunder som OBOS-Banken, BankID og DNB.   Johan er frontendutvikler i Knowit Reaktor Oslo og har skrevet mye smashing kode for blant annet OBOS-Banken, Fornebulandet, LDO og VOX."
     },
     "hvordan_gi_en_server_et_ansikt": {
-      "pending": true,
       "speaker": "Peter Tollnes Flem & Håvard Fjær",
       "type": "Short talk (30 min)",
       "title": "Hvordan gi en server et ansikt",
