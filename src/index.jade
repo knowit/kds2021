@@ -35,14 +35,13 @@ html(lang='en')
           | <a href="mailto:kds@knowit.no">kds@knowit.no</a>. We might be
           | able to squeeze you in!
 
-
     section#schedule.schedule
       .content
         h1 Preliminary Schedule
 
         p.lead
           | The final schedule is still work in progress and we are still
-          | selecting talks from the great submission we received, so the
+          | selecting talks from the great submissions we received, so the
           | schedule is very likely to change.
 
         each schedule in schedules
@@ -54,19 +53,40 @@ html(lang='en')
                   h4= collection.time
                   each entry in collection.entries
                     .schedule-entry
-                      //h5 Room #{entry.room}
+                      h5 Room #{entry.room}
                       each slot in entry.slots
                         - var talk = talks[slot]
                         .schedule-slot(class={pending: talk.pending, rejected: talk.rejected})
                           if talk.pending
                             p tba
                           else
-                            p= talk.title
-                            address= talk.speaker
+                            p(lang=talk.languageCode)
+                              a(id='p_'+slot href='#'+slot)= talk.title
+                            address
+                              | #{talk.speaker} - #{talk.languageCode.toUpperCase()}
               else
                 h3.schedule-all-tracks= collection.time
 
-    section.location
+    section#talks.talks
+      .content
+        h1 Talks and Speakers
+        each schedule in schedules
+          each collection in schedule.collections
+            if collection.entries
+              each entry in collection.entries
+                each slot in entry.slots
+                  - var talk = talks[slot]
+                  if !talk.pending
+                    div(id=slot)
+                      h4(lang=talk.languageCode)= " " + talk.title
+                      address.talk-speaker= talk.speaker
+                      p.talk-meta
+                        | #{talk.type}, #{talk.language}, #{" "}
+                        a(href='#p_'+slot)  #{schedule.day.split(',').shift()} #{collection.time.split(' ').shift()} slot - room #{entry.room}
+                      p.talk-description(lang=talk.languageCode)= talk.description
+
+
+    section#location.location
       .wrapper
         iframe(
           src=event.gmapsUrl

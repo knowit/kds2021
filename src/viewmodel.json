@@ -128,26 +128,46 @@
         },
         { "time": "15:00-15:30 Afternoon coffee" },
         {
-          "time": "15:30-16:50 Lightning talks",
+          "time": "15:30-15:40 Lightning talks",
           "entries": [
             {
               "room": "C4",
               "slots": [
-                "introduksjon_til_c_6_0",
+                "introduksjon_til_c_6_0"
+              ]
+            },
+            {
+              "room": "24/25",
+              "slots": [
+                "worst_integration_project_ever"
+              ]
+            },
+            {
+              "room": "23",
+              "slots": [
+                "do_students_require_grunt_to_knockout_jasmine_"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "15:50-16:50 Long talks",
+          "entries": [
+            {
+              "room": "C4",
+              "slots": [
                 "monoliths_self_contained_systems_and_microservices"
               ]
             },
             {
               "room": "24/25",
               "slots": [
-                "worst_integration_project_ever",
                 "iot_la_microsoft_windows_10_on_raspberry_pi"
               ]
             },
             {
               "room": "23",
               "slots": [
-                "do_students_require_grunt_to_knockout_jasmine_",
                 "exploratory_testing_basics_and_experiences"
               ]
             }
@@ -363,7 +383,7 @@
       "speaker": "Richard Lilja",
       "type": "Long talk (60 min)",
       "title": "Building Front-end using Yeoman, Gulp & PostCSS!",
-      "description": "A talk about building front-end for web applications using Node-based tools such as Yeoman, Gulp, Bower and what not. The talk is practical in its nature, which means that we won’t dive very deep into theory and code. Instead I will keep it simple by exploring key-concepts, workflow, and potential benefits from using these kind of tools.",
+      "description": "A talk about building front-end for web applications using Node-based tools such as Yeoman, Gulp, PostCSS and what not. The talk is practical in its nature, which means that we won’t dive very deep into theory and code. Instead I will keep it simple by exploring key-concepts, workflow, and potential benefits from using these kind of tools.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner, basic JavaScript and NodeJS knowledge."
@@ -426,7 +446,7 @@
       "speaker": "Kristofer Walters",
       "type": "Short talk (30 min)",
       "title": "Fancy Input Elements with Web Components",
-      "description": "Advanced web components by example. More abstract coming soon.",
+      "description": "Building advanced web components by example.",
       "language": "English",
       "languageCode": "en",
       "notes": "intermediate; basic understanding of javascript and DOM required"
@@ -523,7 +543,7 @@
       "notes": "Beginner to understand concepts, WordPress developer/dev-ops to understand and fully use the conepts in practice."
     },
     "do_students_require_grunt_to_knockout_jasmine_": {
-      "speaker": "Roger Nesheim og Johan Stene",
+      "speaker": "Roger Nesheim, Johan Stene",
       "type": "Lightning talk (10 min)",
       "title": "Do students require grunt to knockout jasmine?",
       "description": "Roger og Johan tar deg gjennom gjennomføringen av to studentprosjekter i parallell, der oppgaven var å lage ett sett med lånekalkulatorer vha. frontendteknologier som grunt, require, knockout og jasmine.",
@@ -532,7 +552,7 @@
       "notes": "Foredraget passer for de som er interresert i å se mulighetene innen moderne frontend og ønsker å lage selvstendige moduler som kan plugges inn i andre løsninger uten å skape fullstendig kaos.  Bio: Roger er senior utvikler og fagansvarlig i Knowit Reaktor Oslo. Han har skapt liv og røre på prosjekter for kunder som OBOS-Banken, BankID og DNB.   Johan er frontendutvikler i Knowit Reaktor Oslo og har skrevet mye smashing kode for blant annet OBOS-Banken, Fornebulandet, LDO og VOX."
     },
     "hvordan_gi_en_server_et_ansikt": {
-      "speaker": "Peter Tollnes Flem & Håvard Fjær",
+      "speaker": "Peter Tollnes Flem, Håvard Fjær",
       "type": "Short talk (30 min)",
       "title": "Hvordan gi en server et ansikt",
       "description": "Vi gir serverne våre et ansikt utad for å fortelle hvordan den har det inni seg. Har den det vondt? Er serveren sliten? Er det god stemning? Se hvordan vi har lekt oss med skytjenester, hobbyelektronikk og mekanikk.  Håvard jobber som arkitekt og problemløser på dagen – og som mad scientist om kvelden med 3D-printere, dreiebenker og elektronikk.  Peter jobber som systemutvikler, og liker teknologi sånn generelt sett over hele fjøla. Han synes det er spennende med alt fra koding til microkontrollere. ",
@@ -541,7 +561,7 @@
       "notes": "Beginner"
     },
     "en_erstatning_til_episerver": {
-      "speaker": "Roger Nesheim og Håvard Slettvold",
+      "speaker": "Roger Nesheim, Håvard Slettvold",
       "type": "Short talk (30 min)",
       "title": "En @#erstatning## til EPiServer",
       "description": "Er redaktøren din dritt lei av å oppdatere den samme verdien flere steder i løsningen sin? Har du ett ønske om å gjøre jobben hans mye lettere? I så fall har vi det ganske likt. Vi tar deg gjennom hvordan vi løste erstatning av nøkkelverdier gjennom hele EPiServer løsningen til OBOS-banken på ca 40ms.",
@@ -551,7 +571,7 @@
     },
     "why_you_should_learn_regular_expressions": {
       "speaker": "Håvard Slettvold",
-      "type": "Short talk (30 min), Long talk (60 min)",
+      "type": "Long talk (60 min)",
       "title": "Why you should learn Regular Expressions",
       "description": "\"I had an issue, and attempted to solve it with regex. Now I have two issues.\" Sounds familiar? Wish you had a string.isIPAddress()? Validation of values like hashes, IP's, emails and URLs are all simple tasks with regex! Håvard Slettvold demonstrates some basic regex, smart tips & tricks and how we are currently using regex to handle editor variables in EPiServer.  Bio: Håvard Slettvold is fresh out of school and works in Knowit Reaktor Oslo. Primarily working on backend, at the moment for Obos. Programming is a passion even off work, as well as a passion for games and spending time outdoors.",
       "language": "English",
@@ -578,7 +598,7 @@
     },
     "web_performance_": {
       "speaker": "Joacim Gunnarsson",
-      "type": "Short talk (30 min), Long talk (60 min)",
+      "type": "Long talk (60 min)",
       "title": "Web Performance ",
       "description": "Insight of web performance tricks on the client side to make the site load and feel faster. As well as how to plan for high performance web pages.",
       "language": "English",
@@ -595,7 +615,7 @@
       "notes": "Beginner ok, interesting for all"
     },
     "quality_challenges_in_digitalized_world_testing_is_needed": {
-      "speaker": "Kari Kakkonen (presentation2)",
+      "speaker": "Kari Kakkonen",
       "type": "Short talk (30 min)",
       "title": "Quality challenges in digitalized world – testing is needed",
       "description": "The world is more and more digitalized. There is the revolution of user experience including different mobile devices for connecting to internet. There is the changing business with more and more of the business becoming electronic, based on web services and automatic information sharing between different systems. Most recently there is the Internet of Things / Everything, connecting almost all industries into each other and/or their backend-systems. All the interconnectedness and increased demand on speed and ease-of-use suggests additional quality challenges. How can we ensure fast enough, secure and user-friendly information systems? My opinion is that security testing, usability testing and performance testing become a greater focus. Additionally the way of creating software needs to become very quick and tuned to the feedback from user base. This means agile practices on both team level and organization level, DevOps, test automation, exploratory testing and broad competences on testing, software development, business domain knowledge and production environments. We need to be able to try easy and use that information to develop our software further. We all experience the changing world, where software takes a bigger role. The quality needs are understood on grass root level, in the lives of each of us, and we try different methodologies and tools to see which will solve the new quality challenges.  ",
@@ -604,7 +624,7 @@
       "notes": "keynote type presentation for all audiences. I gave this as a keynote in Czech Test in June."
     },
     "ios_swift_and_reactive_cocoa": {
-      "speaker": "Hans Olav Nome og Christian Askeland",
+      "speaker": "Hans Olav Nome, Christian Askeland",
       "type": "Long talk (60 min)",
       "title": "iOS, Swift and Reactive-Cocoa",
       "description": "Hvordan vi laget RuterReise - reiseplanlegger-app for en halv million mennesker. Våre erfaringer med Swift og Reactive Cocoa, hva vi likte og hva vi ikke likte.",
@@ -750,7 +770,7 @@
       "notes": "Beginner"
     },
     "devops_erfaringer_fra_oslo_kommune": {
-      "speaker": "Andreas Hagen og Cathrine Riise Dannevig",
+      "speaker": "Andreas Hagen, Cathrine Riise Dannevig",
       "type": "Short talk (30 min)",
       "title": "Devops- Erfaringer fra Oslo Kommune",
       "description": "Vi oppsummerer fordeler og utfordringer vi ser etter å ha drevet med Devops i Oslo kommune i flere år. Foredraget har fokus på utviklerens trivsel og effektivitet og opplevt kundeverdi.",
