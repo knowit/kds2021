@@ -206,6 +206,16 @@ td, th{
   margin: 10px 10px 0 10px;
 }
 
+.schedule-entry p[lang=no]:after {
+    display: inline-block;
+    content: url(norway.png);
+}
+
+.schedule-entry p[lang=sv]:after {
+    display: inline-block;
+    content: url(sweden.png);
+}
+
 .schedule-entry address {
   margin: 0px 10px 10px 10px;
 }

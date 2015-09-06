@@ -63,7 +63,7 @@ html(lang='en')
                             p(lang=talk.languageCode)
                               a(id='p_'+slot href='#'+slot)= talk.title
                             address
-                              | #{talk.speaker} - #{talk.languageCode.toUpperCase()}
+                              | #{talk.speaker}
               else
                 h3.schedule-all-tracks= collection.time
 
@@ -79,7 +79,8 @@ html(lang='en')
                   if !talk.pending
                     div(id=slot)
                       h4(lang=talk.languageCode)= " " + talk.title
-                      address.talk-speaker= talk.speaker
+                      address.talk-speaker
+                        | #{talk.speaker} - #{talk.company} #{talk.city}
                       p.talk-meta
                         | #{talk.type}, #{talk.language}, #{" "}
                         a(href='#p_'+slot)  #{schedule.day.split(',').shift()} #{collection.time.split(' ').shift()} slot - room #{entry.room}
