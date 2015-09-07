@@ -4,6 +4,7 @@
   "description": "Knowit Developer Summit",
   "scripts": {
     "build": "jade --out . --obj src/viewmodel.json --pretty src/index.jade",
+    "build:stats": "jade --out . --obj src/attendees.json --pretty src/stats.jade",
     "start": "jade --out . --obj src/viewmodel.json --pretty --watch src/index.jade"
   },
   "repository": {
@@ -14,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/knowit/kds/issues"
   },
-  "homepage": "http://kds.knowit.no/"
+  "homepage": "http://kds.knowit.no/",
+  "devDependencies": {
+    "jade": "^1.11.0"
+  }
 }
