@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Knowit Developer Summit",
   "scripts": {
-    "build": "jade --out . --obj src/viewmodel.json --pretty src",
-    "start": "jade --out . --obj src/viewmodel.json --pretty --watch src"
+    "build": "jade --out . --obj src/viewmodel.json --pretty src/index.jade",
+    "start": "jade --out . --obj src/viewmodel.json --pretty --watch src/index.jade"
   },
   "repository": {
     "type": "git",
