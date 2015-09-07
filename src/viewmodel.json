@@ -94,7 +94,7 @@
             },
             {
               "room": "23",
-              "slots": [ "building_front_end_using_yeoman_gulp_more_" ]
+              "slots": [ "building_front_end_using_node_gulp_postcss_" ]
             }
           ]
         },
@@ -343,11 +343,11 @@
       "company": "Knowit",
       "city": "Stockholm"
     },
-    "building_front_end_using_yeoman_gulp_more_": {
-      "title": "Building Front-end using Yeoman, Gulp & More!",
+    "building_front_end_using_node_gulp_postcss_": {
+      "title": "Building Front-end using Node, Gulp & PostCSS!",
       "speaker": "Richard Lilja",
       "type": "Long talk (60 min)",
-      "description": "A talk about building front-end for web applications using Node-based tools such as Yeoman, Gulp, Bower and what not. The talk is practical in its nature, which means that we won’t dive very deep into theory and code. Instead I will keep it simple by exploring key-concepts, workflow, and potential benefits from using these kind of tools.",
+      "description": "A talk about building front-end for web applications using Node-based tools. Specifically the talk will focus on Gulp (“the streaming build system”) and PostCSS (“the future of CSS, now”). We will explore the whys and hows as well as delve into code by creating a new project to build from start.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner, basic JavaScript and NodeJS knowledge.",
