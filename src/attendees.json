@@ -512,13 +512,6 @@
       "country": "Norway"
     },
     {
-      "name": "Jan Karl Andersen",
-      "speaker": false,
-      "company": "Knowit Amende",
-      "city": "Oslo",
-      "country": "Norway"
-    },
-    {
       "name": "Martin Hansen",
       "speaker": false,
       "company": "Knowit Amende",
@@ -707,13 +700,6 @@
       "country": "Norway"
     },
     {
-      "name": "Olaf Lindström",
-      "speaker": false,
-      "company": "Knowit Jönköping",
-      "city": "Jönköping",
-      "country": "Sweden"
-    },
-    {
       "name": "Frida Karlin",
       "speaker": false,
       "company": "Knowit Reaktor Stockholm",
@@ -726,6 +712,13 @@
       "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
       "country": "Norway"
+    },
+    {
+      "name": "Martin Segelfeldt",
+      "speaker": false,
+      "company": "Knowit Digital Communication",
+      "city": "Göteborg",
+      "country": "Sweden"
     }
   ]
 }
