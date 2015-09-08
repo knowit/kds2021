@@ -719,6 +719,13 @@
       "company": "Knowit Digital Communication",
       "city": "Göteborg",
       "country": "Sweden"
+    },
+    {
+      "name": "Daniel Trochez",
+      "speaker": false,
+      "company": "Knowit Digital Communication",
+      "city": "Göteborg",
+      "country": "Sweden"
     }
   ]
 }
