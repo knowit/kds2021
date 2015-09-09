@@ -719,6 +719,20 @@
       "company": "Knowit Digital Communication",
       "city": "Göteborg",
       "country": "Sweden"
+    },
+    {
+      "name": "Fredrik Claesson",
+      "speaker": false,
+      "company": "Knowit System Development",
+      "city": "Göteborg",
+      "country": "Sweden"
+    },
+    {
+      "name": "Gustav Lidälv",
+      "speaker": false,
+      "company": "Knowit Reaktor Stockholm",
+      "city": "Stockholm",
+      "country": "Sweden"
     }
   ]
 }
