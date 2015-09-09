@@ -11,6 +11,12 @@ var companyGrp = companyDim.group();
 var cityGrp = cityDim.group();
 var countryGrp = countryDim.group();
 
+var countSpeakers = cf.groupAll().value();
+
+function ordering(d) {
+  return countSpeakers - d.value + 1;
+}
+
 var colorRange1 = [ '#00967f' ];
 var colorRange2 = [ colorRange1[0], d3.rgb( colorRange1[0] ).darker(0.5).toString() ];
 
@@ -18,8 +24,8 @@ var speakerChart = dc.pieChart('#speaker-chart')
   .dimension( speakerDim )
   .group( speakerGrp )
   .height(200)
-  .width(200)
-  .radius(90)
+  .width(350)
+  .radius(100)
   .label(function (d) {
     return (d.key ? 'Speakers: ' : 'Attendees: ') + d.value;
   })
@@ -29,40 +35,40 @@ var speakerChart = dc.pieChart('#speaker-chart')
 var companyChart = dc.rowChart('#company-chart')
   .dimension( companyDim )
   .group( companyGrp )
-  .height( companyGrp.size() * 30)
-  .width(400)
+  .height( companyGrp.size() * 40)
+  .width(350)
   .margins({top:0, bottom:0, left:0, right:0})
   .label(function (d) {
     return d.key +': '+ d.value;
   })
-  .elasticX( true )
   .ordinalColors( colorRange1 )
+  .ordering( ordering )
 ;
 
 var cityChart = dc.rowChart('#city-chart')
   .dimension( cityDim )
   .group( cityGrp )
-  .height( cityGrp.size() * 30)
-  .width(400)
+  .height( cityGrp.size() * 40)
+  .width(350)
   .margins({top:0, bottom:0, left:0, right:0})
   .label(function (d) {
     return d.key +': '+ d.value;
   })
-  .elasticX( true )
   .ordinalColors( colorRange1 )
+  .ordering( ordering )
 ;
 
 var countryChart = dc.rowChart('#country-chart')
   .dimension( countryDim )
   .group( countryGrp )
-  .height( countryGrp.size() * 30)
-  .width(400)
+  .height( countryGrp.size() * 40)
+  .width(350)
   .margins({top:0, bottom:0, left:0, right:0})
   .label(function (d) {
     return d.key +': '+ d.value;
   })
-  .elasticX( true )
   .ordinalColors( colorRange1 )
+  .ordering( ordering )
 ;
 
 var dataCount = dc.dataCount('#data-count')
