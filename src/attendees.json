@@ -733,6 +733,27 @@
       "company": "Knowit Reaktor Stockholm",
       "city": "Stockholm",
       "country": "Sweden"
+    },
+    {
+      "name": "Mattias Svensson",
+      "speaker": false,
+      "company": "Knowit Göteborg",
+      "city": "Göteborg",
+      "country": "Sweden"
+    },
+    {
+      "name": "Jens Hintze Holm",
+      "speaker": false,
+      "company": "Knowit Objectnet",
+      "city": "Oslo",
+      "country": "Norway"
+    },
+    {
+      "name": "Mattias Sönnergren",
+      "speaker": false,
+      "company": "Knowit Digital Communication",
+      "city": "Göteborg",
+      "country": "Sweden"
     }
   ]
 }
