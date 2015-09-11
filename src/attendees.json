@@ -754,6 +754,20 @@
       "company": "Knowit Digital Communication",
       "city": "Göteborg",
       "country": "Sweden"
+    },
+    {
+      "name": "Filip Hesslund",
+      "speaker": false,
+      "company": "Knowit Göteborg",
+      "city": "Göteborg",
+      "country": "Sweden"
+    },
+    {
+      "name": "Ulf Landgren",
+      "speaker": false,
+      "company": "Knowit Stockholm",
+      "city": "Stockholm",
+      "country": "Sweden"
     }
   ]
 }
