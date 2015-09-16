@@ -23,7 +23,7 @@ var colorRange2 = [ colorRange1[0], d3.rgb( colorRange1[0] ).darker(0.5).toStrin
 var speakerChart = dc.pieChart('#speaker-chart')
   .dimension( speakerDim )
   .group( speakerGrp )
-  .height(200)
+  .height(206)
   .width(350)
   .radius(100)
   .label(function (d) {
