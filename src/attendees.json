@@ -722,13 +722,6 @@
       "country": "Sweden"
     },
     {
-      "name": "Fredrik Claesson",
-      "speaker": false,
-      "company": "Knowit System Development",
-      "city": "Göteborg",
-      "country": "Sweden"
-    },
-    {
       "name": "Gustav Lidälv",
       "speaker": false,
       "company": "Knowit Reaktor Stockholm",
@@ -767,6 +760,48 @@
       "name": "Ulf Landgren",
       "speaker": false,
       "company": "Knowit Stockholm",
+      "city": "Stockholm",
+      "country": "Sweden"
+    },
+    {
+      "name": "Magnus Uddstål",
+      "speaker": false,
+      "company": "Knowit Norrland",
+      "city": "Norrland",
+      "country": "Sweden"
+    },
+    {
+      "name": "Patrik Alm",
+      "speaker": false,
+      "company": "Knowit Örebro",
+      "city": "Örebro",
+      "country": "Sweden"
+    },
+    {
+      "name": "William Hemmingsson",
+      "speaker": false,
+      "company": "Knowit Karlstad",
+      "city": "Karlstad",
+      "country": "Sweden"
+    },
+    {
+      "name": "Andreas Älveborn",
+      "speaker": false,
+      "company": "Knowit Karlstad",
+      "city": "Karlstad",
+      "country": "Sweden"
+    },
+    {
+      "name": "William Hemmingsson",
+      "speaker": false,
+      "company": "Knowit Karlstad",
+      "city": "Karlstad",
+      "country": "Sweden"
+    },
+    {
+      "name": "Mats Eriksson",
+      "speaker": false,
+      "company": "Knowit Reaktor Stockholm",
       "city": "Stockholm",
       "country": "Sweden"
     }
