@@ -222,6 +222,10 @@ td, th{
   margin: 0px 10px 10px 10px;
 }
 
+.schedule-entry .annote {
+  font-weight: normal;
+}
+
 .location {
   height: 100%;
   padding-bottom: 0;
@@ -337,6 +341,10 @@ td, th{
 
   .schedule .content {
       overflow: hidden;
+  }
+
+  .schedule.progComView .content {
+    width: 90%;
   }
 
   .schedule-entry {

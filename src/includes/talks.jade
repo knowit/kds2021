@@ -1,3 +1,4 @@
+- progComView = progComView || false
 section#talks.talks
   .content
     h1 Talks and Speakers
@@ -16,5 +17,12 @@ section#talks.talks
                     | #{talk.type}, #{talk.language}, #{" "}
                     a(href='#p_'+slot)  #{schedule.day.split(',').shift()} #{collection.time.split(' ').shift()} slot - room #{entry.room}
                   p.talk-description(lang=talk.languageCode)= talk.description
+                  if progComView
+                    p.talk-notes
+                      b Notes:
+                      | #{' ' + talk.notes}
+                    p.talk-types
+                      b Formats:
+                      | #{' ' + talk.types.join(', ')}
 
 

@@ -1,4 +1,5 @@
-section#schedule.schedule
+- progComView = progComView || false
+section#schedule.schedule(class={progComView: progComView})
   .content
     h1 Preliminary Schedule
 
@@ -20,13 +21,17 @@ section#schedule.schedule
                     - var talk = talks[slot]
                     if talk
                       .schedule-slot(class={pending: talk.pending, rejected: talk.rejected})
-                        if talk.pending
+                        if talk.pending && !progComView
                           p tba
                         else
                           p(lang=talk.languageCode)
                             a(id='p_'+slot href='#'+slot)= talk.title
                           address
                             | #{talk.speaker}
+                          if progComView
+                            p.annote.
+                              !{talk.types.join(', ').replace(talk.type, '<u>'+talk.type+'</u>')}
+                            p.annote= talk.notes
                     else
                       .schedule-slot= slot
           else
