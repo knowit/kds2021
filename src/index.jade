@@ -1,107 +1,50 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(name='viewport' content='initial-scale=1, maximum-scale=1')
-    title Knowit Developer Summit
-    link(href='http://fonts.googleapis.com/css?family=Raleway:500,400,300,200,100' rel='stylesheet' type='text/css')
-    link(href='http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css' rel='stylesheet' type='text/css')
-    link(rel='stylesheet' href='style.css')
-  body
-    section.intro
-      .wrapper
-        img(src='kds.svg')
-        .content
-          h1 Knowit Developer Summit
-          h3 #{event.date}<br>#{event.city}
+extends layout.jade
 
-    section.two
+block content
+  section.intro
+    .wrapper
+      img(src='kds.svg')
       .content
-        h1 Registration
+        h1 Knowit Developer Summit
+        h3 #{event.date}<br>#{event.city}
 
-        p.lead
-          | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
+  section.two
+    .content
+      h1 Registration
 
-        p: a.btn(href=registration.registrationUrl target='_blank')
-          | Register as a participant
+      p.lead
+        | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
 
-        p
-          | <strong>Extended deadline</strong>: We have a few seats available,
-          | so registration closes on #{registration.registrationDeadline}―or
-          | when the last seat is gone.
+      p: a.btn(href=registration.registrationUrl target='_blank')
+        | Register as a participant
 
-        p
-          | The last day for submitting a talk was #{cfp.submissionDeadline}.
-          | However, if you have something really important to tell your
-          | collegues, feel free to contact us at
-          | <a href="mailto:kds@knowit.no">kds@knowit.no</a>. We might be
-          | able to squeeze you in!
+      p
+        | <strong>Extended deadline</strong>: We have a few seats available,
+        | so registration closes on #{registration.registrationDeadline}―or
+        | when the last seat is gone.
 
-    section#schedule.schedule
+      p
+        | The last day for submitting a talk was #{cfp.submissionDeadline}.
+        | However, if you have something really important to tell your
+        | collegues, feel free to contact us at
+        | <a href="mailto:kds@knowit.no">kds@knowit.no</a>. We might be
+        | able to squeeze you in!
+
+  include ./includes/schedule.jade
+  include ./includes/talks.jade
+
+  section#location.location
+    .wrapper
+      iframe(
+        src=event.gmapsUrl
+        width='100%'
+        height='100%'
+        frameborder='0'
+        style='border:0'
+      )
+      .blocker
       .content
-        h1 Preliminary Schedule
+        h1 Location
+        h3= event.venue
+        h3= event.city
 
-        p.lead
-          | The final schedule is still work in progress, so this
-          | schedule is very likely to change.
-
-        each schedule in schedules
-          .schedule-day
-            h2= schedule.day
-            each collection in schedule.collections
-              if collection.entries
-                .schedule-collection(class="with-#{collection.entries.length}-entries")
-                  h4= collection.time
-                  each entry in collection.entries
-                    .schedule-entry
-                      h5 Room #{entry.room}
-                      each slot in entry.slots
-                        - var talk = talks[slot]
-                        if talk
-                          .schedule-slot(class={pending: talk.pending, rejected: talk.rejected})
-                            if talk.pending
-                              p tba
-                            else
-                              p(lang=talk.languageCode)
-                                a(id='p_'+slot href='#'+slot)= talk.title
-                              address
-                                | #{talk.speaker}
-                        else
-                          .schedule-slot= slot
-              else
-                h3.schedule-all-tracks= collection.time
-
-    section#talks.talks
-      .content
-        h1 Talks and Speakers
-        each schedule in schedules
-          each collection in schedule.collections
-            if collection.entries
-              each entry in collection.entries
-                each slot in entry.slots
-                  - var talk = talks[slot]
-                  if talk && !talk.pending
-                    div(id=slot)
-                      h4(lang=talk.languageCode)= " " + talk.title
-                      address.talk-speaker
-                        | #{talk.speaker} - #{talk.company}
-                      p.talk-meta
-                        | #{talk.type}, #{talk.language}, #{" "}
-                        a(href='#p_'+slot)  #{schedule.day.split(',').shift()} #{collection.time.split(' ').shift()} slot - room #{entry.room}
-                      p.talk-description(lang=talk.languageCode)= talk.description
-
-
-    section#location.location
-      .wrapper
-        iframe(
-          src=event.gmapsUrl
-          width='100%'
-          height='100%'
-          frameborder='0'
-          style='border:0'
-        )
-        .blocker
-        .content
-          h1 Location
-          h3= event.venue
-          h3= event.city

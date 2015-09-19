@@ -1,0 +1,34 @@
+section#schedule.schedule
+  .content
+    h1 Preliminary Schedule
+
+    p.lead
+      | The final schedule is still work in progress, so this
+      | schedule is very likely to change.
+
+    each schedule in schedules
+      .schedule-day
+        h2= schedule.day
+        each collection in schedule.collections
+          if collection.entries
+            .schedule-collection(class="with-#{collection.entries.length}-entries")
+              h4= collection.time
+              each entry in collection.entries
+                .schedule-entry
+                  h5 Room #{entry.room}
+                  each slot in entry.slots
+                    - var talk = talks[slot]
+                    if talk
+                      .schedule-slot(class={pending: talk.pending, rejected: talk.rejected})
+                        if talk.pending
+                          p tba
+                        else
+                          p(lang=talk.languageCode)
+                            a(id='p_'+slot href='#'+slot)= talk.title
+                          address
+                            | #{talk.speaker}
+                    else
+                      .schedule-slot= slot
+          else
+            h3.schedule-all-tracks= collection.time
+

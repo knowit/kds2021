@@ -1,0 +1,20 @@
+section#talks.talks
+  .content
+    h1 Talks and Speakers
+    each schedule in schedules
+      each collection in schedule.collections
+        if collection.entries
+          each entry in collection.entries
+            each slot in entry.slots
+              - var talk = talks[slot]
+              if talk && !talk.pending
+                div(id=slot)
+                  h4(lang=talk.languageCode)= " " + talk.title
+                  address.talk-speaker
+                    | #{talk.speaker} - #{talk.company}
+                  p.talk-meta
+                    | #{talk.type}, #{talk.language}, #{" "}
+                    a(href='#p_'+slot)  #{schedule.day.split(',').shift()} #{collection.time.split(' ').shift()} slot - room #{entry.room}
+                  p.talk-description(lang=talk.languageCode)= talk.description
+
+
