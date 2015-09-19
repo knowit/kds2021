@@ -90,11 +90,11 @@
             },
             {
               "room": "24/25",
-              "slots": [ "entity_framework_conventions_deep_dive_" ]
+              "slots": [ "entity_framework_conventions_deep_dive" ]
             },
             {
               "room": "23",
-              "slots": [ "building_front_end_using_node_gulp_postcss_" ]
+              "slots": [ "building_front_end_using_node_gulp_postcss" ]
             }
           ]
         },
@@ -104,7 +104,7 @@
             {
               "room": "C4",
               "slots": [
-                "mine_containere_er_lettere_enn_dine_enklere_uviklingsmilj_med_boot2docker_og_docker_compose_",
+                "mine_containere_er_lettere_enn_dine_enklere_uvikli",
                 "retrofit_easy_peasy_api_consumpsion",
                 "tips_tricks_in_atom"
               ]
@@ -113,7 +113,7 @@
               "room": "24/25",
               "slots": [
                 "dapper_net",
-                "instant_automated_test_feedback_using_ncrunch_in_visual_studio",
+                "instant_automated_test_feedback_using_ncrunch_in_v",
                 "vnext_and_omnisharp"
               ]
             },
@@ -121,7 +121,8 @@
               "room": "23",
               "slots": [
                 "style_guide_driven_development",
-                "windows_uten_microsoft"
+                "windows_uten_microsoft",
+                "let_us_rethink_the_db"
               ]
             }
           ]
@@ -145,7 +146,7 @@
             {
               "room": "23",
               "slots": [
-                "do_students_require_grunt_to_knockout_jasmine_"
+                "do_students_require_grunt_to_knockout_jasmine"
               ]
             }
           ]
@@ -185,15 +186,22 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "web_performance_" ]
+              "slots": [ "web_performance" ]
             },
             {
-              "room": "24/25",
+              "room": "25",
               "slots": [ "why_you_should_learn_regular_expressions" ]
             },
             {
+              "room": "24",
+              "slots": [ "building_universal_windows_apps_using_the_unity_ga" ]
+            },
+            {
               "room": "23",
-              "slots": [ "building_universal_windows_apps_using_the_unity_game_engine_and_visual_studio" ]
+              "slots": [
+                "search_find_with_categories_epi_style",
+                "azure_service_fabric_actor_model_approach_to_micro"
+              ]
             }
           ]
         },
@@ -202,7 +210,7 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "cross_platform_mobile_development_with_xamarin_forms" ]
+              "slots": [ "cross_platform_mobile_development_with_xamarin_for" ]
             },
             {
               "room": "25",
@@ -223,7 +231,7 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "what_is_cloud_native_" ]
+              "slots": [ "what_is_cloud_native" ]
             },
             {
               "room": "25",
@@ -256,7 +264,7 @@
             },
             {
               "room": "23",
-              "slots": [ "negation_scope_detection_for_twitter_sentiment_analysis" ]
+              "slots": [ "negation_scope_detection_for_twitter_sentiment_ana" ]
             }
           ]
         },
@@ -268,14 +276,14 @@
               "room": "C4",
               "slots": [
                 "mobile_version_of_estonian_state_portal_eesti_ee",
-                "quality_challenges_in_digitalized_world_testing_is_needed"
+                "quality_challenges_in_digitalized_world_testing_is"
               ]
             },
             {
               "room": "25",
               "slots": [
                 "en_erstatning_til_episerver",
-                "en_identity_management_l_sning_for_h_ndtere_1_4_million_medlemer_og_kunder_for_coop"
+                "en_identity_management_l_sning_for_h_ndtere_1_4_mi"
               ]
             },
             {
@@ -322,533 +330,1023 @@
   ],
   "talks": {
     "a_farewell_to_javascript_looking_at_scala_js": {
-      "title": "A farewell to JavaScript? Looking at Scala.js",
+      "talkId": "a_farewell_to_javascript_looking_at_scala_js",
+      "pending": false,
       "speaker": "Sigmund Marius Nilssen",
+      "email": "smn@knowit.no",
+      "speakers": [
+        "Sigmund Marius Nilssen"
+      ],
+      "title": "A farewell to JavaScript? Looking at Scala.js",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Scala.js compiles your Scala code to JavaScript, allowing you to write your entire web-application in Scala (with a bit of HTML and CSS, of course).  This talk gives an introduction to Scala.js. You will see examples of developer tools, roundtrip, unit testing and sharing of code between front- and backend.  Version 0.6.0 of Scala.js was released in February 2015, and was the first to be declared \"production ready\". Any code you write now will work throughout the 0.6.x and 1.x versions. In other words, this is the perfect time to get in on the ground floor!",
       "language": "English",
       "languageCode": "en",
       "notes": "The lightning talk is meant for anyone looking for an alternative to JavaScript for frontend-coding, or who are just curious about Scala.js. Some familiarity with Scala is assumed, but not really necessary to understand the talk.",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "iot_la_microsoft_windows_10_on_raspberry_pi": {
-      "title": "IoT á la Microsoft - Windows 10 on Raspberry PI",
+      "talkId": "iot_la_microsoft_windows_10_on_raspberry_pi",
+      "pending": false,
       "speaker": "Gunder Bitén",
+      "email": "gunder.biten@gabcia.se",
+      "speakers": [
+        "Gunder Bitén"
+      ],
+      "title": "IoT á la Microsoft - Windows 10 on Raspberry PI",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Internet of Things is one of the fastest growing trends in the business and Microsoft most certainly want it's share. Raspberry PI is the most popular miniature computer today and is a perfect companion for IoT labs. With the help of services in Azure You can connect thousands of small devices with backend functionality  ",
       "language": "English",
       "languageCode": "en",
       "notes": "Basic Microsoft knowledge ",
-      "company": "Knowit",
-      "city": "Stockholm"
+      "city": "Stockholm",
+      "company": "Knowit Stockholm",
+      "country": "Sweden"
     },
-    "building_front_end_using_node_gulp_postcss_": {
-      "title": "Building Front-end using Node, Gulp & PostCSS!",
+    "building_front_end_using_node_gulp_postcss": {
+      "talkId": "building_front_end_using_node_gulp_postcss",
+      "pending": false,
       "speaker": "Richard Lilja",
+      "email": "richard.lilja@knowit.se",
+      "speakers": [
+        "Richard Lilja"
+      ],
+      "title": "Building Front-end using Node, Gulp & PostCSS!",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "A talk about building front-end for web applications using Node-based tools. Specifically the talk will focus on Gulp (“the streaming build system”) and PostCSS (“the future of CSS, now”). We will explore the whys and hows as well as delve into code by creating a new project to build from start.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner, basic JavaScript and NodeJS knowledge.",
-      "company": "Knowit Reaktor",
-      "city": "Stockholm"
-    },
-    "bygg_for_endring": {
-      "title": "Bygg for endring",
-      "speaker": "Jan Henrik Gundelsby",
-      "type": "Lightning talk (10 min)",
-      "description": "Istedenfor å bruke år på å utbrodere arkitekturtegninger for å sikre at en ikke gjør et galt valg på noe som blir vanskelig å endre, bør man rett og slett bruke tiden på å bygge.  Når man bygger må man sørge for å og holde seg innenfor prinsippene om å unngå synkrone kall, sørg for robusthet ift feil, automatiser så langt som mulig testing, utrulling, overvåking og sørg for at «deploy» er en «ikke-hendelse».",
-      "language": "Norwegian",
-      "languageCode": "no",
-      "notes": "Foredraget handler om arkitektur. Greit å kunne være litt erfaren når man hører på, sik at man kjenner seg igjen. ",
-      "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "city": "Stockholm",
+      "company": "Knowit Reaktor Stockholm",
+      "country": "Sweden"
     },
     "devops_og_kontinuerlige_leveranser_i_oslo_kommune": {
-      "title": "DevOps og kontinuerlige leveranser i Oslo kommune",
+      "talkId": "devops_og_kontinuerlige_leveranser_i_oslo_kommune",
+      "pending": false,
       "speaker": "Jan Henrik Gundelsby",
+      "email": "jhg@knowit.no",
+      "speakers": [
+        "Jan Henrik Gundelsby"
+      ],
+      "title": "DevOps og kontinuerlige leveranser i Oslo kommune",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "En av Norges største bedrifter, Oslo kommune, har utviklet en omfattende integrasjonsplattform basert på åpne biblioteker og standarder, best practice for deployment, lastbalansering, konfigurering, overvåkning og organisering av tjenester. Denne vedlikeholdes til enhver tid av et 20-talls utviklere på oppdrag fra 40-50 forskjellige interessenter med sine egne krav, planer og leveranseløp. Alt sammen muliggjøres ved delegering av ansvar til de enkelte utviklerne, som også drifter plattformen.  Erfaringsforedraget beskriver utviklerens hverdag og hvordan prosjektet i praksis håndteres med bruk av metoder som feature branching, pull requests, DevOps, kontinuerlige leveranser innenfor ITIL, og teknologi som github, puppet, nagios og release/deployment med rubyscripts.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Nybegynner til erfaren.",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "learning_mongodb": {
-      "title": "Learning MongoDB",
+      "talkId": "learning_mongodb",
+      "pending": false,
       "speaker": "David Lund",
+      "email": "david.lund@knowit.se",
+      "speakers": [
+        "David Lund"
+      ],
+      "title": "Learning MongoDB",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Beginner level MongoDB 101. The talk explains the differences between relational databases (like MS SQL) and document databases (MondoDB). It then goes into a bit more detail about MongoDB from a .NET developer's Point of view.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner level, some database knowledge a help but not needed. The .NET stuff is not all that important either.",
+      "city": "Stockholm",
       "company": "Knowit Digital Solutions",
-      "city": "Stockholm"
+      "country": "Sweden"
     },
-    "cross_platform_mobile_development_with_xamarin_forms": {
-      "title": "Cross-platform mobile development with Xamarin Forms",
+    "cross_platform_mobile_development_with_xamarin_for": {
+      "talkId": "cross_platform_mobile_development_with_xamarin_for",
+      "pending": false,
       "speaker": "Roy Bang",
+      "email": "rob@knowit.no",
+      "speakers": [
+        "Roy Bang"
+      ],
+      "title": "Cross-platform mobile development with Xamarin Forms",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Devolping apps for iOS, Andoid and Windows Phone with C# has been a revolution. This is now taken to new heights with Xamarin.Forms. With this up to 90% of code can be shared among platforms.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner. No former knowledge required.",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
-    "building_universal_windows_apps_using_the_unity_game_engine_and_visual_studio": {
-      "title": "Building Universal Windows Apps using the Unity game engine and Visual Studio",
+    "building_universal_windows_apps_using_the_unity_ga": {
+      "talkId": "building_universal_windows_apps_using_the_unity_ga",
+      "pending": false,
       "speaker": "Christian Egeberg",
+      "email": "ceg@knowit.no",
+      "speakers": [
+        "Christian Egeberg"
+      ],
+      "title": "Building Universal Windows Apps using the Unity game engine and Visual Studio",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Have you ever been curious about making a game for a PC, or maybe an Xbox, or a Phone? I'll show how to use the Unity game engine and modelling tools together with Visual Studio and the Tools for Unity extension, to create a small Windows Store game app written in C#. It'll be fun :-)",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner level is perfect",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
-    "mine_containere_er_lettere_enn_dine_enklere_uviklingsmilj_med_boot2docker_og_docker_compose_": {
-      "title": "Mine containere er lettere enn dine. Enklere uviklingsmiljø med Boot2Docker og Docker Compose.",
+    "mine_containere_er_lettere_enn_dine_enklere_uvikli": {
+      "talkId": "mine_containere_er_lettere_enn_dine_enklere_uvikli",
+      "pending": false,
       "speaker": "Anders Breivik",
+      "email": "abr@knowit.no",
+      "speakers": [
+        "Anders Breivik"
+      ],
+      "title": "Mine containere er lettere enn dine. Enklere uviklingsmiljø med Boot2Docker og Docker Compose.",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": " Består løsningen din av flere moduler? Vil du under utvikling og testing styre hvilke moduler og databaser du kjører opp på egen maskin og hvilke du lar gå mot eksterne miljøer? I denne lyntalen får du se hvordan et prosjekt benyttet Boot2Docker og Docker Compose til å lage et lettvekts og orkestrerbart utviklingsmiljø av Docker-containere.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Beginner",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "fancy_input_elements_with_web_components": {
-      "title": "Fancy Input Elements with Web Components",
+      "talkId": "fancy_input_elements_with_web_components",
+      "pending": false,
       "speaker": "Kristofer Walters",
+      "email": "kw@knowit.no",
+      "speakers": [
+        "Kristofer Walters"
+      ],
+      "title": "Fancy Input Elements with Web Components",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Building advanced web components by example.",
       "language": "English",
       "languageCode": "en",
       "notes": "intermediate; basic understanding of javascript and DOM required",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
-    "entity_framework_conventions_deep_dive_": {
-      "title": "Entity Framework – conventions deep dive! ",
+    "entity_framework_conventions_deep_dive": {
+      "talkId": "entity_framework_conventions_deep_dive",
+      "pending": false,
       "speaker": "Magnus Backeus",
+      "email": "magnus.backeus@knowit.se",
+      "speakers": [
+        "Magnus Backeus"
+      ],
+      "title": "Entity Framework – conventions deep dive! ",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Ever though that EF don't do as you expect? What hides within that inner room of EF? Well lets open that door and see whats in that inner room!  We go through basic conventions and build some custom conventions! ",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner to Medium Level!  Code examples in Visualstudio 2013, C# and EF 6.1",
-      "company": "Knowit",
-      "city": "Stockholm"
-    },
-    "how_to_apply_design_patterns_in_reality_": {
-      "title": "How to apply design patterns in reality?",
-      "speaker": "Magnus Backeus",
-      "type": "Long talk (60 min)",
-      "description": "Read some Design Patterns books? Okay we know a bunch of them and we also are aware of SOLID principles. But how to apply some of these patterns to create a core domain and services that work together with less friction. ",
-      "language": "English",
-      "languageCode": "en",
-      "notes": "Medium Level. Some basic understanding about SOLID is prefered but not necessary. Code examples in C# and presented in VisualStudio.",
-      "company": "Knowit",
-      "city": "Stockholm"
+      "city": "Stockholm",
+      "company": "Knowit Stockholm",
+      "country": "Sweden"
     },
     "mobile_version_of_estonian_state_portal_eesti_ee": {
-      "title": "Mobile version of Estonian state portal eesti.ee",
+      "talkId": "mobile_version_of_estonian_state_portal_eesti_ee",
+      "pending": false,
       "speaker": "Hannes Lehemets",
+      "email": "hannes.lehemets@knowit.ee",
+      "speakers": [
+        "Hannes Lehemets"
+      ],
+      "title": "Mobile version of Estonian state portal eesti.ee",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Knowit Estonia's and Knowit Göteborg's co-operation result was a responsive tablet and mobile friendly Estonian state portal eesti.ee. The talk will present what we learned about the co-operation with the client and technology wise.  Techniques / methods: Java 6 and 7, Tomcat 7, Weblogic 12, PostgreSQL 8.1 and 9.2, AngularJS, Grunt, Bower, JQuery,  JSON, HTML5, CSS3, Git, SVN, Maven, JIRA, SCRUM",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner. It is not a technical talk but how-to deal with a project with different companies, cultures and countries and how technology can be used to collaborate and get results.",
-      "company": "Knowit",
-      "city": "Tallinn"
+      "city": "Tallinn",
+      "company": "Knowit Estonia",
+      "country": "Estonia"
     },
     "hardware_simulations_at_cern": {
-      "title": "Hardware simulations at CERN",
+      "talkId": "hardware_simulations_at_cern",
+      "pending": false,
       "speaker": "Håvard Rustad Olsen",
+      "email": "haavard.olsen@live.com",
+      "speakers": [
+        "Håvard Rustad Olsen"
+      ],
+      "title": "Hardware simulations at CERN",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "How can you upgrade a system from handling 25 gigabytes of data per second to 1 TERABYTE per second? Virtualize and simualte your hardware with software!",
       "language": "English",
       "languageCode": "en",
       "notes": "Basic programming knowledge.",
+      "city": "Bergen",
       "company": "Knowit Reaktor Kyber",
-      "city": "Bergen"
+      "country": "Norway"
     },
     "vnext_and_omnisharp": {
-      "title": "vNext and Omnisharp",
+      "talkId": "vnext_and_omnisharp",
+      "pending": false,
       "speaker": "Tomas Osland",
+      "email": "tomas.osland@knowit.no",
+      "speakers": [
+        "Tomas Osland"
+      ],
+      "title": "vNext and Omnisharp",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": ".NET is going cross platform.  Let's get up and running with a .NET application in 2 minutes using a mac and editor of choice. Omnisharp and Roslyn makes coding without Visual Studio slightly less painful.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner.",
+      "city": "Bergen",
       "company": "Knowit Reaktor Kyber",
-      "city": "Bergen"
+      "country": "Norway"
     },
-    "instant_automated_test_feedback_using_ncrunch_in_visual_studio": {
-      "title": "Instant, automated test feedback using NCrunch in Visual Studio",
+    "instant_automated_test_feedback_using_ncrunch_in_v": {
+      "talkId": "instant_automated_test_feedback_using_ncrunch_in_v",
+      "pending": false,
       "speaker": "Espen A. Svendsen",
+      "email": "espen.svendsen@knowit.no",
+      "speakers": [
+        "Espen A. Svendsen"
+      ],
+      "title": "Instant, automated test feedback using NCrunch in Visual Studio",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "NCrunch provides instant feedback on the test that covers the code lines you just changed, automatically. See what code-lines are covered by tests (and perhaps more importantly, those who are not), which code-line they fail on and the path taken, and much more, without clicking a single button.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner, plugin to Visual Studio, demonstrated in C# (supports F#,VB .Net, C#)",
+      "city": "Oslo",
       "company": "Knowit Amende",
-      "city": "Oslo"
+      "country": "Norway"
     },
-    "what_is_cloud_native_": {
-      "title": "What is Cloud Native?",
+    "what_is_cloud_native": {
+      "talkId": "what_is_cloud_native",
+      "pending": false,
       "speaker": "Dennis Malmgren",
+      "email": "dennis.malmgren@knowit.se",
+      "speakers": [
+        "Dennis Malmgren"
+      ],
+      "title": "What is Cloud Native?",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "We look at the twelve factors of a \"cloud native\" application, how to implement them, and why you should implement them.   We look at some simple practices around implementation when starting fresh or migrating to a cloud native system as well as some common pitfalls and not-so-common pitfalls I've experienced.",
       "language": "English",
       "languageCode": "en",
       "notes": "Aimed at developers and/or architects that have less cloud experience that want to know what to look for, what they could implement in their internal processes if they haven't already and how to design to become cloud native.  This presentation will have some tooling, some visualization, some demo and a little code. Most examples will be in .Net/Azure but references will be made to other platforms/languages (python/java/AWS etc).",
+      "city": "Linköping",
       "company": "Knowit Digital Communication",
-      "city": "Linköping"
+      "country": "Sweden"
     },
     "monoliths_self_contained_systems_and_microservices": {
-      "title": "Monoliths, Self-Contained Systems and Microservices",
+      "talkId": "monoliths_self_contained_systems_and_microservices",
+      "pending": false,
       "speaker": "Jan Stenberg",
+      "email": "jan.stenberg@knowit.se",
+      "speakers": [
+        "Jan Stenberg"
+      ],
+      "title": "Monoliths, Self-Contained Systems and Microservices",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "What is a system and how do we create an architecture for it? Should we build one Monolith, a few Self-Contained Systems or several Microservices?",
       "language": "English",
       "languageCode": "en",
       "notes": "Intermediate architecture and design knowledge.",
-      "company": "Knowit",
-      "city": "Norrland"
+      "city": "Norrland",
+      "company": "Knowit Norrland",
+      "country": "Sweden"
     },
     "developing_applications_with_ember_js": {
-      "title": "Developing applications with Ember.js",
+      "talkId": "developing_applications_with_ember_js",
+      "pending": false,
       "speaker": "Jesper Haug Karsrud",
+      "email": "jesper.haug.karsrud@knowit.no",
+      "speakers": [
+        "Jesper Haug Karsrud"
+      ],
+      "title": "Developing applications with Ember.js",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Learn how to develop applications with Ember, Ember-CLI and ES6. In this talk, Jesper go through what Ember is and what makes it an awesome framework for developing \"ambitious web applications\" by making an Ember-app from scratch. ",
       "language": "English",
       "languageCode": "en",
       "notes": "The talk does not expect any previous experience with Ember or ES6, but will require JavaScript knowledge,",
+      "city": "Bergen",
       "company": "Knowit Reaktor Kyber",
-      "city": "Bergen"
+      "country": "Norway"
     },
     "why_you_should_learn_regular_expressions": {
-      "title": "Why you should learn Regular Expressions",
+      "talkId": "why_you_should_learn_regular_expressions",
+      "pending": false,
       "speaker": "Håvard Slettvold",
+      "email": "havard.slettvold@knowit.no",
+      "speakers": [
+        "Håvard Slettvold"
+      ],
+      "title": "Why you should learn Regular Expressions",
       "type": "Long talk (60 min)",
-      "description": "\"I had an issue, and attempted to solve it with regex. Now I have two issues.\" Sounds familiar? Wish you had a string.isIPAddress()? Validation of values like hashes, IP's, emails and URLs are all simple tasks with regex! Håvard Slettvold demonstrates some basic regex, smart tips & tricks and how we are currently using regex to handle editor variables in EPiServer.  Bio: Håvard Slettvold is fresh out of school and works in Knowit Reaktor Oslo. Primarily working on backend, at the moment for Obos. Programming is a passion even off work, as well as a passion for games and spending time outdoors.",
+      "types": [
+        "Long talk (60 min)",
+        "Short talk (30 min)"
+      ],
+      "description": "\"I had an issue, and attempted to solve it with regex. Now I have two issues.\" Sounds familiar? Wish you had a string.isIPAddress()? Validation of values like hashes, IP's, emails and URLs are all simple tasks with regex! Håvard Slettvold demonstrates some basic regex, smart tips & tricks and how we are currently using regex to handle editor variables in EPiServer.",
       "language": "English",
       "languageCode": "en",
       "notes": "No precursory knowledge required. Fitting for anyone wishing to learn, brush up on or understand Regex for everyday use, and how we are using it in our project at Obosbanken.",
-      "company": "Knowit Reaktor",
-      "city": "Oslo"
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
     },
     "continous_wordpress_maintenance": {
-      "title": "Continous WordPress maintenance",
+      "talkId": "continous_wordpress_maintenance",
+      "pending": false,
       "speaker": "Olaf Lindström",
+      "email": "olaf.lindstrom@knowit.se",
+      "speakers": [
+        "Olaf Lindström"
+      ],
+      "title": "Continous WordPress maintenance",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Thinking of using WordPress in business critical web pages? This talk will guide you on what to consider before you start and also give hands on tips on how to create a workflow that makes it possible to rollback releases, orchestrate dev/test/prod environments and how to maintain servers in a automated way.  At the Jönköping office WordPress group we've packaged this into a \"product\" which we will also give a short presentation on.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner to understand concepts, WordPress developer/dev-ops to understand and fully use the conepts in practice.",
-      "company": "Knowit",
-      "city": "Jönköping"
+      "city": "Jönköping",
+      "company": "Knowit Jönköping",
+      "country": "Sweden"
     },
-    "do_students_require_grunt_to_knockout_jasmine_": {
-      "title": "Do students require grunt to knockout jasmine?",
+    "do_students_require_grunt_to_knockout_jasmine": {
+      "talkId": "do_students_require_grunt_to_knockout_jasmine",
+      "pending": false,
       "speaker": "Roger Nesheim, Johan Stene",
+      "email": "roger.nesheim@knowit.no",
+      "speakers": [
+        "Roger Nesheim",
+        "Johan Stene"
+      ],
+      "title": "Do students require grunt to knockout jasmine?",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "Roger og Johan tar deg gjennom gjennomføringen av to studentprosjekter i parallell, der oppgaven var å lage ett sett med lånekalkulatorer vha. frontendteknologier som grunt, require, knockout og jasmine.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Foredraget passer for de som er interresert i å se mulighetene innen moderne frontend og ønsker å lage selvstendige moduler som kan plugges inn i andre løsninger uten å skape fullstendig kaos.  Bio: Roger er senior utvikler og fagansvarlig i Knowit Reaktor Oslo. Han har skapt liv og røre på prosjekter for kunder som OBOS-Banken, BankID og DNB.   Johan er frontendutvikler i Knowit Reaktor Oslo og har skrevet mye smashing kode for blant annet OBOS-Banken, Fornebulandet, LDO og VOX.",
-      "company": "Knowit Reaktor",
-      "city": "Oslo"
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
     },
     "hvordan_gi_en_server_et_ansikt": {
-      "title": "Hvordan gi en server et ansikt",
+      "talkId": "hvordan_gi_en_server_et_ansikt",
+      "pending": false,
       "speaker": "Peter Tollnes Flem, Håvard Fjær",
+      "email": "peter.tollnes.flem@knowit.no",
+      "speakers": [
+        "Peter Tollnes Flem",
+        "Håvard Fjær"
+      ],
+      "title": "Hvordan gi en server et ansikt",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Vi gir serverne våre et ansikt utad for å fortelle hvordan den har det inni seg. Har den det vondt? Er serveren sliten? Er det god stemning? Se hvordan vi har lekt oss med skytjenester, hobbyelektronikk og mekanikk.  Håvard jobber som arkitekt og problemløser på dagen – og som mad scientist om kvelden med 3D-printere, dreiebenker og elektronikk.  Peter jobber som systemutvikler, og liker teknologi sånn generelt sett over hele fjøla. Han synes det er spennende med alt fra koding til microkontrollere. ",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner",
-      "company": "Knowit Reaktor",
-      "city": "Oslo"
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
     },
     "en_erstatning_til_episerver": {
-      "title": "En @#erstatning## til EPiServer",
+      "talkId": "en_erstatning_til_episerver",
+      "pending": false,
       "speaker": "Roger Nesheim, Håvard Slettvold",
+      "email": "roger.nesheim@knowit.no",
+      "speakers": [
+        "Roger Nesheim",
+        "Håvard Slettvold"
+      ],
+      "title": "En @#erstatning## til EPiServer",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Er redaktøren din dritt lei av å oppdatere den samme verdien flere steder i løsningen sin? Har du ett ønske om å gjøre jobben hans mye lettere? I så fall har vi det ganske likt. Vi tar deg gjennom hvordan vi løste erstatning av nøkkelverdier gjennom hele EPiServer løsningen til OBOS-banken på ca 40ms.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Foredraget passer for C# utviklere som er kjent med EPiServer og MVC.   Bio: Roger er senior utvikler og fagansvarlig i Knowit Reaktor Oslo. Han har skapt liv og røre på prosjekter for kunder som OBOS-Banken, BankID og DNB.   Håvard er et nytt tilskudd til Knowit Reaktor Oslo, med master fra NTNU. Primært jobber han med backend, og har vært involvert i OBOS-Banken prosjektet. Når han ikke sitter klistret fast foran RegEx'en så nyter han solen eller en god runde med gaming.",
-      "company": "Knowit Reaktor",
-      "city": "Oslo"
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
     },
     "nservicebus_och_en_saga": {
-      "title": "NServiceBus och en Saga",
+      "talkId": "nservicebus_och_en_saga",
+      "pending": false,
       "speaker": "Martin Ivarsson",
+      "email": "martin.ivarsson@knowit.se",
+      "speakers": [
+        "Martin Ivarsson"
+      ],
+      "title": "NServiceBus och en Saga",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Genomgång översiktligt av C# servicebusen NServiceBus och mer spefikt om hur dess mekanism för att sköta transaktioner som spänner över längre tid fungerar(Sagas).",
       "language": "Swedish",
       "languageCode": "sv",
       "notes": "Intermediate",
+      "city": "Göteborg",
       "company": "Knowit System Development",
-      "city": "Göteborg"
+      "country": "Sweden"
     },
     "retrofit_easy_peasy_api_consumpsion": {
-      "title": "Retrofit - easy peasy API consumpsion",
+      "talkId": "retrofit_easy_peasy_api_consumpsion",
+      "pending": false,
       "speaker": "Christian Askeland",
+      "email": "christian.askeland@knowit.no",
+      "speakers": [
+        "Christian Askeland"
+      ],
+      "title": "Retrofit - easy peasy API consumpsion",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "Retrofit makes API consumption a lot easier by turning your (REST) API into a Java interface. With only a few lines of code you are able to GET, PUT, DELETE and POST data easily. Retrofit is primarily made with Android and mobile in mind, but it can also bring a whole lot of benefits to your server-to-server communication as well.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner level talk that gives an intro to Retrofit and basic use of it. Participants should have some knowledge of Java and knowledge of Android is even better. Code in slides.",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
-    "web_performance_": {
-      "title": "Web Performance ",
+    "web_performance": {
+      "talkId": "web_performance",
+      "pending": false,
       "speaker": "Joacim Gunnarsson",
+      "email": "joacim.gunnarsson@knowit.se",
+      "speakers": [
+        "Joacim Gunnarsson"
+      ],
+      "title": "Web Performance ",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)",
+        "Short talk (30 min)"
+      ],
       "description": "Insight of web performance tricks on the client side to make the site load and feel faster. As well as how to plan for high performance web pages.",
       "language": "English",
       "languageCode": "en",
       "notes": "Basic knowledge in web development",
-      "company": "Knowit Reaktor",
-      "city": "Stockholm"
+      "city": "Stockholm",
+      "company": "Knowit Reaktor Stockholm",
+      "country": "Sweden"
     },
     "exploratory_testing_basics_and_experiences": {
-      "title": "Exploratory testing basics and experiences",
+      "talkId": "exploratory_testing_basics_and_experiences",
+      "pending": false,
       "speaker": "Kari Kakkonen",
+      "email": "kari.kakkonen@knowit.fi",
+      "speakers": [
+        "Kari Kakkonen"
+      ],
+      "title": "Exploratory testing basics and experiences",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Basics about exploratory testing •                          Terminology and techniques •                          Test sessions •                          Exploratory testing from management and competence development point of view •                          Contexts, where exploratory testing is most useful •                          How to develop one’s learning and thinking skills to enable exploratory testing •                          Skill to question, skill to analyze, skill to assess one’s own activities etc. ",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner ok, interesting for all",
-      "company": "Knowit",
-      "city": "Helsinki"
+      "city": "Helsinki",
+      "company": "Knowit Finland",
+      "country": "Finland"
     },
-    "quality_challenges_in_digitalized_world_testing_is_needed": {
-      "title": "Quality challenges in digitalized world – testing is needed",
+    "quality_challenges_in_digitalized_world_testing_is": {
+      "talkId": "quality_challenges_in_digitalized_world_testing_is",
+      "pending": false,
       "speaker": "Kari Kakkonen",
+      "email": "kari.kakkonen@knowit.fi",
+      "speakers": [
+        "Kari Kakkonen"
+      ],
+      "title": "Quality challenges in digitalized world – testing is needed",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "The world is more and more digitalized. There is the revolution of user experience including different mobile devices for connecting to internet. There is the changing business with more and more of the business becoming electronic, based on web services and automatic information sharing between different systems. Most recently there is the Internet of Things / Everything, connecting almost all industries into each other and/or their backend-systems. All the interconnectedness and increased demand on speed and ease-of-use suggests additional quality challenges. How can we ensure fast enough, secure and user-friendly information systems? My opinion is that security testing, usability testing and performance testing become a greater focus. Additionally the way of creating software needs to become very quick and tuned to the feedback from user base. This means agile practices on both team level and organization level, DevOps, test automation, exploratory testing and broad competences on testing, software development, business domain knowledge and production environments. We need to be able to try easy and use that information to develop our software further. We all experience the changing world, where software takes a bigger role. The quality needs are understood on grass root level, in the lives of each of us, and we try different methodologies and tools to see which will solve the new quality challenges.  ",
       "language": "English",
       "languageCode": "en",
       "notes": "keynote type presentation for all audiences. I gave this as a keynote in Czech Test in June.",
-      "company": "Knowit",
-      "city": "Helsinki"
+      "city": "Helsinki",
+      "company": "Knowit Finland",
+      "country": "Finland"
     },
     "ios_swift_and_reactive_cocoa": {
-      "title": "iOS, Swift and Reactive-Cocoa",
+      "talkId": "ios_swift_and_reactive_cocoa",
+      "pending": false,
       "speaker": "Hans Olav Nome",
+      "email": "hanfar@knowit.no",
+      "speakers": [
+        "Hans Olav Nome"
+      ],
+      "title": "iOS, Swift and Reactive-Cocoa",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)",
+        "Short talk (30 min)"
+      ],
       "description": "Hvordan vi laget RuterReise - reiseplanlegger-app for en halv million mennesker. Våre erfaringer med Swift og Reactive Cocoa, hva vi likte og hva vi ikke likte.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Beginner.  Vil snakke om grunnleggende prinsipper for utvikling av apper på iOS-plattformen, i tillegg til innføring i Swift og Reactive-Cocoa. ",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "tips_tricks_in_atom": {
-      "title": "Tips & tricks in Atom",
+      "talkId": "tips_tricks_in_atom",
+      "pending": false,
       "speaker": "Daniel Hallqvist",
+      "email": "dhallqvist91@gmail.com",
+      "speakers": [
+        "Daniel Hallqvist"
+      ],
+      "title": "Tips & tricks in Atom",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "A short presentation on the capabilities of the Github Atom editor for web developers. I've done the dirty work for you digging through and testing the official and community packages. Hopefully, Atom users will go out with some new tips on features and packages, and people who haven't tried it before will be inspired and ready to configure the Atom editor for their needs! ",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner, no knowledge required",
-      "company": "Knowit Reaktor",
-      "city": "Bergen"
+      "city": "Bergen",
+      "company": "Knowit Reaktor Bergen",
+      "country": "Norway"
     },
-    "negation_scope_detection_for_twitter_sentiment_analysis": {
-      "title": "Negation Scope Detection for Twitter Sentiment Analysis",
+    "negation_scope_detection_for_twitter_sentiment_ana": {
+      "talkId": "negation_scope_detection_for_twitter_sentiment_ana",
+      "pending": false,
       "speaker": "Johan Reitan",
+      "email": "johrei@knowit.no",
+      "speakers": [
+        "Johan Reitan"
+      ],
+      "title": "Negation Scope Detection for Twitter Sentiment Analysis",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "The talk describes the first sophisticated negation scope detection system for Twitter sentiment analysis. The system has been evaluated both on existing corpora from other domains and on a corpus of English Twitter data (tweets) annotated for negation. It produces better results than what has been reported in other domains and improves the performance on tweets containing negation when incorporated into a state-of-the-art Twitter sentiment analyser.",
       "language": "English",
       "languageCode": "en",
       "notes": "Participants should have basic knowledge of machine learning and natural language processing. The talk will be mostly scientific and focused on method and architecture more than technical details. ",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "yet_another_boring_f_intro": {
-      "title": "Yet another boring F# intro",
+      "talkId": "yet_another_boring_f_intro",
+      "pending": false,
       "speaker": "Endre Vestbø, Ruben Oen, Halvard Hagesæther",
+      "email": "endre.vestbo@knowit.no",
+      "speakers": [
+        "Endre Vestbø",
+        "Ruben Oen",
+        "Halvard Hagesæther"
+      ],
+      "title": "Yet another boring F# intro",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Functional programming is growing every year and we already have one of the best tools in .NET. Learn how to impress all your friends with functional wizardry!",
       "language": "English",
       "languageCode": "en",
       "notes": "We will start with an introduction to F# and follow up with a short code-along. So please bring a laptop with either Visual Studio or web browser with Silverlight installed.",
+      "city": "Bergen",
       "company": "Knowit Reaktor Solutions",
-      "city": "Bergen"
+      "country": "Norway"
     },
     "worst_integration_project_ever": {
-      "title": "Worst integration project ever",
+      "talkId": "worst_integration_project_ever",
+      "pending": false,
       "speaker": "Endre Vestbø, Petter Barvik",
+      "email": "endre.vestbo@knowit.no",
+      "speakers": [
+        "Endre Vestbø",
+        "Petter Barvik"
+      ],
+      "title": "Worst integration project ever",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "After going through an integration project with one of the largest tech companies in the world, we learned that even the big ones can fail. In this lightning talk we want to highlight the mistakes done by the other company so you do not look like a complete fool in your next integration project.",
       "language": "English",
       "languageCode": "en",
       "notes": "Beginner",
+      "city": "Bergen",
       "company": "Knowit Reaktor Solutions",
-      "city": "Bergen"
+      "country": "Norway"
     },
     "style_guide_driven_development": {
-      "title": "Style Guide Driven Development",
+      "talkId": "style_guide_driven_development",
+      "pending": false,
       "speaker": "Torleif Halseth",
+      "email": "halseth.torleif@gmail.com",
+      "speakers": [
+        "Torleif Halseth"
+      ],
+      "title": "Style Guide Driven Development",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "Creating a living representation and documentation of our websites’ user interfaces",
       "language": "English",
       "languageCode": "en",
       "notes": "beginner",
+      "city": "Bergen",
       "company": "Knowit Reaktor Kyber",
-      "city": "Bergen"
+      "country": "Norway"
     },
     "dapper_net": {
-      "title": "Dapper.NET",
+      "talkId": "dapper_net",
+      "pending": false,
       "speaker": "Oskar Kvamme",
+      "email": "oskark@knowit.no",
+      "speakers": [
+        "Oskar Kvamme"
+      ],
+      "title": "Dapper.NET",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "At first look ORMs like EntityFramework looks amazing. In minutes you can have your database up running with full CRUD without writing SQL at all. To make this possible, the ORMs are doing crazy magic that you as a developer have no control of. When you use a ORM like that in a real world application, the magic will at some point bite you hard in the arse. To get it working as you want, you will need to implement workarounds and dirty hacks all over the place.  Dapper.NET to the rescue!  Dapper.NET is a transparent and fast micro-ORM with no magic (by design) written by the developers behind Stack Overflow. The only thing Dapper does is to map plain old database result set to POCOs, and in most cases that is what you want from a ORM.",
       "language": "English",
       "languageCode": "en",
       "notes": "Knowledge: C#, SQL. Beginner level",
-      "company": "Knowit Reaktor",
-      "city": "Bergen"
+      "city": "Bergen",
+      "company": "Knowit Reaktor Bergen",
+      "country": "Norway"
     },
     "how_stuff_works_big_data_metrics_at_cern": {
-      "title": "How stuff works - Big data metrics at CERN",
+      "talkId": "how_stuff_works_big_data_metrics_at_cern",
+      "pending": false,
       "speaker": "Dinesh Ram",
+      "email": "dinesh.ram@knowit.no",
+      "speakers": [
+        "Dinesh Ram"
+      ],
+      "title": "How stuff works - Big data metrics at CERN",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "This short presentation will walk the audience through the how and why about the data deluge produced by the different big experiments at CERN and the strategies and shortcuts developed to make sense of it.",
       "language": "English",
       "languageCode": "en",
       "notes": "It is open to everyone and no particular competency level is necessary. I can make it a 10 or 30 minute presentation.",
+      "city": "Bergen",
       "company": "Knowit Reaktor Solutions",
-      "city": "Bergen"
+      "country": "Norway"
     },
     "windows_uten_microsoft": {
-      "title": "Windows uten Microsoft",
+      "talkId": "windows_uten_microsoft",
+      "pending": false,
       "speaker": "Gunnar Velle",
+      "email": "gv@knowit.no",
+      "speakers": [
+        "Gunnar Velle"
+      ],
+      "title": "Windows uten Microsoft",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "Korleis overleve som utvikler på Windows. Ein gjennomgang av alternative verktøy som erstatter eller utvider funksjonalteten til innebygde funksjoner i Windows. Presentasjonen er originalt basert på win8 men blir oppdatert til å dekke win10.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Presentasjonen er mest for windows-brukere som er på utkikk etter nye verktøy.",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
-    "knowit_academy_arkitektskolen": {
-      "title": "Knowit Academy - Arkitektskolen",
+    "en_identity_management_l_sning_for_h_ndtere_1_4_mi": {
+      "talkId": "en_identity_management_l_sning_for_h_ndtere_1_4_mi",
+      "pending": false,
       "speaker": "Svein Aandahl",
-      "type": "Lightning talk (10 min)",
-      "description": "Å lære å bli den personen som leder teamet fremover er ingen enkel oppgave. Ingen ble født med ferdigheter til å lede eller ta avgjørelser.   Det er en ferdighet som alle må lære. For mange mennesker er det å ta beslutninger og å ta eierskap ubehagelig. Dette kan skape frykt og det skyver deg utenfor din komfortsone og mange mennesker viker unna. Vårt faglige miljø i Oslo utfordrer senior utviklere og løsningsarkitekter til å vokse og få nye verktøy og kunnskap gjennom vår Arkitektskole.",
-      "language": "Norwegian",
-      "languageCode": "no",
-      "notes": "For alle",
-      "company": "Knowit Reaktor",
-      "city": "Oslo"
-    },
-    "en_identity_management_l_sning_for_h_ndtere_1_4_million_medlemer_og_kunder_for_coop": {
+      "email": "svein.aandahl@knowit.no",
+      "speakers": [
+        "Svein Aandahl"
+      ],
       "title": "En Identity Management løsning for å håndtere 1,4 million medlemer og kunder for Coop",
-      "speaker": "Svein Aandahl",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Svein vil ta dere med på en reise igjennom hvilke utfordringer og valg som ble gjort for å komme i land med Identity Management til både ehandelprosjekt og mobile applikasjoner for norges neste største dagligvarekjede, Coop.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "BIO: Svein Aandahl jobber som CTO i Knowit Reaktor OSLO. Svein har mer enn 20 års erfaring fra software utvikling og har jobbet med alt fra spill utvikling til store ehandelsprosjekter.",
-      "company": "Knowit Reaktor",
-      "city": "Oslo"
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
     },
     "cool_new_features_with_the_asp_net_5_framework": {
-      "title": "Cool new features with the ASP.NET 5 Framework",
+      "talkId": "cool_new_features_with_the_asp_net_5_framework",
+      "pending": false,
       "speaker": "Thorsteinn Gestsson",
+      "email": "thorsteinn.gestsson@knowit.no",
+      "speakers": [
+        "Thorsteinn Gestsson"
+      ],
+      "title": "Cool new features with the ASP.NET 5 Framework",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "We will be creating an ASP.NET 5 web application using the command line and Visual Studio Code and deployt it to Azure using Git.  I will explain a little bit about the DNX (the .NET Execution Environment).",
       "language": "English",
       "languageCode": "en",
       "notes": "beginner, some knowledge with the ASP.NET MVC framework.",
+      "city": "Oslo",
       "company": "Knowit Amende",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "the_browser_is_the_new_fat_client": {
-      "title": "The browser is the new fat client",
+      "talkId": "the_browser_is_the_new_fat_client",
+      "pending": false,
       "speaker": "Freddy Hansen",
+      "email": "fredddy.hansen@knowit.no",
+      "speakers": [
+        "Freddy Hansen"
+      ],
+      "title": "The browser is the new fat client",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
       "description": "Can you actually run data-intensive, complex business applications in the browser - replacing the good old desktop app? In this talk I'll share experiences from a project where we did just that. You will get an understanding of what's doable in today's browser environments, learn from our mistakes and see how we solved some real tough challenges.",
       "language": "English",
       "languageCode": "en",
       "notes": "Experience in general web development helps, but is not strictly required to understand the possibilities.",
+      "city": "Oslo",
       "company": "Knowit Amende",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "introduksjon_til_c_6_0": {
-      "title": "Introduksjon til C# 6.0",
+      "talkId": "introduksjon_til_c_6_0",
+      "pending": false,
       "speaker": "Marvin Massih",
+      "email": "marvin.massih@knowit.no",
+      "speakers": [
+        "Marvin Massih"
+      ],
+      "title": "Introduksjon til C# 6.0",
       "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
       "description": "Det gis et raskt overblikk over hvilke nye features som finnes i C# 6.0 og hvordan du kan bruke dem.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "N/A",
+      "city": "Oslo",
       "company": "Knowit Amende",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "moving_from_waterfall_to_agile": {
-      "title": "Moving from Waterfall to Agile",
+      "talkId": "moving_from_waterfall_to_agile",
+      "pending": false,
       "speaker": "Espen A. Svendsen",
+      "email": "espen.svendsen@knowit.no",
+      "speakers": [
+        "Espen A. Svendsen"
+      ],
+      "title": "Moving from Waterfall to Agile",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "You have probably encountered this, projects and organizations claiming to use Agile methods, while they in fact are using Waterfall methods. Why is this happening, how can you spot it, and what can you do about it?",
       "language": "English",
       "languageCode": "en",
       "notes": "Everyone",
+      "city": "Oslo",
       "company": "Knowit Amende",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "best_mulig_for_flest_mulig_p_nett": {
+      "talkId": "best_mulig_for_flest_mulig_p_nett",
       "pending": true,
-      "title": "Best mulig for flest mulig på nett",
       "speaker": "Siv Tunold",
+      "email": "siv.tunold@konowit.no",
+      "speakers": [
+        "Siv Tunold"
+      ],
+      "title": "Best mulig for flest mulig på nett",
       "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)",
+        "Short talk (30 min)"
+      ],
       "description": "Er ny funksjonshemmet - og midt i målgruppen for universell utforming... Målgruppen er stor, vi blir eldre og mange får dårligere syn.  Selvbetjente løsninger er er \"i tiden\". God universell utforming er også god UI.  Feil funnet sent i prosjektets levetid koster mer å reparere enn feil funnet tidlig.  - Hva kan du som utvikler gjøre?",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Beginner",
-      "company": "Knowit Quality Management",
-      "city": "Oslo"
+      "city": "Oslo",
+      "company": "Knowit Oslo",
+      "country": "Norway"
     },
     "devops_erfaringer_fra_oslo_kommune": {
-      "title": "Devops- Erfaringer fra Oslo Kommune",
+      "talkId": "devops_erfaringer_fra_oslo_kommune",
+      "pending": false,
       "speaker": "Andreas Hagen, Cathrine Riise Dannevig",
+      "email": "crd@knowit.no",
+      "speakers": [
+        "Andreas Hagen",
+        "Cathrine Riise Dannevig"
+      ],
+      "title": "Devops- Erfaringer fra Oslo Kommune",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Vi oppsummerer fordeler og utfordringer vi ser etter å ha drevet med Devops i Oslo kommune i flere år. Foredraget har fokus på utviklerens trivsel og effektivitet og opplevt kundeverdi.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Beginner  Foredraget er ikke ferdig, så vi er litt usikre på lengde enda. 30 eller 60 min. ",
+      "city": "Oslo",
       "company": "Knowit Objectnet",
-      "city": "Oslo"
+      "country": "Norway"
     },
     "serverless_architecture_in_the_cloud": {
-      "title": "Serverless Architecture in The Cloud",
+      "talkId": "serverless_architecture_in_the_cloud",
+      "pending": false,
       "speaker": "Thomas Avasol",
+      "email": "thomas.avasol@gmail.com",
+      "speakers": [
+        "Thomas Avasol"
+      ],
+      "title": "Serverless Architecture in The Cloud",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Agenda How to only write code and never worry about scalability again The Cloud - origin of serverless architecture Serverless Architecture Lambda - What is it? Why is it the future? What’s next? ",
       "language": "English",
       "languageCode": "en",
       "notes": "beginner, developer",
+      "city": "Stockholm",
       "company": "Knowit Cloud Innovation",
-      "city": "Stockholm"
+      "country": "Sweden"
     },
     "automatisk_innholdsanalyse_p_web": {
-      "title": "Automatisk innholdsanalyse på web",
+      "talkId": "automatisk_innholdsanalyse_p_web",
+      "pending": false,
       "speaker": "Anders Brenna",
+      "email": "anders.brenna@knowit.no",
+      "speakers": [
+        "Anders Brenna"
+      ],
+      "title": "Automatisk innholdsanalyse på web",
       "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
       "description": "Automatisert webanalyse som ved hjelp av NodeJS, PhantomJS og diverse web API samler mest mulig informasjon om ett eller flere nettsteder i et felles dataset som indekseres og analyseres med Elasticsearch. Løsningen egner seg godt til å avdekke hva som må gjøres på migreringsprosjekter, analyse av webtekster og annet innhold, samt til å sammenligne et nettsted med nærliggende konkurrenter. Alt håndteres med NodeJS scripts som er fleksible og gjenbrukbare.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Should be interesting for webdevelopers, designers and project managers.",
-      "company": "Knowit Reaktor",
-      "city": "Oslo"
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
+    },
+    "search_find_with_categories_epi_style": {
+      "talkId": "search_find_with_categories_epi_style",
+      "pending": false,
+      "speaker": "Marie Foisack",
+      "email": "marie.foisack@knowit.se",
+      "speakers": [
+        "Marie Foisack"
+      ],
+      "title": "Search & Find with categories – Epi Style",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "An intro to EPiServer Find. Discover one teams way of using this search engine for the first time together with filters made out of EPiServer Categories. ",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "Beginner.",
+      "city": "Stockholm",
+      "company": "Knowit Reaktor Stockholm",
+      "country": "Sweden"
+    },
+    "azure_service_fabric_actor_model_approach_to_micro": {
+      "talkId": "azure_service_fabric_actor_model_approach_to_micro",
+      "pending": false,
+      "speaker": "Fredrik Claesson",
+      "email": "fredrik.claesson@knowit.se",
+      "speakers": [
+        "Fredrik Claesson"
+      ],
+      "title": "Azure Service Fabric - Actor Model approach to microservices",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "We take a look at Azure Service Fabric and Reliable Actors in particular. How can it help me build Actor Model Implementations. What is the Actor Model Best fit for an Actor Model.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": ".Net/C# focused.",
+      "company": "Knowit System Development",
+      "city": "Göteborg",
+      "country": "Sweden"
+    },
+    "let_us_rethink_the_db": {
+      "talkId": "let_us_rethink_the_db",
+      "pending": false,
+      "speaker": "Erlend Andresen",
+      "email": "erlend.andresen@knowit.no",
+      "speakers": [
+        "Erlend Andresen"
+      ],
+      "title": "Let us Rethink the DB",
+      "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
+      "description": "RethinkDB is like MongoDB/Firebase on acid. What is RethinkDB and how does it take advantage of stream based data flow from server to client? A short demo will be presented with introduction to RethinkDB and ReQL.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "Beginner to intermediate",
+      "city": "Bergen",
+      "company": "Knowit Reaktor Bergen",
+      "country": "Norway"
     }
   }
 }
