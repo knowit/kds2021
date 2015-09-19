@@ -8,7 +8,7 @@ section#talks.talks
           each entry in collection.entries
             each slot in entry.slots
               - var talk = talks[slot]
-              if talk && !talk.pending
+              if talk && (!talk.pending || progComView)
                 div(id=slot)
                   h4(lang=talk.languageCode)= " " + talk.title
                   address.talk-speaker
