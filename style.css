@@ -226,6 +226,11 @@ td, th{
   font-weight: normal;
 }
 
+.talks-entry {
+  margin-bottom: 3em;
+}
+
+
 .location {
   height: 100%;
   padding-bottom: 0;
