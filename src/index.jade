@@ -15,13 +15,11 @@ block content
       p.lead
         | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
 
-      p: a.btn(href=registration.registrationUrl target='_blank')
-        | Register as a participant
-
       p
-        | <strong>Extended deadline</strong>: We have a few seats available,
-        | so registration closes on #{registration.registrationDeadline}―or
-        | when the last seat is gone.
+        | Registration closed on #{registration.registrationDeadline}, but we
+        | still have a few seats available.  For late registration please use
+        | <a href=#{registration.registrationUrl} target='_blank'>this
+        | form</a>.
 
       p
         | The last day for submitting a talk was #{cfp.submissionDeadline}.
