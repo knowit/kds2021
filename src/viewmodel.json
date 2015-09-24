@@ -235,7 +235,7 @@
             },
             {
               "room": "25",
-              "slots": [ "ios_swift_and_reactive_cocoa" ]
+              "slots": [ "ios_swift_og_reactive_cocoa" ]
             },
             {
               "room": "24",
@@ -901,15 +901,16 @@
       "company": "Knowit Finland",
       "country": "Finland"
     },
-    "ios_swift_and_reactive_cocoa": {
-      "talkId": "ios_swift_and_reactive_cocoa",
+    "ios_swift_og_reactive_cocoa": {
+      "talkId": "ios_swift_og_reactive_cocoa",
       "pending": false,
-      "speaker": "Hans Olav Nome",
+      "speaker": "Hans Olav Nome, Christian Askeland",
       "email": "hanfar@knowit.no",
       "speakers": [
-        "Hans Olav Nome"
+        "Hans Olav Nome",
+        "Christian Askeland"
       ],
-      "title": "iOS, Swift and Reactive-Cocoa",
+      "title": "iOS, Swift og Reactive-Cocoa",
       "type": "Long talk (60 min)",
       "types": [
         "Long talk (60 min)",
