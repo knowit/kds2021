@@ -818,6 +818,27 @@
       "city": "Stockholm",
       "company": "Knowit Reaktor Stockholm",
       "country": "Sweden"
+    },
+    {
+      "name": "Shahzad Gul",
+      "speaker": false,
+      "company": "Knowit Net Result",
+      "city": "Stockholm",
+      "country": "Sweden"
+    },
+    {
+      "name": "Jon Vassbø",
+      "speaker": false,
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    {
+      "name": "Erling Limm",
+      "speaker": false,
+      "city": "Kristiansand",
+      "company": "Knowit Sør",
+      "country": "Norway"
     }
   ]
 }
