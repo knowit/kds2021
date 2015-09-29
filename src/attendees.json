@@ -839,6 +839,13 @@
       "city": "Kristiansand",
       "company": "Knowit Sør",
       "country": "Norway"
+    },
+    {
+      "name": "Beate Baier",
+      "speaker": false,
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
     }
   ]
 }

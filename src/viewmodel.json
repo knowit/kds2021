@@ -832,7 +832,7 @@
       "description": "Retrofit makes API consumption a lot easier by turning your (REST) API into a Java interface. With only a few lines of code you are able to GET, PUT, DELETE and POST data easily. Retrofit is primarily made with Android and mobile in mind, but it can also bring a whole lot of benefits to your server-to-server communication as well.",
       "language": "English",
       "languageCode": "en",
-      "notes": "Beginner level talk that gives an intro to Retrofit and basic use of it. Participants should have some knowledge of Java and knowledge of Android is even better. Code in slides.",
+      "notes": "Beginner level talk that gives an intro to Retrofit and basic use of it. Participants should have some knowledge of Java and knowledge of Android is even better. Code in slides. Hvordan er forresten muligheten til at lyntalen min om Retrofit tar 15 min i stedet for 10?",
       "city": "Oslo",
       "company": "Knowit Objectnet",
       "country": "Norway"
