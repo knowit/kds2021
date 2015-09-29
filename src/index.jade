@@ -16,17 +16,11 @@ block content
         | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
 
       p
-        | Registration closed on #{registration.registrationDeadline}, but we
-        | still have a few seats available.  For late registration please use
-        | <a href=#{registration.registrationUrl} target='_blank'>this
-        | form</a>.
-
-      p
-        | The last day for submitting a talk was #{cfp.submissionDeadline}.
-        | However, if you have something really important to tell your
-        | collegues, feel free to contact us at
-        | <a href="mailto:kds@knowit.no">kds@knowit.no</a>. We might be
-        | able to squeeze you in!
+        | Registration closed on #{registration.registrationDeadline}.  If you
+        | really really want to come, but missed the registration deadline,
+        | please send us an email to <a
+        | href="mailto:kds@knowit.no">kds@knowit.no</a> and we will see what we
+        | can do.
 
   include ./includes/schedule.jade
   include ./includes/talks.jade
