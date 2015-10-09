@@ -140,14 +140,20 @@ section {
   margin-top: 20px;
   clear: both;
 }
-h3.schedule-all-tracks {
+.schedule-all-tracks {
   clear: both;
-  padding: 5px;
+}
+h3.schedule-all-tracks {
   margin: 20px 0;
+  padding: 5px;
   background: #fafafa;
 }
 h3.schedule-all-tracks.session {
   background: #85d6cb;
+}
+h4.schedule-all-tracks {
+  padding: 0;
+  margin: 10px 0;
 }
 
 table, th, td,  tr{

@@ -82,152 +82,28 @@
         { "time": "11:20-11:50 Kick-off / meet and greet" },
         { "time": "12:00-13:00 Lunch" },
         {
-          "time": "13:05-14:05 Long talks",
+          "time": "13:00-14:00 Long talks",
           "entries": [
             {
               "room": "C4",
-              "slots": [ "devops_og_kontinuerlige_leveranser_i_oslo_kommune" ]
-            },
-            {
-              "room": "24/25",
-              "slots": [ "entity_framework_conventions_deep_dive" ]
-            },
-            {
-              "room": "23",
               "slots": [ "building_front_end_using_node_gulp_postcss" ]
-            }
-          ]
-        },
-        {
-          "time": "14:20-15:10 Lightning talks",
-          "entries": [
-            {
-              "room": "C4",
-              "slots": [
-                "mine_containere_er_lettere_enn_dine_enklere_uvikli",
-                "retrofit_easy_peasy_api_consumpsion",
-                "tips_tricks_in_atom"
-              ]
-            },
-            {
-              "room": "24/25",
-              "slots": [
-                "dapper_net",
-                "instant_automated_test_feedback_using_ncrunch_in_v",
-                "vnext_and_omnisharp"
-              ]
-            },
-            {
-              "room": "23",
-              "slots": [
-                "style_guide_driven_development",
-                "windows_uten_microsoft",
-                "let_us_rethink_the_db"
-              ]
-            }
-          ]
-        },
-        { "time": "15:00-15:30 Afternoon coffee" },
-        {
-          "time": "15:30-15:40 Lightning talks",
-          "entries": [
-            {
-              "room": "C4",
-              "slots": [
-                "introduksjon_til_c_6_0"
-              ]
-            },
-            {
-              "room": "24/25",
-              "slots": [
-                "worst_integration_project_ever"
-              ]
-            },
-            {
-              "room": "23",
-              "slots": [
-                "do_students_require_grunt_to_knockout_jasmine"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "15:50-16:50 Long talks",
-          "entries": [
-            {
-              "room": "C4",
-              "slots": [
-                "monoliths_self_contained_systems_and_microservices"
-              ]
-            },
-            {
-              "room": "24/25",
-              "slots": [
-                "iot_la_microsoft_windows_10_on_raspberry_pi"
-              ]
-            },
-            {
-              "room": "23",
-              "slots": [
-                "exploratory_testing_basics_and_experiences"
-              ]
-            }
-          ]
-        },
-        { "time": "17:00-18:00 Open Space" },
-        { "time": "19:00-22:00 Conference dinner" }
-      ]
-    },
-    {
-      "day": "Saturday, 14th",
-      "collections": [
-        {
-          "time": "09:00-10:00 Long talks",
-          "entries": [
-            {
-              "room": "C4",
-              "slots": [ "web_performance" ]
             },
             {
               "room": "25",
+              "slots": [ "iot_la_microsoft_windows_10_on_raspberry_pi" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "yet_another_boring_f_intro" ]
+            },
+            {
+              "room": "24",
               "slots": [ "why_you_should_learn_regular_expressions" ]
-            },
-            {
-              "room": "24",
-              "slots": [ "building_universal_windows_apps_using_the_unity_ga" ]
-            },
-            {
-              "room": "23",
-              "slots": [
-                "search_find_with_categories_epi_style",
-                "azure_service_fabric_actor_model_approach_to_micro"
-              ]
             }
           ]
         },
         {
-          "time": "10:10-10:40 Short talks",
-          "entries": [
-            {
-              "room": "C4",
-              "slots": [ "cross_platform_mobile_development_with_xamarin_for" ]
-            },
-            {
-              "room": "25",
-              "slots": [ "a_farewell_to_javascript_looking_at_scala_js" ]
-            },
-            {
-              "room": "24",
-              "slots": [ "moving_from_waterfall_to_agile" ]
-            },
-            {
-              "room": "23",
-              "slots": [ "learning_mongodb" ]
-            }
-          ]
-        },
-        {
-          "time": "11:00-12:00 Long talks",
+          "time": "14:10-15:10 Long talks",
           "entries": [
             {
               "room": "C4",
@@ -235,28 +111,114 @@
             },
             {
               "room": "25",
-              "slots": [ "ios_swift_og_reactive_cocoa" ]
+              "slots": [ "the_browser_is_the_new_fat_client" ]
             },
             {
               "room": "24",
-              "slots": [ "devops_erfaringer_fra_oslo_kommune" ]
+              "slots": [ "topic_unclear_right_now" ]
             },
             {
               "room": "23",
-              "slots": [ "yet_another_boring_f_intro" ]
+              "slots": [ "ios_swift_og_reactive_cocoa" ]
+            }
+          ]
+        },
+        { "time": "15:00-15:30 Afternoon coffee" },
+        {
+          "time": "15:30-16:45 Lightning talks (10 minutes break between talks)",
+          "entries": [
+            {
+              "room": "C4",
+              "slots": [
+                "simulations_101_how_to_simlate_any_system",
+                "how_stuff_works_big_data_metrics_at_cern",
+                "windows_uten_microsoft",
+                "let_us_rethink_the_db",
+                "retrofit_easy_peasy_api_consumpsion"
+              ]
+            },
+            {
+              "room": "24/25",
+              "slots": [
+                "do_students_require_grunt_to_knockout_jasmine",
+                "style_guide_driven_development",
+                "tips_tricks_in_atom",
+                "worst_integration_project_ever",
+                "mine_containere_er_lettere_enn_dine_enklere_uvikli"
+              ]
+            },
+            {
+              "room": "23",
+              "slots": [
+                "dapper_net",
+                "vnext_and_omnisharp",
+                "instant_automated_test_feedback_using_ncrunch_in_v",
+                "introduksjon_til_c_6_0",
+                "search_find_with_categories_epi_style"
+              ]
+            }
+          ]
+        },
+        { "time": "16:45-18:00 Open Space" },
+        { "time": "19:00-22:00 Conference dinner" }
+      ]
+    },
+    {
+      "day": "Saturday, 14th",
+      "collections": [
+        {
+          "time": "09:00-09:30 Short talks",
+          "entries": [
+            {
+              "room": "C4",
+              "slots": [ "quality_challenges_in_digitalized_world_testing_is" ]
+            },
+            {
+              "room": "25",
+              "slots": [ "learning_mongodb" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "a_farewell_to_javascript_looking_at_scala_js" ]
+            },
+            {
+              "room": "23",
+              "slots": [ "hvordan_gi_en_server_et_ansikt" ]
             }
           ]
         },
         {
-          "time": "12:10-12:40 Short talks",
+          "time": "09:40-10:40 Long talks",
           "entries": [
             {
               "room": "C4",
-              "slots": [ "nservicebus_och_en_saga" ]
+              "slots": [ "entity_framework_conventions_deep_dive" ]
             },
             {
               "room": "25",
-              "slots": [ "fancy_input_elements_with_web_components" ]
+              "slots": [ "monoliths_self_contained_systems_and_microservices" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "developing_applications_with_ember_js" ]
+            },
+            {
+              "room": "23",
+              "slots": [ "continous_wordpress_maintenance" ]
+            }
+          ]
+        },
+        { "time": "10:40-11:00 Forenoon coffee" },
+        {
+          "time": "11:00-11:30 Short talks",
+          "entries": [
+            {
+              "room": "C4",
+              "slots": [ "en_erstatning_til_episerver" ]
+            },
+            {
+              "room": "25",
+              "slots": [ "mobile_version_of_estonian_state_portal_eesti_ee" ]
             },
             {
               "room": "24",
@@ -264,67 +226,76 @@
             },
             {
               "room": "23",
+              "slots": [ "nservicebus_och_en_saga" ]
+            }
+          ]
+        },
+        {
+          "time": "11:40-12:10 Short talks",
+          "entries": [
+            {
+              "room": "C4",
+              "slots": [ "moving_from_waterfall_to_agile" ]
+            },
+            {
+              "room": "25",
               "slots": [ "negation_scope_detection_for_twitter_sentiment_ana" ]
-            }
-          ]
-        },
-        { "time": "13:45-12:40 Conference lunch" },
-        {
-          "time": "13:50-15:00 Short talks",
-          "entries": [
-            {
-              "room": "C4",
-              "slots": [
-                "mobile_version_of_estonian_state_portal_eesti_ee",
-                "quality_challenges_in_digitalized_world_testing_is"
-              ]
-            },
-            {
-              "room": "25",
-              "slots": [
-                "en_erstatning_til_episerver",
-                "en_identity_management_l_sning_for_h_ndtere_1_4_mi"
-              ]
             },
             {
               "room": "24",
-              "slots": [
-                "automatisk_innholdsanalyse_p_web",
-                "cool_new_features_with_the_asp_net_5_framework"
-              ]
+              "slots": [ "fancy_input_elements_with_web_components" ]
             },
             {
               "room": "23",
-              "slots": [
-                "hvordan_gi_en_server_et_ansikt",
-                "how_stuff_works_big_data_metrics_at_cern",
-                "hardware_simulations_at_cern"
-              ]
+              "slots": [ "cross_platform_mobile_development_with_xamarin_for" ]
             }
           ]
         },
-        { "time": "15:00-15:30 Afternoon coffee" },
+        { "time": "12:10-13:10 Conference lunch" },
         {
-          "time": "15:15-16:15 Long talks",
+          "time": "13:10-13:40 Short talks",
           "entries": [
             {
               "room": "C4",
-              "slots": [ "developing_applications_with_ember_js" ]
+              "slots": [ "cool_new_features_with_the_asp_net_5_framework" ]
             },
             {
               "room": "25",
-              "slots": [ "the_browser_is_the_new_fat_client" ]
+              "slots": [ "en_identity_management_l_sning_for_h_ndtere_1_4_mi" ]
             },
             {
               "room": "24",
-              "slots": [ "best_mulig_for_flest_mulig_p_nett" ]
+              "slots": [ "automatisk_innholdsanalyse_p_web" ]
             },
             {
               "room": "23",
-              "slots": [ "continous_wordpress_maintenance" ]
+              "slots": [ "azure_service_fabric_actor_model_approach_to_micro" ]
             }
           ]
-        }
+        },
+        {
+          "time": "13:40-14:50 Long talks",
+          "entries": [
+            {
+              "room": "C4",
+              "slots": [ "exploratory_testing_basics_and_experiences" ]
+            },
+            {
+              "room": "25",
+              "slots": [ "devops_og_kontinuerlige_leveranser_i_oslo_kommune" ]
+            },
+            {
+              "room": "24",
+              "slots": [ "web_performance" ]
+            },
+            {
+              "room": "23",
+              "slots": [ "building_universal_windows_apps_using_the_unity_ga" ]
+            }
+          ]
+        },
+        { "time": "14:50-15:10 Afternoon coffee" },
+        { "time": "15:10-15:40 Conference closing" }
       ]
     }
   ],
@@ -376,8 +347,7 @@
       "pending": false,
       "speaker": "Richard Lilja",
       "email": "richard.lilja@knowit.se",
-      "speakers": [
-        "Richard Lilja"
+      "speakers": [ "Richard Lilja"
       ],
       "title": "Building Front-end using Node, Gulp & PostCSS!",
       "type": "Long talk (60 min)",
@@ -392,20 +362,20 @@
       "company": "Knowit Reaktor Stockholm",
       "country": "Sweden"
     },
-    "devops_og_kontinuerlige_leveranser_i_oslo_kommune": {
-      "talkId": "devops_og_kontinuerlige_leveranser_i_oslo_kommune",
+    "topic_unclear_right_now": {
+      "talkId": "topic_unclear_right_now",
       "pending": false,
       "speaker": "Jan Henrik Gundelsby",
       "email": "jhg@knowit.no",
       "speakers": [
         "Jan Henrik Gundelsby"
       ],
-      "title": "DevOps og kontinuerlige leveranser i Oslo kommune",
+      "title": "tba",
       "type": "Long talk (60 min)",
       "types": [
         "Long talk (60 min)"
       ],
-      "description": "En av Norges største bedrifter, Oslo kommune, har utviklet en omfattende integrasjonsplattform basert på åpne biblioteker og standarder, best practice for deployment, lastbalansering, konfigurering, overvåkning og organisering av tjenester. Denne vedlikeholdes til enhver tid av et 20-talls utviklere på oppdrag fra 40-50 forskjellige interessenter med sine egne krav, planer og leveranseløp. Alt sammen muliggjøres ved delegering av ansvar til de enkelte utviklerne, som også drifter plattformen.  Erfaringsforedraget beskriver utviklerens hverdag og hvordan prosjektet i praksis håndteres med bruk av metoder som feature branching, pull requests, DevOps, kontinuerlige leveranser innenfor ITIL, og teknologi som github, puppet, nagios og release/deployment med rubyscripts.",
+      "description": "",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Nybegynner til erfaren.",
@@ -560,20 +530,20 @@
       "company": "Knowit Estonia",
       "country": "Estonia"
     },
-    "hardware_simulations_at_cern": {
-      "talkId": "hardware_simulations_at_cern",
+    "simulations_101_how_to_simlate_any_system": {
+      "talkId": "simulations_101_how_to_simlate_any_system",
       "pending": false,
       "speaker": "Håvard Rustad Olsen",
       "email": "haavard.olsen@live.com",
       "speakers": [
         "Håvard Rustad Olsen"
       ],
-      "title": "Hardware simulations at CERN",
+      "title": "Simulations 101 - How to simulate any system",
       "type": "Lightning talk (10 min)",
       "types": [
         "Lightning talk (10 min)"
       ],
-      "description": "How can you upgrade a system from handling 25 gigabytes of data per second to 1 TERABYTE per second? Virtualize and simualte your hardware with software!",
+      "description": "How can you upgrade a electronic system from handling 25 gigabytes of data per second to 1 TERABYTE per second? Virtualize and simulate your hardware with software! How can you discover bottlenecks in your business's workflow? Create a computer model, and simulate it!",
       "language": "English",
       "languageCode": "en",
       "notes": "Basic programming knowledge.",
