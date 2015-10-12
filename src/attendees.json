@@ -3,344 +3,337 @@
     {
       "name": "Sigmund Marius Nilssen",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Gunder Bitén",
       "speaker": true,
-      "company": "Knowit Stockholm",
       "city": "Stockholm",
+      "company": "Knowit Stockholm",
       "country": "Sweden"
     },
     {
       "name": "Richard Lilja",
       "speaker": true,
-      "company": "Knowit Reaktor Stockholm",
       "city": "Stockholm",
+      "company": "Knowit Reaktor Stockholm",
       "country": "Sweden"
     },
     {
       "name": "Jan Henrik Gundelsby",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "David Lund",
       "speaker": true,
-      "company": "Knowit Digital Solutions",
       "city": "Stockholm",
+      "company": "Knowit Digital Solutions",
       "country": "Sweden"
     },
     {
       "name": "Roy Bang",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Christian Egeberg",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Anders Breivik",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Kristofer Walters",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Magnus Backeus",
       "speaker": true,
-      "company": "Knowit Stockholm",
       "city": "Stockholm",
+      "company": "Knowit Stockholm",
       "country": "Sweden"
     },
     {
       "name": "Hannes Lehemets",
       "speaker": true,
-      "company": "Knowit Estonia",
       "city": "Tallinn",
+      "company": "Knowit Estonia",
       "country": "Estonia"
     },
     {
       "name": "Håvard Rustad Olsen",
       "speaker": true,
-      "company": "Knowit Reaktor Kyber",
       "city": "Bergen",
+      "company": "Knowit Reaktor Kyber",
       "country": "Norway"
     },
     {
       "name": "Tomas Osland",
       "speaker": true,
-      "company": "Knowit Reaktor Kyber",
       "city": "Bergen",
+      "company": "Knowit Reaktor Kyber",
       "country": "Norway"
     },
     {
       "name": "Espen A. Svendsen",
       "speaker": true,
-      "company": "Knowit Amende",
       "city": "Oslo",
+      "company": "Knowit Amende",
       "country": "Norway"
     },
     {
       "name": "Dennis Malmgren",
       "speaker": true,
-      "company": "Knowit Digital Communication",
       "city": "Linköping",
+      "company": "Knowit Digital Communication",
       "country": "Sweden"
     },
     {
       "name": "Jan Stenberg",
       "speaker": true,
-      "company": "Knowit Norrland",
       "city": "Norrland",
+      "company": "Knowit Norrland",
       "country": "Sweden"
     },
     {
       "name": "Jesper Haug Karsrud",
       "speaker": true,
-      "company": "Knowit Reaktor Kyber",
       "city": "Bergen",
+      "company": "Knowit Reaktor Kyber",
       "country": "Norway"
     },
     {
       "name": "Håvard Slettvold",
       "speaker": true,
-      "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     {
       "name": "Olaf Lindström",
       "speaker": true,
-      "company": "Knowit Jönköping",
       "city": "Jönköping",
+      "company": "Knowit Jönköping",
       "country": "Sweden"
     },
     {
       "name": "Roger Nesheim",
       "speaker": true,
-      "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     {
       "name": "Johan Stene",
       "speaker": true,
-      "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     {
       "name": "Peter Tollnes Flem",
       "speaker": true,
-      "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     {
       "name": "Håvard Fjær",
       "speaker": true,
-      "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     {
       "name": "Martin Ivarsson",
       "speaker": true,
-      "company": "Knowit System Development",
       "city": "Göteborg",
+      "company": "Knowit System Development",
       "country": "Sweden"
     },
     {
       "name": "Christian Askeland",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Joacim Gunnarsson",
       "speaker": true,
-      "company": "Knowit Reaktor Stockholm",
       "city": "Stockholm",
+      "company": "Knowit Reaktor Stockholm",
       "country": "Sweden"
     },
     {
       "name": "Kari Kakkonen",
       "speaker": true,
-      "company": "Knowit Finland",
       "city": "Helsinki",
+      "company": "Knowit Finland",
       "country": "Finland"
     },
     {
       "name": "Hans Olav Nome",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Daniel Hallqvist",
       "speaker": true,
-      "company": "Knowit Reaktor Bergen",
       "city": "Bergen",
+      "company": "Knowit Reaktor Bergen",
       "country": "Norway"
     },
     {
       "name": "Johan Reitan",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Endre Vestbø",
       "speaker": true,
-      "company": "Knowit Reaktor Solutions",
       "city": "Bergen",
-      "country": "Norway"
-    },
-    {
-      "name": "Ruben Oen",
-      "speaker": true,
       "company": "Knowit Reaktor Solutions",
-      "city": "Bergen",
       "country": "Norway"
     },
     {
       "name": "Halvard Hagesæther",
       "speaker": true,
-      "company": "Knowit Reaktor Solutions",
       "city": "Bergen",
+      "company": "Knowit Reaktor Solutions",
       "country": "Norway"
     },
     {
       "name": "Petter Barvik",
       "speaker": true,
-      "company": "Knowit Reaktor Solutions",
       "city": "Bergen",
+      "company": "Knowit Reaktor Solutions",
       "country": "Norway"
     },
     {
       "name": "Torleif Halseth",
       "speaker": true,
-      "company": "Knowit Reaktor Kyber",
       "city": "Bergen",
+      "company": "Knowit Reaktor Kyber",
       "country": "Norway"
     },
     {
       "name": "Oskar Kvamme",
       "speaker": true,
-      "company": "Knowit Reaktor Bergen",
       "city": "Bergen",
+      "company": "Knowit Reaktor Bergen",
       "country": "Norway"
     },
     {
       "name": "Dinesh Ram",
       "speaker": true,
-      "company": "Knowit Reaktor Solutions",
       "city": "Bergen",
+      "company": "Knowit Reaktor Solutions",
       "country": "Norway"
     },
     {
       "name": "Gunnar Velle",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Svein Aandahl",
       "speaker": true,
-      "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     {
       "name": "Thorsteinn Gestsson",
       "speaker": true,
-      "company": "Knowit Amende",
       "city": "Oslo",
+      "company": "Knowit Amende",
       "country": "Norway"
     },
     {
       "name": "Freddy Hansen",
       "speaker": true,
-      "company": "Knowit Amende",
       "city": "Oslo",
+      "company": "Knowit Amende",
       "country": "Norway"
     },
     {
       "name": "Marvin Massih",
       "speaker": true,
-      "company": "Knowit Amende",
       "city": "Oslo",
+      "company": "Knowit Amende",
       "country": "Norway"
     },
     {
       "name": "Andreas Hagen",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Cathrine Riise Dannevig",
       "speaker": true,
-      "company": "Knowit Objectnet",
       "city": "Oslo",
+      "company": "Knowit Objectnet",
       "country": "Norway"
     },
     {
       "name": "Thomas Avasol",
       "speaker": true,
-      "company": "Knowit Cloud Innovation",
       "city": "Stockholm",
+      "company": "Knowit Cloud Innovation",
       "country": "Sweden"
     },
     {
       "name": "Anders Brenna",
       "speaker": true,
-      "company": "Knowit Reaktor Oslo",
       "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     {
       "name": "Marie Foisack",
       "speaker": true,
-      "company": "Knowit Reaktor Stockholm",
       "city": "Stockholm",
+      "company": "Knowit Reaktor Stockholm",
       "country": "Sweden"
     },
     {
       "name": "Fredrik Claesson",
       "speaker": true,
-      "company": "Knowit System Development",
       "city": "Göteborg",
+      "company": "Knowit System Development",
       "country": "Sweden"
     },
     {
       "name": "Erlend Andresen",
       "speaker": true,
-      "company": "Knowit Reaktor Bergen",
       "city": "Bergen",
+      "company": "Knowit Reaktor Bergen",
       "country": "Norway"
     },
     {
@@ -369,13 +362,6 @@
       "speaker": false,
       "city": "Solna",
       "company": "Knowit Consulting",
-      "country": "Sweden"
-    },
-    {
-      "name": "Peter Bergman",
-      "speaker": false,
-      "city": "Stockholm",
-      "company": "Knowit Net Result",
       "country": "Sweden"
     },
     {
@@ -659,13 +645,6 @@
       "country": "Norway"
     },
     {
-      "name": "Kristoffer Skarbø",
-      "speaker": false,
-      "city": "Bergen",
-      "company": "Knowit Reaktor Magma",
-      "country": "Norway"
-    },
-    {
       "name": "Eskindir Abdela",
       "speaker": false,
       "city": "Helsinki",
@@ -822,8 +801,8 @@
     {
       "name": "Shahzad Gul",
       "speaker": false,
-      "company": "Knowit Net Result",
       "city": "Stockholm",
+      "company": "Knowit Net Result",
       "country": "Sweden"
     },
     {
@@ -842,6 +821,20 @@
     },
     {
       "name": "Beate Baier",
+      "speaker": false,
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
+      "country": "Norway"
+    },
+    {
+      "name": "Ståle Raknes",
+      "speaker": false,
+      "city": "Bergen",
+      "company": "Knowit Reaktor Magma",
+      "country": "Norway"
+    },
+    {
+      "name": "Kim Skaar",
       "speaker": false,
       "city": "Oslo",
       "company": "Knowit Reaktor Oslo",

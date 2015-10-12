@@ -997,11 +997,10 @@
     "yet_another_boring_f_intro": {
       "talkId": "yet_another_boring_f_intro",
       "pending": false,
-      "speaker": "Endre Vestbø, Ruben Oen, Halvard Hagesæther",
+      "speaker": "Endre Vestbø, Halvard Hagesæther",
       "email": "endre.vestbo@knowit.no",
       "speakers": [
         "Endre Vestbø",
-        "Ruben Oen",
         "Halvard Hagesæther"
       ],
       "title": "Yet another boring F# intro",
