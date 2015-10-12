@@ -116,7 +116,7 @@
             },
             {
               "room": "24",
-              "slots": [ "topic_unclear_right_now" ]
+              "slots": [ "kompetanseutvikling_i_knowit_objectnet", "arkitektskolen" ]
             },
             {
               "room": "23",
@@ -421,25 +421,46 @@
       "company": "Knowit Reaktor Stockholm",
       "country": "Sweden"
     },
-    "topic_unclear_right_now": {
-      "talkId": "topic_unclear_right_now",
+    "kompetanseutvikling_i_knowit_objectnet": {
+      "talkId": "kompetanseutvikling_i_knowit_objectnet",
       "pending": false,
       "speaker": "Jan Henrik Gundelsby",
       "email": "jhg@knowit.no",
       "speakers": [
         "Jan Henrik Gundelsby"
       ],
-      "title": "tba",
-      "type": "Long talk (60 min)",
+      "title": "Kompetanseutvikling i Knowit Objectnet",
+      "type": "Long talk (45 min)",
       "types": [
-        "Long talk (60 min)"
+        "Long talk (45 min)"
       ],
-      "description": "",
+      "description": "I Knowit Objectnet er vi best på fag! Det er din og min kompetanse vi lever av! Jan Henrik forteller om hvordan Oslo-selskapet gjør fagarbeid. Dette gjøres ved hjelp av ansatt-drevne faggrupper, fagkvelder, konferansedeltagelse, samt flere interne fagseminarer pr. år. Objectnet har et sterkt fokus på en kultur der alle skal bidra og dele! Foredraget beskriver hvordan fagarbeid gjøres, fagorganisasjon og planlagt forbedringspotensiale.",
       "language": "Norwegian",
       "languageCode": "no",
-      "notes": "Nybegynner til erfaren.",
+      "notes": "For alle faglig interesserte",
       "city": "Oslo",
       "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "arkitektskolen": {
+      "talkId": "arkitektskolen",
+      "pending": false,
+      "speaker": "Svein Aandahl",
+      "email": "svein.aandahl@knowit.no",
+      "speakers": [
+        "Svein Aandahl"
+      ],
+      "title": "Knowit Academy - Arkitektskolen",
+      "type": "Lightning talk (10 min)",
+      "types": [
+        "Lightning talk (10 min)"
+      ],
+      "description": "Å lære å bli den personen som leder teamet fremover er ingen enkel oppgave. Ingen ble født med ferdigheter til å lede eller ta avgjørelser.  Det er en ferdighet som alle må lære. For mange mennesker er det å ta beslutninger og å ta eierskap ubehagelig. Dette kan skape frykt og det skyver deg utenfor din komfortsone og mange mennesker viker unna. Vårt faglige miljø i Oslo utfordrer senior utviklere og løsningsarkitekter til å vokse og få nye verktøy og kunnskap gjennom vår Arkitektskole.",
+      "language": "Norwegian",
+      "languageCode": "no",
+      "notes": "For alle",
+      "city": "Oslo",
+      "company": "Knowit Reaktor Oslo",
       "country": "Norway"
     },
     "learning_mongodb": {
