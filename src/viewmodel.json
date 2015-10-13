@@ -29,7 +29,6 @@
         "Building Universal Windows Apps using the Unity game engine and Visual Studio",
         "Continous WordPress maintenance",
         "Cool new features with the ASP.NET 5 Framework",
-        "Cross-platform mobile development with Xamarin Forms",
         "Dapper.NET",
         "Developing applications with Ember.js",
         "Do students require grunt to knockout jasmine?",
@@ -484,26 +483,26 @@
       "company": "Knowit Digital Solutions",
       "country": "Sweden"
     },
-    "cross_platform_mobile_development_with_xamarin_for": {
-      "talkId": "cross_platform_mobile_development_with_xamarin_for",
-      "pending": false,
-      "speaker": "Roy Bang",
-      "email": "rob@knowit.no",
+    "tbashort30": {
+      "talkId": "tbashort30",
+      "pending": true,
+      "speaker": "tba",
+      "email": "",
       "speakers": [
-        "Roy Bang"
+        "TBA"
       ],
-      "title": "Cross-platform mobile development with Xamarin Forms",
+      "title": "TBA",
       "type": "Short talk (30 min)",
       "types": [
         "Short talk (30 min)"
       ],
-      "description": "Devolping apps for iOS, Andoid and Windows Phone with C# has been a revolution. This is now taken to new heights with Xamarin.Forms. With this up to 90% of code can be shared among platforms.",
-      "language": "English",
-      "languageCode": "en",
-      "notes": "Beginner. No former knowledge required.",
-      "city": "Oslo",
-      "company": "Knowit Objectnet",
-      "country": "Norway"
+      "description": "",
+      "language": "",
+      "languageCode": "",
+      "notes": "",
+      "city": "",
+      "company": "",
+      "country": ""
     },
     "building_universal_windows_apps_using_the_unity_ga": {
       "talkId": "building_universal_windows_apps_using_the_unity_ga",
