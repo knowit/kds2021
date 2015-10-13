@@ -9,7 +9,7 @@ section#talks.talks
             each slot in entry.slots
               - var talk = talks[slot]
               if talk && (!talk.pending || progComView)
-                .talks-entry(id=slot)
+                .talks-entry(id=slot data-talk-id=slot)
                   h4(lang=talk.languageCode)= " " + talk.title
                   address.talk-speaker
                     | #{talk.speaker} - #{talk.company}

@@ -179,6 +179,39 @@ h4.schedule-all-tracks {
   margin: 10px 0;
 }
 
+.fav {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/*
+.schedule-slot--faved {
+  background-color: lightyellow;
+}
+
+.schedule-slot--faved .fav {
+  color: orange;
+  text-shadow: 0 0 1px yellow;
+}
+*/
+
+.favourited {
+  background-color: lightyellow;
+}
+
+.favourited .fav {
+  color: orange;
+  text-shadow: 0 0 1px yellow;
+}
+
+.my-content-only .talks-entry {
+  display: none;
+}
+
+.my-content-only .talks-entry.favourited {
+  display: block;
+}
+
 table, th, td,  tr{
   border: 1px solid black;
 }

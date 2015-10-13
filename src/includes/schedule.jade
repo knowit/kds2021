@@ -16,7 +16,7 @@ section#schedule.schedule(class={progComView: progComView})
                   each slot in entry.slots
                     - var talk = talks[slot]
                     if talk
-                      .schedule-slot(class={pending: talk.pending, rejected: talk.rejected})
+                      .schedule-slot(data-talk-id=slot)
                         if talk.pending && !progComView
                           p tba
                         else
