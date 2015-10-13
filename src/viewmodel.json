@@ -483,27 +483,6 @@
       "company": "Knowit Digital Solutions",
       "country": "Sweden"
     },
-    "tbashort30": {
-      "talkId": "tbashort30",
-      "pending": true,
-      "speaker": "tba",
-      "email": "",
-      "speakers": [
-        "TBA"
-      ],
-      "title": "TBA",
-      "type": "Short talk (30 min)",
-      "types": [
-        "Short talk (30 min)"
-      ],
-      "description": "",
-      "language": "",
-      "languageCode": "",
-      "notes": "",
-      "city": "",
-      "company": "",
-      "country": ""
-    },
     "building_universal_windows_apps_using_the_unity_ga": {
       "talkId": "building_universal_windows_apps_using_the_unity_ga",
       "pending": false,
