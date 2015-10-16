@@ -93,7 +93,7 @@
             },
             {
               "room": "24",
-              "slots": [ "yet_another_boring_f_intro" ]
+              "slots": [ "tba" ]
             },
             {
               "room": "24",
@@ -992,28 +992,6 @@
       "notes": "Participants should have basic knowledge of machine learning and natural language processing. The talk will be mostly scientific and focused on method and architecture more than technical details. ",
       "city": "Oslo",
       "company": "Knowit Objectnet",
-      "country": "Norway"
-    },
-    "yet_another_boring_f_intro": {
-      "talkId": "yet_another_boring_f_intro",
-      "pending": false,
-      "speaker": "Endre Vestbø",
-      "email": "endre.vestbo@knowit.no",
-      "speakers": [
-        "Endre Vestbø",
-        "Halvard Hagesæther"
-      ],
-      "title": "Yet another boring F# intro",
-      "type": "Long talk (60 min)",
-      "types": [
-        "Long talk (60 min)"
-      ],
-      "description": "Functional programming is growing every year and we already have one of the best tools in .NET. Learn how to impress all your friends with functional wizardry!",
-      "language": "English",
-      "languageCode": "en",
-      "notes": "We will start with an introduction to F# and follow up with a short code-along. So please bring a laptop with either Visual Studio or web browser with Silverlight installed.",
-      "city": "Bergen",
-      "company": "Knowit Reaktor Solutions",
       "country": "Norway"
     },
     "worst_integration_project_ever": {
