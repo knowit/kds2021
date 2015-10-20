@@ -78,6 +78,7 @@ block content
       .blocker
       .content
         h1 Location
-        h3= event.venue
+        h3
+          a(href=event.venueUrl)= event.venue
         h3= event.city
 
