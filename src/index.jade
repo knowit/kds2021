@@ -10,25 +10,13 @@ block content
 
   section.two
     .content
-      h1 Registration
+      h1 By Developers<br>For Developers
 
       p.lead
-        | Knowit's yearly company-wide software developer conference will be held on the #{event.longDate} in #{event.city}, #{event.country}.
+        | Knowit Developer Summit (KDS) is Knowit's annual company-wide software developer conference.
+        | The 2015 conference will be held on the #{event.longDate} at the #{event.venue} in #{event.city}, #{event.country}.
 
-      p
-        | Registration closed on #{registration.registrationDeadline}.  If you
-        | really really want to come, but missed the registration deadline,
-        | please send us an email to <a
-        | href="mailto:kds@knowit.no">kds@knowit.no</a> and we will see what we
-        | can do.
-
-  section.two
-    .content
-      h1 Practical information
-
-      p.lead
-        | Knowit Developer Summit (KDS) is Knowit's annual developer conference. The 2015 conference venue is the Radison Blue Stockholm Waterfront hotel.
-
+      h3 Practical information
       p
         | If you have questions during the conference, please feel free to send them to <a href="mailto:kds@knowit.no">kds@knowit.no</a> (we read mail continously).
 
@@ -61,6 +49,14 @@ block content
 
       p
         | <strong>Share!</strong> Use hashtag <strong>#kds2015</strong> on twitter and Yammer, blog on your company blogs and make this conference visible to everyone! We have lots of great content to be shared.
+
+      h3 Registration
+      p
+        | Registration closed on #{registration.registrationDeadline}.  If you
+        | really really want to come, but missed the registration deadline,
+        | please send us an email to <a
+        | href="mailto:kds@knowit.no">kds@knowit.no</a> and we will see what we
+        | can do.
 
 
   include ./includes/schedule.jade
