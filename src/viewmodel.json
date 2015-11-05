@@ -998,11 +998,10 @@
     "worst_integration_project_ever": {
       "talkId": "worst_integration_project_ever",
       "pending": false,
-      "speaker": "Endre Vestbø, Petter Barvik",
+      "speaker": "Endre Vestbø",
       "email": "endre.vestbo@knowit.no",
       "speakers": [
-        "Endre Vestbø",
-        "Petter Barvik"
+        "Endre Vestbø"
       ],
       "title": "Worst integration project ever",
       "type": "Lightning talk (10 min)",
