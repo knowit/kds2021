@@ -210,7 +210,7 @@
             },
             {
               "room": "23",
-              "slots": [ "search_find_with_categories_epi_style" ]
+              "slots": [ "tba" ]
             }
           ]
         },
@@ -278,7 +278,7 @@
             },
             {
               "room": "24",
-              "slots": [ "tba" ]
+              "slots": [ "search_find_with_categories_epi_style" ]
             },
             {
               "room": "23",
