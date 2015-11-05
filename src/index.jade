@@ -1,6 +1,11 @@
 extends layout.jade
 
 block content
+  nav.navigation
+    a(href='#practical') Practicalities
+    a(href='#schedule') Schedule
+    a(href='#talks') Talks and Speakers
+    a(href='#location') Location
   section.intro
     .wrapper
       img(src='kds.svg')
@@ -8,7 +13,7 @@ block content
         h1 Knowit Developer Summit
         h3 #{event.date}<br>#{event.city}
 
-  section.two
+  section#practical.two
     .content
       h1 By Developers<br>For Developers
 
