@@ -85,7 +85,7 @@
           "time": "13:00-14:00 Long talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "building_front_end_using_node_gulp_postcss" ]
             },
             {
@@ -107,7 +107,7 @@
           "time": "14:10-15:10 Long talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "what_is_cloud_native" ]
             },
             {
@@ -129,7 +129,7 @@
           "time": "15:30-15:40 Lightning talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "simulations_101_how_to_simulate_any_system" ]
             },
             {
@@ -147,7 +147,7 @@
           "time": "15:45-15:55 Lightning talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "how_stuff_works_big_data_metrics_at_cern" ]
             },
             {
@@ -165,7 +165,7 @@
           "time": "16:00-16:10 Lightning talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "windows_uten_microsoft" ]
             },
             {
@@ -183,7 +183,7 @@
           "time": "16:15-16:25 Lightning talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "let_us_rethink_the_db" ]
             },
             {
@@ -201,7 +201,7 @@
           "time": "16:30-16:40 Lightning talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "retrofit_easy_peasy_api_consumpsion" ]
             },
             {
@@ -225,7 +225,7 @@
           "time": "09:00-09:30 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "quality_challenges_in_digitalized_world_testing_is" ]
             },
             {
@@ -247,7 +247,7 @@
           "time": "09:40-10:40 Long talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "entity_framework_conventions_deep_dive" ]
             },
             {
@@ -269,7 +269,7 @@
           "time": "11:00-11:30 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "en_erstatning_til_episerver" ]
             },
             {
@@ -291,7 +291,7 @@
           "time": "11:40-12:10 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "moving_from_waterfall_to_agile" ]
             },
             {
@@ -313,7 +313,7 @@
           "time": "13:10-13:40 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "cool_new_features_with_the_asp_net_5_framework" ]
             },
             {
@@ -335,7 +335,7 @@
           "time": "13:50-14:50 Long talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "exploratory_testing_basics_and_experiences" ]
             },
             {
