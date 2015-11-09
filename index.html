@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <nav class="navigation"><a href="#practical">Practicalities</a><a href="#schedule">Schedule</a><a href="#talks">Talks and Speakers</a><a href="#location">Location</a></nav>
     <section class="intro">
       <div class="wrapper"><img src="kds.svg">
         <div class="content">
@@ -17,7 +18,7 @@
         </div>
       </div>
     </section>
-    <section class="two">
+    <section id="practical" class="two">
       <div class="content">
         <h1>By Developers<br>For Developers</h1>
         <p class="lead">
@@ -26,7 +27,7 @@
         </p>
         <h3>Practical information</h3>
         <p>If you have questions during the conference, please feel free to send them to <a href="mailto:kds@knowit.no">kds@knowit.no</a> (we read mail continously).</p>
-        <p><strong>The venue.</strong> The conference department is on the second floor. It has its own entrance, to the left of the main hotel entrance. Use the escalators to go <em>down</em> two floors.</p>
+        <p><strong>The venue.</strong> The conference area has its own entrance, to the left of the main hotel entrance. Look for signs!</p>
         <p><strong>Dinner.</strong> There will be a conference dinner at the hotel at 19:00. The dinner is included in the conference fee and is served in RBG Bar & Grill.</p>
         <p><strong>Name badges</strong> will be handed out in order to make it easier with names and be able to see which company you belong to.</p>
         <p><strong>Hotel check inn</strong>. You can pick up your room key in the conference area sometime after 16:00 on Friday. Please make sure that the hotel reservation is in accordance with your wishes. There has been sent a separate mail on this. <em>Please</em> check this, as we want to be 100% sure that everyone has a room. Those of you who want to extend your stay at the hotel beyond the included accommodation from friday to saturday have to fix this yourself by sending an e-mail to <a href="mailto:kds@knowit.no">kds@knowit.no</a>. You pay for any additional nights and/or people when you check out.</p>
@@ -129,10 +130,7 @@
             </div>
             <div class="schedule-entry">
               <h5>Room 24/25</h5>
-              <div class="schedule-slot">
-                <p lang="no"><a id="p_do_students_require_grunt_to_knockout_jasmine" href="#do_students_require_grunt_to_knockout_jasmine">Do students require grunt to knockout jasmine?</a></p>
-                <address>Roger Nesheim, Johan Stene</address>
-              </div>
+              <div class="schedule-slot">tba</div>
             </div>
             <div class="schedule-entry">
               <h5>Room 23</h5>
@@ -206,7 +204,7 @@
               <h5>Room 24/25</h5>
               <div class="schedule-slot">
                 <p lang="en"><a id="p_worst_integration_project_ever" href="#worst_integration_project_ever">Worst integration project ever</a></p>
-                <address>Endre Vestbø, Petter Barvik</address>
+                <address>Endre Vestbø</address>
               </div>
             </div>
             <div class="schedule-entry">
@@ -236,10 +234,7 @@
             </div>
             <div class="schedule-entry">
               <h5>Room 23</h5>
-              <div class="schedule-slot">
-                <p lang="en"><a id="p_search_find_with_categories_epi_style" href="#search_find_with_categories_epi_style">Search &amp; Find with categories – Epi Style</a></p>
-                <address>Marie Foisack</address>
-              </div>
+              <div class="schedule-slot">tba</div>
             </div>
           </div>
           <h3 class="schedule-all-tracks">16:45-18:00 Open Space</h3>
@@ -329,7 +324,10 @@
             </div>
             <div class="schedule-entry">
               <h5>Room 24</h5>
-              <div class="schedule-slot">tba</div>
+              <div class="schedule-slot">
+                <p lang="en"><a id="p_search_find_with_categories_epi_style" href="#search_find_with_categories_epi_style">Search &amp; Find with categories – Epi Style</a></p>
+                <address>Marie Foisack</address>
+              </div>
             </div>
             <div class="schedule-entry">
               <h5>Room 23</h5>
@@ -494,12 +492,6 @@
           <p class="talk-meta">Lightning talk (10 min), English,  <a href="#p_simulations_101_how_to_simulate_any_system"> Friday 15:30-15:40 slot - room C3</a></p>
           <p lang="en" class="talk-description">How can you upgrade a electronic system from handling 25 gigabytes of  data per second to 1 TERABYTE per second? Virtualize and simulate your  hardware with software! How can you discover bottlenecks in your  business's workflow? Create a computer model, and simulate it!</p>
         </div>
-        <div id="do_students_require_grunt_to_knockout_jasmine" class="talks-entry">
-          <h4 lang="no"> Do students require grunt to knockout jasmine?</h4>
-          <address class="talk-speaker">Roger Nesheim, Johan Stene - Knowit Reaktor Oslo</address>
-          <p class="talk-meta">Lightning talk (10 min), Norwegian,  <a href="#p_do_students_require_grunt_to_knockout_jasmine"> Friday 15:30-15:40 slot - room 24/25</a></p>
-          <p lang="no" class="talk-description">Roger og Johan tar deg gjennom gjennomføringen av to studentprosjekter i parallell, der oppgaven var å lage ett sett med lånekalkulatorer vha. frontendteknologier som grunt, require, knockout og jasmine.</p>
-        </div>
         <div id="dapper_net" class="talks-entry">
           <h4 lang="en"> Dapper.NET</h4>
           <address class="talk-speaker">Oskar Kvamme - Knowit Reaktor Bergen</address>
@@ -550,7 +542,7 @@
         </div>
         <div id="worst_integration_project_ever" class="talks-entry">
           <h4 lang="en"> Worst integration project ever</h4>
-          <address class="talk-speaker">Endre Vestbø, Petter Barvik - Knowit Reaktor Solutions</address>
+          <address class="talk-speaker">Endre Vestbø - Knowit Reaktor Solutions</address>
           <p class="talk-meta">Lightning talk (10 min), English,  <a href="#p_worst_integration_project_ever"> Friday 16:15-16:25 slot - room 24/25</a></p>
           <p lang="en" class="talk-description">After going through an integration project with one of the largest tech companies in the world, we learned that even the big ones can fail. In this lightning talk we want to highlight the mistakes done by the other company so you do not look like a complete fool in your next integration project.</p>
         </div>
@@ -571,12 +563,6 @@
           <address class="talk-speaker">Anders Breivik - Knowit Objectnet</address>
           <p class="talk-meta">Lightning talk (10 min), Norwegian,  <a href="#p_mine_containere_er_lettere_enn_dine_enklere_uvikli"> Friday 16:30-16:40 slot - room 24/25</a></p>
           <p lang="no" class="talk-description"> Består løsningen din av flere moduler? Vil du under utvikling og testing styre hvilke moduler og databaser du kjører opp på egen maskin og hvilke du lar gå mot eksterne miljøer? I denne lyntalen får du se hvordan et prosjekt benyttet Boot2Docker og Docker Compose til å lage et lettvekts og orkestrerbart utviklingsmiljø av Docker-containere.</p>
-        </div>
-        <div id="search_find_with_categories_epi_style" class="talks-entry">
-          <h4 lang="en"> Search &amp; Find with categories – Epi Style</h4>
-          <address class="talk-speaker">Marie Foisack - Knowit Reaktor Stockholm</address>
-          <p class="talk-meta">Short talk (30 min), English,  <a href="#p_search_find_with_categories_epi_style"> Friday 16:30-16:40 slot - room 23</a></p>
-          <p lang="en" class="talk-description">An intro to EPiServer Find. Discover one teams way of using this search engine for the first time together with filters made out of EPiServer Categories. </p>
         </div>
         <div id="quality_challenges_in_digitalized_world_testing_is" class="talks-entry">
           <h4 lang="en"> Quality challenges in digitalized world – testing is needed</h4>
@@ -637,6 +623,12 @@
           <address class="talk-speaker">Hannes Lehemets - Knowit Estonia</address>
           <p class="talk-meta">Short talk (30 min), English,  <a href="#p_mobile_version_of_estonian_state_portal_eesti_ee"> Saturday 11:00-11:30 slot - room 25</a></p>
           <p lang="en" class="talk-description">Knowit Estonia's and Knowit Göteborg's co-operation result was a responsive tablet and mobile friendly Estonian state portal eesti.ee. The talk will present what we learned about the co-operation with the client and technology wise.  Techniques / methods: Java 6 and 7, Tomcat 7, Weblogic 12, PostgreSQL 8.1 and 9.2, AngularJS, Grunt, Bower, JQuery,  JSON, HTML5, CSS3, Git, SVN, Maven, JIRA, SCRUM</p>
+        </div>
+        <div id="search_find_with_categories_epi_style" class="talks-entry">
+          <h4 lang="en"> Search &amp; Find with categories – Epi Style</h4>
+          <address class="talk-speaker">Marie Foisack - Knowit Reaktor Stockholm</address>
+          <p class="talk-meta">Short talk (30 min), English,  <a href="#p_search_find_with_categories_epi_style"> Saturday 11:00-11:30 slot - room 24</a></p>
+          <p lang="en" class="talk-description">An intro to EPiServer Find. Discover one teams way of using this search engine for the first time together with filters made out of EPiServer Categories. </p>
         </div>
         <div id="nservicebus_och_en_saga" class="talks-entry">
           <h4 lang="sv"> NServiceBus och en Saga</h4>

@@ -32,7 +32,7 @@ dd {
 }
 
 a {
-  color: #85d6cb;
+  color: #009685;
 }
 
 .btn {
@@ -59,6 +59,29 @@ section {
   /*min-height: 100%;*/
   position: relative;
   padding-bottom: 100px;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #fff;
+  text-align: center;
+}
+
+
+.navigation a {
+  background-color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 .2em;
+}
+
+.navigation a:before {
+  content: '#';
+  color: #85d6cb;
 }
 
 .intro {

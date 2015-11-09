@@ -134,7 +134,7 @@
             },
             {
               "room": "24/25",
-              "slots": [ "do_students_require_grunt_to_knockout_jasmine" ]
+              "slots": [ "tba" ]
             },
             {
               "room": "23",
@@ -210,7 +210,7 @@
             },
             {
               "room": "23",
-              "slots": [ "search_find_with_categories_epi_style" ]
+              "slots": [ "tba" ]
             }
           ]
         },
@@ -278,7 +278,7 @@
             },
             {
               "room": "24",
-              "slots": [ "tba" ]
+              "slots": [ "search_find_with_categories_epi_style" ]
             },
             {
               "room": "23",
@@ -998,11 +998,10 @@
     "worst_integration_project_ever": {
       "talkId": "worst_integration_project_ever",
       "pending": false,
-      "speaker": "Endre Vestbø, Petter Barvik",
+      "speaker": "Endre Vestbø",
       "email": "endre.vestbo@knowit.no",
       "speakers": [
-        "Endre Vestbø",
-        "Petter Barvik"
+        "Endre Vestbø"
       ],
       "title": "Worst integration project ever",
       "type": "Lightning talk (10 min)",
