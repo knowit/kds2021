@@ -939,13 +939,13 @@
         "Hans Olav Nome",
         "Christian Askeland"
       ],
-      "title": "iOS, Swift og Reactive-Cocoa",
+      "title": "Apputvikling - utviklingsløp og teknologi",
       "type": "Long talk (60 min)",
       "types": [
         "Long talk (60 min)",
         "Short talk (30 min)"
       ],
-      "description": "Hvordan vi laget RuterReise - reiseplanlegger-app for en halv million mennesker. Våre erfaringer med Swift og Reactive Cocoa, hva vi likte og hva vi ikke likte.",
+      "description": "Hvordan vi laget RuterReise - en sanntids reiseplanlegger-app for en halv million mennesker. Våre erfaringer med apputvikling for iOS. En gjennomgang av teknologier med en liten innføring Swift og Reactive Cocoa. Videre gir vi også noen innblikk i erfaringer vi har fått rundt universell utforming og andre utfordringer vi møtte på veien fra skisser til ferdig app.",
       "language": "Norwegian",
       "languageCode": "no",
       "notes": "Beginner.  Vil snakke om grunnleggende prinsipper for utvikling av apper på iOS-plattformen, i tillegg til innføring i Swift og Reactive-Cocoa. ",
