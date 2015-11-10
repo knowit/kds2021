@@ -279,7 +279,7 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "moving_from_waterfall_to_agile" ]
+              "slots": [ "how_agile_are_you_really" ]
             },
             {
               "room": "25",
@@ -1171,20 +1171,20 @@
       "company": "Knowit Amende",
       "country": "Norway"
     },
-    "moving_from_waterfall_to_agile": {
-      "talkId": "moving_from_waterfall_to_agile",
+    "how_agile_are_you_really": {
+      "talkId": "how_agile_are_you_really",
       "pending": false,
       "speaker": "Espen A. Svendsen",
       "email": "espen.svendsen@knowit.no",
       "speakers": [
         "Espen A. Svendsen"
       ],
-      "title": "Moving from Waterfall to Agile",
+      "title": "How Agile are you, really?",
       "type": "Short talk (30 min)",
       "types": [
         "Short talk (30 min)"
       ],
-      "description": "You have probably encountered this, projects and organizations claiming to use Agile methods, while they in fact are using Waterfall methods. Why is this happening, how can you spot it, and what can you do about it?",
+      "description": "A project is not Agile just because the top management say it is. This talk will answer the following questions: What are some of the pitfalls of adopting an Agile methodology, how can you spot trouble and what can you do about it?",
       "language": "English",
       "languageCode": "en",
       "notes": "Everyone",
