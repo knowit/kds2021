@@ -94,7 +94,7 @@
             },
             {
               "room": "24",
-              "slots": [ "tba" ]
+              "slots": [ "entity_framework_conventions_deep_dive" ]
             },
             {
               "room": "23",
@@ -248,7 +248,7 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "entity_framework_conventions_deep_dive" ]
+              "slots": [ "tba" ]
             },
             {
               "room": "25",
