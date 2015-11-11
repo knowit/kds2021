@@ -235,11 +235,11 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "tba" ]
+              "slots": [ "monoliths_self_contained_systems_and_microservices" ]
             },
             {
               "room": "25",
-              "slots": [ "monoliths_self_contained_systems_and_microservices" ]
+              "slots": [ "tba" ]
             },
             {
               "room": "24",
