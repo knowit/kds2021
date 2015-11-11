@@ -257,7 +257,7 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "en_erstatning_til_episerver" ]
+              "slots": [ "tba" ]
             },
             {
               "room": "25",
@@ -291,7 +291,7 @@
             },
             {
               "room": "23",
-              "slots": [ "tba" ]
+              "slots": [ "en_erstatning_til_episerver" ]
             }
           ]
         },
