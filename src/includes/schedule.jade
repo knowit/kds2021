@@ -34,4 +34,6 @@ section#schedule.schedule(class={progComView: progComView})
             h4.schedule-all-tracks= collection.time
           else
             h3.schedule-all-tracks= collection.time
+            if collection.details
+              p.schedule-all-tracks !{collection.details}
 

@@ -340,7 +340,13 @@
           ]
         },
         { "time": "14:50-15:10 Afternoon coffee" },
-        { "time": "15:10-15:40 Conference closing" }
+        {
+          "time": "15:10-15:40 Mats Ohlsson",
+          "details": "Mats Ohlsson, Head of Strategy and Business Development, with a short talk about Knowit and other things."
+        },
+        {
+          "time": "15:30-15:40 Conference closing"
+        }
       ]
     }
   ],
