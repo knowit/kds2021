@@ -959,12 +959,12 @@
       "speakers": [
         "Johan Reitan"
       ],
-      "title": "Negation Scope Detection for Twitter Sentiment Analysis",
+      "title": "Twitter Sentiment Analysis",
       "type": "Short talk (30 min)",
       "types": [
         "Short talk (30 min)"
       ],
-      "description": "The talk describes the first sophisticated negation scope detection system for Twitter sentiment analysis. The system has been evaluated both on existing corpora from other domains and on a corpus of English Twitter data (tweets) annotated for negation. It produces better results than what has been reported in other domains and improves the performance on tweets containing negation when incorporated into a state-of-the-art Twitter sentiment analyser.",
+      "description": "Twitter is packed with people expressing their opinions and emotions. There are huge amounts unexploited data, which makes Twitter optimal for text mining. This talk describes a state-of-the-art system for doing this.",
       "language": "English",
       "languageCode": "en",
       "notes": "Participants should have basic knowledge of machine learning and natural language processing. The talk will be mostly scientific and focused on method and architecture more than technical details. ",
