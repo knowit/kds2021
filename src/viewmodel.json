@@ -238,11 +238,7 @@
               "slots": [ "monoliths_self_contained_systems_and_microservices" ]
             },
             {
-              "room": "25",
-              "slots": [ "tba" ]
-            },
-            {
-              "room": "24",
+              "room": "25/24",
               "slots": [ "developing_applications_with_ember_js" ]
             },
             {
@@ -257,14 +253,10 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "tba" ]
-            },
-            {
-              "room": "25",
               "slots": [ "mobile_version_of_estonian_state_portal_eesti_ee" ]
             },
             {
-              "room": "24",
+              "room": "25/24",
               "slots": [ "search_find_with_categories_epi_style" ]
             },
             {
@@ -282,12 +274,8 @@
               "slots": [ "how_agile_are_you_really" ]
             },
             {
-              "room": "25",
+              "room": "25/24",
               "slots": [ "negation_scope_detection_for_twitter_sentiment_ana" ]
-            },
-            {
-              "room": "24",
-              "slots": [ "fancy_input_elements_with_web_components" ]
             },
             {
               "room": "23",
@@ -304,11 +292,7 @@
               "slots": [ "en_identity_management_l_sning_for_h_ndtere_1_4_mi" ]
             },
             {
-              "room": "25",
-              "slots": [ "tba" ]
-            },
-            {
-              "room": "24",
+              "room": "25/24",
               "slots": [ "automatisk_innholdsanalyse_p_web" ]
             },
             {
