@@ -307,11 +307,11 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "exploratory_testing_basics_and_experiences" ]
+              "slots": [ "devops_erfaringer_fra_oslo_kommune" ]
             },
             {
               "room": "25",
-              "slots": [ "devops_erfaringer_fra_oslo_kommune" ]
+              "slots": [ "exploratory_testing_basics_and_experiences" ]
             },
             {
               "room": "24",
