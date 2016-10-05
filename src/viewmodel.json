@@ -2,7 +2,7 @@
   "title": "Knowit Developer Summit",
   "event": {
     "date": "October 21.-22. 2016",
-    "longDate": "21-22. of October 2016",
+    "longDate": "21.-22. of October 2016",
     "venue": "Radisson Blu Waterfront",
     "venueUrl": "https://www.radissonblu.com/en/waterfronthotel-stockholm",
     "city": "Stockholm",
@@ -213,7 +213,7 @@
       ]
     },
     {
-      "day": "Saturday, 22th",
+      "day": "Saturday, 22nd",
       "collections": [
         {
           "time": "09:00-09:30 Short talks",
