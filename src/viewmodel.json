@@ -1,8 +1,8 @@
 {
   "title": "Knowit Developer Summit",
   "event": {
-    "date": "November 13.-14. 2015",
-    "longDate": "13th-14th of November 2015",
+    "date": "October 21.-22. 2016",
+    "longDate": "21-22. of October 2016",
     "venue": "Radisson Blu Waterfront",
     "venueUrl": "https://www.radissonblu.com/en/waterfronthotel-stockholm",
     "city": "Stockholm",
@@ -10,7 +10,7 @@
     "gmapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.1851871275999!2d18.056061999999997!3d59.329861999999885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d604f482201%3A0x858ff8c54ed4011b!2sRadisson+Blu+Waterfront+Hotel!5e0!3m2!1sno!2sno!4v1396439444495"
   },
   "cfp": {
-    "submissionDeadline": "August 20th, 2015",
+    "submissionDeadline": "August 31th, 2016",
     "submissionUrl": "https://docs.google.com/forms/d/13bf7QFAFAMBqsebA2GNf2v4moLLK_6bmvywutFBY6Qw/viewform?usp=send_form",
     "topics": {
       "Architecture": "Microservices, DDD, containere (Docker, Rocket...), event-sourcing, asynchronous services, fault tolerant systems, REST, dependency injection, web services without frameworks, web services without app servers, in-memory computing",
@@ -72,264 +72,266 @@
     ]
   },
   "registration": {
-    "registrationDeadline": "September 21th, 2015",
+    "registrationDeadline": "September 21th, 2016",
     "registrationUrl": "https://docs.google.com/forms/d/1_sBsjTvAzqHak7CX3pqEkJjM29WpvNSg7ifVS1epKeY/viewform?usp=send_form"
   },
   "schedules": [
     {
-      "day": "Friday, 13th",
+      "day": "Friday, 21st",
       "collections": [
-        { "time": "11:20-11:50 Kick-off / meet and greet" },
+        { "time": "11:30-11:50 Kick-off / meet and greet" },
         { "time": "12:00-13:00 Lunch" },
         {
           "time": "13:00-14:00 Long talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "building_front_end_using_node_gulp_postcss" ]
+              "room": "26",
+              "slots": [ "health_care_servicebus" ]
             },
             {
-              "room": "25",
-              "slots": [ "iot_la_microsoft_windows_10_on_raspberry_pi" ]
+              "room": "C4",
+              "slots": [ "f#_whats_in_it_4_me" ]
             },
             {
               "room": "24",
-              "slots": [ "entity_framework_conventions_deep_dive" ]
+              "slots": [ "git_enemy_friend" ]
             },
             {
-              "room": "23",
-              "slots": [ "why_you_should_learn_regular_expressions" ]
+              "room": "25",
+              "slots": [ "" ]
             }
           ]
         },
         { "time": "14:00-14:10 Break", "isBreak": true },
         {
-          "time": "14:10-15:10 Long talks",
+          "time": "14:10-14:40 Short talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "what_is_cloud_native" ]
+              "room": "26",
+              "slots": [ "emerging_architectures" ]
             },
             {
-              "room": "25",
-              "slots": [ "the_browser_is_the_new_fat_client" ]
+              "room": "C4",
+              "slots": [ "progressive_web_apps" ]
             },
             {
               "room": "24",
-              "slots": [ "kompetanseutvikling_i_knowit_objectnet", "arkitektskolen" ]
-            },
-            {
-              "room": "23",
-              "slots": [ "ios_swift_og_reactive_cocoa" ]
-            }
-          ]
-        },
-        { "time": "15:10-15:30 Afternoon coffee" },
-        {
-          "time": "15:30-15:40 Lightning talks",
-          "entries": [
-            {
-              "room": "C3",
-              "slots": [ "simulations_101_how_to_simulate_any_system" ]
+              "slots": [ "make_a_programming_language" ]
             },
             {
               "room": "25",
-              "slots": [ "retrofit_easy_peasy_api_consumpsion" ]
+              "slots": [ "bimodal" ]
+            }
+          ]
+        },
+        { "time": "14:40-14:50 Break", "isBreak": true },
+        {
+          "time": "14:50-15:05 Lightning talks",
+          "entries": [
+            {
+              "room": "26",
+              "slots": [ "api_first" ]
+            },
+            {
+              "room": "C4",
+              "slots": [ "react_angular" ]
             },
             {
               "room": "24",
-              "slots": [ "mine_containere_er_lettere_enn_dine_enklere_uvikli" ]
+              "slots": [ "xamarin" ]
             },
             {
-              "room": "23",
-              "slots": [ "dapper_net" ]
+              "room": "25",
+              "slots": [ "fast_is_ef" ]
             }
           ]
         },
-        { "time": "15:40-15:45 Break", "isBreak": true },
         {
-          "time": "15:45-15:55 Lightning talks",
+          "time": "15:10-15:25 Lightning talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "how_stuff_works_big_data_metrics_at_cern" ]
+              "room": "26",
+              "slots": [ "api_first" ]
             },
             {
-              "room": "24/25",
-              "slots": [ "style_guide_driven_development" ]
+              "room": "C4",
+              "slots": [ "intro_web_components" ]
             },
             {
-              "room": "23",
-              "slots": [ "vnext_and_omnisharp" ]
+              "room": "24",
+              "slots": [ "nosql" ]
+            },
+            {
+              "room": "25",
+              "slots": [ "agile_cat" ]
             }
           ]
         },
-        { "time": "15:55-16:00 Break", "isBreak": true },
+        { "time": "15:25-15:45 Break and Fika", "isBreak": true },
         {
-          "time": "16:00-16:10 Lightning talks",
+          "time": "15:45-16:00 Lightning talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "windows_uten_microsoft" ]
+              "room": "26",
+              "slots": [ "http2" ]
             },
             {
-              "room": "24/25",
-              "slots": [ "tips_tricks_in_atom" ]
+              "room": "C4",
+              "slots": [ "react_story_book" ]
             },
             {
-              "room": "23",
-              "slots": [ "instant_automated_test_feedback_using_ncrunch_in_v" ]
+              "room": "24",
+              "slots": [ "scratch" ]
+            },
+            {
+              "room": "25",
+              "slots": [ "baked_in_security" ]
             }
           ]
         },
-        { "time": "16:10-16:15 Break", "isBreak": true },
         {
-          "time": "16:15-16:25 Lightning talks",
+          "time": "16:05-16:20 Lightning talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "let_us_rethink_the_db" ]
+              "room": "26",
+              "slots": [ "rest_service_bus" ]
             },
             {
-              "room": "24/25",
-              "slots": [ "worst_integration_project_ever" ]
+              "room": "C4",
+              "slots": [ "angular_angle" ]
             },
             {
-              "room": "23",
-              "slots": [ "introduksjon_til_c_6_0" ]
+              "room": "24",
+              "slots": [ "kotlin" ]
+            },
+            {
+              "room": "25",
+              "slots": [ "hackathon_poc" ]
             }
           ]
         },
-        { "time": "16:25-16:30 Break", "isBreak": true },
+        { "time": "16:20-16:30 Break", "isBreak": true },
         { "time": "16:30-18:00 Open Space" },
         { "time": "19:00-22:00 Conference dinner" }
       ]
     },
     {
-      "day": "Saturday, 14th",
+      "day": "Saturday, 22th",
       "collections": [
         {
           "time": "09:00-09:30 Short talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "quality_challenges_in_digitalized_world_testing_is" ]
+              "room": "C4",
+              "slots": [ "scalable_css" ]
             },
             {
-              "room": "25",
-              "slots": [ "learning_mongodb" ]
+              "room": "24+25",
+              "slots": [ "type_safe_elm" ]
             },
             {
-              "room": "24",
-              "slots": [ "a_farewell_to_javascript_looking_at_scala_js" ]
-            },
-            {
-              "room": "23",
-              "slots": [ "hvordan_gi_en_server_et_ansikt" ]
+              "room": "26",
+              "slots": [ "neural_network" ]
             }
           ]
         },
         { "time": "09:30-09:40 Break", "isBreak": true },
         {
-          "time": "09:40-10:40 Long talks",
+          "time": "09:40-10:10 Short talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "monoliths_self_contained_systems_and_microservices" ]
+              "room": "C4",
+              "slots": [ "styling_css" ]
             },
             {
-              "room": "25/24",
-              "slots": [ "developing_applications_with_ember_js" ]
+              "room": "24+25",
+              "slots": [ "universe_parallell_programming" ]
             },
             {
-              "room": "23",
-              "slots": [ "continous_wordpress_maintenance" ]
+              "room": "26",
+              "slots": [ "mlaas_machine_learning" ]
             }
           ]
         },
-        { "time": "10:40-11:00 Forenoon coffee" },
+        { "time": "10:10-10:20 Break", "isBreak": true },
         {
-          "time": "11:00-11:30 Short talks",
+          "time": "10:20-11:30 Long talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "mobile_version_of_estonian_state_portal_eesti_ee" ]
+              "room": "C4",
+              "slots": [ "containers_vs_microservices" ]
             },
             {
-              "room": "25/24",
-              "slots": [ "search_find_with_categories_epi_style" ]
+              "room": "24+25",
+              "slots": [ "personal_digital_security" ]
             },
             {
-              "room": "23",
-              "slots": [ "nservicebus_och_en_saga" ]
+              "room": "26",
+              "slots": [ "tensorflow" ]
             }
           ]
         },
-        { "time": "11:30-11:40 Break", "isBreak": true },
+        { "time": "10:20-11:40 Break", "isBreak": true },
         {
           "time": "11:40-12:10 Short talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "how_agile_are_you_really" ]
+              "room": "C4",
+              "slots": [ "aurelia_wf" ]
             },
             {
-              "room": "25/24",
-              "slots": [ "negation_scope_detection_for_twitter_sentiment_ana" ]
+              "room": "24+25",
+              "slots": [ "azure_functions" ]
             },
             {
-              "room": "23",
-              "slots": [ "en_erstatning_til_episerver" ]
+              "room": "26",
+              "slots": [ "spring_bootapp" ]
             }
           ]
         },
-        { "time": "12:10-13:10 Conference lunch" },
+        { "time": "12:10-13:10 Conference Lunch" },
         {
           "time": "13:10-13:40 Short talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "en_identity_management_l_sning_for_h_ndtere_1_4_mi" ]
+              "room": "C4",
+              "slots": [ "shadow_dom" ]
             },
             {
-              "room": "25/24",
-              "slots": [ "automatisk_innholdsanalyse_p_web" ]
+              "room": "24+25",
+              "slots": [ "chrome_extension_browseit" ]
             },
             {
-              "room": "23",
-              "slots": [ "azure_service_fabric_actor_model_approach_to_micro" ]
+              "room": "26",
+              "slots": [ "microsoft_hololens" ]
             }
           ]
         },
         { "time": "13:40-13:50 Break", "isBreak": true },
         {
-          "time": "13:50-14:50 Long talks",
+          "time": "13:50-14:20 Short talks",
           "entries": [
             {
-              "room": "C3",
-              "slots": [ "devops_erfaringer_fra_oslo_kommune" ]
+              "room": "C4",
+              "slots": [ "sp_framework_react_office360" ]
             },
             {
-              "room": "25",
-              "slots": [ "exploratory_testing_basics_and_experiences" ]
+              "room": "24+25",
+              "slots": [ "oracle_apex" ]
             },
             {
-              "room": "24",
-              "slots": [ "web_performance" ]
-            },
-            {
-              "room": "23",
-              "slots": [ "building_universal_windows_apps_using_the_unity_ga" ]
+              "room": "26",
+              "slots": [ "drones_with_js" ]
             }
           ]
         },
-        { "time": "14:50-15:10 Afternoon coffee" },
+        { "time": "14:20-14:40 Afternoon coffee" },
         {
-          "time": "15:10-15:40 Mats Ohlsson",
-          "details": "Mats Ohlsson, Head of Strategy and Business Development, with a short talk about Knowit and other things."
+          "time": "14:40-15:00 Johan Strid",
+          "details": "Johan Strid, Head of ..., with a short talk about Knowit and other things."
         },
         {
-          "time": "15:30-15:40 Conference closing"
+          "time": "15:00-15:10 Conference closing"
         }
       ]
     }
