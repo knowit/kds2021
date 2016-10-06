@@ -320,11 +320,11 @@
         },
         { "time": "14:20-14:40 Afternoon coffee" },
         {
-          "time": "14:40-15:00 Johan Strid",
-          "details": "Johan Strid, Head of ..., with a short talk about Knowit and other things."
+          "time": "14:40-15:10 Johan Strid",
+          "details": "Johan Strid, Business Area Manager, Knowit Solutions, with a short talk about Knowit, trends, openness and other things."
         },
         {
-          "time": "15:00-15:10 Conference closing"
+          "time": "15:10-15:20 Conference closing"
         }
       ]
     }
