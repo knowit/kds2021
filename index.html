@@ -49,7 +49,10 @@
             <h4>13:00-14:00 Long talks</h4>
             <div class="schedule-entry">
               <h5>Room 26</h5>
-              <div class="schedule-slot">Building a healthcare service bus</div>
+              <div data-talk-id="health_care_servicebus" class="schedule-slot">
+                <p lang="en"><a id="p_health_care_servicebus" href="#health_care_servicebus">Building a healthcare service bus</a></p>
+                <address>Don Janssen</address>
+              </div>
             </div>
             <div class="schedule-entry">
               <h5>Room C4</h5>
@@ -266,6 +269,12 @@
     <section id="talks" class="talks">
       <div class="content">
         <h1>Talks and Speakers</h1>
+        <div id="health_care_servicebus" data-talk-id="health_care_servicebus" class="talks-entry">
+          <h4 lang="en"> Building a healthcare service bus</h4>
+          <address class="talk-speaker">Don Janssen - Knowit Norrland</address>
+          <p class="talk-meta">Long talk (60 min), English,  <a href="#p_health_care_servicebus"> Friday 13:00-14:00 slot - room 26</a></p>
+          <p lang="en" class="talk-description">In a hospital lots of different systems are used and usually they do not work very well together. At the same time systems need to share information with each other and patients and authorities want information regardless of the system that stores the information. To solve this problem we are building a service bus for the county of Västerbotten, based on principles for domain driven architecture, SOA, REST and MicroServices, using .Net and Web API. The service bus handles routing, service discovery and has an engagement index that keeps track of patients and in which system they have data. Although every service is independent of the other a lot of functionality is the same for every service, therefore we created a framework existing of NuGet packages. As part of the project we also build a web portal on top of the service bus that makes the information about the patients accessible for the hospital's employees. In this talk I will discuss the challenges but most important the solutions we are working on to solve those integrations.</p>
+        </div>
       </div>
     </section>
     <section id="location" class="location">

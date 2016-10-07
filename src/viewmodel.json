@@ -86,7 +86,7 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "Building a healthcare service bus" ]
+              "slots": [ "health_care_servicebus" ]
             },
             {
               "room": "C4",
@@ -372,25 +372,25 @@
       "company": "Knowit Stockholm",
       "country": "Sweden"
     },
-    "building_front_end_using_node_gulp_postcss": {
-      "talkId": "building_front_end_using_node_gulp_postcss",
+    "health_care_servicebus": {
+      "talkId": "health_care_servicebus",
       "pending": false,
-      "speaker": "Richard Lilja",
-      "email": "richard.lilja@knowit.se",
+      "speaker": "Don Janssen",
+      "email": "don.janssen@knowit.se",
       "speakers": [
-        "Richard Lilja"
+        "Don Janssen"
       ],
-      "title": "Building Front-end using Node, Gulp & PostCSS!",
+      "title": "Building a healthcare service bus",
       "type": "Long talk (60 min)",
       "types": [
         "Long talk (60 min)"
       ],
-      "description": "A talk about building front-end for web applications using Node-based tools. Specifically the talk will focus on Gulp (“the streaming build system”) and PostCSS (“the future of CSS, now”). We will explore the whys and hows as well as delve into code by creating a new project to build from start.",
+      "description": "In a hospital lots of different systems are used and usually they do not work very well together. At the same time systems need to share information with each other and patients and authorities want information regardless of the system that stores the information. To solve this problem we are building a service bus for the county of Västerbotten, based on principles for domain driven architecture, SOA, REST and MicroServices, using .Net and Web API. The service bus handles routing, service discovery and has an engagement index that keeps track of patients and in which system they have data. Although every service is independent of the other a lot of functionality is the same for every service, therefore we created a framework existing of NuGet packages. As part of the project we also build a web portal on top of the service bus that makes the information about the patients accessible for the hospital's employees. In this talk I will discuss the challenges but most important the solutions we are working on to solve those integrations.",
       "language": "English",
       "languageCode": "en",
-      "notes": "Beginner, basic JavaScript and NodeJS knowledge.",
-      "city": "Stockholm",
-      "company": "Knowit Reaktor Stockholm",
+      "notes": "",
+      "city": "Umeå",
+      "company": "Knowit Norrland",
       "country": "Sweden"
     },
     "kompetanseutvikling_i_knowit_objectnet": {
