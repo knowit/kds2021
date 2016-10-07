@@ -107,7 +107,7 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "Emerging Architectures" ]
+              "slots": [ "emerging_architectures" ]
             },
             {
               "room": "C4",
@@ -413,6 +413,27 @@
       "city": "Oslo",
       "company": "Knowit Objectnet",
       "country": "Norway"
+    },
+    "emerging_architectures": {
+      "talkId": "emerging_architectures",
+      "pending": false,
+      "speaker": "Jan Stenberg",
+      "email": "jan.stenberg@knowit.se",
+      "speakers": [
+        "Jan Stenberg"
+      ],
+      "title": "Emerging Architectures",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "I will talk about architectures, that may be old, but gets an increasing interest today, because of their simplicity and how well they fit in the services and cloud world of today.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Umeå",
+      "company": "Knowit Norrland",
+      "country": "Sweden"
     },
     "mlaas_machine_learning": {
       "talkId": "mlaas_machine_learning",
