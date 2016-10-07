@@ -107,19 +107,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "emerging_architectures" ]
+              "slots": [ "Emerging Architectures" ]
             },
             {
               "room": "C4",
-              "slots": [ "progressive_web_apps" ]
+              "slots": [ "Progressive Web Apps" ]
             },
             {
               "room": "24",
-              "slots": [ "make_a_programming_language" ]
+              "slots": [ "How to make a programming language" ]
             },
             {
               "room": "25",
-              "slots": [ "bimodal" ]
+              "slots": [ "Bimodal Business Intelligence – Data-driven innovation without loosing control" ]
             }
           ]
         },
@@ -128,19 +128,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "api_first" ]
+              "slots": [ "Skalering av store enterprise-systemer med API-first 1" ]
             },
             {
               "room": "C4",
-              "slots": [ "react_angular" ]
+              "slots": [ "React or angular2?" ]
             },
             {
               "room": "24",
-              "slots": [ "xamarin" ]
+              "slots": [ "Xamarin vs Native Development" ]
             },
             {
               "room": "25",
-              "slots": [ "fast_is_ef" ]
+              "slots": [ "How fast is EF really?" ]
             }
           ]
         },
@@ -149,19 +149,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "api_first" ]
+              "slots": [ "Skalering av store enterprise-systemer med API-first 2" ]
             },
             {
               "room": "C4",
-              "slots": [ "intro_web_components" ]
+              "slots": [ "Introduction to Web Components" ]
             },
             {
               "room": "24",
-              "slots": [ "nosql" ]
+              "slots": [ "NoSQL - flattening data structures" ]
             },
             {
               "room": "25",
-              "slots": [ "agile_cat" ]
+              "slots": [ "Agile as a cat or just going through the motions." ]
             }
           ]
         },
@@ -171,19 +171,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "http2" ]
+              "slots": [ "HTTP/2 - The new speedy gonzales of the web" ]
             },
             {
               "room": "C4",
-              "slots": [ "react_story_book" ]
+              "slots": [ "How to Develop and Document your React Components using React Storybook" ]
             },
             {
               "room": "24",
-              "slots": [ "scratch" ]
+              "slots": [ "Kodboken och Scratch - skapandet av framtidens Linus Torvalds?" ]
             },
             {
               "room": "25",
-              "slots": [ "baked_in_security" ]
+              "slots": [ "Baked-in security" ]
             }
           ]
         },
@@ -192,19 +192,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "rest_service_bus" ]
+              "slots": [ "SignalR, Servicebus and REST mixed. What does it mean for your database?" ]
             },
             {
               "room": "C4",
-              "slots": [ "angular_angle" ]
+              "slots": [ "Angular at an angle" ]
             },
             {
               "room": "24",
-              "slots": [ "kotlin" ]
+              "slots": [ "Kotlin – Et språk for alt!" ]
             },
             {
               "room": "25",
-              "slots": [ "hackathon_poc" ]
+              "slots": [ "How to win a hackathon" ]
             }
           ]
         },
@@ -237,15 +237,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "styling_css" ]
+              "slots": [ "Practical tips for scalable CSS" ]
             },
             {
               "room": "24+25",
-              "slots": [ "universe_parallell_programming" ]
+              "slots": [ "Solving the mysteries of the universe with parallel programming" ]
             },
             {
               "room": "26",
-              "slots": [ "mlaas_machine_learning" ]
+              "slots": [ "MLaaS - Machine Learning for the rest of us" ]
             }
           ]
         },
@@ -254,15 +254,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "containers_vs_microservices" ]
+              "slots": [ "Containers and micro services - Architectural considerations and practical use case" ]
             },
             {
               "room": "24+25",
-              "slots": [ "personal_digital_security" ]
+              "slots": [ "Personal digital security" ]
             },
             {
               "room": "26",
-              "slots": [ "tensorflow" ]
+              "slots": [ "Bruk av Google Tensorflow i et praktisk kundeprosjekt" ]
             }
           ]
         },
@@ -271,15 +271,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "aurelia_wf" ]
+              "slots": [ "Modern Times - the Aurelia web framework" ]
             },
             {
               "room": "24+25",
-              "slots": [ "azure_functions" ]
+              "slots": [ "Azure Functions - Yet another event driven option" ]
             },
             {
               "room": "26",
-              "slots": [ "spring_bootapp" ]
+              "slots": [ "Overvåking av Spring Boot applikasjoner med Spring Boot Admin og Javamelody" ]
             }
           ]
         },
@@ -289,15 +289,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "shadow_dom" ]
+              "slots": [ "Shadow DOM" ]
             },
             {
               "room": "24+25",
-              "slots": [ "chrome_extension_browseit" ]
+              "slots": [ "A Chrome extension called BrowseIt" ]
             },
             {
               "room": "26",
-              "slots": [ "microsoft_hololens" ]
+              "slots": [ "Programming the Microsoft HoloLens" ]
             }
           ]
         },
@@ -306,15 +306,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "sp_framework_react_office360" ]
+              "slots": [ "SharePoint Framework, ReactJS and Webpack in Office 365 development" ]
             },
             {
               "room": "24+25",
-              "slots": [ "oracle_apex" ]
+              "slots": [ "Oracle Apex 5.0 - Rapid GUI development" ]
             },
             {
               "room": "26",
-              "slots": [ "drones_with_js" ]
+              "slots": [ "Programming mini drones with JavaScript" ]
             }
           ]
         },
