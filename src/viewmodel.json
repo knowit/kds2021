@@ -1,8 +1,8 @@
 {
   "title": "Knowit Developer Summit",
   "event": {
-    "date": "October 21.-22. 2016",
-    "longDate": "21.-22. of October 2016",
+    "date": "21 - 22 October 2016",
+    "longDate": "Friday, 21st - Saturday, 22nd October 2016",
     "venue": "Radisson Blu Waterfront",
     "venueUrl": "https://www.radissonblu.com/en/waterfronthotel-stockholm",
     "city": "Stockholm",
@@ -86,15 +86,15 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "health_care_servicebus" ]
+              "slots": [ "Building a healthcare service bus" ]
             },
             {
               "room": "C4",
-              "slots": [ "f#_whats_in_it_4_me" ]
+              "slots": [ "F# : what's in it for me?" ]
             },
             {
               "room": "24",
-              "slots": [ "git_enemy_friend" ]
+              "slots": [ "Git - From your worst enemy to your best friend" ]
             },
             {
               "room": "25",
