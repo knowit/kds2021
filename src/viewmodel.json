@@ -98,7 +98,7 @@
             },
             {
               "room": "25",
-              "slots": [ "" ]
+              "slots": [ "Managing your containers with Kubernetes" ]
             }
           ]
         },
@@ -220,15 +220,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "scalable_css" ]
+              "slots": [ "Practical tips for scalable CSS" ]
             },
             {
               "room": "24+25",
-              "slots": [ "type_safe_elm" ]
+              "slots": [ "Type safe front-end development in Elm" ]
             },
             {
               "room": "26",
-              "slots": [ "neural_network" ]
+              "slots": [ "A beginner's guide to Convolutional Neural Networks" ]
             }
           ]
         },
@@ -237,7 +237,7 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "Practical tips for scalable CSS" ]
+              "slots": [ "Local styling with CSS Modules" ]
             },
             {
               "room": "24+25",
