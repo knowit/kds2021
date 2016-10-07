@@ -90,7 +90,7 @@
             },
             {
               "room": "C4",
-              "slots": [ "F# : what's in it for me?" ]
+              "slots": [ "f#_whats_in_it_4_me" ]
             },
             {
               "room": "24",
@@ -350,6 +350,27 @@
       "city": "Umeå",
       "company": "Knowit Norrland",
       "country": "Sweden"
+    },
+    "f#_whats_in_it_4_me": {
+      "talkId": "f#_whats_in_it_4_me",
+      "pending": false,
+      "speaker": "",
+      "email": "toni.kaihola@knowit.fi",
+      "speakers": [
+        "Toni Kaihola"
+      ],
+      "title": "F# : what's in it for me?",
+      "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
+      "description": "Join me on a whirlwind tour into the functional cousin of C#. We will cover many areas of the language, including the powerful type system and useful language constructs. You will get answers to the following questions: How can you code without nulls? What if you could do calculations with units of measurements such as m/s ? Using extension methods without extension methods, how? How can you get value equality for free? I have a lot of existing C# or VB code. Can I somehow benefit from F#? Finally we will explore tools that you can use to get acquainted with F# scripting and tools which you can use with your existing .NET projects and beyond.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Helsinki",
+      "company": "Knowit OY Group",
+      "country": "Finland"
     },
     "mlaas_machine_learning": {
       "talkId": "mlaas_machine_learning",
