@@ -94,11 +94,11 @@
             },
             {
               "room": "24",
-              "slots": [ "Git - From your worst enemy to your best friend" ]
+              "slots": [ "git_enemy_friend" ]
             },
             {
               "room": "25",
-              "slots": [ "Managing your containers with Kubernetes" ]
+              "slots": [ "managing_containers_kubernetes" ]
             }
           ]
         },
@@ -386,6 +386,27 @@
         "Long talk (60 min)"
       ],
       "description": "In this talk I'll present my workflow when using git, including some advanced features, in order to showcase how you can get the most out of using this powerful tool.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "managing_containers_kubernetes": {
+      "talkId": "managing_containers_kubernetes",
+      "pending": false,
+      "speaker": "Ole Bakstad",
+      "email": "ole.bakstad@knowit.no",
+      "speakers": [
+        "Ole Bakstad"
+      ],
+      "title": "Managing your containers with Kubernetes",
+      "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
+      "description": "During the last few years containers have become a common word in the tech vocabulary. There are many providers that offer solutions for managing containers for example Google Cloud Platform, Amazon AWS and Mesosphere. This talk will introduce Kubernetes from Google, a orchestration tool that offer automated deployment, scaling and management of your containers. You will learn the core concepts and features of Kubernetes and gain insight in how it differs from similar solutions like Amazon Container Service or Mesosphere. I will also give a live demo of these features. The demo will show how to easily load balance between multiple container instances, auto scale your application and how to do canary releases and rolling upgrades with zero down time.",
       "language": "English",
       "languageCode": "en",
       "notes": "",
