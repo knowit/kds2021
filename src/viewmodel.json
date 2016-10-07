@@ -354,7 +354,7 @@
     "f#_whats_in_it_4_me": {
       "talkId": "f#_whats_in_it_4_me",
       "pending": false,
-      "speaker": "",
+      "speaker": "Toni Kaihola",
       "email": "toni.kaihola@knowit.fi",
       "speakers": [
         "Toni Kaihola"
@@ -371,6 +371,27 @@
       "city": "Helsinki",
       "company": "Knowit OY Group",
       "country": "Finland"
+    },
+    "git_enemy_friend": {
+      "talkId": "git_enemy_friend",
+      "pending": false,
+      "speaker": "Christoffer Eliesen",
+      "email": "christoffer.eliesen@knowit.no",
+      "speakers": [
+        "Christoffer Eliesen"
+      ],
+      "title": "Git - From your worst enemy to your best friend",
+      "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
+      "description": "In this talk I'll present my workflow when using git, including some advanced features, in order to showcase how you can get the most out of using this powerful tool.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
     },
     "mlaas_machine_learning": {
       "talkId": "mlaas_machine_learning",
