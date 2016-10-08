@@ -128,19 +128,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "Skalering av store enterprise-systemer med API-first 1" ]
+              "slots": [ "api_first" ]
             },
             {
               "room": "C4",
-              "slots": [ "React or angular2?" ]
+              "slots": [ "react_angular" ]
             },
             {
               "room": "24",
-              "slots": [ "Xamarin vs Native Development" ]
+              "slots": [ "xamarin" ]
             },
             {
               "room": "25",
-              "slots": [ "How fast is EF really?" ]
+              "slots": [ "how_fast_is_ef" ]
             }
           ]
         },
@@ -149,19 +149,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "Skalering av store enterprise-systemer med API-first 2" ]
+              "slots": [ "api_first" ]
             },
             {
               "room": "C4",
-              "slots": [ "Introduction to Web Components" ]
+              "slots": [ "intro_web_components" ]
             },
             {
               "room": "24",
-              "slots": [ "NoSQL - flattening data structures" ]
+              "slots": [ "nosql" ]
             },
             {
               "room": "25",
-              "slots": [ "Agile as a cat or just going through the motions." ]
+              "slots": [ "agile_cat" ]
             }
           ]
         },
@@ -171,19 +171,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "HTTP/2 - The new speedy gonzales of the web" ]
+              "slots": [ "http2" ]
             },
             {
               "room": "C4",
-              "slots": [ "How to Develop and Document your React Components using React Storybook" ]
+              "slots": [ "http2" ]
             },
             {
               "room": "24",
-              "slots": [ "Kodboken och Scratch - skapandet av framtidens Linus Torvalds?" ]
+              "slots": [ "scratch" ]
             },
             {
               "room": "25",
-              "slots": [ "Baked-in security" ]
+              "slots": [ "baked_in_security" ]
             }
           ]
         },
@@ -192,19 +192,19 @@
           "entries": [
             {
               "room": "26",
-              "slots": [ "SignalR, Servicebus and REST mixed. What does it mean for your database?" ]
+              "slots": [ "rest_service_bus" ]
             },
             {
               "room": "C4",
-              "slots": [ "Angular at an angle" ]
+              "slots": [ "angular_angle" ]
             },
             {
               "room": "24",
-              "slots": [ "Kotlin – Et språk for alt!" ]
+              "slots": [ "kotlin" ]
             },
             {
               "room": "25",
-              "slots": [ "How to win a hackathon" ]
+              "slots": [ "hackathon_poc" ]
             }
           ]
         },
@@ -220,15 +220,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "Practical tips for scalable CSS" ]
+              "slots": [ "scalable_css" ]
             },
             {
               "room": "24+25",
-              "slots": [ "Type safe front-end development in Elm" ]
+              "slots": [ "type_safe_elm" ]
             },
             {
               "room": "26",
-              "slots": [ "A beginner's guide to Convolutional Neural Networks" ]
+              "slots": [ "neural_network" ]
             }
           ]
         },
@@ -237,11 +237,11 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "Local styling with CSS Modules" ]
+              "slots": [ "styling_css" ]
             },
             {
               "room": "24+25",
-              "slots": [ "Solving the mysteries of the universe with parallel programming" ]
+              "slots": [ "universe_parallell_programming" ]
             },
             {
               "room": "26",
@@ -254,15 +254,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "Containers and micro services - Architectural considerations and practical use case" ]
+              "slots": [ "containers_vs_microservices" ]
             },
             {
               "room": "24+25",
-              "slots": [ "Personal digital security" ]
+              "slots": [ "personal_digital_security" ]
             },
             {
               "room": "26",
-              "slots": [ "Bruk av Google Tensorflow i et praktisk kundeprosjekt" ]
+              "slots": [ "tensorflow" ]
             }
           ]
         },
@@ -271,15 +271,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "Modern Times - the Aurelia web framework" ]
+              "slots": [ "aurelia_wf" ]
             },
             {
               "room": "24+25",
-              "slots": [ "Azure Functions - Yet another event driven option" ]
+              "slots": [ "azure_functions" ]
             },
             {
               "room": "26",
-              "slots": [ "Overvåking av Spring Boot applikasjoner med Spring Boot Admin og Javamelody" ]
+              "slots": [ "spring_bootapp" ]
             }
           ]
         },
@@ -289,15 +289,15 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "Shadow DOM" ]
+              "slots": [ "shadow_dom" ]
             },
             {
               "room": "24+25",
-              "slots": [ "A Chrome extension called BrowseIt" ]
+              "slots": [ "chrome_extension_browseit" ]
             },
             {
               "room": "26",
-              "slots": [ "Programming the Microsoft HoloLens" ]
+              "slots": [ "microsoft_hololens" ]
             }
           ]
         },
@@ -306,11 +306,11 @@
           "entries": [
             {
               "room": "C4",
-              "slots": [ "SharePoint Framework, ReactJS and Webpack in Office 365 development" ]
+              "slots": [ "sp_framework_react_office365" ]
             },
             {
               "room": "24+25",
-              "slots": [ "Oracle Apex 5.0 - Rapid GUI development" ]
+              "slots": [ "oracle_apex" ]
             },
             {
               "room": "26",
