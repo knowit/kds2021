@@ -331,8 +331,8 @@
   ],
   "talks": {
     "health_care_servicebus": {
-      "talkid": "health_care_servicebus",
-      "pending": "false",
+      "talkId": "health_care_servicebus",
+      "pending": false,
       "speaker": "Don Janssen",
       "email": "don.janssen@knowit.se",
       "speakers": [
@@ -352,8 +352,8 @@
       "country": "Sweden"
     },
     "f#_whats_in_it_4_me": {
-      "talkid": "f#_whats_in_it_4_me",
-      "pending": "false",
+      "talkId": "f#_whats_in_it_4_me",
+      "pending": false,
       "speaker": "Toni Kaihola",
       "email": "toni.kaihola@knowit.fi",
       "speakers": [
@@ -373,8 +373,8 @@
       "country": "Finland"
     },
     "git_enemy_friend": {
-      "talkid": "git_enemy_friend",
-      "pending": "false",
+      "talkId": "git_enemy_friend",
+      "pending": false,
       "speaker": "Christoffer Eliesen",
       "email": "christoffer.eliesen@knowit.no",
       "speakers": [
@@ -394,8 +394,8 @@
       "country": "Norway"
     },
     "managing_containers_kubernetes": {
-      "talkid": "managing_containers_kubernetes",
-      "pending": "false",
+      "talkId": "managing_containers_kubernetes",
+      "pending": false,
       "speaker": "Ole Bakstad",
       "email": "ole.bakstad@knowit.no",
       "speakers": [
@@ -415,8 +415,8 @@
       "country": "Norway"
     },
     "emerging_architectures": {
-      "talkid": "emerging_architectures",
-      "pending": "false",
+      "talkId": "emerging_architectures",
+      "pending": false,
       "speaker": "Jan Stenberg",
       "email": "jan.stenberg@knowit.se",
       "speakers": [
@@ -436,8 +436,8 @@
       "country": "Sweden"
     },
     "progressive_web_apps": {
-      "talkid": "progressive_web_apps",
-      "pending": "false",
+      "talkId": "progressive_web_apps",
+      "pending": false,
       "speaker": "Thuc Hoang",
       "email": "thuc.hoang@knowit.no",
       "speakers": [
@@ -457,8 +457,8 @@
       "country": "Norway"
     },
     "make_a_programming_language": {
-      "talkid": "make_a_programming_language",
-      "pending": "false",
+      "talkId": "make_a_programming_language",
+      "pending": false,
       "speaker": "Martin Valen",
       "email": "martin.valen@knowit.no",
       "speakers": [
@@ -478,8 +478,8 @@
       "country": "Norway"
     },
     "bimodal_business_intelligence": {
-      "talkid": "bimodal_business_intelligence",
-      "pending": "false",
+      "talkId": "bimodal_business_intelligence",
+      "pending": false,
       "speaker": "Pehr Benderix",
       "email": "pehr.benderix@knowit.se",
       "speakers": [
@@ -499,8 +499,8 @@
       "country": "Sweden"
     },
     "api_first": {
-      "talkid": "api_first",
-      "pending": "false",
+      "talkId": "api_first",
+      "pending": false,
       "speaker": "Jan Henrik Gundelsby",
       "email": "jhg@knowit.no",
       "speakers": [
@@ -520,8 +520,8 @@
       "country": "Norway"
     },
     "react_angular": {
-      "talkid": "react_angular",
-      "pending": "false",
+      "talkId": "react_angular",
+      "pending": false,
       "speaker": "Olof Drevin",
       "email": "olof.drevin@knowit.se",
       "speakers": [
@@ -541,8 +541,8 @@
       "country": "Sweden"
     },
     "xamarin": {
-      "talkid": "xamarin",
-      "pending": "false",
+      "talkId": "xamarin",
+      "pending": false,
       "speaker": "Marit Hellestø",
       "email": "marit.hellesto@knowit.no",
       "speakers": [
@@ -562,8 +562,8 @@
       "country": "Norway"
     },
     "how_fast_is_ef": {
-      "talkid": "how_fast_is_ef",
-      "pending": "false",
+      "talkId": "how_fast_is_ef",
+      "pending": false,
       "speaker": "David Lund",
       "email": "david.lund@knowit.se",
       "speakers": [
@@ -583,8 +583,8 @@
       "country": "Sweden"
     },
     "intro_web_components": {
-      "talkid": "intro_web_components",
-      "pending": "false",
+      "talkId": "intro_web_components",
+      "pending": false,
       "speaker": "Christian Cederfjärd",
       "email": "christian.cederfjard@knowit.se",
       "speakers": [
@@ -604,8 +604,8 @@
       "country": "Sweden"
     },
     "nosql": {
-      "talkid": "nosql",
-      "pending": "false",
+      "talkId": "nosql",
+      "pending": false,
       "speaker": "Andreas Hunderi",
       "email": "andreas.hunderi@knowit.no",
       "speakers": [
@@ -625,8 +625,8 @@
       "country": "Norway"
     },
     "agile_cat": {
-      "talkid": "agile_cat",
-      "pending": "false",
+      "talkId": "agile_cat",
+      "pending": false,
       "speaker": "Krister Karto",
       "email": "krister.karto@knowit.no",
       "speakers": [
@@ -646,8 +646,8 @@
       "country": "Norway"
     },
     "http2": {
-      "talkid": "http2",
-      "pending": "false",
+      "talkId": "http2",
+      "pending": false,
       "speaker": "Asgeir Hølleland",
       "email": "asgeir.holleland@knowit.no",
       "speakers": [
@@ -667,8 +667,8 @@
       "country": "Norway"
     },
     "react_story_book": {
-      "talkid": "react_story_book",
-      "pending": "false",
+      "talkId": "react_story_book",
+      "pending": false,
       "speaker": "Alexander Bjerkan",
       "email": "alb@knowit.no",
       "speakers": [
@@ -688,8 +688,8 @@
       "country": "Norway"
     },
     "scratch": {
-      "talkid": "scratch",
-      "pending": "false",
+      "talkId": "scratch",
+      "pending": false,
       "speaker": "Martin Ivarsson",
       "email": "martin.ivarsson@knowit.se",
       "speakers": [
@@ -709,8 +709,8 @@
       "country": "Sweden"
     },
     "baked_in_security": {
-      "talkid": "baked_in_security",
-      "pending": "false",
+      "talkId": "baked_in_security",
+      "pending": false,
       "speaker": "Ellen Weber",
       "email": "lnw@knowit.no",
       "speakers": [
@@ -730,8 +730,8 @@
       "country": "Norway"
     },
     "rest_service_bus": {
-      "talkid": "rest_service_bus",
-      "pending": "false",
+      "talkId": "rest_service_bus",
+      "pending": false,
       "speaker": "Krister Karto",
       "email": "krister.karto@knowit.no",
       "speakers": [
@@ -751,8 +751,8 @@
       "country": "Norway"
     },
     "angular_angle": {
-      "talkid": "angular_angle",
-      "pending": "false",
+      "talkId": "angular_angle",
+      "pending": false,
       "speaker": "Dennis Malmgren",
       "email": "dennis.malmgren@knowit.se",
       "speakers": [
@@ -772,8 +772,8 @@
       "country": "Sweden"
     },
     "kotlin": {
-      "talkid": "kotlin",
-      "pending": "false",
+      "talkId": "kotlin",
+      "pending": false,
       "speaker": "Kennet Vuong",
       "email": "kennet.vuong@knowit.no",
       "speakers": [
@@ -793,8 +793,8 @@
       "country": "Norway"
     },
     "hackathon_poc": {
-      "talkid": "hackathon_poc",
-      "pending": "false",
+      "talkId": "hackathon_poc",
+      "pending": false,
       "speaker": "Simon Nilsson",
       "email": "simon.nilsson@knowit.se",
       "speakers": [
@@ -814,8 +814,8 @@
       "country": "Sweden"
     },
     "scalable_css": {
-      "talkid": "scalable_css",
-      "pending": "false",
+      "talkId": "scalable_css",
+      "pending": false,
       "speaker": "Daniel Hallqvist",
       "email": "daniel.hallqvist@knowit.no",
       "speakers": [
@@ -835,8 +835,8 @@
       "country": "Norway"
     },
     "type_safe_elm": {
-      "talkid": "type_safe_elm",
-      "pending": "false",
+      "talkId": "type_safe_elm",
+      "pending": false,
       "speaker": "Runar Furenes",
       "email": "ruf@knowit.no",
       "speakers": [
@@ -856,8 +856,8 @@
       "country": "Norway"
     },
     "neural_network": {
-      "talkid": "neural_network",
-      "pending": "false",
+      "talkId": "neural_network",
+      "pending": false,
       "speaker": "Astrid Tessem",
       "email": "astrid.tessem@knowit.no",
       "speakers": [
@@ -877,8 +877,8 @@
       "country": "Norway"
     },
     "styling_css": {
-      "talkid": "styling_css",
-      "pending": "false",
+      "talkId": "styling_css",
+      "pending": false,
       "speaker": "Alexander Bjerkan",
       "email": "alb@knowit.no",
       "speakers": [
@@ -898,8 +898,8 @@
       "country": "Norway"
     },
     "universe_parallell_programming": {
-      "talkid": "universe_parallell_programming",
-      "pending": "false",
+      "talkId": "universe_parallell_programming",
+      "pending": false,
       "speaker": "Andreas Hunderi",
       "email": "andreas.hunderi@knowit.no",
       "speakers": [
@@ -919,8 +919,8 @@
       "country": "Norway"
     },
     "mlaas_machine_learning": {
-      "talkid": "mlaas_machine_learning",
-      "pending": "false",
+      "talkId": "mlaas_machine_learning",
+      "pending": false,
       "speaker": "Anders Breivik",
       "email": "abr@knowit.no",
       "speakers": [
@@ -940,8 +940,8 @@
       "country": "Norway"
     },
     "containers_vs_microservices": {
-      "talkid": "containers_vs_microservices",
-      "pending": "false",
+      "talkId": "containers_vs_microservices",
+      "pending": false,
       "speaker": "Stellan Söderstrom",
       "email": "stellan.soderstrom@knowit.se",
       "speakers": [
@@ -961,8 +961,8 @@
       "country": "Sweden"
     },
     "personal_digital_security": {
-      "talkid": "personal_digital_security",
-      "pending": "false",
+      "talkId": "personal_digital_security",
+      "pending": false,
       "speaker": "Michael Johansen",
       "email": "michael.johansen@knowit.no",
       "speakers": [
@@ -982,8 +982,8 @@
       "country": "Norway"
     },
     "tensorflow": {
-      "talkid": "tensorflow",
-      "pending": "false",
+      "talkId": "tensorflow",
+      "pending": false,
       "speaker": "Truls Fretland",
       "email": "tfret@knowit.no",
       "speakers": [
@@ -1003,8 +1003,8 @@
       "country": "Norway"
     },
     "aurelia_wf": {
-      "talkid": "aurelia_wf",
-      "pending": "false",
+      "talkId": "aurelia_wf",
+      "pending": false,
       "speaker": "Erlend Andresen",
       "email": "erlend.andresen@knowit.no",
       "speakers": [
@@ -1024,8 +1024,8 @@
       "country": "Norway"
     },
     "azure_functions": {
-      "talkid": "azure_functions",
-      "pending": "false",
+      "talkId": "azure_functions",
+      "pending": false,
       "speaker": "Fredrik Claesson",
       "email": "fredrik.claesson@knowit.se",
       "speakers": [
@@ -1045,8 +1045,8 @@
       "country": "Sweden"
     },
     "spring_bootapp": {
-      "talkid": "spring_bootapp",
-      "pending": "false",
+      "talkId": "spring_bootapp",
+      "pending": false,
       "speaker": "Gunnar Velle",
       "email": "gv@knowit.no",
       "speakers": [
@@ -1066,8 +1066,8 @@
       "country": "Norway"
     },
     "shadow_dom": {
-      "talkid": "shadow_dom",
-      "pending": "false",
+      "talkId": "shadow_dom",
+      "pending": false,
       "speaker": "Johannes Giske",
       "email": "johannes.giske@knowit.no",
       "speakers": [
@@ -1087,8 +1087,8 @@
       "country": "Norway"
     },
     "chrome_extension_browseit": {
-      "talkid": "chrome_extension_browseit",
-      "pending": "false",
+      "talkId": "chrome_extension_browseit",
+      "pending": false,
       "speaker": "Michael Johansen",
       "email": "michael.johansen@knowit.no",
       "speakers": [
@@ -1108,8 +1108,8 @@
       "country": "Norway"
     },
     "microsoft_hololens": {
-      "talkid": "microsoft_hololens",
-      "pending": "false",
+      "talkId": "microsoft_hololens",
+      "pending": false,
       "speaker": "Christian Egeberg",
       "email": "ceg@knowit.no",
       "speakers": [
@@ -1129,8 +1129,8 @@
       "country": "Norway"
     },
     "sp_framework_react_office365": {
-      "talkid": "sp_framework_react_office365",
-      "pending": "false",
+      "talkId": "sp_framework_react_office365",
+      "pending": false,
       "speaker": "Toni Kaihola",
       "email": "toni.kaihola@knowit.fi",
       "speakers": [
@@ -1150,8 +1150,8 @@
       "country": "Finland"
     },
     "oracle_apex": {
-      "talkid": "oracle_apex",
-      "pending": "false",
+      "talkId": "oracle_apex",
+      "pending": false,
       "speaker": "Ove Holm",
       "email": "ove.holm@knowit.se",
       "speakers": [
@@ -1171,8 +1171,8 @@
       "country": "Sweden"
     },
     "drones_with_js": {
-      "talkid": "drones_with_js",
-      "pending": "false",
+      "talkId": "drones_with_js",
+      "pending": false,
       "speaker": "Anders Breivik",
       "email": "abr@knowit.no",
       "speakers": [
