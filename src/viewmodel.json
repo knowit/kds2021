@@ -331,8 +331,8 @@
   ],
   "talks": {
     "health_care_servicebus": {
-      "talkId": "health_care_servicebus",
-      "pending": false,
+      "talkid": "health_care_servicebus",
+      "pending": "false",
       "speaker": "Don Janssen",
       "email": "don.janssen@knowit.se",
       "speakers": [
@@ -352,8 +352,8 @@
       "country": "Sweden"
     },
     "f#_whats_in_it_4_me": {
-      "talkId": "f#_whats_in_it_4_me",
-      "pending": false,
+      "talkid": "f#_whats_in_it_4_me",
+      "pending": "false",
       "speaker": "Toni Kaihola",
       "email": "toni.kaihola@knowit.fi",
       "speakers": [
@@ -373,8 +373,8 @@
       "country": "Finland"
     },
     "git_enemy_friend": {
-      "talkId": "git_enemy_friend",
-      "pending": false,
+      "talkid": "git_enemy_friend",
+      "pending": "false",
       "speaker": "Christoffer Eliesen",
       "email": "christoffer.eliesen@knowit.no",
       "speakers": [
@@ -394,8 +394,8 @@
       "country": "Norway"
     },
     "managing_containers_kubernetes": {
-      "talkId": "managing_containers_kubernetes",
-      "pending": false,
+      "talkid": "managing_containers_kubernetes",
+      "pending": "false",
       "speaker": "Ole Bakstad",
       "email": "ole.bakstad@knowit.no",
       "speakers": [
@@ -415,8 +415,8 @@
       "country": "Norway"
     },
     "emerging_architectures": {
-      "talkId": "emerging_architectures",
-      "pending": false,
+      "talkid": "emerging_architectures",
+      "pending": "false",
       "speaker": "Jan Stenberg",
       "email": "jan.stenberg@knowit.se",
       "speakers": [
@@ -436,8 +436,8 @@
       "country": "Sweden"
     },
     "progressive_web_apps": {
-      "talkId": "progressive_web_apps",
-      "pending": false,
+      "talkid": "progressive_web_apps",
+      "pending": "false",
       "speaker": "Thuc Hoang",
       "email": "thuc.hoang@knowit.no",
       "speakers": [
@@ -457,8 +457,8 @@
       "country": "Norway"
     },
     "make_a_programming_language": {
-      "talkId": "make_a_programming_language",
-      "pending": false,
+      "talkid": "make_a_programming_language",
+      "pending": "false",
       "speaker": "Martin Valen",
       "email": "martin.valen@knowit.no",
       "speakers": [
@@ -478,8 +478,8 @@
       "country": "Norway"
     },
     "bimodal_business_intelligence": {
-      "talkId": "bimodal_business_intelligence",
-      "pending": false,
+      "talkid": "bimodal_business_intelligence",
+      "pending": "false",
       "speaker": "Pehr Benderix",
       "email": "pehr.benderix@knowit.se",
       "speakers": [
@@ -490,7 +490,7 @@
       "types": [
         "Short talk (30 min)"
       ],
-      "description": "The digital era we are in has made data to the natural resource of our time. Organisations need to be able to harness data, transform it and derive insights and business value from it in order to survive in accelerating competition. This places increasing demands on organisations’ Business Intelligence to deliver innovative solutions enabling the business to create new and increased business value. Demands that that are hard to satisfy without compromising reliability and security in the existing BI landscape. Bimodal BI is about allowing two versions of BI to coexist in an organisation: BI Type I (Performance) and BI Type II (Innovation). The partition intends to give room for an explorative way of working with data-driven innovation while maintaining strict governance and control of daily business critical reporting and analysis work.",
+      "description": "\"The digital era we are in has made data to the \"\"natural resource” of our time. Organisations need to be able to harness data, transform it and derive insights and business value from it in order to survive in accelerating competition. This places increasing demands on organisations’ Business Intelligence to deliver innovative solutions enabling the business to create new and increased business value. Demands that that are hard to satisfy without compromising reliability and security in the existing BI landscape. Bimodal BI is about allowing two versions of BI to coexist in an organisation: BI Type I (Performance) and BI Type II (Innovation). The partition intends to give room for an explorative way of working with data-driven innovation while maintaining strict governance and control of daily business critical reporting and analysis work.\"",
       "language": "English",
       "languageCode": "en",
       "notes": "",
@@ -498,9 +498,429 @@
       "company": "Knowit Decision Linköping",
       "country": "Sweden"
     },
+    "api_first": {
+      "talkid": "api_first",
+      "pending": "false",
+      "speaker": "Jan Henrik Gundelsby",
+      "email": "jhg@knowit.no",
+      "speakers": [
+        "Jan Henrik Gundelsby"
+      ],
+      "title": "Skalering av store enterprise-systemer med API-first",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "Oslo kommune har over mange år bygget opp et stort felles applikasjonshotell og integrasjonsplattform ved hjelp av mikrotjenester. De kjører nærmere 200 mikrotjenester og er i stadig vekst på grunn av stor politisk satsning på digitale tjenester. Utviklerne jobber etter DevOps-prinsipper på grunn av alle de mange parallelle leveransene til alle kommunens 40 virksomheter. For å skalere plattformen med tanke på antall utviklere, utvidet last, økt mengde parallell aktivitet samt økte krav til time-to-market endrer kommunen nå både overordnet arkitekturmålbilde og strategi for utvikling av nye tjenester. Foredraget vil gi innblikk i veien frem til dagens situasjon, nåbildet og fremtidig målarkitektur.",
+      "language": "Norska",
+      "languageCode": "no",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "react_angular": {
+      "talkid": "react_angular",
+      "pending": "false",
+      "speaker": "Olof Drevin",
+      "email": "olof.drevin@knowit.se",
+      "speakers": [
+        "Olof Drevin"
+      ],
+      "title": "React or angular2?",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "When I say I work as a frontend architect the most common question I get is: Should we use React or Angular? In 15 minutes I'll present my answer based on my 7 years as a front end developer and 4 years as a front end architect, working for companies such as PwC, Unibet and Telia.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Stockholm",
+      "company": "Knowit Development",
+      "country": "Sweden"
+    },
+    "xamarin": {
+      "talkid": "xamarin",
+      "pending": "false",
+      "speaker": "Marit Hellestø",
+      "email": "marit.hellesto@knowit.no",
+      "speakers": [
+        "Marit Hellestø"
+      ],
+      "title": "Xamarin vs Native Development",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "A short look at the pros and cons of Xamarin vs Native Mobile Development.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "how_fast_is_ef": {
+      "talkid": "how_fast_is_ef",
+      "pending": "false",
+      "speaker": "David Lund",
+      "email": "david.lund@knowit.se",
+      "speakers": [
+        "David Lund"
+      ],
+      "title": "How fast is EF really?",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Ett kort tal om jämförelse om att använda databas via ADO.NET, EF6, kanske nHibernate och Dapper.NET. Det bygger på en del Tech spikes jag har gjort på S&P. Tänkte mest diskutera vad jag har gjort och ha en Github med koden så att andra kan testa själva.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Stockholm",
+      "company": "Knowit Development",
+      "country": "Sweden"
+    },
+    "intro_web_components": {
+      "talkid": "intro_web_components",
+      "pending": "false",
+      "speaker": "Christian Cederfjärd",
+      "email": "christian.cederfjard@knowit.se",
+      "speakers": [
+        "Christian Cederfjärd"
+      ],
+      "title": "Introduction to Web Components",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "A concise introduction to the Web Components specifications (Custom Elements, HTML Templates, Shadow DOM and HTML Imports) and how you can make use of them right now.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Göteborg",
+      "company": "Knowit SysDev Göteborg",
+      "country": "Sweden"
+    },
+    "nosql": {
+      "talkid": "nosql",
+      "pending": "false",
+      "speaker": "Andreas Hunderi",
+      "email": "andreas.hunderi@knowit.no",
+      "speakers": [
+        "Andreas Hunderi"
+      ],
+      "title": "NoSQL - flattening data structures",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Storing data in nosql is easy to get started with but dificult to master. I plan to talk about conventions for structuring data in nosql to minimize redundancy.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "agile_cat": {
+      "talkid": "agile_cat",
+      "pending": "false",
+      "speaker": "Krister Karto",
+      "email": "krister.karto@knowit.no",
+      "speakers": [
+        "Krister Karto"
+      ],
+      "title": "Agile as a cat or just going through the motions.",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Agile development is supposed to be the be all end all methodology to follow when developing software. Agile for us developers can range from being great, to the most painstaking experience ever. If the standup is taking forever and sprint planning consist of checking your phone more than the sprint board, something is wrong. The aim of this talk is to use my experience with both working and dysfunctional teams to pinpoint some pitfalls in agile and what can be done avoid them. Occasionally we need a reminder about what agile development is supposed to help us with to make sure we use it make our teams perform at its best.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "http2": {
+      "talkid": "http2",
+      "pending": "false",
+      "speaker": "Asgeir Hølleland",
+      "email": "asgeir.holleland@knowit.no",
+      "speakers": [
+        "Asgeir Hølleland"
+      ],
+      "title": "HTTP/2 - The new speedy gonzales of the web",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Why are we still using a protocol stuck in the 90s? You can always fallback to http/1.x if you really want that backwards compatibility. We might also have to undo some of the HTTP/1.x best practices that will cause performance degradation when loading our sites. There is even a part of the HTTP/2 specification that allows you to push content to the client before they'we even asked for it. HTTP/2 solves many issues but it also introduces some changes that we should know about. By the way, HTTP/2's official symbol is H2 (according to Surma @ Google) so you can go ahead and refer to HTTP/2 as H2.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "react_story_book": {
+      "talkid": "react_story_book",
+      "pending": "false",
+      "speaker": "Alexander Bjerkan",
+      "email": "alb@knowit.no",
+      "speakers": [
+        "Alexander Bjerkan"
+      ],
+      "title": "How to Develop and Document your React Components using React Storybook",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "In this lightning talk I will showcase React Storybook, an UI development tools for React components. By using the right plugins it can also be used to generate documentation and show the usage of your component library.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "scratch": {
+      "talkid": "scratch",
+      "pending": "false",
+      "speaker": "Martin Ivarsson",
+      "email": "martin.ivarsson@knowit.se",
+      "speakers": [
+        "Martin Ivarsson"
+      ],
+      "title": "Kodboken och Scratch - skapandet av framtidens Linus Torvalds?",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Introduktion till Kodboken och Scratch för att skapa förståelse hos barn och vuxna(!) vad programmering är.",
+      "language": "Svenska",
+      "languageCode": "sv",
+      "notes": "",
+      "city": "Göteborg",
+      "company": "Knowit SysDev Göteborg",
+      "country": "Sweden"
+    },
+    "baked_in_security": {
+      "talkid": "baked_in_security",
+      "pending": "false",
+      "speaker": "Ellen Weber",
+      "email": "lnw@knowit.no",
+      "speakers": [
+        "Ellen Weber"
+      ],
+      "title": "Baked-in security",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "In any IT project it is important to think about security right from the start. I'll talk about how agile teams can (and should!) do this and point out some helpful questions to go through.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "rest_service_bus": {
+      "talkid": "rest_service_bus",
+      "pending": "false",
+      "speaker": "Krister Karto",
+      "email": "krister.karto@knowit.no",
+      "speakers": [
+        "Krister Karto"
+      ],
+      "title": "SignalR, Servicebus and REST mixed. What does it mean for your database?",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Using several means of communication for your application can put your architecture to a test and why would you even do that? When using different sets of communication, you are also getting different sets of scopes where you're database is supposed to live. Handling this can be tricky. While developing for FjordTours we have seen the issues that can arise and figured out ways to solve them while trying to keep the code clean and understandable. Throwing MicroServices in the mix as well means the plumbing to set things up has to be repeated for every MicroService. How can this be solved with minimum code repetition.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "angular_angle": {
+      "talkid": "angular_angle",
+      "pending": "false",
+      "speaker": "Dennis Malmgren",
+      "email": "dennis.malmgren@knowit.se",
+      "speakers": [
+        "Dennis Malmgren"
+      ],
+      "title": "Angular at an angle",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "If you build it they will come.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Linköping",
+      "company": "Knowit Experience Linköping",
+      "country": "Sweden"
+    },
+    "kotlin": {
+      "talkid": "kotlin",
+      "pending": "false",
+      "speaker": "Kennet Vuong",
+      "email": "kennet.vuong@knowit.no",
+      "speakers": [
+        "Kennet Vuong"
+      ],
+      "title": "Kotlin – Et språk for alt!",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Du har mest sannsynlig hørt JVM språk som Scala, Clojure, Java, Ceylon eller kanskje Jython eller Jruby? Hold deg fast, Kotlin er enda et nytt språk som kjøres på JVM’en. Kotlin er utviklet av Jetbrains og har endelig kommet ute av betafasen. Kotlin er et enkelt og statisk typet programmeringspråk som er fri for null pointer exceptions og 100% kompatibel med Java, og det kan brukes til mobil- og nettleser utvikling. Målet med denne lyntalen er å gi deg noen nye ideer om hvordan du kan ta i bruk Kotlin i ditt neste prosjekt.",
+      "language": "Norska",
+      "languageCode": "no",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "hackathon_poc": {
+      "talkid": "hackathon_poc",
+      "pending": "false",
+      "speaker": "Simon Nilsson",
+      "email": "simon.nilsson@knowit.se",
+      "speakers": [
+        "Simon Nilsson"
+      ],
+      "title": "How to win a hackathon",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "... or how to create a proof of concept in a day. Simon tells us about the benefits of Hackathons and how his team created a fully working app in a day and won the Spotify hosted hackathon Hack Out West.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Göteborg",
+      "company": "Knowit SysDev Göteborg",
+      "country": "Sweden"
+    },
+    "scalable_css": {
+      "talkid": "scalable_css",
+      "pending": "false",
+      "speaker": "Daniel Hallqvist",
+      "email": "daniel.hallqvist@knowit.no",
+      "speakers": [
+        "Daniel Hallqvist"
+      ],
+      "title": "Practical tips for scalable CSS",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "\"CSS takes a minute to learn, but a lifetime to master\"\", someone probably said some time. I know a lot of developers who dismiss deepening their knowledge in CSS because it's easy and they feel like they know everything already. Then why do most medium-to-larger web projects' stylesheets look like a big pile of s*it? I will run through a few practical tips that I think are handy when working with CSS and how they can keep the stylesheets leaner, more scalable and easier to maintain.\"",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "type_safe_elm": {
+      "talkid": "type_safe_elm",
+      "pending": "false",
+      "speaker": "Runar Furenes",
+      "email": "ruf@knowit.no",
+      "speakers": [
+        "Runar Furenes"
+      ],
+      "title": "Type safe front-end development in Elm",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "Have you ever made changes in JavaScript and felt confident that you didn't break anything? Me neither. Elm is a functional language, which compiles to JavaScript. Elm code is fast, type safe, easy to refactor and highly testable. The Elm compiler provides understandable and helpful error messages, and ensures that no runtime exceptions are possible. This talk introduces the Elm language, followed by a step-by-step demo of how to implement a simple in-browser game in Elm.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "neural_network": {
+      "talkid": "neural_network",
+      "pending": "false",
+      "speaker": "Astrid Tessem",
+      "email": "astrid.tessem@knowit.no",
+      "speakers": [
+        "Astrid Tessem"
+      ],
+      "title": "A beginner's guide to Convolutional Neural Networks",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "In this talk I will provide an overview of what Convolutional Neural Networks are and how they work. I am planning to show a demo at the end of the talk.",
+      "language": "Norska",
+      "languageCode": "no",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "styling_css": {
+      "talkid": "styling_css",
+      "pending": "false",
+      "speaker": "Alexander Bjerkan",
+      "email": "alb@knowit.no",
+      "speakers": [
+        "Alexander Bjerkan"
+      ],
+      "title": "Local styling with CSS Modules",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "CSS is well known for being applied globally. This very behaviour makes it difficult to scale, and it is challenging working with CSS on large and long-lasting codebases. In this talk, we will explore what CSS Modules are, what they intend to solve and how to use them.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "universe_parallell_programming": {
+      "talkid": "universe_parallell_programming",
+      "pending": "false",
+      "speaker": "Andreas Hunderi",
+      "email": "andreas.hunderi@knowit.no",
+      "speakers": [
+        "Andreas Hunderi"
+      ],
+      "title": "Solving the mysteries of the universe with parallel programming",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "How can we harness the power of parallelism to tackle complex problems that can advance our understanding of the universe? The N-body problem is a collection of problems of how objects or particles interact with each other given an initial speed, a direction and a force that acts upon all other ojects (for instance gravity). This is relevant in many aspects of our lives today, like astrophysics, medicine or the simulation of weather patterns. I plan to talk about the N-body problem, and show what a serial and parallel implementation of the problem would look like.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
     "mlaas_machine_learning": {
-      "talkId": "mlaas_machine_learning",
-      "pending": false,
+      "talkid": "mlaas_machine_learning",
+      "pending": "false",
       "speaker": "Anders Breivik",
       "email": "abr@knowit.no",
       "speakers": [
@@ -519,9 +939,240 @@
       "company": "Knowit Objectnet",
       "country": "Norway"
     },
+    "containers_vs_microservices": {
+      "talkid": "containers_vs_microservices",
+      "pending": "false",
+      "speaker": "Stellan Söderstrom",
+      "email": "stellan.soderstrom@knowit.se",
+      "speakers": [
+        "Stellan Söderstrom"
+      ],
+      "title": "Containers and micro services - Architectural considerations and practical use case",
+      "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
+      "description": "Monolithic applications are good for small scale projects, but when you need to scale up usage and involve more teams, it quickly gets problematic. This talk describes how micro services and containers can be used to achieve a scalable architecture. Concrete examples and demonstrations will be used throughout the presentation.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Stockholm",
+      "company": "Knowit Architecture",
+      "country": "Sweden"
+    },
+    "personal_digital_security": {
+      "talkid": "personal_digital_security",
+      "pending": "false",
+      "speaker": "Michael Johansen",
+      "email": "michael.johansen@knowit.no",
+      "speakers": [
+        "Michael Johansen"
+      ],
+      "title": "Personal digital security",
+      "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
+      "description": "\"You are one of the most significant security threats to your company. We all know we are going to fix better passwords / encryption / firewalls / etc. one day. Getting properly hacked is one of those things that is a lot more comfortable to prevent beforehand than to gather the shattered pieces afterwards. In this talk, we will take a practical approach to good personal digital security. We will start with the easy parts before drilling through the layers of security, down to the parts that are unpredictable and dangerous. Bring your laptop and a tin foil hat. Topics include: What it's like to get properly hacked. Using password managers. Operating system security. Browser security. Encryption, firewalls, factors, and other means of protection. All audiences. No code. All practical application. Perfect if you've watched the show \"\"Mr. Robot\"\" You will hopefully learn to, as they say, \"\"get your shit together\"\" when it comes to personal security.\"",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "tensorflow": {
+      "talkid": "tensorflow",
+      "pending": "false",
+      "speaker": "Truls Fretland",
+      "email": "tfret@knowit.no",
+      "speakers": [
+        "Truls Fretland"
+      ],
+      "title": "Bruk av Google Tensorflow i et praktisk kundeprosjekt",
+      "type": "Long talk (60 min)",
+      "types": [
+        "Long talk (60 min)"
+      ],
+      "description": "Dyp læring (deep learning) har den siste tiden fått mye oppmerksomhet på grunn av flere gjennombrudd. Spesielt har Tensorflow rammeverket til Google blitt populært. I denne presentasjonen vil bruk av Google Tensorflow i et faktisk kundeprosjekt bli demonstrert.",
+      "language": "Norska",
+      "languageCode": "no",
+      "notes": "",
+      "city": "Stavanger",
+      "company": "Knowit Stavanger",
+      "country": "Norway"
+    },
+    "aurelia_wf": {
+      "talkid": "aurelia_wf",
+      "pending": "false",
+      "speaker": "Erlend Andresen",
+      "email": "erlend.andresen@knowit.no",
+      "speakers": [
+        "Erlend Andresen"
+      ],
+      "title": "Modern Times - the Aurelia web framework",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "In this talk we will have look at the aurelia.io web framework and its take on the competitive web framework race. Web Components and a modular platform is key to be a competitive framework nowadays without being in your way as a developer. I am planning to demo some of the features Aurelia provides.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "azure_functions": {
+      "talkid": "azure_functions",
+      "pending": "false",
+      "speaker": "Fredrik Claesson",
+      "email": "fredrik.claesson@knowit.se",
+      "speakers": [
+        "Fredrik Claesson"
+      ],
+      "title": "Azure Functions - Yet another event driven option",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "In Azure you can trigger on events by Queue triggers, blob triggers, Azure Service Bus subscribers, Event hub processor. What does Azure Functions add to the table? Whats the use case? Pros and cons?",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Göteborg",
+      "company": "Knowit SysDev Göteborg",
+      "country": "Sweden"
+    },
+    "spring_bootapp": {
+      "talkid": "spring_bootapp",
+      "pending": "false",
+      "speaker": "Gunnar Velle",
+      "email": "gv@knowit.no",
+      "speakers": [
+        "Gunnar Velle"
+      ],
+      "title": "Overvåking av Spring Boot applikasjoner med Spring Boot Admin og Javamelody",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "Tenk om det hadde fantes et verktøy som lar deg enkelt få oversikten over alle spring boot applikasjonene dine, som lot deg få innblikk i noværande minne og prosessorbruk og som lot deg styre loggnivå runtime og i tillegg gi tilgang til JMX-konfigurasjon av applikasjonen. Det finnes og heiter Spring Boot Admin. Tenk om det også hadde fantes et verktøy som gir deg historiske oversikter over alt av ressursbruk i applikasjonene dine i tillegg til full logg over http-trafikk og sesjonsinformasjon med mye mer. Det finnes også og heter Javamelody. Denne presentasjonen viser kva vi gjorde i DSB-prosjektet med bruk av Spring Boot Admin og Javamelody ved hjelp av en egen applikasjon som samler alt av overvåkingsdata på en plass og som gir verdifull innsikt i kjøremiljøet ditt.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "shadow_dom": {
+      "talkid": "shadow_dom",
+      "pending": "false",
+      "speaker": "Johannes Giske",
+      "email": "johannes.giske@knowit.no",
+      "speakers": [
+        "Johannes Giske"
+      ],
+      "title": "Shadow DOM",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "An introduction to the Shadow DOM which is becomming available in newer browsers and some of the new possibilities this enables in the near future.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Bergen",
+      "company": "Knowit Experience Bergen",
+      "country": "Norway"
+    },
+    "chrome_extension_browseit": {
+      "talkid": "chrome_extension_browseit",
+      "pending": "false",
+      "speaker": "Michael Johansen",
+      "email": "michael.johansen@knowit.no",
+      "speakers": [
+        "Michael Johansen"
+      ],
+      "title": "A Chrome extension called BrowseIt",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "A practical talk about Chrome extensions, exemplified by an extension used as an internal onboarding tool in Knowit Objectnet.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "microsoft_hololens": {
+      "talkid": "microsoft_hololens",
+      "pending": "false",
+      "speaker": "Christian Egeberg",
+      "email": "ceg@knowit.no",
+      "speakers": [
+        "Christian Egeberg"
+      ],
+      "title": "Programming the Microsoft HoloLens",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "What makes the Microsoft HoloLens different from other Virtual Reality headsets like Oculus Rift and HTC Vive? What can you use a HoloLens for now, and which direction is it moving forward? We'll look at ways to program the HoloLens, and API support for world coordinates, gestures, gaze, voice, spatial sound and spatial mapping. Yes, we'll bring a HoloLens to KDS 2016.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Oslo",
+      "company": "Knowit Objectnet",
+      "country": "Norway"
+    },
+    "sp_framework_react_office365": {
+      "talkid": "sp_framework_react_office365",
+      "pending": "false",
+      "speaker": "Toni Kaihola",
+      "email": "toni.kaihola@knowit.fi",
+      "speakers": [
+        "Toni Kaihola"
+      ],
+      "title": "SharePoint Framework, ReactJS and Webpack in Office 365 development",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "There's something afoot in SharePoint land! Come with me as I explore the new client-side SharePoint Framework, it's development tools as well as ReactJS and Webpack. The session will include quick introductions to ReactJS and Webpack, after which we'll see how to create your first SharePoint Framework webpart.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Helsinki",
+      "company": "Knowit OY Group",
+      "country": "Finland"
+    },
+    "oracle_apex": {
+      "talkid": "oracle_apex",
+      "pending": "false",
+      "speaker": "Ove Holm",
+      "email": "ove.holm@knowit.se",
+      "speakers": [
+        "Ove Holm"
+      ],
+      "title": "Oracle Apex 5.0 - Rapid GUI development",
+      "type": "Short talk (30 min)",
+      "types": [
+        "Short talk (30 min)"
+      ],
+      "description": "Oracle recently released version 5 of their Application Express product, a free GUI well suited for any system that uses an Oracle database. Currently, many customers are looking to replace their old Oracle Forms systems (which has reached End-Of-Life) and Apex is a fast-start, no-license fee environment which leverages existing PL/SQL-competence and can scale to enterprise application size.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": "Linköping",
+      "company": "Knowit Decision Linköping",
+      "country": "Sweden"
+    },
     "drones_with_js": {
-      "talkId": "drones_with_js",
-      "pending": false,
+      "talkid": "drones_with_js",
+      "pending": "false",
       "speaker": "Anders Breivik",
       "email": "abr@knowit.no",
       "speakers": [
