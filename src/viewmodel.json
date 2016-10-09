@@ -175,7 +175,7 @@
             },
             {
               "room": "C4",
-              "slots": [ "http2" ]
+              "slots": [ "react_story_book" ]
             },
             {
               "room": "24",
