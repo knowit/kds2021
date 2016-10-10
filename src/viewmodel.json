@@ -249,8 +249,9 @@
             }
           ]
         },
+        { "time": "10:10-10:30 Forenoon coffee" },
         {
-          "time": "10:20-11:30 Long talks",
+          "time": "10:30-11:30 Long talks",
           "entries": [
             {
               "room": "C3",
