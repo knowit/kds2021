@@ -307,15 +307,15 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "sp_framework_react_office365" ]
+              "slots": [ "drones_with_js" ]
             },
             {
               "room": "24+25",
-              "slots": [ "oracle_apex" ]
+              "slots": [ "sp_framework_react_office365" ]
             },
             {
               "room": "26",
-              "slots": [ "drones_with_js" ]
+              "slots": [ "oracle_apex" ]
             }
           ]
         },
