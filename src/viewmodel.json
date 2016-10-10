@@ -153,7 +153,7 @@
             },
             {
               "room": "24",
-              "slots": [ "nosql" ]
+              "slots": [ "To be confirmed" ]
             },
             {
               "room": "25",
@@ -192,11 +192,11 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [ "angular_angle" ]
+              "slots": [ "kotlin" ]
             },
             {
               "room": "24",
-              "slots": [ "kotlin" ]
+              "slots": [ "To be confirmed" ]
             },
             {
               "room": "25",
@@ -604,27 +604,6 @@
       "company": "Knowit SysDev Göteborg",
       "country": "Sweden"
     },
-    "nosql": {
-      "talkId": "nosql",
-      "pending": false,
-      "speaker": "Andreas Hunderi",
-      "email": "andreas.hunderi@knowit.no",
-      "speakers": [
-        "Andreas Hunderi"
-      ],
-      "title": "NoSQL - flattening data structures",
-      "type": "Lightning talk (15 min)",
-      "types": [
-        "Lightning talk (15 min)"
-      ],
-      "description": "Storing data in nosql is easy to get started with but dificult to master. I plan to talk about conventions for structuring data in nosql to minimize redundancy.",
-      "language": "English",
-      "languageCode": "en",
-      "notes": "",
-      "city": "Bergen",
-      "company": "Knowit Experience Bergen",
-      "country": "Norway"
-    },
     "agile_cat": {
       "talkId": "agile_cat",
       "pending": false,
@@ -750,27 +729,6 @@
       "city": "Bergen",
       "company": "Knowit Experience Bergen",
       "country": "Norway"
-    },
-    "angular_angle": {
-      "talkId": "angular_angle",
-      "pending": false,
-      "speaker": "Dennis Malmgren",
-      "email": "dennis.malmgren@knowit.se",
-      "speakers": [
-        "Dennis Malmgren"
-      ],
-      "title": "Angular at an angle",
-      "type": "Lightning talk (15 min)",
-      "types": [
-        "Lightning talk (15 min)"
-      ],
-      "description": "If you build it they will come.",
-      "language": "English",
-      "languageCode": "en",
-      "notes": "",
-      "city": "Linköping",
-      "company": "Knowit Experience Linköping",
-      "country": "Sweden"
     },
     "kotlin": {
       "talkId": "kotlin",
