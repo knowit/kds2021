@@ -85,10 +85,6 @@
           "time": "13:00-14:00 Long talks",
           "entries": [
             {
-              "room": "26",
-              "slots": [ "health_care_servicebus" ]
-            },
-            {
               "room": "C3",
               "slots": [ "f#_whats_in_it_4_me" ]
             },
@@ -99,16 +95,16 @@
             {
               "room": "25",
               "slots": [ "managing_containers_kubernetes" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "health_care_servicebus" ]
             }
           ]
         },
         {
           "time": "14:10-14:40 Short talks",
           "entries": [
-            {
-              "room": "26",
-              "slots": [ "emerging_architectures" ]
-            },
             {
               "room": "C3",
               "slots": [ "progressive_web_apps" ]
@@ -120,16 +116,16 @@
             {
               "room": "25",
               "slots": [ "bimodal_business_intelligence" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "emerging_architectures" ]
             }
           ]
         },
         {
           "time": "14:50-15:05 Lightning talks",
           "entries": [
-            {
-              "room": "26",
-              "slots": [ "api_first" ]
-            },
             {
               "room": "C3",
               "slots": [ "react_angular" ]
@@ -141,16 +137,16 @@
             {
               "room": "25",
               "slots": [ "how_fast_is_ef" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "api_first" ]
             }
           ]
         },
         {
           "time": "15:10-15:25 Lightning talks",
           "entries": [
-            {
-              "room": "26",
-              "slots": [ "api_first" ]
-            },
             {
               "room": "C3",
               "slots": [ "intro_web_components" ]
@@ -162,6 +158,10 @@
             {
               "room": "25",
               "slots": [ "agile_cat" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "api_first" ]
             }
           ]
         },
@@ -169,10 +169,6 @@
         {
           "time": "15:45-16:00 Lightning talks",
           "entries": [
-            {
-              "room": "26",
-              "slots": [ "http2" ]
-            },
             {
               "room": "C3",
               "slots": [ "react_story_book" ]
@@ -184,16 +180,16 @@
             {
               "room": "25",
               "slots": [ "baked_in_security" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "http2" ]
             }
           ]
         },
         {
           "time": "16:05-16:20 Lightning talks",
           "entries": [
-            {
-              "room": "26",
-              "slots": [ "rest_service_bus" ]
-            },
             {
               "room": "C3",
               "slots": [ "angular_angle" ]
@@ -205,6 +201,10 @@
             {
               "room": "25",
               "slots": [ "hackathon_poc" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "rest_service_bus" ]
             }
           ]
         },
