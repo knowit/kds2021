@@ -89,7 +89,7 @@
               "slots": [ "health_care_servicebus" ]
             },
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "f#_whats_in_it_4_me" ]
             },
             {
@@ -110,7 +110,7 @@
               "slots": [ "emerging_architectures" ]
             },
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "progressive_web_apps" ]
             },
             {
@@ -131,7 +131,7 @@
               "slots": [ "api_first" ]
             },
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "react_angular" ]
             },
             {
@@ -152,7 +152,7 @@
               "slots": [ "api_first" ]
             },
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "intro_web_components" ]
             },
             {
@@ -174,7 +174,7 @@
               "slots": [ "http2" ]
             },
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "react_story_book" ]
             },
             {
@@ -195,7 +195,7 @@
               "slots": [ "rest_service_bus" ]
             },
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "angular_angle" ]
             },
             {
@@ -219,7 +219,7 @@
           "time": "09:00-09:30 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "scalable_css" ]
             },
             {
@@ -236,7 +236,7 @@
           "time": "09:40-10:10 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "styling_css" ]
             },
             {
@@ -253,7 +253,7 @@
           "time": "10:20-11:30 Long talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "containers_vs_microservices" ]
             },
             {
@@ -270,7 +270,7 @@
           "time": "11:40-12:10 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "aurelia_wf" ]
             },
             {
@@ -288,7 +288,7 @@
           "time": "13:10-13:40 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "shadow_dom" ]
             },
             {
@@ -305,7 +305,7 @@
           "time": "13:50-14:20 Short talks",
           "entries": [
             {
-              "room": "C4",
+              "room": "C3",
               "slots": [ "sp_framework_react_office365" ]
             },
             {
