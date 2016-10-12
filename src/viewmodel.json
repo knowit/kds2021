@@ -764,9 +764,9 @@
       "types": [
         "Lightning talk (15 min)"
       ],
-      "description": "Available shortly.",
-      "language": "Svenska",
-      "languageCode": "sv",
+      "description": "In this lightning talk I will talk about the frontends we are building to support the new system 'Ladok'’. Frontends that will be used by all 37 universities who are members in the Ladok community. I will talk about some of the choices made in the process as well as the frameworks chosen and the problems we have faced.",
+      "language": "English",
+      "languageCode": "en",
       "notes": "",
       "city": "Umeå",
       "company": "Knowit Norrland",
