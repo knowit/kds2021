@@ -196,7 +196,7 @@
             },
             {
               "room": "24",
-              "slots": [ "To be confirmed" ]
+              "slots": [ "frontends_for_enterprise_system" ]
             },
             {
               "room": "25",
@@ -750,6 +750,27 @@
       "city": "Oslo",
       "company": "Knowit Objectnet",
       "country": "Norway"
+    },
+    "frontends_for_enterprise_system": {
+      "talkId": "frontends_for_enterprise_system",
+      "pending": false,
+      "speaker": "Magnus Uddstål",
+      "email": "magnus.uddstal@knowit.se",
+      "speakers": [
+        "Magnus Uddstål"
+      ],
+      "title": "Building modern FrontEnds for a new large enterprise system",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "Available shortly.",
+      "language": "Svenska",
+      "languageCode": "se",
+      "notes": "",
+      "city": "Umeå",
+      "company": "Knowit Norrland",
+      "country": "Sweden"
     },
     "hackathon_poc": {
       "talkId": "hackathon_poc",
