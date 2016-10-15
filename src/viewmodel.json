@@ -223,11 +223,11 @@
               "slots": [ "scalable_css" ]
             },
             {
-              "room": "24+25",
+              "room": "24",
               "slots": [ "type_safe_elm" ]
             },
             {
-              "room": "26",
+              "room": "25",
               "slots": [ "neural_network" ]
             }
           ]
@@ -240,11 +240,11 @@
               "slots": [ "styling_css" ]
             },
             {
-              "room": "24+25",
+              "room": "24",
               "slots": [ "universe_parallell_programming" ]
             },
             {
-              "room": "26",
+              "room": "25",
               "slots": [ "mlaas_machine_learning" ]
             }
           ]
@@ -258,11 +258,11 @@
               "slots": [ "containers_vs_microservices" ]
             },
             {
-              "room": "24+25",
+              "room": "24",
               "slots": [ "personal_digital_security" ]
             },
             {
-              "room": "26",
+              "room": "25",
               "slots": [ "tensorflow" ]
             }
           ]
@@ -275,11 +275,11 @@
               "slots": [ "aurelia_wf" ]
             },
             {
-              "room": "24+25",
+              "room": "24",
               "slots": [ "azure_functions" ]
             },
             {
-              "room": "26",
+              "room": "25",
               "slots": [ "spring_bootapp" ]
             }
           ]
@@ -293,11 +293,11 @@
               "slots": [ "shadow_dom" ]
             },
             {
-              "room": "24+25",
+              "room": "24",
               "slots": [ "chrome_extension_browseit" ]
             },
             {
-              "room": "26",
+              "room": "25",
               "slots": [ "microsoft_hololens" ]
             }
           ]
@@ -310,11 +310,11 @@
               "slots": [ "drones_with_js" ]
             },
             {
-              "room": "24+25",
+              "room": "24",
               "slots": [ "sp_framework_react_office365" ]
             },
             {
-              "room": "26",
+              "room": "25",
               "slots": [ "oracle_apex" ]
             }
           ]
