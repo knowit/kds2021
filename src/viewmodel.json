@@ -165,7 +165,7 @@
             }
           ]
         },
-        { "time": "15:25-15:45 Afternoon Coffee"},
+        { "time": "15:25-15:45 Afternoon coffee and hotel check-in, both in the conference lobby"},
         {
           "time": "15:45-16:00 Lightning talks",
           "entries": [
@@ -209,7 +209,7 @@
           ]
         },
         { "time": "16:30-18:00 Open Space" },
-        { "time": "19:00-22:00 Conference dinner" }
+        { "time": "19:00-22:00 Conference dinner, at the 5th floor" }
       ]
     },
     {
