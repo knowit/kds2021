@@ -1142,7 +1142,7 @@
       "types": [
         "Short talk (30 min)"
       ],
-      "description": "Oracle recently released version 5 of their Application Express product, a free GUI well suited for any system that uses an Oracle database. Currently, many customers are looking to replace their old Oracle Forms systems (which has reached End-Of-Life) and Apex is a fast-start, no-license fee environment which leverages existing PL/SQL-competence and can scale to enterprise application size.",
+      "description": "Oracle recently released version 5 of their Application Express product, a free GUI well suited for any system that uses an Oracle database. Currently, many customers are looking to replace their old Oracle Forms systems (which is approaching End-of-Life) and Apex is a fast-start, no-license fee environment which leverages existing PL/SQL-competence and can scale to enterprise application size.",
       "language": "English",
       "languageCode": "en",
       "notes": "",
