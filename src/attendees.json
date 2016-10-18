@@ -394,7 +394,7 @@
     },
     {
       "name": "Magnus Uddstål",
-      "speaker": false,
+      "speaker": true,
       "city": "Umeå",
       "company": "Knowit Norrland",
       "country": "Sweden"
