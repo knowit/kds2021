@@ -296,7 +296,7 @@
             },
             {
               "room": "26",
-              "slots": [ "MS Hololens Demo" ]
+              "slots": [ "<strong>Hololens Demo</strong>" ]
             }
           ]
         },
@@ -315,6 +315,10 @@
             {
               "room": "25",
               "slots": [ "microsoft_hololens" ]
+            },
+            {
+              "room": "26",
+              "slots": [ " " ]
             }
           ]
         },
