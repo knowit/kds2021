@@ -229,6 +229,10 @@
             {
               "room": "25",
               "slots": [ "neural_network" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "MS Hololens Demo" ]
             }
           ]
         },
@@ -246,6 +250,10 @@
             {
               "room": "25",
               "slots": [ "mlaas_machine_learning" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "MS Hololens Demo" ]
             }
           ]
         },
@@ -264,6 +272,10 @@
             {
               "room": "25",
               "slots": [ "tensorflow" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "Demo of Microsoft Hololens" ]
             }
           ]
         },
@@ -281,6 +293,10 @@
             {
               "room": "25",
               "slots": [ "spring_bootapp" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "MS Hololens Demo" ]
             }
           ]
         },
@@ -316,6 +332,10 @@
             {
               "room": "25",
               "slots": [ "oracle_apex" ]
+            },
+            {
+              "room": "26",
+              "slots": [ "MS Hololens Demo" ]
             }
           ]
         },
