@@ -232,7 +232,7 @@
             },
             {
               "room": "26",
-              "slots": [ "MS Hololens Demo" ]
+              "slots": [ "Demo of Microsoft Hololens" ]
             }
           ]
         },
@@ -253,7 +253,7 @@
             },
             {
               "room": "26",
-              "slots": [ "MS Hololens Demo" ]
+              "slots": [ "Hololens demo" ]
             }
           ]
         },
@@ -275,7 +275,7 @@
             },
             {
               "room": "26",
-              "slots": [ "Demo of Microsoft Hololens" ]
+              "slots": [ "Hololens demo" ]
             }
           ]
         },
@@ -296,7 +296,7 @@
             },
             {
               "room": "26",
-              "slots": [ "<strong>Hololens Demo</strong>" ]
+              "slots": [ "Hololens Demo" ]
             }
           ]
         },
@@ -339,7 +339,7 @@
             },
             {
               "room": "26",
-              "slots": [ "MS Hololens Demo" ]
+              "slots": [ "Hololens Demo" ]
             }
           ]
         },
