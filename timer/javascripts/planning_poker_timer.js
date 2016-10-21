@@ -2,9 +2,9 @@ var Counter = {
 
   init: function() {
     // http://kds.knowit.no/timer/?precision=1&time=600&restartAt=-120&colours[10]=ff0000&colours[0]=FF0000
-    // this.query = new Hash(window.location.search.toQueryParams());
+    this.query = new Hash(window.location.search.toQueryParams());
+    this.time = (this.query.get('time') || 900) * 1;  
     this.query = new Hash("?precision=1&time=600&restartAt=-120&colours%5B10%5D=ff0000&colours%5B0%5D=FF0000".toQueryParams());
-    this.time = (this.query.get('time') || 10) * 1;
     this.precision = (this.query.get('precision') || 2) * 1;
     this.initialColor = '#' + (this.query.get('initialColour') || '00ff00');
     this.restartAt = this.query.get('restartAt');
