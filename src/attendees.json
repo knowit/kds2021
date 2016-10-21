@@ -674,7 +674,7 @@
     },
     {
       "name": "Thuc Hoang",
-      "speaker": false,
+      "speaker": true,
       "city": "Oslo",
       "company": "Knowit Objectnet",
       "country": "Norway"
