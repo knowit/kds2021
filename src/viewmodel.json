@@ -1,13 +1,13 @@
 {
   "title": "Knowit Developer Summit",
   "event": {
-    "date": "21 - 22 October 2016",
-    "longDate": "Friday, 21st - Saturday, 22nd October 2016",
-    "venue": "Radisson Blu Waterfront",
-    "venueUrl": "https://www.radissonblu.com/en/waterfronthotel-stockholm",
-    "city": "Stockholm",
-    "country": "Sweden",
-    "gmapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.1851871275999!2d18.056061999999997!3d59.329861999999885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d604f482201%3A0x858ff8c54ed4011b!2sRadisson+Blu+Waterfront+Hotel!5e0!3m2!1sno!2sno!4v1396439444495"
+    "date": "26 - 27 January 2018",
+    "longDate": "Friday, 26st - Saturday, 27nd January 2018",
+    "venue": "Thon Hotel Opera",
+    "venueUrl": "https://www.thonhotels.no/hoteller/norge/oslo/thon-hotel-opera",
+    "city": "Oslo",
+    "country": "Norway",
+    "gmapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32005.79851825295!2d10.718292777066187!3d59.90953257140824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e8a48ee3e9b%3A0xc4f89a926a96cd2e!2sThon+Hotel+Opera!5e0!3m2!1sno!2sno!4v1499322616064"
   },
   "cfp": {
     "submissionDeadline": "August 31th, 2016",
