@@ -79,7 +79,7 @@
     {
       "day": "Friday, 26th",
       "collections": [
-        { "time": "11:00-11:20 Kick-off / meet and greet" },
+        { "time": "11:00-11:30 Welcome / meet and greet" },
         { "time": "11:30-12:30 Lunch" },
         {
           "time": "12:30-12:45 Lightning talks",
@@ -103,7 +103,7 @@
           ]
         },
         {
-          "time": "12:55-13:05 Lightning talks",
+          "time": "12:50-13:05 Lightning talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -144,9 +144,9 @@
             }
           ]
         },
-        { "time": "13:25-13:45 Break"},
+        { "time": "13:25-13:40 Break"},
         {
-          "time": "13:45-14:15 Short talks",
+          "time": "13:40-14:10 Short talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -167,7 +167,7 @@
           ]
         },
         {
-          "time": "14:15-14:45 Short talks",
+          "time": "14:20-14:50 Short talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -187,7 +187,7 @@
             }
           ]
         },
-        { "time": "14:45-15:00 Break and hotel check-in"},
+        { "time": "14:50-15:00 Short break and hotel check-in"},
         {
           "time": "15:00-15:30 Short talks",
           "entries": [
@@ -209,8 +209,9 @@
             }
           ]
         },
+        { "time": "15:30-15:40 Short break and hotel check-in"},
         {
-          "time": "15:30-16:00 Short talks",
+          "time": "15:40-16:10 Short talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -230,8 +231,9 @@
             }
           ]
         },
+        { "time": "16:10-16:20 Short break and hotel check-in"},
         {
-          "time": "16:00-16:30 Short talks",
+          "time": "16:20-16:50 Short talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -251,9 +253,9 @@
             }
           ]
         },
-        { "time": "16:30-16:45 Break and hotel check-in"},
-        { "time": "16:45-17:00 Open Space Introduction" },
-        { "time": "17:00-18:00 Open Space" },
+        { "time": "16:50-17:00 Short break and hotel check-in"},
+        { "time": "17:00-17:15 Open Space Introduction" },
+        { "time": "17:15-18:15 Open Space" },
         { "time": "20:00-23:00 Conference dinner, around Oslo" }
       ]
     },
@@ -281,9 +283,29 @@
             }
           ]
         },
-        { "time": "11:15-11:30 Break" },
         {
-          "time": "11:30-12:00 Short talks",
+          "time": "09:40-11:10 Long talks",
+          "entries": [
+            {
+              "room": "Flagstad",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Boheme",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Traviata",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "Rigoletto",
+              "slots": [ "TBC" ]
+            }
+          ]
+        },
+        {
+          "time": "11:20-11:50 Short talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -325,7 +347,7 @@
           ]
         },
         {
-          "time": "12:30-13:00 Short talks",
+          "time": "12:40-13:10 Short talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -345,7 +367,7 @@
             }
           ]
         },
-        { "time": "13:00-14:00 Conference Lunch" },
+        { "time": "13:10-14:00 Conference Lunch" },
         {
           "time": "14:00-14:30 Short talks",
           "entries": [
@@ -368,7 +390,7 @@
           ]
         },
         {
-          "time": "14:30-15:00 Short talks",
+          "time": "14:40-15:10 Short talks",
           "entries": [
             {
               "room": "Flagstad",
@@ -388,13 +410,13 @@
             }
           ]
         },
-        { "time": "15:00-15:10 Break" },
+        { "time": "15:10-15:20 Break" },
         {
-          "time": "15:10-15:30 Keynote",
+          "time": "15:20-15:50 Keynote",
           "details": "Keynote speaker is not yet confirmed"
         },
         {
-          "time": "15:30-15:40 Conference closing"
+          "time": "15:50-16:00 Conference closing"
         }
       ]
     }
