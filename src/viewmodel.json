@@ -527,7 +527,7 @@
       "company": "Knowit Experience Bergen",
       "country": null
     },
-    "turn_web_page_into_an_api_with_aws_lambda": {
+    "web_page_api_aws_lambda": {
       "talkId": "web_page_api_aws_lambda",
       "pending": false,
       "speaker": "Runar Furenes",
