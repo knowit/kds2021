@@ -107,19 +107,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "web_page_api_aws_lambda" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "lei_av_darlige_repl" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "javascript_state_of_affairs" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "maskinlæring_parkeringsgebyrklager_oslo_kommune" ]
             }
           ]
         },
@@ -528,7 +528,7 @@
       "country": null
     },
     "turn_web_page_into_an_api_with_aws_lambda": {
-      "talkId": "turn_web_page_into_an_api_with_aws_lambda",
+      "talkId": "web_page_api_aws_lambda",
       "pending": false,
       "speaker": "Runar Furenes",
       "email": "ruf@knowit.no",
