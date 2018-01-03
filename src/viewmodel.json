@@ -103,7 +103,7 @@
           ]
         },
         {
-          "time": "14:10-14:40 Short talks",
+          "time": "12:55-13:05 Lightning talks",
           "entries": [
             {
               "room": "C3",
@@ -124,7 +124,7 @@
           ]
         },
         {
-          "time": "14:50-15:05 Lightning talks",
+          "time": "13:10-13:25 Lightning talks",
           "entries": [
             {
               "room": "C3",
@@ -144,8 +144,9 @@
             }
           ]
         },
+        { "time": "13:25-13:45 Break"},
         {
-          "time": "15:10-15:25 Lightning talks",
+          "time": "13:45-14:15 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -165,9 +166,8 @@
             }
           ]
         },
-        { "time": "15:25-15:45 Afternoon coffee and hotel check-in, both in the conference lobby"},
         {
-          "time": "15:45-16:00 Lightning talks",
+          "time": "14:15-14:45 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -187,8 +187,9 @@
             }
           ]
         },
+        { "time": "14:45-15:00 Break and hotel check-in"},
         {
-          "time": "16:05-16:20 Lightning talks",
+          "time": "15:00-15:30 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -208,8 +209,52 @@
             }
           ]
         },
-        { "time": "16:30-18:00 Open Space" },
-        { "time": "19:00-22:00 Conference dinner, at the 5th floor" }
+        {
+          "time": "15:30-16:00 Short talks",
+          "entries": [
+            {
+              "room": "Flagstad",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Boheme",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Traviata",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "Rigoletto",
+              "slots": [ "TBC" ]
+            }
+          ]
+        },
+        {
+          "time": "16:00-16:30 Short talks",
+          "entries": [
+            {
+              "room": "Flagstad",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Boheme",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Traviata",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "Rigoletto",
+              "slots": [ "TBC" ]
+            }
+          ]
+        },
+        { "time": "16:30-16:45 Break and hotel check-in"},
+        { "time": "16:45-17:00 Open Space Introduction" },
+        { "time": "17:00-18:00 Open Space" },
+        { "time": "20:00-23:00 Conference dinner, around Oslo" }
       ]
     },
     {
@@ -237,7 +282,29 @@
           ]
         },
         {
-          "time": "09:40-10:10 Short talks",
+          "time": "09:30-11:15 Long talks",
+          "entries": [
+            {
+              "room": "Flagstad",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Boheme",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "La Traviata",
+              "slots": [ "TBC" ]
+            },
+            {
+              "room": "Rigoletto",
+              "slots": [ "TBC" ]
+            }
+          ]
+        },
+        { "time": "11:15-11:30 Break" },
+        {
+          "time": "11:30-12:00 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -257,9 +324,8 @@
             }
           ]
         },
-        { "time": "10:10-10:30 Forenoon coffee" },
         {
-          "time": "10:30-11:30 Long talks",
+          "time": "12:00-12:30 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -280,7 +346,7 @@
           ]
         },
         {
-          "time": "11:40-12:10 Short talks",
+          "time": "12:30-13:00 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -300,9 +366,9 @@
             }
           ]
         },
-        { "time": "12:10-13:10 Conference Lunch" },
+        { "time": "13:00-14:00 Conference Lunch" },
         {
-          "time": "13:10-13:40 Short talks",
+          "time": "14:00-14:30 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -323,7 +389,7 @@
           ]
         },
         {
-          "time": "13:50-14:20 Short talks",
+          "time": "14:30-15:00 Short talks",
           "entries": [
             {
               "room": "C3",
@@ -343,13 +409,13 @@
             }
           ]
         },
-        { "time": "14:20-14:40 Afternoon coffee" },
+        { "time": "15:00-15:10 Break" },
         {
-          "time": "14:40-15:10 Johan Strid",
-          "details": "Johan Strid, Business Area Manager, Knowit Solutions, with a short talk about Knowit, trends, openness and other things."
+          "time": "15:10-15:30 Keynote",
+          "details": "Keynote speaker is not yet confirmed"
         },
         {
-          "time": "15:10-15:20 Conference closing"
+          "time": "15:30-15:40 Conference closing"
         }
       ]
     }
