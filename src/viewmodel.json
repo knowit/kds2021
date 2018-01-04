@@ -237,19 +237,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "mikrotjenester_cdc" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "koden_betyr_ingenting" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "in_rust_i_trust" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "machine_learning_challenges" ]
             }
           ]
         },
@@ -781,8 +781,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "koden_din_betyr_ingenting": {
-      "talkId": "koden_din_betyr_ingenting",
+    "koden_betyr_ingenting": {
+      "talkId": "koden_betyr_ingenting",
       "pending": false,
       "speaker": "Astrid Tessem",
       "email": "astrid.tessem@knowit.no",
@@ -928,29 +928,29 @@
       "company": "Knowit Experience Oslo",
       "country": null
     },
-    "mikrotjenester_consumer_driven_contracts": {
-      "talkId": "mikrotjenester_consumer_driven_contracts",
+    "mikrotjenester_cdc": {
+      "talkId": "mikrotjenester_cdc",
       "pending": false,
       "speaker": "Henrik Stene",
       "email": "henrik.stene@knowit.no",
       "speakers": [
         "Henrik Stene"
       ],
-      "title": "Trygg release av mikrotjenester med Consumer Driven Contracts",
+      "title": "Deploy microservices confidently using Consumer Driven Contracts",
       "type": "Presentation (30 min)",
       "types": [
         "Presentation (30 min)"
       ],
-      "description": "I en verden der alt skal være mikrotjenester oppdager du fort at det kan være skummelt å rulle ut nye versjoner. I en mikrotjenestearkitektur kan det være en mengde applikasjoner som bruker dine api-er, kanskje til og med så mange at du ikke helt vet hvilke applikasjoner som faktisk bruker tjenesten din. I denne presentasjonen skal jeg vise deg hvordan du kan rulle ut nye versjoner av din tjeneste og samtidig være sikker på at du ikke vil brekke noen av applikasjonene som bruker tjenesten du nettopp oppdaterte. Consumer Driven Contracts (CDC) er en måte å sørge for at de som konsumerer dine api-er kan gi tjenesten din det som trengs for å ha gode interne tester. I denne talken vil jeg fortelle om CDC og demonstrere dette ved hjelp av Pacts.",
-      "language": "Norska",
-      "languageCode": "no",
+      "description": "Consumer Driven Contracts is a testing paradigm that let API-consumers communicate to the API-providers how they are using their services. This talk discusses software testing, how and when to use Consumer Driven Contract, and how Consumer Driven Contracts can make developers more confident. It also includes live coding to show how to implement Consumer Driven Contracts using the Pact framework. To increase the velocity and reduce the cost of microservices development, it is key to be able to build and deploy new versions with confidence that you don't break any dependencies. Microservices are easy to build and run, but they quickly become a tangled web of dependencies that slow down development and result in broken dependencies. Organizations that transition from a traditional monolithic design to a microservice architecture, will soon realize that it is hard to keep track of all dependencies. Consumer Driven Contracts is a testing paradigm that helps developers keep control on all dependencies in a distributed system and this talk will tell more about how to use it and show how to do so in a live demo.",
+      "language": "English",
+      "languageCode": "en",
       "notes": "",
       "city": null,
       "company": "Knowit Objectnet",
       "country": null
     },
-    "machine_learning_challenges_and_approaches.": {
-      "talkId": "machine_learning_challenges_and_approaches.",
+    "machine_learning_challenges": {
+      "talkId": "machine_learning_challenges",
       "pending": false,
       "speaker": "Ivan Starenius",
       "email": "ivan.starenius@knowit.se",
@@ -971,8 +971,8 @@
       "company": "Knowit Decision Helikopter",
       "country": null
     },
-    "iot_från_grunden_internetuppkopplad_lampa": {
-      "talkId": "iot_från_grunden_internetuppkopplad_lampa",
+    "iot_från_grunden": {
+      "talkId": "iot_från_grunden",
       "pending": false,
       "speaker": "Jon Johnson",
       "email": "jon.johnson@knowit.se",
