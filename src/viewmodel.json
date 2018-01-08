@@ -26,47 +26,10 @@
     "submissions": [
       [
         "A farewell to JavaScript? Looking at Scala.js",
-        "Building Front-end using Yeoman, Gulp & More!",
-        "Building Universal Windows Apps using the Unity game engine and Visual Studio",
-        "Continous WordPress maintenance",
-        "Cool new features with the ASP.NET 5 Framework",
-        "Dapper.NET",
-        "Developing applications with Ember.js",
-        "Do students require grunt to knockout jasmine?",
-        "Entity Framework – conventions deep dive! ",
-        "Exploratory testing basics and experiences",
-        "Fancy Input Elements with Web Components",
-        "Hardware simulations at CERN",
-        "How stuff works - Big data metrics at CERN",
-        "How to apply design patterns in reality?",
-        "Instant, automated test feedback using NCrunch in Visual Studio",
-        "iOS, Swift and Reactive-Cocoa",
-        "IoT á la Microsoft - Windows 10 on Raspberry PI",
-        "Learning MongoDB",
-        "Mobile version of Estonian state portal eesti.ee",
-        "Monoliths, Self-Contained Systems and Microservices",
-        "Negation Scope Detection for Twitter Sentiment Analysis",
-        "Quality challenges in digitalized world – testing is needed",
-        "Retrofit - easy peasy API consumpsion",
-        "Style Guide Driven Development",
-        "The browser is the new fat client",
-        "Tips & tricks in Atom",
-        "vNext and Omnisharp",
-        "Web Performance ",
-        "What is Cloud Native?",
-        "Why you should learn Regular Expressions",
         "Worst integration project ever",
         "Yet another boring F# intro"
       ], [
         "Arkitektenes tid er over",
-        "DevOps og kontinuerlige leveranser i Oslo kommune",
-        "En @#erstatning## til EPiServer",
-        "En Identity Management løsning for å håndtere 1,4 million medlemer og kunder for Coop",
-        "Hvordan gi en server et ansikt",
-        "Introduksjon til C# 6.0",
-        "Knowit Academy - Arkitektskolen",
-        "Mine containere er lettere enn dine. Enklere uviklingsmiljø med Boot2Docker og Docker Compose.",
-        "NServiceBus och en Saga",
         "Windows uten Microsoft"
       ]
     ]
@@ -128,19 +91,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "set_up_a_microservice_architecture" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "gothenburg_startup_hack" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "progressive_web_apps" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "image_recognition_subreddit" ]
             }
           ]
         },
@@ -150,19 +113,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "role_based_security_with_power_bi" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "agile_development_at_scale" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "microservices_is_it_worth_it" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "doobie_database_access" ]
             }
           ]
         },
@@ -171,19 +134,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "identity_providers_owin_episerver" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "agile_development_at_scale" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "android_architecture_components" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "chaos_engineering_101" ]
             }
           ]
         },
@@ -193,19 +156,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "ui_test_automation" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "TBA" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "intro_domenedreven_utvikling" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "machine_learning_open_hotel" ]
             }
           ]
         },
@@ -215,19 +178,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "smertefri_frontend_testing" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "large_scale_decoupled_torrenting" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "next_microservice_in_go" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "azure_machine_learning" ]
             }
           ]
         },
@@ -241,7 +204,7 @@
             },
             {
               "room": "La Boheme",
-              "slots": [ "koden_betyr_ingenting" ]
+              "slots": [ "blockchain_hyperledger_fabric" ]
             },
             {
               "room": "La Traviata",
@@ -267,19 +230,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "angular_warstories" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "intro_to_vuejs" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "this_keyword_in_javascript" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
             }
           ]
         },
@@ -288,19 +251,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "intro_to_angular" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "think_can_frontend" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "flexbox_the_right_way" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
             }
           ]
         },
@@ -309,19 +272,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "git_to_find_bugs" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "in_memory_database_testing_ef" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "not_suck_bootstrap_css" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "azure_b2c_identity_services" ]
             }
           ]
         },
@@ -330,19 +293,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "git_to_find_bugs" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "ai_guided_software_testing" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "error_handling_javascript" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "securing_azure_active_directory" ]
             }
           ]
         },
@@ -351,19 +314,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "koden_betyr_ingenting" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "TBA" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "css_grid" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "securing_azure_active_directory" ]
             }
           ]
         },
@@ -373,19 +336,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "iot_från_grunden" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "cryptography_illustrated" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "chrome_devtools" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "tfs_og_octopus" ]
             }
           ]
         },
@@ -394,19 +357,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "TBC" ]
+              "slots": [ "how_i_built_a_power_meter" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBC" ]
+              "slots": [ "cryptography_illustrated" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "TBC" ]
+              "slots": [ "chrome_devtools" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBC" ]
+              "slots": [ "centralized_logging" ]
             }
           ]
         },
@@ -570,8 +533,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "image_recognition_on_a_subreddit": {
-      "talkId": "image_recognition_on_a_subreddit",
+    "image_recognition_subreddit": {
+      "talkId": "image_recognition_subreddit",
       "pending": false,
       "speaker": "Sverre Johann Bjørke",
       "email": "sverre.bjorke@knowit.no",
@@ -654,8 +617,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "multiple_identity_providers_owin_episerver": {
-      "talkId": "multiple_identity_providers_owin_episerver",
+    "identity_providers_owin_episerver": {
+      "talkId": "identity_providers_owin_episerver",
       "pending": false,
       "speaker": "Håvard Eidheim",
       "email": "havard.eidheim@knowit.no",
@@ -696,8 +659,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "intro_til_progressive_web_apps": {
-      "talkId": "intro_til_progressive_web_apps",
+    "progressive_web_apps": {
+      "talkId": "progressive_web_apps",
       "pending": false,
       "speaker": "Sigurd Christensen",
       "email": "sigurd.christensen@knowit.no",
@@ -717,8 +680,8 @@
       "company": "Knowit Reaktor Solutions",
       "country": null
     },
-    "blockchain_yperledger_fabric": {
-      "talkId": "blockchain_yperledger_fabric",
+    "blockchain_hyperledger_fabric": {
+      "talkId": "blockchain_hyperledger_fabric",
       "pending": false,
       "speaker": "Anders Breivik",
       "email": "abr@knowit.no",
@@ -810,7 +773,7 @@
       "speakers": [
         "Aulon Mujaj"
       ],
-      "title": "Intro to Vuejs",
+      "title": "Intro to Vue.js",
       "type": "Presentation (30 min)",
       "types": [
         "Presentation (30 min)"
@@ -823,8 +786,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "intro_til_domenedreven_utvikling": {
-      "talkId": "intro_til_domenedreven_utvikling",
+    "intro_domenedreven_utvikling": {
+      "talkId": "intro_domenedreven_utvikling",
       "pending": false,
       "speaker": "Beate_Baier Biribakken",
       "email": "beate.baier@knowit.no",
@@ -844,8 +807,8 @@
       "company": "Knowit Experience Oslo",
       "country": null
     },
-    "using_machine_learning_where_to_open_hotel": {
-      "talkId": "using_machine_learning_where_to_open_hotel",
+    "machine_learning_open_hotel": {
+      "talkId": "machine_learning_open_hotel",
       "pending": false,
       "speaker": "David Svensson",
       "email": "david.svensson@knowit.se",
@@ -886,8 +849,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "centralized_logging_serilog_elastic": {
-      "talkId": "centralized_logging_serilog_elastic",
+    "centralized_logging": {
+      "talkId": "centralized_logging",
       "pending": false,
       "speaker": "Fredrik Claesson",
       "email": "fredrik.claesson@knowit.se",
@@ -907,8 +870,8 @@
       "company": "Knowit SysDev Göteborg",
       "country": null
     },
-    "azure_ad_b2c_identity_services": {
-      "talkId": "azure_ad_b2c_identity_services",
+    "azure_b2c_identity_services": {
+      "talkId": "azure_b2c_identity_services",
       "pending": false,
       "speaker": "Håvard Slettvold",
       "email": "havard.slettvold@knowit.no",
@@ -1097,8 +1060,8 @@
       "company": "Knowit Reaktor Solutions",
       "country": null
     },
-    "error_handling_in_javascript": {
-      "talkId": "error_handling_in_javascript",
+    "error_handling_javascript": {
+      "talkId": "error_handling_javascript",
       "pending": false,
       "speaker": "Øyvind Marthinsen",
       "email": "oma@knowit.no",
@@ -1181,8 +1144,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "how_i_built_a_power_meter_reader": {
-      "talkId": "how_i_built_a_power_meter_reader",
+    "how_i_built_a_power_meter": {
+      "talkId": "how_i_built_a_power_meter",
       "pending": false,
       "speaker": "Thomas Malt",
       "email": "thomas.malt@knowit.no",
@@ -1202,8 +1165,8 @@
       "company": "Knowit Experience Oslo",
       "country": null
     },
-    "smertefri_frontend-testing_med_cypress": {
-      "talkId": "smertefri_frontend-testing_med_cypress",
+    "smertefri_frontend_testing": {
+      "talkId": "smertefri_frontend_testing",
       "pending": false,
       "speaker": "Eirik Vågeskar",
       "email": "eirik.vageskar@knowit.no",
@@ -1244,8 +1207,8 @@
       "company": "Knowit Experience Bergen",
       "country": null
     },
-    "doobie_principled_database_access": {
-      "talkId": "doobie_principled_database_access",
+    "doobie_database_access": {
+      "talkId": "doobie_database_access",
       "pending": false,
       "speaker": "Imre Kerr",
       "email": "imre.kerr@knowit.no",
@@ -1265,8 +1228,8 @@
       "company": "Knowit Objectnet",
       "country": null
     },
-    "how_not_to_suck_at_bootstrap.css": {
-      "talkId": "how_not_to_suck_at_bootstrap.css",
+    "not_suck_bootstrap_css": {
+      "talkId": "not_suck_bootstrap_css",
       "pending": false,
       "speaker": "Patrick Tørresvold",
       "email": "patrick.torresvold@knowit.no",
@@ -1286,8 +1249,8 @@
       "company": "Knowit Experience Oslo",
       "country": null
     },
-    "in-memory_database_testing_entity_framework": {
-      "talkId": "in-memory_database_testing_entity_framework",
+    "in_memory_database_testing_ef": {
+      "talkId": "in_memory_database_testing_ef",
       "pending": false,
       "speaker": "Endre Vestbø",
       "email": "endre.vestbo@knowit.no",
@@ -1307,8 +1270,8 @@
       "company": "Knowit Reaktor Solutions",
       "country": null
     },
-    "ai-guided_software_testing": {
-      "talkId": "ai-guided_software_testing",
+    "ai_guided_software_testing": {
+      "talkId": "ai_guided_software_testing",
       "pending": false,
       "speaker": "Juhani Teeriniemi",
       "email": "juhani.teeriniemi@knowit.fi",
@@ -1415,8 +1378,8 @@
       "company": "Knowit Experience Oslo",
       "country": null
     },
-    "use_git_to_find_bugs": {
-      "talkId": "use_git_to_find_bugs",
+    "git_to_find_bugs": {
+      "talkId": "git_to_find_bugs",
       "pending": false,
       "speaker": "Christoffer Eliesen",
       "email": "christoffer.eliesen@knowit.no",
@@ -1457,8 +1420,8 @@
       "company": "Knowit OY Group",
       "country": null
     },
-    "securing_application_azure_active_directory_oauth": {
-      "talkId": "securing_application_azure_active_directory_oauth",
+    "securing_azure_active_directory": {
+      "talkId": "securing_azure_active_directory",
       "pending": false,
       "speaker": "Krister Karto",
       "email": "krister.karto@knowit.no",
@@ -1521,8 +1484,8 @@
       "company": "Knowit Experience Oslo",
       "country": null
     },
-    "so_you_think_you_can_frontend": {
-      "talkId": "so_you_think_you_can_frontend",
+    "think_can_frontend": {
+      "talkId": "think_can_frontend",
       "pending": false,
       "speaker": "Håvard Olsen",
       "email": "havard.olsen@knowit.no",
