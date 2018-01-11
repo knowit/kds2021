@@ -45,65 +45,24 @@
         { "time": "11:00-11:30 Welcome / meet and greet" },
         { "time": "11:30-12:30 Lunch" },
         {
-          "time": "12:30-12:45 Lightning talks",
+          "time": "12:30-13:25 Lightning talks",
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "object_relation_mapping_kjapt_og_enkelt" ]
+              "slots": [ "object_relation_mapping_kjapt_og_enkelt", "web_page_api_aws_lambda", "set_up_a_microservice_architecture" ]
+
             },
             {
               "room": "La Boheme",
-              "slots": [ "reklamefri_web_2020" ]
+              "slots": [ "reklamefri_web_2020", "lei_av_darlige_repl", "gothenburg_startup_hack" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "why_i_fell_in_love_with_elm" ]
+              "slots": [ "why_i_fell_in_love_with_elm", "javascript_state_of_affairs", "progressive_web_apps" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "recommendations_recurrent_neural_networks" ]
-            }
-          ]
-        },
-        {
-          "time": "12:50-13:05 Lightning talks",
-          "entries": [
-            {
-              "room": "Flagstad",
-              "slots": [ "web_page_api_aws_lambda" ]
-            },
-            {
-              "room": "La Boheme",
-              "slots": [ "lei_av_darlige_repl" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "javascript_state_of_affairs" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "maskinlæring_parkeringsgebyrklager_oslo_kommune" ]
-            }
-          ]
-        },
-        {
-          "time": "13:10-13:25 Lightning talks",
-          "entries": [
-            {
-              "room": "Flagstad",
-              "slots": [ "set_up_a_microservice_architecture" ]
-            },
-            {
-              "room": "La Boheme",
-              "slots": [ "gothenburg_startup_hack" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "progressive_web_apps" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "image_recognition_subreddit" ]
+              "slots": [ "recommendations_recurrent_neural_networks", "maskinlæring_parkeringsgebyrklager_oslo_kommune", "image_recognition_subreddit" ]
             }
           ]
         },
