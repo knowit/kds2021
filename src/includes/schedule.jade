@@ -23,7 +23,11 @@ section#schedule.schedule(class={progComView: progComView})
                           p(lang=talk.languageCode)
                             a(id='p_'+slot href='#'+slot)= talk.title
                           address
-                            | #{talk.speaker}
+                            if talk.speakers
+                              each speaker in talk.speakers
+                                | #{speaker}<br/>
+                            else
+                              | #{talk.speaker}
                           if progComView
                             p.annote.
                               !{talk.types.join(', ').replace(talk.type, '<u>'+talk.type+'</u>')}
