@@ -117,7 +117,7 @@
             },
             {
               "room": "La Boheme",
-              "slots": [ "agile_development_at_scale" ]
+              "slots": [ "how_i_built_a_power_meter" ]
             },
             {
               "room": "La Traviata",
@@ -138,7 +138,7 @@
             },
             {
               "room": "La Boheme",
-              "slots": [ "agile_development_at_scale" ]
+              "slots": [ "iot_från_grunden" ]
             },
             {
               "room": "La Traviata",
@@ -190,7 +190,7 @@
             },
             {
               "room": "Rigoletto",
-              "slots": [ "azure_machine_learning" ]
+              "slots": [ "wcag2.0_accessibility_and_frontend" ]
             }
           ]
         },
@@ -248,7 +248,7 @@
           ]
         },
         {
-          "time": "09:40-11:10 Long talks",
+          "time": "09:40-11:10 Workshops",
           "entries": [
             {
               "room": "Flagstad",
@@ -269,11 +269,32 @@
           ]
         },
         {
-          "time": "11:20-11:50 Short talks",
+          "time": "11:20-12:20 Long talks",
           "entries": [
             {
               "room": "Flagstad",
               "slots": [ "git_to_find_bugs" ]
+            },
+            {
+              "room": "La Boheme",
+              "slots": [ "devops_maturity_models_knowit_and_dasa_views" ]
+            },
+            {
+              "room": "La Traviata",
+              "slots": [ "chrome_devtools" ]
+            },
+            {
+              "room": "Rigoletto",
+              "slots": [ "securing_azure_active_directory" ]
+            }
+          ]
+        },
+        {
+          "time": "12:30-13:10 Medium talks",
+          "entries": [
+            {
+              "room": "Flagstad",
+              "slots": [ "ai_guided_software_testing" ]
             },
             {
               "room": "La Boheme",
@@ -281,53 +302,11 @@
             },
             {
               "room": "La Traviata",
-              "slots": [ "not_suck_bootstrap_css" ]
+              "slots": [ "azure_machine_learning" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "azure_b2c_identity_services" ]
-            }
-          ]
-        },
-        {
-          "time": "12:00-12:30 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad",
-              "slots": [ "git_to_find_bugs" ]
-            },
-            {
-              "room": "La Boheme",
-              "slots": [ "ai_guided_software_testing" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "error_handling_javascript" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "securing_azure_active_directory" ]
-            }
-          ]
-        },
-        {
-          "time": "12:40-13:10 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad",
-              "slots": [ "koden_betyr_ingenting" ]
-            },
-            {
-              "room": "La Boheme",
-              "slots": [ "ai_guided_software_testing" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "css_grid" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "securing_azure_active_directory" ]
+              "slots": [ "agile_development_at_scale" ]
             }
           ]
         },
@@ -337,7 +316,7 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "iot_från_grunden" ]
+              "slots": [ "error_handling_javascript" ]
             },
             {
               "room": "La Boheme",
@@ -345,7 +324,7 @@
             },
             {
               "room": "La Traviata",
-              "slots": [ "chrome_devtools" ]
+              "slots": [ "not_suck_bootstrap_css" ]
             },
             {
               "room": "Rigoletto",
@@ -358,19 +337,19 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "how_i_built_a_power_meter" ]
+              "slots": [ "koden_betyr_ingenting" ]
             },
             {
               "room": "La Boheme",
-              "slots": [ "cryptography_illustrated" ]
+              "slots": [ "centralized_logging" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "chrome_devtools" ]
+              "slots": [ "css_grid" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "centralized_logging" ]
+              "slots": [ "azure_b2c_identity_services" ]
             }
           ]
         },
