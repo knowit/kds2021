@@ -1494,14 +1494,14 @@
       "speakers": [
         "Patrick Monslaup"
       ],
-      "title": "Flexbox - The right way",
-      "type": "Workshop (120 min)",
+      "title": "Flexbox - Responsive web made easy",
+      "type": "Workshop (90 min)",
       "types": [
-        "Workshop (120 min)"
+        "Workshop (90 min)"
       ],
-      "description": "Lag kraftige komponenter og layouter på kort tid med flexbox. Workshoppen vil lære deg å bruke flexbox for å lage intuitive og responsive web-komponenter. Flexbox er en html5 attributt som lar deg definere hvordan elementer skal plasseres og skalere på en nettside. Jeg vil dele mine beste tips og designmønstre som gjør at du kan lage kraftige komponenter på kort tid. Foredraget passer for alle som vil lære mer om flexbox, enten man er ny eller erfaren.",
-      "language": "Norsk",
-      "languageCode": "no",
+      "description": "This workshop will teach you how to quickly create powerful and responsive web components using flexbox. Flexbox is a html5 / css3 property which is finally becoming mature enough that most projects not only can, but should use it. I will in this presentation share my best tips and design patterns, while outlining potential pitfalls that you'll come across when using flex. The workshop features a a short presentation followed by progressively harder components, which should present both fledling web-developer and more experienced code-monkeys a challenge. Requirement to participate is a laptop (or a partner with one), any code editor, and preferably several browser installed such as IE / Safari, Firefox, and Chrome.",
+      "language": "English",
+      "languageCode": "en",
       "notes": "",
       "city": null,
       "company": "Knowit Experience Bergen",
