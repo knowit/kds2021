@@ -117,7 +117,7 @@
             },
             {
               "room": "La Boheme",
-              "slots": [ "how_i_built_a_power_meter" ]
+              "slots": [ "error_handling_javascript" ]
             },
             {
               "room": "La Traviata",
@@ -125,7 +125,7 @@
             },
             {
               "room": "Rigoletto",
-              "slots": [ "doobie_database_access" ]
+              "slots": [ "agile_development_at_scale" ]
             }
           ]
         },
@@ -160,11 +160,11 @@
             },
             {
               "room": "La Boheme",
-              "slots": [ "TBA" ]
+              "slots": [ "intro_domenedreven_utvikling" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "intro_domenedreven_utvikling" ]
+              "slots": [ "koden_betyr_ingenting" ]
             },
             {
               "room": "Rigoletto",
@@ -306,7 +306,7 @@
             },
             {
               "room": "Rigoletto",
-              "slots": [ "agile_development_at_scale" ]
+              "slots": [ "doobie_database_access" ]
             }
           ]
         },
@@ -316,7 +316,7 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "error_handling_javascript" ]
+              "slots": [ "how_i_built_a_power_meter" ]
             },
             {
               "room": "La Boheme",
@@ -337,7 +337,7 @@
           "entries": [
             {
               "room": "Flagstad",
-              "slots": [ "koden_betyr_ingenting" ]
+              "slots": [ "azure_b2c_identity_services" ]
             },
             {
               "room": "La Boheme",
@@ -349,7 +349,7 @@
             },
             {
               "room": "Rigoletto",
-              "slots": [ "azure_b2c_identity_services" ]
+              "slots": [ "TBA" ]
             }
           ]
         },
