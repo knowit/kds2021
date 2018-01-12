@@ -48,7 +48,7 @@
           "time": "12:30-12:45 Lightning talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "object_relation_mapping_kjapt_og_enkelt" ]
             },
             {
@@ -56,7 +56,7 @@
               "slots": [ "reklamefri_web_2020" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "why_i_fell_in_love_with_elm" ]
             },
             {
@@ -69,7 +69,7 @@
           "time": "12:50-13:05 Lightning talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "web_page_api_aws_lambda" ]
             },
             {
@@ -77,7 +77,7 @@
               "slots": [ "lei_av_darlige_repl" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "javascript_state_of_affairs" ]
             },
             {
@@ -90,7 +90,7 @@
           "time": "13:10-13:25 Lightning talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "set_up_a_microservice_architecture" ]
             },
             {
@@ -98,7 +98,7 @@
               "slots": [ "gothenburg_startup_hack" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "progressive_web_apps" ]
             },
             {
@@ -112,7 +112,7 @@
           "time": "13:40-14:10 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "role_based_security_with_power_bi" ]
             },
             {
@@ -120,7 +120,7 @@
               "slots": [ "error_handling_javascript" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "microservices_is_it_worth_it" ]
             },
             {
@@ -133,7 +133,7 @@
           "time": "14:20-14:50 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "identity_providers_owin_episerver" ]
             },
             {
@@ -141,7 +141,7 @@
               "slots": [ "iot_från_grunden" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "android_architecture_components" ]
             },
             {
@@ -155,7 +155,7 @@
           "time": "15:00-15:30 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "ui_test_automation" ]
             },
             {
@@ -163,7 +163,7 @@
               "slots": [ "intro_domenedreven_utvikling" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "koden_betyr_ingenting" ]
             },
             {
@@ -177,7 +177,7 @@
           "time": "15:40-16:10 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "smertefri_frontend_testing" ]
             },
             {
@@ -185,7 +185,7 @@
               "slots": [ "large_scale_decoupled_torrenting" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "next_microservice_in_go" ]
             },
             {
@@ -199,7 +199,7 @@
           "time": "16:20-16:50 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "mikrotjenester_cdc" ]
             },
             {
@@ -207,7 +207,7 @@
               "slots": [ "blockchain_hyperledger_fabric" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "in_rust_i_trust" ]
             },
             {
@@ -230,7 +230,7 @@
           "time": "09:00-09:30 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "angular_warstories" ]
             },
             {
@@ -238,7 +238,7 @@
               "slots": [ "intro_to_vuejs" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "this_keyword_in_javascript" ]
             },
             {
@@ -251,7 +251,7 @@
           "time": "09:40-11:10 Workshops",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "intro_to_angular" ]
             },
             {
@@ -259,7 +259,7 @@
               "slots": [ "think_can_frontend" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "flexbox_the_right_way" ]
             },
             {
@@ -272,7 +272,7 @@
           "time": "11:20-12:20 Long talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "git_to_find_bugs" ]
             },
             {
@@ -280,7 +280,7 @@
               "slots": [ "devops_maturity_models_knowit_and_dasa_views" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "chrome_devtools" ]
             },
             {
@@ -293,7 +293,7 @@
           "time": "12:30-13:10 Medium talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "ai_guided_software_testing" ]
             },
             {
@@ -301,7 +301,7 @@
               "slots": [ "in_memory_database_testing_ef" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "azure_machine_learning" ]
             },
             {
@@ -315,7 +315,7 @@
           "time": "14:00-14:30 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "how_i_built_a_power_meter" ]
             },
             {
@@ -323,7 +323,7 @@
               "slots": [ "cryptography_illustrated" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "not_suck_bootstrap_css" ]
             },
             {
@@ -336,7 +336,7 @@
           "time": "14:40-15:10 Short talks",
           "entries": [
             {
-              "room": "Flagstad",
+              "room": "Flagstad 🎥",
               "slots": [ "azure_b2c_identity_services" ]
             },
             {
@@ -344,7 +344,7 @@
               "slots": [ "centralized_logging" ]
             },
             {
-              "room": "La Traviata",
+              "room": "La Traviata 🎥",
               "slots": [ "css_grid" ]
             },
             {
