@@ -52,11 +52,11 @@
               "slots": [ "object_relation_mapping_kjapt_og_enkelt" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "reklamefri_web_2020" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "why_i_fell_in_love_with_elm" ]
             },
             {
@@ -73,11 +73,11 @@
               "slots": [ "web_page_api_aws_lambda" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "lei_av_darlige_repl" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "javascript_state_of_affairs" ]
             },
             {
@@ -94,11 +94,11 @@
               "slots": [ "set_up_a_microservice_architecture" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "gothenburg_startup_hack" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "progressive_web_apps" ]
             },
             {
@@ -116,11 +116,11 @@
               "slots": [ "role_based_security_with_power_bi" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "error_handling_javascript" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "microservices_is_it_worth_it" ]
             },
             {
@@ -137,11 +137,11 @@
               "slots": [ "identity_providers_owin_episerver" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "iot_från_grunden" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "android_architecture_components" ]
             },
             {
@@ -159,11 +159,11 @@
               "slots": [ "ui_test_automation" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "intro_domenedreven_utvikling" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "koden_betyr_ingenting" ]
             },
             {
@@ -181,11 +181,11 @@
               "slots": [ "smertefri_frontend_testing" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "large_scale_decoupled_torrenting" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "next_microservice_in_go" ]
             },
             {
@@ -203,11 +203,11 @@
               "slots": [ "mikrotjenester_cdc" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "blockchain_hyperledger_fabric" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "in_rust_i_trust" ]
             },
             {
@@ -234,11 +234,11 @@
               "slots": [ "angular_warstories" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "intro_to_vuejs" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "this_keyword_in_javascript" ]
             },
             {
@@ -255,11 +255,11 @@
               "slots": [ "intro_to_angular" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "think_can_frontend" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "flexbox_the_right_way" ]
             },
             {
@@ -276,11 +276,11 @@
               "slots": [ "git_to_find_bugs" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "devops_maturity_models_knowit_and_dasa_views" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "chrome_devtools" ]
             },
             {
@@ -297,11 +297,11 @@
               "slots": [ "ai_guided_software_testing" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "in_memory_database_testing_ef" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "azure_machine_learning" ]
             },
             {
@@ -319,11 +319,11 @@
               "slots": [ "how_i_built_a_power_meter" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "cryptography_illustrated" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "not_suck_bootstrap_css" ]
             },
             {
@@ -340,11 +340,11 @@
               "slots": [ "azure_b2c_identity_services" ]
             },
             {
-              "room": "La Boheme",
+              "room": "La Boheme 🎥",
               "slots": [ "centralized_logging" ]
             },
             {
-              "room": "La Traviata 🎥",
+              "room": "La Traviata",
               "slots": [ "css_grid" ]
             },
             {
