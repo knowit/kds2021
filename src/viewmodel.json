@@ -522,9 +522,9 @@
         "Alexander Premer"
       ],
       "title": "Lei av din dårlige REPL?",
-      "type": "Lightning talk (20 min)",
+      "type": "Lightning talk (15 min)",
       "types": [
-        "Lightning talk (20 min)"
+        "Lightning talk (15 min)"
       ],
       "description": "Er du en av de som skriver feil i blant? Er litt usikker noen ganger? Liker konfigurerbarhet? Nysgjerrig på Scala? Lei av din Scala-REPL?Om minst et av disse utsagnene passer deg, da har du noe du kan ta med deg fra denne talken! Denne talken tar på seg oppgaven med å demonstrere at Scala-REPL er en antikvitet i forhold til Ammonite-REPL!",
       "language": "Norsk",
@@ -543,9 +543,9 @@
         "Christopher Olsen"
       ],
       "title": "UI Test Automation - how and why YOU should start automation on your project! ",
-      "type": "Presentation (20 min)",
+      "type": "Lightning talk (15 min)",
       "types": [
-        "Presentation (20 min)"
+        "Lightning talk (15 min)"
       ],
       "description": "An introduction to the field of UI test automation with an emphasize on encouraging people with no experience other than programming knowledge to try and pick up this ball in their projects. All thats needed is knowing where to start and how it fits into your project.",
       "language": "English",
@@ -564,9 +564,9 @@
         "Håvard Eidheim"
       ],
       "title": "Multiple Identity providers with OWIN and  Episerver",
-      "type": "Presentation (20 min)",
+      "type": "Lightning talk (15 min)",
       "types": [
-        "Presentation (20 min)"
+        "Lightning talk (15 min)"
       ],
       "description": "A presentation on how to set up one or more identity providers with OWIN and Episerver, why you might want to do this and some technical details on how to get it done.",
       "language": "English",
@@ -585,9 +585,9 @@
         "Ole Steinar Lillestøl Skrede"
       ],
       "title": "Recommendations with Recurrent Neural Networks",
-      "type": "Lightning talk (20 min)",
+      "type": "Lightning talk (15 min)",
       "types": [
-        "Lightning talk (20 min)"
+        "Lightning talk (15 min)"
       ],
       "description": "Research in recent years has shown that recurrent neural networks (RNN) can outperform other state-of-the-art recommendation models at session-based recommendations. This talk is about how RNNs can be used in this domain, and why they work so well.",
       "language": "English",
@@ -606,9 +606,9 @@
         "Sigurd Christensen"
       ],
       "title": "Intro til Progressive Web Apps",
-      "type": "Lightning talk (20 min)",
+      "type": "Lightning talk (15 min)",
       "types": [
-        "Lightning talk (20 min)"
+        "Lightning talk (15 min)"
       ],
       "description": "Lag nye web-applikasjoner som direkte kan lastes ned på enheter, bli listet på Google Play, ha offline-funksjoner eller masse annet - alt dette uten å røre et native eller hybrid app-rammeverk. Progressive Web Apps holder på å vokse frem som et raskt og enkelt alternativ til dedikerte mobil-apper der man ikke har behov for native APIer. Det er under aktiv utvikling fra flere av de største browser og app-aktørene og mulighetene med denne teknologien ser ut til å utvides raskt. Noe av det beste? Det er fort gjort å legge til på en eksisterende web-app, liten eller stor. I denne talken tar vi en rask kikk på hva Progressive Web Apps er og hva man kan bruke det til. I tillegg tar vi en snikkikk på hva fremtiden kan by på for denne lovende måten å forbedre web-applikasjoner på.",
       "language": "Norsk",
@@ -1112,9 +1112,9 @@
         "Eirik Vågeskar"
       ],
       "title": "Smertefri frontend-testing med Cypress",
-      "type": "Presentation (35 min)",
+      "type": "Presentation (30 min)",
       "types": [
-        "Presentation (35 min)"
+        "Presentation (30 min)"
       ],
       "description": "Skriver du frontend-tester og synes det er tungtvint? Har du aldri prøvd? Har du prøvd og gitt opp? Om du svarte ja på minst ett av disse spørsmålene, burde du prøve Cypress: Et nytt testrammeverk som installeres og settes opp med én kodelinje (spoiler: det er `npm install cypress`) og som kan teste hva som helst som kjører på webben. (Og til de som måtte lure: Nei, det har ingenting med Selenium Webdriver å gjøre.) I dette foredraget vil Eirik Vågeskar, som har jobbet i Knowit Objectnet siden høsten 2017, vise deg hvordan man setter opp og bruker Cypress. Han kommer også til å fortelle om hvordan billett- og arrangementssystemet Hoopla har tatt i bruk Cypress for å utvikle og produksjonssette ny funksjonalitet raskere og med større selvtillit. Ingen forkunnskaper om automatisk testing er nødvendig. Passer for utviklere av alle ferdighetsnivåer.",
       "language": "Norsk",
@@ -1133,9 +1133,9 @@
         "Hannah Hansen"
       ],
       "title": "Cryptography Illustrated ",
-      "type": "Presentation (40 min)",
+      "type": "Presentation (30 min)",
       "types": [
-        "Presentation (40 min)"
+        "Presentation (30 min)"
       ],
       "description": "Are you curious about how messages are kept secret in this digital world? Do bullet points and lectures bore you? Fear not. This talk will temporarily satisfy your curiosity without bullet points. Everything will be illustrated. No text. It will be a fun challenge. Come and see if I manage to convey the topic to your satisfaction. No previous knowledge required. This is a talk for all who wish to learn about public-key cryptography. ",
       "language": "English",
@@ -1175,9 +1175,9 @@
         "Patrick Tørresvold"
       ],
       "title": "How not to suck at Bootstrap.css",
-      "type": "Presentation (40 min)",
+      "type": "Presentation (30 min)",
       "types": [
-        "Presentation (40 min)"
+        "Presentation (30 min)"
       ],
       "description": "How should you really use Bootstrap as a developer or designer? Change your mindset and learn how I want you to use third party frameworks like Bootstrap to improve your daily work.",
       "language": "Norsk",
@@ -1196,9 +1196,9 @@
         "Endre Vestbø"
       ],
       "title": "In-memory database for black box testing using Entity Framework and Effort",
-      "type": "Presentation (45 min)",
+      "type": "Presentation (40 min)",
       "types": [
-        "Presentation (45 min)"
+        "Presentation (40 min)"
       ],
       "description": "This presentation will show you how to use Effort to create an in-memory database for blackbox testing using Entity Framework. Inlcuding the different ways Effort can be used and how to seemlessly add Effort to your projects using dependency injection.",
       "language": "English",
@@ -1217,9 +1217,9 @@
         "Juhani Teeriniemi"
       ],
       "title": "AI-Guided Software Testing",
-      "type": "Presentation (45 min)",
+      "type": "Presentation (40 min)",
       "types": [
-        "Presentation (45 min)"
+        "Presentation (40 min)"
       ],
       "description": "It has been estimated that software bugs cost $59.5 billion annually in U.S. alone. To diminish costs of a software development life cycle, software testing activities should be focused on critical areas of an application. Recently, machine learning methods have been discovered as a powerful tool for software testers. In this presentation, current state of AI-guided software testing is outlined. Also, machine learning based code quality metrics are demonstrated.",
       "language": "English",
@@ -1260,9 +1260,9 @@
         "Zeeshan Ahmed"
       ],
       "title": "Azure Machine Learning",
-      "type": "Presentation (45 min)",
+      "type": "Presentation (40 min)",
       "types": [
-        "Presentation (45 min)"
+        "Presentation (40 min)"
       ],
       "description": "In this session I will discuss: - What is Machine Learning. - What are the important pre-steps that are needed before getting into the Machine learning itself. - Why we need Machine Learning. -  How we can create Machine Learning models using Azure Machine Learning Studio.  (Demo) -  How we can deploy AML model as web service and use it in custom our applications.  (Demo)",
       "language": "English",
