@@ -331,12 +331,12 @@
       "speakers": [
         "Erlend Rommetveit"
       ],
-      "title": "Object Relation Mapping  gjort kjapt og enkelt",
+      "title": "Object Relation Mapping gjort kjapt og enkelt",
       "type": "Lightning talk (10 min)",
       "types": [
         "Lightning talk (10 min)"
       ],
-      "description": "Savner du kontroll i prosjektene dine? Enkelte fullverdige ORM-biblioteker som f.eks Entity Framework har mange nyttige funksjoner, men du kan ikke styre hvordan SQL'en din blir generert. Finnes det en mellomting mellom store biblioteker som utfører alt automagisk for deg, men kan være trege; og helt vanilla SQL der du må gjøre all jobben selv? Denne talken er et kjapt innblikk i fordeler og ulemper ved å bruke NPoco, et lettvektig Micro-ORM bilbiotek for .NET som fokuserer på hastighet.",
+      "description": "Hvilket ORM passer best for deg? Prioriterer du hastighet, enkelhet, eller er det funksjonalitet som er viktigst? Denne talken er en kort sammenligning av tre ulike biblioteker for .NET: Entity Framework, NPoco, og Dapper. Derav den første er et fullverdig ORM med mye innebygd funksjonalitet, mens de andre er såkalte Micro-ORM-biblioteker der hastighet har hovedfokus.",
       "language": "Norsk",
       "languageCode": "no",
       "notes": "",
