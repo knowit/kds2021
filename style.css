@@ -122,7 +122,7 @@ section {
 
 .two, .talks {
   background: #fafafa;
-  padding: 85px 20px 40px;
+  padding: 85px 20px 60px;
 }
 
 .two::before, .schedule::before, .talks::before {
