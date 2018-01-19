@@ -185,26 +185,10 @@
       "day": "Saturday, 27th",
       "collections": [
         {
-          "time": "09:00-09:30 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "angular_warstories" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "intro_to_vuejs" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "this_keyword_in_javascript" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
-            }
-          ]
+          "time": "09:00-09:30 Keynote",
+          "details": "Erik Amundrud, Business Area Manager, Knowit Solutions Norway"
         },
+        { "time": "09:30-09:40 Break" },
         {
           "time": "09:40-11:10 Workshops",
           "entries": [
@@ -313,8 +297,25 @@
         },
         { "time": "15:10-15:20 Break" },
         {
-          "time": "15:20-15:50 Keynote",
-          "details": "Erik Amundrud, Business Area Manager, Knowit Solutions Norway"
+          "time": "15:20-15:50 Short talks",
+          "entries": [
+            {
+              "room": "Flagstad 🎥",
+              "slots": [ "angular_warstories" ]
+            },
+            {
+              "room": "La Boheme 🎥",
+              "slots": [ "intro_to_vuejs" ]
+            },
+            {
+              "room": "La Traviata",
+              "slots": [ "this_keyword_in_javascript" ]
+            },
+            {
+              "room": "Rigoletto",
+              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
+            }
+          ]
         },
         {
           "time": "15:50-16:00 Conference closing"
