@@ -190,7 +190,28 @@
         },
         { "time": "09:30-09:40 Break" },
         {
-          "time": "09:40-11:10 Workshops",
+          "time": "09:40-10:10 Short talks",
+          "entries": [
+            {
+              "room": "Flagstad 🎥",
+              "slots": [ "angular_warstories" ]
+            },
+            {
+              "room": "La Boheme 🎥",
+              "slots": [ "intro_to_vuejs" ]
+            },
+            {
+              "room": "La Traviata",
+              "slots": [ "this_keyword_in_javascript" ]
+            },
+            {
+              "room": "Rigoletto",
+              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
+            }
+          ]
+        },
+        {
+          "time": "10:20-11:50 Workshops",
           "entries": [
             {
               "room": "Flagstad 🎥",
@@ -211,7 +232,7 @@
           ]
         },
         {
-          "time": "11:20-12:20 Long talks",
+          "time": "12:00-13:00 Long talks",
           "entries": [
             {
               "room": "Flagstad 🎥",
@@ -231,8 +252,9 @@
             }
           ]
         },
+        { "time": "13:00-13:50 Conference Lunch" },
         {
-          "time": "12:30-13:10 Medium talks",
+          "time": "13:50-14:30 Medium talks",
           "entries": [
             {
               "room": "Flagstad 🎥",
@@ -252,9 +274,8 @@
             }
           ]
         },
-        { "time": "13:10-14:00 Conference Lunch" },
         {
-          "time": "14:00-14:30 Short talks",
+          "time": "14:40-15:10 Short talks",
           "entries": [
             {
               "room": "Flagstad 🎥",
@@ -275,7 +296,7 @@
           ]
         },
         {
-          "time": "14:40-15:10 Short talks",
+          "time": "15:20-15:50 Short talks",
           "entries": [
             {
               "room": "Flagstad 🎥",
@@ -292,28 +313,6 @@
             {
               "room": "Rigoletto",
               "slots": [ "TBA" ]
-            }
-          ]
-        },
-        { "time": "15:10-15:20 Break" },
-        {
-          "time": "15:20-15:50 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "angular_warstories" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "intro_to_vuejs" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "this_keyword_in_javascript" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
             }
           ]
         },
@@ -1273,28 +1272,6 @@
       "company": "Knowit OY Group",
       "country": null
     },
-    "intro_to_angular": {
-      "talkId": "intro_to_angular",
-      "pending": false,
-      "speaker": "Alf Hammerseth",
-      "email": "alf.hammerseth@knowit.no",
-      "speakers": [
-        "Alf Hammerseth",
-        "Hazar Askari"
-      ],
-      "title": "Intro to Angular",
-      "type": "Workshop (50 min)",
-      "types": [
-        "Workshop (50 min)"
-      ],
-      "description": "Introducing angular and creating a to do list. In this workshop we will demonstrate how easy it is to get up and running with Angular and create your first application. Then we will move on to make a ToDo list with a JSON backend. This is not ment to be a code along course but more a demo of how to get started. You as a participant will observe the magic. There will be an extended time for questions.",
-      "language": "English",
-      "languageCode": "en",
-      "notes": "",
-      "city": null,
-      "company": "Knowit Experience Oslo",
-      "country": null
-    },
     "angular_warstories": {
       "talkId": "angular_warstories",
       "pending": false,
@@ -1302,7 +1279,8 @@
       "email": "alf.hammerseth@knowit.no",
       "speakers": [
         "Alf Hammerseth",
-        "Hazar Askari"
+        "Hazar Askari",
+        "(Note! 50 min. Continues into Intro to Angular in next slot)"
       ],
       "title": "Angular Warstories",
       "type": "Presentation (60 min)",
@@ -1310,6 +1288,29 @@
         "Presentation (60 min)"
       ],
       "description": "Talk related to Angular2+ and presenting two cases with the good and the bad.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": null,
+      "company": "Knowit Experience Oslo",
+      "country": null
+    },
+    "intro_to_angular": {
+      "talkId": "intro_to_angular",
+      "pending": false,
+      "speaker": "Alf Hammerseth",
+      "email": "alf.hammerseth@knowit.no",
+      "speakers": [
+        "Alf Hammerseth",
+        "Hazar Askari",
+        "(Starts after Angular Warstories from previous slot)"
+      ],
+      "title": "Intro to Angular",
+      "type": "Workshop (50 min)",
+      "types": [
+        "Workshop (50 min)"
+      ],
+      "description": "Introducing angular and creating a to do list. In this workshop we will demonstrate how easy it is to get up and running with Angular and create your first application. Then we will move on to make a ToDo list with a JSON backend. This is not ment to be a code along course but more a demo of how to get started. You as a participant will observe the magic. There will be an extended time for questions.",
       "language": "English",
       "languageCode": "en",
       "notes": "",
