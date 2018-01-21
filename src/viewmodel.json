@@ -136,7 +136,7 @@
           "entries": [
             {
               "room": "Flagstad 🎥",
-              "slots": [ "smertefri_frontend_testing" ]
+              "slots": [ "in_memory_database_testing_ef" ]
             },
             {
               "room": "La Boheme 🎥",
@@ -262,7 +262,7 @@
             },
             {
               "room": "La Boheme 🎥",
-              "slots": [ "in_memory_database_testing_ef" ]
+              "slots": [ "smertefri_frontend_testing" ]
             },
             {
               "room": "La Traviata",
