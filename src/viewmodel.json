@@ -49,7 +49,7 @@
           "entries": [
             {
               "room": "Flagstad 🎥",
-              "slots": [ "object_relation_mapping_kjapt_og_enkelt", "web_page_api_aws_lambda", "set_up_a_microservice_architecture" ]
+              "slots": [ "recommendations_recurrent_neural_networks", "maskinlæring_parkeringsgebyrklager_oslo_kommune", "image_recognition_subreddit" ]
             },
             {
               "room": "La Boheme 🎥",
@@ -57,11 +57,11 @@
             },
             {
               "room": "La Traviata",
-              "slots": [ "why_i_fell_in_love_with_elm", "javascript_state_of_affairs", "progressive_web_apps" ]
+              "slots": [ "why_i_fell_in_love_with_elm", "javascript_state_of_affairs" ]
             },
             {
               "room": "Rigoletto",
-              "slots": [ "recommendations_recurrent_neural_networks", "maskinlæring_parkeringsgebyrklager_oslo_kommune", "image_recognition_subreddit" ]
+              "slots": [ "object_relation_mapping_kjapt_og_enkelt", "progressive_web_apps" ]
             }
           ]
         },
