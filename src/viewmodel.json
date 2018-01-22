@@ -42,7 +42,7 @@
     {
       "day": "Friday, 26th",
       "collections": [
-        { "time": "11:00-11:30 Welcome / meet and greet" },
+        { "time": "11:00-11:30 Welcome / meet and greet (room: Flagstad)" },
         { "time": "11:30-12:30 Lunch" },
         {
           "time": "12:30-13:25 Lightning talks",
@@ -175,8 +175,8 @@
           ]
         },
         { "time": "16:50-17:00 Short break and hotel check-in"},
-        { "time": "17:00-17:15 Open Space Introduction" },
-        { "time": "17:15-18:15 Open Space" },
+        { "time": "17:00-17:15 Open Space Introduction (room: Flagstad)" },
+        { "time": "17:15-18:15 Open Space (room: Flagstad)" },
         { "time": "19:40-19:45 Dinner groups meet in the lobby" },
         { "time": "20:00-23:00 Conference dinner, around Oslo" }
       ]
@@ -185,7 +185,7 @@
       "day": "Saturday, 27th",
       "collections": [
         {
-          "time": "09:00-09:30 Keynote",
+          "time": "09:00-09:30 Keynote (room: Flagstad)",
           "details": "Erik Amundrud, Business Area Manager, Knowit Solutions Norway"
         },
         { "time": "09:30-09:40 Break" },
@@ -317,7 +317,7 @@
           ]
         },
         {
-          "time": "15:50-16:00 Conference closing"
+          "time": "15:50-16:00 Conference closing (room: Flagstad)"
         }
       ]
     }
