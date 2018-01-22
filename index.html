@@ -73,11 +73,6 @@
                 <address>Eirik Nesje<br/>Nataniel Pedersen<br/>
                 </address>
               </div>
-              <div data-talk-id="lei_av_darlige_repl" class="schedule-slot">
-                <p lang="no"><a id="p_lei_av_darlige_repl" href="#lei_av_darlige_repl">Lei av din dårlige REPL?</a></p>
-                <address>Alexander Premer<br/>
-                </address>
-              </div>
               <div data-talk-id="gothenburg_startup_hack" class="schedule-slot">
                 <p lang="en"><a id="p_gothenburg_startup_hack" href="#gothenburg_startup_hack">Gothenburg Startup Hack - Bringing the community together</a></p>
                 <address>Max Witt<br/>
@@ -91,9 +86,9 @@
                 <address>Tale Prestmo<br/>
                 </address>
               </div>
-              <div data-talk-id="javascript_state_of_affairs" class="schedule-slot">
-                <p lang="en"><a id="p_javascript_state_of_affairs" href="#javascript_state_of_affairs">Javascript: State of Affairs</a></p>
-                <address>Christoffer Eliesen<br/>
+              <div data-talk-id="lei_av_darlige_repl" class="schedule-slot">
+                <p lang="no"><a id="p_lei_av_darlige_repl" href="#lei_av_darlige_repl">Lei av din dårlige REPL?</a></p>
+                <address>Alexander Premer<br/>
                 </address>
               </div>
             </div>
@@ -505,7 +500,11 @@
             </div>
             <div class="schedule-entry">
               <h5>Room Rigoletto</h5>
-              <div class="schedule-slot">TBA</div>
+              <div data-talk-id="javascript_state_of_affairs" class="schedule-slot">
+                <p lang="en"><a id="p_javascript_state_of_affairs" href="#javascript_state_of_affairs">Javascript: State of Affairs</a></p>
+                <address>Christoffer Eliesen<br/>(lightning talk)<br/>
+                </address>
+              </div>
             </div>
           </div>
           <h3 class="schedule-all-tracks">15:50-16:00 Conference closing</h3>
@@ -539,12 +538,6 @@
           <p class="talk-meta">Lightning talk (15 min), Norsk,  <a href="#p_reklamefri_web_2020"> Friday 12:30-13:25 slot - room La Boheme 🎥</a></p>
           <p lang="no" class="talk-description">Ingen liker reklame eller betalingsmurer. Hvordan skal nyhetsnettsider som VG livnære seg, nå som vi lever i Adblock-æraen? Finnes det et alternativ som ikke er forstyrrende for brukeren og samtidig gir en bærekraftig inntekt for innholdsskaperne? Vi skal utforske mining av kryptovaluta i nettleseren og vise hvordan et nettsted kan få en stabil inntekt ved å bruke klienten sin datakraft. Denne talken vil ta for seg fordeler og ulemper ved dette, samt se på konkrete implementasjoner av teknologien.</p>
         </div>
-        <div id="lei_av_darlige_repl" data-talk-id="lei_av_darlige_repl" class="talks-entry">
-          <h4 lang="no"> Lei av din dårlige REPL?</h4>
-          <address class="talk-speaker">Alexander Premer - Knowit Objectnet</address>
-          <p class="talk-meta">Lightning talk (15 min), Norsk,  <a href="#p_lei_av_darlige_repl"> Friday 12:30-13:25 slot - room La Boheme 🎥</a></p>
-          <p lang="no" class="talk-description">Er du en av de som skriver feil i blant? Er litt usikker noen ganger? Liker konfigurerbarhet? Nysgjerrig på Scala? Lei av din Scala-REPL?Om minst et av disse utsagnene passer deg, da har du noe du kan ta med deg fra denne talken! Denne talken tar på seg oppgaven med å demonstrere at Scala-REPL er en antikvitet i forhold til Ammonite-REPL!</p>
-        </div>
         <div id="gothenburg_startup_hack" data-talk-id="gothenburg_startup_hack" class="talks-entry">
           <h4 lang="en"> Gothenburg Startup Hack - Bringing the community together</h4>
           <address class="talk-speaker">Max Witt - Knowit SysDev Göteborg</address>
@@ -557,11 +550,11 @@
           <p class="talk-meta">Lightning talk (15 min), English,  <a href="#p_why_i_fell_in_love_with_elm"> Friday 12:30-13:25 slot - room La Traviata</a></p>
           <p lang="en" class="talk-description">As a developer with minimal experience with functional programming and front-end, I decided to learn Elm. This talk gives an easy introduction to the language, and shows some reasons as to why I enjoy writing code in Elm.</p>
         </div>
-        <div id="javascript_state_of_affairs" data-talk-id="javascript_state_of_affairs" class="talks-entry">
-          <h4 lang="en"> Javascript: State of Affairs</h4>
-          <address class="talk-speaker">Christoffer Eliesen - Knowit Objectnet</address>
-          <p class="talk-meta">Lightning talk (15 min), English,  <a href="#p_javascript_state_of_affairs"> Friday 12:30-13:25 slot - room La Traviata</a></p>
-          <p lang="en" class="talk-description">Do you want to be a front end developer? Do you know what you’re getting yourself into? Well I do, and in this talk I present an overview of the complex beast that awaits you in the web.</p>
+        <div id="lei_av_darlige_repl" data-talk-id="lei_av_darlige_repl" class="talks-entry">
+          <h4 lang="no"> Lei av din dårlige REPL?</h4>
+          <address class="talk-speaker">Alexander Premer - Knowit Objectnet</address>
+          <p class="talk-meta">Lightning talk (15 min), Norsk,  <a href="#p_lei_av_darlige_repl"> Friday 12:30-13:25 slot - room La Traviata</a></p>
+          <p lang="no" class="talk-description">Er du en av de som skriver feil i blant? Er litt usikker noen ganger? Liker konfigurerbarhet? Nysgjerrig på Scala? Lei av din Scala-REPL?Om minst et av disse utsagnene passer deg, da har du noe du kan ta med deg fra denne talken! Denne talken tar på seg oppgaven med å demonstrere at Scala-REPL er en antikvitet i forhold til Ammonite-REPL!</p>
         </div>
         <div id="object_relation_mapping_kjapt_og_enkelt" data-talk-id="object_relation_mapping_kjapt_og_enkelt" class="talks-entry">
           <h4 lang="no"> Object Relation Mapping gjort kjapt og enkelt</h4>
@@ -832,6 +825,12 @@
           <address class="talk-speaker">Filip Egge - Knowit Objectnet</address>
           <p class="talk-meta">Presentation (30 min), Norsk,  <a href="#p_css_grid"> Saturday 15:20-15:50 slot - room La Traviata</a></p>
           <p lang="no" class="talk-description">CSS Grid ER fremtiden, og fremtiden er her. Lær å ta i bruk grid for din applikasjon.</p>
+        </div>
+        <div id="javascript_state_of_affairs" data-talk-id="javascript_state_of_affairs" class="talks-entry">
+          <h4 lang="en"> Javascript: State of Affairs</h4>
+          <address class="talk-speaker">Christoffer Eliesen - Knowit Objectnet</address>
+          <p class="talk-meta">Lightning talk (15 min), English,  <a href="#p_javascript_state_of_affairs"> Saturday 15:20-15:50 slot - room Rigoletto</a></p>
+          <p lang="en" class="talk-description">Do you want to be a front end developer? Do you know what you’re getting yourself into? Well I do, and in this talk I present an overview of the complex beast that awaits you in the web.</p>
         </div>
       </div>
     </section>

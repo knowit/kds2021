@@ -53,11 +53,11 @@
             },
             {
               "room": "La Boheme 🎥",
-              "slots": [ "reklamefri_web_2020", "lei_av_darlige_repl", "gothenburg_startup_hack" ]
+              "slots": [ "reklamefri_web_2020", "gothenburg_startup_hack" ]
             },
             {
               "room": "La Traviata",
-              "slots": [ "why_i_fell_in_love_with_elm", "javascript_state_of_affairs" ]
+              "slots": [ "why_i_fell_in_love_with_elm", "lei_av_darlige_repl" ]
             },
             {
               "room": "Rigoletto",
@@ -312,7 +312,7 @@
             },
             {
               "room": "Rigoletto",
-              "slots": [ "TBA" ]
+              "slots": [ "javascript_state_of_affairs" ]
             }
           ]
         },
@@ -371,7 +371,8 @@
       "speaker": "Christoffer Eliesen",
       "email": "christoffer.eliesen@knowit.no",
       "speakers": [
-        "Christoffer Eliesen"
+        "Christoffer Eliesen",
+        "(lightning talk)"
       ],
       "title": "Javascript: State of Affairs",
       "type": "Lightning talk (15 min)",
