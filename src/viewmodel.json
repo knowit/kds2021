@@ -185,6 +185,7 @@
       "day": "Saturday, 27th",
       "collections": [
         {
+        	"isKeynote": "true",
           "time": "09:00-09:30 Keynote",
           "details": "Erik Amundrud, Business Area Manager, Knowit Solutions Norway"
         },
