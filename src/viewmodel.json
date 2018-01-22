@@ -42,7 +42,7 @@
     {
       "day": "Friday, 26th",
       "collections": [
-        { "time": "11:00-11:30 Welcome / meet and greet" },
+        { "time": "11:00-11:30 Welcome / meet and greet (room: Flagstad)" },
         { "time": "11:30-12:30 Lunch" },
         {
           "time": "12:30-13:25 Lightning talks",
@@ -175,8 +175,8 @@
           ]
         },
         { "time": "16:50-17:00 Short break and hotel check-in"},
-        { "time": "17:00-17:15 Open Space Introduction" },
-        { "time": "17:15-18:15 Open Space" },
+        { "time": "17:00-17:15 Open Space Introduction (room: Flagstad)" },
+        { "time": "17:15-18:15 Open Space (room: Flagstad)" },
         { "time": "19:40-19:45 Dinner groups meet in the lobby" },
         { "time": "20:00-23:00 Conference dinner, around Oslo" }
       ]
@@ -186,7 +186,7 @@
       "collections": [
         {
         	"isKeynote": "true",
-          "time": "09:00-09:30 Keynote",
+          "time": "09:00-09:30 Keynote (room: Flagstad)",
           "details": "Erik Amundrud, Business Area Manager, Knowit Solutions Norway"
         },
         { "time": "09:30-09:40 Break" },
@@ -318,7 +318,7 @@
           ]
         },
         {
-          "time": "15:50-16:00 Conference closing"
+          "time": "15:50-16:00 Conference closing (room: Flagstad)"
         }
       ]
     }
@@ -966,12 +966,12 @@
       "speakers": [
         "Martin Valen"
       ],
-      "title": "Why your next microservice should be written in Go",
+      "title": "Web app security by and for someone who doesn’t really know security",
       "type": "Presentation (30 min)",
       "types": [
         "Presentation (30 min)"
       ],
-      "description": "Google Go has risen in popularity the last few years. It is perfect for today’s microservice architecture because of its lightweight design and easy concurrency. At least according to Google. But is it worth the hassle of learning a new language? Is it really as easy to use as they say? Why did Google choose a name for its language that you simply can’t google? After setting up a few microservices using Go, I can answer at least two of these questions. In this talk you’ll get a short introduction to Go's pros and cons, learn the basics of its syntax, and in the end set up a simple service using Docker. ",
+      "description": "If you are a web developer, chances are that you've deployed a web app at some point. But did you actually think about its security, or did you mostly worry about your fancy dashboard breaking in some old version of Safari? In this talk I'll show some tools that grade your websites security and show how you can go from an ugly F to a respectable C with a few minutes of work. I'll also try to explain concepts like CSP, HSTS, and PKP, allowing you to move towards the top grades.",
       "language": "English",
       "languageCode": "en",
       "notes": "",
