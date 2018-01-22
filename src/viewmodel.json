@@ -965,12 +965,12 @@
       "speakers": [
         "Martin Valen"
       ],
-      "title": "Why your next microservice should be written in Go",
+      "title": "Web app security by and for someone who doesn’t really know security",
       "type": "Presentation (30 min)",
       "types": [
         "Presentation (30 min)"
       ],
-      "description": "Google Go has risen in popularity the last few years. It is perfect for today’s microservice architecture because of its lightweight design and easy concurrency. At least according to Google. But is it worth the hassle of learning a new language? Is it really as easy to use as they say? Why did Google choose a name for its language that you simply can’t google? After setting up a few microservices using Go, I can answer at least two of these questions. In this talk you’ll get a short introduction to Go's pros and cons, learn the basics of its syntax, and in the end set up a simple service using Docker. ",
+      "description": "If you are a web developer, chances are that you've deployed a web app at some point. But did you actually think about its security, or did you mostly worry about your fancy dashboard breaking in some old version of Safari? In this talk I'll show some tools that grade your websites security and show how you can go from an ugly F to a respectable C with a few minutes of work. I'll also try to explain concepts like CSP, HSTS, and PKP, allowing you to move towards the top grades.",
       "language": "English",
       "languageCode": "en",
       "notes": "",
