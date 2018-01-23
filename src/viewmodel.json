@@ -240,7 +240,7 @@
           "entries": [
             {
               "room": "Flagstad 🎥",
-              "slots": [ "git_to_find_bugs" ]
+              "slots": [ "chrome_devtools" ]
             },
             {
               "room": "La Boheme 🎥",
@@ -248,7 +248,7 @@
             },
             {
               "room": "La Traviata",
-              "slots": [ "chrome_devtools" ]
+              "slots": [ "Animation_believe" ]
             },
             {
               "room": "Rigoletto",
@@ -1325,20 +1325,20 @@
       "company": "Knowit Experience Oslo",
       "country": null
     },
-    "git_to_find_bugs": {
-      "talkId": "git_to_find_bugs",
+    "Animation_believe": {
+      "talkId": "Animation_believe",
       "pending": false,
       "speaker": "Christoffer Eliesen",
       "email": "christoffer.eliesen@knowit.no",
       "speakers": [
-        "Christoffer Eliesen"
+        "Christoffer Eliesen", "(30 min)"
       ],
-      "title": "How to use Git to help you find bugs",
-      "type": "Presentation (60 min)",
+      "title": "Animation you can believe in",
+      "type": "Presentation (30 min)",
       "types": [
-        "Presentation (60 min)"
+        "Presentation (30 min)"
       ],
-      "description": "Git has become an important tool for many of us during our daily work. Some people only use it to share code with other developers, but it is actually a really powerful tool and it can help you during your coding sessions too. In this talk I demonstrate some tricks that will allow you to use git to actually help you find bugs while you are coding. Most of the talk will consist of live demonstrations.",
+      "description": "TBA",
       "language": "English",
       "languageCode": "en",
       "notes": "",
