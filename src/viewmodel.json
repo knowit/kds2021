@@ -1331,14 +1331,14 @@
       "speaker": "Christoffer Eliesen",
       "email": "christoffer.eliesen@knowit.no",
       "speakers": [
-        "Christoffer Eliesen", "(30 min)"
+        "Christoffer Eliesen", "(30 min, Beginner)"
       ],
       "title": "Animation you can believe in",
       "type": "Presentation (30 min)",
       "types": [
         "Presentation (30 min)"
       ],
-      "description": "TBA",
+      "description": "Pictures are nice but movies are better. Are you a frontend developer that is thinking about spicing up your products? Or maybe you just want to make things move across your screen for fun? In this talk I’ll give an introduction to animations on the web.",
       "language": "English",
       "languageCode": "en",
       "notes": "",
