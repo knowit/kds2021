@@ -894,7 +894,7 @@
       ],
       "description": "Jag kommer att visa hur enkelt det är att modda t.ex. en lampa, koppla den till en mikrokontroller och koppla upp den på nätet. Mikrokontrollers såsom Arduino eller ESP8266 är billiga och enkla att komma igång med, och kan användas såväl för spännande hobbyprojekt som för att bygga prototyper till verkliga IoT-projekt.",
       "language": "Svenska",
-      "languageCode": "se",
+      "languageCode": "sv",
       "notes": "",
       "city": null,
       "company": "Knowit Uppsala",
