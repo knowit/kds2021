@@ -571,9 +571,9 @@
         "Håvard Eidheim"
       ],
       "title": "Multiple Identity providers with OWIN and  Episerver",
-      "type": "Lightning talk (15 min)",
+      "type": "Short talk (20 min)",
       "types": [
-        "Lightning talk (15 min)"
+        "Short talk (20 min)"
       ],
       "description": "A presentation on how to set up one or more identity providers with OWIN and Episerver, why you might want to do this and some technical details on how to get it done.",
       "language": "English",
