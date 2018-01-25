@@ -53,7 +53,7 @@
             },
             {
               "room": "La Boheme 🎥",
-              "slots": [ "why_i_fell_in_love_with_elm", "gothenburg_startup_hack" ]
+              "slots": [ "why_i_fell_in_love_with_elm", "gothenburg_startup_hack", "practical_canvas" ]
             },
             {
               "room": "La Traviata",
@@ -370,6 +370,27 @@
       "notes": "",
       "city": null,
       "company": "Knowit SysDev Göteborg",
+      "country": null
+    },
+    "practical_canvas": {
+      "talkId": "practical_canvas",
+      "pending": false,
+      "speaker": "Patrick Monslaup",
+      "email": "patrick.monslaup@knowit.no",
+      "speakers": [
+        "Patrick Monslaup"
+      ],
+      "title": "Practical Canvas",
+      "type": "Lightning talk (15 min)",
+      "types": [
+        "Lightning talk (15 min)"
+      ],
+      "description": "An introduction to canvas.",
+      "language": "English",
+      "languageCode": "en",
+      "notes": "",
+      "city": null,
+      "company": "Knowit Experience Bergen",
       "country": null
     },
     "javascript_state_of_affairs": {
