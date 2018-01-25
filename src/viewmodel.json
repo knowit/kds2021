@@ -153,9 +153,9 @@
             }
           ]
         },
-        { "time": "16:10-16:20 Short break and hotel check-in", "isBreak": "true" },
+        { "time": "16:10-16:30 Break with a small snack, and hotel check-in", "isBreak": "true" },
         {
-          "time": "16:20-16:50 Short talks",
+          "time": "16:30-17:00 Short talks",
           "entries": [
             {
               "room": "Flagstad 🎥",
@@ -175,9 +175,10 @@
             }
           ]
         },
-        { "time": "16:50-17:00 Short break and hotel check-in", "isBreak": "true" },
-        { "time": "17:00-17:15 Open Space Introduction (room: Flagstad)" },
-        { "time": "17:15-18:15 Open Space (room: Flagstad)" },
+        { "time": "17:00-17:10 Short break and hotel check-in", "isBreak": "true" },
+        { "time": "17:10-17:30 Open Space preparation (room: Flagstad)" },
+        { "time": "17:30-18:30 Open Space (room: Flagstad)" },
+        { "time": "18:30-19:40 Break with hotel check-in, relaxing, waiting for dinner", "isBreak": "true" },
         { "time": "19:40-19:45 Dinner groups meet in the lobby" },
         { "time": "20:00-23:00 Conference dinner, around Oslo" }
       ]
