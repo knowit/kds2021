@@ -149,7 +149,7 @@
             },
             {
               "room": "Rigoletto",
-              "slots": [ "wcag2.0_accessibility_and_frontend" ]
+              "slots": [ "CANCELLED!", "wcag2.0_accessibility_and_frontend" ]
             }
           ]
         },
