@@ -307,7 +307,7 @@
           "entries": [
             {
               "room": "Flagstad 🎥",
-              "slots": [ "azure_b2c_identity_services" ]
+              "slots": [ "CANCELLED!", "azure_b2c_identity_services" ]
             },
             {
               "room": "La Boheme 🎥",
