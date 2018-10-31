@@ -1,8 +1,8 @@
 {
   "title": "Knowit Developer Summit",
   "event": {
-    "date": "1. - 2. February 2019",
-    "longDate": "Friday, 1st - Saturday, 2nd February 2019",
+    "date": "12. - 13. April 2019",
+    "longDate": "Friday, 12th - Saturday, 13th April 2019",
     "venue": "Stockholm Waterfront Hotel",
     "venueUrl": "http://www.stockholmwaterfront.com/find-us/?lang=svskapa%20ett%20ljusspel%20bakom%20takets%20fula%20uppstaende%20aluminiumstaket.",
     "city": "Stockholm",
@@ -35,7 +35,7 @@
     ]
   },
   "registration": {
-    "registrationDeadline": "December 11th, 2017",
+    "registrationDeadline": "January 12th, 2019",
     "registrationUrl": "https://docs.google.com/forms/d/1_sBsjTvAzqHak7CX3pqEkJjM29WpvNSg7ifVS1epKeY/viewform?usp=send_form"
   },
   "schedules": [
