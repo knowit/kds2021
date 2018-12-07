@@ -58,7 +58,7 @@ section {
   width: 100%;
   min-height: 70%;
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 40px;
 }
 
 .navigation {
@@ -120,38 +120,23 @@ section {
   padding: 0;
 }
 
+.wrapper .lead {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .two, .talks {
   background: #fafafa;
-  padding: 85px 20px 60px;
 }
 
-.two::before, .schedule::before, .talks::before {
-  top: -40px;
-  background: #ceefeb;
-  box-shadow: -40px 40px 0 #85d6cb, 40px -40px 0 #85d6cb;
-}
-
-.two::before, .schedule::before, .talks::before {
-  left: 50%;
-  width: 80px;
-  height: 80px;
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-}
-
-.two::before, .schedule::before, .talks::before {
-  position: absolute;
-  content: '';
-  pointer-events: none;
+.two, .talks, .schedule {
+  padding: 40px 20px;
 }
 
 .two .content h1 {
   text-align: center;
 }
 
-.schedule, .talks {
-  padding-top: 100px;
-}
 .schedule h1 {
   text-align: center;
 }
@@ -163,11 +148,13 @@ section {
   clear: both;
 }
 h3.schedule-all-tracks {
-  margin: 20px 0;
-  padding: 5px;
+  margin: 20px -20px;
+  padding: 5px 25px;
   background: #fafafa;
 }
 h3.schedule-all-tracks.session {
+  margin: 0 -20px;
+  padding: 0px 20px;
   background: #85d6cb;
 }
 h4.schedule-all-tracks {
@@ -176,9 +163,9 @@ h4.schedule-all-tracks {
 }
 h4.schedule-keynote {
   background: #85d6cb;
+  margin: 10px -20px;
+  padding: 10px 30px;
   font-weight: bold;
-  padding: 10px;
-  margin: 10px 0;
 }
 
 .fav {
@@ -199,6 +186,8 @@ h4.schedule-keynote {
 
 .favourited {
   background-color: lightyellow;
+  margin: 0 -20px;
+  padding: 0 20px;
 }
 
 .favourited .fav {
@@ -250,6 +239,8 @@ td, th{
 .schedule-entry {
   margin-bottom: 20px;
   background: #fafafa;
+  margin: 0px -20px;
+  padding: 0px 20px;
 }
 
 /*
@@ -261,8 +252,8 @@ td, th{
   background: #85d6cb;
   color: white;
   font-weight: normal;
-  padding: 5px;
-  margin: 0;
+  margin: 0px -20px;
+  padding: 5px 25px;
 }
 
 .schedule-entry p {
@@ -419,6 +410,8 @@ td, th{
   .schedule-entry {
     width: 31.3333333%;
     float: left;
+    margin: 0;
+    padding: 0;
     margin-right: 2%;
   }
   .with-4-entries .schedule-entry {
@@ -427,5 +420,14 @@ td, th{
 
   .schedule-entry:last-child {
     margin-left: 0;
+  }
+
+  .schedule-entry h5 {
+    margin: 0;
+    padding: 5px;
+  }
+  .favourited {
+    margin: 0;
+    padding: 0;
   }
 }
