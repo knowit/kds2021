@@ -8,6 +8,7 @@ block content
     //a(href='#schedule') Schedule
     //a(href='#talks') Talks and Speakers
     a(href='#location') Location
+    a(href='#coc') Code of Conduct
   section.intro
     .wrapper
       img(src='logo/KDS symbol.svg')
@@ -45,3 +46,4 @@ block content
           a(href=event.venueUrl)= event.venue
         h3= event.city
 
+  include ./includes/coc.jade
