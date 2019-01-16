@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/knowit/kds/issues"
   },
-  "homepage": "http://kds.knowit.no/",
+  "homepage": "https://kds.knowit.no/",
   "devDependencies": {
     "jade": "^1.11.0"
   }
