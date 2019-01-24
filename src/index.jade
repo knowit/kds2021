@@ -4,7 +4,7 @@ block content
   nav.navigation
     a(href='') Top
     a(href='#practical') Practicalities
-    a(href='#cfp') Call for presentations
+    //a(href='#cfp') Call for presentations
     //a(href='#schedule') Schedule
     //a(href='#talks') Talks and Speakers
     a(href='#location') Location
@@ -17,15 +17,16 @@ block content
         h2 For Developers
         p
         h3 #{event.date}<br>#{event.city}
-        h5 For the 2018-program, see <a href="index_2018.html"> here.</a>
+        h5 For the 2018-program, see <a href="index_2018.html"> here.</a>        
         h5 Feel free to <a href="mailto:kds@knowit.no">contact us.</a>
       p.lead
         | Knowit Developer Summit (KDS) is Knowit's annual company-wide software developer conference.
         | The 2019 conference will be held on #{event.longDate} at the #{event.venue} in #{event.city}, #{event.country}.
 
-  //include ./includes/practical_info.jade
+  include ./includes/register.jade
+  include ./includes/practical_info.jade
   
-  include ./includes/cfp.jade
+  //- include ./includes/cfp.jade
 
   //include ./includes/schedule.jade
   //include ./includes/talks.jade
