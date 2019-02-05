@@ -42,286 +42,198 @@
     {
       "day": "Friday, 26th",
       "collections": [
-        { "time": "11:00-11:30 Welcome / meet and greet (room: Flagstad)" },
+        { "time": "11:10-11:30 Welcome / meet and greet (room: C3)" },
         { "time": "11:30-12:30 Lunch" },
         {
-          "time": "12:30-13:25 Lightning talks",
+          "time": "12:30-13:30 Long talks and workshops",
           "entries": [
             {
-              "room": "Flagstad 🎥",
-              "slots": [ "maskinlæring_parkeringsgebyrklager_oslo_kommune", "object_relation_mapping_kjapt_og_enkelt", "progressive_web_apps" ]
+              "room": "C3",
+              "slots": [  ]
             },
             {
-              "room": "La Boheme 🎥",
-              "slots": [ "why_i_fell_in_love_with_elm", "gothenburg_startup_hack", "practical_canvas" ]
+              "room": "24",
+              "slots": [  ]
             },
             {
-              "room": "La Traviata",
-              "slots": [ "reklamefri_web_2020", "lei_av_darlige_repl" ]
+              "room": "25",
+              "slots": [  ]
             },
             {
-              "room": "Rigoletto",
-              "slots": [ "recommendations_recurrent_neural_networks", "image_recognition_subreddit" ]
+              "room": "26",
+              "slots": [  ]
             }
           ]
         },
-        { "time": "13:25-13:40 Break", "isBreak": "true" },
+        { "time": "13:30-13:40 Break", "isBreak": "true" },
         {
-          "time": "13:40-14:10 Short talks",
+          "time": "13:40-14:10 Short talks and continued workshops",
           "entries": [
             {
-              "room": "Flagstad 🎥",
-              "slots": [ "role_based_security_with_power_bi" ]
+              "room": "C3",
+              "slots": [  ]
             },
             {
-              "room": "La Boheme 🎥",
-              "slots": [ "error_handling_javascript" ]
+              "room": "24",
+              "slots": [  ]
             },
             {
-              "room": "La Traviata",
-              "slots": [ "microservices_is_it_worth_it" ]
+              "room": "25",
+              "slots": [  ]
             },
             {
-              "room": "Rigoletto",
-              "slots": [ "agile_development_at_scale" ]
+              "room": "26",
+              "slots": [  ]
             }
           ]
         },
-        { "time": "14:10-14:20 Break", "isBreak": "true" },
+        { "time": "14:10-14:30 Break", "isBreak": "true" },
         {
-          "time": "14:20-14:50 Short talks",
+          "time": "14:30-15:30 Long talks",
           "entries": [
             {
-              "room": "Flagstad 🎥",
-              "slots": [ "identity_providers_owin_episerver" ]
+              "room": "C3",
+              "slots": [  ]
             },
             {
-              "room": "La Boheme 🎥",
-              "slots": [ "iot_från_grunden" ]
+              "room": "24",
+              "slots": [  ]
             },
             {
-              "room": "La Traviata",
-              "slots": [ "android_architecture_components" ]
+              "room": "25",
+              "slots": [  ]
             },
             {
-              "room": "Rigoletto",
-              "slots": [ "chaos_engineering_101" ]
+              "room": "26",
+              "slots": [  ]
             }
           ]
         },
-        { "time": "14:50-15:00 Short break and hotel check-in", "isBreak": "true" },
+        { "time": "15:30-15:50 Short break and fika", "isBreak": "true" },
         {
-          "time": "15:00-15:30 Short talks",
+          "time": "15:50-16:20 Short talks",
           "entries": [
             {
-              "room": "Flagstad 🎥",
-              "slots": [ "ui_test_automation" ]
+              "room": "C3",
+              "slots": [  ]
             },
             {
-              "room": "La Boheme 🎥",
-              "slots": [ "intro_domenedreven_utvikling" ]
+              "room": "24",
+              "slots": [  ]
             },
             {
-              "room": "La Traviata",
-              "slots": [ "koden_betyr_ingenting" ]
+              "room": "25",
+              "slots": [  ]
             },
             {
-              "room": "Rigoletto",
-              "slots": [ "machine_learning_open_hotel" ]
+              "room": "26",
+              "slots": [  ]
             }
           ]
         },
-        { "time": "15:30-15:40 Short break and hotel check-in", "isBreak": "true" },
-        {
-          "time": "15:40-16:10 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "in_memory_database_testing_ef" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "large_scale_decoupled_torrenting" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "next_microservice_in_go" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "CANCELLED!", "wcag2.0_accessibility_and_frontend" ]
-            }
-          ]
-        },
-        { "time": "16:10-16:30 Break with wraps and other snacks, and hotel check-in", "isBreak": "true" },
-        {
-          "time": "16:30-17:00 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "mikrotjenester_cdc" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "CANCELLED!", "blockchain_hyperledger_fabric" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "in_rust_i_trust" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "machine_learning_challenges" ]
-            }
-          ]
-        },
-        { "time": "17:00-17:10 Short break and hotel check-in", "isBreak": "true" },
-        { "time": "17:10-17:30 Open Space preparation (room: Flagstad)" },
-        { "time": "17:30-18:30 Open Space (room: Flagstad)" },
-        { "time": "18:30-19:40 Break with hotel check-in, relaxing, waiting for dinner", "isBreak": "true" },
-        { "time": "19:40-19:45 Dinner groups meet in the lobby" },
-        { "time": "20:00-23:00 Conference dinner, around Oslo" }
+        { "time": "16:20-20:00 Break with hotel check-in, relaxing, waiting for dinner", "isBreak": "true" },
+        { "time": "20:00-23:00 Conference dinner" }
       ]
     },
     {
       "day": "Saturday, 27th",
       "collections": [
         {
+          "time": "09:00-09:45 Lightning talks",
+          "entries": [
+            {
+              "room": "C3",
+              "slots": [  ]
+            },
+            {
+              "room": "24",
+              "slots": [  ]
+            },
+            {
+              "room": "25",
+              "slots": [  ]
+            },
+            {
+              "room": "26",
+              "slots": [  ]
+            }
+          ]
+        },
+        { "time": "09:45-10:00 Break", "isBreak": "true" },
+        {
+          "time": "10:00-11:30 Open space Open Space (starts in room C3)"
+        },
+        { "time": "11:30-12:30 Lunch" },
+        {
+          "time": "12:30-13:00 Short talks",
+          "entries": [
+            {
+              "room": "C3",
+              "slots": [  ]
+            },
+            {
+              "room": "24",
+              "slots": [  ]
+            },
+            {
+              "room": "25",
+              "slots": [  ]
+            },
+            {
+              "room": "26",
+              "slots": [  ]
+            }
+          ]
+        },
+        { "time": "13:00-13:20 Break", "isBreak":"true" },
+        {
+          "time": "13:20-13:50 Short talks",
+          "entries": [
+            {
+              "room": "C3",
+              "slots": [  ]
+            },
+            {
+              "room": "24",
+              "slots": [  ]
+            },
+            {
+              "room": "25",
+              "slots": [  ]
+            },
+            {
+              "room": "26",
+              "slots": [  ]
+            }
+          ]
+        },
+        { "time": "13:50-14:00 Break", "isBreak": "true" },
+        {
+          "time": "14:00-14:30 Short talks",
+          "entries": [
+            {
+              "room": "C3",
+              "slots": [  ]
+            },
+            {
+              "room": "24",
+              "slots": [  ]
+            },
+            {
+              "room": "25",
+              "slots": [  ]
+            },
+            {
+              "room": "26",
+              "slots": [  ]
+            }
+          ]
+        },
+        { "time": "14:30-14:45 Break", "isBreak": "true" },
+        {
         	"isKeynote": "true",
-          "time": "09:00-09:30 Keynote (room: Flagstad)",
-          "details": "Erik Amundrud, Business Area Manager, Knowit Solutions Norway"
-        },
-        { "time": "09:30-09:40 Break", "isBreak": "true" },
-        {
-          "time": "09:40-10:10 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "angular_warstories" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "intro_to_vuejs" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "this_keyword_in_javascript" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
-            }
-          ]
-        },
-        { "time": "10:10-10:20 Break", "isBreak": "true" },
-        {
-          "time": "10:20-11:50 Workshops",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "intro_to_angular" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "think_can_frontend" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "flexbox_the_right_way" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "mini_economy_blockchain_ethereum_solidity" ]
-            }
-          ]
-        },
-        { "time": "11:50-12:00 Break", "isBreak": "true" },
-        {
-          "time": "12:00-13:00 Long talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "chrome_devtools" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "devops_maturity_models_knowit_and_dasa_views" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "Animation_believe" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "securing_azure_active_directory" ]
-            }
-          ]
-        },
-        { "time": "13:00-13:50 Conference Lunch" },
-        {
-          "time": "13:50-14:30 Medium talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "ai_guided_software_testing" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "smertefri_frontend_testing" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "azure_machine_learning" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "doobie_database_access" ]
-            }
-          ]
-        },
-        { "time": "14:30-14:40 Break", "isBreak": "true" },
-        {
-          "time": "14:40-15:10 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "how_i_built_a_power_meter" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "cryptography_illustrated" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "not_suck_bootstrap_css" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "tfs_og_octopus" ]
-            }
-          ]
-        },
-        { "time": "15:10-15:20 Break", "isBreak": "true" },
-        {
-          "time": "15:20-15:50 Short talks",
-          "entries": [
-            {
-              "room": "Flagstad 🎥",
-              "slots": [ "CANCELLED!", "azure_b2c_identity_services" ]
-            },
-            {
-              "room": "La Boheme 🎥",
-              "slots": [ "centralized_logging" ]
-            },
-            {
-              "room": "La Traviata",
-              "slots": [ "css_grid" ]
-            },
-            {
-              "room": "Rigoletto",
-              "slots": [ "javascript_state_of_affairs" ]
-            }
-          ]
+          "time": "14:45-15:15 Keynote (room: C3)",
+          "details": "TBA"
         },
         {
           "time": "KDS is over! See you all next time!"
