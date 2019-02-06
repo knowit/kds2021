@@ -49,19 +49,19 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [  "Blazor.Net_-_Brave_new_feature_off_web_development"]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [ "Human_skills_for_better_password_practise" ]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [ "Designa_skalbara_system_med_Azure:_Insikter_från_tre_projekt" ]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "Create_your_own_synthesizer_with_Rust" ]
             }
           ]
         },
@@ -71,41 +71,41 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [ "From_monotlith_to_microservices_in_finance" ]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [ "Machine_learning_in_the_underwater_domain" ]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [ "Episerver_eCommerce_Single_Page_Application" ]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "Create_your_own_synthesizer_with_Rust" ]
             }
           ]
         },
         { "time": "14:10-14:30 Break", "isBreak": "true" },
         {
-          "time": "14:30-15:30 Long talks",
+          "time": "14:30-15:30 Long talks/Short talks",
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [ "Reverse_engineering_an_Android_app",  "Getting_to_know_Flutter"]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [ "En_innføring_i_3D-visualisering_på_Web",  "GPGPU_med_WebGL_2.0"]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [ "Kubernetes_for_developers" ]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "How_does_Blockchain_work_101" ]
             }
           ]
         },
@@ -115,19 +115,19 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [ "Design_Thinking,_Lean,_and_Agile:_An_Innovation_Crash_Course" ]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [ "Modern_Enterprise_Architecture_at_Statsbygg" ]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [  "Route__\"66\"_to_DevOps"]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "WireGuard,_VPN_for_the_future" ]
             }
           ]
         },
@@ -143,19 +143,19 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [ "Some_title_concerning_Scrumish_things", "Surviving_as_the_New_Technical_Leader_-_Real_Life_Stories",  "Functional_patterns_and_techniques_in_C#"]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [ "VS_Code_can_do_that_too",  "Why_your_next_mocking_framework_should_be_NSubstitute", "Who_is_an_orbiting_developer_and_you_should_be_one"]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [ "Santander_-_Open_Banking_and_PSD2" , "Distribuerade_teams_-_dos_&_don'ts", "The_challenges_of_hybrid_applications"]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "Developing_SpinSling_in_Unity_-_Experiences_of_a_small_team",  "Down_the_rabbit_hole","Good_ideas_faster_-_A_fast_introduction_to_Google_Design_Sprints" ]
             }
           ]
         },
@@ -169,19 +169,19 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [ "No_idea_right_now" ]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [ "A_machine_learning_framework_for_identification_of_faulty_electrical_meters" ]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [ "Tell_me_the_money!_How_I_made_my_bank_talk_to_me_by_way_of_PSD2" ]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "De_andre_måtene_å_bruke_Linqpad_på" ]
             }
           ]
         },
@@ -191,19 +191,19 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [  "Technical_debt_in_practice"]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [  "Bygg_ditt_eget_smartspeil_med_Magic_Mirror_og_stemmestyring"]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [ "OP_DevOps_with_Azure_DevOps" ]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "Reptile_Framework:_A_novel_Python-based_Test_Automation_Framework_for_Developers!" ]
             }
           ]
         },
@@ -213,19 +213,19 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [  ]
+              "slots": [ "Automated'_UI_testing_in_the_hands_of_the_customer" ]
             },
             {
               "room": "24",
-              "slots": [  ]
+              "slots": [ "A_story_about_an_agile_six_pizza_team" ]
             },
             {
               "room": "25",
-              "slots": [  ]
+              "slots": [ "Speeding_up_your_Entity_Framework" ]
             },
             {
               "room": "26",
-              "slots": [  ]
+              "slots": [ "Windows_PowerShell_anno_2019" ]
             }
           ]
         },
@@ -712,7 +712,7 @@
         "John-Olav Storvold",
         "Sverre Johann Bjørke, Thomas Tøkje"
       ],
-      "title": "Create your own synthesizer with Rust",
+      "title": "Create your own synthesizer with Rust (workshop)",
       "type": "Workshop (90 minutes)",
       "types": [
         "Workshop (90 minutes)"
