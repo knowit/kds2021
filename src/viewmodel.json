@@ -83,7 +83,7 @@
             },
             {
               "room": "26",
-              "slots": [ "Create_your_own_synthesizer_with_Rust" ]
+              "slots": [ "Create_your_own_synthesizer_with_Rust_continued" ]
             }
           ]
         },
@@ -712,7 +712,28 @@
         "John-Olav Storvold",
         "Sverre Johann Bjørke, Thomas Tøkje"
       ],
-      "title": "Create your own synthesizer with Rust (workshop)",
+      "title": "[Workshop] Create your own synthesizer with Rust",
+      "type": "Workshop (90 minutes)",
+      "types": [
+        "Workshop (90 minutes)"
+      ],
+      "description": "Rust is a reliable systems programming language providing bare-metal performance in a modern wrapping. It guarantees memory and thread-safety without garbage collection, offers great tooling and an amazing community — in fact, Rust has been voted the most loved programming language according to the Stack Overflow Developer Survey three years in a row. The language is experiencing rapid adaptation in multiple industries ranging from game development to backend systems.\n\nIn this workshop, we will explore Rust and create a simple synthesizer that can be played with your computer keyboard. We will also implement rudimentary sound effects. The goal of this workshop is to learn some of the basics of Rust through a hands-on project, and no prior knowledge of Rust or audio processing is required.\n Outline:\nWe start off with some basic sound theory ~ 15 min\n\nWe then have a fundamental introduction to Rust, focusing on the aspects required to complete the tasks.\n\nFor the remainder of the time we assist the participants as they progress through the tasks. When opportune, we will present our proposed solution for the tasks, giving those who lag behind the opportunity to catch up.\n Difficulty: Intermediate",
+      "language": "English",
+      "languageCode": "en",
+      "notes": null,
+      "company": "Knowit Objectnet AS",
+      "country": "Norway"
+    },
+    "Create_your_own_synthesizer_with_Rust_continued": {
+      "talkId": "Create_your_own_synthesizer_with_Rust_continued",
+      "pending": false,
+      "speaker": "John-Olav Storvold",
+      "email": "johsto@knowit.no",
+      "speakers": [
+        "John-Olav Storvold",
+        "Sverre Johann Bjørke, Thomas Tøkje"
+      ],
+      "title": "[Workshop cont.] Create your own synthesizer with Rust",
       "type": "Workshop (90 minutes)",
       "types": [
         "Workshop (90 minutes)"
@@ -807,10 +828,10 @@
     "No_idea_right_now": {
       "talkId": "No_idea_right_now",
       "pending": false,
-      "speaker": "kriser karto",
+      "speaker": "Krister Karto",
       "email": "krister.karto@knowit.no",
       "speakers": [
-        "kriser karto"
+        "Krister Karto"
       ],
       "title": "No idea right now",
       "type": "Short presentation (30 minutes)",
