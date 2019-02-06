@@ -16,7 +16,7 @@ section#talks.talks
                   p.talk-meta
                     | #{talk.type}, #{talk.language}, #{" "}
                     a(href='#p_'+slot)  #{schedule.day.split(',').shift()} #{collection.time.split(' ').shift()} slot - room #{entry.room}
-                  p.talk-description(lang=talk.languageCode)= talk.description
+                  p.talk-description(lang=talk.languageCode) !{talk.description}
                   if progComView
                     p.talk-notes
                       b Notes:
