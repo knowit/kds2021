@@ -267,7 +267,7 @@ td, th{
     padding-left: 4px;
 }
 
-.schedule-entry p[lang=sv]:after {
+.schedule-entry p[lang=se]:after {
     display: inline-block;
     content: url(sweden.png);
     padding-left: 4px;
