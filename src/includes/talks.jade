@@ -12,7 +12,9 @@ section#talks.talks
                 .talks-entry(id=slot data-talk-id=slot)
                   h4(lang=talk.languageCode)= " " + talk.title
                   address.talk-speaker
-                    | #{talk.speaker} - #{talk.company}
+                    each speaker in talk.speakers
+                      | #{speaker} - 
+                    | #{talk.company}
                   p.talk-meta
                     | #{talk.type}, #{talk.language}, #{" "}
                     a(href='#p_'+slot)  #{schedule.day.split(',').shift()} #{collection.time.split(' ').shift()} slot - room #{entry.room}
