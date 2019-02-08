@@ -206,8 +206,7 @@
               "room": "24",
               "slots": [
                 "VS_Code_can_do_that_too",
-                "Why_your_next_mocking_framework_should_be_NSubstitute",
-                "Who_is_an_orbiting_developer_and_you_should_be_one"
+                "Why_your_next_mocking_framework_should_be_NSubstitute"
               ]
             },
             {
@@ -1055,7 +1054,7 @@
       "speakers": [
         "Sofija Ivanova"
       ],
-      "title": "Who is an orbiting developer and you should be one",
+      "title": "Who is an orbiting developer and you should be one - CANCELLED",
       "type": "Lightning talk (10 minutes)",
       "types": [
         "Lightning talk (10 minutes)"
