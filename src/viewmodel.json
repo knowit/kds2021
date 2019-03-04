@@ -151,33 +151,9 @@
           "isBreak": "true"
         },
         {
-          "time": "15:50-16:20 Short talks",
-          "entries": [
-            {
-              "room": "C3",
-              "slots": [
-                "Design_Thinking,_Lean,_and_Agile:_An_Innovation_Crash_Course"
-              ]
-            },
-            {
-              "room": "24",
-              "slots": [
-                "Modern_Enterprise_Architecture_at_Statsbygg"
-              ]
-            },
-            {
-              "room": "25",
-              "slots": [
-                "Route__\"66\"_to_DevOps"
-              ]
-            },
-            {
-              "room": "26",
-              "slots": [
-                "WireGuard,_VPN_for_the_future"
-              ]
-            }
-          ]
+          "isKeynote": "true",
+          "time": "15:50-16:20 Keynote (room: C3)",
+          "details": "Åsa Schwarz"
         },
         {
           "time": "16:20-20:00 Break with hotel check-in, relaxing, waiting for dinner",
@@ -337,9 +313,33 @@
           "isBreak": "true"
         },
         {
-          "isKeynote": "true",
-          "time": "14:45-15:15 Keynote (room: C3)",
-          "details": "TBA"
+          "time": "14:45-15:15 Short talks",
+          "entries": [
+            {
+              "room": "C3",
+              "slots": [
+                "Design_Thinking,_Lean,_and_Agile:_An_Innovation_Crash_Course"
+              ]
+            },
+            {
+              "room": "24",
+              "slots": [
+                "Modern_Enterprise_Architecture_at_Statsbygg"
+              ]
+            },
+            {
+              "room": "25",
+              "slots": [
+                "Route__\"66\"_to_DevOps"
+              ]
+            },
+            {
+              "room": "26",
+              "slots": [
+                "WireGuard,_VPN_for_the_future"
+              ]
+            }
+          ]
         },
         {
           "time": "KDS is over! See you all next time!"
