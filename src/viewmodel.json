@@ -41,7 +41,7 @@
   },
   "schedules": [
     {
-      "day": "Friday, 26th",
+      "day": "Friday, 12th",
       "collections": [
         {
           "time": "11:10-11:30 Welcome / meet and greet (room: C3)"
@@ -189,7 +189,7 @@
       ]
     },
     {
-      "day": "Saturday, 27th",
+      "day": "Saturday, 13th",
       "collections": [
         {
           "time": "09:00-09:45 Lightning talks",
@@ -315,7 +315,7 @@
             {
               "room": "24",
               "slots": [
-                "A_story_about_an_agile_six_pizza_team"
+                "Internet_Of_Things._From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data."
               ]
             },
             {
@@ -934,7 +934,7 @@
       "types": [
         "Lightning talk (10 minutes)"
       ],
-      "description": "Lorem Ipsum<br />Outline:<br />Lorem Ipsum<br />Difficulty: Beginner",
+      "description": "I went and got certified as a Scrummaster, and one thing I noticed during the process was that Scrum seemed very rigid. I thought about the teams I had worked in and how they fit into this rigid system and they just didn’t. So I was stuck with this thought in my head; Is Scrum-ish such a bad thing? <br />In this talk I’ll air out my thoughts on different aspects of Scrum, hopefully this can lead to an interesting discussion during Open Space. <br />Difficulty: Beginner",
       "language": "English",
       "languageCode": "en",
       "notes": null,
