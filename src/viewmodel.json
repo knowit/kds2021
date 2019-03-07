@@ -841,12 +841,12 @@
       "speakers": [
         "David Lund"
       ],
-      "title": "Down the rabbit hole",
+      "title": "Q# - Down the rabbit hole",
       "type": "Lightning talk (10 minutes)",
       "types": [
         "Lightning talk (10 minutes)"
       ],
-      "description": "or \"here is the source code make like it is but better!\"...<br />Outline:<br />This is a short autopsy of my latest project where most of the blame is my own<br />Difficulty: Beginner",
+      "description": "Quick look at Q# - Microsoft's Quantum computing language.<br />Difficulty: Beginner",
       "language": "English",
       "languageCode": "en",
       "notes": null,
