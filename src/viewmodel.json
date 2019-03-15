@@ -121,7 +121,6 @@
             {
               "room": "C3",
               "slots": [
-                "Reverse_engineering_an_Android_app",
                 "Getting_to_know_Flutter"
               ]
             },
@@ -237,7 +236,6 @@
             {
               "room": "26",
               "slots": [
-                "De_andre_måtene_å_bruke_Linqpad_på"
               ]
             }
           ]
@@ -318,7 +316,6 @@
             {
               "room": "C3",
               "slots": [
-                "Design_Thinking,_Lean,_and_Agile:_An_Innovation_Crash_Course"
               ]
             },
             {
@@ -454,27 +451,6 @@
       "company": "Knowit Objectnet",
       "country": "Norway",
       "speakerBio": "Anders is a fallen mathematician with 15 years of experience from his backup plan as a software developer. As a manager and senior consultant with the Knowit Objectnet, Anders is focused on creating truly innovative solutions while never losing sight of building the right product.\n"
-    },
-    "Reverse_engineering_an_Android_app": {
-      "talkId": "Reverse_engineering_an_Android_app",
-      "pending": false,
-      "speaker": "Kristoffer Berge",
-      "email": "Kristoffer.berge@knowit.no",
-      "speakers": [
-        "Kristoffer Berge"
-      ],
-      "title": "Reverse engineering an Android app",
-      "type": "Short presentation (30 minutes)",
-      "types": [
-        "Short presentation (30 minutes)"
-      ],
-      "description": "Nothing is worse than being forced to use bad applications. Why not just reverse engineer it and create a better version of the app for yourself?<br />Outline:<br />I created my own app to open the door at my local bike parking facility. I'll be sharing the painstaking process i went through as well as a couple of different ways to uncover, and use the undocumented API behind the app.<br />Difficulty: Beginner<br />Tags: Android, Xamarin, Flic, Reverse engineering",
-      "language": "English",
-      "languageCode": "en",
-      "notes": null,
-      "company": "Knowit Experience Oslo",
-      "country": "Norway",
-      "speakerBio": "Kristoffer is a .NET developer and also a mobile app developer thanks to Xamarin"
     },
     "Modern_Enterprise_Architecture_at_Statsbygg": {
       "talkId": "Modern_Enterprise_Architecture_at_Statsbygg",
@@ -1048,28 +1024,6 @@
       "country": "Sweden",
       "speakerBio": "Ove Holm, works mostly with Oracle stuff but is curious about all new stuff"
     },
-    "Design_Thinking,_Lean,_and_Agile:_An_Innovation_Crash_Course": {
-      "talkId": "Design_Thinking,_Lean,_and_Agile:_An_Innovation_Crash_Course",
-      "pending": false,
-      "speaker": "Sofija Ivanova",
-      "email": "sofija.ivanova@knowit.no",
-      "speakers": [
-        "Sofija Ivanova",
-        "Maja Jaakson"
-      ],
-      "title": "Design Thinking, Lean, and Agile: An Innovation Crash Course",
-      "type": "Short presentation (30 minutes)",
-      "types": [
-        "Short presentation (30 minutes)"
-      ],
-      "description": "Design Thinking, Lean, and Agile are three popular methodologies for creating new products, services and startups. In this talk, we explore their underlying principles, similarities, and differences.<br />Difficulty: Beginner<br />Tags: design thinking, lean, agile, methodology, innovation, process",
-      "language": "English",
-      "languageCode": "en",
-      "notes": null,
-      "company": "Knowit Experience Bergen",
-      "country": "Norway",
-      "speakerBio": "Sofija: Front-end developer and design thinker, Maja: developer"
-    },
     "Who_is_an_orbiting_developer_and_you_should_be_one": {
       "talkId": "Who_is_an_orbiting_developer_and_you_should_be_one",
       "pending": false,
@@ -1174,27 +1128,6 @@
       "company": "Knowit Amende",
       "country": "Norway",
       "speakerBio": "https://www.linkedin.com/in/siddiseh/"
-    },
-    "De_andre_måtene_å_bruke_Linqpad_på": {
-      "talkId": "De_andre_måtene_å_bruke_Linqpad_på",
-      "pending": false,
-      "speaker": "Andrew Rutherfurd",
-      "email": "andrew.rutherfurd@knowit.no",
-      "speakers": [
-        "Andrew Rutherfurd"
-      ],
-      "title": "De andre måtene å bruke Linqpad på",
-      "type": "Short presentation (30 minutes)",
-      "types": [
-        "Short presentation (30 minutes)"
-      ],
-      "description": "Mange kjenner allerede til Linqpad, men det kan kanskje brukes til mer enn du gjør nå?\n\nLinqpad kan brukes til mange forskjellige typer oppgaver. Demo av:\n- småfunksjoner\n- db spørringer i Linq eller SQL\n- kalle metoder i dll'er i andre prosjekt\n- \"Dump()\"\n- API-kall (?)<br />Difficulty: Beginner<br />Tags: LinqPad, Linq",
-      "language": "Norwegian",
-      "languageCode": "no",
-      "notes": null,
-      "company": "Knowit Amende",
-      "country": "Norway",
-      "speakerBio": "https://www.linkedin.com/in/andrew-rutherfurd-9481092/"
     },
     "Good_ideas_faster_-_A_fast_introduction_to_Google_Design_Sprints": {
       "talkId": "Good_ideas_faster_-_A_fast_introduction_to_Google_Design_Sprints",
