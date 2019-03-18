@@ -236,6 +236,7 @@
             {
               "room": "26",
               "slots": [
+                "Think_Big,_Start_Small_&_Move_Fast._Kickstart_your_Cloud_Migration!"
               ]
             }
           ]
@@ -1276,6 +1277,30 @@
       "country": "Sweden",
       "speakerBio": "Magnus har 21 års erfarenhet inom design av webb och distribuerade system. Han brinner för kvalitet och bra arkitektur och lite extra kring Domain Driven Design. Magnus roll på Knowit är arkitekt, utvecklare, workshopledare, säljstöd och utbildare."
     },
+
+    "Think_Big,_Start_Small_&_Move_Fast._Kickstart_your_Cloud_Migration!": {
+      "talkId": "Think_Big,_Start_Small_&_Move_Fast._Kickstart_your_Cloud_Migration!",
+      "pending": false,
+      "speaker": "Joakim Berg",
+      "email": "joakm.berg@knowit.se",
+      "speakers": [
+        "Joakim Berg"
+      ],
+      "title": "Think Big, Start Small & Move Fast. Kickstart your Cloud Migration!",
+      "type": "Short presentation (30 minutes)",
+      "types": [
+        "Short presentation (30 minutes)"
+      ],
+      "description": "Getting started using public cloud is easy if you know what you’re doing. Joakim Berg, cloud strategist at Knowit Cloud, explains how to effectively migrate applications and workloads to AWS, Azure or Google Cloud.",
+      "language": "Swedish",
+      "languageCode": "se",
+      "notes": null,
+      "company": "Knowit Cloud AB",
+      "country": "Sweden",
+      "speakerBio": "Joakim Berg​ is a senior digitalization and cloud specialist at Knowit Cloud with more 15 years experience as a business and IT consultant. For the past 8+ years Joakim has been focusing on public cloud solutions, both from a digital workplace perspective using SaaS solutions such as Office 365 and from an application hosting and development perspective using IaaS, CaaS and Paas services. "
+    },
+
+
     "Distribuerade_teams_-_dos_&_don'ts": {
       "talkId": "Distribuerade_teams_-_dos_&_don'ts",
       "pending": false,
