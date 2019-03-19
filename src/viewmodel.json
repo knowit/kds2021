@@ -151,8 +151,8 @@
         },
         {
           "isKeynote": "true",
-          "time": "15:50-16:20 Keynote (room: C3)",
-          "details": "Åsa Schwarz"
+          "time": "15:50-16:20 Keynote - Åsa Schwarz (room: C3)",
+          "details": "Head of Business Development at Knowit Cybersecurity & Law. </br></br>Was appointed Security profile of the year (2017). </br></br>She is also a novelist translated to seventeen languages. Her last novel was the hackerthriller \"The seven keys\"."
         },
         {
           "time": "16:20-20:00 Break with hotel check-in, relaxing, waiting for dinner",
@@ -1330,12 +1330,12 @@
       "speakers": [
         "Mads Wiemann"
       ],
-      "title": "A machine learning framework for identification of faulty electrical meters",
+      "title": "The importance of a ml framework to move from PoC to Production",
       "type": "Short presentation (30 minutes)",
       "types": [
         "Short presentation (30 minutes)"
       ],
-      "description": "*<br />Difficulty: Advanced<br />Tags: Machine learning, AI, data science",
+      "description": "To reap the benefits of a proposed machine learning model it can be very important that it works 24/7/365. Having a PoC is one thing but being able to scale it such that it runs continuously in production with a stable and high accuracy is no simple task and one that is often underestimated.</ br> </ br> It can take lot of effort to turn a PoC model into a working model in production without a framework. In this presentation I will therefore dive more into the importance of a ML framework, based on our learnings/experiences from establishing one at E.ON Energy networks AB.<br />Difficulty: Advanced<br />Tags: Machine learning, AI, data science",
       "language": "English",
       "languageCode": "en",
       "notes": null,
