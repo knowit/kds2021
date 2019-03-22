@@ -218,7 +218,6 @@
             {
               "room": "C3",
               "slots": [
-                "No_idea_right_now"
               ]
             },
             {
@@ -960,27 +959,6 @@
       "company": "Knowit Experience",
       "country": "Norway",
       "speakerBio": "Full stack web developer at Knowit Experience Bergen"
-    },
-    "No_idea_right_now": {
-      "talkId": "No_idea_right_now",
-      "pending": false,
-      "speaker": "Krister Karto",
-      "email": "krister.karto@knowit.no",
-      "speakers": [
-        "Krister Karto"
-      ],
-      "title": "Take charge of your own career, the future is happening right now!",
-      "type": "Short presentation (30 minutes)",
-      "types": [
-        "Short presentation (30 minutes)"
-      ],
-      "description": "The golden age for developers have started and we are living in the very beginning of it. Software development have moved from something weird that NASA did, to something little kids go to summer camp to learn, and not just the nerdy kids! The future really is happening right now! What does this mean for each of us and what skilsets do we, as developers, need to have in order to take advantage of this. <br /><br />In this talk I will look a bit into our history and where we are going and also discuss how you as a consultant can take advantage of the golden age of development. Difficulty: Beginner<br />Tags: Agile",
-      "language": "English",
-      "languageCode": "en",
-      "notes": null,
-      "company": "knowit experience bergen",
-      "country": "Norway",
-      "speakerBio": "Simply the best"
     },
     "Episerver_eCommerce_Single_Page_Application": {
       "talkId": "Episerver_eCommerce_Single_Page_Application",
