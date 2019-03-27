@@ -55,7 +55,7 @@
             {
               "room": "C3",
               "slots": [
-                "Blazor.Net_-_Brave_new_feature_off_web_development"
+                "Blazor.Net_-_Brave_new_future_off_web_development"
               ]
             },
             {
@@ -768,19 +768,19 @@
       "speakerBio": "im a developer"
     },
     "Blazor.Net_-_Brave_new_feature_off_web_development": {
-      "talkId": "Blazor.Net_-_Brave_new_feature_off_web_development",
+      "talkId": "Blazor.Net_-_Brave_new_future_off_web_development",
       "pending": false,
       "speaker": "Fredrik Claesson",
       "email": "fredrik.claesson@knowit.se",
       "speakers": [
         "Fredrik Claesson"
       ],
-      "title": "Blazor.Net - Brave new feature off web development",
+      "title": "Blazor.Net - Brave new future off web development",
       "type": "Long presentation (60 minutes)",
       "types": [
         "Long presentation (60 minutes)"
       ],
-      "description": "Lorem ipsum<br />Outline:<br />Lorem ipsum<br />Difficulty: Intermediate",
+      "description": "Blazor is a new framework for building SPAs that can run C# code client-side in the browser as Web Assembly code but also server side (with or without webserver) <br />Outline:<br />I this talk I'll go through the concepts around Blazor and Web Assebly and compare the different hosting and runtime options. \nYou will also see some live code examples on how routing, binding, components, re-use, dependency injection, JavaScript interop works. \nAnd the grande finale, I'll show what it takes to build a desktop client by using Electron <br />Difficulty: Intermediate",
       "language": "English",
       "languageCode": "en",
       "notes": null,
