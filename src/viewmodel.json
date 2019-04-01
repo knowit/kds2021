@@ -268,7 +268,7 @@
             {
               "room": "26",
               "slots": [
-                "Reptile_Framework:_A_novel_Python-based_Test_Automation_Framework_for_Developers!"
+                "TraceRobot:_A_Pythonic_Test_Automation_Solution"
               ]
             }
           ]
@@ -557,20 +557,20 @@
       "country": "Norway",
       "speakerBio": "I have worked at Knowit as a fullstack developer for almost 4 years now. I have worked on a lot of different projects, spanning multiple industries. "
     },
-    "Reptile_Framework:_A_novel_Python-based_Test_Automation_Framework_for_Developers!": {
-      "talkId": "Reptile_Framework:_A_novel_Python-based_Test_Automation_Framework_for_Developers!",
+    "TraceRobot:_A_Pythonic_Test_Automation_Solution": {
+      "talkId": "TraceRobot:_A_Pythonic_Test_Automation_Solution",
       "pending": false,
       "speaker": "Markku Degerholm",
       "email": "markku.degerholm@knowit.fi",
       "speakers": [
         "Markku Degerholm"
       ],
-      "title": "Reptile Framework: A novel Python-based Test Automation Framework for Developers!",
-      "type": "Workshop (90 minutes)",
+      "title": "TraceRobot: A Pythonic Test Automation Solution",
+      "type": "Short presentation (30 minutes)",
       "types": [
-        "Workshop (90 minutes)"
+        "Short presentation (30 minutes)"
       ],
-      "description": "We like Robot Framework because it is easy to use and has nice reports. We love Python because it's a nice language for many things. We hate Robot Framework because it's horrible as a programming language. Being 100% Python but able to output Robot FW reports, the Reptile Framework tries to combine the best of both worlds. But beware, it's still only a prototype and the project is looking for volunteers!\n\nTake your laptop with you, in this workshop you will be able to try it out!<br />Difficulty: Intermediate<br />Tags: python, test automation, framework, workshop, agile",
+      "description": "We like Robot Framework because it is easy to use and has nice reports. We love Python because it's a cool programming language. Unfortunately, the same cannot be said about Robot Framework. Thus, many developers have been looking for a way to write tests in native Python  and still come out with test execution trace logs, as provided Robot Framework. So here it is: TraceRobot. TraceRobot is a python module and a PyTest plugin, combining the best worlds of PyTest and Robot Framework. But beware, the project is still a PoC and looking for volunteers!<br />Difficulty: Intermediate<br />Tags: python, test automation, framework, workshop, agile",
       "language": "English",
       "languageCode": "en",
       "notes": null,
