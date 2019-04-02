@@ -62,7 +62,7 @@ a {
 /* Layout */
 section {
   width: 100%;
-  min-height: 25%;
+  min-height: 60%;
   position: relative;
   padding-bottom: 40px;
 }
