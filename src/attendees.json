@@ -267,13 +267,6 @@
       "country": "Sweden"
     },
     {
-      "name": " ",
-      "speaker": true,
-      "city": null,
-      "company": null,
-      "country": null
-    },
-    {
       "name": "Christer Alm",
       "speaker": false,
       "city": "Stockholm",
@@ -305,7 +298,7 @@
       "name": "Mattias Svensson",
       "speaker": false,
       "city": "Göteborg",
-      "company": "Knowit Development Göteborg AB",
+      "company": "Knowit Systems Development Göteborg AB",
       "country": "Sweden"
     },
     {
