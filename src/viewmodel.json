@@ -218,6 +218,7 @@
             {
               "room": "C3",
               "slots": [
+                "A_paranoids_guide_to_trusting_open_source"
               ]
             },
             {
@@ -366,6 +367,27 @@
       "company": "Knowit company (full name):",
       "country": "Knowit country:",
       "speakerBio": "Speaker bio:"
+    },
+    "A_paranoids_guide_to_trusting_open_source": {
+      "talkId": "A_paranoids_guide_to_trusting_open_source:",
+      "pending": false,
+      "speaker": "Rickard Westberg",
+      "email": "Rickard.Westberg@knowit.se",
+      "speakers": [
+        "Rickard Westberg"
+      ],
+      "title": "A paranoids guide to trusting open source",
+      "type": "Short presentation (30 minutes)",
+      "types": [
+        "Short presentation (30 minutes)"
+      ],
+      "description": "What if you actually had to address all the criticism you’ve heard about open source software before you use it in your project? This is a story about what needs to be done, and a look at current and future CI/CD/DevOps pipeline capabilities supporting this. <br />Tags: DevOps, test, open source, security, shift left",
+      "language": "English",
+      "languageCode": "en",
+      "notes": null,
+      "company": "Knowit Defence Technology",
+      "country": "Sweden",
+      "speakerBio": ""
     },
     "Technical_debt_in_practice": {
       "talkId": "Technical_debt_in_practice",
