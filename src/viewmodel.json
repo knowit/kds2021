@@ -100,7 +100,6 @@
             {
               "room": "25",
               "slots": [
-                "Episerver_eCommerce_Single_Page_Application"
               ]
             },
             {
@@ -981,28 +980,6 @@
       "company": "Knowit Experience",
       "country": "Norway",
       "speakerBio": "Full stack web developer at Knowit Experience Bergen"
-    },
-    "Episerver_eCommerce_Single_Page_Application": {
-      "talkId": "Episerver_eCommerce_Single_Page_Application",
-      "pending": false,
-      "speaker": "Axel Nilsson Svegard",
-      "email": "axel.nilsson-svegard@knowit.se",
-      "speakers": [
-        "Axel Nilsson Svegard",
-        "Axel Nilsson Svegard, Philip Essy-Ehsing"
-      ],
-      "title": "Episerver eCommerce Single Page Application",
-      "type": "Short presentation (30 minutes)",
-      "types": [
-        "Short presentation (30 minutes)"
-      ],
-      "description": "How to tackle the difficulties around creating a single page application for an Episerver eCommerce site.\nSolving Episerver built in functionality like on-page-editing.\nServer side rendering using node services to run javascript server side.\n<br />Difficulty: Advanced<br />Tags: Episerver, react, spa, frontend, backend, javascript, ecommerce",
-      "language": "Swedish",
-      "languageCode": "se",
-      "notes": null,
-      "company": "Knowit Experience Malmö",
-      "country": "Sweden",
-      "speakerBio": "Axel Nilsson Svegard is a eCommerce Solution Architect at Knowit Experience Malmö. Focusing primarily on Episerver solutions for large customers in both B2C and B2B.\n\nPhilip Essy-Ehsing is a frontend ninja working at the Malmö office. Philip mainly focuses on javascript and UX for all kinds of customers."
     },
     "How_does_Blockchain_work_101": {
       "talkId": "How_does_Blockchain_work_101",
