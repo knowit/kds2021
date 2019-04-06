@@ -1,5 +1,6 @@
 {
-  "attendees": [
+  "attendees": 
+  [
     {
       "name": "Siddise Hirpa",
       "speaker": true,
@@ -26,7 +27,7 @@
       "speaker": true,
       "city": "Oslo",
       "company": "Knowit Amende AS",
-      "country": "Norge"
+      "country": "Norway"
     },
     {
       "name": "Michael Åhs",
@@ -47,7 +48,7 @@
       "speaker": true,
       "city": "Hellerup",
       "company": "Knowit Decision Danmark",
-      "country": "Danmark"
+      "country": "Denmark"
     },
     {
       "name": "Ove Holm",
@@ -139,20 +140,6 @@
       "city": "Bergen",
       "company": "Knowit Experience Bergen AS",
       "country": "Norway"
-    },
-    {
-      "name": "Axel Nilsson Svegard",
-      "speaker": true,
-      "city": "Malmö",
-      "company": "Knowit Experience Malmö AB",
-      "country": "Sweden"
-    },
-    {
-      "name": "Philip Essy-Ehsing",
-      "speaker": true,
-      "city": "Malmö",
-      "company": "Knowit Experience Malmö AB",
-      "country": "Sweden"
     },
     {
       "name": "Håvard Slettvold",
@@ -414,13 +401,6 @@
       "country": "Sweden"
     },
     {
-      "name": "André Samuelsson",
-      "speaker": false,
-      "city": "Göteborg",
-      "company": "Knowit Systems Development Göteborg AB",
-      "country": "Sweden"
-    },
-    {
       "name": "Alexander Grahn",
       "speaker": false,
       "city": "Stockholm",
@@ -572,13 +552,6 @@
       "speaker": false,
       "city": "Stockholm",
       "company": "Knowit Defence Technology AB",
-      "country": "Sweden"
-    },
-    {
-      "name": "Anna Österberg",
-      "speaker": false,
-      "city": "Örebro",
-      "company": "Knowit Örebro AB",
       "country": "Sweden"
     },
     {
@@ -764,13 +737,6 @@
       "country": "Norway"
     },
     {
-      "name": "Jimmie Magnusson",
-      "speaker": false,
-      "city": "Malmö",
-      "company": "Knowit Experience Malmö AB",
-      "country": "Sweden"
-    },
-    {
       "name": "Niklas Brättemark",
       "speaker": false,
       "city": "Stockholm",
@@ -804,6 +770,12 @@
       "city": "Luleå",
       "company": "Knowit Norrland AB",
       "country": "Sweden"
+    },
+    {
+      "name": "Ernie Gustafsson Skarphagen",
+      "speaker": false,
+      "city": "Stockholm",
+      "company": "Knowit Development AB",
+      "country": "Sweden"
     }
-  ]
-}
+  ]}
