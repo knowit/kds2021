@@ -777,5 +777,13 @@
       "city": "Stockholm",
       "company": "Knowit Development AB",
       "country": "Sweden"
+    },
+    {
+      "name": "Mathias Andersson",
+      "speaker": false,
+      "city": "Malmö",
+      "company": "Knowit Experience Malmö AB",
+      "country": "Sweden"
     }
-  ]}
+  ]
+}
