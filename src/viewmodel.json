@@ -100,6 +100,7 @@
             {
               "room": "25",
               "slots": [
+                
               ]
             },
             {
@@ -119,15 +120,15 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [
-                "Getting_to_know_Flutter"
+              "slots": [                
+                "En_innføring_i_3D-visualisering_på_Web",
+                "GPGPU_med_WebGL_2.0"
               ]
             },
             {
               "room": "24",
               "slots": [
-                "En_innføring_i_3D-visualisering_på_Web",
-                "GPGPU_med_WebGL_2.0"
+                "Getting_to_know_Flutter"
               ]
             },
             {
@@ -1073,12 +1074,12 @@
       "speakers": [
         "Jens Kristoffer Markussen"
       ],
-      "title": "GPGPU med WebGL 2.0",
+      "title": "GPGPU with WebGL 2.0",
       "type": "Short presentation (30 minutes)",
       "types": [
         "Short presentation (30 minutes)"
       ],
-      "description": "Grafikkort brukes til mer enn bare grafikkrendering, de er også brukt til å akselerere andre beregningsintensive oppgaver innen computer vision, simulering, video-enkoding, og lignende. Med WebGL så er grafikkortet sitt potensiale tilgjengelig fra en nettleser og 2.0 spesifikasjonen, samt en \"Compute Shader\" utvidelse som kommer, åpner for nye muligheter for hva som er mulig i en nettleser uten nettleserutvidelser.\n\nDemonstrasjon av potensiale med å vise en post-prosesseringspipeline av webkamera video i sanntid<br />Difficulty: Advanced<br />Tags: GPGPU, WebGL, Shaders, Hardware acceleration",
+      "description": "Graphics cards can be used to do more than just rendering graphics, they can also be used to accelerate compute-intensive workloads within fields like computer vision, physics simulation, video encoding, and the likes. With WebGL, the graphics processor is programmable directly from a browser, and with the 2.0 specification, as well as an upcoming “compute shader” extension, new possibilities for high-performance and browser-native heterogeneous programming presents itself. <br />Difficulty: Advanced<br />Tags: GPGPU, WebGL, Shaders, Hardware acceleration",
       "language": "English",
       "languageCode": "en",
       "notes": null,
