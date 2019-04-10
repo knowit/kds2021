@@ -98,12 +98,6 @@
               ]
             },
             {
-              "room": "25",
-              "slots": [
-                
-              ]
-            },
-            {
               "room": "26",
               "slots": [
                 "Create_your_own_synthesizer_with_Rust_continued"
@@ -128,7 +122,8 @@
             {
               "room": "24",
               "slots": [
-                "Getting_to_know_Flutter"
+                "Getting_to_know_Flutter",
+                "OP_DevOps_with_Azure_DevOps"
               ]
             },
             {
@@ -261,12 +256,6 @@
               ]
             },
             {
-              "room": "25",
-              "slots": [
-                "OP_DevOps_with_Azure_DevOps"
-              ]
-            },
-            {
               "room": "26",
               "slots": [
                 "TraceRobot:_A_Pythonic_Test_Automation_Solution"
@@ -316,11 +305,6 @@
           "entries": [
             {
               "room": "C3",
-              "slots": [
-              ]
-            },
-            {
-              "room": "24",
               "slots": [
                 "Modern_Enterprise_Architecture_at_Statsbygg"
               ]
