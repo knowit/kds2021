@@ -555,7 +555,7 @@
       "types": [
         "Short presentation (30 minutes)"
       ],
-      "description": "Automated UI testing is an incredible tool that usually is only available for developers. What if we gave the customer the ability to trigger, schedule, and orchestrate such tests?\nWe are creating a platform with this exact purpose.\nThis talk dives into the idea behind this, how it is built, and future possibilities.<br />Difficulty: Intermediate<br />Tags: UI Testing, Javascript, Firebase Functions",
+      "description": "Automated UI testing is an incredible tool that usually is only available for developers. What if we gave the customer the ability to trigger, schedule, and orchestrate such tests?\nWe are creating a platform with this exact purpose.\nThis talk dives into the idea behind this, how it is built, and future possibilities.<br />Difficulty: Beginner<br />Tags: UI Testing, Javascript, Firebase Functions",
       "language": "English",
       "languageCode": "en",
       "notes": null,
@@ -911,7 +911,7 @@
       "speakers": [
         "Marit Hellestø"
       ],
-      "title": "Some title concerning Scrumish things",
+      "title": "Scrumish? Whats so bad about that?",
       "type": "Lightning talk (10 minutes)",
       "types": [
         "Lightning talk (10 minutes)"
@@ -922,7 +922,7 @@
       "notes": null,
       "company": "Knowit Experience Bergen AS",
       "country": "Norway",
-      "speakerBio": "Fullstack developer, certified Scrummaster, "
+      "speakerBio": "Fullstack developer, certified Scrummaster, Technical Manager"
     },
     "VS_Code_can_do_that_too": {
       "talkId": "VS_Code_can_do_that_too",
