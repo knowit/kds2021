@@ -55,7 +55,7 @@
             {
               "room": "C3",
               "slots": [
-                "Blazor.Net_-_Brave_new_future_off_web_development"
+                "Blazor_dotnet_-_Brave_new_future_off_web_development"
               ]
             },
             {
@@ -169,7 +169,7 @@
               "slots": [
                 "Some_title_concerning_Scrumish_things",
                 "Surviving_as_the_New_Technical_Leader_-_Real_Life_Stories",
-                "Functional_patterns_and_techniques_in_C#"
+                "Functional_patterns_and_techniques_in_CS"
               ]
             },
             {
@@ -183,7 +183,7 @@
               "room": "25",
               "slots": [
                 "Santander_-_Open_Banking_and_PSD2",
-                "Distribuerade_teams_-_dos_&_don'ts",
+                "Distribuerade_teams_-_dos_and_donts",
                 "The_challenges_of_hybrid_applications"
               ]
             },
@@ -225,13 +225,13 @@
             {
               "room": "25",
               "slots": [
-                "Tell_me_the_money!_How_I_made_my_bank_talk_to_me_by_way_of_PSD2"
+                "Tell_me_the_money_How_I_made_my_bank_talk_to_me_by_way_of_PSD2"
               ]
             },
             {
               "room": "26",
               "slots": [
-                "Think_Big,_Start_Small_&_Move_Fast._Kickstart_your_Cloud_Migration!"
+                "Think_Big_Start_Small_and_Move_Fast._Kickstart_your_Cloud_Migration"
               ]
             }
           ]
@@ -273,13 +273,13 @@
             {
               "room": "C3",
               "slots": [
-                "Automated'_UI_testing_in_the_hands_of_the_customer"
+                "Automated_UI_testing_in_the_hands_of_the_customer"
               ]
             },
             {
               "room": "24",
               "slots": [
-                "Internet_Of_Things._From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data."
+                "Internet_Of_Things_From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data"
               ]
             },
             {
@@ -312,13 +312,13 @@
             {
               "room": "25",
               "slots": [
-                "Route__\"66\"_to_DevOps"
+                "Route_66_to_DevOps"
               ]
             },
             {
               "room": "26",
               "slots": [
-                "WireGuard,_VPN_for_the_future"
+                "WireGuard_VPN_for_the_future"
               ]
             }
           ]
@@ -437,8 +437,8 @@
       "country": "Norway",
       "speakerBio": "Fullstack developer with a love for learning and finding better ways of problem solving."
     },
-    "Tell_me_the_money!_How_I_made_my_bank_talk_to_me_by_way_of_PSD2": {
-      "talkId": "Tell_me_the_money!_How_I_made_my_bank_talk_to_me_by_way_of_PSD2",
+    "Tell_me_the_money_How_I_made_my_bank_talk_to_me_by_way_of_PSD2": {
+      "talkId": "Tell_me_the_money_How_I_made_my_bank_talk_to_me_by_way_of_PSD2",
       "pending": false,
       "speaker": "Anders Breivik",
       "email": "abr@knowit.no",
@@ -542,8 +542,8 @@
       "country": "Norway",
       "speakerBio": "Øyvind has worked in Knowit since 2012. He has been moving back and forth between front-end and back-end. After three years working mostly back-end on a travel booking platform, Øyvind went back to working with Umbraco in 2019."
     },
-    "Automated'_UI_testing_in_the_hands_of_the_customer": {
-      "talkId": "Automated'_UI_testing_in_the_hands_of_the_customer",
+    "Automated_UI_testing_in_the_hands_of_the_customer": {
+      "talkId": "Automated_UI_testing_in_the_hands_of_the_customer",
       "pending": false,
       "speaker": "Håvard Olsen",
       "email": "havard.olsen@knowit.no",
@@ -626,8 +626,8 @@
       "country": "Norge",
       "speakerBio": "Ole Eskild Steensen jobber som utvikler i Knowit Experience Bergen. Der jobber han stort sett med web-teknologier som ASP.NET, Vue og React for strømleverandøren Fjordkraft. "
     },
-    "Route__\"66\"_to_DevOps": {
-      "talkId": "Route__\"66\"_to_DevOps",
+    "Route_66_to_DevOps": {
+      "talkId": "Route_66_to_DevOps",
       "pending": false,
       "speaker": "Sari Alander",
       "email": "sari.alander@knowit.fi",
@@ -773,8 +773,8 @@
       "country": "Norway",
       "speakerBio": "im a developer"
     },
-    "Blazor.Net_-_Brave_new_future_off_web_development": {
-      "talkId": "Blazor.Net_-_Brave_new_future_off_web_development",
+    "Blazor_dotnet_-_Brave_new_future_off_web_development": {
+      "talkId": "Blazor_dotnet_-_Brave_new_future_off_web_development",
       "pending": false,
       "speaker": "Fredrik Claesson",
       "email": "fredrik.claesson@knowit.se",
@@ -794,8 +794,8 @@
       "country": "Sweden",
       "speakerBio": "Lorem ipsum"
     },
-    "WireGuard,_VPN_for_the_future": {
-      "talkId": "WireGuard,_VPN_for_the_future",
+    "WireGuard_VPN_for_the_future": {
+      "talkId": "WireGuard_VPN_for_the_future",
       "pending": false,
       "speaker": "Sverre Johann Bjørke",
       "email": "sverre.bjorke@knowit.no",
@@ -882,8 +882,8 @@
       "country": "Norway",
       "speakerBio": "John-Olav is a passionate full stack developer working for Knowit in Oslo. He is excited about all things tech-related, and lately that has been channeled into Rust."
     },
-    "Functional_patterns_and_techniques_in_C#": {
-      "talkId": "Functional_patterns_and_techniques_in_C#",
+    "Functional_patterns_and_techniques_in_CS": {
+      "talkId": "Functional_patterns_and_techniques_in_CS",
       "pending": false,
       "speaker": "Alexandra  Dobrescu",
       "email": "alexandra.dobrescu@knowit.no",
@@ -1240,8 +1240,8 @@
       "speakerBio": "Magnus har 21 års erfarenhet inom design av webb och distribuerade system. Han brinner för kvalitet och bra arkitektur och lite extra kring Domain Driven Design. Magnus roll på Knowit är arkitekt, utvecklare, workshopledare, säljstöd och utbildare."
     },
 
-    "Think_Big,_Start_Small_&_Move_Fast._Kickstart_your_Cloud_Migration!": {
-      "talkId": "Think_Big,_Start_Small_&_Move_Fast._Kickstart_your_Cloud_Migration!",
+    "Think_Big_Start_Small_and_Move_Fast._Kickstart_your_Cloud_Migration": {
+      "talkId": "Think_Big_Start_Small_and_Move_Fast._Kickstart_your_Cloud_Migration",
       "pending": false,
       "speaker": "Joakim Berg",
       "email": "joakm.berg@knowit.se",
@@ -1263,8 +1263,8 @@
     },
 
 
-    "Distribuerade_teams_-_dos_&_don'ts": {
-      "talkId": "Distribuerade_teams_-_dos_&_don'ts",
+    "Distribuerade_teams_-_dos_and_donts": {
+      "talkId": "Distribuerade_teams_-_dos_and_donts",
       "pending": false,
       "speaker": "Victor Hultfeldt",
       "email": "victor.hultfeldt@knowit.se",
@@ -1305,8 +1305,8 @@
       "country": "Danmark",
       "speakerBio": "Data scientist"
     },
-    "Internet_Of_Things._From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data.": {
-      "talkId": "Internet_Of_Things._From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data.",
+    "Internet_Of_Things_From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data": {
+      "talkId": "Internet_Of_Things_From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data",
       "pending": false,
       "speaker": "Wille Esteche",
       "email": "Wille.esteche@knowit.se",
