@@ -67,7 +67,7 @@
             {
               "room": "25",
               "slots": [
-                "Designa_skalbara_system_med_Azure:_Insikter_från_tre_projekt"
+                "Designa_skalbara_system_med_Azure_Insikter_från_tre_projekt"
               ]
             },
             {
@@ -116,7 +116,7 @@
               "room": "C3",
               "slots": [                
                 "En_innføring_i_3D-visualisering_på_Web",
-                "GPGPU_med_WebGL_2.0"
+                "GPGPU_med_WebGL_20"
               ]
             },
             {
@@ -231,7 +231,7 @@
             {
               "room": "26",
               "slots": [
-                "Think_Big_Start_Small_and_Move_Fast._Kickstart_your_Cloud_Migration"
+                "Think_Big_Start_Small_and_Move_Fast_Kickstart_your_Cloud_Migration"
               ]
             }
           ]
@@ -258,7 +258,7 @@
             {
               "room": "26",
               "slots": [
-                "TraceRobot:_A_Pythonic_Test_Automation_Solution"
+                "TraceRobot_A_Pythonic_Test_Automation_Solution"
               ]
             }
           ]
@@ -279,7 +279,7 @@
             {
               "room": "24",
               "slots": [
-                "Internet_Of_Things_From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data"
+                "Internet_Of_Things_From_a_Thing_to_the_Internet_A_whole_flow_by_mobile_data"
               ]
             },
             {
@@ -563,8 +563,8 @@
       "country": "Norway",
       "speakerBio": "I have worked at Knowit as a fullstack developer for almost 4 years now. I have worked on a lot of different projects, spanning multiple industries. "
     },
-    "TraceRobot:_A_Pythonic_Test_Automation_Solution": {
-      "talkId": "TraceRobot:_A_Pythonic_Test_Automation_Solution",
+    "TraceRobot_A_Pythonic_Test_Automation_Solution": {
+      "talkId": "TraceRobot_A_Pythonic_Test_Automation_Solution",
       "pending": false,
       "speaker": "Markku Degerholm",
       "email": "markku.degerholm@knowit.fi",
@@ -1050,8 +1050,8 @@
       "country": "Norge",
       "speakerBio": "https://www.linkedin.com/in/michaelahs/"
     },
-    "GPGPU_med_WebGL_2.0": {
-      "talkId": "GPGPU_med_WebGL_2.0",
+    "GPGPU_med_WebGL_20": {
+      "talkId": "GPGPU_med_WebGL_20",
       "pending": false,
       "speaker": "Jens Kristoffer Markussen",
       "email": "jens.markussen@knowit.no",
@@ -1218,8 +1218,8 @@
       "country": "Norge",
       "speakerBio": "https://www.linkedin.com/in/henningkvalheim/"
     },
-    "Designa_skalbara_system_med_Azure:_Insikter_från_tre_projekt": {
-      "talkId": "Designa_skalbara_system_med_Azure:_Insikter_från_tre_projekt",
+    "Designa_skalbara_system_med_Azure_Insikter_från_tre_projekt": {
+      "talkId": "Designa_skalbara_system_med_Azure_Insikter_från_tre_projekt",
       "pending": false,
       "speaker": "Magnus Backeus",
       "email": "magnus.backeus@knowit.se",
@@ -1240,8 +1240,8 @@
       "speakerBio": "Magnus har 21 års erfarenhet inom design av webb och distribuerade system. Han brinner för kvalitet och bra arkitektur och lite extra kring Domain Driven Design. Magnus roll på Knowit är arkitekt, utvecklare, workshopledare, säljstöd och utbildare."
     },
 
-    "Think_Big_Start_Small_and_Move_Fast._Kickstart_your_Cloud_Migration": {
-      "talkId": "Think_Big_Start_Small_and_Move_Fast._Kickstart_your_Cloud_Migration",
+    "Think_Big_Start_Small_and_Move_Fast_Kickstart_your_Cloud_Migration": {
+      "talkId": "Think_Big_Start_Small_and_Move_Fast_Kickstart_your_Cloud_Migration",
       "pending": false,
       "speaker": "Joakim Berg",
       "email": "joakm.berg@knowit.se",
@@ -1305,8 +1305,8 @@
       "country": "Danmark",
       "speakerBio": "Data scientist"
     },
-    "Internet_Of_Things_From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data": {
-      "talkId": "Internet_Of_Things_From_a_Thing_to_the_Internet._A_whole_flow_by_mobile_data",
+    "Internet_Of_Things_From_a_Thing_to_the_Internet_A_whole_flow_by_mobile_data": {
+      "talkId": "Internet_Of_Things_From_a_Thing_to_the_Internet_A_whole_flow_by_mobile_data",
       "pending": false,
       "speaker": "Wille Esteche",
       "email": "Wille.esteche@knowit.se",
