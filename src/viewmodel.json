@@ -287,12 +287,6 @@
               "slots": [
                 "Speeding_up_your_Entity_Framework"
               ]
-            },
-            {
-              "room": "26",
-              "slots": [
-                "Windows_PowerShell_anno_2019"
-              ]
             }
           ]
         },
@@ -709,27 +703,6 @@
       "company": "Knowit System Development AB",
       "country": "Sweden",
       "speakerBio": "tbd"
-    },
-    "Windows_PowerShell_anno_2019": {
-      "talkId": "Windows_PowerShell_anno_2019",
-      "pending": false,
-      "speaker": "Håvard Slettvold",
-      "email": "havard.slettvold@knowit.no",
-      "speakers": [
-        "Håvard Slettvold"
-      ],
-      "title": "Windows PowerShell anno 2019",
-      "type": "Short presentation (30 minutes)",
-      "types": [
-        "Short presentation (30 minutes)"
-      ],
-      "description": "Windows PowerShell has had a face lift in recent years, and in many areas it now compares well to most unix terminals. Get some perspective on command line tooling, prompt look-and-feel and check out bash available through Ubuntu subsystem.<br />Outline:<br />This talk will be a live demo showing some features that makes PowerShell worth using over other terminals such as git-bash, cmder and cygwin.<br />Difficulty: Beginner<br />Tags: terminal, powershell, console, git, scoop, chocolatey, prompt, bash, ubuntu subsystem",
-      "language": "English",
-      "languageCode": "en",
-      "notes": null,
-      "company": "Knowit Experience Oslo",
-      "country": "Norway",
-      "speakerBio": "I'm a backend developer, mostly working with integrations and other parts of the system no one sees. Programming has been a passion of mine for about 15 years, and I loathe graphical interfaces that hide functionality I would find in a terminal. Work mostly in .Net, with Episerver, Xamarin and Core projects."
     },
     "Developing_SpinSling_in_Unity_-_Experiences_of_a_small_team": {
       "talkId": "Developing_SpinSling_in_Unity_-_Experiences_of_a_small_team",
