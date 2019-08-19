@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import "variables";
+.content {
+  .paragraphLink {
+    color: $link-color;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: $break-small) {
+    padding: 1em;
+  }
+}
+body {
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}

@@ -1,23 +1,35 @@
 {
-  "name": "kds-ghpages",
+  "name": "newKDS",
   "version": "1.0.0",
-  "description": "Knowit Developer Summit",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "jade --out . --obj src/viewmodel.json --pretty src/index.jade",
-    "build:stats": "jade --out . --obj src/attendees.json --pretty src/stats.jade",
-    "watch:stats": "jade --out . --obj src/attendees.json --pretty --watch src/stats.jade",
-    "start": "jade --out . --obj src/viewmodel.json --pretty --watch src/index.jade"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/knowit/kds.git"
+    "url": "git+https://github.com/Maritt/newKDS.git"
   },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/knowit/kds/issues"
+    "url": "https://github.com/Maritt/newKDS/issues"
   },
-  "homepage": "https://kds.knowit.no/",
+  "homepage": "https://github.com/Maritt/newKDS#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^9.0.3",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
   "devDependencies": {
-    "jade": "^1.11.0"
+    "@types/node": "^12.6.2",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
+    "typescript": "^3.5.3"
   }
 }
