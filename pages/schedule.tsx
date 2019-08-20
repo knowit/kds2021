@@ -14,7 +14,7 @@ class Schedule extends Component {
         <Layout>
           <h1>Schedule</h1>
           <div className="schedule-content">
-            <FilterButton program={Program} />
+            {/* <FilterButton program={Program} /> */}
             <div className="schedule-content">
               {Program.days.map((day, i) =>
                 <Day key={i} currDay={day.day} slots={day.slots} />
