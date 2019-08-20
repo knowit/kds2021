@@ -65,6 +65,17 @@ div.schedule {
     margin-bottom: 0px;
     margin-left: 1em;
   }
+ 
+  #{$a-tags} {
+    color: $primary-color;
+    text-decoration: none;
+  }
+  #{$a-tags-hover} {
+    color: $link-color;
+    transition: 0.2s linear color;
+  }
+  
+
   #speaker {
     margin-top: 0.5em;
     margin-left: 1.5em;
