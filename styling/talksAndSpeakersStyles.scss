@@ -5,17 +5,35 @@ div.talksAndSpeakers {
     // display: none;
   }
 
+
+  .talks {
+    margin-top: 10px;
+  }
+
   .talk-container {
+    margin: auto;
+    width: 90%;
+    margin-bottom: 10px;
     #speaker,
-    #title {
-      // display: none;
+    #title,
+    #room,
+    #language,
+    #difficulty,
+    #type {
+      display: none;
     }
 
     .speaker-page {
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 3em;
-      width: 80%;
+      width: 90%;
+    }
+    .room-header {
+      display: none;
+    }
+    .speaker-page {
+      display: inherit;
     }
   }
 

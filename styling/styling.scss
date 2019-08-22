@@ -6,6 +6,11 @@
     font-weight: bold;
   }
 
+
+  @media screen and (min-width: $break-small) {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
   @media screen and (max-width: $break-small) {
     padding: 1em;
   }

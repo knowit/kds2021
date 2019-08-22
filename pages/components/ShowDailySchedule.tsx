@@ -9,7 +9,7 @@ const ShowDailySchedule = props => {
     <div>
       <DayButton arrow="../../static/arrow_down.svg" day={props.day} showSchedule={props.showSchedule} />
       {props.slots.map((slot, i) =>
-        <div>
+        <div key={i + "slot"}>
           <EventHeader key={i + "slot"} timeStart={slot.timeStart} timeEnd={slot.timeEnd} type={slot.type} />
           {slot.rooms && <ScheduleEntry key={i + 1 + "slot"} slot={slot} />}
         </div>

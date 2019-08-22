@@ -65,6 +65,29 @@ div.schedule {
     margin-bottom: 0px;
     margin-left: 1em;
   }
+ 
+  .room-header {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: $link-color;
+    color: white;
+    width: 100%;
+    display: block;
+    span {
+      padding: 5px;
+    }
+  }
+
+  #{$a-tags} {
+    color: $primary-color;
+    text-decoration: none;
+  }
+  #{$a-tags-hover} {
+    color: $link-color;
+    transition: 0.2s linear color;
+  }
+  
+
   #speaker {
     margin-top: 0.5em;
     margin-left: 1.5em;
@@ -107,7 +130,7 @@ div.schedule {
   font-family: $font-family;
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 100%;
   align-items: center;
   padding: 2em;
   margin-top: 2em;
@@ -125,6 +148,39 @@ div.schedule {
     }
   }
 }
+
+.schedule-container {
+  width: 60%;
+  margin: auto;
+  @media screen and (max-width: $break-small) {
+    width: 100%;
+  }
+}
+
+.filter-tag {
+  @media screen and (max-width: $break-small) {
+    display: block;
+    width: 100%;
+  }
+  margin-left: 10px;
+  button {
+    font-size: 120%;
+    font-weight: 200;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+}
+
+.only-favorites-button {
+  display: block;
+  float: right;
+  input {
+    width: 17px;
+    height: 17px;
+  }
+}
+
 #arrow-right {
   :hover {
     .baseline-chevron {
