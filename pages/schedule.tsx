@@ -1,25 +1,26 @@
 import { Component } from "react";
 import Layout from "./components/Layout";
 import "../styling/styling.scss";
+import "../styling/scheduleStyles.scss";
 import Day from "./components/Day";
-import { program as Program } from "../models/data.json";
 import FilterButton from "./components/FilterButton";
+import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
+import FilteredProgramBase from "./components/FilteredProgramBase";
 
-class Schedule extends Component {
-
-
+class Schedule extends FilteredProgramBase {
   render() {
     return (
       <div className="schedule">
         <Layout>
           <h1>Schedule</h1>
-          <div className="schedule-content">
-            {/* <FilterButton program={Program} /> */}
-            <div className="schedule-content">
-              {Program.days.map((day, i) =>
-                <Day key={i} currDay={day.day} slots={day.slots} />
-              )}
+          <div className="schedule-container">
+            <div>
+              <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange}></ShowOnlyFavoritesButton>
+              <FilterButton program={this.state.filteredProgram} handleChange={this.handleFilterChange.bind(this)} />
             </div>
+            {this.state.filteredProgram.days.map((day, i) =>
+              <Day key={i} currDay={day.day} slots={day.slots} />
+            )}
           </div>
         </Layout>
       </div>
