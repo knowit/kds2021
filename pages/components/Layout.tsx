@@ -1,5 +1,6 @@
 import Menu from "./Menu";
 import "../../styling/headerStyles.scss";
+import "../../styling/styling.scss";
 
 const Layout = props => (
   <div >
@@ -13,7 +14,7 @@ const Layout = props => (
           </h2>
           <h3 className="header-location">
             <img id="location-img" src="../static/location.svg" />
-            Bergen, Norway 17 - 18 January<hr />
+            Bergen, Norway 17 - 18 January 2020<hr />
           </h3>
           <h4 className="header-subheadline">For the 2019-program, <a className="subheadline-link" href="/static/old/index_2019.html"> see here </a></h4>
 

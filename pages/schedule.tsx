@@ -1,6 +1,5 @@
 import { Component } from "react";
 import Layout from "./components/Layout";
-import "../styling/styling.scss";
 import "../styling/scheduleStyles.scss";
 import Day from "./components/Day";
 import FilterButton from "./components/FilterButton";

@@ -11,23 +11,26 @@ const Menu = () => (
         <span />
       </div>
       <div id="menu">
-        <Link href="/practicalities">
+        <Link href="/callForPresentations">
+          <a className="link callForPresentations">Call for presentations</a>
+        </Link>
+        {/*<Link href="/practicalities">
           <a className="link practicalities">Practicalities</a>
         </Link>
-        {/*<Link href="/schedule" >
+        <Link href="/schedule" >
           <a className="link schedule">Schedule</a>
         </Link>
         <Link href="/talksAndSpeakers">
           <a className="link talksAndSpeakers">Talks and speakers</a>
-        </Link>*/}
+        </Link>
         <Link href="/location">
           <a className="link location">Location</a>
-        </Link>
+        </Link>*/}
 
         <Link href="/codeOfConduct">
           <a className="link codeOfConduct">Code of conduct</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutUs">
           <a className="link aboutUs">About us</a>
         </Link>
       </div>

@@ -1,7 +1,7 @@
 import Layout from "./components/Layout";
-import "../styling/styling.scss";
 import Practicalities from './practicalities';
+import CallForPresentations from "./callForPresentations";
 
 export default function Home() {
-  return <Practicalities />;
+  return <CallForPresentations />;
 }
