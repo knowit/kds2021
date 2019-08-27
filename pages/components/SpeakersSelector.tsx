@@ -63,7 +63,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
             return {
                 cospeakers: speakers
             }
-        }, () => this.props.onChange(this.state.cospeakers));
+        }, () => this.props.onChange(this.state.cospeakers.concat([this.state.speaker])));
     }
 
     render() {
