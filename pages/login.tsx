@@ -12,11 +12,12 @@ class Login extends React.Component<any, IState> {
     _isMounted: Boolean = false;
 
     handleSignOut = () => {
+        console.log(auth.currentUser);
         auth.signOut().then(() => {
             console.log("signed out");
         }).catch((err) => {
             console.log(err)
-        })
+        });
     }
 
     login = (user, pass) => {
@@ -51,24 +52,12 @@ class Login extends React.Component<any, IState> {
         this._isMounted = false;
     }
 
-    getName() {
-        if (auth && auth.currentUser) {
-            return auth.currentUser.email;
-        }
-        return "not logged in";
-    }
-
     render() {
         return (<div>
-            <p>{this.getName()}</p>
             <button onClick={this.handleSignOut}>Sign out</button> <br></br><br></br>
             <input type="text" name="email" onChange={this.updateUsername} /> <br></br>
             <input type="password" name="passowrd" onChange={this.updatePassword} /> <br></br>
             <input type="submit" onClick={() => this.login(this.state.username, this.state.password)} value="Sign in" />
-
-            <Link href="/callForPresentations">
-                <a className="link callForPresentations">Call for presentations</a>
-            </Link>
         </div>);
     }
 }

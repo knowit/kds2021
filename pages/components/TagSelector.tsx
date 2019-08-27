@@ -2,12 +2,17 @@ import React, { Ref } from 'react';
 import { firestore } from '../../firebase'
 import TagsMenu from './TagsMenu';
 
-interface IState {
-    tags: Array<String>,
-    selectedTags: Array<String>
+interface IProps {
+    onChange: (val: Array<string>) =>  void,
+    value: Array<string>
 }
 
-class TagSelector extends React.Component<any, IState> {
+interface IState {
+    tags: Array<string>,
+    selectedTags: Array<string>
+}
+
+class TagSelector extends React.Component<IProps, IState> {
     newTagNameInput: any;
 
     constructor(props) {
@@ -17,7 +22,7 @@ class TagSelector extends React.Component<any, IState> {
 
         this.state = {
             tags: [],
-            selectedTags: []
+            selectedTags: this.props.value
         };
     }
 
@@ -32,6 +37,8 @@ class TagSelector extends React.Component<any, IState> {
 
     newTag() {
         const tag = this.newTagNameInput.current.value;
+
+        this.newTagNameInput.current.value = "";
 
         if (tag == '' || this.state.tags.includes(tag)) {
             return;
@@ -54,13 +61,33 @@ class TagSelector extends React.Component<any, IState> {
         });
     }
 
+    selectTag(tag: string) {
+        this.setState((prev) => ({
+            selectedTags: prev.selectedTags.concat([tag])
+        }), () => this.props.onChange(this.state.selectedTags));
+    }
+
+    deselectTag(tag: string) {
+        this.setState((prev) => ({
+            selectedTags: prev.selectedTags.filter(t => t !== tag)
+        }), () => this.props.onChange(this.state.selectedTags));
+    }
+
+    updateTag(checked: boolean, tag: string) {
+        if (checked && !this.state.selectedTags.includes(tag)) {
+            this.selectTag(tag);
+        }
+        else {
+            this.deselectTag(tag);
+        }
+    }
+
     render() {
-        console.log(this);
         return (<div>
             {this.state.tags.map(tag =>
-                <div className="tag-row">
+                <div className="tag-row" key={tag}>
                     <label >{tag}</label>
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={(evt) => this.updateTag(evt.target.checked, tag)} checked={this.state.selectedTags.includes(tag)}/>
                 </div>
             )}
             <div className="tag-row">
