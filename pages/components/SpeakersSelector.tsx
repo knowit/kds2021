@@ -1,10 +1,11 @@
 import React from 'react';
 import SpeakerSelector from './SpeakerSelector';
-import { firestore } from './../../firebase'
+import { firestore, auth } from './../../firebase'
 
 interface IState {
     speakers: Array<string>,
-    selectedSpeakers: Array<string>,
+    cospeakers: Array<string>,
+    speaker: string
 }
 
 interface IProps {
@@ -18,48 +19,60 @@ class SpeakersSelector extends React.Component<IProps, IState> {
 
         this.state = {
             speakers: [],
-            selectedSpeakers: this.props.value.concat([""])
+            cospeakers: this.props.value,
+            speaker: ""
         }
     }
 
     async getSpeakers() {
         const res = await firestore.collection('speakers').get();
-        const tags = res.docs.map(doc => {
+        const speakers = res.docs.map(doc => {
             return doc.data();
         });
 
-        return tags;
+        return speakers;
+    }
+
+    async getTalkSpeaker() {
+        const speaker = await firestore.collection('speakers').where('email', '==', auth.currentUser.email).get();
+        if (speaker.docs.length > 0) {
+            return speaker.docs[0].data();
+        }
+        return null;
     }
 
     async componentDidMount() {
+        const talkSpeaker = await this.getTalkSpeaker();
         const speakers = await this.getSpeakers();
         this.setState({
-            speakers: speakers.map(speaker => speaker.name)
+            speakers: speakers.map(speaker => speaker.name),
+            speaker: talkSpeaker.name
         });
     }
 
     addSpeaker() {
         this.setState((prev) => ({
-            selectedSpeakers: prev.selectedSpeakers.concat([""])
+            cospeakers: prev.cospeakers.concat([""])
         }));
     }
 
     updateSpeakers(index, speaker) {
         this.setState((prev) => {
-            const speakers = prev.selectedSpeakers;
+            const speakers = prev.cospeakers;
             speakers[index] = speaker;
             return {
-                selectedSpeakers: speakers
+                cospeakers: speakers
             }
-        }, () => this.props.onChange(this.state.selectedSpeakers));
+        }, () => this.props.onChange(this.state.cospeakers));
     }
 
     render() {
         return (
             <div>
+                <p>{this.state.speaker}</p>
                 {
-                    this.state.selectedSpeakers.map((speaker, i) => {
-                        return <SpeakerSelector key={i} speakers={this.state.speakers} value={speaker} onChange={(val) => this.updateSpeakers(i, val)}></SpeakerSelector>
+                    this.state.cospeakers.map((speaker, i) => {
+                        return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => this.updateSpeakers(i, val)}></SpeakerSelector>
                     })
                 }
                 

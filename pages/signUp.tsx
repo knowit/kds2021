@@ -51,19 +51,20 @@ class Login extends React.Component<any, IState> {
         if (this.validForm(this.state.form)) {
             auth.createUserWithEmailAndPassword(this.state.form.email, this.state.form.password)
                 .then((val) => {
-                    console.log(val);
                     if (this.state.speaker) {
                         firestore.collection('speakers').add({
                             name: this.state.form.name,
                             info: this.state.speakerInfo,
                             email: this.state.form.email
                         });
+                        Router.push('/addTalk');
                     }
                     else {
                         firestore.collection('participants').add({
                             name: this.state.form.name,
                             email: this.state.form.email
                         });
+                        Router.push('/');
                     }
                 })
                 .catch(console.error);

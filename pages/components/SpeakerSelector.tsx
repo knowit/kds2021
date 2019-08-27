@@ -2,8 +2,7 @@ import React from 'react';
 
 interface IProps {
     speakers: Array<string>,
-    value: string,
-    onChange: (val: string) => void
+    onChange?: (val: string) => void
 }
 
 class SpeakerSelector extends React.Component<IProps, any> {
@@ -14,7 +13,7 @@ class SpeakerSelector extends React.Component<IProps, any> {
             <div>
                 <input list="list" onChange={(evt) => {
                     const val = evt.target.value;
-                    this.props.speakers.includes(val) && this.props.onChange(val);
+                    this.props.speakers.includes(val) && this.props.onChange && this.props.onChange(val);
                 }}>
                 </input>
                 <datalist id="list">
