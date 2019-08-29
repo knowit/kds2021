@@ -3,7 +3,7 @@ import TagsMenu from './TagsMenu';
 import FilterTag from "./FilterTag";
 
 interface IProps {
-    program: any,
+    tags: any,
     handleChange: any
 }
 
@@ -42,7 +42,7 @@ class FilterButton extends React.Component<IProps, any> {
             <div>
                 <button onClick={() => this.showFilters()} id="filter-button"> Filter by tags</button>
                 {this.state.tags.map(tag => <FilterTag key={tag} name={tag} remove={this.removeTag.bind(this, tag)}></FilterTag>) }
-                {this.state.clicked && <div id="filter-dropdown"><TagsMenu program={this.props.program} handleChange={this.addTag.bind(this)}/> </div>}
+                {this.state.clicked && <div id="filter-dropdown"><TagsMenu tags={this.props.tags} handleChange={this.addTag.bind(this)}/> </div>}
             </div>
         );
     }

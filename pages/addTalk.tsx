@@ -5,6 +5,8 @@ import React from 'react';
 import { firestore, auth } from './../firebase';
 import TagSelector from './components/TagSelector'
 import SpeakersSelector from './components/SpeakersSelector'
+import { fromString } from "long";
+import { DH_NOT_SUITABLE_GENERATOR } from "constants";
 
 interface IState {
     form: Form
@@ -18,7 +20,8 @@ class Form {
     difficulty: string
     language: string
     tags: Array<string>
-    speakers: Array<string>
+    speaker: null
+    cospeakers: Array<any>
 }
 
 class AddTalk extends React.Component<any, IState> {
@@ -34,18 +37,25 @@ class AddTalk extends React.Component<any, IState> {
                 difficulty: "beginner",
                 language: "norwegian",
                 tags: [],
-                speakers: []
+                speaker: null,
+                cospeakers: []
             }
         };
     }
     addTalk() {
-        firestore.collection('talks').add(this.state.form)
+        const form = this.state.form;
+        console.log(form.cospeakers);
+        form.speaker = form.cospeakers[0].ref;
+        form.cospeakers = form.cospeakers.splice(1).map(speaker => speaker.ref);
+
+        firestore.collection('talks').add(form)
             .then(console.log)
             .catch(console.log);
 
     }
 
     updateForm(val: any, prop: string) {
+        console.log(val);
         this.setState((prev) => {
             prev.form[prop] = val;
 
@@ -88,7 +98,7 @@ class AddTalk extends React.Component<any, IState> {
                                 <option value="swedish">Swedish</option>
                             </select>
                             <label className="form-row-header">Speakers</label>
-                            <SpeakersSelector className="form-row" value={this.state.form.speakers} onChange={(val) => this.updateForm(val, 'speakers')}></SpeakersSelector>
+                            <SpeakersSelector className="form-row" value={this.state.form.cospeakers} onChange={(val) => this.updateForm(val, 'cospeakers')}></SpeakersSelector>
                             <label className="form-row-header">Tags</label>
                             <TagSelector className="form-row" value={this.state.form.tags} onChange={(val) => this.updateForm(val, 'tags')}></TagSelector>
                             <label className="form-row-header">Comment to organizers</label>

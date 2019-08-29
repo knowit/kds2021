@@ -3,15 +3,15 @@ import SpeakerSelector from './SpeakerSelector';
 import { firestore, auth } from './../../firebase'
 
 interface IState {
-    speakers: Array<string>,
-    cospeakers: Array<string>,
-    speaker: string
+    speakers: Array<any>,
+    cospeakers: Array<any>,
+    speaker: any
 }
 
 interface IProps {
     className: string,
-    value: Array<string>,
-    onChange: (val: Array<string>) => void
+    value: Array<any>,
+    onChange: (val: Array<any>) => void
 }
 
 class SpeakersSelector extends React.Component<IProps, IState> {
@@ -21,14 +21,22 @@ class SpeakersSelector extends React.Component<IProps, IState> {
         this.state = {
             speakers: [],
             cospeakers: this.props.value,
-            speaker: ""
+            speaker: {
+                data: {
+                    name: ""
+                },
+                ref: null
+            }
         }
     }
 
     async getSpeakers() {
         const res = await firestore.collection('speakers').get();
         const speakers = res.docs.map(doc => {
-            return doc.data();
+            return {
+                data: doc.data(),
+                ref: doc.ref
+            };
         });
 
         return speakers;
@@ -37,7 +45,10 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     async getTalkSpeaker() {
         const speaker = await firestore.collection('speakers').where('email', '==', auth.currentUser.email).get();
         if (speaker.docs.length > 0) {
-            return speaker.docs[0].data();
+            return {
+                data: speaker.docs[0].data(),
+                ref: speaker.docs[0].ref
+            };
         }
         return null;
     }
@@ -46,14 +57,17 @@ class SpeakersSelector extends React.Component<IProps, IState> {
         const talkSpeaker = await this.getTalkSpeaker();
         const speakers = await this.getSpeakers();
         this.setState({
-            speakers: speakers.map(speaker => speaker.name),
-            speaker: talkSpeaker.name
+            speakers: speakers,
+            speaker: talkSpeaker
         });
     }
 
     addSpeaker() {
         this.setState((prev) => ({
-            cospeakers: prev.cospeakers.concat([""])
+            cospeakers: prev.cospeakers.concat([{
+                data: null,
+                ref: null
+            }])
         }));
     }
 
@@ -64,16 +78,16 @@ class SpeakersSelector extends React.Component<IProps, IState> {
             return {
                 cospeakers: speakers
             }
-        }, () => this.props.onChange(this.state.cospeakers.concat([this.state.speaker])));
+        }, () => this.props.onChange([this.state.speaker].concat(this.state.cospeakers)));
     }
 
     render() {
         return (
             <div className={`speakers-selector ${this.props.className}`}>
-                <p>{this.state.speaker}</p>
+                <p>{this.state.speaker.data.name}</p>
                 {
                     this.state.cospeakers.map((speaker, i) => {
-                        return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => this.updateSpeakers(i, val)}></SpeakerSelector>
+                        return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => {this.updateSpeakers(i, val)}}></SpeakerSelector>
                     })
                 }
                 

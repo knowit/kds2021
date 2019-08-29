@@ -9,6 +9,8 @@ class Form {
     email: string
     password: string
     password2: string
+    company: string
+    country: string
 }
 
 interface IState {
@@ -27,7 +29,9 @@ class Login extends React.Component<any, IState> {
                 name: "",
                 email: "",
                 password: "",
-                password2: ""
+                password2: "",
+                company: "",
+                country: ""
             },
             speaker: false,
             speakerInfo: ""
@@ -103,6 +107,12 @@ class Login extends React.Component<any, IState> {
 
                         <label className="form-row-header">Password again</label>
                         <input className="form-row" type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password2')} />
+
+                        <label className="form-row-header">Knowit company (full name)</label>
+                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'company')} />
+
+                        <label className="form-row-header">Knowit country</label>
+                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'country')} />
 
                         <label className="form-row-header">Speaker?</label>
                         <input className="form-row" type="checkbox" onChange={(evt) => this.updateState(evt.target.checked, 'speaker')} />
