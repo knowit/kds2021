@@ -40,6 +40,46 @@
     color: white;
 }
 
+.speakers-selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+select {
+    font-size: 1em;
+    font-family: "Raleway", sans-serif;
+    
+}
+
+.speakers-selector * {
+    flex: 0 0 auto;
+}
+
+.speakers-selector p, .speakers-selector button {
+    font-size: 1em;
+    font-family: "Raleway", sans-serif;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #D0D0D0;
+    overflow: auto;
+    margin: 8px 8px 8px 0px;
+}
+
+.speakers-selector button {
+    cursor: pointer;
+}
+
+.speakers-selector div input {
+    font-family: "Raleway", sans-serif;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #D0D0D0;
+    margin: 8px 8px 8px 0px;
+}
+
+
 .no-select {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

@@ -68,7 +68,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div>
+            <div className="speakers-selector">
                 <p>{this.state.speaker}</p>
                 {
                     this.state.cospeakers.map((speaker, i) => {
@@ -76,7 +76,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
                     })
                 }
                 
-                <br></br><button onClick={() => this.addSpeaker()}>Add cospeaker</button>
+                <button onClick={() => this.addSpeaker()}>Add cospeaker</button>
             </div>
         );
     }

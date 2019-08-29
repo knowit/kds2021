@@ -7,14 +7,18 @@ import TagSelector from './components/TagSelector'
 import SpeakersSelector from './components/SpeakersSelector'
 
 interface IState {
-    name: string,
-    description: string,
-    outline: string,
-    type: string,
-    difficulty: string,
-    language: string,
-    tags: Array<string>,
-    speakers: Array<string>
+    form: Form
+}
+
+class Form {
+    name: string
+    description: string
+    outline: string
+    type: string
+    difficulty: string
+    language: string
+    tags: Array<string>
+    speakers: Array<string>    
 }
 
 class AddTalk extends React.Component<any, IState> {
@@ -22,28 +26,31 @@ class AddTalk extends React.Component<any, IState> {
         super(props);
 
         this.state = {
-            name: "",
-            description: "",
-            outline: "",
-            type: "Lightning talk",
-            difficulty: "beginner",
-            language: "norwegian",
-            tags: [],
-            speakers: []
+            form: {
+                name: "",
+                description: "",
+                outline: "",
+                type: "Lightning talk",
+                difficulty: "beginner",
+                language: "norwegian",
+                tags: [],
+                speakers: []
+            }
         };
     }
     addTalk() {
-        // Change to not use state and instead create object on state..
-        firestore.collection('talks').add(this.state)
+        firestore.collection('talks').add(this.state.form)
             .then(console.log)
             .catch(console.log);
          
     }
 
-    updateState(val: any, stateName: string) {
-        const state = {};
-        state[stateName] = val;
-        this.setState(state);
+    updateForm(val: any, prop: string) {
+        this.setState((prev) => {
+            prev.form[prop] = val;
+
+            return prev;
+        });
     }
 
     render() {
@@ -54,19 +61,19 @@ class AddTalk extends React.Component<any, IState> {
                         <p>New Talk</p>
                         <div className="form-row">
                             <label>Name</label><br></br>
-                            <input type="text" onChange={(evt) => this.updateState(evt.target.value, 'name')} value={this.state.name}/>
+                            <input type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')} defaultValue={this.state.form.name}/>
                         </div>
                         <div className="form-row">
                             <label>Short description</label><br></br>
-                            <textarea cols={30} rows={10} onChange={(evt) => this.updateState(evt.target.value, 'description')} value={this.state.description}></textarea>
+                            <textarea cols={40} rows={10} onChange={(evt) => this.updateForm(evt.target.value, 'description')} defaultValue={this.state.form.description}></textarea>
                         </div>
                         <div className="form-row">
                             <label>Outline</label><br></br>
-                            <input type="text" onChange={(evt) => this.updateState(evt.target.value, 'outline')} value={this.state.outline}/>
+                            <textarea cols={40} rows={5} onChange={(evt) => this.updateForm(evt.target.value, 'outline')} defaultValue={this.state.form.outline}></textarea>
                         </div>
                         <div className="form-row">
                             <label>Type</label><br></br>
-                            <select onChange={(evt) => this.updateState(evt.target.value, 'type')} value={this.state.type}>
+                            <select onChange={(evt) => this.updateForm(evt.target.value, 'type')} defaultValue={this.state.form.type}>
                                 <option value="Lightning talk">Lightning talk</option>
                                 <option value="Short presentation">Short presentation</option>
                                 <option value="Long presentation">Long presentation</option>
@@ -75,7 +82,7 @@ class AddTalk extends React.Component<any, IState> {
                         </div>
                         <div className="form-row">
                             <label>Difficulty level</label><br></br>
-                            <select onChange={(evt) => this.updateState(evt.target.value, 'difficulty')} value={this.state.difficulty}>
+                            <select onChange={(evt) => this.updateForm(evt.target.value, 'difficulty')} defaultValue={this.state.form.difficulty}>
                                 <option value="beginner">Beginner</option>
                                 <option value="intermediate">Intermediate</option>
                                 <option value="advanced">Advanced</option>
@@ -83,7 +90,7 @@ class AddTalk extends React.Component<any, IState> {
                         </div>
                         <div className="form-row">
                             <label>Language used</label><br></br>
-                            <select onChange={(evt) => this.updateState(evt.target.value, 'language')}  value={this.state.language}>
+                            <select onChange={(evt) => this.updateForm(evt.target.value, 'language')}  defaultValue={this.state.form.language}>
                                 <option value="english">English</option>
                                 <option value="norwegian">Norwegian</option>
                                 <option value="swedish">Swedish</option>
@@ -91,11 +98,11 @@ class AddTalk extends React.Component<any, IState> {
                         </div>
                         <div className="form-row">
                             <label>Speakers</label><br></br>
-                            <SpeakersSelector value={this.state.speakers} onChange={(val) => this.updateState(val, 'speakers')}></SpeakersSelector>  
+                            <SpeakersSelector value={this.state.form.speakers} onChange={(val) => this.updateForm(val, 'speakers')}></SpeakersSelector>  
                         </div>
                         <div className="form-row">
                             <label>Tags</label><br></br>
-                            <TagSelector value={this.state.tags} onChange={(val) => this.updateState(val, 'tags')}></TagSelector>
+                            <TagSelector value={this.state.form.tags} onChange={(val) => this.updateForm(val, 'tags')}></TagSelector>
                         </div>
                         <div className="form-row">
                             <label>Comment to organizers</label><br></br>
