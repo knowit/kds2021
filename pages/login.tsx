@@ -12,16 +12,6 @@ interface IState {
 
 class Login extends React.Component<any, IState> {
     _isMounted: Boolean = false;
-
-    handleSignOut = () => {
-        console.log(auth.currentUser);
-        auth.signOut().then(() => {
-            console.log("signed out");
-        }).catch((err) => {
-            console.log(err)
-        });
-    }
-
     login = (user, pass) => {
         auth.signInWithEmailAndPassword(user, pass)
             .then(() => {
@@ -58,9 +48,8 @@ class Login extends React.Component<any, IState> {
         return (<div className="login">
             <Layout>
                 <div className="content">
-                    <div className="login-form">
+                    <div className="form">
                         <h2 className="form-row">Login</h2>
-                        {/*<button onClick={this.handleSignOut}>Sign out</button> <br></br><br></br>*/}
                         {/*<label className="form-row">Email</label>*/}
                         <input className="form-row" type="text" name="email" placeholder="Email" onChange={this.updateUsername} />
                         {/*<label className="form-row">Password</label>*/}

@@ -9,6 +9,7 @@ interface IState {
 }
 
 interface IProps {
+    className: string,
     value: Array<string>,
     onChange: (val: Array<string>) => void
 }
@@ -68,7 +69,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className="speakers-selector">
+            <div className={`speakers-selector ${this.props.className}`}>
                 <p>{this.state.speaker}</p>
                 {
                     this.state.cospeakers.map((speaker, i) => {

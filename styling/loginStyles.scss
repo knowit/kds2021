@@ -1,5 +1,5 @@
 @import "variables";
-.login-form {
+.form {
     @media screen and (max-width: $break-small) {
         width: 90%;
       }
@@ -10,12 +10,22 @@
     display: flex;
     flex-direction: column;
 }
-.login-form .form-row {
+.form .form-row {
     vertical-align: middle;
     margin: 5px;
     text-align: center;
 }
 
-.login-form input {
+.form-row-header {
+    @extend .form-row;
+    text-align: left !important;
+    margin-bottom: 0px !important;
+}
+
+.form-row > * {
+    float: left;
+}
+
+.form input {
     font-size: 1.2em;
 }

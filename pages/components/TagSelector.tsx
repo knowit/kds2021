@@ -4,7 +4,8 @@ import TagsMenu from './TagsMenu';
 
 interface IProps {
     onChange: (val: Array<string>) => void,
-    value: Array<string>
+    value: Array<string>,
+    className: string
 }
 
 interface IState {
@@ -74,7 +75,6 @@ class TagSelector extends React.Component<IProps, IState> {
     }
 
     updateTag(checked: boolean, tag: string) {
-        console.log(tag);
         if (checked && !this.state.selectedTags.includes(tag)) {
             this.selectTag(tag);
         }
@@ -85,7 +85,7 @@ class TagSelector extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div>
+            <div className={this.props.className}>
                 <div className="tags">
                     {this.state.tags.map(tag =>
                         <div className="tag-row tag" key={tag}>

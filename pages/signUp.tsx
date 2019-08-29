@@ -9,7 +9,7 @@ class Form {
     email: string
     password: string
     password2: string
-} 
+}
 
 interface IState {
     form: Form,
@@ -76,7 +76,7 @@ class Login extends React.Component<any, IState> {
         }
     }
 
-    validForm(form: Form) : boolean {
+    validForm(form: Form): boolean {
         if (!form.email.includes('@')) { // Maybe som more checks
             return false;
         }
@@ -91,41 +91,33 @@ class Login extends React.Component<any, IState> {
         return (<div className="signUp">
             <Layout>
                 <div className="content">
-                    <div className="login-form">
-                        <div className="form-row">
-                            <label>Name</label><br></br>
-                            <input type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')}/>
-                        </div>
-                        <div className="form-row">
-                            <label>Email</label><br></br>
-                            <input type="text" onChange={(evt) => this.updateForm(evt.target.value, 'email')}/>
-                        </div>
-                        <div className="form-row">
-                            <label>Password</label><br></br>
-                            <input type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password')}/>
-                        </div>
-                        <div className="form-row">
-                            <label>Password again</label><br></br>
-                            <input type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password2')}/>
-                        </div>
-                        <div className="form-row">
-                            <label>Speaker?</label><br></br>
-                            <input type="checkbox" onChange={(evt) => this.updateState(evt.target.checked, 'speaker')}/>
-                        </div>
+                    <div className="form">
+                        <label className="form-row-header">Name</label>
+                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')} />
+
+                        <label className="form-row-header">Email</label>
+                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'email')} />
+
+                        <label className="form-row-header">Password</label>
+                        <input className="form-row" type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password')} />
+
+                        <label className="form-row-header">Password again</label>
+                        <input className="form-row" type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password2')} />
+
+                        <label className="form-row-header">Speaker?</label>
+                        <input className="form-row" type="checkbox" onChange={(evt) => this.updateState(evt.target.checked, 'speaker')} />
                         {
                             this.state.speaker &&
-                            <div className="form-row">
-                                <label>Info about you</label><br></br>
-                                <textarea name="" id="" cols={30} rows={10} onChange={(evt) => this.updateState(evt.target.value, 'speakerInfo')}></textarea>
-                            </div>
+                            <React.Fragment>
+                                <label className="form-row-header">Info about you</label>
+                                <textarea className="form-row" name="" id="" cols={30} rows={10} onChange={(evt) => this.updateState(evt.target.value, 'speakerInfo')}></textarea>
+                            </React.Fragment>
                         }
-                        <div className="form-row">
-                            <button onClick={() => this.signUp()}> Sign up!</button>
-                        </div>
+                        <button onClick={() => this.signUp()}> Sign up!</button>
                     </div>
                 </div>
             </Layout>
-        </div>);
+        </div >);
     }
 }
 
