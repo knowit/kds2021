@@ -1,3 +1,4 @@
+import '../styling/loginStyles.scss';
 import { auth, firestore } from '../firebase'
 import React from 'react'
 import Router from 'next/router'
@@ -17,7 +18,7 @@ interface IState {
 }
 
 class Login extends React.Component<any, IState> {
-
+    signup = false;
     constructor(props) {
         super(props);
 
@@ -48,6 +49,7 @@ class Login extends React.Component<any, IState> {
     }
 
     signUp() {
+        this.signup = true;
         if (this.validForm(this.state.form)) {
             auth.createUserWithEmailAndPassword(this.state.form.email, this.state.form.password)
                 .then((val) => {
@@ -89,34 +91,38 @@ class Login extends React.Component<any, IState> {
         return (<div className="signUp">
             <Layout>
                 <div className="content">
-                    <div>
-                        <label>Name</label><br></br>
-                        <input type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')}/>
-                    </div>
-                    <div>
-                        <label>Email</label><br></br>
-                        <input type="text" onChange={(evt) => this.updateForm(evt.target.value, 'email')}/>
-                    </div>
-                    <div>
-                        <label>Password</label><br></br>
-                        <input type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password')}/>
-                    </div>
-                    <div>
-                        <label>Password again</label><br></br>
-                        <input type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password2')}/>
-                    </div>
-                    <div>
-                        <label>Speaker?</label><br></br>
-                        <input type="checkbox" onChange={(evt) => this.updateState(evt.target.checked, 'speaker')}/>
-                    </div>
-                    {
-                        this.state.speaker &&
-                        <div>
-                            <label>Info about you</label><br></br>
-                            <textarea name="" id="" cols={30} rows={10} onChange={(evt) => this.updateState(evt.target.value, 'speakerInfo')}></textarea>
+                    <div className="login-form">
+                        <div className="form-row">
+                            <label>Name</label><br></br>
+                            <input type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')}/>
                         </div>
-                    }
-                    <button onClick={() => this.signUp()}> Sign up!</button>
+                        <div className="form-row">
+                            <label>Email</label><br></br>
+                            <input type="text" onChange={(evt) => this.updateForm(evt.target.value, 'email')}/>
+                        </div>
+                        <div className="form-row">
+                            <label>Password</label><br></br>
+                            <input type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password')}/>
+                        </div>
+                        <div className="form-row">
+                            <label>Password again</label><br></br>
+                            <input type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password2')}/>
+                        </div>
+                        <div className="form-row">
+                            <label>Speaker?</label><br></br>
+                            <input type="checkbox" onChange={(evt) => this.updateState(evt.target.checked, 'speaker')}/>
+                        </div>
+                        {
+                            this.state.speaker &&
+                            <div className="form-row">
+                                <label>Info about you</label><br></br>
+                                <textarea name="" id="" cols={30} rows={10} onChange={(evt) => this.updateState(evt.target.value, 'speakerInfo')}></textarea>
+                            </div>
+                        }
+                        <div className="form-row">
+                            <button onClick={() => this.signUp()}> Sign up!</button>
+                        </div>
+                    </div>
                 </div>
             </Layout>
         </div>);

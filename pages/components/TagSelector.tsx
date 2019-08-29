@@ -3,7 +3,7 @@ import { firestore } from '../../firebase'
 import TagsMenu from './TagsMenu';
 
 interface IProps {
-    onChange: (val: Array<string>) =>  void,
+    onChange: (val: Array<string>) => void,
     value: Array<string>
 }
 
@@ -51,7 +51,7 @@ class TagSelector extends React.Component<IProps, IState> {
         firestore.collection('tags').add({
             name: tag
         }).then(console.log)
-        .catch(console.log)
+            .catch(console.log)
     }
 
     async componentDidMount() {
@@ -74,6 +74,7 @@ class TagSelector extends React.Component<IProps, IState> {
     }
 
     updateTag(checked: boolean, tag: string) {
+        console.log(tag);
         if (checked && !this.state.selectedTags.includes(tag)) {
             this.selectTag(tag);
         }
@@ -83,17 +84,23 @@ class TagSelector extends React.Component<IProps, IState> {
     }
 
     render() {
-        return (<div>
-            {this.state.tags.map(tag =>
-                <div className="tag-row" key={tag}>
-                    <label >{tag}</label>
-                    <input type="checkbox" onChange={(evt) => this.updateTag(evt.target.checked, tag)} checked={this.state.selectedTags.includes(tag)}/>
+        return (
+            <div>
+                <div className="tags">
+                    {this.state.tags.map(tag =>
+                        <div className="tag-row tag" key={tag}>
+                            <label>
+                                <input type="checkbox" hidden onChange={(evt) => this.updateTag(evt.target.checked, tag)} checked={this.state.selectedTags.includes(tag)} />
+                                <span className="no-select">{tag}</span>
+                            </label>
+                        </div>
+                    )}
                 </div>
-            )}
-            <div className="tag-row">
-                <input type="text" ref={this.newTagNameInput} name="" id="" /><button onClick={() => this.newTag()}>+</button>
-            </div>
-        </div>);
+                <div className="tag-row">
+                    <span>Can't find a specific tag? Create a new one!</span><br></br>
+                    <input type="text" ref={this.newTagNameInput} name="" id="" /><button onClick={() => this.newTag()}>Create tag</button>
+                </div>
+            </div>);
     }
 }
 

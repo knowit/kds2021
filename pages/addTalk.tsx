@@ -90,16 +90,16 @@ class AddTalk extends React.Component<any, IState> {
                             </select>
                         </div>
                         <div className="form-row">
-                            <label>Comment to organizers</label><br></br>
-                            <input type="text" name="" id="" />
-                        </div>
-                        <div className="form-row">
                             <label>Speakers</label><br></br>
                             <SpeakersSelector value={this.state.speakers} onChange={(val) => this.updateState(val, 'speakers')}></SpeakersSelector>  
                         </div>
                         <div className="form-row">
                             <label>Tags</label><br></br>
                             <TagSelector value={this.state.tags} onChange={(val) => this.updateState(val, 'tags')}></TagSelector>
+                        </div>
+                        <div className="form-row">
+                            <label>Comment to organizers</label><br></br>
+                            <input type="text" name="" id="" />
                         </div>
                         
                         <input type="button" value="New Talk" onClick={() => this.addTalk()} />
