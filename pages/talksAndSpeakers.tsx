@@ -84,6 +84,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
   }
 
   render() {
+    console.log(this.state.filteredTalks);
     return (<div className="talksAndSpeakers">
       <Layout>
         <h1> Talks and speakers</h1>
@@ -92,56 +93,13 @@ class TalksAndSpeakers extends React.Component<any, IState> {
             <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
             <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
           </div>
-          {/*<div className="talks">
-            {this.state.filteredProgram.days
-              .map(day => day.slots
-                .filter(function (slot) {
-                  return slot.rooms !== undefined
-                })
-                .map(slot => slot.rooms
-                  .map(room => room.talks
-                    .map((talk, i) => talk.speakers
-                    .map(speaker =>
-                      <div className="talk-container" key={i}>
-                          <Talk
-                            description={talk.description}
-                            speakerInfo={speaker.info}
-                            speaker={speaker.name}
-                            title={talk.title}
-                            type={talk.type}
-                            id={talk.talkId}
-                            room={room.name}
-                            language={talk.language}
-                            key={i}
-                            difficulty={talk.difficulty}
-                            tags={talk.tags} />
-                            <FavouriteTalkButtonNoSSR talkId={talk.talkId} />
-                        </div>
-                      )
-                      )
-                      )
-                      )
-                      )
-                    }
-            </div>
-          */}
           <div className="talks">
             {this.state.filteredTalks.map(talk =>
               <div key={talk.id}>
                 <div>
                   <div className="talk-container">
                     <TalkView
-                      description={talk.description}
-                      speakerInfo={talk.speaker.info}
-                      speaker={talk.speaker.name}
-                      title={talk.name}
-                      type={talk.type}
-                      id={talk.id}
-                      room={"room c3123"}
-                      language={talk.language}
-                      key={talk.id}
-                      difficulty={talk.difficulty}
-                      tags={talk.tags}
+                      talk={talk}
                     >
                     </TalkView>
                     <FavouriteTalkButtonNoSSR talkId={talk.id} />
