@@ -1,5 +1,6 @@
 import Layout from "./components/Layout";
-import Talk from "./components/Talk";
+import TalkView from "./components/Talk";
+import Talk from "../models/Talk";
 import FilteredProgramBase from "./components/FilteredProgramBase";
 import FilterButton from "./components/FilterButton";
 import "../styling/talksAndSpeakersStyles.scss";
@@ -67,6 +68,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
 
     // Update speaker to its data instead of ref, can drop this if data is stored instead of ref, this will duplicate data tho..
     for (let i = 0; i < talks.length; i++) {
+      console.log(talks[i]);
       talks[i].speaker = await FirestoreHandler.get('speakers', talks[i].speaker.id);
       for (let j = 0; j < talks[i].cospeakers.length; j++) {
         talks[i].cospeakers[j] = await FirestoreHandler.get('speakers', talks[i].cospeakers[j].id);
@@ -128,7 +130,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
               <div key={talk.id}>
                 <div>
                   <div className="talk-container">
-                    <Talk
+                    <TalkView
                       description={talk.description}
                       speakerInfo={talk.speaker.info}
                       speaker={talk.speaker.name}
@@ -141,7 +143,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
                       difficulty={talk.difficulty}
                       tags={talk.tags}
                     >
-                    </Talk>
+                    </TalkView>
                     <FavouriteTalkButtonNoSSR talkId={talk.id} />
                   </div>
                 </div>

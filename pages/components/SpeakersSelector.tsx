@@ -15,12 +15,14 @@ interface IProps {
 }
 
 class SpeakersSelector extends React.Component<IProps, IState> {
+    private valueUpdated: boolean = false;
+
     constructor(props) {
         super(props);
 
         this.state = {
             speakers: [],
-            cospeakers: this.props.value,
+            cospeakers: this.props.value || [],
             speaker: {
                 data: {
                     name: ""
@@ -59,7 +61,34 @@ class SpeakersSelector extends React.Component<IProps, IState> {
         this.setState({
             speakers: speakers,
             speaker: talkSpeaker
+        }, () => {
+            this.setDefaultValue();
+            this.onChange();
         });
+    }
+
+    setDefaultValue() {
+        // Only set defaut if not been updated before and data is ready
+        if (!this.valueUpdated && this.state.speakers && this.state.speakers.length > 0 && this.props.value && this.props.value.length > 0) {
+            
+            this.valueUpdated = true;
+
+            const mappedDefaultValues = this.props.value.map((ref) => {
+                return this.state.speakers.filter((speaker) => speaker.ref.id == ref.id)[0] || null
+            });
+
+            this.setState({
+                cospeakers: mappedDefaultValues
+            });
+        }
+    }
+
+    onChange() {
+        this.props.onChange([this.state.speaker].concat(this.state.cospeakers.filter(speaker => speaker != null)));
+    }
+
+    componentDidUpdate() {
+        this.setDefaultValue();
     }
 
     addSpeaker() {
@@ -72,13 +101,15 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     }
 
     updateSpeakers(index, speaker) {
+        this.valueUpdated = true;
+
         this.setState((prev) => {
             const speakers = prev.cospeakers;
             speakers[index] = speaker;
             return {
                 cospeakers: speakers
             }
-        }, () => this.props.onChange([this.state.speaker].concat(this.state.cospeakers)));
+        }, () => this.onChange());
     }
 
     render() {
@@ -86,8 +117,8 @@ class SpeakersSelector extends React.Component<IProps, IState> {
             <div className={`speakers-selector ${this.props.className}`}>
                 <p>{this.state.speaker.data.name}</p>
                 {
-                    this.state.cospeakers.map((speaker, i) => {
-                        return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => {this.updateSpeakers(i, val)}}></SpeakerSelector>
+                    this.state.cospeakers && this.state.cospeakers.map((speaker, i) => {
+                        return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => {this.updateSpeakers(i, val)}} value={speaker}></SpeakerSelector>
                     })
                 }
                 

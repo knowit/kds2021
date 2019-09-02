@@ -4,7 +4,7 @@ import TagsMenu from './TagsMenu';
 
 interface IProps {
     onChange: (val: Array<string>) => void,
-    value: Array<string>,
+    value: Array<any>,
     className: string
 }
 
@@ -14,7 +14,8 @@ interface IState {
 }
 
 class TagSelector extends React.Component<IProps, IState> {
-    newTagNameInput: any;
+    private newTagNameInput: any;
+    private valueUpdated: boolean = false;
 
     constructor(props) {
         super(props);
@@ -23,7 +24,7 @@ class TagSelector extends React.Component<IProps, IState> {
 
         this.state = {
             tags: [],
-            selectedTags: this.props.value
+            selectedTags: this.props.value || []
         };
     }
 
@@ -53,6 +54,15 @@ class TagSelector extends React.Component<IProps, IState> {
             name: tag
         }).then(console.log)
             .catch(console.log)
+    }
+
+    componentDidUpdate() {
+        if (!this.valueUpdated && this.props.value && this.props.value.length > 0) {
+            this.valueUpdated = true;
+            this.setState({
+                selectedTags: this.props.value
+            });
+        }
     }
 
     async componentDidMount() {
