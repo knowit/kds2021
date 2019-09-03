@@ -1,0 +1,48 @@
+@import "variables";
+
+.day {
+    width: 100%;
+    background-color: $secondary-color;
+    padding: 30px 0 30px 0;
+    margin: 10px 0 10px 0;
+}
+
+.timeslots {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeslot {
+    margin: 5px;
+    background-color: $primary-color;
+    color: white;
+    flex-grow: 1;
+    min-height: 100px;
+}
+
+.rooms {
+    display: flex;
+    flex-direction: row;
+}
+
+.room {
+    margin: 5px;
+    background-color: $secondary-color;
+    flex-grow: 1;
+    min-height: 100px;
+}
+
+.day {
+    .add-button {
+        float: right;
+    }
+}
+
+.talk {
+    cursor: move;
+}
+
+.dragging-talk {
+    pointer-events: none;
+    position: absolute;
+}

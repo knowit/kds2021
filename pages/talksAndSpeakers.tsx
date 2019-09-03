@@ -68,7 +68,6 @@ class TalksAndSpeakers extends React.Component<any, IState> {
 
     // Update speaker to its data instead of ref, can drop this if data is stored instead of ref, this will duplicate data tho..
     for (let i = 0; i < talks.length; i++) {
-      console.log(talks[i]);
       talks[i].speaker = await FirestoreHandler.get('speakers', talks[i].speaker.id);
       for (let j = 0; j < talks[i].cospeakers.length; j++) {
         talks[i].cospeakers[j] = await FirestoreHandler.get('speakers', talks[i].cospeakers[j].id);
