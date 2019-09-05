@@ -1,7 +1,6 @@
 import Layout from "./components/Layout";
 import TalkView from "./components/Talk";
 import Talk from "../models/Talk";
-import FilteredProgramBase from "./components/FilteredProgramBase";
 import FilterButton from "./components/FilterButton";
 import "../styling/talksAndSpeakersStyles.scss";
 import React from "react";

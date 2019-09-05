@@ -64,6 +64,14 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
         this.props.onChange(this.state.timeslot);
     }
 
+    updateType(str: string) {
+        this.setState((prev) => {
+            prev.timeslot.type = str;
+            return prev;
+        });
+        this.props.onChange(this.state.timeslot);
+    }
+
     updateRoom(index: number, room: Room) {
         this.setState((prev) => {
             prev.timeslot.rooms[index] = room;
@@ -84,11 +92,14 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
                 {!this.state.editMode &&
                     <p>{new Time(this.props.timeslot.from.hour, this.props.timeslot.from.minute).toString()} -
                     {new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()}
+                    &nbsp;{this.props.timeslot.type}
                         &nbsp;<span onClick={() => this.setEditMode()}>edit</span></p>}
                 {this.state.editMode && <div>
                     <input type="time" onChange={(evt) => this.updateFrom(evt.target.value)} defaultValue={new Time(this.props.timeslot.from.hour, this.props.timeslot.from.minute).toString()} />
                     -
-                    <input type="time" onChange={(evt) => this.updateTo(evt.target.value)} defaultValue={new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()} /> <button onClick={() => this.save()}>Save</button>
+                    <input type="time" onChange={(evt) => this.updateTo(evt.target.value)} defaultValue={new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()} /> 
+                    <input type="text" onChange={(evt) => this.updateType(evt.target.value)} defaultValue={this.props.timeslot.type}/>
+                    <button onClick={() => this.save()}>Save</button>
                 </div>}
                 <div className="rooms">
                     {this.state.timeslot.rooms.map((room, i) =>

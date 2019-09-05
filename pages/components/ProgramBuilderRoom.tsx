@@ -14,7 +14,8 @@ interface IProps {
 
 interface IState {
     room: Room,
-    editMode: boolean
+    editMode: boolean,
+    insertIndex: number
 }
 
 class ProgramBuilderRoom extends React.Component<IProps, IState> {
@@ -23,7 +24,8 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
 
         this.state = {
             editMode: false,
-            room: this.props.room || new Room()
+            room: this.props.room || new Room(),
+            insertIndex: 0
         }
 
         // Bind creates a new object and we only want one function
@@ -31,11 +33,11 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
     }
 
     onTalkDropped(talk: Talk) {
+        console.log(this.state.insertIndex);
         this.setState((prev) => {
-            prev.room.talks.push(talk);
+            prev.room.talks.splice(prev.insertIndex, 0, talk);
             return prev;
-        }, () =>
-                this.props.onChange(this.state.room));
+        }, () => this.props.onChange(this.state.room));
     }
 
     startDrag(talk: Talk, x: number, y: number) {
@@ -92,6 +94,12 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
         }, () => this.props.onChange(this.state.room));
     }
 
+    updateInsertIndex(index: number) {
+        this.setState({
+            insertIndex: index
+        });
+    }
+
     render() {
         return (
             <div className={`room ${this.isFull() ? 'full-room' : ''}`} onMouseEnter={() => this.props.timeslotCallbackSetter(this.onTalkDropped)} onMouseLeave={() => this.props.timeslotCallbackSetter(null)}>
@@ -101,9 +109,9 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
                     <button onClick={() => this.save()}>save</button>
                 </div>}
 
-                {this.state.room.talks.map(talk =>
+                {this.state.room.talks.map((talk, i) =>
                     <div>
-                        <TalkView talk={talk} onStartDrag={this.startDrag.bind(this)}></TalkView>
+                        <TalkView talk={talk} onStartDrag={this.startDrag.bind(this)} onMouseEnter={this.updateInsertIndex.bind(this, i + 1)} onMouseLeave={this.updateInsertIndex.bind(this, 0)}></TalkView>
                     </div>
                 )}
             </div>

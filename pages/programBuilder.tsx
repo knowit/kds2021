@@ -177,7 +177,7 @@ class Login extends React.Component<any, IState> {
                 { this.state.talks.map(talk => <TalkView talk={talk} onStartDrag={this.startDrag.bind(this)}></TalkView>)}
 
                 { this.state.draggingTalk != null &&
-                    <div className="dragging-talk" style={{left: this.state.mouseX + "px", top: this.state.mouseY + "px"}}>
+                    <div className="talk dragging-talk" style={{left: this.state.mouseX + "px", top: this.state.mouseY + "px"}}>
                         <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
                     </div>
                 }

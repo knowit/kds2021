@@ -1,6 +1,7 @@
 import FirestoreHandler from './firestoreHandler';
 import ProgramBuilderDay from '../pages/components/ProgramBuilderDay';
 import _ from 'lodash';
+import Talk from '../models/Talk';
 
 async function loadTalks(program) {
   const talks = getTalks(program); // Will only get the id's and not objects
@@ -47,8 +48,24 @@ function getTalks(program) {
       .map(room => room.talks))).flat(Infinity)
 }
 
+// Does not make a copy of the program, should be called with a copy as the parameter
+function filterProgram(program, cb: (Talk) => boolean) {
+  program.days = program.days.map(day => {
+    day.timeslots.map(timeslot => {
+      timeslot.rooms = timeslot.rooms.map(room => {
+        room.talks = room.talks.filter(talk => cb(talk));
+        return room;
+      });
+      return timeslot;
+    });
+    return day;
+  });
+  return program;
+}
+
 export default {
   getTalks,
-  loadProgram
+  loadProgram,
+  filterProgram
 }
 
