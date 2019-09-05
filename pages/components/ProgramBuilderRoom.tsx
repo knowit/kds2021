@@ -9,11 +9,11 @@ interface IProps {
     duration: number, // in minutes
     timeslotCallbackSetter: (cb: (talk: Talk) => void) => void,
     onStartDrag: (talk: Talk, x: number, y: number) => void,
-    onChange: (val: any) => void
+    onChange: (val: any) => void,
+    onRemove: () => void
 }
 
 interface IState {
-    room: Room,
     editMode: boolean,
     insertIndex: number
 }
@@ -24,7 +24,6 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
 
         this.state = {
             editMode: false,
-            room: this.props.room || new Room(),
             insertIndex: 0
         }
 
@@ -33,19 +32,14 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
     }
 
     onTalkDropped(talk: Talk) {
-        console.log(this.state.insertIndex);
-        this.setState((prev) => {
-            prev.room.talks.splice(prev.insertIndex, 0, talk);
-            return prev;
-        }, () => this.props.onChange(this.state.room));
+        this.props.room.talks.splice(this.state.insertIndex, 0, talk);
+        this.props.onChange(this.props.room);
     }
 
     startDrag(talk: Talk, x: number, y: number) {
-        this.setState((prev) => {
-            const index = prev.room.talks.indexOf(talk);
-            prev.room.talks = prev.room.talks.slice(0, index).concat(prev.room.talks.slice(index + 1));
-            return prev;
-        }, () => this.props.onChange(this.state.room));
+        const index = this.props.room.talks.indexOf(talk);
+        this.props.room.talks = this.props.room.talks.slice(0, index).concat(this.props.room.talks.slice(index + 1));
+        this.props.onChange(this.props.room);
         this.props.onStartDrag(talk, x, y);
     }
 
@@ -68,7 +62,7 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
     }
 
     isFull() {
-        const duration = this.state.room.talks.reduce((acc: number, x: Talk) => {
+        const duration = this.props.room.talks.reduce((acc: number, x: Talk) => {
             acc += this.getDuration(x);
             return acc;
         }, 0);
@@ -86,12 +80,10 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
             editMode: false
         });
     }
-
+    
     updateName(val: string) {
-        this.setState((prev) => {
-            prev.room.name = val;
-            return prev;
-        }, () => this.props.onChange(this.state.room));
+        this.props.room.name = val;
+        this.props.onChange(this.props.room);
     }
 
     updateInsertIndex(index: number) {
@@ -103,14 +95,15 @@ class ProgramBuilderRoom extends React.Component<IProps, IState> {
     render() {
         return (
             <div className={`room ${this.isFull() ? 'full-room' : ''}`} onMouseEnter={() => this.props.timeslotCallbackSetter(this.onTalkDropped)} onMouseLeave={() => this.props.timeslotCallbackSetter(null)}>
-                {!this.state.editMode && <p>{this.state.room.name} <span onClick={() => this.setEditMode()}>edit</span></p>}
+                <button className="remove-button" onClick={() => this.props.onRemove()}>remove</button>
+                {!this.state.editMode && <p>{this.props.room.name} <span onClick={() => this.setEditMode()}>edit</span></p>}
                 {this.state.editMode && <div>
-                    <input type="text" onChange={(evt) => this.updateName(evt.target.value)} defaultValue={this.state.room.name} />
+                    <input type="text" onChange={(evt) => this.updateName(evt.target.value)} defaultValue={this.props.room.name} />
                     <button onClick={() => this.save()}>save</button>
                 </div>}
 
-                {this.state.room.talks.map((talk, i) =>
-                    <div>
+                {this.props.room.talks.map((talk, i) =>
+                    <div key={i}>
                         <TalkView talk={talk} onStartDrag={this.startDrag.bind(this)} onMouseEnter={this.updateInsertIndex.bind(this, i + 1)} onMouseLeave={this.updateInsertIndex.bind(this, 0)}></TalkView>
                     </div>
                 )}

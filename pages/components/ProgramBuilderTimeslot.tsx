@@ -9,11 +9,12 @@ interface IProps {
     timeslot: Timeslot
     timeslotCallbackSetter: (cb: (talk: Talk) => void) => void,
     onStartDrag: (talk: Talk, x: number, y: number) => void,
-    onChange: (val: any) => void
+    onChange: (val: any) => void,
+    onRemove: () => void,
+    addTalks: (talks: Talk[]) => void
 }
 
 interface IState {
-    timeslot: Timeslot,
     editMode: boolean
 }
 
@@ -23,17 +24,13 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
 
         this.state = {
             editMode: false,
-            timeslot: this.props.timeslot || new Timeslot()
         }
     }
 
     addRoom() {
-        this.setState((prev) => {
-            prev.timeslot.rooms = prev.timeslot.rooms.concat([new Room()]);
-            return prev;
-        });
+        this.props.timeslot.rooms.push(new Room);
 
-        this.props.onChange(this.state.timeslot);
+        this.props.onChange(this.props.timeslot);
     }
 
     setEditMode() {
@@ -49,46 +46,42 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
     }
 
     updateFrom(timestr: string) {
-        this.setState((prev) => {
-            prev.timeslot.from = Time.parse(timestr);
-            return prev;
-        });
-        this.props.onChange(this.state.timeslot);
+        this.props.timeslot.from = Time.parse(timestr);
+        this.props.onChange(this.props.timeslot);
     }
 
     updateTo(timestr: string) {
-        this.setState((prev) => {
-            prev.timeslot.to = Time.parse(timestr);
-            return prev;
-        });
-        this.props.onChange(this.state.timeslot);
+        this.props.timeslot.to = Time.parse(timestr);
+        this.props.onChange(this.props.timeslot);
     }
 
     updateType(str: string) {
-        this.setState((prev) => {
-            prev.timeslot.type = str;
-            return prev;
-        });
-        this.props.onChange(this.state.timeslot);
+        this.props.timeslot.type = str;
+        this.props.onChange(this.props.timeslot);
     }
 
     updateRoom(index: number, room: Room) {
-        this.setState((prev) => {
-            prev.timeslot.rooms[index] = room;
-            return prev;
-        });
+        this.props.timeslot.rooms[index] = room;
+        this.props.onChange(this.props.timeslot);
     }
 
     getDuration() {
-        const from = this.state.timeslot.from.hour * 60 + this.state.timeslot.from.minute;
-        const to = this.state.timeslot.to.hour * 60 + this.state.timeslot.to.minute;
+        const from = this.props.timeslot.from.hour * 60 + this.props.timeslot.from.minute;
+        const to = this.props.timeslot.to.hour * 60 + this.props.timeslot.to.minute;
 
         return to - from;
+    }
+
+    onRoomRemoved(roomIndex: number) {
+        const removed = this.props.timeslot.rooms.splice(roomIndex, 1)[0];
+        this.props.addTalks(removed.talks);
+        this.props.onChange(this.props.timeslot);
     }
 
     render() {
         return (
             <div className="timeslot">
+                <button className="remove-button" onClick={() => this.props.onRemove()}>remove</button>
                 {!this.state.editMode &&
                     <p>{new Time(this.props.timeslot.from.hour, this.props.timeslot.from.minute).toString()} -
                     {new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()}
@@ -102,8 +95,8 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
                     <button onClick={() => this.save()}>Save</button>
                 </div>}
                 <div className="rooms">
-                    {this.state.timeslot.rooms.map((room, i) =>
-                        <RoomView duration={this.getDuration()} onChange={this.updateRoom.bind(this, i)} room={room} timeslotCallbackSetter={this.props.timeslotCallbackSetter} onStartDrag={this.props.onStartDrag}></RoomView>)
+                    {this.props.timeslot.rooms.map((room, i) =>
+                        <RoomView key={i} onRemove={this.onRoomRemoved.bind(this, i)} duration={this.getDuration()} onChange={this.updateRoom.bind(this, i)} room={room} timeslotCallbackSetter={this.props.timeslotCallbackSetter} onStartDrag={this.props.onStartDrag}></RoomView>)
                     }
                 </div>
 

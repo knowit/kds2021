@@ -27,7 +27,7 @@ class Login extends React.Component<any, IState> {
         super(props);
 
         this.state = {
-            days : [],
+            days: [],
             talks: [],
             draggingTalk: null,
             mouseX: 0,
@@ -51,14 +51,14 @@ class Login extends React.Component<any, IState> {
             const res = programTalks.some(pTalk => pTalk.id == talk.id);
             return !res;
         });
-        
+
         // Update speaker to its data instead of ref, can drop this if data is stored instead of ref, this will duplicate data and will make updating speakers harder..
         const speakers = await Promise.all(talks.map(talk => FirestoreHandler.get('speakers', talk.speaker.id)));
 
         talks.forEach((talk, index) => {
             talk.speaker = speakers[index];
         });
-        
+
         this.setState({
             days: program.days,
             talks: talks
@@ -76,13 +76,13 @@ class Login extends React.Component<any, IState> {
     addDay() {
         this.setState((prev) => ({
             days: prev.days.concat([new Day()])
-        }));        
+        }));
     }
 
     startDrag(talk: Talk, x: number, y: number) {
         this.setState((prev) => {
             const index = prev.talks.indexOf(talk);
-            let talks = index >= 0 ? prev.talks.slice(0, index).concat(prev.talks.slice(index + 1)) : prev.talks; 
+            let talks = index >= 0 ? prev.talks.slice(0, index).concat(prev.talks.slice(index + 1)) : prev.talks;
             if (prev.draggingTalk != null) {
                 talks.push(prev.draggingTalk);
             }
@@ -113,7 +113,7 @@ class Login extends React.Component<any, IState> {
 
         if (this.state.timeslotCallback) {
             this.state.timeslotCallback(this.state.draggingTalk);
-            
+
             this.setState((prev) => ({
                 draggingTalk: null
             }));
@@ -156,7 +156,7 @@ class Login extends React.Component<any, IState> {
                     return Object.assign({}, room);
                 });
 
-                timeslot.to = Object.assign({}, timeslot.to);    
+                timeslot.to = Object.assign({}, timeslot.to);
                 timeslot.from = Object.assign({}, timeslot.from);
                 return Object.assign({}, timeslot);
             });
@@ -167,22 +167,49 @@ class Login extends React.Component<any, IState> {
         const res = await FirestoreHandler.update('program', 'test', program);
     }
 
+    // Used for day, timeslot and room to add talks back when being removed
+    addTalks(talks: Talk[]) {
+        this.setState((prev) => ({
+            talks: prev.talks.concat(talks)
+        }));
+    }
+
+    onDayRemoved(dayIndex: number) {
+        const removed = this.state.days.splice(dayIndex, 1)[0];
+        console.log(removed);
+        const talks = removed.timeslots.map(timeslot => timeslot.rooms.map(room => room.talks)).flat(Infinity);
+        this.addTalks(talks);
+    }
+
     render() {
         return (<div className="programBuilder">
             <Layout>
-                <div className="content">
-                    { this.state.days.map((day, i) => <DayView onChange={this.updateDays.bind(this, i)} timeslotCallbackSetter={this.timeslotCallbackSetter.bind(this)} onStartDrag={this.startDrag.bind(this)} day={day}></DayView>)}
-                    <button className="add-button" onClick={() => this.addDay()}>Add day</button>
-                </div>
-                { this.state.talks.map(talk => <TalkView talk={talk} onStartDrag={this.startDrag.bind(this)}></TalkView>)}
-
-                { this.state.draggingTalk != null &&
-                    <div className="talk dragging-talk" style={{left: this.state.mouseX + "px", top: this.state.mouseY + "px"}}>
-                        <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
+                <div className="program-builder">
+                    <div className="talks">
+                        <h4>Unassigned talks</h4>
+                        {this.state.talks.map((talk, i) => <TalkView key={i} talk={talk} onStartDrag={this.startDrag.bind(this)}></TalkView>)}
                     </div>
-                }
 
-                <button onClick={() => this.save()}>Save</button>
+                    <div className="builder">
+                        {this.state.days.map((day, i) => <DayView
+                            key={i}
+                            onRemove={this.onDayRemoved.bind(this, i)}
+                            addTalks={this.addTalks.bind(this)}
+                            onChange={this.updateDays.bind(this, i)}
+                            timeslotCallbackSetter={this.timeslotCallbackSetter.bind(this)}
+                            onStartDrag={this.startDrag.bind(this)}
+                            day={day}></DayView>)}
+                        <button className="add-button" onClick={() => this.addDay()}>Add day</button>
+                        <button onClick={() => this.save()}>Save</button>
+                    </div>
+
+                    {this.state.draggingTalk != null &&
+                        <div className="talk dragging-talk" style={{ left: this.state.mouseX + "px", top: this.state.mouseY + "px" }}>
+                            <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
+                        </div>
+                    }
+
+                </div>
             </Layout>
         </div>);
     }

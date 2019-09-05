@@ -23,13 +23,7 @@ const withAuth = (Component, Redirect) => {
                     });
                 }
                 else {
-                    if (typeof Redirect === 'string') {
-                        router.push(Redirect);
-                    }
-                    
-                    this.setState({
-                        status: 'SIGNED_OUT'
-                    });
+                    router.push(Redirect);
                 }
             });
         }
@@ -40,9 +34,6 @@ const withAuth = (Component, Redirect) => {
             }
             else if (this.state.status == 'SIGNED_IN') {
                 return (<Component {...this.props } />);
-            }
-            else if (this.state.status == 'SIGNED_IN' && typeof Redirect !== 'string') {
-                return (<Redirect {...this.props } />);
             }
         }
 

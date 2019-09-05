@@ -9,11 +9,12 @@ interface IProps {
     day: Day,
     timeslotCallbackSetter: (cb: (talk: Talk) => void) => void,
     onStartDrag: (talk: Talk, x: number, y: number) => void,
-    onChange: (val: any) => void
+    onChange: (val: any) => void,
+    onRemove: () => void,
+    addTalks: (talks: Talk[]) => void
 }
 
 interface IState {
-    day: Day,
     editMode: boolean
 }
 
@@ -22,30 +23,23 @@ class ProgramBuilderDay extends React.Component<IProps, IState> {
         super(props);
 
         this.state = {
-            day: this.props.day || new Day(),
             editMode: false
         }
     }
 
     formatDay(date: Date) {
-        const options = { weekday: 'long', month: 'long', day: 'numeric'};
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
         return date.toLocaleDateString("en-US", options);
     }
 
     addSlot() {
-        this.setState((prev) => {
-            prev.day.timeslots = prev.day.timeslots.concat([new Timeslot()]); 
-            return prev;
-        }); 
-        // Propagate update  
-        this.props.onChange(this.state.day);
+        this.props.day.timeslots.push(new Timeslot());
+        this.props.onChange(this.props.day);
     }
 
     updateDate(datestr) {
-        this.setState((prev) => {
-            prev.day.day = this.createDate(datestr);
-            return prev;
-        })
+        this.props.day.day = this.createDate(datestr);
+        this.props.onChange(this.props.day);
     }
 
     setEditMode() {
@@ -59,7 +53,7 @@ class ProgramBuilderDay extends React.Component<IProps, IState> {
             editMode: false
         });
         // Propagate update 
-        this.props.onChange(this.state.day);
+        this.props.onChange(this.props.day);
     }
 
     formatDate(date: Date) {
@@ -77,22 +71,35 @@ class ProgramBuilderDay extends React.Component<IProps, IState> {
     }
 
     updateSlots(index: number, timeslot: Timeslot) {
-        this.setState((prev) => {
-            prev.day.timeslots[index] = timeslot;
-            return prev;
-        });
+        this.props.day.timeslots[index] = timeslot;
+        this.props.onChange(this.props.day);
+    }
+
+    onTimeslotRemoved(timeslotIndex: number) {
+        const removed = this.props.day.timeslots.splice(timeslotIndex, 1)[0];
+        const talks = removed.rooms.map(room => room.talks).flat(Infinity);
+        this.props.addTalks(talks);
+        this.props.onChange(this.props.day);
     }
 
     render() {
         return (
             <div className="day">
-                { !this.state.editMode && <h3>{this.formatDay(this.props.day.day)}<span onClick={() => this.setEditMode()}>&nbsp;&nbsp;edit</span></h3>}
-                { this.state.editMode && <div>
-                    <input type="date" onChange={(evt) => this.updateDate(evt.target.value)} defaultValue={this.formatDate(this.props.day.day)}/>
+                <button className="remove-button" onClick={() => this.props.onRemove()}>remove</button>
+                {!this.state.editMode && <h3>{this.formatDay(this.props.day.day)}<span onClick={() => this.setEditMode()}>&nbsp;&nbsp;edit</span></h3>}
+                {this.state.editMode && <div>
+                    <input type="date" onChange={(evt) => this.updateDate(evt.target.value)} defaultValue={this.formatDate(this.props.day.day)} />
                     <button onClick={() => this.save()}>save</button>
                 </div>}
                 <div className="timeslots">
-                    { this.state.day.timeslots.map((timeslot, i) => <TimeslotView onChange={this.updateSlots.bind(this, i)} timeslotCallbackSetter={this.props.timeslotCallbackSetter} onStartDrag={this.props.onStartDrag} timeslot={timeslot}></TimeslotView>)}
+                    {this.props.day.timeslots.map((timeslot, i) => <TimeslotView
+                        key={i}
+                        addTalks={this.props.addTalks}
+                        onRemove={this.onTimeslotRemoved.bind(this, i)}
+                        onChange={this.updateSlots.bind(this, i)}
+                        timeslotCallbackSetter={this.props.timeslotCallbackSetter}
+                        onStartDrag={this.props.onStartDrag}
+                        timeslot={timeslot}></TimeslotView>)}
                 </div>
 
                 <button className="add-button" onClick={() => this.addSlot()}>
