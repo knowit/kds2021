@@ -2,7 +2,7 @@ import Talk from './Talk';
 
 // Room used in one timeslot
 class Room {
-    name: string = ""
+    name: string = "room?"
     talks: Array<Talk> = []
 }
 

@@ -1,9 +1,11 @@
+import Time from '../../models/Time';
+
 const EventHeader = props => {
   return (
     <div id="event-header" className="content">
       <hr />
       <p>
-        {props.timeStart} - {props.timeEnd} {props.type}
+        {new Time(props.from.hour, props.from.minute).toString()} - {new Time(props.to.hour, props.to.minute).toString()}
       </p>
     </div>
   );

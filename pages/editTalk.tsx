@@ -46,15 +46,13 @@ class EditTalk extends React.Component<any, IState> {
         });
     }
 
+    // Value from speaker selector has format [speaker, cospeaker, cospeaker, ..., cospeaker]
     updateSpeakers(val: any) {
         this.setState((prev) => {
-            const talk = {...prev.talk};
-
-            talk.speaker= val[0].ref;
-            talk.cospeakers = val.splice(1).map(speaker => speaker.ref);
-            return {
-                talk: talk
-            }
+            prev.talk.speaker = val[0].ref;
+            prev.talk.cospeakers = val.splice(1).map(speaker => speaker.ref);
+            
+            return prev;
         });
     }
 

@@ -1,12 +1,12 @@
 import { Component } from "react";
 import ShowDailySchedule from "./ShowDailySchedule";
 import DayButton from './DayButton';
+import Day from '../../models/Day';
 
 interface IProps {
-  currDay: string;
-  slots: {};
+  currDay: Day;
 }
-class Day extends Component<IProps, any> {
+class DayView extends Component<IProps, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +32,6 @@ class Day extends Component<IProps, any> {
         <ShowScheduleButton
           showSchedule={this.showSchedule}
           day={this.props.currDay}
-          slots={this.props.slots}
           clicked={this.state.clicked}
         />
       </div>
@@ -44,7 +43,6 @@ const ShowScheduleButton = props => {
     return (
       <ShowDailySchedule
         day={props.day}
-        slots={props.slots}
         showSchedule={props.showSchedule}
       />
     );
@@ -56,4 +54,4 @@ const ShowScheduleButton = props => {
 
 };
 
-export default Day;
+export default DayView;

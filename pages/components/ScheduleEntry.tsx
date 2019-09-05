@@ -10,29 +10,21 @@ interface IProps {
 }
 class ScheduleEntry extends Component<IProps, any> {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
     return (
       <div className="talk-slot">
         {this.props.slot.rooms.map(room => room.talks
-          .map((talk, i) => talk.speakers
-            .map(speaker =>
-              <div className="talk-container" key={i}>
-                <Talk title={talk.title}
-                  speaker={speaker.name}
-                  room={room.name}
-                  type={talk.type}
-                  language={talk.language}
-                  difficulty={talk.difficulty}
-                  talkId={talk.talkId}
-                  key={i} 
-                  tags={talk.tags}/>
-
-                <FavouriteTalkButton talkId={talk.talkId} />
-              </div>
-            )))}
+          .map((talk, i) => {
+            talk.room = room.name;
+            return(<div className="talk-container" key={i}>
+              <Talk talk={talk} />
+              <FavouriteTalkButton talkId={talk.id} />
+            </div>);
+          }
+          ))}
       </div>
     );
   }

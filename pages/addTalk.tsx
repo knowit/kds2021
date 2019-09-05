@@ -40,17 +40,16 @@ class AddTalk extends React.Component<any, IState> {
         });
     }
 
-
     updateSpeakers(val: any) {
         this.setState((prev) => {
-            const talk = {...prev.talk};
+            const talk = prev.talk as Talk;
 
             talk.speaker= val[0].ref;
             talk.cospeakers = val.splice(1).map(speaker => speaker.ref);
             return {
                 talk: talk
             }
-        }, () => console.log(this.state.talk));
+        });
     }
 
     render() {

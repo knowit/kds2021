@@ -7,7 +7,8 @@ import DayView from './components/ProgramBuilderDay';
 import TalkView from './components/ProgramBuilderTalk';
 import Day from '../models/Day';
 import Talk from '../models/Talk';
-
+import _ from 'lodash';
+import programUtils from '../helpers/programUtils';
 
 interface IState {
     days: Array<any>,
@@ -19,6 +20,9 @@ interface IState {
 }
 
 class Login extends React.Component<any, IState> {
+    private mouseMoveCallback: any;
+    private mouseUpCallback: any;
+
     constructor(props) {
         super(props);
 
@@ -30,28 +34,43 @@ class Login extends React.Component<any, IState> {
             mouseY: 0,
             timeslotCallback: null
         }
+
+        this.mouseMoveCallback = (evt) => this.handleDrag(evt.pageX, evt.pageY);
+        this.mouseUpCallback = () => this.stopDrag();
     }
 
     async componentDidMount() {
-        const talks = await FirestoreHandler.getAll("talks");
+        let talks = await FirestoreHandler.getAll("talks");
 
+        const program = await programUtils.loadProgram('test');
+
+        const programTalks = programUtils.getTalks(program);
+
+        // Avoid duplicate talks
+        talks = talks.filter(talk => {
+            const res = programTalks.some(pTalk => pTalk.id == talk.id);
+            return !res;
+        });
         
         // Update speaker to its data instead of ref, can drop this if data is stored instead of ref, this will duplicate data and will make updating speakers harder..
-        for (let i = 0; i < talks.length; i++) {
-            talks[i].speaker = await FirestoreHandler.get('speakers', talks[i].speaker.id);
-        }
+        const speakers = await Promise.all(talks.map(talk => FirestoreHandler.get('speakers', talk.speaker.id)));
+
+        talks.forEach((talk, index) => {
+            talk.speaker = speakers[index];
+        });
         
         this.setState({
+            days: program.days,
             talks: talks
         });
 
-        document.addEventListener('mousemove', (evt) => this.handleDrag(evt.clientX, evt.clientY));
-        document.addEventListener('mouseup', () => this.stopDrag());
+        document.addEventListener('mousemove', this.mouseMoveCallback);
+        document.addEventListener('mouseup', this.mouseUpCallback);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('mousemove', (evt) => this.handleDrag(evt.clientX, evt.clientY));
-        document.removeEventListener('mousemove', () => this.stopDrag());
+        document.removeEventListener('mousemove', this.mouseMoveCallback);
+        document.removeEventListener('mousemove', this.mouseUpCallback);
     }
 
     addDay() {
@@ -123,6 +142,31 @@ class Login extends React.Component<any, IState> {
         });
     }
 
+    async save() {
+        let program = {
+            days: []
+        };
+
+        // Object with types not equal to Object cannot be uploaded to firestore, need to 'cast' all of them to normal Javascript Objects.
+        program.days = this.state.days.map(day => _.cloneDeep(Object.assign({}, day)));
+        program.days.map(day => {
+            day.timeslots = day.timeslots.map(timeslot => {
+                timeslot.rooms = timeslot.rooms.map(room => {
+                    room.talks = room.talks.map(talk => talk.id);
+                    return Object.assign({}, room);
+                });
+
+                timeslot.to = Object.assign({}, timeslot.to);    
+                timeslot.from = Object.assign({}, timeslot.from);
+                return Object.assign({}, timeslot);
+            });
+            return Object.assign({}, day);
+        })
+
+
+        const res = await FirestoreHandler.update('program', 'test', program);
+    }
+
     render() {
         return (<div className="programBuilder">
             <Layout>
@@ -134,9 +178,11 @@ class Login extends React.Component<any, IState> {
 
                 { this.state.draggingTalk != null &&
                     <div className="dragging-talk" style={{left: this.state.mouseX + "px", top: this.state.mouseY + "px"}}>
-                        {this.state.draggingTalk.name}
+                        <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
                     </div>
                 }
+
+                <button onClick={() => this.save()}>Save</button>
             </Layout>
         </div>);
     }

@@ -22,7 +22,7 @@ class ProgramBuilderDay extends React.Component<IProps, IState> {
         super(props);
 
         this.state = {
-            day: new Day(),
+            day: this.props.day || new Day(),
             editMode: false
         }
     }
@@ -92,7 +92,7 @@ class ProgramBuilderDay extends React.Component<IProps, IState> {
                     <button onClick={() => this.save()}>save</button>
                 </div>}
                 <div className="timeslots">
-                    { this.state.day.timeslots.map((timeslot, i) => <TimeslotView onChange={this.updateSlots.bind(this, i)} timeslotCallbackSetter={this.props.timeslotCallbackSetter} onStartDrag={this.props.onStartDrag} timeslot={timeslot}>hei</TimeslotView>)}
+                    { this.state.day.timeslots.map((timeslot, i) => <TimeslotView onChange={this.updateSlots.bind(this, i)} timeslotCallbackSetter={this.props.timeslotCallbackSetter} onStartDrag={this.props.onStartDrag} timeslot={timeslot}></TimeslotView>)}
                 </div>
 
                 <button className="add-button" onClick={() => this.addSlot()}>

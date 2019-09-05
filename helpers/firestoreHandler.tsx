@@ -58,7 +58,6 @@ class FirestoreHandler {
         return obj;
     }
 
-
     async getAll(collection, skip: number = 0, take: number = null) {
         let query = firestore.collection(collection).orderBy('name').startAt(skip);
         if (take) {

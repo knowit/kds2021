@@ -83,7 +83,6 @@ class TalksAndSpeakers extends React.Component<any, IState> {
   }
 
   render() {
-    console.log(this.state.filteredTalks);
     return (<div className="talksAndSpeakers">
       <Layout>
         <h1> Talks and speakers</h1>

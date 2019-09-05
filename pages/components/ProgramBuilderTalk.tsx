@@ -3,7 +3,7 @@ import Talk from '../../models/Talk';
 
 interface IProps {
     talk: Talk,
-    onStartDrag: (talk: Talk, x: number, y: number) => void
+    onStartDrag?: (talk: Talk, x: number, y: number) => void
 }
 
 interface IState {
@@ -23,10 +23,12 @@ class ProgramBuilderTalk extends React.Component<IProps, IState> {
     render() {
         return (
             <div className="talk" onMouseDown={(evt) => {
-                    evt.preventDefault();    
-                    this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
-                }}>
-                {this.props.talk.name}
+                evt.preventDefault();
+                this.props.onStartDrag && this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
+            }}>
+                <p>
+                    {this.props.talk.name} - {this.props.talk.type}
+                </p>
             </div>
         );
     }

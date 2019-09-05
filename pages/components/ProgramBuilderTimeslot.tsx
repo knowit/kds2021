@@ -7,7 +7,7 @@ import RoomView from './ProgramBuilderRoom';
 
 interface IProps {
     timeslot: Timeslot
-    timeslotCallbackSetter: (cb : (talk: Talk) => void) => void,
+    timeslotCallbackSetter: (cb: (talk: Talk) => void) => void,
     onStartDrag: (talk: Talk, x: number, y: number) => void,
     onChange: (val: any) => void
 }
@@ -23,16 +23,16 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
 
         this.state = {
             editMode: false,
-            timeslot: new Timeslot()
+            timeslot: this.props.timeslot || new Timeslot()
         }
     }
 
     addRoom() {
         this.setState((prev) => {
-            prev.timeslot.rooms = prev.timeslot.rooms.concat([new Room()]); 
+            prev.timeslot.rooms = prev.timeslot.rooms.concat([new Room()]);
             return prev;
-        }); 
-        
+        });
+
         this.props.onChange(this.state.timeslot);
     }
 
@@ -71,18 +71,28 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
         });
     }
 
+    getDuration() {
+        const from = this.state.timeslot.from.hour * 60 + this.state.timeslot.from.minute;
+        const to = this.state.timeslot.to.hour * 60 + this.state.timeslot.to.minute;
+
+        return to - from;
+    }
+
     render() {
         return (
             <div className="timeslot">
-                {!this.state.editMode && <p>{this.props.timeslot.from.toString()} - {this.props.timeslot.to.toString()} <span onClick={() => this.setEditMode()}>edit</span></p> }
+                {!this.state.editMode &&
+                    <p>{new Time(this.props.timeslot.from.hour, this.props.timeslot.from.minute).toString()} -
+                    {new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()}
+                        &nbsp;<span onClick={() => this.setEditMode()}>edit</span></p>}
                 {this.state.editMode && <div>
-                    <input type="time" onChange={(evt) => this.updateFrom(evt.target.value)} defaultValue={this.props.timeslot.from.toString()}/> 
-                    - 
-                    <input type="time" onChange={(evt) => this.updateTo(evt.target.value)} defaultValue={this.props.timeslot.to.toString()}/> <button onClick={() => this.save()}>Save</button>
+                    <input type="time" onChange={(evt) => this.updateFrom(evt.target.value)} defaultValue={new Time(this.props.timeslot.from.hour, this.props.timeslot.from.minute).toString()} />
+                    -
+                    <input type="time" onChange={(evt) => this.updateTo(evt.target.value)} defaultValue={new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()} /> <button onClick={() => this.save()}>Save</button>
                 </div>}
                 <div className="rooms">
-                    { this.state.timeslot.rooms.map((room, i) => 
-                        <RoomView onChange={this.updateRoom.bind(this, i)} room={room} timeslotCallbackSetter={this.props.timeslotCallbackSetter} onStartDrag={this.props.onStartDrag}></RoomView>)
+                    {this.state.timeslot.rooms.map((room, i) =>
+                        <RoomView duration={this.getDuration()} onChange={this.updateRoom.bind(this, i)} room={room} timeslotCallbackSetter={this.props.timeslotCallbackSetter} onStartDrag={this.props.onStartDrag}></RoomView>)
                     }
                 </div>
 

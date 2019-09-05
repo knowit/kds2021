@@ -17,11 +17,11 @@ const Menu = () => (
         <Link href="/talksAndSpeakers">
           <a className="link talksAndSpeakers">Talks and speakers</a>
         </Link>
-        {/*<Link href="/practicalities">
-          <a className="link practicalities">Practicalities</a>
-        </Link>
         <Link href="/schedule" >
           <a className="link schedule">Schedule</a>
+        </Link>
+        {/*<Link href="/practicalities">
+          <a className="link practicalities">Practicalities</a>
         </Link>
         <Link href="/location">
           <a className="link location">Location</a>
