@@ -8,11 +8,11 @@ import FirestoreHandler from '../helpers/firestoreHandler';
 import React from 'react';
 import _ from 'lodash';
 import ProgramUtils from '../helpers/programUtils';
+import Router from "next/router";
 
 class Schedule extends React.Component<any, any> {
     constructor(props) {
         super(props);
-
         this.state = {
             program: {
                 days: []
@@ -32,24 +32,47 @@ class Schedule extends React.Component<any, any> {
 
         const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
 
+        let selectedTags = Router.query.tags || [];
+        if (selectedTags && !Array.isArray(selectedTags)) {
+            selectedTags = [Router.query.tags as string];
+        }
+
         this.setState({
             program: program,
             filteredProgram: program,
             tags: tags,
-            loading: false
+            loading: false,
+            showOnlyFavorites: Router.query.onlyFavorites == 'true',
+            selectedTags: selectedTags
+        }, this.filter);
+    }
+
+    updateQuery() {
+        Router.replace({
+            pathname: Router.route,
+            query: {
+                onlyFavorites: this.state.showOnlyFavorites,
+                tags: this.state.selectedTags
+            }
         });
     }
 
     handleFavoriteChange(val) {
         this.setState({
             showOnlyFavorites: val
-        }, this.filter);
+        }, () => {
+            this.updateQuery()
+            this.filter();
+        });
     }
 
     handleFilterChange(val) {
         this.setState({
             selectedTags: val
-        }, this.filter);
+        }, () => {
+            this.updateQuery()
+            this.filter();
+        });
     }
 
     filter() {
@@ -80,11 +103,11 @@ class Schedule extends React.Component<any, any> {
                         <h1>Schedule</h1>
                         <div className="schedule-container">
                             <div>
-                                <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
-                                <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
+                                <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)} value={this.state.showOnlyFavorites}></ShowOnlyFavoritesButton>
+                                <FilterButton tags={this.state.tags} value={this.state.selectedTags} handleChange={this.handleFilterChange.bind(this)} />
                             </div>
                             {this.state.filteredProgram.days.map((day, i) =>
-                                <Day key={i} currDay={day} onChange={() => this.filter()}/>
+                                <Day key={i} currDay={day} onChange={() => this.filter()} />
                             )}
                         </div>
                     </Loader>

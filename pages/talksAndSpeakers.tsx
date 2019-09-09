@@ -6,7 +6,7 @@ import Loader from "./components/Loader";
 import React from "react";
 import dynamic from "next/dynamic"
 import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
-
+import Router from "next/router";
 import FirestoreHandler from '../helpers/firestoreHandler';
 
 interface IState {
@@ -36,16 +36,33 @@ class TalksAndSpeakers extends React.Component<any, IState> {
     }
   }
 
+  updateQuery() {
+    Router.replace({
+      pathname: Router.route,
+      query: {
+        onlyFavorites: this.state.showOnlyFavorites,
+        tags: this.state.selectedTags
+      }
+    });
+  }
+
+
   handleFavoriteChange(val) {
     this.setState({
       showOnlyFavorites: val
-    }, this.filter);
+    }, () => {
+      this.updateQuery()
+      this.filter();
+    });
   }
 
   handleFilterChange(val) {
     this.setState({
       selectedTags: val
-    }, this.filter);
+    }, () => {
+      this.updateQuery()
+      this.filter();
+    });
 
   }
 
@@ -77,9 +94,16 @@ class TalksAndSpeakers extends React.Component<any, IState> {
 
     const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
 
+    let selectedTags = Router.query.tags || [];
+    if (selectedTags && !Array.isArray(selectedTags)) {
+      selectedTags = [Router.query.tags as string];
+    }
+
     this.setState({
       talks: talks,
       tags: tags,
+      selectedTags: selectedTags as string[],
+      showOnlyFavorites: Router.query.onlyFavorites == 'true',
       loading: false
     }, this.filter);
   }
@@ -92,7 +116,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
           <div className="schedule-container">
             <div className="schedule-filter">
               <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
-              <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
+              <FilterButton value={this.state.selectedTags} tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
             </div>
             <div className="talks">
               {this.state.filteredTalks.map(talk =>
