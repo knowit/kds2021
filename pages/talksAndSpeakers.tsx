@@ -103,7 +103,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
                         talk={talk}
                       >
                       </TalkView>
-                      <FavouriteTalkButtonNoSSR talkId={talk.id} />
+                      <FavouriteTalkButtonNoSSR onChange={() => this.filter()} talkId={talk.id} />
                     </div>
                   </div>
                 </div>)}

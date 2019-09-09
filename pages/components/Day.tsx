@@ -4,7 +4,8 @@ import DayButton from './DayButton';
 import Day from '../../models/Day';
 
 interface IProps {
-  currDay: Day;
+  currDay: Day,
+  onChange: () => void
 }
 class DayView extends Component<IProps, any> {
   constructor(props) {
@@ -33,6 +34,7 @@ class DayView extends Component<IProps, any> {
           showSchedule={this.showSchedule}
           day={this.props.currDay}
           clicked={this.state.clicked}
+          onChange={this.props.onChange}
         />
       </div>
     );
@@ -44,6 +46,7 @@ const ShowScheduleButton = props => {
       <ShowDailySchedule
         day={props.day}
         showSchedule={props.showSchedule}
+        onChange={props.onChange}
       />
     );
   } else {

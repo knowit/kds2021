@@ -6,7 +6,8 @@ import FavouriteTalkButton from "./FavouriteTalkButton"
 
 
 interface IProps {
-  slot: any
+  slot: any,
+  onChange: () => void
 }
 class ScheduleEntry extends Component<IProps, any> {
   constructor(props) {
@@ -21,7 +22,7 @@ class ScheduleEntry extends Component<IProps, any> {
             talk.room = room.name;
             return(<div className="talk-container" key={i}>
               <Talk talk={talk} />
-              <FavouriteTalkButton talkId={talk.id} />
+              <FavouriteTalkButton onChange={this.props.onChange} talkId={talk.id} />
             </div>);
           }
           ))}

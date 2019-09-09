@@ -84,7 +84,7 @@ class Schedule extends React.Component<any, any> {
                                 <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
                             </div>
                             {this.state.filteredProgram.days.map((day, i) =>
-                                <Day key={i} currDay={day} />
+                                <Day key={i} currDay={day} onChange={() => this.filter()}/>
                             )}
                         </div>
                     </Loader>
