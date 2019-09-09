@@ -1,0 +1,44 @@
+@import "variables";
+
+.cfp {
+    @media screen and (min-width: $break-small) {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    @media screen and (max-width: $break-small) {
+        padding: 1em;
+    }
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.info {
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.register-button {
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 40px;
+    background-color: #A0D1CA;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.list {
+    li {
+        font-size: 24px;
+        margin-bottom: 20px;
+        span {
+            font-size: 16px;
+        }
+    }
+    margin-bottom: 40px;
+}

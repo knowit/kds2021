@@ -1,4 +1,5 @@
 import Menu from "./Menu";
+import Link from "next/link";
 import "../../styling/headerStyles.scss";
 import "../../styling/styling.scss";
 
@@ -7,7 +8,9 @@ const Layout = props => (
     <div className="menuAndHeader">
 
       <div className="header">
-        <img id="KDSlogo" src="../static/KDSsymbol.svg" />
+        <Link href="/">
+          <img id="KDSlogo" src="../static/KDSsymbol.svg" />
+        </Link>
         <div id="KDSheader">
           <h2 className="headline">
             By Developers, For Developers

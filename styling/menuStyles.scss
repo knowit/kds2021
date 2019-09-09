@@ -20,7 +20,7 @@
 
     /* to stop flickering of text in safari */
     transform-origin: 0 0;
-    transform: translate(-200%, 0);
+    transform: translate(100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 0.5);
   }
 
