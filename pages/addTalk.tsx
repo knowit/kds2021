@@ -6,6 +6,7 @@ import { firestore, auth } from './../firebase';
 import FirestoreHandler from '../helpers/firestoreHandler';
 import TagSelector from './components/TagSelector';
 import SpeakersSelector from './components/SpeakersSelector';
+import Loader from './components/Loader';
 import Talk from '../models/Talk';
 import _ from 'lodash';
 import Router from "next/router";

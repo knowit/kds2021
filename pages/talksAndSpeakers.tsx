@@ -1,8 +1,8 @@
 import Layout from "./components/Layout";
 import TalkView from "./components/Talk";
-import Talk from "../models/Talk";
 import FilterButton from "./components/FilterButton";
 import "../styling/talksAndSpeakersStyles.scss";
+import Loader from "./components/Loader";
 import React from "react";
 import dynamic from "next/dynamic"
 import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
@@ -14,7 +14,8 @@ interface IState {
   filteredTalks: Array<any>,
   tags: Array<string>,
   selectedTags: Array<string>,
-  showOnlyFavorites: boolean
+  showOnlyFavorites: boolean,
+  loading: boolean
 }
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./components/FavouriteTalkButton"), {
@@ -30,7 +31,8 @@ class TalksAndSpeakers extends React.Component<any, IState> {
       filteredTalks: [],
       showOnlyFavorites: false,
       tags: [],
-      selectedTags: []
+      selectedTags: [],
+      loading: true
     }
   }
 
@@ -44,7 +46,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
     this.setState({
       selectedTags: val
     }, this.filter);
-  
+
   }
 
   filter() {
@@ -55,7 +57,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
         }
         if (this.state.selectedTags.length > 0 && !talk.tags.some(tag => this.state.selectedTags.includes(tag))) {
           return false;
-      }
+        }
 
         return true;
       })
@@ -72,39 +74,42 @@ class TalksAndSpeakers extends React.Component<any, IState> {
         talks[i].cospeakers[j] = await FirestoreHandler.get('speakers', talks[i].cospeakers[j].id);
       }
     }
-    
+
     const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
 
     this.setState({
       talks: talks,
-      tags: tags
-    }, this.filter);    
+      tags: tags,
+      loading: false
+    }, this.filter);
   }
 
   render() {
     return (<div className="talksAndSpeakers">
       <Layout>
+        <Loader loading={this.state.loading}>¨
         <h1> Talks and speakers</h1>
-        <div className="schedule-container">
-          <div className="schedule-filter">
-            <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
-            <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
-          </div>
-          <div className="talks">
-            {this.state.filteredTalks.map(talk =>
-              <div key={talk.id}>
-                <div>
-                  <div className="talk-container">
-                    <TalkView
-                      talk={talk}
-                    >
-                    </TalkView>
-                    <FavouriteTalkButtonNoSSR talkId={talk.id} />
+          <div className="schedule-container">
+            <div className="schedule-filter">
+              <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
+              <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
+            </div>
+            <div className="talks">
+              {this.state.filteredTalks.map(talk =>
+                <div key={talk.id}>
+                  <div>
+                    <div className="talk-container">
+                      <TalkView
+                        talk={talk}
+                      >
+                      </TalkView>
+                      <FavouriteTalkButtonNoSSR talkId={talk.id} />
+                    </div>
                   </div>
-                </div>
-              </div>)}
+                </div>)}
+            </div>
           </div>
-        </div>
+        </Loader>
       </Layout>
     </div >
     )

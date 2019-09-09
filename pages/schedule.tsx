@@ -3,14 +3,13 @@ import "../styling/scheduleStyles.scss";
 import Day from "./components/Day";
 import FilterButton from "./components/FilterButton";
 import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
+import Loader from "./components/Loader";
 import FirestoreHandler from '../helpers/firestoreHandler';
 import React from 'react';
 import _ from 'lodash';
 import ProgramUtils from '../helpers/programUtils';
-import programUtils from "../helpers/programUtils";
 
 class Schedule extends React.Component<any, any> {
-    private loaded: boolean = false;
     constructor(props) {
         super(props);
 
@@ -23,26 +22,22 @@ class Schedule extends React.Component<any, any> {
             },
             tags: [],
             selectedTags: [],
-            showOnlyFavorites: false
+            showOnlyFavorites: false,
+            loading: true
         }
     }
 
     async componentDidMount() {
+        const program = await ProgramUtils.loadProgram('test');
 
-        if (!this.loaded) {
-            this.loaded = true;
+        const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
 
-            const program = await ProgramUtils.loadProgram('test');
-
-            const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
-
-            this.setState({
-                program: program,
-                filteredProgram: program,
-                tags: tags
-            });
-
-        }
+        this.setState({
+            program: program,
+            filteredProgram: program,
+            tags: tags,
+            loading: false
+        });
     }
 
     handleFavoriteChange(val) {
@@ -60,7 +55,7 @@ class Schedule extends React.Component<any, any> {
     filter() {
         const filteredProgram = _.cloneDeep(this.state.program);
 
-        programUtils.filterProgram(filteredProgram, (talk) => {
+        ProgramUtils.filterProgram(filteredProgram, (talk) => {
             if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
                 return false;
             }
@@ -80,16 +75,19 @@ class Schedule extends React.Component<any, any> {
         return (
             <div className="schedule">
                 <Layout>
-                    <h1>Schedule</h1>
-                    <div className="schedule-container">
-                        <div>
-                            <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
-                            <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
+                    <Loader loading={this.state.loading}>
+
+                        <h1>Schedule</h1>
+                        <div className="schedule-container">
+                            <div>
+                                <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
+                                <FilterButton tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
+                            </div>
+                            {this.state.filteredProgram.days.map((day, i) =>
+                                <Day key={i} currDay={day} />
+                            )}
                         </div>
-                        {this.state.filteredProgram.days.map((day, i) =>
-                            <Day key={i} currDay={day} />
-                        )}
-                    </div>
+                    </Loader>
                 </Layout>
             </div>
         );

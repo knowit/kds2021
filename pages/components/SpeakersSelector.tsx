@@ -1,11 +1,13 @@
 import React from 'react';
 import SpeakerSelector from './SpeakerSelector';
+import Loader from './Loader';
 import { firestore, auth } from './../../firebase'
 
 interface IState {
     speakers: Array<any>,
     cospeakers: Array<any>,
-    speaker: any
+    speaker: any,
+    loading: boolean
 }
 
 interface IProps {
@@ -28,7 +30,8 @@ class SpeakersSelector extends React.Component<IProps, IState> {
                     name: ""
                 },
                 ref: null
-            }
+            },
+            loading: true
         }
     }
 
@@ -60,7 +63,8 @@ class SpeakersSelector extends React.Component<IProps, IState> {
         const speakers = await this.getSpeakers();
         this.setState({
             speakers: speakers,
-            speaker: talkSpeaker
+            speaker: talkSpeaker,
+            loading: false
         }, () => {
             this.setDefaultValue();
             this.onChange();
@@ -70,7 +74,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     setDefaultValue() {
         // Only set defaut if not been updated before and data is ready
         if (!this.valueUpdated && this.state.speakers && this.state.speakers.length > 0 && this.props.value && this.props.value.length > 0) {
-            
+
             this.valueUpdated = true;
 
             const mappedDefaultValues = this.props.value.map((ref) => {
@@ -114,16 +118,19 @@ class SpeakersSelector extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className={`speakers-selector ${this.props.className}`}>
-                <p>{this.state.speaker.data.name}</p>
-                {
-                    this.state.cospeakers && this.state.cospeakers.map((speaker, i) => {
-                        return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => {this.updateSpeakers(i, val)}} value={speaker}></SpeakerSelector>
-                    })
-                }
-                
-                <button onClick={() => this.addSpeaker()}>Add cospeaker</button>
-            </div>
+            <Loader loading={this.state.loading}>
+
+                <div className={`speakers-selector ${this.props.className}`}>
+                    <p>{this.state.speaker.data.name}</p>
+                    {
+                        this.state.cospeakers && this.state.cospeakers.map((speaker, i) => {
+                            return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => { this.updateSpeakers(i, val) }} value={speaker}></SpeakerSelector>
+                        })
+                    }
+
+                    <button onClick={() => this.addSpeaker()}>Add cospeaker</button>
+                </div>
+            </Loader>
         );
     }
 

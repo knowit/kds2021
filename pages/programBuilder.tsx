@@ -5,6 +5,7 @@ import React from 'react';
 import Layout from './components/Layout';
 import DayView from './components/ProgramBuilderDay';
 import TalkView from './components/ProgramBuilderTalk';
+import Loader from './components/Loader';
 import Day from '../models/Day';
 import Talk from '../models/Talk';
 import _ from 'lodash';
@@ -16,7 +17,8 @@ interface IState {
     draggingTalk: Talk | null,
     mouseX: number,
     mouseY: number,
-    timeslotCallback: (talk: Talk) => void | null // Used for adding talk to timeslot
+    timeslotCallback: (talk: Talk) => void | null, // Used for adding talk to timeslot
+    isLoading: boolean
 }
 
 class Login extends React.Component<any, IState> {
@@ -32,7 +34,8 @@ class Login extends React.Component<any, IState> {
             draggingTalk: null,
             mouseX: 0,
             mouseY: 0,
-            timeslotCallback: null
+            timeslotCallback: null,
+            isLoading: true
         }
 
         this.mouseMoveCallback = (evt) => this.handleDrag(evt.pageX, evt.pageY);
@@ -61,7 +64,8 @@ class Login extends React.Component<any, IState> {
 
         this.setState({
             days: program.days,
-            talks: talks
+            talks: talks,
+            isLoading: false
         });
 
         document.addEventListener('mousemove', this.mouseMoveCallback);
@@ -176,7 +180,6 @@ class Login extends React.Component<any, IState> {
 
     onDayRemoved(dayIndex: number) {
         const removed = this.state.days.splice(dayIndex, 1)[0];
-        console.log(removed);
         const talks = removed.timeslots.map(timeslot => timeslot.rooms.map(room => room.talks)).flat(Infinity);
         this.addTalks(talks);
     }
@@ -184,35 +187,39 @@ class Login extends React.Component<any, IState> {
     render() {
         return (<div className="programBuilder">
             <Layout>
-                <div className="program-builder">
-                    <div className="talks">
-                        <h4>Unassigned talks</h4>
-                        {this.state.talks.map((talk, i) => <TalkView key={i} talk={talk} onStartDrag={this.startDrag.bind(this)}></TalkView>)}
-                    </div>
+                <Loader loading={this.state.isLoading}>
 
-                    <div className="builder">
-                        {this.state.days.map((day, i) => <DayView
-                            key={i}
-                            onRemove={this.onDayRemoved.bind(this, i)}
-                            addTalks={this.addTalks.bind(this)}
-                            onChange={this.updateDays.bind(this, i)}
-                            timeslotCallbackSetter={this.timeslotCallbackSetter.bind(this)}
-                            onStartDrag={this.startDrag.bind(this)}
-                            day={day}></DayView>)}
-                        <button className="add-button" onClick={() => this.addDay()}>Add day</button>
-                        <button onClick={() => this.save()}>Save</button>
-                    </div>
-
-                    {this.state.draggingTalk != null &&
-                        <div className="talk dragging-talk" style={{ left: this.state.mouseX + "px", top: this.state.mouseY + "px" }}>
-                            <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
+                    <div className="program-builder">
+                        <div className="talks">
+                            <h4>Unassigned talks</h4>
+                            {this.state.talks.map((talk, i) => <TalkView key={i} talk={talk} onStartDrag={this.startDrag.bind(this)}></TalkView>)}
                         </div>
-                    }
 
-                </div>
+                        <div className="builder">
+                            {this.state.days.map((day, i) => <DayView
+                                key={i}
+                                onRemove={this.onDayRemoved.bind(this, i)}
+                                addTalks={this.addTalks.bind(this)}
+                                onChange={this.updateDays.bind(this, i)}
+                                timeslotCallbackSetter={this.timeslotCallbackSetter.bind(this)}
+                                onStartDrag={this.startDrag.bind(this)}
+                                day={day}></DayView>)}
+                            <button className="add-button" onClick={() => this.addDay()}>Add day</button>
+                            <button onClick={() => this.save()}>Save</button>
+                        </div>
+
+                        {this.state.draggingTalk != null &&
+                            <div className="talk dragging-talk" style={{ left: this.state.mouseX + "px", top: this.state.mouseY + "px" }}>
+                                <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
+                            </div>
+                        }
+
+                    </div>
+                </Loader>
             </Layout>
         </div>);
     }
 }
+
 
 export default Login;

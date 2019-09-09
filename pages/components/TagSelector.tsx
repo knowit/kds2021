@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import { firestore } from '../../firebase'
-import TagsMenu from './TagsMenu';
+import Loader from './Loader';
 
 interface IProps {
     onChange: (val: Array<string>) => void,
@@ -11,6 +11,7 @@ interface IProps {
 interface IState {
     tags: Array<string>,
     selectedTags: Array<string>
+    loading: boolean
 }
 
 class TagSelector extends React.Component<IProps, IState> {
@@ -24,7 +25,8 @@ class TagSelector extends React.Component<IProps, IState> {
 
         this.state = {
             tags: [],
-            selectedTags: this.props.value || []
+            selectedTags: this.props.value || [],
+            loading: true
         };
     }
 
@@ -68,7 +70,8 @@ class TagSelector extends React.Component<IProps, IState> {
     async componentDidMount() {
         const tags = await this.getTags();
         this.setState({
-            tags: tags.map(tag => tag.name)
+            tags: tags.map(tag => tag.name),
+            loading: false
         });
     }
 
@@ -95,22 +98,24 @@ class TagSelector extends React.Component<IProps, IState> {
 
     render() {
         return (
+            <Loader loading={this.state.loading}>
             <div className={this.props.className}>
                 <div className="tags">
-                    {this.state.tags.map(tag =>
-                        <div className="tag-row tag" key={tag}>
-                            <label>
-                                <input type="checkbox" hidden onChange={(evt) => this.updateTag(evt.target.checked, tag)} checked={this.state.selectedTags.includes(tag)} />
-                                <span className="no-select">{tag}</span>
-                            </label>
-                        </div>
-                    )}
+                        {this.state.tags.map(tag =>
+                            <div className="tag-row tag" key={tag}>
+                                <label>
+                                    <input type="checkbox" hidden onChange={(evt) => this.updateTag(evt.target.checked, tag)} checked={this.state.selectedTags.includes(tag)} />
+                                    <span className="no-select">{tag}</span>
+                                </label>
+                            </div>
+                        )}
                 </div>
                 <div className="tag-row">
                     <span>Can't find a specific tag? Create a new one!</span><br></br>
                     <input type="text" ref={this.newTagNameInput} name="" id="" /><button onClick={() => this.newTag()}>Create tag</button>
                 </div>
-            </div>);
+            </div>
+            </Loader>);
     }
 }
 

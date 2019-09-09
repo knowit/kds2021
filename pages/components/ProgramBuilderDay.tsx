@@ -92,6 +92,7 @@ class ProgramBuilderDay extends React.Component<IProps, IState> {
                     <button onClick={() => this.save()}>save</button>
                 </div>}
                 <div className="timeslots">
+                    {/* The timeslots should be sorted by from time.. */}
                     {this.props.day.timeslots.map((timeslot, i) => <TimeslotView
                         key={i}
                         addTalks={this.props.addTalks}

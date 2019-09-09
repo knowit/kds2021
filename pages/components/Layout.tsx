@@ -3,7 +3,7 @@ import "../../styling/headerStyles.scss";
 import "../../styling/styling.scss";
 
 const Layout = props => (
-  <div >
+  <div className="layout">
     <div className="menuAndHeader">
 
       <div className="header">
@@ -22,7 +22,9 @@ const Layout = props => (
       </div>
       <Menu />
     </div>
-    {props.children}
+    <div className="layout-content">
+      {props.children}
+    </div>
   </div>
 );
 

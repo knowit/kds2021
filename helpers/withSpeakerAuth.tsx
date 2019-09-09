@@ -2,6 +2,7 @@ import React from 'react';
 import router from 'next/router'
 import { auth, firestore } from '../firebase';
 import { User } from 'firebase';
+import Loader from '../pages/components/Loader';
 
 interface IState {
     status: String
@@ -42,7 +43,7 @@ const withSpeakerAuth = (Component, redirect) =>  {
 
         renderContent() {
             if (this.state.status == 'LOADING') {
-                return (<h1>Loading...</h1>);
+                return (<Loader loading={false}></Loader>);
             }
             else if (this.state.status == 'SIGNED_IN') {
                 return (<Component {...this.props } />);
