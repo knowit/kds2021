@@ -38,7 +38,9 @@ async function loadProgram(id) {
 // Firestore uses Timestamp so it needs to be converted to Date objects
 function fixDates(program) {
   program.days.forEach(day => {
-    day.day = new Date(day.day.seconds * 1000);
+    if (!(day.day instanceof Date)) {
+      day.day = new Date(day.day.seconds * 1000);
+    }
   })
 }
 
