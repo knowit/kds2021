@@ -18,9 +18,9 @@ const withSpeakerAuth = (Component, redirect) =>  {
         }
 
         async isSpeaker(email: string) : Promise<boolean> {
-            const res = await firestore.collection('speakers').where('email', '==', email).get();
+            //const res = await firestore.collection('speakers').where('email', '==', email).get();
 
-            return res.docs.length > 0;
+            return true; //res.docs.length > 0;
         }
 
         async authenticate(authUser: User) {

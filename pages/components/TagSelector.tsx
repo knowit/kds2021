@@ -1,6 +1,7 @@
 import React, { Ref } from 'react';
 import { firestore } from '../../firebase'
 import Loader from './Loader';
+import FirestoreHandler from '../../helpers/firestoreHandler';
 
 interface IProps {
     onChange: (val: Array<string>) => void,
@@ -31,11 +32,8 @@ class TagSelector extends React.Component<IProps, IState> {
     }
 
     async getTags() {
-        const res = await firestore.collection('tags').get();
-        const tags = res.docs.map(doc => {
-            return doc.data();
-        });
-
+        const tags = await FirestoreHandler.getAll('tags');
+        
         return tags;
     }
 

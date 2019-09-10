@@ -51,12 +51,12 @@ class Login extends React.Component<any, IState> {
 
         // Avoid duplicate talks
         talks = talks.filter(talk => {
-            const res = programTalks.some(pTalk => pTalk.id == talk.id);
+            const res = programTalks.some(pTalk => pTalk._id == talk._id);
             return !res;
         });
 
         // Update speaker to its data instead of ref, can drop this if data is stored instead of ref, this will duplicate data and will make updating speakers harder..
-        const speakers = await Promise.all(talks.map(talk => FirestoreHandler.get('speakers', talk.speaker.id)));
+        const speakers = await Promise.all(talks.map(talk => FirestoreHandler.get('users', talk.speaker)));
 
         talks.forEach((talk, index) => {
             talk.speaker = speakers[index];
@@ -156,7 +156,7 @@ class Login extends React.Component<any, IState> {
         program.days.map(day => {
             day.timeslots = day.timeslots.map(timeslot => {
                 timeslot.rooms = timeslot.rooms.map(room => {
-                    room.talks = room.talks.map(talk => talk.id);
+                    room.talks = room.talks.map(talk => talk._id);
                     return Object.assign({}, room);
                 });
 
@@ -165,10 +165,11 @@ class Login extends React.Component<any, IState> {
                 return Object.assign({}, timeslot);
             });
             return Object.assign({}, day);
-        })
+        });
 
+        console.log(program);
 
-        const res = await FirestoreHandler.update('program', 'test', program);
+        const res = await FirestoreHandler.updateOrCreate('program', 'test', program);
     }
 
     // Used for day, timeslot and room to add talks back when being removed

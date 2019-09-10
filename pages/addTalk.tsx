@@ -25,11 +25,9 @@ class AddTalk extends React.Component<any, IState> {
     }
 
     async addTalk() {
-        const talk = _.cloneDeep(this.state.talk);
-        talk.owner = auth.currentUser.uid;
+        const talk = this.state.talk;
 
         await FirestoreHandler.create('talks', talk);
-
         Router.push('/talksAndSpeakers');
     }
 
@@ -45,8 +43,8 @@ class AddTalk extends React.Component<any, IState> {
         this.setState((prev) => {
             const talk = prev.talk as Talk;
 
-            talk.speaker= val[0].ref;
-            talk.cospeakers = val.splice(1).map(speaker => speaker.ref);
+            talk.speaker= val[0]._id;
+            talk.cospeakers = val.splice(1).map(speaker => speaker._id);
             return {
                 talk: talk
             }

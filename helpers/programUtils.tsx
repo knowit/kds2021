@@ -9,16 +9,21 @@ async function loadTalks(program) {
     const talkObjs = await Promise.all(talks.map(talk => FirestoreHandler.get('talks', talk)));
 
     const talksDict = talkObjs.reduce((acc, talk: any) => {
-      acc[talk.id] = talk;
+      if (talk) {
+        acc[talk._id] = talk;
+      }
+      else {
+        console.log("Talk in program was not found in db, it might have been deleted after the program was created");
+      }
       return acc;
     }, {});
 
     program.days.forEach(day => day.timeslots
       .forEach(timeslot => timeslot.rooms
-        .forEach(room => room.talks
-          .forEach((talk, index, arr) => {
-            arr[index] = talksDict[talk]
-          }))));
+        .forEach(room =>
+          room.talks = room.talks
+            .map(talk => talksDict[talk])
+            .filter(talk => talk != null))));
   }
 
   return program;
@@ -28,7 +33,7 @@ async function loadProgram(id) {
   // Make a copy to avoid changing the cache
   const program = _.cloneDeep(await FirestoreHandler.get('program', id));
 
-
+  console.log(getTalks(program));
   await loadTalks(program);
   fixDates(program);
 
@@ -48,6 +53,7 @@ function getTalks(program) {
   return program.days.map(day => day.timeslots
     .map(timeslot => timeslot.rooms
       .map(room => room.talks))).flat(Infinity)
+    .filter(talk => talk != null);
 }
 
 // Does not make a copy of the program, should be called with a copy as the parameter

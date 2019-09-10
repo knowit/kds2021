@@ -22,7 +22,7 @@ class ScheduleEntry extends Component<IProps, any> {
             talk.room = room.name;
             return(<div className="talk-container" key={i}>
               <Talk talk={talk} />
-              <FavouriteTalkButton onChange={this.props.onChange} talkId={talk.id} />
+              <FavouriteTalkButton onChange={this.props.onChange} talkId={talk._id} />
             </div>);
           }
           ))}

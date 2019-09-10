@@ -33,7 +33,7 @@ const Talk = props => {
       <div className="speaker-page">
         <h3 id="speaker-edit" >
           {
-            auth.currentUser.uid === props.talk.owner && <Link href={"./editTalk?id=" + props.talk.id}><a>edit</a></Link>
+            auth.currentUser.uid === props.talk.speaker._id && <Link href={"./editTalk?id=" + props.talk._id}><a>edit</a></Link>
           }
         </h3>
         <h2 id="talk-speaker"> {props.talk.speaker.name} </h2>

@@ -1,5 +1,6 @@
 import '../styling/loginStyles.scss';
 import { auth, firestore } from '../firebase'
+import FirestoreHandler from '../helpers/firestoreHandler';
 import React from 'react'
 import Router from 'next/router'
 import Layout from './components/Layout'
@@ -57,8 +58,10 @@ class Login extends React.Component<any, IState> {
         if (this.validForm(this.state.form)) {
             auth.createUserWithEmailAndPassword(this.state.form.email, this.state.form.password)
                 .then((val) => {
+                    const auid = val.user.uid;
                     if (this.state.speaker) {
-                        firestore.collection('speakers').add({
+                        FirestoreHandler.updateOrCreate('users', auid, {
+                            speaker: true,
                             name: this.state.form.name,
                             info: this.state.speakerInfo,
                             email: this.state.form.email
@@ -66,7 +69,8 @@ class Login extends React.Component<any, IState> {
                         Router.push('/addTalk');
                     }
                     else {
-                        firestore.collection('participants').add({
+                        FirestoreHandler.updateOrCreate('users', auid, {
+                            speaker: false,
                             name: this.state.form.name,
                             email: this.state.form.email
                         });

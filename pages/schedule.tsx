@@ -30,6 +30,8 @@ class Schedule extends React.Component<any, any> {
     async componentDidMount() {
         const program = await ProgramUtils.loadProgram('test');
 
+        console.log(program);
+
         const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
 
         let selectedTags = Router.query.tags || [];
@@ -79,7 +81,7 @@ class Schedule extends React.Component<any, any> {
         const filteredProgram = _.cloneDeep(this.state.program);
 
         ProgramUtils.filterProgram(filteredProgram, (talk) => {
-            if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
+            if (this.state.showOnlyFavorites && !localStorage.getItem(talk._id)) {
                 return false;
             }
             if (this.state.selectedTags.length > 0 && !talk.tags.some(tag => this.state.selectedTags.includes(tag))) {

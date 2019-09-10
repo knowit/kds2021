@@ -13,7 +13,7 @@ class SpeakerSelector extends React.Component<IProps, any> {
     handleChange(evt) {
         const val = evt.target.value;
 
-        const speakers = this.props.speakers.filter(speaker => speaker.data.name == val);
+        const speakers = this.props.speakers.filter(speaker => speaker.name == val);
         if (speakers.length > 0) {
             const speaker = speakers[0]; // Just choose first match for now
             this.props.onChange(speaker);
@@ -21,8 +21,8 @@ class SpeakerSelector extends React.Component<IProps, any> {
     }
 
     getDefaultValue() {
-        if (this.props.value && this.props.value.data) {
-            return this.props.value.data.name;
+        if (this.props.value && this.props) {
+            return this.props.value.name;
         }
         return "";
     }
@@ -33,7 +33,7 @@ class SpeakerSelector extends React.Component<IProps, any> {
                 <input list="list" ref={this.input} onChange={this.handleChange.bind(this)} defaultValue={this.getDefaultValue()}>
                 </input>
                 <datalist id="list">
-                    { this.props.speakers.map((speaker, i) => <option key={i} value={speaker.data.name}></option>)}
+                    { this.props.speakers.map((speaker, i) => <option key={i} value={speaker.name}></option>)}
                 </datalist>
             </div>
         );

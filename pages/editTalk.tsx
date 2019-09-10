@@ -49,8 +49,8 @@ class EditTalk extends React.Component<any, IState> {
     // Value from speaker selector has format [speaker, cospeaker, cospeaker, ..., cospeaker]
     updateSpeakers(val: any) {
         this.setState((prev) => {
-            prev.talk.speaker = val[0].ref;
-            prev.talk.cospeakers = val.splice(1).map(speaker => speaker.ref);
+            prev.talk.speaker = val[0]._id;
+            prev.talk.cospeakers = val.splice(1).map(speaker => speaker._id);
             
             return prev;
         });
@@ -59,7 +59,7 @@ class EditTalk extends React.Component<any, IState> {
     async saveTalk() {
         const talk = _.cloneDeep(this.state.talk);
         talk.owner = auth.currentUser.uid;
-        const res = await FirestoreHandler.update("talks", this.state.id, talk);
+        const res = await FirestoreHandler.updateOrCreate("talks", this.state.id, talk);
     }
 
     render() {

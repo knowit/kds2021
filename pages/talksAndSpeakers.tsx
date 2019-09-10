@@ -8,6 +8,7 @@ import dynamic from "next/dynamic"
 import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
 import Router from "next/router";
 import FirestoreHandler from '../helpers/firestoreHandler';
+import VoteButton from './components/VoteButton';
 
 interface IState {
   talks: Array<any>,
@@ -84,11 +85,11 @@ class TalksAndSpeakers extends React.Component<any, IState> {
   async componentDidMount() {
     let talks = await FirestoreHandler.getAll('talks');
 
-    // Update speaker to its data instead of ref, can drop this if data is stored instead of ref, this will duplicate data tho..
+    // Update speaker to its data instead of ref, can drop this if data is stored instead of id, this will duplicate data tho..
     for (let i = 0; i < talks.length; i++) {
-      talks[i].speaker = await FirestoreHandler.get('speakers', talks[i].speaker.id);
+      talks[i].speaker = await FirestoreHandler.get('users', talks[i].speaker);
       for (let j = 0; j < talks[i].cospeakers.length; j++) {
-        talks[i].cospeakers[j] = await FirestoreHandler.get('speakers', talks[i].cospeakers[j].id);
+        talks[i].cospeakers[j] = await FirestoreHandler.get('users', talks[i].cospeakers[j]);
       }
     }
 
@@ -120,7 +121,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
             </div>
             <div className="talks">
               {this.state.filteredTalks.map(talk =>
-                <div key={talk.id}>
+                <div key={talk._id}>
                   <div>
                     <div className="talk-container">
                       <TalkView
@@ -128,6 +129,7 @@ class TalksAndSpeakers extends React.Component<any, IState> {
                       >
                       </TalkView>
                       <FavouriteTalkButtonNoSSR onChange={() => this.filter()} talkId={talk.id} />
+                      <VoteButton talkId={talk._id} currentFavoriteId={talk._id} onChange={(a) => console.log(a)}></VoteButton>
                     </div>
                   </div>
                 </div>)}
