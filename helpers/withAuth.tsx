@@ -7,7 +7,7 @@ interface IState {
     status: String
 }
 
-const withAuth = (Component, Redirect) => {
+const withAuth = (Component, Redirect?) => {
     return class extends React.Component<any, IState> {
         constructor(props) {
             super(props);
@@ -24,7 +24,12 @@ const withAuth = (Component, Redirect) => {
                     });
                 }
                 else {
-                    router.push(Redirect);
+                    this.setState({
+                        status: 'SIGNED_OUT'
+                    });
+                    if (typeof Redirect == 'string') {
+                        router.push(Redirect);
+                    }
                 }
             });
         }
@@ -35,6 +40,12 @@ const withAuth = (Component, Redirect) => {
             }
             else if (this.state.status == 'SIGNED_IN') {
                 return (<Component {...this.props } />);
+            }
+            else if (this.state.status == 'SIGNED_OUT' && Redirect) {
+                return (<Redirect {...this.props }/>);
+            }
+            else {
+                return (<React.Fragment></React.Fragment>);
             }
         }
 

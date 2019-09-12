@@ -9,7 +9,7 @@ interface IState {
     status: String
 }
 
-const withSpeakerAuth = (Component, Redirect?) =>  {
+const withAdminAuth = (Component, Redirect?) =>  {
     return class extends React.Component<any, IState> {
         constructor(props) {
             super(props);
@@ -18,14 +18,16 @@ const withSpeakerAuth = (Component, Redirect?) =>  {
             }
         }
 
-        async isSpeaker(uid: string) : Promise<boolean> {
-            const res = await FirestoreHandler.get('users', uid);
-            return res.speaker;
+        async isAdmin(uid: string) : Promise<boolean> {
+            const res = await FirestoreHandler.get('settings', 'admins');
+
+            console.log(res.admins.includes(uid));
+            return res.admins.includes(uid);
         }
 
         async authenticate(authUser: User) {
             if (authUser) {
-                const isSpeaker = await this.isSpeaker(authUser.uid);
+                const isSpeaker = await this.isAdmin(authUser.uid);
                 if (isSpeaker) {
                     this.setState({
                         status: 'SIGNED_IN'
@@ -70,4 +72,4 @@ const withSpeakerAuth = (Component, Redirect?) =>  {
     }
 }
 
-export default withSpeakerAuth;
+export default withAdminAuth;

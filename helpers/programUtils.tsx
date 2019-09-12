@@ -33,7 +33,6 @@ async function loadProgram(id) {
   // Make a copy to avoid changing the cache
   const program = _.cloneDeep(await FirestoreHandler.get('program', id));
 
-  console.log(getTalks(program));
   await loadTalks(program);
   fixDates(program);
 

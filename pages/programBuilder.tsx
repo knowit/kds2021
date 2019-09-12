@@ -167,8 +167,6 @@ class Login extends React.Component<any, IState> {
             return Object.assign({}, day);
         });
 
-        console.log(program);
-
         const res = await FirestoreHandler.updateOrCreate('program', 'test', program);
     }
 
