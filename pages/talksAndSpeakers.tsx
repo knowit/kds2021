@@ -73,7 +73,8 @@ class TalksAndSpeakers extends React.Component<any, IState> {
         if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
           return false;
         }
-        if (this.state.selectedTags.length > 0 && !talk.tags.some(tag => this.state.selectedTags.includes(tag))) {
+        const tags = talk.tags.concat(talk.language);
+        if (this.state.selectedTags.length > 0 && !tags.some(tag => this.state.selectedTags.includes(tag))) {
           return false;
         }
 

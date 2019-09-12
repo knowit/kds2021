@@ -1,6 +1,7 @@
 import React from "react";
 import TagsMenu from './TagsMenu';
 import FilterTag from "./FilterTag";
+import languages from "../../models/Languages.json";
 
 interface IProps {
     tags: any,
@@ -10,10 +11,11 @@ interface IProps {
 
 class FilterButton extends React.Component<IProps, any> {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
-            clicked: false
-        }
+            tags: props.tags.concat(languages),
+            clicked: false,
+        };
     }
 
     showFilters = () => {
@@ -37,7 +39,7 @@ class FilterButton extends React.Component<IProps, any> {
             <div>
                 <button onClick={() => this.showFilters()} id="filter-button"> Filter by tags</button>
                 {this.props.value && this.props.value.map(tag => <FilterTag key={tag} name={tag} remove={this.removeTag.bind(this, tag)}></FilterTag>) }
-                {this.state.clicked && <div id="filter-dropdown"><TagsMenu tags={this.props.tags} handleChange={this.addTag.bind(this)}/> </div>}
+                {this.state.clicked && <div id="filter-dropdown"><TagsMenu tags={this.state.tags} handleChange={this.addTag.bind(this)}/> </div>}
             </div>
         );
     }

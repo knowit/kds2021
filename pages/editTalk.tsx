@@ -9,6 +9,8 @@ import Talk from '../models/Talk';
 import Router from 'next/router';
 import FirestoreHandler from '../helpers/firestoreHandler';
 import _ from 'lodash';
+import languages from '../models/Languages.json';
+
 
 interface IState {
     id: string,
@@ -92,9 +94,8 @@ class EditTalk extends React.Component<any, IState> {
                             </select>
                             <label className="form-row-header">Language used</label>
                             <select className="form-row" onChange={(evt) => this.updateTalk(evt.target.value, 'language')} value={this.state.talk.language}>
-                                <option value="english">English</option>
-                                <option value="norwegian">Norwegian</option>
-                                <option value="swedish">Swedish</option>
+                                { languages.map(language => 
+                                <option value={language}>{language}</option>)}
                             </select>
                             <label className="form-row-header">Speakers</label>
                             <SpeakersSelector className="form-row" value={this.state.talk.cospeakers} onChange={(val) => this.updateSpeakers(val)}></SpeakersSelector>
