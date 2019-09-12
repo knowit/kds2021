@@ -6,11 +6,12 @@ const Menu = () => (
     <div id="menuToggle">
       <input type="checkbox" />
       <div className="menuButton">
-        <span />
-        <span />
-        <span />
+        <span className="top" />
+        <span className="middle" />
+        <span className="bottom" />
       </div>
       <div id="menu">
+        <h1 className="menuHeader"></h1>
         <Link href="/callForPresentations">
           <a className="link callForPresentations">Call for presentations</a>
         </Link>
@@ -32,6 +33,9 @@ const Menu = () => (
         </Link>
         <Link href="/aboutUs">
           <a className="link aboutUs">About us</a>
+        </Link>
+        <Link href="/static/old/index_2019.html">
+          <a className="link">Last years program</a>
         </Link>
       </div>
     </div>
