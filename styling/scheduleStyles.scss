@@ -49,64 +49,8 @@ div.schedule {
   border: none;
 }
 .talk-container {
-  background-color: $button-color;
-  width: 20%;
-
-  @media screen and (max-width: $break-large) {
-    width: 85%;
-    margin: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.3em;
-  }
-
-  #title {
-    font-size: 1.5em;
-    margin-bottom: 0px;
-    margin-left: 1em;
-  }
- 
-  .room-header {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    background-color: $link-color;
-    color: white;
-    width: 100%;
-    display: block;
-    span {
-      padding: 5px;
-    }
-  }
-
-  #{$a-tags} {
-    color: $primary-color;
-    text-decoration: none;
-  }
-  #{$a-tags-hover} {
-    color: $link-color;
-    transition: 0.2s linear color;
-  }
-  
-
-  #speaker {
-    margin-top: 0.5em;
-    margin-left: 1.5em;
-  }
-
-  .talk-info {
-    margin-left: 1.5em;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    .info-entry {
-      margin-right: 2em;
-    }
-
-    #tag-list {
-      display: none;
-    }
-  }
+  //background-color: $button-color;
+  //width: 20%;
 }
 
 #event-header {
@@ -157,20 +101,6 @@ div.schedule {
   }
 }
 
-.filter-tag {
-  @media screen and (max-width: $break-small) {
-    display: block;
-    width: 100%;
-  }
-  margin-left: 10px;
-  button {
-    font-size: 120%;
-    font-weight: 200;
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-}
 
 .only-favorites-button {
   display: block;

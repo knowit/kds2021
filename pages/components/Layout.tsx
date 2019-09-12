@@ -1,4 +1,5 @@
 import Menu from "./Menu";
+import Filter from "./Filter";
 import Link from "next/link";
 import "../../styling/headerStyles.scss";
 import "../../styling/styling.scss";
@@ -23,6 +24,8 @@ const Layout = props => (
 
         </div>
       </div>
+      {props.filter && <Filter onChange={props.onFilterChange}/>}
+      
       <Menu />
     </div>
     {props.children}

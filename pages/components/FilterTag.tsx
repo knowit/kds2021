@@ -1,7 +1,8 @@
 import React from "react";
 interface IProps {
-    remove: () => void,
-    name: string
+    onClick?: () => void,
+    name: string,
+    selected?: boolean
 }
 
 class FilterTag extends React.Component<IProps, any> {
@@ -10,10 +11,9 @@ class FilterTag extends React.Component<IProps, any> {
     }
     render() {
         return (
-            <span className="filter-tag">
-                {this.props.name}
-                <button onClick={() => this.props.remove()}>X</button>
-            </span>
+            <div className={`filter-tag ${this.props.selected ? 'selected' : ''}`} onClick={this.props.onClick ? () => this.props.onClick() : () => {}}>
+                <span>{this.props.name}</span>
+            </div>
         );
     }
 }

@@ -4,12 +4,7 @@ import FilteredProgramBase from "./components/FilteredProgramBase";
 import FilterButton from "./components/FilterButton";
 import "../styling/talksAndSpeakersStyles.scss";
 import React from "react";
-import dynamic from "next/dynamic"
 import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
-
-const FavouriteTalkButtonNoSSR = dynamic(() => import("./components/FavouriteTalkButton"), {
-  ssr: false
-});
 
 class TalksAndSpeakers extends FilteredProgramBase {
   constructor(props) {
@@ -17,13 +12,12 @@ class TalksAndSpeakers extends FilteredProgramBase {
   }
 
   render() {
-    return (<div className="talksAndSpeakers">
-      <Layout>
-        <h1> Talks and speakers</h1>
+    return (<div className="talksAndSpeakers page">
+      <Layout filter={true} onFilterChange={this.handleFilterChange}>
+        <h1> Talks & speakers</h1>
         <div className="schedule-container">
           <div className="schedule-filter">
             <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange}></ShowOnlyFavoritesButton>
-            <FilterButton program={this.state.filteredProgram} handleChange={this.handleFilterChange} />
           </div>
           <div className="talks">
             {this.state.filteredProgram.days
@@ -37,6 +31,9 @@ class TalksAndSpeakers extends FilteredProgramBase {
                     .map(speaker =>
                       <div className="talk-container" key={i}>
                           <Talk
+                            day={day.day}
+                            timeStart={slot.timeStart}
+                            timeEnd={slot.timeEnd}
                             description={talk.description}
                             speakerInfo={speaker.info}
                             speaker={speaker.name}
@@ -48,7 +45,6 @@ class TalksAndSpeakers extends FilteredProgramBase {
                             key={i}
                             difficulty={talk.difficulty}
                             tags={talk.tags} />
-                            <FavouriteTalkButtonNoSSR talkId={talk.talkId} />
                         </div>
                       )
                       )

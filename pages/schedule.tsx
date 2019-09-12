@@ -15,7 +15,6 @@ class Schedule extends FilteredProgramBase {
           <div className="schedule-container">
             <div>
               <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange}></ShowOnlyFavoritesButton>
-              <FilterButton program={this.state.filteredProgram} handleChange={this.handleFilterChange.bind(this)} />
             </div>
             {this.state.filteredProgram.days.map((day, i) =>
               <Day key={i} currDay={day.day} slots={day.slots} />

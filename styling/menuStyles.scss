@@ -5,6 +5,7 @@
   justify-content: center;
   width: 100%;
   font-family: $font-family;
+  z-index: 1;
 
   @media screen and (max-width: $break-small) {
     display: flex;
@@ -53,6 +54,13 @@
   input:checked ~ #menu {
     transform: none;
   }
+  input:checked {
+    z-index: 3;
+  }
+  
+  input:checked ~ .menuButton {
+    z-index: 2;
+  }
 
   span.top, span.middle, span.bottom {
     @media screen and (max-width: $break-small) {
@@ -97,8 +105,8 @@
       display: block;
       position: absolute;
       top: 32px;
-      right: 30px;
-      width: 42px;
+      right: 26px;
+      width: 34px;
       height: 34px;
       
       cursor: pointer;
@@ -111,8 +119,9 @@
   }
 
   .menuButton {
-    margin-top: 32px;
-    margin-right: 30px;
+    position: absolute;
+    top: 32px;
+    right: 30px;
     width: 33px;
 
     display: none;

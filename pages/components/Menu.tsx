@@ -4,14 +4,18 @@ import "../../styling/menuStyles.scss";
 const Menu = () => (
   <nav role="navigation">
     <div id="menuToggle">
-      <input type="checkbox" />
+      <input type="checkbox" className="menu" />
       <div className="menuButton">
         <span className="top" />
         <span className="middle" />
         <span className="bottom" />
       </div>
+      
+      <div id="filter">
+        
+      </div>
       <div id="menu">
-        <h1 className="menuHeader"></h1>
+        <h1 className="menuHeader">Menu</h1>
         <Link href="/callForPresentations">
           <a className="link callForPresentations">Call for presentations</a>
         </Link>
