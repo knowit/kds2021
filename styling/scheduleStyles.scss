@@ -1,120 +1,84 @@
 @import "variables";
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
-#filter-button {
-  background-color: Transparent;
-  font-family: $font-family;
-  font-size: 1em;
-  width: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em;
 
-  @media screen and (max-width: $break-large) {
-    width: 10em;
-  }
-}
-
-#tag-button {
-  height: 4em;
-  border: none;
-  background-color: Transparent;
-  font-family: $font-family;
-  font-size: 1em;
-  width: 100%;
-
-  :hover {
-    background-color: $hover-color;
-  }
-}
-
-#filter-dropdown {
-  width: 15%;
-}
-div.schedule {
-  .talk-slot {
-    @media screen and (min-width: $break-large) {
-      display: flex;
-      width: 70%;
-      margin-left: auto;
-      margin-right: auto;
-      justify-content: space-evenly;
-    }
-    @media screen and (max-width: $break-large) {
-      display: block;
-    }
-  }
-}
-#favourite-talk-button {
-  background-color: Transparent;
-  border: none;
-}
-.talk-container {
-  //background-color: $button-color;
-  //width: 20%;
-}
-
-#event-header {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 3em;
-
-  @media screen and (max-width: $break-small) {
-    font-size: 2em;
-  }
-}
-
-.speaker-page {
-  display: none;
-}
-
-.day-button {
-  border: none;
-  background-color: $button-color;
-  font-family: $font-family;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  padding: 2em;
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media screen and (max-width: $break-small) {
-    font-size: 0.7em;
-    padding: 1.3em;
-  }
-
-  .right-arrow {
-    .baseline-chevron {
-      width: 3em;
-    }
-  }
-}
-
-.schedule-container {
-  width: 60%;
-  margin: auto;
-  @media screen and (max-width: $break-small) {
+.schedule {
+  .day-selector {
+    position: absolute;
+    top: 32px;
     width: 100%;
+    text-align: center;
+    .header-day {
+      font-size: 16px;
+    }
+    .header-day.selected {
+      font-weight: bold;
+    }
+  }
+  .slot:nth-child(odd) .event-header {
+    background-color: #a0d1ca;
+  }
+  .slot:nth-child(even) .event-header {
+    background-color: #b6b8dc;
+  }
+
+  .event-header {
+    width: 100%;
+    height: 40px;
+    .type {
+      float: left;
+      margin-left: 30px;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .time {
+      float: right;
+      margin-right: 30px;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
   }
 }
 
+div.schedule {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 
-.only-favorites-button {
-  display: block;
-  float: right;
-  input {
-    width: 17px;
-    height: 17px;
-  }
-}
-
-#arrow-right {
-  :hover {
-    .baseline-chevron {
-      transform: rotate(90deg);
+  .talk {
+    padding: 24px 30px;
+    border-bottom: 1px solid #1D2E46;
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      .room {
+        margin-top: 0;
+        position: relative;
+        span {
+          display: block;
+          float: left;
+        }
+      }
+    }
+    .day {
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+    .speaker {
+      font-size: 14px;
+      color: #1D2E46;
+      text-align: left;
+      margin-bottom: 20px;
     }
   }
 }

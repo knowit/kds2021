@@ -1,10 +1,11 @@
 import Layout from "./components/Layout";
+import RegisterButton from './components/RegisterButton';
 
 export default function CodeOfConduct() {
   return (
     <div className="codeOfConduct">
-      <Layout>
-        <div className="content">
+      <Layout header={<RegisterButton></RegisterButton>}>
+        <div className="document">
           <h1>Conference Code of Conduct</h1>
           <p />
           All attendees, speakers and organisers at our conference are required to

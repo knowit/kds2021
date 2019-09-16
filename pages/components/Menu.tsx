@@ -25,18 +25,18 @@ const Menu = () => (
         <Link href="/schedule" >
           <a className="link schedule">Schedule</a>
         </Link>
+        <Link href="/aboutUs">
+          <a className="link aboutUs">About us</a>
+        </Link>
         <Link href="/talksAndSpeakers">
           <a className="link talksAndSpeakers">Talks and speakers</a>
-        </Link>
+        </Link>*/}
         <Link href="/location">
           <a className="link location">Location</a>
-        </Link>*/}
+        </Link>
 
         <Link href="/codeOfConduct">
           <a className="link codeOfConduct">Code of conduct</a>
-        </Link>
-        <Link href="/aboutUs">
-          <a className="link aboutUs">About us</a>
         </Link>
         <Link href="/static/old/index_2019.html">
           <a className="link">Last years program</a>

@@ -1,59 +1,27 @@
 import { Component } from "react";
 import ShowDailySchedule from "./ShowDailySchedule";
 import DayButton from './DayButton';
+import EventHeader from './EventHeader';
+import ScheduleEntry from './ScheduleEntry';
 
 interface IProps {
   currDay: string;
-  slots: {};
+  slots: any[];
 }
 class Day extends Component<IProps, any> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      clicked: false
-    };
-  }
-
-  showSchedule = () => {
-    if (this.state.clicked) {
-      this.setState({
-        clicked: false
-      });
-    } else {
-      this.setState({
-        clicked: true
-      });
-    }
-  };
 
   render() {
     return (
-      <div>
-        <ShowScheduleButton
-          showSchedule={this.showSchedule}
-          day={this.props.currDay}
-          slots={this.props.slots}
-          clicked={this.state.clicked}
-        />
+      <div className="day">
+        {this.props.slots.map((slot, i) =>
+        <div key={i + "slot"} className="slot">
+          <EventHeader key={i + "slot"} timeStart={slot.timeStart} timeEnd={slot.timeEnd} type={slot.type} />
+          {slot.rooms && <ScheduleEntry slot={slot} />}
+        </div>
+         )}
       </div>
     );
   }
 }
-const ShowScheduleButton = props => {
-  if (props.clicked) {
-    return (
-      <ShowDailySchedule
-        day={props.day}
-        slots={props.slots}
-        showSchedule={props.showSchedule}
-      />
-    );
-  } else {
-    return (
-      <DayButton arrow="../../static/baseline-chevron_right.svg" day={props.day} showSchedule={props.showSchedule} />
-    );
-  }
-
-};
 
 export default Day;

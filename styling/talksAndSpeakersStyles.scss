@@ -11,6 +11,7 @@ div.talksAndSpeakers {
 
     .talk {
       padding: 0px 30px;
+      border-bottom: 1px solid #1D2E46;
       .header {
         display: flex;
         flex-direction: row;
@@ -52,35 +53,5 @@ div.talksAndSpeakers {
         margin-bottom: 30px;
       }
     }
-  }
-}
-
-.pin-container {
-  top: 0;
-  left: 0;
-}
-
-.pin {
-  height: 42px;
-  width: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  .top {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-radius: 50%;
-    border: 10px solid black;
-    width: 30px;
-    height: 30px;
-  }
-  .bottom {
-    width: 0;
-    height: 0;
-    margin-top: -5px;
-    margin-left: 4px;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
-    border-top: 15px solid black;
   }
 }

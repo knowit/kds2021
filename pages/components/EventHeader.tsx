@@ -1,10 +1,8 @@
 const EventHeader = props => {
   return (
-    <div id="event-header" className="content">
-      <hr />
-      <p>
-        {props.timeStart} - {props.timeEnd} {props.type}
-      </p>
+    <div className="event-header">
+      <span className="type">{props.type}</span>
+      <span className="time">{props.timeStart} - {props.timeEnd}</span>
     </div>
   );
 };

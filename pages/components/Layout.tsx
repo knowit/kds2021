@@ -1,17 +1,18 @@
 import Menu from "./Menu";
 import Filter from "./Filter";
 import Link from "next/link";
+import React from 'react';
 import "../../styling/headerStyles.scss";
 import "../../styling/styling.scss";
 
-const Layout = props => (
-  <div >
-    <div className="menuAndHeader">
 
+const Layout = props => (
+  <div className="layout">
+    <div className="menuAndHeader">
       <div className="header">
-        <Link href="/">
+        {!props.hideLogo && (<Link href="/">
           <img id="KDSlogo" src="../static/KDSsymbol.svg" />
-        </Link>
+        </Link>)}
         <div id="KDSheader">
           <h2 className="headline">
             By Developers, For Developers
@@ -20,16 +21,17 @@ const Layout = props => (
             <img id="location-img" src="../static/location.svg" />
             Bergen, Norway 17 - 18 January 2020<hr />
           </h3>
-          <h4 className="header-subheadline">For the 2019-program, <a className="subheadline-link" href="/static/old/index_2019.html"> see here </a></h4>
-
+          {props.header}
         </div>
       </div>
-      {props.filter && <Filter onChange={props.onFilterChange}/>}
-      
+      {props.filter && <Filter onChange={props.onFilterChange} />}
+
       <Menu />
     </div>
-    {props.children}
-  </div>
+    <div className="content">
+      {props.children}
+    </div>
+  </div >
 );
 
 export default Layout;

@@ -3,6 +3,11 @@ import EventHeader from "./EventHeader";
 import { Component } from "react";
 import "../../styling/scheduleStyles.scss";
 import FavouriteTalkButton from "./FavouriteTalkButton"
+import dynamic from "next/dynamic";
+
+const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
+  ssr: false
+});
 
 
 interface IProps {
@@ -28,9 +33,8 @@ class ScheduleEntry extends Component<IProps, any> {
                   difficulty={talk.difficulty}
                   talkId={talk.talkId}
                   key={i} 
-                  tags={talk.tags}/>
-
-                <FavouriteTalkButton talkId={talk.talkId} />
+                  tags={talk.tags}
+                  minimal={true}/>
               </div>
             )))}
       </div>

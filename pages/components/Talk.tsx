@@ -1,4 +1,4 @@
-import "../../styling/scheduleStyles.scss";
+import '../../styling/talkStyles.scss';
 import FilterTag from './FilterTag';
 import Difficulty from './Difficulty';
 import dynamic from "next/dynamic";
@@ -7,7 +7,7 @@ const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), 
   ssr: false
 });
 
-// Should maybe be tweaked to create more "nice" colors
+// Should be tweaked to create more "nice" colors
 const colorFromRoomName = roomName => {
   const str = roomName + roomName + roomName + roomName; // Room names tend to be quite short so we put multiple of them togheter
   let hash = 0;
@@ -40,14 +40,13 @@ const Talk = props => {
         </div>
       </div>
       <p className="day">{props.day}</p>
-      <p className="time">{props.timeStart} - {props.timeEnd}</p>
-      <p className="type">{props.type}</p>
+      {!props.minimal && <p className="time">{props.timeStart} - {props.timeEnd}</p>}
+      {!props.minimal && <p className="type">{props.type}</p>}
       <h1 className="title">{props.title}</h1>
       <p className="speaker">{props.speaker}</p>
-      <p className="info">{props.speakerInfo}</p>
+      {!props.mininal && <p className="info">{props.speakerInfo}</p>}
 
       {props.tags.map(tag => <FilterTag name={tag}></FilterTag>)}
-      <hr />
     </div>
   );
 };
