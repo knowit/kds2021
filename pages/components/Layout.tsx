@@ -28,6 +28,7 @@ const Layout = props => (
 
       <Menu />
     </div>
+    {props.background && <img src="../static/code.svg" className="background"/>}
     <div className="content">
       {props.children}
     </div>

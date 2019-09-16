@@ -5,7 +5,7 @@ import RegisterButton from './components/RegisterButton';
 export default function CallForPresentations() {
   return (
     <div className="callForPresentations">
-      <Layout header={<RegisterButton></RegisterButton>}>
+      <Layout header={<RegisterButton></RegisterButton>} background={true}>
         <div className="cfp">
           <div className="document">
             <h1 className="title">Call for presentations</h1>
