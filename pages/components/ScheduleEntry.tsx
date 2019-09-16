@@ -1,8 +1,6 @@
 import Talk from "./Talk";
-import EventHeader from "./EventHeader";
 import { Component } from "react";
 import "../../styling/scheduleStyles.scss";
-import FavouriteTalkButton from "./FavouriteTalkButton"
 import dynamic from "next/dynamic";
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
@@ -21,7 +19,7 @@ class ScheduleEntry extends Component<IProps, any> {
   render() {
     return (
       <div className="talk-slot">
-        {this.props.slot.rooms.map(room => room.talks
+        {this.props.slot && this.props.slot.rooms && this.props.slot.rooms.map(room => room.talks
           .map((talk, i) => talk.speakers
             .map(speaker =>
               <div className="talk-container" key={i}>

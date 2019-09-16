@@ -1,10 +1,7 @@
-import Link from "next/link";
 import "../../styling/filterStyles.scss";
 import React from 'react';
-import FilterButton from './FilterButton';
 import Program from '../../models/data.json';
 import FilterTag from './FilterTag';
-import { isMainThread } from "worker_threads";
 
 interface IState {
     open: boolean

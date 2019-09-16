@@ -6,33 +6,39 @@ import "../../styling/headerStyles.scss";
 import "../../styling/styling.scss";
 
 
-const Layout = props => (
-  <div className="layout">
-    <div className="menuAndHeader">
-      <div className="header">
-        {!props.hideLogo && (<Link href="/">
-          <img id="KDSlogo" src="../static/KDSsymbol.svg" />
-        </Link>)}
-        <div id="KDSheader">
-          <h2 className="headline">
-            By Developers, For Developers
-          </h2>
-          <h3 className="header-location">
-            <img id="location-img" src="../static/location.svg" />
-            Bergen, Norway 17 - 18 January 2020<hr />
-          </h3>
-          {props.header}
-        </div>
-      </div>
-      {props.filter && <Filter onChange={props.onFilterChange} />}
 
-      <Menu />
-    </div>
-    {props.background && <img src="../static/code.svg" className="background"/>}
-    <div className="content">
-      {props.children}
-    </div>
-  </div >
-);
+class Layout extends React.Component<any, any> {
+  render() {
+    return (
+      <div className="layout">
+        <div className="menuAndHeader">
+          <div className="header">
+            {!this.props.hideLogo && (<Link href="/">
+              <img id="KDSlogo" src="../static/KDSsymbol.svg" />
+            </Link>)}
+            <div id="KDSheader">
+              <h2 className="headline">
+                By Developers, For Developers
+            </h2>
+              <h3 className="header-location">
+                <img id="location-img" src="../static/location.svg" />
+                Bergen, Norway 17 - 18 January 2020<hr />
+              </h3>
+              {this.props.header}
+            </div>
+          </div>1
+          {this.props.filter && <Filter onChange={this.props.onFilterChange} />}
+
+          <Menu />
+        </div>
+        {this.props.background && <img src="../static/code.svg" className="background" />}
+        <div className="content">
+          {this.props.children}
+        </div>
+      </div >
+    );
+  }
+}
+
 
 export default Layout;

@@ -1,14 +1,49 @@
 import Layout from "./components/Layout";
 import Talk from "./components/Talk";
-import FilteredProgramBase from "./components/FilteredProgramBase";
-import FilterButton from "./components/FilterButton";
 import "../styling/talksAndSpeakersStyles.scss";
 import React from "react";
 import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
+import { program as Program } from "../models/data.json";
 
-class TalksAndSpeakers extends FilteredProgramBase {
+class TalksAndSpeakers extends React.Component<any, any> {
   constructor(props) {
     super(props);
+    this.state = {
+      filteredProgram: JSON.parse(JSON.stringify(Program)), // Need a deep copy
+      showOnlyFavorites: false,
+      tags: []
+    }
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.handleFavoriteChange = this.handleFavoriteChange.bind(this);
+}
+
+  handleFilterChange(newVal) {
+    this.setState({ tags: newVal }, this.filterProgram);
+  }
+  handleFavoriteChange(newVal) {
+    this.setState({ showOnlyFavorites: newVal }, this.filterProgram);
+
+  }
+
+  filterProgram() {
+    let filteredProgram = JSON.parse(JSON.stringify(Program));
+    filteredProgram.days
+      .forEach(day => day.slots
+        .forEach(slot => slot.rooms && slot.rooms
+          .forEach(room => {
+            room.talks = room.talks
+              .filter(talk => {
+                if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
+                  return false;
+                }
+                if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
+                  return false;
+                }
+                return true;
+              })
+          })));
+
+    this.setState({ filteredProgram: filteredProgram });
   }
 
   render() {
@@ -28,8 +63,8 @@ class TalksAndSpeakers extends FilteredProgramBase {
                 .map(slot => slot.rooms
                   .map(room => room.talks
                     .map((talk, i) => talk.speakers
-                    .map(speaker =>
-                      <div className="talk-container" key={i}>
+                      .map(speaker =>
+                        <div className="talk-container" key={i}>
                           <Talk
                             day={day.day}
                             timeStart={slot.timeStart}
@@ -47,13 +82,13 @@ class TalksAndSpeakers extends FilteredProgramBase {
                             tags={talk.tags} />
                         </div>
                       )
-                      )
-                      )
-                      )
-                      )
-                    }
-            </div>
+                    )
+                  )
+                )
+              )
+            }
           </div>
+        </div>
       </Layout>
     </div >
     )

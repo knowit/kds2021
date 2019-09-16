@@ -2,9 +2,6 @@ import { Component } from "react";
 import Layout from "./components/Layout";
 import "../styling/scheduleStyles.scss";
 import Day from "./components/Day";
-import FilterButton from "./components/FilterButton";
-import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
-import FilteredProgramBase from "./components/FilteredProgramBase";
 import { program as Program } from "../models/data.json";
 
 

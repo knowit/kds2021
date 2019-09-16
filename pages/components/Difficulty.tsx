@@ -1,12 +1,17 @@
 import "../../styling/difficultyStyles.scss";
+import React from 'react';
 
-const Difficulty = (props) => (
-    <div className="difficulty">
-        <span className={`first active`}></span>
-        <span className={`second ${(props.difficulty == 'Intermediate' || props.difficulty == 'Advanced') ? 'active' : ''}`}></span>
-        <span className={`third ${props.difficulty == 'Advanced' ? 'active' : ''}`}></span>
-    </div>
-);
+class Difficulty extends React.Component<any, any> {
+    render() {
+        return (
+            <div className="difficulty">
+                <span className={`first active`}></span>
+                <span className={`second ${(this.props.difficulty == 'Intermediate' || this.props.difficulty == 'Advanced') ? 'active' : ''}`}></span>
+                <span className={`third ${this.props.difficulty == 'Advanced' ? 'active' : ''}`}></span>
+            </div>
+        );
+    }
+}
 
 export default Difficulty;
 
