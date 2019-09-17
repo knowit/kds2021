@@ -1,6 +1,5 @@
 import Talk from "./Talk";
 import { Component } from "react";
-import "../../styling/scheduleStyles.scss";
 import dynamic from "next/dynamic";
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {

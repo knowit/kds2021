@@ -1,9 +1,9 @@
+import "../../styling/headerStyles.scss";
+import "../../styling/styling.scss";
 import Menu from "./Menu";
 import Filter from "./Filter";
 import Link from "next/link";
 import React from 'react';
-import "../../styling/headerStyles.scss";
-import "../../styling/styling.scss";
 
 
 

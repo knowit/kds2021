@@ -1,7 +1,7 @@
-import { Component } from "react";
-import Layout from "./components/Layout";
 import "../styling/scheduleStyles.scss";
+import Layout from "./components/Layout";
 import Day from "./components/Day";
+import { Component } from "react";
 import { program as Program } from "../models/data.json";
 
 
