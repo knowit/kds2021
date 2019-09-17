@@ -26,7 +26,7 @@ class Layout extends React.Component<any, any> {
               </h3>
               {this.props.header}
             </div>
-          </div>1
+          </div>
           {this.props.filter && <Filter onChange={this.props.onFilterChange} />}
 
           <Menu />
