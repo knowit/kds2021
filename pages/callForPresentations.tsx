@@ -14,9 +14,7 @@ export default function CallForPresentations() {
               We are now looking for speakers for the conference, the basic idea is to share knowledge and experiences with other developers within Knowit. The length of a presentation can be 10, 30, 60 or 90 minutes. You decide!
               <br></br><br></br>
               If you have any questions feel free to contact us at&nbsp;
-              <Link href="mailto:kds@knowit.no">
-                <a className="link">kds@knowit.no</a>
-              </Link>
+              <a className="link" href="mailto:kds@knowit.no">kds@knowit.no</a>
               <br></br><br></br>
                 The subject for a talk can vary widely, you can check out last years program&nbsp;
               <Link href="/static/old/index_2019.html">
