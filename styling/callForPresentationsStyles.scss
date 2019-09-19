@@ -1,34 +1,37 @@
 @import "variables";
 
 .cfp {
-}
-
-.title {
-  margin-bottom: 30px;
-  font-size: 36px;
-}
-
-.info {
-  margin-bottom: 40px;
-  font-size: 18px;
-  .link {
-    color: $link-color;
+  .title {
+    margin-bottom: 30px;
+    font-size: 36px;
   }
-}
 
-.register-button.upper {
-  @media screen and (min-width: $break-large) {
-    display: none;
-  }
-}
-
-.list {
-  li {
-    font-size: 24px;
-    margin-bottom: 20px;
-    span {
-      font-size: 16px;
+  .info {
+    margin-bottom: 40px;
+    font-size: 18px;
+    .info-p:not(:last-child) {
+      display: block;
+      margin-bottom: 30px;
+    }
+    .link {
+      color: $link-color;
     }
   }
-  margin-bottom: 40px;
+
+  .register-button.upper {
+    @media screen and (min-width: $break-large) {
+      display: none;
+    }
+  }
+
+  .list {
+    li {
+      font-size: 24px;
+      margin-bottom: 20px;
+      span {
+        font-size: 16px;
+      }
+    }
+    margin-bottom: 40px;
+  }
 }
