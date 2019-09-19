@@ -2,10 +2,10 @@
 
 #menu {
   width: 100%;
-  transform: translate(100%, 0);
+  transform: translate(0, 0);
   @media screen and (min-width: $break-small) {
     width: 25%;
-    transform: translate(400%, 0);
+    transform: translate(0, 0);
   }
 
   display: flex;
@@ -19,9 +19,8 @@
 
   position: absolute;
   top: 0;
-  left: 0;
+  left: 100vw;
   background-color: white;
-  width: 100%;
   margin: 0;
   padding-bottom: 40px;
 
@@ -54,10 +53,7 @@
 #menuToggle {
   input:checked ~ #menu {
     z-index: 4;
-    transform: none;
-    @media screen and (min-width: $break-small) {
-      transform: translate(300%, 0);
-    }
+    transform: translate(-100%, 0);
   }
   input:checked {
     z-index: 6;
