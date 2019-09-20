@@ -13,22 +13,26 @@ class FavouriteTalkButton extends React.Component<IProps, any> {
     favouriteButtonClick = () => {
         this.setState({
             clicked: !this.state.clicked
-        })
-        if (!localStorage.getItem(this.props.talkId)) {
+        });
+        if (typeof localStorage != 'undefined' && !localStorage.getItem(this.props.talkId)) {
             localStorage.setItem(this.props.talkId, this.props.talkId)
-        } else {
+        } else if (typeof localStorage != 'undefined') {
             localStorage.removeItem(this.props.talkId)
         }
     }
+    isFavorited(id) {
+        return typeof localStorage != 'undefined' && localStorage.getItem(id);
+    }
 
     render() {
-
-            var icon = localStorage.getItem(this.props.talkId)
-            ? '../../static/star.svg'
-            : '../../static/outline-star.svg'
+            var icon = '../static/heart-filled.png';
+            
+            if (this.isFavorited(this.props.talkId)) {
+                icon = '../static/heart.png';
+            }
             return (
                 <button onClick={() => this.favouriteButtonClick()} id="favourite-talk-button">
-                <img src={icon} />
+                    <img src={icon}></img>                
             </button>
         );
     }

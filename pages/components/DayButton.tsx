@@ -1,20 +1,23 @@
-const DayButton = props => {
+import React from 'react';
 
-    return (
-        <button
-            className="day-button"
-            type="submit"
-            onClick={props.showSchedule}
-        >
-            <h2>{props.day}</h2>
-            <div className="right-arrow">
-                <img
-                    className="baseline-chevron"
-                    src={props.arrow}
-                />
-            </div>
-        </button>
-    );
+class DayButton extends React.Component<any, any> {
+    render() {
+        return (
+            <button
+                className="day-button"
+                type="submit"
+                onClick={this.props.showSchedule}
+            >
+                <h2>{this.props.day}</h2>
+                <div className="right-arrow">
+                    <img
+                        className="baseline-chevron"
+                        src={this.props.arrow}
+                    />
+                </div>
+            </button>
+        );
+    }
 }
 
 export default DayButton;

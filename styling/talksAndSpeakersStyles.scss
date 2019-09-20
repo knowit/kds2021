@@ -1,43 +1,57 @@
 @import "variables";
 div.talksAndSpeakers {
-  .info-entry,
-  .talk-info {
-    // display: none;
-  }
-
-
-  .talks {
-    margin-top: 10px;
-  }
+  width: 100%;
+  padding: 0;
+  margin: 0;
 
   .talk-container {
-    margin: auto;
-    width: 90%;
-    margin-bottom: 10px;
-    #speaker,
-    #title,
-    #room,
-    #language,
-    #difficulty,
-    #type {
-      display: none;
-    }
+    margin-top: 40px;
+    padding: 0;
+    width: 100%;
 
-    .speaker-page {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 3em;
-      width: 90%;
+    .talk {
+      padding: 0px 30px;
+      border-bottom: 1px solid #1D2E46;
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        .room {
+          margin-top: 0;
+          position: relative;
+          span {
+            display: block;
+            float: left;
+          }
+        }
+      }
+      .day {
+        font-weight: bold;
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+      .time {
+        font-weight: bold;
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 7px;
+      }
+      .speaker {
+        font-size: 18px;
+        color: #a0d1ca;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      .info {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
     }
-    .room-header {
-      display: none;
-    }
-    .speaker-page {
-      display: inherit;
-    }
-  }
-
-  #tags-list-entry {
-    list-style-type: circle;
   }
 }

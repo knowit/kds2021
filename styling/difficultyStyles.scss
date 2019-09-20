@@ -1,0 +1,37 @@
+.difficulty {
+    margin-left: auto;
+    margin-right: auto;
+    width: 24px;
+    height: 28px;    
+    position: relative;
+
+
+    span.first, span.second, span.third {
+        display: block;
+        background-color: #CFD0D3;
+        position: absolute;
+        bottom: 0;
+    }
+
+    span.first {
+        width: 30%;
+        height: 33%;
+    }
+
+    span.second {
+        margin-left: 34%;
+        width: 30%;
+        height: 66%;
+    }
+
+    span.third {
+        margin-left: 69%;
+        width: 30%;
+        height: 100%;
+    }
+
+    span.active {
+        background-color: #1D2E46;
+    }
+}
+

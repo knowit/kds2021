@@ -1,29 +1,58 @@
 import Layout from "./components/Layout";
 import Talk from "./components/Talk";
-import FilteredProgramBase from "./components/FilteredProgramBase";
-import FilterButton from "./components/FilterButton";
 import "../styling/talksAndSpeakersStyles.scss";
 import React from "react";
-import dynamic from "next/dynamic"
 import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
+import { program as Program } from "../models/data.json";
 
-const FavouriteTalkButtonNoSSR = dynamic(() => import("./components/FavouriteTalkButton"), {
-  ssr: false
-});
-
-class TalksAndSpeakers extends FilteredProgramBase {
+class TalksAndSpeakers extends React.Component<any, any> {
   constructor(props) {
     super(props);
+    this.state = {
+      filteredProgram: JSON.parse(JSON.stringify(Program)), // Need a deep copy
+      showOnlyFavorites: false,
+      tags: []
+    }
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.handleFavoriteChange = this.handleFavoriteChange.bind(this);
+}
+
+  handleFilterChange(newVal) {
+    this.setState({ tags: newVal }, this.filterProgram);
+  }
+  handleFavoriteChange(newVal) {
+    this.setState({ showOnlyFavorites: newVal }, this.filterProgram);
+
+  }
+
+  filterProgram() {
+    let filteredProgram = JSON.parse(JSON.stringify(Program));
+    filteredProgram.days
+      .forEach(day => day.slots
+        .forEach(slot => slot.rooms && slot.rooms
+          .forEach(room => {
+            room.talks = room.talks
+              .filter(talk => {
+                if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
+                  return false;
+                }
+                if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
+                  return false;
+                }
+                return true;
+              })
+          })));
+
+    this.setState({ filteredProgram: filteredProgram });
   }
 
   render() {
-    return (<div className="talksAndSpeakers">
-      <Layout>
-        <h1> Talks and speakers</h1>
+    return (<div className="talksAndSpeakers page">
+      <Layout filter={true} onFilterChange={this.handleFilterChange}>
+        <h1> Talks & speakers</h1>
         <div className="schedule-container">
           <div className="schedule-filter">
             <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange}></ShowOnlyFavoritesButton>
-            <FilterButton program={this.state.filteredProgram} handleChange={this.handleFilterChange} />
           </div>
           <div className="talks">
             {this.state.filteredProgram.days
@@ -34,9 +63,12 @@ class TalksAndSpeakers extends FilteredProgramBase {
                 .map(slot => slot.rooms
                   .map(room => room.talks
                     .map((talk, i) => talk.speakers
-                    .map(speaker =>
-                      <div className="talk-container" key={i}>
+                      .map(speaker =>
+                        <div className="talk-container" key={i}>
                           <Talk
+                            day={day.day}
+                            timeStart={slot.timeStart}
+                            timeEnd={slot.timeEnd}
                             description={talk.description}
                             speakerInfo={speaker.info}
                             speaker={speaker.name}
@@ -48,16 +80,15 @@ class TalksAndSpeakers extends FilteredProgramBase {
                             key={i}
                             difficulty={talk.difficulty}
                             tags={talk.tags} />
-                            <FavouriteTalkButtonNoSSR talkId={talk.talkId} />
                         </div>
                       )
-                      )
-                      )
-                      )
-                      )
-                    }
-            </div>
+                    )
+                  )
+                )
+              )
+            }
           </div>
+        </div>
       </Layout>
     </div >
     )

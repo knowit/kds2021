@@ -1,54 +1,58 @@
-import "../../styling/scheduleStyles.scss";
-import Link from 'next/link';
+import '../../styling/talkStyles.scss';
+import FilterTag from './FilterTag';
+import Difficulty from './Difficulty';
+import dynamic from "next/dynamic";
+import Pin from './Pin';
+import React from 'react';
 
-const Talk = props => {
-  return (
-    <div>
-      <span className="room-header">
-        <span>
-          {"Room " + props.room}
-        </span>
-      </span>
-      <h3 id="title" >
-        <Link href={"./talksAndSpeakers#" + props.talkId}><a>{props.title}</a></Link>
-      </h3>
-      <p id="speaker">
-        <Link href={"./talksAndSpeakers#" + props.talkId}><a>{props.speaker}</a></Link>
-      </p>
-      <div className="talk-info">
-        <p id="room" className="info-entry">
-          {props.room}
-        </p>
-        <p id="type" className="info-entry">
-          {props.type}
-        </p>
-        <p id="language" className="info-entry">
-          {props.language}
-        </p>
-        <p id="difficulty" className="info-entry">
-          {props.difficulty}
-        </p>
-      </div>
-      <div className="speaker-page">
-        <h2 id="talk-speaker"> {props.speaker} </h2>
-        <p id="talk-speakerinfo"> {props.speakerInfo} </p>
-        <h2 id="talk-title"> {props.title} </h2>
-        <p id="talk.description"> {props.description}</p>
-        <br />
-        <p id="talk.type">{props.type}</p>
-        <p id="talk.language">{props.language}</p>
-        <p id="talk.difficulty">{props.difficulty}</p>
-        <div id="tag-list">
-          <p>Tags:</p>
-          <ul>
-            {props.tags.map((tag, i) => <li key={tag} id="tags-list-entry">{props.tags[i]}</li>)}
-          </ul>
+const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
+  ssr: false
+});
+
+// Should be tweaked to create more "nice" colors
+const colorFromRoomName = roomName => {
+  const str = roomName + roomName + roomName + roomName; // Room names tend to be quite short so we put multiple of them togheter
+  let hash = 0;
+  for (var i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  var c = (hash & 0x00FFFFFF)
+    .toString(16)
+    .toUpperCase();
+
+  return "#" + "00000".substring(0, 6 - c.length) + c;
+}
+
+
+class Talk extends React.Component<any, any> {
+  render() {
+    return (
+      <div className="talk">
+        <div className="header">
+          <div className="room">
+            <Pin color={colorFromRoomName(this.props.room)}></Pin>
+            Room {this.props.room}
+          </div>
+          <div className="diff">
+            <Difficulty difficulty={this.props.difficulty}></Difficulty>
+            {this.props.difficulty}
+          </div>
+          <div className="heart">
+            <FavouriteTalkButtonNoSSR talkId={this.props.id} />
+          </div>
         </div>
-        <hr />
-      </div>
-    </div>
-  );
-};
+        <p className="day">{this.props.day}</p>
+        {!this.props.minimal && <p className="time">{this.props.timeStart} - {this.props.timeEnd}</p>}
+        {!this.props.minimal && <p className="type">{this.props.type}</p>}
+        <h1 className="title">{this.props.title}</h1>
+        <p className="speaker">{this.props.speaker}</p>
+        {!this.props.mininal && <p className="info">{this.props.speakerInfo}</p>}
 
+        {this.props.tags && this.props.tags.map(tag => <FilterTag name={tag}></FilterTag>)}
+      </div>
+    );
+  }
+}
 
 export default Talk;
