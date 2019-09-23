@@ -18,30 +18,37 @@ class Talk extends React.Component<any, any> {
       <div className="talk">
         <div className="header">
           <div className="time">
-            {this.props.day}<br></br>
-            {this.props.timeStart} - {this.props.timeEnd}
+            <img src="../../static/clock.svg" width="24" height="24"/>
+            <span className="time-text">
+              {this.props.day}<br></br>
+              {this.props.timeStart.toString()} - {this.props.timeEnd.toString()}
+            </span>
           </div>
           <div className="room">
             <Pin color={colorFromRoomName(this.props.room)}></Pin>
-            Room {this.props.room}
+            <span className="room-name">
+              Room {this.props.room}
+            </span>
           </div>
           <div className="diff">
             <Difficulty difficulty={this.props.difficulty}></Difficulty>
-            {this.props.difficulty}
+            <span className="diff-name">
+              {this.props.difficulty}
+            </span>
           </div>
           <div className="heart">
             <FavouriteTalkButtonNoSSR talkId={this.props.id} />
           </div>
         </div>
         <p className="day">{this.props.day}</p>
-        {!this.props.minimal && <p className="time">{this.props.timeStart} - {this.props.timeEnd}</p>}
-        {!this.props.minimal && <p className="type">{this.props.type}</p>}
+        <p className="time-info">{this.props.timeStart.toString()} - {this.props.timeEnd.toString()}</p>
+        <p className="type-info">{this.props.type}</p>
         <h1 className="title">{this.props.title}</h1>
         <p className="speaker">{this.props.speaker}</p>
-        {!this.props.mininal && <p className="info">{this.props.speakerInfo}</p>}
+        <p className="info">{this.props.speakerInfo}</p>
 
-        {this.props.tags && this.props.tags.map(tag => <FilterTag key={tag} name={tag}></FilterTag>)}
-        <hr/>
+        {this.props.tags && this.props.tags.map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.includes(tag)} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
+        <hr className="seperator"/>
       </div>
     );
   }

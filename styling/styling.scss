@@ -41,6 +41,7 @@ h1 {
 
 .document {
   margin-top: 90px;
+  margin-bottom: 50px;
   width: 40%;
   margin-left: auto;
   margin-right: auto;
@@ -54,10 +55,10 @@ h1 {
     border: none;
     padding: 0 0;
   }
-  *:first-child {
+  > *:first-child {
     margin-top: 50px;
   }
-  *:last-child {
+  > *:last-child {
     margin-bottom: 50px;
   }
   background-color: white;
@@ -72,4 +73,35 @@ h1 {
   width: 200%;
   height: 100%;
   position: absolute;
+}
+
+.flex-row {
+  display: flex; 
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.hide-small {
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+}
+.hide-large {
+  @media screen and (min-width: $break-large) {
+    display: none;
+  }
+}
+.show-small {
+  display: none;
+  @media screen and (max-width: $break-small) {
+    display: inherit;
+  }
+}
+.show-large {
+  display: none;
+  @media screen and (min-width: $break-large) {
+    display: inherit;
+  }
 }

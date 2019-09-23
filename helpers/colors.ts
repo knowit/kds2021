@@ -16,7 +16,8 @@ const colorFromRoomName = roomName => {
     return colorMinumum("#" + "00000".substring(0, 6 - c.length) + c, [130, 120, 90]);
 }
 
-const colorMinumum = (color, min) => {
+// Makes r, g and b has atleast a minimum value
+const colorMinumum = (color, min: number[]) => {
     const c = color.substring(1, color.length);
     const rgb = c.match(/.{1,2}/g).map(i => parseInt(i, 16)).map((i, j) => Math.max(i, min[j])).map(i => i.toString(16).toUpperCase());
     return "#" + rgb.map(i => ("0" + i).substr(-2)).join('');

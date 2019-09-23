@@ -22,7 +22,7 @@ class Schedule extends Component<any, any> {
 
   getRooms(day) {
     const roomDict = {};
-    
+
     const rooms = day.slots.reduce((acc, slot) => acc.concat(slot.rooms), []);
     rooms.forEach(room => {
       if (room) {
@@ -37,7 +37,16 @@ class Schedule extends Component<any, any> {
   }
   handleFavoriteChange(newVal) {
     this.setState({ showOnlyFavorites: newVal }, this.filterProgram);
+  }
 
+  handleToggleTag(tag) {
+    this.setState((prev) => {
+      if (prev.tags.includes(tag)) {
+        return { tags: prev.tags.filter(t => t != tag) };
+      }
+      return { tags: prev.tags.concat(tag) };
+      
+    }, this.filterProgram);
   }
 
   filterProgram() {
@@ -46,17 +55,20 @@ class Schedule extends Component<any, any> {
       .forEach(day => day.slots
         .forEach(slot => slot.rooms && slot.rooms
           .forEach(room => {
-            room.talks = room.talks
-              .filter(talk => {
+            room.talks
+              .forEach(talk => {
                 if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
-                  return false;
+                  talk.hide = true;
                 }
-                if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
-                  return false;
+                else if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
+                  talk.hide = true;
                 }
-                return true;
+                else {
+                  talk.hide = false;
+                }
               })
-          })));
+          }))
+      );
 
     this.setState({ filteredProgram: filteredProgram });
   }
@@ -94,7 +106,7 @@ class Schedule extends Component<any, any> {
               </div>
             </div>
 
-            {this.state.filteredProgram.days.length > 0 && <Day rooms={this.state.rooms} currDay={this.state.filteredProgram.days[this.state.currentDayIndex]} slots={this.state.filteredProgram.days[this.state.currentDayIndex].slots} />}
+            {this.state.filteredProgram.days.length > 0 && <Day onToggleTag={(val) => this.handleToggleTag(val)} tags={this.state.tags} rooms={this.state.rooms} currDay={this.state.filteredProgram.days[this.state.currentDayIndex]} slots={this.state.filteredProgram.days[this.state.currentDayIndex].slots} />}
           </div>
         </Layout>
       </div>

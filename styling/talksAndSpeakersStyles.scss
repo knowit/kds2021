@@ -1,9 +1,7 @@
 @import "variables";
-div.talksAndSpeakers {
-  width: 100%;
-  padding: 0;
-  margin: 0;
+@import "styling";
 
+div.talksAndSpeakers {
   .talks-container {
     @media screen and (min-width: $break-small) {
       border: 1px solid black;
@@ -14,48 +12,58 @@ div.talksAndSpeakers {
       font-size: 36px;
     }
   }
+  .talk-container:last-child .talk .seperator {
+    display: none;
+  }
   .talk-container {
-
     .talk {
       .header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 30px;
-        .room {
-          margin-top: 0;
-          position: relative;
-          span {
-            display: block;
-            float: left;
-          }
-        }
       }
       .day {
-        font-weight: bold;
-        font-size: 12px;
-        margin-bottom: 6px;
+        display: none;
       }
+      .type-info {
+        font-size: 0.75rem;
+      }
+
       .time {
-        font-weight: bold;
-        font-size: 12px;
-        margin-bottom: 6px;
+        @extend .show-large;
+      }
+
+      .time-info {
+        @extend .hide-large;
       }
       .title {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: left;
         margin-bottom: 7px;
       }
       .speaker {
-        font-size: 18px;
+        font-size: 1.125rem;
         color: #a0d1ca;
         text-align: left;
         margin-bottom: 20px;
       }
       .info {
-        font-size: 16px;
+        font-size: 1rem;
         margin-bottom: 30px;
+      }
+      .seperator {
+        // Not the prettiest way.. overflow is hidden so it works..
+        @media screen and (max-width: $break-small) {
+          margin-left: -100vw;
+          width: 200vw;
+        }
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+      .time, .room, .diff {
+        @extend .flex-row;
       }
     }
   }

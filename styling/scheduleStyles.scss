@@ -1,5 +1,6 @@
 @import "variables";
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import "styling";
 
 .schedule {
   .day-selector-top {
@@ -90,7 +91,7 @@ div.schedule {
     @media screen and (max-width: $break-large) {
       border-bottom: 1px solid #1d2e46;
     }
-    hr {
+    .seperator {
       display: none;
     }
     .header {
@@ -127,21 +128,44 @@ div.schedule {
       text-align: left;
       margin-bottom: 20px;
     }
-  }
-}
 
-.rooms {
-  @media screen and (min-width: $break-large) {
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
+    .time {
+      @extend .hide-large;
+      img {
+        margin: auto;
+      }
+      .time-text {
+        text-align: center;
+      }
+    }
+
+    .time-info {
+      @extend .show-large;
+    }
+
+    .time, .room, .time {
+      @extend .flex-col;
+    }
   }
-  .room-container:last-child .room-content {
+
+
+  .rooms {
     @media screen and (min-width: $break-large) {
-      border-right: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+    }
+    .room-container:last-child .room-content {
+      @media screen and (min-width: $break-large) {
+        border-right: none;
+      }
     }
   }
 }
+
+
+
+
 .room-container {
   flex-shrink: 1;
   flex-grow: 1;

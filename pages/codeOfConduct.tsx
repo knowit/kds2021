@@ -3,7 +3,7 @@ import RegisterButton from './components/RegisterButton';
 
 export default function CodeOfConduct() {
   return (
-    <div className="codeOfConduct">
+    <div className="codeOfConduct page">
       <Layout header={<RegisterButton></RegisterButton>} background={true}>
         <div className="document">
           <h1>Conference Code of Conduct</h1>
