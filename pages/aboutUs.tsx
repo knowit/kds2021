@@ -2,7 +2,7 @@ import Layout from "./components/Layout";
 
 export default function AboutUs() {
   return (
-    <div className="aboutUs">
+    <div className="aboutUs page">
       <Layout>
         <div className="document">
           <h1>About us</h1>
