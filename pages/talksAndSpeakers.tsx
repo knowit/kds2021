@@ -30,7 +30,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
         return { tags: prev.tags.filter(t => t != tag) };
       }
       return { tags: prev.tags.concat(tag) };
-      
+
     }, this.filterProgram);
   }
 
@@ -58,6 +58,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
   }
 
   render() {
+    console.log(this.state.filteredProgram);
     return (<div className="talksAndSpeakers page">
       <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags}>
         <div className="talks-container document">
@@ -68,10 +69,11 @@ class TalksAndSpeakers extends React.Component<any, any> {
                 .filter(function (slot) {
                   return slot.rooms !== undefined
                 })
-                .map(slot => {
-                  let from = Time.fromString(slot.timeStart);
-                  return slot.rooms
-                    .map(room => room.talks
+                .map(slot => slot.rooms
+                  .map(room => {
+
+                    let from = Time.fromString(slot.timeStart);
+                    return room.talks
                       .map((talk, i) => talk.speakers
                         .map(speaker => {
                           const to = from.copy().add(getDuration(talk.type));
@@ -98,12 +100,8 @@ class TalksAndSpeakers extends React.Component<any, any> {
                           from = to;
 
                           return !talk.hide ? el : '';
-                        })
-                      )
-                    )
-                })
-              )
-            }
+                        }))
+                  })))}
           </div>
         </div>
       </Layout>
