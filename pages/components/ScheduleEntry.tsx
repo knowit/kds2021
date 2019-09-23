@@ -19,7 +19,6 @@ interface IProps {
 class ScheduleEntry extends Component<IProps, any> {
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   render() {

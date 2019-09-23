@@ -5,21 +5,18 @@ import FilterTag from './FilterTag';
 
 interface IState {
     open: boolean
-    selectedTags: string[]
-    nonSelectedTags: string[]
 }
 
 interface IProps {
     onChange: (tags: string[]) => void
+    selectedTags: string[]
 }
 
-class Filter extends React.Component<any, IState> {
+class Filter extends React.Component<IProps, IState> {
     constructor(props) {
         super(props);
         this.state = {
-            open: false,
-            selectedTags: [],
-            nonSelectedTags: Program.program.tags
+            open: false
         }
     }
 
@@ -30,17 +27,11 @@ class Filter extends React.Component<any, IState> {
     }
 
     addTag(tag) {
-        this.setState((prev) => ({
-            nonSelectedTags: prev.nonSelectedTags.filter(t => t != tag),
-            selectedTags: prev.selectedTags.concat([tag])
-        }), () => this.props.onChange(this.state.selectedTags));
+        this.props.onChange(this.props.selectedTags.concat([tag]));
     }
 
     removeTag(tag) {
-        this.setState((prev) => ({
-            nonSelectedTags: prev.nonSelectedTags.concat([tag]),
-            selectedTags: prev.selectedTags.filter(t => t != tag)
-        }), () => this.props.onChange(this.state.selectedTags));
+        this.props.onChange(this.props.selectedTags.filter(t => t != tag));
     }
 
     render() {
@@ -55,11 +46,11 @@ class Filter extends React.Component<any, IState> {
                     <h1>Filter by tag</h1>
                     <div className="active">
                         <p>Active filters:</p>
-                        {this.state.selectedTags.map(tag => <FilterTag key={tag} name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
+                        {this.props.selectedTags.map(tag => <FilterTag key={tag} name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
                     </div>
                     <div className="nonActive">
                         <p>Click to select filters</p>
-                        {this.state.nonSelectedTags.map(tag => <FilterTag key={tag} name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
+                        {Program.program.tags.filter(tag => !this.props.selectedTags.some(t => t == tag)).map(tag => <FilterTag key={tag} name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
                     </div>
                 </div>
             </div>);

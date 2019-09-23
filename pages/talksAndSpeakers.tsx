@@ -59,7 +59,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   render() {
     return (<div className="talksAndSpeakers page">
-      <Layout filter={true} onFilterChange={this.handleFilterChange}>
+      <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags}>
         <div className="talks-container document">
           <h1> Talks & speakers</h1>
           <div className="talks">

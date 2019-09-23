@@ -82,7 +82,7 @@ class Schedule extends Component<any, any> {
   render() {
     return (
       <div className="schedule page">
-        <Layout filter={true} onFilterChange={this.handleFilterChange} hideLogo={true} background={true}>
+        <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} hideLogo={true} background={true}>
           <div className="day-selector-top">
             {this.state.filteredProgram.days.map((day, i) =>
               <span key={day.day}>
