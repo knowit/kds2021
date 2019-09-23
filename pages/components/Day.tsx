@@ -3,8 +3,9 @@ import EventHeader from './EventHeader';
 import ScheduleEntry from './ScheduleEntry';
 
 interface IProps {
-  currDay: string;
-  slots: any[];
+  currDay: string
+  slots: any[]
+  rooms: string[]
 }
 class Day extends Component<IProps, any> {
 
@@ -14,7 +15,7 @@ class Day extends Component<IProps, any> {
         {this.props.slots && this.props.slots.map((slot, i) =>
         <div key={i + "slot"} className="slot">
           <EventHeader key={i + "slot"} timeStart={slot.timeStart} timeEnd={slot.timeEnd} type={slot.type} />
-          {slot.rooms && <ScheduleEntry slot={slot} />}
+          {slot.rooms && <ScheduleEntry slot={slot} rooms={this.props.rooms} showRoomHeader={i==0}/>}
         </div>
          )}
       </div>

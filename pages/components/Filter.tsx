@@ -55,11 +55,11 @@ class Filter extends React.Component<any, IState> {
                     <h1>Filter by tag</h1>
                     <div className="active">
                         <p>Active filters:</p>
-                        {this.state.selectedTags.map(tag => <FilterTag name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
+                        {this.state.selectedTags.map(tag => <FilterTag key={tag} name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
                     </div>
                     <div className="nonActive">
                         <p>Click to select filters</p>
-                        {this.state.nonSelectedTags.map(tag => <FilterTag name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
+                        {this.state.nonSelectedTags.map(tag => <FilterTag key={tag} name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
                     </div>
                 </div>
             </div>);

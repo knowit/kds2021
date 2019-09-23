@@ -4,14 +4,19 @@ div.talksAndSpeakers {
   padding: 0;
   margin: 0;
 
+  .talks-container {
+    @media screen and (min-width: $break-small) {
+      border: 1px solid black;
+    }
+    margin-bottom: 90px;
+    margin-top: 90px;
+    h1 {
+      font-size: 36px;
+    }
+  }
   .talk-container {
-    margin-top: 40px;
-    padding: 0;
-    width: 100%;
 
     .talk {
-      padding: 0px 30px;
-      border-bottom: 1px solid #1D2E46;
       .header {
         display: flex;
         flex-direction: row;

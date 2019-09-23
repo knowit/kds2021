@@ -4,25 +4,12 @@ import Difficulty from './Difficulty';
 import dynamic from "next/dynamic";
 import Pin from './Pin';
 import React from 'react';
+import { colorFromRoomName } from '../../helpers/colors';
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
   ssr: false
 });
 
-// Should be tweaked to create more "nice" colors
-const colorFromRoomName = roomName => {
-  const str = roomName + roomName + roomName + roomName; // Room names tend to be quite short so we put multiple of them togheter
-  let hash = 0;
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-
-  var c = (hash & 0x00FFFFFF)
-    .toString(16)
-    .toUpperCase();
-
-  return "#" + "00000".substring(0, 6 - c.length) + c;
-}
 
 
 class Talk extends React.Component<any, any> {
@@ -30,6 +17,10 @@ class Talk extends React.Component<any, any> {
     return (
       <div className="talk">
         <div className="header">
+          <div className="time">
+            {this.props.day}<br></br>
+            {this.props.timeStart} - {this.props.timeEnd}
+          </div>
           <div className="room">
             <Pin color={colorFromRoomName(this.props.room)}></Pin>
             Room {this.props.room}
@@ -49,7 +40,8 @@ class Talk extends React.Component<any, any> {
         <p className="speaker">{this.props.speaker}</p>
         {!this.props.mininal && <p className="info">{this.props.speakerInfo}</p>}
 
-        {this.props.tags && this.props.tags.map(tag => <FilterTag name={tag}></FilterTag>)}
+        {this.props.tags && this.props.tags.map(tag => <FilterTag key={tag} name={tag}></FilterTag>)}
+        <hr/>
       </div>
     );
   }

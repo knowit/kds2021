@@ -49,11 +49,8 @@ class TalksAndSpeakers extends React.Component<any, any> {
   render() {
     return (<div className="talksAndSpeakers page">
       <Layout filter={true} onFilterChange={this.handleFilterChange}>
-        <h1> Talks & speakers</h1>
-        <div className="schedule-container">
-          <div className="schedule-filter">
-            <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange}></ShowOnlyFavoritesButton>
-          </div>
+        <div className="talks-container document">
+          <h1> Talks & speakers</h1>
           <div className="talks">
             {this.state.filteredProgram.days
               .map(day => day.slots

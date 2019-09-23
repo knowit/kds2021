@@ -2,9 +2,14 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
 .schedule {
-  .day-selector {
+  .day-selector-top {
+    @media screen and (min-width: $break-small) {
+      display: none;
+    }
+    cursor: pointer;
     position: absolute;
     top: 32px;
+    left: 0px;
     width: 100%;
     text-align: center;
     .header-day {
@@ -45,16 +50,58 @@ div.schedule {
   width: 100%;
   padding: 0;
   margin: 0;
-
+  .schedule-container {
+    background-color: white;
+    @media screen and (min-width: $break-small) {
+      border: 1px solid black;
+    }
+    margin-bottom: 90px;
+    margin-top: 90px;
+    .header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+      h1 {
+        margin-bottom: 16px;
+      }
+      .day-selector-header {
+        word-spacing: 12px;
+        .seperator {
+          font-size: 24px;
+        }
+        .header-day {
+          cursor: pointer;
+          font-size: 18px;
+        }
+        .header-day.selected {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .slot .room-container:last-child .talk-container:last-child .talk {
+    border-bottom: none;
+  }
   .talk {
     padding: 24px 30px;
-    border-bottom: 1px solid #1D2E46;
+    @media screen and (max-width: $break-large) {
+      border-bottom: 1px solid #1d2e46;
+    }
+    hr {
+      display: none;
+    }
     .header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       margin-bottom: 30px;
       .room {
+        @media screen and (min-width: $break-large) {
+          display: none;
+        }
         margin-top: 0;
         position: relative;
         span {
@@ -76,9 +123,50 @@ div.schedule {
     }
     .speaker {
       font-size: 14px;
-      color: #1D2E46;
+      color: #1d2e46;
       text-align: left;
       margin-bottom: 20px;
+    }
+  }
+}
+
+.rooms {
+  @media screen and (min-width: $break-large) {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+  }
+  .room-container:last-child .room-content {
+    @media screen and (min-width: $break-large) {
+      border-right: none;
+    }
+  }
+}
+.room-container {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+
+  .room-header {
+    @media screen and (max-width: $break-large) {
+      display: none;
+    }
+    border-left: 0px solid transparent;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 0px;
+  }
+
+  .room-content {
+    flex-grow: 1;
+    @media screen and (min-width: $break-large) {
+      border-right: 1px solid black;
+    }
+    .talk-container:not(:last-child) {
+      border-bottom: 1px solid black;
     }
   }
 }
