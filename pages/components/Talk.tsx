@@ -18,25 +18,31 @@ class Talk extends React.Component<any, any> {
       <div className="talk">
         <div className="header">
           <div className="time">
-            <img src="../../static/clock.svg" width="24" height="24"/>
+            <div className="wrapper">
+              <img src="../../static/clock.svg" width="24" height="24"/>
+            </div>
             <span className="time-text">
-              {this.props.day}<br></br>
+              <span className="time-text-day">{this.props.day}<br></br></span>
               {this.props.timeStart.toString()} - {this.props.timeEnd.toString()}
             </span>
           </div>
           <div className="room">
-            <Pin color={colorFromRoomName(this.props.room)}></Pin>
-            <span className="room-name">
+            <div className="wrapper">
+              <Pin color={colorFromRoomName(this.props.room)}></Pin>
+            </div>
+            <span className="text room-name">
               Room {this.props.room}
             </span>
           </div>
           <div className="diff">
-            <Difficulty difficulty={this.props.difficulty}></Difficulty>
-            <span className="diff-name">
+            <div className="wrapper">
+              <Difficulty difficulty={this.props.difficulty}></Difficulty>
+            </div>
+            <span className="text diff-name">
               {this.props.difficulty}
             </span>
           </div>
-          <div className="heart">
+          <div className="text heart">
             <FavouriteTalkButtonNoSSR talkId={this.props.id} />
           </div>
         </div>

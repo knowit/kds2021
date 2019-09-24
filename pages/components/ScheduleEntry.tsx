@@ -10,6 +10,7 @@ const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), 
 
 
 interface IProps {
+  day: string
   slot: any,
   rooms: string[]
   showRoomHeader: boolean,
@@ -42,6 +43,7 @@ class ScheduleEntry extends Component<IProps, any> {
                         difficulty={talk.difficulty}
                         id={talk.talkId}
                         key={i}
+                        day={this.props.day}
                         tags={talk.tags}
                         timeStart={from.copy() /*Make sure we get a copy..*/}
                         timeEnd={to.copy()} 

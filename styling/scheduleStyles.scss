@@ -58,7 +58,7 @@ div.schedule {
     }
     margin-bottom: 90px;
     margin-top: 90px;
-    .header {
+    > .header {
       display: flex;
       flex-direction: column;
       margin-bottom: 30px;
@@ -99,22 +99,18 @@ div.schedule {
       flex-direction: row;
       justify-content: space-around;
       margin-bottom: 30px;
-      .room {
-        @media screen and (min-width: $break-large) {
-          display: none;
-        }
-        margin-top: 0;
-        position: relative;
-        span {
-          display: block;
-          float: left;
-        }
+      .time-text, .room-name, .diff-name {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
       }
+      .room {
+        @extend .hide-large;
+      }
+
     }
     .day {
-      font-weight: bold;
-      font-size: 0.75rem;
-      margin-bottom: 6px;
+      display: none;
     }
     .title {
       font-size: 1.5rem;
@@ -134,9 +130,6 @@ div.schedule {
       img {
         margin: auto;
       }
-      .time-text {
-        text-align: center;
-      }
     }
 
     .type-info {
@@ -149,6 +142,18 @@ div.schedule {
 
     .time, .room, .time {
       @extend .flex-col;
+      .time-text-day {
+        display: none;
+      }
+      > .text {
+        flex-grow: 0;
+      }
+      > .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-grow: 1;
+      }
     }
   }
 

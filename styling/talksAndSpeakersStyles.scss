@@ -8,7 +8,7 @@ div.talksAndSpeakers {
     }
     margin-bottom: 90px;
     margin-top: 90px;
-    h1 {
+    > h1 {
       font-size: 2.25rem;
     }
   }
@@ -22,9 +22,15 @@ div.talksAndSpeakers {
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 30px;
+        .room-name, .diff-name, .time-text {
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-left: 16px;
+          height: 100%;
+        }
       }
       .day {
-        display: none;
+        @extend .hide-large;
       }
       .type-info {
         font-size: 0.75rem;
