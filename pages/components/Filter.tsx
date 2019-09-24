@@ -43,13 +43,13 @@ class Filter extends React.Component<IProps, IState> {
                     <span className="bottom" />
                 </div>
                 <div className={`filter ${this.state.open ? 'open' : ''}`}>
-                    <h1>Filter by tag</h1>
+                    <h1 className="header">Filter by tag</h1>
                     <div className="active">
-                        <p>Active filters:</p>
+                        <p className="subheader">Active filters:</p>
                         {this.props.selectedTags.map(tag => <FilterTag key={tag} name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
                     </div>
                     <div className="nonActive">
-                        <p>Click to select filters</p>
+                        <p className="subheader">Click to select filters</p>
                         {Program.program.tags.filter(tag => !this.props.selectedTags.some(t => t == tag)).map(tag => <FilterTag key={tag} name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
                     </div>
                 </div>

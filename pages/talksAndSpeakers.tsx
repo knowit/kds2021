@@ -58,7 +58,6 @@ class TalksAndSpeakers extends React.Component<any, any> {
   }
 
   render() {
-    console.log(this.state.filteredProgram);
     return (<div className="talksAndSpeakers page">
       <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags}>
         <div className="talks-container document">

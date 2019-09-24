@@ -14,7 +14,7 @@
     width: 100%;
     text-align: center;
     .header-day {
-      font-size: 16px;
+      font-size: 1rem;
     }
     .header-day.selected {
       font-weight: bold;
@@ -34,14 +34,14 @@
       float: left;
       margin-left: 30px;
       padding: 10px;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: bold;
     }
     .time {
       float: right;
       margin-right: 30px;
       padding: 10px;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: bold;
     }
   }
@@ -71,11 +71,11 @@ div.schedule {
       .day-selector-header {
         word-spacing: 12px;
         .seperator {
-          font-size: 24px;
+          font-size: 1.5rem;
         }
         .header-day {
           cursor: pointer;
-          font-size: 18px;
+          font-size: 1.125rem;
         }
         .header-day.selected {
           font-weight: bold;
@@ -97,7 +97,7 @@ div.schedule {
     .header {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
       margin-bottom: 30px;
       .room {
         @media screen and (min-width: $break-large) {
@@ -113,17 +113,17 @@ div.schedule {
     }
     .day {
       font-weight: bold;
-      font-size: 12px;
+      font-size: 0.75rem;
       margin-bottom: 6px;
     }
     .title {
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: bold;
       text-align: left;
       margin-bottom: 8px;
     }
     .speaker {
-      font-size: 14px;
+      font-size: 0.875rem;
       color: #1d2e46;
       text-align: left;
       margin-bottom: 20px;
@@ -139,6 +139,10 @@ div.schedule {
       }
     }
 
+    .type-info {
+      display: none;
+    }
+    
     .time-info {
       @extend .show-large;
     }
@@ -178,7 +182,7 @@ div.schedule {
       display: none;
     }
     border-left: 0px solid transparent;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     padding: 12px 0px;

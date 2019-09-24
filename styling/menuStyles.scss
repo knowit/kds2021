@@ -1,6 +1,8 @@
 @import "variables";
 
 #menu {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
   width: 100%;
   transform: translate(0, 0);
   @media screen and (min-width: $break-small) {
@@ -30,7 +32,7 @@
 
   .menuHeader {
     margin-top: 32px;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 100;
   }
 
@@ -38,7 +40,7 @@
     color: $primary-color;
     text-decoration: none;
     padding: 1em 1em 1em 1em;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-left: 40px;
     font-weight: bold;
 
@@ -134,7 +136,7 @@
   background-color: #a0d1ca;
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   white-space: nowrap;
   font-weight: bold;
   z-index: 2;

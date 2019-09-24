@@ -3,12 +3,12 @@
 .cfp {
   .title {
     margin-bottom: 30px;
-    font-size: 36px;
+    font-size: 1.5rem;
   }
 
   .info {
     margin-bottom: 40px;
-    font-size: 18px;
+    font-size: 1.125rem;
     .info-p:not(:last-child) {
       display: block;
       margin-bottom: 30px;
@@ -26,10 +26,10 @@
 
   .list {
     li {
-      font-size: 24px;
+      font-size: 1.5rem;
       margin-bottom: 20px;
       span {
-        font-size: 16px;
+        font-size: 1rem;
       }
     }
     margin-bottom: 40px;

@@ -64,6 +64,8 @@
 }
 
 .filter {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
   width: 100%;
   transform: translateX(-100%);
   @media screen and (min-width: $break-small) {
@@ -77,14 +79,14 @@
   background: white;
   transform-origin: 0 0;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 0.5);
-  p {
+  .subheader {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
   }
-  h1 {
+  .header {
     font-weight: 100;
     margin-top: 32px;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .active {
@@ -99,6 +101,9 @@
   .favorite {
     margin: auto;
   }
+  .filter-tag {
+    font-size: 0.875rem;
+  }
 }
 
 .filter-tag {
@@ -109,7 +114,7 @@
   margin-bottom: 20px;
   color: #1d2e46;
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.75rem;
 
   cursor: pointer;
 }

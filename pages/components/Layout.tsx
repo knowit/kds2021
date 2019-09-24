@@ -13,8 +13,8 @@ class Layout extends React.Component<any, any> {
       <div className="layout">
         <div className="menuAndHeader">
           <div className="header">
-            {!this.props.hideLogo && (<Link href="/">
-              <img id="KDSlogo" src="../static/KDSsymbol.svg" />
+            {this.props.hideLogo !== true && (<Link href="/">
+              <img id="KDSlogo" className={this.props.hideLogo ? `hide-${this.props.hideLogo}` : ''} src="../static/KDSsymbol.svg" />
             </Link>)}
             <div id="KDSheader">
               <h2 className="headline">
