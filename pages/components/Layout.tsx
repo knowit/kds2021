@@ -6,9 +6,9 @@ import Link from "next/link";
 import React from 'react';
 
 interface IProps {
-  hideLogo?: string | boolean
+  hideLogo?: 'small' | 'large' | boolean
   header?: any
-  filter?: boolean
+  filter?: 'small' | 'large' | boolean
   onFilterChange?: (tags: string[]) => void
   selectedTags?: string[]
   background?: boolean
@@ -34,7 +34,9 @@ class Layout extends React.Component<IProps, any> {
               {this.props.header}
             </div>
           </div>
-          {this.props.filter && <Filter onChange={this.props.onFilterChange} selectedTags={this.props.selectedTags}/>}
+          <div className="filter-pos">
+            {this.props.filter && <Filter onChange={this.props.onFilterChange} selectedTags={this.props.selectedTags} className={typeof this.props.filter === 'string' ? `show-${this.props.filter}` : ''}/>}
+          </div>
 
           <Menu />
         </div>

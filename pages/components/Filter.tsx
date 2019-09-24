@@ -10,6 +10,7 @@ interface IState {
 interface IProps {
     onChange: (tags: string[]) => void
     selectedTags: string[]
+    className?: string
 }
 
 class Filter extends React.Component<IProps, IState> {
@@ -36,7 +37,7 @@ class Filter extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div>
+            <div className={`filter-container ${this.props.className}`}>
                 <div className={`filterButton ${this.state.open ? 'open' : ''}`} onClick={() => this.toggle()}>
                     <span className="top" />
                     <span className="middle" />

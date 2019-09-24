@@ -1,5 +1,9 @@
 @import "variables";
 
+.filter-container {
+  position: relative;
+}
+
 .filterButton {
   cursor: pointer;
   position: absolute;
@@ -66,10 +70,11 @@
 .filter {
   border-bottom: 1px solid $border-color;
   border-right: 1px solid $border-color;
-  width: 100%;
+  width: 100vw;
+  padding-bottom: 30px;
   transform: translateX(-100%);
   @media screen and (min-width: $break-small) {
-    width: 25%;
+    width: 25vw;
   }
   z-index: 1;
   overflow-x: hidden;

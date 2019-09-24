@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import "variables";
 .content {
+  position: relative;
+  overflow-y: visible;
   .paragraphLink {
     color: $link-color;
     font-weight: bold;

@@ -4,7 +4,7 @@ import Day from "./components/Day";
 import { Component } from "react";
 import { program as Program } from "../models/data.json";
 import RegisterButton from "./components/RegisterButton";
-
+import Filter from './components/Filter';
 
 class Schedule extends Component<any, any> {
   constructor(props) {
@@ -41,6 +41,7 @@ class Schedule extends Component<any, any> {
   }
 
   handleToggleTag(tag) {
+    console.log(tag);
     this.setState((prev) => {
       if (prev.tags.includes(tag)) {
         return { tags: prev.tags.filter(t => t != tag) };
@@ -83,7 +84,7 @@ class Schedule extends Component<any, any> {
   render() {
     return (
       <div className="schedule page">
-        <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
+        <Layout filter={'small'} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
           <div className="day-selector-top">
             {this.state.filteredProgram.days.map((day, i) =>
               <span key={day.day}>
@@ -95,6 +96,9 @@ class Schedule extends Component<any, any> {
           </div>
           <div className="schedule-container">
             <div className="header">
+              <div className="filter-helper">
+                <Filter onChange={(val) => this.handleFilterChange(val)} selectedTags={this.state.tags} className="hide-small"></Filter>
+              </div>
               <h1>Schedule</h1>
               <div className="day-selector-header">
                 {this.state.filteredProgram.days.map((day, i) =>
