@@ -25,10 +25,10 @@ class FavouriteTalkButton extends React.Component<IProps, any> {
     }
 
     render() {
-            var icon = '../static/heart-filled.png';
+            var icon = '../static/heart.png';
             
             if (this.isFavorited(this.props.talkId)) {
-                icon = '../static/heart.png';
+                icon = '../static/heart-filled.png';
             }
             return (
                 <button onClick={() => this.favouriteButtonClick()} id="favourite-talk-button">
