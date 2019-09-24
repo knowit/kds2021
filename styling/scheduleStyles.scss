@@ -21,10 +21,10 @@
     }
   }
   .slot:nth-child(odd) .event-header {
-    background-color: #a0d1ca;
+    background-color: $event-header-color1;
   }
   .slot:nth-child(even) .event-header {
-    background-color: #b6b8dc;
+    background-color: $event-header-color2;
   }
 
   .event-header {
@@ -54,7 +54,7 @@ div.schedule {
   .schedule-container {
     background-color: white;
     @media screen and (min-width: $break-small) {
-      border: 1px solid black;
+      border: 1px solid $border-color;
     }
     margin-bottom: 90px;
     margin-top: 90px;
@@ -89,7 +89,7 @@ div.schedule {
   .talk {
     padding: 24px 30px;
     @media screen and (max-width: $break-large) {
-      border-bottom: 1px solid #1d2e46;
+      border-bottom: 1px solid $border-color;
     }
     .seperator {
       display: none;
@@ -120,7 +120,7 @@ div.schedule {
     }
     .speaker {
       font-size: 0.875rem;
-      color: #1d2e46;
+      color: $border-color;
       text-align: left;
       margin-bottom: 20px;
     }
@@ -196,10 +196,10 @@ div.schedule {
   .room-content {
     flex-grow: 1;
     @media screen and (min-width: $break-large) {
-      border-right: 1px solid black;
+      border-right: 1px solid $border-color;
     }
     .talk-container:not(:last-child) {
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid $border-color;
     }
   }
 }

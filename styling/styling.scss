@@ -13,11 +13,10 @@
 }
 
 #KDSheader {
-  @media screen and (max-width: $break-small) {
-    * {
-      display: none;
-    }
+  * {
+    @extend .hide-small;
   }
+  
 }
 
 body {
@@ -42,10 +41,10 @@ h1 {
 .document {
   margin-top: 90px;
   margin-bottom: 50px;
-  width: 40%;
+  width: 35vw;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #1d2e46;
+  border: 1px solid $border-color;
   padding: 0 90px;
   @media screen and (max-width: $break-small) {
     margin-top: 30px;

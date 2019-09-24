@@ -1,3 +1,5 @@
+@import "variables";
+
 .difficulty {
     margin-left: auto;
     margin-right: auto;
@@ -8,7 +10,7 @@
 
     span.first, span.second, span.third {
         display: block;
-        background-color: #CFD0D3;
+        background-color: $diff-color-empty;
         position: absolute;
         bottom: 0;
         width: 25%;
@@ -29,7 +31,7 @@
     }
 
     span.active {
-        background-color: #1D2E46;
+        background-color: $diff-color-filled;
     }
 }
 

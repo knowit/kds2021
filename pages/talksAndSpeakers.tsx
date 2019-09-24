@@ -2,9 +2,10 @@ import Layout from "./components/Layout";
 import Talk from "./components/Talk";
 import "../styling/talksAndSpeakersStyles.scss";
 import React from "react";
-import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
 import { program as Program } from "../models/data.json";
 import { Time, getDuration } from "../helpers/time";
+import RegisterButton from "./components/RegisterButton";
+
 class TalksAndSpeakers extends React.Component<any, any> {
   constructor(props) {
     super(props);
@@ -59,9 +60,9 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   render() {
     return (<div className="talksAndSpeakers page">
-      <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags}>
+      <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} header={<RegisterButton></RegisterButton>}>
         <div className="talks-container document">
-          <h1> Talks & speakers</h1>
+          <h1 className="title"> Talks & speakers</h1>
           <div className="talks">
             {this.state.filteredProgram.days
               .map(day => day.slots

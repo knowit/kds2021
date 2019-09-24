@@ -42,7 +42,7 @@
     margin: 0em;
     font-size: 1em;
     font-weight: normal;
-    color: #75787b;
+    color: $header-text-color;
     @media screen and (max-width: $break-small) {
       font-size: 0.8em;
     }

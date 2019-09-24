@@ -2,12 +2,16 @@ $break-small: 650px;
 $break-large: 1350px;
 
 $primary-color: #28334a;
-$button-color: #e4e2db;
-$secondary-color: #75787b;
+$button-color: #a0d1ca;
+$toggle-button-color: #75787b; 
+$header-text-color: #75787b;
 $link-color: #009681;
 $hover-color: #e4e2db;
 $font-family: "Raleway";
+$border-color: #1d2e46;
 
+$event-header-color1: #a0d1ca;
+$event-header-color2: #b6b8dc;
 
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+$diff-color-empty: #CFD0D3; 
+$diff-color-filled: #1D2E46;

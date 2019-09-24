@@ -5,9 +5,16 @@ import Filter from "./Filter";
 import Link from "next/link";
 import React from 'react';
 
+interface IProps {
+  hideLogo?: string | boolean
+  header?: any
+  filter?: boolean
+  onFilterChange?: (tags: string[]) => void
+  selectedTags?: string[]
+  background?: boolean
+}
 
-
-class Layout extends React.Component<any, any> {
+class Layout extends React.Component<IProps, any> {
   render() {
     return (
       <div className="layout">

@@ -71,6 +71,9 @@ div.talksAndSpeakers {
       .time, .room, .diff {
         @extend .flex-row;
       }
+      .filter-tag {
+        font-size: 0.875rem;
+      }
     }
   }
 }

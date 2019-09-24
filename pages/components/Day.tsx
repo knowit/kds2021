@@ -11,7 +11,6 @@ interface IProps {
 }
 class Day extends Component<IProps, any> {
   render() {
-    console.log(this.props);
     return (
       <div className="day">
         {this.props.slots && this.props.slots.map((slot, i) =>

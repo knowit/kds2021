@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Day from "./components/Day";
 import { Component } from "react";
 import { program as Program } from "../models/data.json";
+import RegisterButton from "./components/RegisterButton";
 
 
 class Schedule extends Component<any, any> {
@@ -82,7 +83,7 @@ class Schedule extends Component<any, any> {
   render() {
     return (
       <div className="schedule page">
-        <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} hideLogo={'small'} background={true}>
+        <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
           <div className="day-selector-top">
             {this.state.filteredProgram.days.map((day, i) =>
               <span key={day.day}>
