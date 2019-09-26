@@ -59,10 +59,12 @@ class Schedule extends Component<any, any> {
           .forEach(room => {
             room.talks
               .forEach(talk => {
+                const tags = talk.tags.concat([talk.language])
+                
                 if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
                   talk.hide = true;
                 }
-                else if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.indexOf(tag) > -1)) {
+                else if (this.state.tags.length > 0 && !tags.some(tag => this.state.tags.indexOf(tag) > -1)) {
                   talk.hide = true;
                 }
                 else {

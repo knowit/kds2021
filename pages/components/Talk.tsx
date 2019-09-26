@@ -53,7 +53,7 @@ class Talk extends React.Component<any, any> {
         <p className="speaker">{this.props.speaker}</p>
         <p className="info">{this.props.speakerInfo}</p>
 
-        {this.props.tags && this.props.tags.map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
+        {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
         <hr className="seperator"/>
       </div>
     );
