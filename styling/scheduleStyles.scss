@@ -53,11 +53,11 @@ div.schedule {
   margin: 0;
   .schedule-container {
     background-color: white;
+    margin-bottom: 90px;
+    margin-top: $header-bottom-margin;
     @media screen and (min-width: $break-small) {
       border: 1px solid $border-color;
     }
-    margin-bottom: 90px;
-    margin-top: 90px;
     > .header {
       display: flex;
       flex-direction: column;
@@ -172,7 +172,7 @@ div.schedule {
   .filter-helper {
     overflow-x: hidden;
     position: absolute;
-    top: 90px;
+    top: $header-bottom-margin;
     left: 0px;
     width: 100%;
     height: 100%;

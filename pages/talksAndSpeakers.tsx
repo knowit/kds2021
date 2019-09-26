@@ -27,7 +27,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   handleToggleTag(tag) {
     this.setState((prev) => {
-      if (prev.tags.includes(tag)) {
+      if (prev.tags.indexOf(tag) > -1) {
         return { tags: prev.tags.filter(t => t != tag) };
       }
       return { tags: prev.tags.concat(tag) };
@@ -46,7 +46,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
                 if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
                   talk.hide = true;
                 }
-                else if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
+                else if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.indexOf(tag) > -1)) {
                   talk.hide = true;
                 }
                 else {
