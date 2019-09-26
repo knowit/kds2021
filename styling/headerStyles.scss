@@ -74,8 +74,8 @@
 }
 
 .menuAndHeader {
-  min-height: 100px;
-  max-height: 100px;
+  min-height: $header-height;
+  max-height: $header-height;
   @media screen and (max-width: $break-small) {
     display: flex;
     flex-direction: column-reverse;

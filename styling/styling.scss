@@ -65,6 +65,13 @@ h1 {
   background-color: white;
 }
 
+// used for pages like schedule which want to use the entire page when the logo is disabled
+.negative-margin {
+  @media screen and (max-width: $break-small) {
+    margin-top: -$header-bottom-margin;
+  }
+}
+
 .background {
   @media screen and (max-width: $break-small) {
     display: none;

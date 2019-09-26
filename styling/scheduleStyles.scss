@@ -4,14 +4,17 @@
 
 .schedule {
   .day-selector-top {
-    @media screen and (min-width: $break-small) {
-      display: none;
-    }
     cursor: pointer;
     position: absolute;
     top: 32px;
     left: 0px;
     width: 100%;
+    @media screen and (min-width: $break-small) {
+      display: none;
+    }
+    @media screen and (max-width: $break-small) {
+      top: -($header-bottom-margin - 32px)
+    }
     text-align: center;
     .header-day {
       font-size: 1rem;
