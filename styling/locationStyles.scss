@@ -2,6 +2,7 @@
 
 .location {
   h1 {
+    margin-top: $header-bottom-margin;
     font-size: 1.5rem;
     text-align: center;
     @media screen and (max-width: $break-small) {
