@@ -41,7 +41,6 @@ class Schedule extends Component<any, any> {
   }
 
   handleToggleTag(tag) {
-    console.log(tag);
     this.setState((prev) => {
       if (prev.tags.indexOf(tag) > -1) {
         return { tags: prev.tags.filter(t => t != tag) };
@@ -60,7 +59,7 @@ class Schedule extends Component<any, any> {
             room.talks
               .forEach(talk => {
                 const tags = talk.tags.concat([talk.language])
-                
+
                 if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
                   talk.hide = true;
                 }
@@ -87,36 +86,36 @@ class Schedule extends Component<any, any> {
     return (
       <div className="schedule page">
         <Layout filter={'small'} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
-          <div className="negative-margin">
-            <div className="day-selector-top">
-              {this.state.filteredProgram.days.map((day, i) =>
-                <span key={day.day}>
-                  {i != 0 && <span> | </span>}
-                  <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                    {day.day}
-                  </span>
-                </span>)}
-            </div>
-            <div className="schedule-container">
-              <div className="header">
-                <div className="filter-helper">
-                  <Filter onChange={(val) => this.handleFilterChange(val)} selectedTags={this.state.tags} className="hide-small"></Filter>
-                </div>
-                <h1>Schedule</h1>
-                <div className="day-selector-header">
-                  {this.state.filteredProgram.days.map((day, i) =>
-                    <span key={day.day}>
-                      {i != 0 && <span className="seperator"> | </span>}
-                      <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                        {day.day}
-                      </span>
-                    </span>)}
-                </div>
+            <div className="schedule-document negative-margin">
+              <div className="day-selector-top">
+                {this.state.filteredProgram.days.map((day, i) =>
+                  <span key={day.day}>
+                    {i != 0 && <span> | </span>}
+                    <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
+                      {day.day}
+                    </span>
+                  </span>)}
               </div>
+              <div className="schedule-container">
+                <div className="header">
+                  <div className="filter-helper">
+                    <Filter onChange={(val) => this.handleFilterChange(val)} selectedTags={this.state.tags} className="hide-small"></Filter>
+                  </div>
+                  <h1>Schedule</h1>
+                  <div className="day-selector-header">
+                    {this.state.filteredProgram.days.map((day, i) =>
+                      <span key={day.day}>
+                        {i != 0 && <span className="seperator"> | </span>}
+                        <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
+                          {day.day}
+                        </span>
+                      </span>)}
+                  </div>
+                </div>
 
-              {this.state.filteredProgram.days.length > 0 && <Day onToggleTag={(val) => this.handleToggleTag(val)} tags={this.state.tags} rooms={this.state.rooms} currDay={this.state.filteredProgram.days[this.state.currentDayIndex]} slots={this.state.filteredProgram.days[this.state.currentDayIndex].slots} />}
+                {this.state.filteredProgram.days.length > 0 && <Day onToggleTag={(val) => this.handleToggleTag(val)} tags={this.state.tags} rooms={this.state.rooms} currDay={this.state.filteredProgram.days[this.state.currentDayIndex]} slots={this.state.filteredProgram.days[this.state.currentDayIndex].slots} />}
+              </div>
             </div>
-          </div>
         </Layout>
       </div>
     );

@@ -37,11 +37,11 @@ div.talksAndSpeakers {
       }
 
       .time {
-        @extend .show-large;
+        @extend .hide-small;
       }
 
       .time-info {
-        @extend .hide-large;
+        @extend .show-small;
       }
       .title {
         font-size: 1.5rem;

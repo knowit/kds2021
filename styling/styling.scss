@@ -7,18 +7,14 @@
     color: $link-color;
     font-weight: bold;
   }
-
-  @media screen and (min-width: $break-small) {
-    margin-left: 20%;
-    margin-right: 20%;
-  }
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #KDSheader {
   * {
     @extend .hide-small;
   }
-  
 }
 
 body {
@@ -43,18 +39,16 @@ h1 {
 .document {
   margin-top: $header-bottom-margin;
   margin-bottom: 50px;
-  width: 35vw;
+  width: $break-small - 2 * $document-padding;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid $border-color;
-  padding: 0 90px;
+  padding: 0 $document-padding;
   @media screen and (max-width: $break-small) {
     margin-top: 30px;
-    width: auto;
-    margin-left: 30px;
-    margin-right: 30px;
+    width: calc(100% - 2 * $document-padding-small);
     border: none;
-    padding: 0 0;
+    padding: 0 $document-padding-small;
   }
   > *:first-child {
     margin-top: 50px;
@@ -84,7 +78,7 @@ h1 {
 }
 
 .flex-row {
-  display: flex; 
+  display: flex;
   flex-direction: row;
 }
 .flex-col {
@@ -110,6 +104,18 @@ h1 {
 .show-large {
   display: none;
   @media screen and (min-width: $break-large) {
+    display: inherit;
+  }
+}
+.hide-schedule {
+  display: none;
+  @media screen and (max-width: $break-schedule) {
+    display: inherit;
+  }
+}
+.show-schedule {
+  display: none;
+  @media screen and (min-width: $break-schedule) {
     display: inherit;
   }
 }

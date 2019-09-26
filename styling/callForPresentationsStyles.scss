@@ -18,12 +18,6 @@
     }
   }
 
-  .register-button.upper {
-    @media screen and (min-width: $break-large) {
-      display: none;
-    }
-  }
-
   .list {
     li {
       font-size: 1.5rem;

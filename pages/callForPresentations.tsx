@@ -28,7 +28,6 @@ export default function CallForPresentations() {
                 &nbsp;for inspiration. If that is not inspiring enough, here are a few more ideas:
               </span>
             </p>
-            <RegisterButton className="upper"></RegisterButton>
             <ul className="list">
               <li><span>A customer project from a technical perspective. Project experience reports are really valuable.</span></li>
               <li><span>JavaScript frameworks or frontend techniques in general</span></li>

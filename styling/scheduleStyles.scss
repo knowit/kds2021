@@ -3,6 +3,14 @@
 @import "styling";
 
 .schedule {
+  .schedule-document {
+    width: $break-schedule;
+
+    @media screen and (max-width: $break-schedule) {
+      width: 100vw;
+    }
+  }
+
   .day-selector-top {
     cursor: pointer;
     position: absolute;
@@ -91,7 +99,7 @@ div.schedule {
   }
   .talk {
     padding: 24px 30px;
-    @media screen and (max-width: $break-large) {
+    @media screen and (max-width: $break-schedule) {
       border-bottom: 1px solid $border-color;
     }
     .seperator {
@@ -108,7 +116,7 @@ div.schedule {
         margin-right: auto;
       }
       .room {
-        @extend .hide-large;
+        @extend .hide-schedule;
       }
 
     }
@@ -129,7 +137,7 @@ div.schedule {
     }
 
     .time {
-      @extend .hide-large;
+      @extend .hide-schedule;
       img {
         margin: auto;
       }
@@ -140,7 +148,7 @@ div.schedule {
     }
     
     .time-info {
-      @extend .show-large;
+      @extend .show-schedule;
     }
 
     .time, .room, .time {
@@ -160,13 +168,13 @@ div.schedule {
     }
   }
   .rooms {
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-schedule) {
       display: flex;
       flex-direction: row;
       justify-content: stretch;
     }
     .room-container:last-child .room-content {
-      @media screen and (min-width: $break-large) {
+      @media screen and (min-width: $break-schedule) {
         border-right: none;
       }
     }
@@ -201,7 +209,7 @@ div.schedule {
   flex-direction: column;
 
   .room-header {
-    @media screen and (max-width: $break-large) {
+    @media screen and (max-width: $break-schedule) {
       display: none;
     }
     border-left: 0px solid transparent;
@@ -213,7 +221,7 @@ div.schedule {
 
   .room-content {
     flex-grow: 1;
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-schedule) {
       border-right: 1px solid $border-color;
     }
     .talk-container:not(:last-child) {
