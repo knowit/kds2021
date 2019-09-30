@@ -9,8 +9,10 @@ interface IProps {
   hideLogo?: 'small' | 'large' | boolean
   header?: any
   filter?: 'small' | 'large' | boolean
-  onFilterChange?: (tags: string[]) => void
+  onTagChange?: (tags: string[]) => void
+  onFavoriteChange?: (val: boolean) => void
   selectedTags?: string[]
+  showOnlyFavorites?: boolean
   background?: boolean
 }
 
@@ -35,7 +37,7 @@ class Layout extends React.Component<IProps, any> {
             </div>
           </div>
           <div className="filter-pos">
-            {this.props.filter && <Filter onChange={this.props.onFilterChange} selectedTags={this.props.selectedTags} className={typeof this.props.filter === 'string' ? `show-${this.props.filter}` : ''}/>}
+            {this.props.filter && <Filter onTagChange={this.props.onTagChange} onFavoriteChange={this.props.onFavoriteChange} showOnlyFavorites={this.props.showOnlyFavorites} selectedTags={this.props.selectedTags} className={typeof this.props.filter === 'string' ? `show-${this.props.filter}` : ''}/>}
           </div>
 
           <Menu />

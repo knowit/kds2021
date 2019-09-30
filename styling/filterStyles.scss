@@ -1,18 +1,16 @@
 @import "variables";
 
-.filter-container {
-  position: relative;
-}
-
-.filterButton {
-  cursor: pointer;
-  position: absolute;
-  top: 32px;
-  left: 30px;
+.filter-button {
+  margin-top: 32px;
+  margin-left: 30px;
   width: 33px;
-
   display: block;
+  cursor: pointer;
 
+  .filter-button-container {
+    position: relative;
+    z-index: 4;
+  }
   span.top,
   span.middle,
   span.bottom {
@@ -21,15 +19,13 @@
     height: 4px;
     margin-top: 4px;
     margin-bottom: 5px;
-    position: relative;
     margin-left: auto;
     margin-right: auto;
-
-    color: $toggle-button-color;
+    z-index: 4;
+    color: $text-color;
+    position: relative;
     background: currentColor;
     border-radius: 3px;
-
-    z-index: 2;
   }
   span.top {
     width: 100%;
@@ -42,8 +38,10 @@
   }
 }
 
-.filterButton.open {
-  z-index: 5;
+.filter-button.open {
+  .filter-button-container {
+    z-index: 5;
+  }
 
   span.top {
     -webkit-transform: translateY(6px) rotateZ(45deg);
@@ -67,33 +65,77 @@
   }
 }
 
+.filter-container.dropdown {
+  .filter {
+    position: absolute;
+    width: 600px;
+    border: 1px solid $border-color;
+    z-index: 2;
+    transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 0.5);
+    left: calc(50vw - 300px - 1px); // 50vw
+    top: 0px;
+    transform-origin: 0 0;
+    transform: translateY(-100%)
+  }
+
+  .filter.open {
+    transform: translateY(200px);
+    z-index: 4;
+  }
+}
+
+.filter-container.slide-left {
+  .filter {
+    transform: translateX(-100%);
+    width: 100vw;
+    @media screen and (min-width: $break-small) {
+      width: 25vw;
+    }
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    .close {
+      display: none;
+    }
+  }
+  .filter.open {
+    z-index: 4;
+
+    transform: none;
+  }
+}
+
 .filter {
+  position: relative;
   border-bottom: 1px solid $border-color;
   border-right: 1px solid $border-color;
-  width: 100vw;
   padding-bottom: 30px;
-  transform: translateX(-100%);
-  @media screen and (min-width: $break-small) {
-    width: 25vw;
-  }
   z-index: 1;
-  overflow-x: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
   background: white;
-  transform-origin: 0 0;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 0.5);
   .subheader {
     font-weight: bold;
     font-size: 1rem;
   }
+  .close {
+    display: block;
+    color: $text-color;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 31px;
+    height: 31px;
+  }
   .header {
     font-weight: 100;
-    margin-top: 32px;
+    margin-top: 20px;
     font-size: 1.5rem;
   }
-
+  .favorite {
+    margin-left: 40px;
+  }
   .active {
     margin-left: 40px;
     margin-top: 56px;
@@ -101,10 +143,6 @@
   .nonActive {
     margin-top: 50px;
     margin-left: 40px;
-  }
-
-  .favorite {
-    margin: auto;
   }
   .filter-tag {
     font-size: 0.875rem;
@@ -127,9 +165,3 @@
   color: white;
   background-color: $border-color;
 }
-
-.filter.open {
-  z-index: 4;
-  transform: none;
-}
-

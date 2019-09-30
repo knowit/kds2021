@@ -5,6 +5,7 @@ import React from "react";
 import { program as Program } from "../models/data.json";
 import { Time, getDuration } from "../helpers/time";
 import RegisterButton from "./components/RegisterButton";
+import Filter from './components/Filter';
 
 class TalksAndSpeakers extends React.Component<any, any> {
   constructor(props) {
@@ -44,7 +45,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
             room.talks
               .forEach(talk => {
                 const tags = talk.tags.concat([talk.language])
-                
+
                 if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
                   talk.hide = true;
                 }
@@ -62,56 +63,62 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   render() {
     return (<div className="talksAndSpeakers page">
-      <Layout filter={true} onFilterChange={this.handleFilterChange} selectedTags={this.state.tags} header={<RegisterButton></RegisterButton>} background={true}>
+      <Layout filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} header={<RegisterButton></RegisterButton>} background={true}>
         <div className="talks-container document">
-          <h1 className="title"> Talks & speakers</h1>
-          <div className="talks">
-            {this.state.filteredProgram.days
-              .map(day => day.slots
-                .filter(function (slot) {
-                  return slot.rooms !== undefined
-                })
-                .map(slot => slot.rooms
-                  .map(room => {
-
-                    let from = Time.fromString(slot.timeStart);
-                    return room.talks
-                      .map((talk, i) => talk.speakers
-                        .map(speaker => {
-                          const to = from.copy().add(getDuration(talk.type));
-                          const el = (<div className="talk-container" key={i}>
-                            <Talk
-                              day={day.day}
-                              timeStart={from.copy()}
-                              timeEnd={to.copy()}
-                              description={talk.description}
-                              speakerInfo={speaker.info}
-                              speaker={speaker.name}
-                              title={talk.title}
-                              type={talk.type}
-                              id={talk.talkId}
-                              room={room.name}
-                              language={talk.language}
-                              key={i}
-                              difficulty={talk.difficulty}
-                              tags={talk.tags}
-                              selectedTags={this.state.tags}
-                              onToggleTag={(val) => this.handleToggleTag(val)} />
-                          </div>);
-
-                          from = to;
-
-                          return !talk.hide ? el : '';
-                        }))
-                  })))}
+          
+          <div className="title-filter">
+            <Filter onFavoriteChange={this.handleFavoriteChange} onTagChange={this.handleFilterChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small talks-filter" type="dropdown"></Filter>
+            <h1 className="title"> Talks & speakers</h1>
           </div>
-        </div>
+
+            <div className="talks">
+              {this.state.filteredProgram.days
+                .map(day => day.slots
+                  .filter(function (slot) {
+                    return slot.rooms !== undefined
+                  })
+                  .map(slot => slot.rooms
+                    .map(room => {
+
+                      let from = Time.fromString(slot.timeStart);
+                      return room.talks
+                        .map((talk, i) => talk.speakers
+                          .map(speaker => {
+                            const to = from.copy().add(getDuration(talk.type));
+                            const el = (<div className="talk-container" key={i}>
+                              <Talk
+                                day={day.day}
+                                timeStart={from.copy()}
+                                timeEnd={to.copy()}
+                                description={talk.description}
+                                speakerInfo={speaker.info}
+                                speaker={speaker.name}
+                                title={talk.title}
+                                type={talk.type}
+                                id={talk.talkId}
+                                room={room.name}
+                                language={talk.language}
+                                key={i}
+                                difficulty={talk.difficulty}
+                                tags={talk.tags}
+                                selectedTags={this.state.tags}
+                                onToggleTag={(val) => this.handleToggleTag(val)}
+                                onFavoriteChange={() => this.filterProgram()}/>
+                            </div>);
+
+                            from = to;
+
+                            return !talk.hide ? el : '';
+                          }))
+                    })))}
+            </div>
+          </div>
       </Layout>
     </div >
-    )
+      )
+    }
   }
-}
-
-export default TalksAndSpeakers;
-
-
+  
+  export default TalksAndSpeakers;
+  
+  

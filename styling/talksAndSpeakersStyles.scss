@@ -8,8 +8,21 @@ div.talksAndSpeakers {
     }
     margin-bottom: 90px;
     margin-top: $header-bottom-margin;
-    > h1 {
-      font-size: 2.25rem;
+    .title-filter {
+      margin-top: 0px;
+      > .title {
+        margin-top: 0px;
+        font-size: 2.25rem;
+      }
+      .talks-filter {
+        height: 0;
+        margin-left: -10px;
+        float: left;
+        .filter-button {
+          margin-left: -50px;
+          margin-top: -30px;
+        }
+      }
     }
   }
   .talk-container:last-child .talk .seperator {
@@ -22,7 +35,9 @@ div.talksAndSpeakers {
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 30px;
-        .room-name, .diff-name, .time-text {
+        .room-name,
+        .diff-name,
+        .time-text {
           margin-top: auto;
           margin-bottom: auto;
           margin-left: 16px;
@@ -68,7 +83,9 @@ div.talksAndSpeakers {
         margin-top: 10px;
         margin-bottom: 30px;
       }
-      .time, .room, .diff {
+      .time,
+      .room,
+      .diff {
         @extend .flex-row;
       }
       .filter-tag {

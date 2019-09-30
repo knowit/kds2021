@@ -4,7 +4,8 @@ $break-large: 1350px;
 $break-schedule: 1086px;
 
 $header-height: 100px;
-$header-bottom-margin: 90px;
+$min-header-height: 44px;
+$header-bottom-margin: 50px;
 
 $primary-color: #28334a;
 $button-color: #a0d1ca;
@@ -19,8 +20,12 @@ $text-color: #1d2e46;
 $event-header-color1: #a0d1ca;
 $event-header-color2: #b6b8dc;
 
-$document-padding: 90px;
-$document-padding-small: 30px;
+$document-padding-vertical: 50px;
+$document-padding-vertical-small: 0px;
+$document-padding-horizontal: 90px;
+$document-padding-horizontal-small: 30px;
 
 $diff-color-empty: #CFD0D3; 
 $diff-color-filled: #1D2E46;
+
+$filter-dropdown-size: 580px;

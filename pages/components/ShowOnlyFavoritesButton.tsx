@@ -2,20 +2,13 @@ import { Component }from "react";
 
 class ShowOnlyFavoritesButton extends Component<any, any> {
     constructor(props) {
-        super(props)
-        this.state = {
-            showOnlyFavorites: true
-        }
+        super(props);
     }
 
     render() {
+        const src = this.props.showOnlyFavorites ? '../static/only-favorite-button.svg' : '../static/only-favorite-button-off.svg';
         return (
-            <div className="only-favorites-button">
-                <label>
-                    <input type="checkbox" onChange={e => this.props.handleChange(e.target.checked)}/>
-                    Show only favorites
-                </label>
-            </div>
+            <img src={src} onClick={this.props.onClick}></img>
         );
     }
 }

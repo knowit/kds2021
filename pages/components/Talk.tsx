@@ -43,7 +43,7 @@ class Talk extends React.Component<any, any> {
             </span>
           </div>
           <div className="text heart">
-            <FavouriteTalkButtonNoSSR talkId={this.props.id} />
+            <FavouriteTalkButtonNoSSR talkId={this.props.id} onClick={this.props.onFavoriteChange}/>
           </div>
         </div>
         <p className="day">{this.props.day}</p>
