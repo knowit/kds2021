@@ -21,7 +21,7 @@ class Filter extends React.Component<IProps, IState> {
     constructor(props) {
         super(props);
         this.state = {
-            open: true
+            open: false
         }
     }
 
