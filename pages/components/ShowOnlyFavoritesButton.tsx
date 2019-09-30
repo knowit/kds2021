@@ -1,4 +1,5 @@
 import { Component }from "react";
+import '../../styling/onlyFavoritesButtonStyles.scss';
 
 class ShowOnlyFavoritesButton extends Component<any, any> {
     constructor(props) {
@@ -6,9 +7,12 @@ class ShowOnlyFavoritesButton extends Component<any, any> {
     }
 
     render() {
-        const src = this.props.showOnlyFavorites ? '../static/only-favorite-button.svg' : '../static/only-favorite-button-off.svg';
         return (
-            <img src={src} onClick={this.props.onClick}></img>
+            <div className={`switch ${this.props.showOnlyFavorites ? 'on' : ''}`} onClick={() => this.props.onClick(!this.props.showOnlyFavorites)}>
+                <div className="ball">
+
+                </div>
+            </div>
         );
     }
 }
