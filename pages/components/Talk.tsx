@@ -19,7 +19,7 @@ class Talk extends React.Component<any, any> {
         <div className="header">
           <div className="time">
             <div className="wrapper">
-              <img src="../../static/clock.svg" width="24" height="24"/>
+              <img src="../../static/clock.svg" width="24" height="24" />
             </div>
             <span className="time-text">
               <span className="time-text-day">{this.props.day}<br></br></span>
@@ -43,18 +43,21 @@ class Talk extends React.Component<any, any> {
             </span>
           </div>
           <div className="text heart">
-            <FavouriteTalkButtonNoSSR talkId={this.props.id} onClick={this.props.onFavoriteChange}/>
+            <FavouriteTalkButtonNoSSR talkId={this.props.id} onClick={this.props.onFavoriteChange} />
           </div>
         </div>
-        <p className="day">{this.props.day}</p>
-        <p className="time-info">{this.props.timeStart.toString()} - {this.props.timeEnd.toString()}</p>
-        <p className="type-info">{this.props.type}</p>
-        <h1 className="title">{this.props.title}</h1>
-        <p className="speaker">{this.props.speaker}</p>
-        <p className="info">{this.props.speakerInfo}</p>
-
-        {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
-        <hr className="seperator"/>
+        <div className="talk-content">
+          <p className="day">{this.props.day}</p>
+          <p className="time-info">{this.props.timeStart.toString()} - {this.props.timeEnd.toString()}</p>
+          <p className="type-info">{this.props.type}</p>
+          <h1 className="title">{this.props.title}</h1>
+          <p className="speaker">{this.props.speaker}</p>
+          <p className="info">{this.props.speakerInfo}</p>
+          <div className="tags">
+            {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
+          </div>
+          <hr className="seperator" />
+        </div>
       </div>
     );
   }
