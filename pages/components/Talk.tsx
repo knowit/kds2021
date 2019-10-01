@@ -23,7 +23,7 @@ class Talk extends React.Component<any, any> {
             </div>
             <span className="time-text">
               <span className="time-text-day">{this.props.day}<br></br></span>
-              {this.props.timeStart.toString()} - {this.props.timeEnd.toString()}
+              {this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}
             </span>
           </div>
           <div className="room">
@@ -48,7 +48,7 @@ class Talk extends React.Component<any, any> {
         </div>
         <div className="talk-content">
           <p className="day">{this.props.day}</p>
-          <p className="time-info">{this.props.timeStart.toString()} - {this.props.timeEnd.toString()}</p>
+          <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}</p>
           <p className="type-info">{this.props.type}</p>
           <h1 className="title">{this.props.title}</h1>
           <p className="speaker">{this.props.speaker}</p>

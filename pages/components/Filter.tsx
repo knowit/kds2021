@@ -59,11 +59,11 @@ class Filter extends React.Component<IProps, IState> {
 
                     <div className="active">
                         <p className="subheader">Active filters:</p>
-                        {this.props.selectedTags.map(tag => <FilterTag key={tag} name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
+                        {this.props.selectedTags && this.props.selectedTags.map(tag => <FilterTag key={tag} name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
                     </div>
                     <div className="nonActive">
                         <p className="subheader">Click to select filters</p>
-                        {Program.program.tags.concat(Program.program.languages).filter(tag => !this.props.selectedTags.some(t => t == tag)).map(tag => <FilterTag key={tag} name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
+                        {Program.program.tags.concat(Program.program.languages).filter(tag => this.props.selectedTags && !this.props.selectedTags.some(t => t == tag)).map(tag => <FilterTag key={tag} name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
                     </div>
                 </div>
             </div>);
