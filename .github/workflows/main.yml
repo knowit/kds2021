@@ -1,0 +1,22 @@
+name: Building and deployment
+on:
+  push:
+    branches: 
+      master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    name: Building and deployment
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Building and deployment
+      uses: JamesIves/github-pages-deploy-action@2.0.3
+      env:  # Should use github token, but currently pushing using github token does not trigger gh pages..
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: out
+        BUILD_SCRIPT: npm install && npm run deploy
