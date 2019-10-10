@@ -1,0 +1,22 @@
+name: Building and deployment
+on:
+  push:
+    branches: 
+      feature/githubActions
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    name: Building an deployment
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Building and deployment
+      uses: JamesIves/github-pages-deploy-action@2.0.3
+      env: 
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: feature/githubActions
+        BRANCH: gh-pages-test
+        FOLDER: out
+        BUILD_SCRIPT: npm run deploy
