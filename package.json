@@ -1,5 +1,5 @@
 {
-  "name": "newKDS",
+  "name": "kds",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,19 +7,21 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "next build && next export -o \"out\" && echo \"\" >> out/.nojekyll && cp CNAME out/CNAME",
+    "deploy-windows": "next build && next export -o \"out\" && echo \"\" >> out/.nojekyll && copy \"CNAME\" \"out/CNAME\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Maritt/newKDS.git"
+    "url": "git+https://github.com/knowit/program.kds.knowit.no.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Maritt/newKDS/issues"
+    "url": "https://github.com/knowit/program.kds.knowit.no/issues"
   },
-  "homepage": "https://github.com/Maritt/newKDS#readme",
+  "homepage": "https://github.com/knowit/program.kds.knowit.no",
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "next": "^9.0.3",
