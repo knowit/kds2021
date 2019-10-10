@@ -85,7 +85,7 @@ class Schedule extends Component<any, any> {
   render() {
     return (
       <div className="schedule page">
-        <Layout filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
+        <Layout title="Schedule" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
           <div className="schedule-document negative-margin">
             <div className="day-selector-top">
               {this.state.filteredProgram.days.map((day, i) =>
@@ -101,7 +101,7 @@ class Schedule extends Component<any, any> {
                 <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"></Filter>
 
                 <div className="header-title">
-                  <h1>Schedule</h1>
+                  <h1 className="title">Schedule</h1>
                   <div className="day-selector-header">
                     {this.state.filteredProgram.days.map((day, i) =>
                       <span key={day.day}>

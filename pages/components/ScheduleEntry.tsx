@@ -28,7 +28,7 @@ class ScheduleEntry extends Component<IProps, any> {
       .map((talk, i) => talk.speakers
         .map(speaker => {
           const to = from.copy().add(getDuration(talk.type));
-          const el = (<div className="talk-container" key={i}>
+          const talkEl = (<div className="talk-container" key={i}>
             <Talk title={talk.title}
               speaker={speaker.name}
               room={room.name}
@@ -39,15 +39,15 @@ class ScheduleEntry extends Component<IProps, any> {
               key={i}
               day={this.props.day}
               tags={talk.tags}
-              timeStart={from.copy() /*Make sure we get a copy..*/}
-              timeEnd={to.copy()}
+              timeStart={from}
+              timeEnd={to}
               selectedTags={this.props.tags}
               onToggleTag={this.props.onToggleTag} />
           </div>);
 
           from = to;
 
-          return !talk.hide ? el : '';
+          return !talk.hide ? talkEl : '';
         }
         ));
   }

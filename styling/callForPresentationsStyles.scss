@@ -1,12 +1,11 @@
 @import "variables";
 
-.callForPresentations .cfp {
-  .title {
-    margin-bottom: 30px;
-    font-size: 1.5rem;
-  }
-
+.cfp {
   .info {
+    @media screen and (max-width: $break-small) {
+      font-weight: inherit;
+    }
+    font-weight: bold;
     margin-bottom: 40px;
     font-size: 1.125rem;
     .info-p:not(:last-child) {

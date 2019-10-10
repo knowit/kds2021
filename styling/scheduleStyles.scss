@@ -29,10 +29,10 @@
     }
   }
   .slot:nth-child(odd) .event-header {
-    background-color: $event-header-color1;
+    background-color: $event-header-green-color;
   }
   .slot:nth-child(even) .event-header {
-    background-color: $event-header-color2;
+    background-color: $event-header-purple-color;
   }
 
   .event-header {
@@ -85,7 +85,7 @@ div.schedule {
         justify-items: center;
         align-items: center;
       }
-      h1 {
+      .title {
         margin-bottom: 16px;
       }
       .day-selector-header {
@@ -185,8 +185,10 @@ div.schedule {
     }
   }
   .rooms.single-track {
-    .talk-container:nth-child(even) .talk {
-      background-color: $dark-bg-color;
+    @media screen and (min-width: $break-schedule) {
+      .talk-container:nth-child(even) .talk {
+        background-color: $dark-bg-color;
+      }
     }
     .talk-container {
       border-bottom: none;
@@ -229,19 +231,21 @@ div.schedule {
     }
   }
   .rooms.multi-track {
-    .room-container:nth-child(odd) {
-      background-color: $dark-bg-color;
-      .talk-container:nth-child(even) {
-        .talk {
-          background-color: $darker-bg-color;
+    @media screen and (min-width: $break-schedule) {
+      .room-container:nth-child(odd) {
+        background-color: $dark-bg-color;
+        .talk-container:nth-child(even) {
+          .talk {
+            background-color: $darker-bg-color;
+          }
         }
       }
-    }
-    .room-container:nth-child(even) {
-      background-color: white;
-      .talk-container:nth-child(even) {
-        .talk {
-          background-color: $dark-bg-color;
+      .room-container:nth-child(even) {
+        background-color: white;
+        .talk-container:nth-child(even) {
+          .talk {
+            background-color: $dark-bg-color;
+          }
         }
       }
     }
@@ -274,9 +278,7 @@ div.schedule {
 }
 
 .room-container {
-  flex-shrink: 1;
-  flex-grow: 1;
-  flex-basis: 0;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
 

@@ -1,8 +1,6 @@
 @import "variables";
 
 #menu {
-  //border-bottom: 1px solid $border-color;
-  //border-left: 1px solid $border-color;
   width: 100%;
   transform: translate(0, 0);
   @media screen and (min-width: $break-small) {

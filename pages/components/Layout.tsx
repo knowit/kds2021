@@ -1,5 +1,6 @@
 import "../../styling/headerStyles.scss";
 import "../../styling/styling.scss";
+import Head from 'next/head';
 import Menu from "./Menu";
 import Filter from "./Filter";
 import Link from "next/link";
@@ -14,12 +15,16 @@ interface IProps {
   selectedTags?: string[]
   showOnlyFavorites?: boolean
   background?: boolean
+  title?: string
 }
 
 class Layout extends React.Component<IProps, any> {
   render() {
     return (
       <div className="layout">
+        <Head>
+          <title>{this.props.title || 'Knowit Developer Summit'}</title>
+        </Head>
         <div className="menuAndHeader">
           <div className="header">
             {this.props.hideLogo !== true && (<Link href="/">

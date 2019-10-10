@@ -42,7 +42,7 @@ class Talk extends React.Component<any, any> {
               {this.props.difficulty}
             </span>
           </div>
-          <div className="text heart">
+          <div className="heart">
             <FavouriteTalkButtonNoSSR talkId={this.props.id} onClick={this.props.onFavoriteChange} />
           </div>
         </div>

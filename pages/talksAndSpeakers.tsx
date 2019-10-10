@@ -63,62 +63,62 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   render() {
     return (<div className="talksAndSpeakers page">
-      <Layout filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} header={<RegisterButton></RegisterButton>} background={true}>
+      <Layout title="Talks & Speakers" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} header={<RegisterButton></RegisterButton>} background={true}>
         <div className="talks-container document">
-          
+
           <div className="title-filter">
             <Filter onFavoriteChange={this.handleFavoriteChange} onTagChange={this.handleFilterChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small talks-filter" type="dropdown"></Filter>
             <h1 className="title"> Talks & speakers</h1>
           </div>
 
-            <div className="talks">
-              {this.state.filteredProgram.days
-                .map(day => day.slots
-                  .filter(function (slot) {
-                    return slot.rooms !== undefined
-                  })
-                  .map(slot => slot.rooms
-                    .map(room => {
+          <div className="talks">
+            {this.state.filteredProgram.days
+              .map(day => day.slots
+                .filter(function (slot) {
+                  return slot.rooms !== undefined
+                })
+                .map(slot => slot.rooms
+                  .map(room => {
 
-                      let from = Time.fromString(slot.timeStart);
-                      return room.talks
-                        .map((talk, i) => talk.speakers
-                          .map(speaker => {
-                            const to = from.copy().add(getDuration(talk.type));
-                            const el = (<div className="talk-container" key={i}>
-                              <Talk
-                                day={day.day}
-                                timeStart={from.copy()}
-                                timeEnd={to.copy()}
-                                description={talk.description}
-                                speakerInfo={speaker.info}
-                                speaker={speaker.name}
-                                title={talk.title}
-                                type={talk.type}
-                                id={talk.talkId}
-                                room={room.name}
-                                language={talk.language}
-                                key={i}
-                                difficulty={talk.difficulty}
-                                tags={talk.tags}
-                                selectedTags={this.state.tags}
-                                onToggleTag={(val) => this.handleToggleTag(val)}
-                                onFavoriteChange={() => this.filterProgram()}/>
-                            </div>);
+                    let from = Time.fromString(slot.timeStart);
+                    return room.talks
+                      .map((talk, i) => talk.speakers
+                        .map(speaker => {
+                          const to = from.copy().add(getDuration(talk.type));
+                          const talkEl = (<div className="talk-container" key={i}>
+                            <Talk
+                              day={day.day}
+                              timeStart={from}
+                              timeEnd={to}
+                              description={talk.description}
+                              speakerInfo={speaker.info}
+                              speaker={speaker.name}
+                              title={talk.title}
+                              type={talk.type}
+                              id={talk.talkId}
+                              room={room.name}
+                              language={talk.language}
+                              key={i}
+                              difficulty={talk.difficulty}
+                              tags={talk.tags}
+                              selectedTags={this.state.tags}
+                              onToggleTag={(val) => this.handleToggleTag(val)}
+                              onFavoriteChange={() => this.filterProgram()} />
+                          </div>);
 
-                            from = to;
+                          from = to;
 
-                            return !talk.hide ? el : '';
-                          }))
-                    })))}
-            </div>
+                          return !talk.hide ? talkEl : '';
+                        }))
+                  })))}
           </div>
+        </div>
       </Layout>
     </div >
-      )
-    }
+    )
   }
-  
-  export default TalksAndSpeakers;
-  
-  
+}
+
+export default TalksAndSpeakers;
+
+

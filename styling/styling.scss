@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import "variables";
+
 .content {
   overflow-y: visible;
   .paragraphLink {
@@ -54,6 +55,23 @@ h1 {
   background-color: white;
 }
 
+.title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0px;
+}
+.paragraph {
+  font-size: 1rem;
+  margin: 0px 0px 10px 0px;
+}
+
 // used for pages like schedule which want to use the entire page when the logo is disabled
 .negative-margin {
   @media screen and (max-width: $break-small) {
@@ -80,6 +98,8 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+
+// !important is needed to overwrite elements with multiple tags, e.g Register button which has display block as part of the style
 .hide-small {
   @media screen and (max-width: $break-small) {
     display: none !important;
