@@ -13,3 +13,9 @@ $ npm install
 ### Running
 To run dev: `npm run dev`
 open `localhost:3000`
+
+### Building
+`npm run build` \
+`npm run export`
+
+
