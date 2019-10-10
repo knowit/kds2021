@@ -7,7 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    name: Building an deployment
+    name: Building and deployment
     steps:
     - name: Checkout
       uses: actions/checkout@master
