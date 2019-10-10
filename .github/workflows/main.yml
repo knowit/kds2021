@@ -19,4 +19,4 @@ jobs:
         BASE_BRANCH: feature/githubActions
         BRANCH: gh-pages-test
         FOLDER: out
-        BUILD_SCRIPT: npm run deploy
+        BUILD_SCRIPT: npm install && npm run deploy
