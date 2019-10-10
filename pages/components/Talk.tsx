@@ -4,7 +4,7 @@ import Difficulty from './Difficulty';
 import dynamic from "next/dynamic";
 import Pin from './Pin';
 import React from 'react';
-import { colorFromRoomName } from '../../helpers/colors';
+import { colorClassFromRoomName } from '../../helpers/colors';
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
   ssr: false
@@ -28,7 +28,7 @@ class Talk extends React.Component<any, any> {
           </div>
           <div className="room">
             <div className="wrapper">
-              <Pin color={colorFromRoomName(this.props.room)}></Pin>
+              <Pin className={colorClassFromRoomName(this.props.room)}></Pin>
             </div>
             <span className="text room-name">
               Room {this.props.room}
@@ -48,7 +48,7 @@ class Talk extends React.Component<any, any> {
         </div>
         <div className="talk-content">
           <p className="day">{this.props.day}</p>
-          <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}</p>
+          <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()} ({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)</p>
           <p className="type-info">{this.props.type}</p>
           <h1 className="title">{this.props.title}</h1>
           <p className="speaker">{this.props.speaker}</p>

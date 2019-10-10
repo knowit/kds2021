@@ -1,19 +1,25 @@
-import React from 'react';
-import { colorFromRoomName } from '../../helpers/colors';
-
+import React, { CSSProperties } from 'react';
+import { colorClassFromRoomName } from '../../helpers/colors';
+import Pin from './Pin';
 
 
 class Room extends React.Component<any, any> {
     render() {
+        const color = colorClassFromRoomName(this.props.room);
+
+        const style = {
+            msGridColumn: this.props.index + 1,
+            msGridRow: 1
+        };
+
         return (
-            <div className="room-container">
-                {this.props.showRoomHeader && <div className="room-header" style={{backgroundColor: colorFromRoomName(this.props.room)}}>
-                    Room {this.props.room}
+            <React.Fragment>
+                {this.props.showRoomHeader && <div className={`room-header ${this.props.index % 2 == 0 ? 'room-even' : 'room-odd'}`} style={style as CSSProperties}>
+                    <Pin className={color} small={true}></Pin> <div className="room-header-text">Room {this.props.room}</div>
                 </div>}
-                <div className="room-content">
-                    {this.props.children}
-                </div>
-            </div >
+
+                {this.props.children}
+            </React.Fragment>
         );
     }
 }

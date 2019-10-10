@@ -1,20 +1,15 @@
 import Talk from "./Talk";
-import { Component } from "react";
+import { Component, CSSProperties } from "react";
 import dynamic from "next/dynamic";
 import Room from './Room';
 import { getDuration, Time } from '../../helpers/time';
 
-const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
-  ssr: false
-});
-
-
 interface IProps {
   day: string
-  slot: any,
-  rooms: string[]
+  slot: any
   showRoomHeader: boolean,
-  tags: string[]
+  tags: string[],
+  trackLength: number,
   onToggleTag: (val) => void
 }
 class ScheduleEntry extends Component<IProps, any> {
@@ -22,13 +17,20 @@ class ScheduleEntry extends Component<IProps, any> {
     super(props);
   }
 
-  createRoom(room) {
+  createRoom(room, index: number) {
     let from = Time.fromString(this.props.slot.timeStart);
-    return room.talks
+    const talks = room.talks
       .map((talk, i) => talk.speakers
         .map(speaker => {
           const to = from.copy().add(getDuration(talk.type));
-          const talkEl = (<div className="talk-container" key={i}>
+
+
+          const style = { // For ie support, ie support is far from good.. but this makes i maybe useable
+            msGridRow: i + 2,
+            msGridColumn: index + 1
+          };
+
+          const talkEl = (<div className={`talk-container ${i % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={i} style={style as CSSProperties}>
             <Talk title={talk.title}
               speaker={speaker.name}
               room={room.name}
@@ -50,6 +52,13 @@ class ScheduleEntry extends Component<IProps, any> {
           return !talk.hide ? talkEl : '';
         }
         ));
+
+    for (let i = 0; i < this.props.trackLength - room.talks.filter(talk => !talk.hide).length; i++) {
+      const talkIndex = room.talks.length + i;
+      talks.push(<div className={`talk-container empty ${talkIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={i}></div>);
+    }
+
+    return talks;
   }
 
   render() {
@@ -57,22 +66,27 @@ class ScheduleEntry extends Component<IProps, any> {
       const room = this.props.slot.rooms[0];
       return (
         <div className="rooms single-track">
-          {this.props.slot.rooms && <Room key={room.name} showRoomHeader={this.props.showRoomHeader} room={room}>{
-            this.createRoom(room)  
+          {this.props.slot.rooms && <Room key={room.name} showRoomHeader={false} room={room}>{
+            this.createRoom(room, 0)
           }</Room>}
         </div>);
     }
     else {
+      // Need to update dimensions of the grid
+      const style = {
+        gridTemplateColumns: `repeat(${this.props.slot.rooms && this.props.slot.rooms.length}, 1fr)`,
+        gridTemplateRows: `60px repeat(${this.props.trackLength}, 1fr)`,
+        msGridRows: `60px (1fr) [${this.props.trackLength}]`,
+        msGridColumns: `(1fr) [${this.props.slot.rooms && this.props.slot.rooms.length}]`
+      };
+
       return (
-        <div className="rooms multi-track">
-          {this.props.rooms && this.props.rooms.map(r => <Room key={r} showRoomHeader={this.props.showRoomHeader} room={r}>{
-            this.props.slot && this.props.slot.rooms
-            && this.props.slot.rooms.filter(room => room.name == r)
-              .map(room => {
-                return this.createRoom(room);
-              }
-              )
-          }</Room>)}
+        <div className="rooms multi-track" style={style}>
+          {this.props.slot && this.props.slot.rooms && this.props.slot.rooms.map((r, i) => <Room key={r.name} index={i} showRoomHeader={this.props.showRoomHeader} room={r.name}>
+            {
+              this.createRoom(r, i)
+            }
+          </Room>)}
         </div>
       );
     }

@@ -6,6 +6,9 @@
   .schedule-document {
     width: $break-schedule;
 
+    margin-left: auto; // Only needed for ie supprot
+    margin-right: auto;
+
     @media screen and (max-width: $break-schedule) {
       width: 100vw;
     }
@@ -63,9 +66,13 @@ div.schedule {
     background-color: white;
     margin-bottom: 90px;
     margin-top: $header-bottom-margin;
-    @media screen and (min-width: $break-small) {
+    @media screen and (min-width: $break-schedule) {
       border: 1px solid $border-color;
     }
+    @media screen and (min-width: $break-small) {
+      border-top: 1px solid $border-color;
+    }
+
     > .header {
       display: flex;
       flex-direction: column;
@@ -103,19 +110,11 @@ div.schedule {
       }
     }
   }
-  .slot .room-container:last-child .talk-container:last-child .talk {
-    border-bottom: none;
-  }
   .rooms {
     @media screen and (min-width: $break-schedule) {
       display: flex;
       flex-direction: row;
       justify-content: stretch;
-    }
-    .room-container:last-child .room-content {
-      @media screen and (min-width: $break-schedule) {
-        border-right: none;
-      }
     }
 
     .talk {
@@ -129,6 +128,7 @@ div.schedule {
         }
       }
       .title {
+        max-width: 90%;
         font-size: 1.5rem;
         font-weight: bold;
         text-align: left;
@@ -143,7 +143,7 @@ div.schedule {
       }
 
       .time {
-        @extend .hide-schedule;
+        display: none;
         img {
           margin: auto;
         }
@@ -151,10 +151,6 @@ div.schedule {
 
       .type-info {
         display: none;
-      }
-
-      .time-info {
-        @extend .show-schedule;
       }
 
       .time,
@@ -184,122 +180,165 @@ div.schedule {
       }
     }
   }
+  .rooms {
+    .talk-container {
+      border-bottom: none;
+      .talk {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @media screen and (max-width: $break-schedule) {
+          border-bottom: 1px solid $border-color;
+        }
+        .talk-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .speaker {
+            font-size: 1.125rem;
+          }
+          .title {
+            display: inline-block;
+            margin-left: 0px;
+          }
+        }
+        .seperator {
+          display: none;
+        }
+        .header {
+          margin-left: 60px; // Stop title from getting to close
+          order: 1;
+          height: 220px; // Cant get this to use full height...
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .time-text,
+          .room-name,
+          .diff-name {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+
   .rooms.single-track {
     @media screen and (min-width: $break-schedule) {
       .talk-container:nth-child(even) .talk {
         background-color: $dark-bg-color;
       }
     }
-    .talk-container {
-      border-bottom: none;
-    }
+    display: flex;
+    flex-direction: column;
+  }
 
-    .talk {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      @media screen and (max-width: $break-schedule) {
-        border-bottom: 1px solid $border-color;
-      }
-      .talk-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+  .rooms.multi-track {
+    @media screen and (min-width: $break-schedule) {
+      display: -ms-grid;
+      display: grid;
+      grid-auto-flow: column;
 
-        .speaker {
-          font-size: 1.125rem;
-        }
+      .room-even {
+        background-color: $darker-bg-color;
       }
-      .seperator {
-        display: none;
+      .room-odd {
+        background-color: $dark-bg-color;
       }
-      .header {
-        margin-left: 60px; // Stop title from getting to close
-        order: 1;
-        height: 220px; // Cant get this to use full height...
+      .room-even.talk-even {
+        background-color: $dark-bg-color;
+      }
+      .room-odd.talk-even {
+        background-color: white;
+      }
+      .room-odd.talk-odd {
+        background-color: $dark-bg-color;
+      }
+
+      .talk {
+        height: calc(100% - 40px); // 100% - padding top and padding bottom
+        padding: 24px 10px 12px 30px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .time-text,
-        .room-name,
+        .seperator {
+          display: none;
+        }
         .diff-name {
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto;
+          display: none;
         }
-      }
-    }
-  }
-  .rooms.multi-track {
-    @media screen and (min-width: $break-schedule) {
-      .room-container:nth-child(odd) {
-        background-color: $dark-bg-color;
-        .talk-container:nth-child(even) {
-          .talk {
-            background-color: $darker-bg-color;
+        .header {
+          height: fit-content;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          margin-left: 0px;
+          .time-text,
+          .room-name,
+          .diff-name {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
           }
-        }
-      }
-      .room-container:nth-child(even) {
-        background-color: white;
-        .talk-container:nth-child(even) {
-          .talk {
-            background-color: $dark-bg-color;
+          .room {
+            display: none;
           }
-        }
-      }
-    }
-    .talk {
-      padding: 24px 30px;
-      @media screen and (max-width: $break-schedule) {
-        border-bottom: 1px solid $border-color;
-      }
-      .seperator {
-        display: none;
-      }
-      .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-bottom: 30px;
-        .time-text,
-        .room-name,
-        .diff-name {
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .room {
-          @extend .hide-schedule;
         }
       }
     }
   }
 }
 
-.room-container {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-
-  .room-header {
-    @media screen and (max-width: $break-schedule) {
-      display: none;
-    }
-    border-left: 0px solid transparent;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 12px 0px;
+.room-header {
+  @media screen and (max-width: $break-schedule) {
+    display: none;
   }
-
-  .room-content {
-    flex-grow: 1;
-    @media screen and (min-width: $break-schedule) {
-      border-right: 1px solid $border-color;
-    }
-    .talk-container:not(:last-child) {
-      border-bottom: 1px solid $border-color;
-    }
+  border-left: 0px solid transparent;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 0px;
+  > * {
+    display: inline-block;
   }
+  .room-header-text {
+    margin-left: 15px;
+  }
+}
+
+@mixin colored-pin($color) {
+  .top {
+    border-color: $color;
+  }
+  .bottom {
+    border-top-color: $color;
+  }
+}
+
+// Have to use .pin.small.room-... to override pin.smalls default color
+.pin.room-header-green {
+  @include colored-pin($event-header-green-color);
+}
+.pin.small.room-header-green {
+  @include colored-pin($event-header-green-color);
+}
+.pin.room-header-purple {
+  @include colored-pin($event-header-purple-color);
+}
+.pin.small.room-header-purple {
+  @include colored-pin($event-header-purple-color);
+}
+.pin.room-header-red {
+  @include colored-pin($event-header-red-color);
+}
+.pin.small.room-header-red {
+  @include colored-pin($event-header-red-color);
+}
+.pin.room-header-yellow {
+  @include colored-pin($event-header-yellow-color);
+}
+.pin.small.room-header-yellow {
+  @include colored-pin($event-header-yellow-color);
 }

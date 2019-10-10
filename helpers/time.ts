@@ -25,6 +25,11 @@ class Time {
         return t;
     }
 
+    // Returns diff in minutes
+    public diff(time: Time) : Number {
+        return Math.abs(this.hours * 60 + this.minutes - time.minutes - time.hours * 60);
+    }
+
     public static fromString(str: string, del: string = '.') {
         const strs = str.split(del);
         return new Time(strs[0], strs[1]);
@@ -33,8 +38,10 @@ class Time {
 
 function getDuration(type: string) : Time {
     switch(type) {
+        case "Lightning talk": return new Time("00", "10");
         case "Short-talk": return new Time("00", "30");
         case "Long-talk": return new Time("01", "00");
+        case "Workshop": return new Time("01", "30");
     }
     return new Time();
 }
