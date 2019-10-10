@@ -4,25 +4,12 @@ import Difficulty from './Difficulty';
 import dynamic from "next/dynamic";
 import Pin from './Pin';
 import React from 'react';
+import { colorFromRoomName } from '../../helpers/colors';
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
   ssr: false
 });
 
-// Should be tweaked to create more "nice" colors
-const colorFromRoomName = roomName => {
-  const str = roomName + roomName + roomName + roomName; // Room names tend to be quite short so we put multiple of them togheter
-  let hash = 0;
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-
-  var c = (hash & 0x00FFFFFF)
-    .toString(16)
-    .toUpperCase();
-
-  return "#" + "00000".substring(0, 6 - c.length) + c;
-}
 
 
 class Talk extends React.Component<any, any> {
@@ -30,26 +17,47 @@ class Talk extends React.Component<any, any> {
     return (
       <div className="talk">
         <div className="header">
+          <div className="time">
+            <div className="wrapper">
+              <img src="../../static/clock.svg" width="24" height="24" />
+            </div>
+            <span className="time-text">
+              <span className="time-text-day">{this.props.day}<br></br></span>
+              {this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}
+            </span>
+          </div>
           <div className="room">
-            <Pin color={colorFromRoomName(this.props.room)}></Pin>
-            Room {this.props.room}
+            <div className="wrapper">
+              <Pin color={colorFromRoomName(this.props.room)}></Pin>
+            </div>
+            <span className="text room-name">
+              Room {this.props.room}
+            </span>
           </div>
           <div className="diff">
-            <Difficulty difficulty={this.props.difficulty}></Difficulty>
-            {this.props.difficulty}
+            <div className="wrapper">
+              <Difficulty difficulty={this.props.difficulty}></Difficulty>
+            </div>
+            <span className="text diff-name">
+              {this.props.difficulty}
+            </span>
           </div>
           <div className="heart">
-            <FavouriteTalkButtonNoSSR talkId={this.props.id} />
+            <FavouriteTalkButtonNoSSR talkId={this.props.id} onClick={this.props.onFavoriteChange} />
           </div>
         </div>
-        <p className="day">{this.props.day}</p>
-        {!this.props.minimal && <p className="time">{this.props.timeStart} - {this.props.timeEnd}</p>}
-        {!this.props.minimal && <p className="type">{this.props.type}</p>}
-        <h1 className="title">{this.props.title}</h1>
-        <p className="speaker">{this.props.speaker}</p>
-        {!this.props.mininal && <p className="info">{this.props.speakerInfo}</p>}
-
-        {this.props.tags && this.props.tags.map(tag => <FilterTag name={tag}></FilterTag>)}
+        <div className="talk-content">
+          <p className="day">{this.props.day}</p>
+          <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}</p>
+          <p className="type-info">{this.props.type}</p>
+          <h1 className="title">{this.props.title}</h1>
+          <p className="speaker">{this.props.speaker}</p>
+          <p className="info">{this.props.speakerInfo}</p>
+          <div className="tags">
+            {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
+          </div>
+          <hr className="seperator" />
+        </div>
       </div>
     );
   }

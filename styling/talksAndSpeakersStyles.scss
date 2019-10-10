@@ -1,56 +1,95 @@
 @import "variables";
+@import "styling";
+
 div.talksAndSpeakers {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-
+  .talks-container {
+    @media screen and (min-width: $break-small) {
+      border: 1px solid black;
+    }
+    margin-bottom: 90px;
+    margin-top: $header-bottom-margin;
+    .title-filter {
+      margin-top: 0px;
+      > .title {
+        margin-top: 0px;
+        font-size: 2.25rem;
+      }
+      .talks-filter {
+        height: 0;
+        margin-left: -10px;
+        float: left;
+        .filter-button {
+          margin-left: -50px;
+          margin-top: -30px;
+        }
+      }
+    }
+  }
+  .talk-container:last-child .talk .seperator {
+    display: none;
+  }
   .talk-container {
-    margin-top: 40px;
-    padding: 0;
-    width: 100%;
-
     .talk {
-      padding: 0px 30px;
-      border-bottom: 1px solid #1D2E46;
       .header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 30px;
-        .room {
-          margin-top: 0;
-          position: relative;
-          span {
-            display: block;
-            float: left;
-          }
+        .room-name,
+        .diff-name,
+        .time-text {
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-left: 16px;
+          height: 100%;
         }
       }
       .day {
-        font-weight: bold;
-        font-size: 12px;
-        margin-bottom: 6px;
+        @extend .hide-large;
       }
+      .type-info {
+        font-size: 0.75rem;
+      }
+
       .time {
-        font-weight: bold;
-        font-size: 12px;
-        margin-bottom: 6px;
+        @extend .hide-small;
+      }
+
+      .time-info {
+        @extend .show-small;
       }
       .title {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: left;
         margin-bottom: 7px;
       }
       .speaker {
-        font-size: 18px;
+        font-size: 1.125rem;
         color: #a0d1ca;
         text-align: left;
         margin-bottom: 20px;
       }
       .info {
-        font-size: 16px;
+        font-size: 1rem;
         margin-bottom: 30px;
+      }
+      .seperator {
+        // Not the prettiest way.. overflow is hidden so it works..
+        @media screen and (max-width: $break-small) {
+          margin-left: -100vw;
+          width: 200vw;
+        }
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+      .time,
+      .room,
+      .diff {
+        @extend .flex-row;
+      }
+      .filter-tag {
+        font-size: 0.875rem;
       }
     }
   }

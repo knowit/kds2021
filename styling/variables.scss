@@ -1,13 +1,40 @@
-$break-small: 650px;
-$break-large: 1200px;
+$break-small: 742px;
+$break-large: 1350px;
+$break-schedule: 1086px;
 
-$primary-color: #28334a;
-$button-color: #e4e2db;
-$secondary-color: #75787b;
+$header-height: 100px;
+$min-header-height: 44px;
+$header-bottom-margin: 50px;
+
+$primary-color: #1d2e46;
+$secondary-color: #A0D1CA;
+
+$dark-bg-color: #F6F6F6;
+$darker-bg-color: #D6D6D6;
+$grey-bg-color: #75787b;
+$light-grey-bg-color: #CFD0D3;
+
+$button-color: $secondary-color;
+$toggle-button-color: $grey-bg-color; 
+$header-text-color: $grey-bg-color;
 $link-color: #009681;
 $hover-color: #e4e2db;
 $font-family: "Raleway";
+$border-color: $primary-color;
+$text-color: $primary-color;
 
+$event-header-green-color: $secondary-color;
+$event-header-purple-color: #b6b8dc;
 
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+$document-padding-vertical: 50px;
+$document-padding-vertical-small: 0px;
+$document-padding-horizontal: 90px;
+$document-padding-horizontal-small: 30px;
+
+$diff-color-empty: $light-grey-bg-color; 
+$diff-color-filled: $primary-color;
+
+$only-favorites-bg-color: $light-grey-bg-color;
+$only-favorites-on-bg-color: $secondary-color;
+
+$filter-dropdown-size: 580px;

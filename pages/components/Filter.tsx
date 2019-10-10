@@ -2,24 +2,26 @@ import "../../styling/filterStyles.scss";
 import React from 'react';
 import Program from '../../models/data.json';
 import FilterTag from './FilterTag';
+import ShowOnlyFavoritesbutton from './ShowOnlyFavoritesButton';
 
 interface IState {
     open: boolean
-    selectedTags: string[]
-    nonSelectedTags: string[]
 }
 
 interface IProps {
-    onChange: (tags: string[]) => void
+    onTagChange: (tags: string[]) => void
+    onFavoriteChange: (val: boolean) => void
+    selectedTags: string[]
+    showOnlyFavorites: boolean
+    className?: string,
+    type?: 'dropdown' | 'slide-left'
 }
 
-class Filter extends React.Component<any, IState> {
+class Filter extends React.Component<IProps, IState> {
     constructor(props) {
         super(props);
         this.state = {
-            open: false,
-            selectedTags: [],
-            nonSelectedTags: Program.program.tags
+            open: false
         }
     }
 
@@ -30,36 +32,38 @@ class Filter extends React.Component<any, IState> {
     }
 
     addTag(tag) {
-        this.setState((prev) => ({
-            nonSelectedTags: prev.nonSelectedTags.filter(t => t != tag),
-            selectedTags: prev.selectedTags.concat([tag])
-        }), () => this.props.onChange(this.state.selectedTags));
+        this.props.onTagChange(this.props.selectedTags.concat([tag]));
     }
 
     removeTag(tag) {
-        this.setState((prev) => ({
-            nonSelectedTags: prev.nonSelectedTags.concat([tag]),
-            selectedTags: prev.selectedTags.filter(t => t != tag)
-        }), () => this.props.onChange(this.state.selectedTags));
+        this.props.onTagChange(this.props.selectedTags.filter(t => t != tag));
     }
 
     render() {
         return (
-            <div>
-                <div className={`filterButton ${this.state.open ? 'open' : ''}`} onClick={() => this.toggle()}>
-                    <span className="top" />
-                    <span className="middle" />
-                    <span className="bottom" />
+            <div className={`filter-container ${this.props.className} ${this.props.type || 'slide-left'}`}>
+                <div className={`filter-button ${this.state.open ? 'open' : ''}`} onClick={() => this.toggle()}>
+                    <div className="filter-button-container">
+                        <span className="top" />
+                        <span className="middle" />
+                        <span className="bottom" />
+                    </div>
                 </div>
                 <div className={`filter ${this.state.open ? 'open' : ''}`}>
-                    <h1>Filter by tag</h1>
+                    <img src='../static/close-24px.svg' className="close" onClick={() => this.toggle()}></img>
+                    <h1 className="header">Filter by tag</h1>
+                    <div className="favorite">
+                        <p className="subheader">Show only favorites: </p>
+                        <ShowOnlyFavoritesbutton showOnlyFavorites={this.props.showOnlyFavorites} onClick={() => this.props.onFavoriteChange(!this.props.showOnlyFavorites)}></ShowOnlyFavoritesbutton>
+                    </div>
+
                     <div className="active">
-                        <p>Active filters:</p>
-                        {this.state.selectedTags.map(tag => <FilterTag name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
+                        <p className="subheader">Active filters:</p>
+                        {this.props.selectedTags && this.props.selectedTags.map(tag => <FilterTag key={tag} name={tag} selected={true} onClick={() => this.removeTag(tag)}></FilterTag>)}
                     </div>
                     <div className="nonActive">
-                        <p>Click to select filters</p>
-                        {this.state.nonSelectedTags.map(tag => <FilterTag name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
+                        <p className="subheader">Click to select filters</p>
+                        {Program.program.tags.concat(Program.program.languages).filter(tag => this.props.selectedTags && !this.props.selectedTags.some(t => t == tag)).map(tag => <FilterTag key={tag} name={tag} onClick={() => this.addTag(tag)}></FilterTag>)}
                     </div>
                 </div>
             </div>);

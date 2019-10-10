@@ -30,7 +30,7 @@
 
   .menuHeader {
     margin-top: 32px;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 100;
   }
 
@@ -38,7 +38,7 @@
     color: $primary-color;
     text-decoration: none;
     padding: 1em 1em 1em 1em;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-left: 40px;
     font-weight: bold;
 
@@ -74,7 +74,7 @@
     margin-bottom: 5px;
     position: relative;
 
-    color: $secondary-color;
+    color: $text-color;
     background: currentColor;
     border-radius: 3px;
 
@@ -131,10 +131,10 @@
   text-align: center;
   width: 100%;
   padding: 15px 0px;
-  background-color: #a0d1ca;
-  color: black;
+  background-color: $button-color;
+  color: $text-color;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   white-space: nowrap;
   font-weight: bold;
   z-index: 2;
@@ -153,5 +153,5 @@ div.callForPresentations div#menu a.callForPresentations,
 div.aboutUs div#menu a.aboutUs,
 div.location div#menu a.location,
 div.codeOfConduct div#menu a.codeOfConduct {
-  color: $link-color;
+  color: $text-color;
 }

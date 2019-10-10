@@ -7,7 +7,7 @@ export default function Location() {
     <div className="location page">
       <Layout header={<RegisterButton></RegisterButton>}>
         <div className="map-container">
-          <h1>Location</h1>
+          <h1 className="title">Location</h1>
           <Map />
         </div>
       </Layout>

@@ -1,20 +1,34 @@
 import "../../styling/headerStyles.scss";
 import "../../styling/styling.scss";
+import Head from 'next/head';
 import Menu from "./Menu";
 import Filter from "./Filter";
 import Link from "next/link";
 import React from 'react';
 
+interface IProps {
+  hideLogo?: 'small' | 'large' | boolean
+  header?: any
+  filter?: 'small' | 'large' | boolean
+  onTagChange?: (tags: string[]) => void
+  onFavoriteChange?: (val: boolean) => void
+  selectedTags?: string[]
+  showOnlyFavorites?: boolean
+  background?: boolean
+  title?: string
+}
 
-
-class Layout extends React.Component<any, any> {
+class Layout extends React.Component<IProps, any> {
   render() {
     return (
       <div className="layout">
+        <Head>
+          <title>{this.props.title || 'Knowit Developer Summit'}</title>
+        </Head>
         <div className="menuAndHeader">
           <div className="header">
-            {!this.props.hideLogo && (<Link href="/">
-              <img id="KDSlogo" src="../static/KDSsymbol.svg" />
+            {this.props.hideLogo !== true && (<Link href="/">
+              <img id="KDSlogo" className={this.props.hideLogo ? `hide-${this.props.hideLogo}` : ''} src="../static/KDSsymbol.svg" />
             </Link>)}
             <div id="KDSheader">
               <h2 className="headline">
@@ -27,7 +41,9 @@ class Layout extends React.Component<any, any> {
               {this.props.header}
             </div>
           </div>
-          {this.props.filter && <Filter onChange={this.props.onFilterChange} />}
+          <div className="filter-pos">
+            {this.props.filter && <Filter onTagChange={this.props.onTagChange} onFavoriteChange={this.props.onFavoriteChange} showOnlyFavorites={this.props.showOnlyFavorites} selectedTags={this.props.selectedTags} className={typeof this.props.filter === 'string' ? `show-${this.props.filter}` : ''}/>}
+          </div>
 
           <Menu />
         </div>

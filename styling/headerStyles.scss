@@ -1,7 +1,9 @@
 @import "variables";
 
 .layout {
+  min-height: 100%;
   height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -9,60 +11,61 @@
 .layout .content {
   flex-grow: 1;
 }
+.menuAndHeader {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family;
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: $font-family;
-
-  @media screen and (max-width: $break-small) {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  #KDSlogo {
-    width: 10em;
-    margin-right: 5%;
     @media screen and (max-width: $break-small) {
-      width: 5em;
-      margin-right: 1em;
+      flex-direction: column;
+      width: 100%;
     }
-  }
-  .headline {
-    float: right;
-    margin-bottom: 0.5em;
-    font-weight: normal;
-    @media screen and (max-width: $break-small) {
+
+    #KDSlogo {
+      width: 10em;
+      margin-right: 5%;
+      @media screen and (max-width: $break-small) {
+        width: 44px;
+        margin-right: 1em;
+      }
+    }
+    .headline {
       float: right;
-      font-size: 1.1em;
+      margin-bottom: 0.5em;
+      font-weight: normal;
+      @media screen and (max-width: $break-small) {
+        float: right;
+        font-size: 1.1em;
+      }
     }
-  }
-  .header-location {
-    margin: 0em;
-    font-size: 1em;
-    font-weight: normal;
-    color: #75787b;
-    @media screen and (max-width: $break-small) {
+    .header-location {
+      margin: 0em;
+      font-size: 1em;
+      font-weight: normal;
+      color: $header-text-color;
+      @media screen and (max-width: $break-small) {
+        font-size: 0.8em;
+      }
+
+      #location-img {
+        width: 1em;
+        margin-right: 0.5em;
+      }
+    }
+
+    .header-subheadline {
+      margin-top: 0em;
       font-size: 0.8em;
-    }
-
-    #location-img {
-      width: 1em;
-      margin-right: 0.5em;
-    }
-  }
-
-  .header-subheadline {
-    margin-top: 0em;
-    font-size: 0.8em;
-    font-weight: normal;
-    .subheadline-link {
-      text-decoration: none;
-      color: $link-color;
-    }
-    @media screen and (max-width: $break-small) {
-      font-size: 0.7em;
+      font-weight: normal;
+      .subheadline-link {
+        text-decoration: none;
+        color: $link-color;
+      }
+      @media screen and (max-width: $break-small) {
+        font-size: 0.7em;
+      }
     }
   }
 
@@ -74,10 +77,16 @@
 }
 
 .menuAndHeader {
-  height: 100px;
+  min-height: $min-header-height;
   @media screen and (max-width: $break-small) {
+    margin-top: 30px;
     display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
+    align-items: center;
   }
+}
+
+.filter-pos {
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }

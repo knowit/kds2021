@@ -1,19 +1,22 @@
 @import "variables";
 
 .location {
-  h1 {
-    font-size: 24px;
-    text-align: center;
-
-    margin-top: 90px;
+  
+  .title {
+    margin-top: $header-bottom-margin;
     @media screen and (max-width: $break-small) {
       margin-top: 40px;
     }
   }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .map-container {
-  height: 100%;
+  flex-grow: 1;
+  width: 100vw;
   display: flex;
   flex-direction: column;
 }
