@@ -48,8 +48,15 @@ class Talk extends React.Component<any, any> {
         </div>
         <div className="talk-content">
           <p className="day">{this.props.day}</p>
-          <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()} ({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)</p>
-          <p className="type-info">{this.props.type}</p>
+          <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}
+            <span className="duration">
+              &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
+            </span>
+          </p>
+          <p className="type-info">{this.props.type}
+            <span className="duration">
+              &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
+            </span></p>
           <h1 className="title">{this.props.title}</h1>
           <p className="speaker">{this.props.speaker}</p>
           <p className="info">{this.props.speakerInfo}</p>

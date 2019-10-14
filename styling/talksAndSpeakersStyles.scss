@@ -45,9 +45,14 @@ div.talksAndSpeakers {
         }
       }
       .day {
-        @extend .hide-large;
+        font-weight: bold;
+        font-size: 0.75rem;
+        margin-bottom: 0px;
+        @extend .show-small;
       }
       .type-info {
+        margin-top: 6px;
+        margin-bottom: 0px;
         font-size: 0.75rem;
       }
 
@@ -56,9 +61,17 @@ div.talksAndSpeakers {
       }
 
       .time-info {
+        margin-top: 6px;
+        margin-bottom: 0px;
+        font-size: 0.75rem;
+        font-weight: bold;
         @extend .show-small;
+        .duration {
+          display: none;
+        }
       }
       .title {
+        margin-top: 6px;
         font-size: 1.5rem;
         font-weight: bold;
         text-align: left;
