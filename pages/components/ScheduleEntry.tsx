@@ -19,18 +19,19 @@ class ScheduleEntry extends Component<IProps, any> {
 
   createRoom(room, index: number) {
     let from = Time.fromString(this.props.slot.timeStart);
+    let trackIndex = 0;
     const talks = room.talks
-      .map((talk, i) => talk.speakers
+      .map((talk) => talk.speakers
         .map(speaker => {
           const to = from.copy().add(getDuration(talk.type));
 
 
           const style = { // For ie support, ie support is far from good.. but this makes i maybe useable
-            msGridRow: i + 2,
+            msGridRow: trackIndex + 2,
             msGridColumn: index + 1
           };
 
-          const talkEl = (<div className={`talk-container ${i % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={i} style={style as CSSProperties}>
+          const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={trackIndex} style={style as CSSProperties}>
             <Talk title={talk.title}
               speaker={speaker.name}
               room={room.name}
@@ -38,7 +39,7 @@ class ScheduleEntry extends Component<IProps, any> {
               language={talk.language}
               difficulty={talk.difficulty}
               id={talk.talkId}
-              key={i}
+              key={trackIndex}
               day={this.props.day}
               tags={talk.tags}
               timeStart={from}
@@ -49,12 +50,18 @@ class ScheduleEntry extends Component<IProps, any> {
 
           from = to;
 
+          if (!talk.hide) {
+            trackIndex++;
+          }
+
           return !talk.hide ? talkEl : '';
         }
         ));
 
-    for (let i = 0; i < this.props.trackLength - room.talks.filter(talk => !talk.hide).length; i++) {
-      const talkIndex = room.talks.length + i;
+
+    const numHidden = room.talks.filter(talk => !talk.hide).length;
+    for (let i = 0; i < this.props.trackLength - numHidden; i++) {
+      const talkIndex = trackIndex + i;
       talks.push(<div className={`talk-container empty ${talkIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={i}></div>);
     }
 
@@ -75,8 +82,8 @@ class ScheduleEntry extends Component<IProps, any> {
       // Need to update dimensions of the grid
       const style = {
         gridTemplateColumns: `repeat(${this.props.slot.rooms && this.props.slot.rooms.length}, 1fr)`,
-        gridTemplateRows: `60px repeat(${this.props.trackLength}, 1fr)`,
-        msGridRows: `60px (1fr) [${this.props.trackLength}]`,
+        gridTemplateRows: `60px ${this.props.trackLength > 0 ? `repeat(${this.props.trackLength}, 1fr)` : ''}`,
+        msGridRows: `60px  ${this.props.trackLength > 0 ? `(1fr)[${this.props.trackLength}]` : ''}`,
         msGridColumns: `(1fr) [${this.props.slot.rooms && this.props.slot.rooms.length}]`
       };
 
