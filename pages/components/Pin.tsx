@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styling/pinStyles.scss';
 
 class Pin extends React.Component<any, any> {
     render() {
