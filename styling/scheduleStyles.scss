@@ -1,190 +1,344 @@
 @import "variables";
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
-#filter-button {
-  background-color: Transparent;
-  font-family: $font-family;
-  font-size: 1em;
-  width: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em;
+@import "styling";
 
-  @media screen and (max-width: $break-large) {
-    width: 10em;
-  }
-}
+.schedule {
+  .schedule-document {
+    width: $break-schedule;
 
-#tag-button {
-  height: 4em;
-  border: none;
-  background-color: Transparent;
-  font-family: $font-family;
-  font-size: 1em;
-  width: 100%;
-
-  :hover {
-    background-color: $hover-color;
-  }
-}
-
-#filter-dropdown {
-  width: 15%;
-}
-div.schedule {
-  .talk-slot {
-    @media screen and (min-width: $break-large) {
-      display: flex;
-      width: 70%;
-      margin-left: auto;
-      margin-right: auto;
-      justify-content: space-evenly;
-    }
-    @media screen and (max-width: $break-large) {
-      display: block;
-    }
-  }
-}
-#favourite-talk-button {
-  background-color: Transparent;
-  border: none;
-}
-.talk-container {
-  background-color: $button-color;
-  width: 20%;
-
-  @media screen and (max-width: $break-large) {
-    width: 85%;
-    margin: 1em;
-    margin-left: auto;
+    margin-left: auto; // Only needed for ie supprot
     margin-right: auto;
-    padding: 0.3em;
+
+    @media screen and (max-width: $break-schedule) {
+      width: 100vw;
+    }
   }
 
-  #title {
-    font-size: 1.5em;
-    margin-bottom: 0px;
-    margin-left: 1em;
-  }
- 
-  .room-header {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    background-color: $link-color;
-    color: white;
+  .day-selector-top {
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    left: 0px;
     width: 100%;
-    display: block;
-    span {
-      padding: 5px;
-    }
-  }
-
-  #{$a-tags} {
-    color: $primary-color;
-    text-decoration: none;
-  }
-  #{$a-tags-hover} {
-    color: $link-color;
-    transition: 0.2s linear color;
-  }
-  
-
-  #speaker {
-    margin-top: 0.5em;
-    margin-left: 1.5em;
-  }
-
-  .talk-info {
-    margin-left: 1.5em;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    .info-entry {
-      margin-right: 2em;
-    }
-
-    #tag-list {
+    @media screen and (min-width: $break-small) {
       display: none;
     }
+    text-align: center;
+    .header-day {
+      font-size: 1rem;
+    }
+    .header-day.selected {
+      font-weight: bold;
+    }
+  }
+  .slot:nth-child(odd) .event-header {
+    background-color: $event-header-green-color;
+  }
+  .slot:nth-child(even) .event-header {
+    background-color: $event-header-purple-color;
+  }
+
+  .event-header {
+    width: 100%;
+    height: 40px;
+    .type {
+      float: left;
+      margin-left: 30px;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .time {
+      float: right;
+      margin-right: 30px;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
   }
 }
 
-#event-header {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 3em;
-
-  @media screen and (max-width: $break-small) {
-    font-size: 2em;
-  }
-}
-
-.speaker-page {
-  display: none;
-}
-
-.day-button {
-  border: none;
-  background-color: $button-color;
-  font-family: $font-family;
-  display: flex;
-  justify-content: space-between;
+div.schedule {
   width: 100%;
-  align-items: center;
-  padding: 2em;
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0;
+  margin: 0;
+  .schedule-container {
+    background-color: white;
+    margin-bottom: 90px;
+    margin-top: $header-bottom-margin;
+    @media screen and (min-width: $break-schedule) {
+      border: 1px solid $border-color;
+    }
+    @media screen and (min-width: $break-small) {
+      border-top: 1px solid $border-color;
+    }
 
-  @media screen and (max-width: $break-small) {
-    font-size: 0.7em;
-    padding: 1.3em;
+    > .header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+      .schedule-filter {
+        height: 0;
+        float: left;
+      }
+      .header-title {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        justify-items: center;
+        align-items: center;
+      }
+      .title {
+        margin-bottom: 16px;
+      }
+      .day-selector-header {
+        word-spacing: 12px;
+        .seperator {
+          font-size: 1.5rem;
+        }
+        .header-day {
+          cursor: pointer;
+          font-size: 1.125rem;
+        }
+        .header-day.selected {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .rooms {
+    @media screen and (min-width: $break-schedule) {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+    }
+
+    .talk {
+      padding: 24px 30px;
+      .tags {
+        .filter-tag {
+          padding: 3px 5px;
+          span {
+            font-size: 0.625rem;
+          }
+        }
+      }
+      .title {
+        max-width: 90%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 8px;
+      }
+      .speaker {
+        font-size: 0.875rem;
+        color: $secondary-color;
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 24px;
+      }
+
+      .time {
+        display: none;
+        img {
+          margin: auto;
+        }
+      }
+
+      .type-info {
+        display: none;
+      }
+
+      .time,
+      .room,
+      .time,
+      .heart {
+        @extend .flex-col;
+        .time-text-day {
+          display: none;
+        }
+        > .wrapper {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-grow: 1;
+        }
+      }
+
+      .day {
+        display: none;
+      }
+      p.info {
+        display: none;
+      }
+      p.time-info {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .rooms {
+    .talk-container {
+      border-bottom: none;
+      .talk {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @media screen and (max-width: $break-schedule) {
+          border-bottom: 1px solid $border-color;
+        }
+        .talk-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .speaker {
+            font-size: 1.125rem;
+          }
+          .title {
+            display: inline-block;
+            margin-left: 0px;
+          }
+        }
+        .seperator {
+          display: none;
+        }
+        .header {
+          margin-left: 60px; // Stop title from getting to close
+          order: 1;
+          height: 220px; // Cant get this to use full height...
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .time-text,
+          .room-name,
+          .diff-name {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
   }
 
-  .right-arrow {
-    .baseline-chevron {
-      width: 3em;
+  .rooms.single-track {
+    @media screen and (min-width: $break-schedule) {
+      .talk-container:nth-child(even) .talk {
+        background-color: $dark-bg-color;
+      }
+    }
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rooms.multi-track {
+    @media screen and (min-width: $break-schedule) {
+      display: -ms-grid;
+      display: grid;
+      grid-auto-flow: column;
+
+      .room-even {
+        background-color: $darker-bg-color;
+      }
+      .room-odd {
+        background-color: $dark-bg-color;
+      }
+      .room-even.talk-even {
+        background-color: $dark-bg-color;
+      }
+      .room-odd.talk-even {
+        background-color: white;
+      }
+      .room-odd.talk-odd {
+        background-color: $dark-bg-color;
+      }
+
+      .talk {
+        height: calc(100% - 40px); // 100% - padding top and padding bottom
+        padding: 24px 10px 12px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .seperator {
+          display: none;
+        }
+        .diff-name {
+          display: none;
+        }
+        .header {
+          height: fit-content;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          margin-left: 0px;
+          .time-text,
+          .room-name,
+          .diff-name {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .room {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
 
-.schedule-container {
-  width: 60%;
-  margin: auto;
-  @media screen and (max-width: $break-small) {
-    width: 100%;
+.room-header {
+  @media screen and (max-width: $break-schedule) {
+    display: none;
+  }
+  border-left: 0px solid transparent;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 0px;
+  > * {
+    display: inline-block;
+  }
+  .room-header-text {
+    margin-left: 15px;
   }
 }
 
-.filter-tag {
-  @media screen and (max-width: $break-small) {
-    display: block;
-    width: 100%;
+@mixin colored-pin($color) {
+  .top {
+    border-color: $color;
   }
-  margin-left: 10px;
-  button {
-    font-size: 120%;
-    font-weight: 200;
-    cursor: pointer;
-    background: none;
-    border: none;
+  .bottom {
+    border-top-color: $color;
   }
 }
 
-.only-favorites-button {
-  display: block;
-  float: right;
-  input {
-    width: 17px;
-    height: 17px;
-  }
+// Have to use .pin.small.room-... to override pin.smalls default color
+.pin.room-header-green {
+  @include colored-pin($event-header-green-color);
 }
-
-#arrow-right {
-  :hover {
-    .baseline-chevron {
-      transform: rotate(90deg);
-    }
-  }
+.pin.small.room-header-green {
+  @include colored-pin($event-header-green-color);
+}
+.pin.room-header-purple {
+  @include colored-pin($event-header-purple-color);
+}
+.pin.small.room-header-purple {
+  @include colored-pin($event-header-purple-color);
+}
+.pin.room-header-red {
+  @include colored-pin($event-header-red-color);
+}
+.pin.small.room-header-red {
+  @include colored-pin($event-header-red-color);
+}
+.pin.room-header-yellow {
+  @include colored-pin($event-header-yellow-color);
+}
+.pin.small.room-header-yellow {
+  @include colored-pin($event-header-yellow-color);
 }

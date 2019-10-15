@@ -1,122 +1,138 @@
-import Layout from "./components/Layout";
 import "../styling/scheduleStyles.scss";
+import Layout from "./components/Layout";
 import Day from "./components/Day";
-import FilterButton from "./components/FilterButton";
-import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
-import Loader from "./components/Loader";
-import FirestoreHandler from '../helpers/firestoreHandler';
-import React from 'react';
-import _ from 'lodash';
+import { Component } from "react";
+import { program as Program } from "../models/data.json";
+import RegisterButton from "./components/RegisterButton";
+import Filter from './components/Filter';
 import ProgramUtils from '../helpers/programUtils';
-import Router from "next/router";
+import Router from 'next/router';
 
-class Schedule extends React.Component<any, any> {
-    constructor(props) {
-        super(props);
-        this.state = {
-            program: {
-                days: []
-            },
-            filteredProgram: {
-                days: []
-            },
-            tags: [],
-            selectedTags: [],
-            showOnlyFavorites: false,
-            loading: true
-        }
+class Schedule extends Component<any, any> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      program: {
+        days: []
+      },
+      loading: true,
+      showOnlyFavorites: false,
+      tags: [],
+      currentDayIndex: 0
+    };
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.handleFavoriteChange = this.handleFavoriteChange.bind(this);
+  }
+
+  async componentDidMount() {
+    const program = await ProgramUtils.loadProgram('test');
+
+    let selectedTags = Router.query.tags || [];
+    if (selectedTags && !Array.isArray(selectedTags)) {
+      selectedTags = [Router.query.tags as string];
     }
 
-    async componentDidMount() {
-        const program = await ProgramUtils.loadProgram('test');
+    this.setState({
+      program: program,
+      tags: selectedTags,
+      loading: false
+    })
+  }
 
-        console.log(program);
+  getRooms(day) {
+    const roomDict = {};
 
-        const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
+    const rooms = day.slots.reduce((acc, slot) => acc.concat(slot.rooms), []);
+    rooms.forEach(room => {
+      if (room) {
+        roomDict[room.name] = true;
+      }
+    });
+    return Object.keys(roomDict);
+  }
 
-        let selectedTags = Router.query.tags || [];
-        if (selectedTags && !Array.isArray(selectedTags)) {
-            selectedTags = [Router.query.tags as string];
-        }
+  handleFilterChange(newVal) {
+    this.setState({ tags: newVal }, this.filterProgram);
+  }
+  handleFavoriteChange(newVal) {
+    this.setState({ showOnlyFavorites: newVal }, this.filterProgram);
+  }
 
-        this.setState({
-            program: program,
-            filteredProgram: program,
-            tags: tags,
-            loading: false,
-            showOnlyFavorites: Router.query.onlyFavorites == 'true',
-            selectedTags: selectedTags
-        }, this.filter);
-    }
+  handleToggleTag(tag) {
+    this.setState((prev) => {
+      if (prev.tags.indexOf(tag) > -1) {
+        return { tags: prev.tags.filter(t => t != tag) };
+      }
+      return { tags: prev.tags.concat(tag) };
 
-    updateQuery() {
-        Router.replace({
-            pathname: Router.route,
-            query: {
-                onlyFavorites: this.state.showOnlyFavorites,
-                tags: this.state.selectedTags
-            }
-        });
-    }
+    }, this.filterProgram);
+  }
 
-    handleFavoriteChange(val) {
-        this.setState({
-            showOnlyFavorites: val
-        }, () => {
-            this.updateQuery()
-            this.filter();
-        });
-    }
+  filterProgram() {
+    ProgramUtils.filterProgram(this.state.program, (talk) => {
+      console.log(talk);
+      if (this.state.showOnlyFavorites && !localStorage.getItem(talk._id)) {
+        return false;
+      }
+      if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
+        return false;
+      }
+      return true;
+    });
 
-    handleFilterChange(val) {
-        this.setState({
-            selectedTags: val
-        }, () => {
-            this.updateQuery()
-            this.filter();
-        });
-    }
+    this.setState({
+      program: this.state.program
+    })
+  }
 
-    filter() {
-        const filteredProgram = _.cloneDeep(this.state.program);
+  setDay(index) {
+    this.setState({
+      currentDayIndex: index
+    });
+  }
 
-        ProgramUtils.filterProgram(filteredProgram, (talk) => {
-            if (this.state.showOnlyFavorites && !localStorage.getItem(talk._id)) {
-                return false;
-            }
-            if (this.state.selectedTags.length > 0 && !talk.tags.some(tag => this.state.selectedTags.includes(tag))) {
-                return false;
-            }
-            return true;
-        });
-
-        this.setState({
-            filteredProgram: filteredProgram
-        })
-
-    }
-
-    render() {
-        return (
-            <div className="schedule">
-                <Layout>
-                    <Loader loading={this.state.loading}>
-
-                        <h1>Schedule</h1>
-                        <div className="schedule-container">
-                            <div>
-                                <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)} value={this.state.showOnlyFavorites}></ShowOnlyFavoritesButton>
-                                <FilterButton tags={this.state.tags} value={this.state.selectedTags} handleChange={this.handleFilterChange.bind(this)} />
-                            </div>
-                            {this.state.filteredProgram.days.map((day, i) =>
-                                <Day key={i} currDay={day} onChange={() => this.filter()} />
-                            )}
-                        </div>
-                    </Loader>
-                </Layout>
+  render() {
+    return (
+      <div className="schedule page">
+        <Layout title="Schedule" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
+          <div className="schedule-document negative-margin">
+            <div className="day-selector-top">
+              {this.state.program.days.map((day, i) =>
+                <span key={day.day}>
+                  {i != 0 && <span> | </span>}
+                  <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
+                    {day.day.getDay()}
+                  </span>
+                </span>)}
             </div>
-        );
-    }
+            <div className="schedule-container">
+              <div className="header">
+                <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"></Filter>
+
+                <div className="header-title">
+                  <h1 className="title">Schedule</h1>
+                  <div className="day-selector-header">
+                    {this.state.program.days.map((day, i) =>
+                      <span key={day.day.getDay()}>
+                        {i != 0 && <span className="seperator"> | </span>}
+                        <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
+                          {day.day.getDay()}
+                        </span>
+                      </span>)}
+                  </div>
+                </div>
+              </div>
+
+              {this.state.program.days.length > 0 && <Day onToggleTag={(val) => this.handleToggleTag(val)}
+                tags={this.state.tags}
+                currDay={this.state.program.days[this.state.currentDayIndex]}
+                slots={this.state.program.days[this.state.currentDayIndex] && this.state.program.days[this.state.currentDayIndex].timeslots} />}
+            </div>
+          </div>
+        </Layout>
+      </div>
+    );
+  }
 }
 
 export default Schedule

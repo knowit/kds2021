@@ -1,100 +1,33 @@
 import Layout from "./components/Layout";
-import TalkView from "./components/Talk";
-import FilterButton from "./components/FilterButton";
+import Talk from "./components/Talk";
 import "../styling/talksAndSpeakersStyles.scss";
 import Loader from "./components/Loader";
 import React from "react";
-import dynamic from "next/dynamic"
-import ShowOnlyFavoritesButton from "./components/ShowOnlyFavoritesButton";
-import Router from "next/router";
+import { program as Program } from "../models/data.json";
+import { Time, getDuration } from "../helpers/time";
+import RegisterButton from "./components/RegisterButton";
+import Filter from './components/Filter';
+import ProgramUtils from '../helpers/programUtils';
 import FirestoreHandler from '../helpers/firestoreHandler';
-import VoteButton from './components/VoteButton';
+import Router from 'next/router';
 
-interface IState {
-  talks: Array<any>,
-  filteredTalks: Array<any>,
-  tags: Array<string>,
-  selectedTags: Array<string>,
-  showOnlyFavorites: boolean,
-  loading: boolean
-}
-
-const FavouriteTalkButtonNoSSR = dynamic(() => import("./components/FavouriteTalkButton"), {
-  ssr: false
-});
-
-class TalksAndSpeakers extends React.Component<any, IState> {
+class TalksAndSpeakers extends React.Component<any, any> {
   constructor(props) {
     super(props);
-
     this.state = {
-      talks: [],
-      filteredTalks: [],
+      program: {
+        days: []
+      },
+      loading: true,
       showOnlyFavorites: false,
-      tags: [],
-      selectedTags: [],
-      loading: true
+      tags: []
     }
-  }
-
-  updateQuery() {
-    Router.replace({
-      pathname: Router.route,
-      query: {
-        onlyFavorites: this.state.showOnlyFavorites,
-        tags: this.state.selectedTags
-      }
-    });
-  }
-
-
-  handleFavoriteChange(val) {
-    this.setState({
-      showOnlyFavorites: val
-    }, () => {
-      this.updateQuery()
-      this.filter();
-    });
-  }
-
-  handleFilterChange(val) {
-    this.setState({
-      selectedTags: val
-    }, () => {
-      this.updateQuery()
-      this.filter();
-    });
-
-  }
-
-  filter() {
-    this.setState({
-      filteredTalks: this.state.talks.filter(talk => {
-        if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
-          return false;
-        }
-        const tags = talk.tags.concat(talk.language);
-        if (this.state.selectedTags.length > 0 && !tags.some(tag => this.state.selectedTags.includes(tag))) {
-          return false;
-        }
-
-        return true;
-      })
-    });
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.handleFavoriteChange = this.handleFavoriteChange.bind(this);
   }
 
   async componentDidMount() {
-    let talks = await FirestoreHandler.getAll('talks');
-
-    // Update speaker to its data instead of ref, can drop this if data is stored instead of id, this will duplicate data tho..
-    for (let i = 0; i < talks.length; i++) {
-      talks[i].speaker = await FirestoreHandler.get('users', talks[i].speaker);
-      for (let j = 0; j < talks[i].cospeakers.length; j++) {
-        talks[i].cospeakers[j] = await FirestoreHandler.get('users', talks[i].cospeakers[j]);
-      }
-    }
-
-    const tags = (await FirestoreHandler.getAll('tags')).map(tag => tag.name);
+    const program = await ProgramUtils.loadProgram('test');
 
     let selectedTags = Router.query.tags || [];
     if (selectedTags && !Array.isArray(selectedTags)) {
@@ -102,41 +35,95 @@ class TalksAndSpeakers extends React.Component<any, IState> {
     }
 
     this.setState({
-      talks: talks,
-      tags: tags,
-      selectedTags: selectedTags as string[],
-      showOnlyFavorites: Router.query.onlyFavorites == 'true',
+      program: program,
+      tags: selectedTags,
       loading: false
-    }, this.filter);
+    })
+  }
+
+  handleFilterChange(newVal) {
+    this.setState({ tags: newVal }, this.filterProgram);
+  }
+  handleFavoriteChange(newVal) {
+    this.setState({ showOnlyFavorites: newVal }, this.filterProgram);
+  }
+
+  handleToggleTag(tag) {
+    this.setState((prev) => {
+      if (prev.tags.indexOf(tag) > -1) {
+        return { tags: prev.tags.filter(t => t != tag) };
+      }
+      return { tags: prev.tags.concat(tag) };
+
+    }, this.filterProgram);
+  }
+
+  filterProgram() {
+    ProgramUtils.filterProgram(this.state.program, (talk) => {
+      if (this.state.showOnlyFavorites && !localStorage.getItem(talk._id)) {
+        return false;
+      }
+      if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
+        return false;
+      }
+      return true;
+    });
+
+    this.setState({
+      program: this.state.program
+    })
   }
 
   render() {
-    return (<div className="talksAndSpeakers">
-      <Layout>
-        <Loader loading={this.state.loading}>¨
-        <h1> Talks and speakers</h1>
-          <div className="schedule-container">
-            <div className="schedule-filter">
-              <ShowOnlyFavoritesButton handleChange={this.handleFavoriteChange.bind(this)}></ShowOnlyFavoritesButton>
-              <FilterButton value={this.state.selectedTags} tags={this.state.tags} handleChange={this.handleFilterChange.bind(this)} />
-            </div>
-            <div className="talks">
-              {this.state.filteredTalks.map(talk =>
-                <div key={talk._id}>
-                  <div>
-                    <div className="talk-container">
-                      <TalkView
-                        talk={talk}
-                      >
-                      </TalkView>
-                      <FavouriteTalkButtonNoSSR onChange={() => this.filter()} talkId={talk.id} />
-                      {/*<VoteButton talkId={talk._id} currentFavoriteId={talk._id} onChange={(a) => console.log(a)}></VoteButton>*/}
-                    </div>
-                  </div>
-                </div>)}
-            </div>
+    return (<div className="talksAndSpeakers page">
+      <Layout title="Talks & Speakers" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} header={<RegisterButton></RegisterButton>} background={true}>
+        <div className="talks-container document">
+
+          <div className="title-filter">
+            <Filter onFavoriteChange={this.handleFavoriteChange} onTagChange={this.handleFilterChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small talks-filter" type="dropdown"></Filter>
+            <h1 className="title"> Talks & speakers</h1>
           </div>
-        </Loader>
+
+          <div className="talks">
+            {this.state.program.days
+              .map(day => day.timeslots
+                .filter(function (slot) {
+                  return slot.rooms !== undefined
+                })
+                .map(slot => slot.rooms
+                  .map(room => {
+
+                    //let from = Time.fromString(slot.timeStart);
+                    return room.talks
+                      .map((talk, i) => {
+                        //const to = from.copy().add(getDuration(talk.type));
+                        const talkEl = (<div className="talk-container" key={i}>
+                          <Talk
+                            day={day.day}
+                            timeStart={new Time()}
+                            timeEnd={new Time()}
+                            description={talk.description}
+                            speakerInfo={"hei"}
+                            speaker={"hei"}
+                            title={talk.title}
+                            type={talk.type}
+                            id={talk.talkId}
+                            room={room.name}
+                            language={talk.language}
+                            key={i}
+                            difficulty={talk.difficulty}
+                            tags={talk.tags}
+                            selectedTags={this.state.tags}
+                            onToggleTag={(val) => this.handleToggleTag(val)}
+                            onFavoriteChange={() => this.filterProgram()} />
+                        </div>);
+
+                        //from = to;
+                        return !talk.hide ? talkEl : '';
+                      })
+                  })))}
+          </div>
+        </div>
       </Layout>
     </div >
     )

@@ -57,15 +57,12 @@ function getTalks(program) {
 
 // Does not make a copy of the program, should be called with a copy as the parameter
 function filterProgram(program, cb: (Talk) => boolean) {
-  program.days = program.days.map(day => {
-    day.timeslots.map(timeslot => {
-      timeslot.rooms = timeslot.rooms.map(room => {
-        room.talks = room.talks.filter(talk => cb(talk));
-        return room;
-      });
-      return timeslot;
+  program.days.forEach(day => {
+    day.timeslots.forEach(timeslot => {
+      timeslot.rooms.forEach(room => {
+          room.talks.forEach(talk => talk.hide = !cb(talk));
+        });
     });
-    return day;
   });
   return program;
 }

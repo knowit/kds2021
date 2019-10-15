@@ -1,60 +1,38 @@
 import { Component } from "react";
-import ShowDailySchedule from "./ShowDailySchedule";
-import DayButton from './DayButton';
-import Day from '../../models/Day';
+import EventHeader from './EventHeader';
+import ScheduleEntry from './ScheduleEntry';
 
 interface IProps {
-  currDay: Day,
-  onChange: () => void
+  currDay: any
+  slots: any[]
+  tags: string[]
+  onToggleTag: (val) => void
 }
-class DayView extends Component<IProps, any> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      clicked: false
-    };
-  }
+class Day extends Component<IProps, any> {
 
-  showSchedule = () => {
-    if (this.state.clicked) {
-      this.setState({
-        clicked: false
-      });
-    } else {
-      this.setState({
-        clicked: true
-      });
+  longestTrack(slot): number {
+
+    const res = Math.max(...(slot.rooms && slot.rooms.map(room =>
+      room.talks && room.talks.filter(talk => !talk.hide).length)));
+
+    if (res < 0) {
+      console.log(slot);
     }
-  };
+    return Math.max(res, 0);
+  }
 
   render() {
     return (
-      <div>
-        <ShowScheduleButton
-          showSchedule={this.showSchedule}
-          day={this.props.currDay}
-          clicked={this.state.clicked}
-          onChange={this.props.onChange}
-        />
+      <div className="day">
+        {this.props.slots && this.props.slots.map((slot, i) =>
+          <div key={i + "slot"} className="slot">
+            <EventHeader key={i + "slot"} timeStart={slot.timeStart} timeEnd={slot.timeEnd} type={slot.type} />
+            {slot.rooms && <ScheduleEntry day={this.props.currDay.day} onToggleTag={this.props.onToggleTag} tags={this.props.tags} slot={slot} showRoomHeader={true} trackLength={this.longestTrack(slot)} />}
+          </div>
+        )}
       </div>
     );
   }
 }
-const ShowScheduleButton = props => {
-  if (props.clicked) {
-    return (
-      <ShowDailySchedule
-        day={props.day}
-        showSchedule={props.showSchedule}
-        onChange={props.onChange}
-      />
-    );
-  } else {
-    return (
-      <DayButton arrow="../../static/baseline-chevron_right.svg" day={props.day} showSchedule={props.showSchedule} />
-    );
-  }
 
-};
-
-export default DayView;
+export default Day;

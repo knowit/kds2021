@@ -1,14 +1,14 @@
-import Time from '../../models/Time';
+import React from 'react';
 
-const EventHeader = props => {
-  return (
-    <div id="event-header" className="content">
-      <hr />
-      <p>
-        {new Time(props.from.hour, props.from.minute).toString()} - {new Time(props.to.hour, props.to.minute).toString()} {props.type}
-      </p>
-    </div>
-  );
-};
+class EventHeader extends React.Component<any, any> {
+  render() {
+    return (
+      <div className="event-header">
+        <span className="type">{this.props.type}</span>
+        <span className="time">{this.props.timeStart} - {this.props.timeEnd}</span>
+      </div>
+    );
+  }
+}
 
 export default EventHeader;

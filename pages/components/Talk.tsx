@@ -1,60 +1,73 @@
-import "../../styling/scheduleStyles.scss";
-import Link from 'next/link';
-import { auth } from '../../firebase'
+import '../../styling/talkStyles.scss';
+import FilterTag from './FilterTag';
+import Difficulty from './Difficulty';
+import dynamic from "next/dynamic";
+import Pin from './Pin';
+import React from 'react';
+import { colorClassFromRoomName } from '../../helpers/colors';
 
-const Talk = props => {
-  return (
-    <div>
-      <span className="room-header">
-        <span>
-          {"Room " + props.talk.room}
-        </span>
-      </span>
-      <h3 id="title" >
-        <Link href={"./talksAndSpeakers#" + props.talk.id}><a>{props.talk.name}</a></Link>
-      </h3>
-      <p id="speaker">
-        <Link href={"./talksAndSpeakers#" + props.talk.id}><a>{props.talk.speaker.name}</a></Link>
-      </p>
-      <div className="talk-info">
-        <p id="room" className="info-entry">
-          {props.talk.room}
-        </p>
-        <p id="type" className="info-entry">
-          {props.talk.type}
-        </p>
-        <p id="language" className="info-entry">
-          {props.talk.language}
-        </p>
-        <p id="difficulty" className="info-entry">
-          {props.talk.difficulty}
-        </p>
-      </div>
-      <div className="speaker-page">
-        <h3 id="speaker-edit" >
-          {
-            auth.currentUser.uid === props.talk.speaker._id && <Link href={"./editTalk?id=" + props.talk._id}><a>edit</a></Link>
-          }
-        </h3>
-        <h2 id="talk-speaker"> {props.talk.speaker.name} </h2>
-        <p id="talk-speakerinfo"> {props.talk.speaker.info} </p>
-        <h2 id="talk-title"> {props.talk.name} </h2>
-        <p id="talk.description"> {props.talk.description}</p>
-        <br />
-        <p id="talk.type">{props.talk.type}</p>
-        <p id="talk.language">{props.talk.language}</p>
-        <p id="talk.difficulty">{props.talk.difficulty}</p>
-        <div id="tag-list">
-          <p>Tags:</p>
-          <ul>
-            {props.talk.tags.map((tag, i) => <li key={tag} id="tags-list-entry">{props.talk.tags[i]}</li>)}
-          </ul>
+const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
+  ssr: false
+});
+
+
+
+class Talk extends React.Component<any, any> {
+  render() {
+    return (
+      <div className="talk">
+        <div className="header">
+          <div className="time">
+            <div className="wrapper">
+              <img src="../../static/clock.svg" width="24" height="24" />
+            </div>
+            <span className="time-text">
+              <span className="time-text-day">{this.props.day.getDay()}<br></br></span>
+              {this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}
+            </span>
+          </div>
+          <div className="room">
+            <div className="wrapper">
+              <Pin className={colorClassFromRoomName(this.props.room)}></Pin>
+            </div>
+            <span className="text room-name">
+              Room {this.props.room}
+            </span>
+          </div>
+          <div className="diff">
+            <div className="wrapper">
+              <Difficulty difficulty={this.props.difficulty}></Difficulty>
+            </div>
+            <span className="text diff-name">
+              {this.props.difficulty}
+            </span>
+          </div>
+          <div className="heart">
+            <FavouriteTalkButtonNoSSR talkId={this.props.id} onClick={this.props.onFavoriteChange} />
+          </div>
         </div>
-        <hr />
+        <div className="talk-content">
+          <p className="day">{this.props.day.getDay()}</p>
+          <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}
+            <span className="duration">
+              &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
+            </span>
+          </p>
+          <p className="type-info">{this.props.type}
+            <span className="duration">
+              &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
+            </span></p>
+          <h1 className="title">{this.props.title}</h1>
+          <p className="speaker">{this.props.speaker}</p>
+          <p className="info">{this.props.speakerInfo}</p>
+          <div className="tags">
+            {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
+          </div>
+          <hr className="seperator" />
+        </div>
       </div>
-    </div>
-  );
-};
-
+    );
+  }
+}
 
 export default Talk;

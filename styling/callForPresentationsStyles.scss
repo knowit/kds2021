@@ -1,0 +1,30 @@
+@import "variables";
+
+.cfp {
+  .info {
+    @media screen and (max-width: $break-small) {
+      font-weight: inherit;
+    }
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 1.125rem;
+    .info-p:not(:last-child) {
+      display: block;
+      margin-bottom: 30px;
+    }
+    .link {
+      color: $link-color;
+    }
+  }
+
+  .list {
+    li {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      span {
+        font-size: 1rem;
+      }
+    }
+    margin-bottom: 40px;
+  }
+}
