@@ -81,10 +81,10 @@ class ScheduleEntry extends Component<IProps, any> {
     else {
       // Need to update dimensions of the grid
       const style = {
-        gridTemplateColumns: `repeat(${this.props.slot.rooms && this.props.slot.rooms.length}, 1fr)`,
+        gridTemplateColumns: `repeat(${this.props.slot && this.props.slot.rooms && this.props.slot.rooms.length}, 1fr)`,
         gridTemplateRows: `60px ${this.props.trackLength > 0 ? `repeat(${this.props.trackLength}, 1fr)` : ''}`,
         msGridRows: `60px  ${this.props.trackLength > 0 ? `(1fr)[${this.props.trackLength}]` : ''}`,
-        msGridColumns: `(1fr) [${this.props.slot.rooms && this.props.slot.rooms.length}]`
+        msGridColumns: `(1fr) [${this.props.slot && this.props.slot.rooms && this.props.slot.rooms.length}]`
       };
 
       return (
