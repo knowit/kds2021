@@ -1,6 +1,6 @@
 import React from 'react';
 import router from 'next/router'
-import { auth } from '../firebase';
+import { auth } from '../firebase_utils';
 import Loader from '../pages/components/Loader';
 
 interface IState {

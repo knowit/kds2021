@@ -1,5 +1,5 @@
 import React, { Ref } from 'react';
-import { firestore } from '../../firebase'
+import { firestore } from '../../firebase_utils'
 import Loader from './Loader';
 import FirestoreHandler from '../../helpers/firestoreHandler';
 

@@ -7,6 +7,8 @@ import RegisterButton from "./components/RegisterButton";
 import Filter from './components/Filter';
 import ProgramUtils from '../helpers/programUtils';
 import Router from 'next/router';
+import ApiHandler from '../helpers/apiHandler';
+import DateUtils from "../helpers/dateUtils";
 
 class Schedule extends Component<any, any> {
   constructor(props) {
@@ -25,7 +27,7 @@ class Schedule extends Component<any, any> {
   }
 
   async componentDidMount() {
-    const program = await ProgramUtils.loadProgram('test');
+    const program = await ApiHandler.getSchedule();
 
     let selectedTags = Router.query.tags || [];
     if (selectedTags && !Array.isArray(selectedTags)) {
@@ -70,7 +72,6 @@ class Schedule extends Component<any, any> {
 
   filterProgram() {
     ProgramUtils.filterProgram(this.state.program, (talk) => {
-      console.log(talk);
       if (this.state.showOnlyFavorites && !localStorage.getItem(talk._id)) {
         return false;
       }
@@ -101,7 +102,7 @@ class Schedule extends Component<any, any> {
                 <span key={day.day}>
                   {i != 0 && <span> | </span>}
                   <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                    {day.day.getDay()}
+                    {DateUtils.dayOfWeek(day.day)}
                   </span>
                 </span>)}
             </div>
@@ -116,7 +117,7 @@ class Schedule extends Component<any, any> {
                       <span key={day.day.getDay()}>
                         {i != 0 && <span className="seperator"> | </span>}
                         <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                          {day.day.getDay()}
+                          {DateUtils.dayOfWeek(day.day)}
                         </span>
                       </span>)}
                   </div>

@@ -1,5 +1,5 @@
 import '../styling/loginStyles.scss';
-import { auth, firebase } from '../firebase';
+import { auth, firebase } from '../firebase_utils';
 import React from 'react';
 import Router from 'next/router';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import { firestore } from '../firebase'
+import { firestore, functions } from '../firebase_utils'
 
 class FirestoreHandler {
     private cache = {};

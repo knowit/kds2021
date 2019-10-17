@@ -2,7 +2,7 @@ import "../../styling/filterStyles.scss";
 import React from 'react';
 import FilterTag from './FilterTag';
 import ShowOnlyFavoritesbutton from './ShowOnlyFavoritesButton';
-import FirestoreHandler from '../../helpers/firestoreHandler';
+import ApiHandler from '../../helpers/apiHandler';
 
 interface IState {
     open: boolean
@@ -27,14 +27,9 @@ class Filter extends React.Component<IProps, IState> {
         }
     }
 
-    async getTags() {
-        const tags = await FirestoreHandler.getAll('tags');
-        return tags.map(tag => tag.name);
-    }
-
     async componentDidMount() {
         this.setState({
-            tags: await this.getTags()
+            tags: await ApiHandler.getTags()
         });
     }
 

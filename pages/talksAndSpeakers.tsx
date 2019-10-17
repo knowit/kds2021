@@ -8,6 +8,7 @@ import { Time, createDate, getDuration } from "../helpers/time";
 import RegisterButton from "./components/RegisterButton";
 import Filter from './components/Filter';
 import ProgramUtils from '../helpers/programUtils';
+import ApiHandler from '../helpers/apiHandler';
 import FirestoreHandler from '../helpers/firestoreHandler';
 import Router from 'next/router';
 
@@ -28,6 +29,10 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   async componentDidMount() {
     const program = await ProgramUtils.loadProgram('test');
+
+    const pr = await ApiHandler.getTalks();
+
+    console.log(pr);
 
     let selectedTags = Router.query.tags || [];
     if (selectedTags && !Array.isArray(selectedTags)) {

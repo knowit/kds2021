@@ -1,8 +1,9 @@
 import React from 'react';
 import SpeakerSelector from './SpeakerSelector';
 import Loader from './Loader';
-import { firestore, auth } from './../../firebase';
+import { firestore, auth } from '../../firebase_utils';
 import FirestoreHandler from '../../helpers/firestoreHandler';
+import ApiHandler from '../../helpers/apiHandler';
 
 interface IState {
     speakers: Array<any>,
@@ -34,7 +35,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     }
 
     async getSpeakers() {
-        const res = await FirestoreHandler.getWhere('users', 'speaker', '==', true);
+        const res = (await ApiHandler.getSpeakers()).data;
         return res;
     }
 
@@ -49,7 +50,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
         const speakers = await this.getSpeakers();
         this.setState({
             speakers: speakers,
-            speaker: talkSpeaker,
+            //speaker: talkSpeaker,
             loading: false
         }, () => {
             this.setDefaultValue();
@@ -65,8 +66,6 @@ class SpeakersSelector extends React.Component<IProps, IState> {
             const mappedDefaultValues = this.props.value.map((id) => {
                 return this.state.speakers.filter((speaker) => speaker._id == id)[0] || null
             });
-
-            console.log(mappedDefaultValues);
 
             this.setState({
                 cospeakers: mappedDefaultValues

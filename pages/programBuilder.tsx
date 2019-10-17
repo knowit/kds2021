@@ -1,5 +1,5 @@
 import '../styling/programBuilder.scss';
-import { auth, firebase } from '../firebase';
+import { auth, firebase } from '../firebase_utils';
 import FirestoreHandler from '../helpers/firestoreHandler'
 import React from 'react';
 import Layout from './components/Layout';
@@ -10,6 +10,7 @@ import Day from '../models/Day';
 import Talk from '../models/Talk';
 import _ from 'lodash';
 import programUtils from '../helpers/programUtils';
+import ApiHandler from '../helpers/apiHandler';
 
 interface IState {
     days: Array<any>,
@@ -43,28 +44,22 @@ class Login extends React.Component<any, IState> {
     }
 
     async componentDidMount() {
-        let talks = await FirestoreHandler.getAll("talks");
+        const res = await Promise.all([
+            ApiHandler.getSchedule(), ApiHandler.getTalks()
+        ]);
 
-        const program = await programUtils.loadProgram('test');
+        const program = res[0];
 
-        const programTalks = programUtils.getTalks(program);
+        const assignedTalks = program.days
+            .map(day => day.timeslots
+                .map(timeslot => timeslot.rooms
+                    .map(room => room.talks))).flat(Infinity);
 
-        // Avoid duplicate talks
-        talks = talks.filter(talk => {
-            const res = programTalks.some(pTalk => pTalk._id == talk._id);
-            return !res;
-        });
-
-        // Update speaker to its data instead of ref, can drop this if data is stored instead of ref, this will duplicate data and will make updating speakers harder..
-        const speakers = await Promise.all(talks.map(talk => FirestoreHandler.get('users', talk.speaker)));
-
-        talks.forEach((talk, index) => {
-            talk.speaker = speakers[index];
-        });
+        const unassignedTalks = res[1].talks.filter(talk => !assignedTalks.find(t => t.id == talk.id));
 
         this.setState({
             days: program.days,
-            talks: talks,
+            talks: unassignedTalks,
             isLoading: false
         });
 
@@ -156,7 +151,7 @@ class Login extends React.Component<any, IState> {
         program.days.map(day => {
             day.timeslots = day.timeslots.map(timeslot => {
                 timeslot.rooms = timeslot.rooms.map(room => {
-                    room.talks = room.talks.map(talk => talk._id);
+                    room.talks = room.talks.map(talk => talk.id);
                     return Object.assign({}, room);
                 });
 
@@ -167,7 +162,8 @@ class Login extends React.Component<any, IState> {
             return Object.assign({}, day);
         });
 
-        const res = await FirestoreHandler.updateOrCreate('program', 'test', program);
+        await ApiHandler.updateSchedule(program);
+        //const res = await FirestoreHandler.updateOrCreate('program', 'test', program);
     }
 
     // Used for day, timeslot and room to add talks back when being removed

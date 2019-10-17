@@ -1,9 +1,10 @@
 import React from 'react';
 import router from 'next/router'
-import { auth, firestore } from '../firebase';
+import { auth, firestore } from '../firebase_utils';
 import { User } from 'firebase';
 import Loader from '../pages/components/Loader';
 import FirestoreHandler from '../helpers/firestoreHandler';
+import ApiHandler from '../helpers/apiHandler';
 
 interface IState {
     status: String
@@ -18,14 +19,13 @@ const withSpeakerAuth = (Component, Redirect?) =>  {
             }
         }
 
-        async isSpeaker(uid: string) : Promise<boolean> {
-            const res = await FirestoreHandler.get('users', uid);
-            return res.speaker;
+        async isSpeaker() {
+            return await ApiHandler.isSpeaker();
         }
 
         async authenticate(authUser: User) {
             if (authUser) {
-                const isSpeaker = await this.isSpeaker(authUser.uid);
+                const isSpeaker = await this.isSpeaker();
                 if (isSpeaker) {
                     this.setState({
                         status: 'SIGNED_IN'

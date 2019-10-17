@@ -1,9 +1,10 @@
 import '../styling/loginStyles.scss';
-import { auth, firestore } from '../firebase'
+import { auth, firestore } from '../firebase_utils'
 import FirestoreHandler from '../helpers/firestoreHandler';
 import React from 'react'
 import Router from 'next/router'
 import Layout from './components/Layout'
+import ApiHandler from '../helpers/apiHandler';
 
 class Form {
     name: string
@@ -60,19 +61,16 @@ class Login extends React.Component<any, IState> {
                 .then((val) => {
                     const auid = val.user.uid;
                     if (this.state.speaker) {
-                        FirestoreHandler.updateOrCreate('users', auid, {
+                        ApiHandler.addUser({
                             speaker: true,
                             name: this.state.form.name,
-                            info: this.state.speakerInfo,
-                            email: this.state.form.email
+                            info: this.state.speakerInfo
                         });
                         Router.push('/addTalk');
                     }
                     else {
-                        FirestoreHandler.updateOrCreate('users', auid, {
-                            speaker: false,
-                            name: this.state.form.name,
-                            email: this.state.form.email
+                        ApiHandler.addUser({
+                            name: this.state.form.name
                         });
                         Router.push('/');
                     }

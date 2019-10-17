@@ -1,6 +1,6 @@
 import React from 'react';
 import FirestoreHandler from '../../helpers/firestoreHandler';
-import { auth } from '../../firebase';
+import { auth } from '../../firebase_utils';
 
 interface IProps {
     talkId: string,

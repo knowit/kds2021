@@ -29,15 +29,15 @@ class ScheduleEntry extends Component<IProps, any> {
           msGridColumn: index + 1
         };
 
-        const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={talk._id} style={style as CSSProperties}>
+        const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={talk.id} style={style as CSSProperties}>
           <Talk title={talk.name}
-            speaker={"hei"}
+            speaker={talk.speaker && talk.speaker.name}
             room={room.name}
             type={talk.type}
             language={talk.language}
             difficulty={talk.difficulty}
-            id={talk._id}
-            key={talk._id}
+            id={talk.id}
+            key={talk.id}
             day={this.props.day}
             tags={talk.tags}
             timeStart={createDate(from, this.props.day)}

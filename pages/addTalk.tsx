@@ -2,8 +2,9 @@ import Layout from "./components/Layout";
 import '../styling/addTalkStyles.scss';
 import withSpeakerAuth from '../helpers/withSpeakerAuth';
 import React from 'react';
-import { firestore, auth } from './../firebase';
+import { firestore, auth } from '../firebase_utils';
 import FirestoreHandler from '../helpers/firestoreHandler';
+import ApiHandler from '../helpers/apiHandler';
 import TagSelector from './components/TagSelector';
 import SpeakersSelector from './components/SpeakersSelector';
 import Loader from './components/Loader';
@@ -28,7 +29,8 @@ class AddTalk extends React.Component<any, IState> {
     async addTalk() {
         const talk = this.state.talk;
 
-        await FirestoreHandler.create('talks', talk);
+        //await FirestoreHandler.create('talks', talk);
+        await ApiHandler.addTalk(talk);
         Router.push('/talksAndSpeakers');
     }
 
