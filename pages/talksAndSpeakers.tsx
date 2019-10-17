@@ -84,7 +84,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
                     return room.talks
                       .map((talk, i) => talk.speakers
                         .map(speaker => {
-                          const to = from.copy().add(getDuration(talk.type));
+                          const to = from.copy().add(getDuration(talk));
                           const talkEl = (<div className="talk-container" key={i}>
                             <Talk
                               day={day.day}

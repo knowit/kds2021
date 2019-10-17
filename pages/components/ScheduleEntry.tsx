@@ -23,7 +23,7 @@ class ScheduleEntry extends Component<IProps, any> {
     const talks = room.talks
       .map((talk) => talk.speakers
         .map(speaker => {
-          const to = from.copy().add(getDuration(talk.type));
+          const to = from.copy().add(getDuration(talk));
 
 
           const style = { // For ie support, ie support is far from good.. but this makes i maybe useable
