@@ -1,14 +1,14 @@
 class Time {
-    minute: number
-    hour: number
+    minutes: number
+    hours: number
 
     constructor(hour?: number, minute?: number) {
-        this.hour = hour || 0;
-        this.minute = minute || 0;
+        this.hours = hour || 0;
+        this.minutes = minute || 0;
     }
 
     public toString() {
-        return ("0" + this.hour).slice(-2) + ":" +  ("0" + this.minute).slice(-2);
+        return ("0" + this.hours).slice(-2) + ":" +  ("0" + this.minutes).slice(-2);
     }
 
     public static parse(str: string) {

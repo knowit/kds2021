@@ -2,10 +2,10 @@ import Talk from "./Talk";
 import { Component, CSSProperties } from "react";
 import dynamic from "next/dynamic";
 import Room from './Room';
-import { getDuration, Time } from '../../helpers/time';
+import { getDuration, Time, createDate } from '../../helpers/time';
 
 interface IProps {
-  day: string
+  day: Date
   slot: any
   showRoomHeader: boolean,
   tags: string[],
@@ -18,20 +18,19 @@ class ScheduleEntry extends Component<IProps, any> {
   }
 
   createRoom(room, index: number) {
-    //let from = Time.fromString(this.props.slot.timeStart);
+    let from = new Time(this.props.slot.from.hours, this.props.slot.from.minutes); 
     let trackIndex = 0;
     const talks = room.talks
       .map((talk) => {
-        //const to = from.copy().add(getDuration(talk.type));
-
-
+        const to = from.copy().add(getDuration(talk.type));
+        
         const style = { // For ie support, ie support is far from good.. but this makes i maybe useable
           msGridRow: trackIndex + 2,
           msGridColumn: index + 1
         };
 
         const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={talk._id} style={style as CSSProperties}>
-          <Talk title={talk.title}
+          <Talk title={talk.name}
             speaker={"hei"}
             room={room.name}
             type={talk.type}
@@ -41,13 +40,13 @@ class ScheduleEntry extends Component<IProps, any> {
             key={talk._id}
             day={this.props.day}
             tags={talk.tags}
-            timeStart={new Time()}
-            timeEnd={new Time()}
+            timeStart={createDate(from, this.props.day)}
+            timeEnd={createDate(to, this.props.day)}
             selectedTags={this.props.tags}
             onToggleTag={this.props.onToggleTag} />
         </div>);
 
-        //from = to;
+        from = to;
 
         if (!talk.hide) {
           trackIndex++;

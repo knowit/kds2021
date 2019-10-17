@@ -66,8 +66,8 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
     }
 
     getDuration() {
-        const from = this.props.timeslot.from.hour * 60 + this.props.timeslot.from.minute;
-        const to = this.props.timeslot.to.hour * 60 + this.props.timeslot.to.minute;
+        const from = this.props.timeslot.from.hours * 60 + this.props.timeslot.from.minutes;
+        const to = this.props.timeslot.to.hours * 60 + this.props.timeslot.to.minutes;
 
         return to - from;
     }
@@ -83,14 +83,14 @@ class ProgramBuilderTimeslot extends React.Component<IProps, IState> {
             <div className="timeslot">
                 <button className="remove-button" onClick={() => this.props.onRemove()}>remove</button>
                 {!this.state.editMode &&
-                    <p>{new Time(this.props.timeslot.from.hour, this.props.timeslot.from.minute).toString()} -
-                    {new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()}
+                    <p>{new Time(this.props.timeslot.from.hours, this.props.timeslot.from.minutes).toString()} -
+                    {new Time(this.props.timeslot.to.hours, this.props.timeslot.to.minutes).toString()}
                     &nbsp;{this.props.timeslot.type}
                         &nbsp;<span onClick={() => this.setEditMode()}>edit</span></p>}
                 {this.state.editMode && <div>
-                    <input type="time" onChange={(evt) => this.updateFrom(evt.target.value)} defaultValue={new Time(this.props.timeslot.from.hour, this.props.timeslot.from.minute).toString()} />
+                    <input type="time" onChange={(evt) => this.updateFrom(evt.target.value)} defaultValue={new Time(this.props.timeslot.from.hours, this.props.timeslot.from.minutes).toString()} />
                     -
-                    <input type="time" onChange={(evt) => this.updateTo(evt.target.value)} defaultValue={new Time(this.props.timeslot.to.hour, this.props.timeslot.to.minute).toString()} /> 
+                    <input type="time" onChange={(evt) => this.updateTo(evt.target.value)} defaultValue={new Time(this.props.timeslot.to.hours, this.props.timeslot.to.minutes).toString()} /> 
                     <input type="text" onChange={(evt) => this.updateType(evt.target.value)} defaultValue={this.props.timeslot.type}/>
                     <button onClick={() => this.save()}>Save</button>
                 </div>}

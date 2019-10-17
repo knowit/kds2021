@@ -4,7 +4,7 @@ import "../styling/talksAndSpeakersStyles.scss";
 import Loader from "./components/Loader";
 import React from "react";
 import { program as Program } from "../models/data.json";
-import { Time, getDuration } from "../helpers/time";
+import { Time, createDate, getDuration } from "../helpers/time";
 import RegisterButton from "./components/RegisterButton";
 import Filter from './components/Filter';
 import ProgramUtils from '../helpers/programUtils';
@@ -92,16 +92,16 @@ class TalksAndSpeakers extends React.Component<any, any> {
                 })
                 .map(slot => slot.rooms
                   .map(room => {
-
-                    //let from = Time.fromString(slot.timeStart);
+                    let from = new Time(slot.from.hours, slot.from.minutes); 
                     return room.talks
                       .map((talk, i) => {
-                        //const to = from.copy().add(getDuration(talk.type));
+                        const to = from.copy().add(getDuration(talk.type));
+                        
                         const talkEl = (<div className="talk-container" key={i}>
                           <Talk
                             day={day.day}
-                            timeStart={new Time()}
-                            timeEnd={new Time()}
+                            timeStart={createDate(from, day.day)}
+                            timeEnd={createDate(to, day.day)}
                             description={talk.description}
                             speakerInfo={"hei"}
                             speaker={"hei"}
@@ -118,7 +118,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
                             onFavoriteChange={() => this.filterProgram()} />
                         </div>);
 
-                        //from = to;
+                        from = to;
                         return !talk.hide ? talkEl : '';
                       })
                   })))}

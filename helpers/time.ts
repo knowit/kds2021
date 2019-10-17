@@ -36,11 +36,18 @@ class Time {
     }
 }
 
+function createDate(time: Time, date: Date) {
+    const d = new Date(date.getTime())
+    d.setHours(time.hours);
+    d.setMinutes(time.minutes);
+    return d;
+}
+
 function getDuration(type: string) : Time {
     switch(type) {
         case "Lightning talk": return new Time("00", "10");
         case "Short-talk": return new Time("00", "30");
-        case "Long-talk": return new Time("01", "00");
+        case "Long presentation": return new Time("01", "00");
         case "Workshop": return new Time("01", "30");
     }
     return new Time();
@@ -48,5 +55,6 @@ function getDuration(type: string) : Time {
 
 export {
     Time,
-    getDuration
+    getDuration,
+    createDate
 };
