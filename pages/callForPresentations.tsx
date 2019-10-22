@@ -9,25 +9,24 @@ export default function CallForPresentations() {
       <Layout title="Call for presentations" header={<RegisterButton></RegisterButton>} background={true}>
         <div className="document cfp">
           <h1 className="title">Call for presentations</h1>
-          <p className="info">
-            <span className="info-p">
-              We are now looking for speakers for the conference, the basic idea is to share knowledge and experiences with other developers within Knowit. The length of a presentation can be 10, 30, 60 or 90 minutes. You decide!
-              </span>
-            <span className="info-p">
+          <div className="info">
+            <p>We are now looking for speakers for the conference, the basic idea is to share knowledge and experiences with other developers within Knowit. The length of a presentation can be 10, 30, 60 or 90 minutes. You decide! </p>
+            <p>Submission deadline is <strong>November 1st</ strong>.</p>
+            <p>
               If you have any questions feel free to contact us at&nbsp;
-                <span className="info-">
+              <span>
                 <a className="link" href="mailto:kds@knowit.no">kds@knowit.no</a>
               </span>
-            </span>
-            <span className="info-p">
+            </p>
+            <p>
               The subject for a talk can vary widely, you can check out last years program&nbsp;
-                <Link href="/static/old/index_2019.html">
+              <Link href="/static/old/index_2019.html">
                 <a className="link">here</a>
               </Link>
               &nbsp;for inspiration. If that is not inspiring enough, here are a few more ideas:
-              </span>
-              <RegisterButton className="show-small"></RegisterButton>
-          </p>
+            </p>
+            <RegisterButton className="show-small"></RegisterButton>
+          </div>
           <ul className="list">
             <li><span>A customer project from a technical perspective. Project experience reports are really valuable.</span></li>
             <li><span>JavaScript frameworks or frontend techniques in general</span></li>
