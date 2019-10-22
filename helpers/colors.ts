@@ -1,5 +1,15 @@
+import { program as Program } from '../models/data.json'; 
 
 const seed = "nice seed!!!!";
+
+
+
+const colorClasses = ['room-header-green', 'room-header-purple', 'room-header-red', 'room-header-yellow'];
+
+const colorClassFromRoomName = roomName => {
+    const index = Math.abs(Program.rooms.indexOf(roomName) % colorClasses.length);
+    return colorClasses[index];
+}
 
 // Should be tweaked to create more "nice" colors
 const colorFromRoomName = roomName => {
@@ -23,4 +33,4 @@ const colorMinumum = (color, min: number[]) => {
     return "#" + rgb.map(i => ("0" + i).substr(-2)).join('');
 }
 
-export { colorFromRoomName };
+export { colorFromRoomName, colorClassFromRoomName };

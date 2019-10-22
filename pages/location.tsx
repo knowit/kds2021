@@ -1,6 +1,7 @@
 import "../styling/locationStyles.scss";
 import Layout from "./components/Layout";
 import RegisterButton from './components/RegisterButton';
+import Pin from './components/Pin';
 
 export default function Location() {
   return (
@@ -8,6 +9,14 @@ export default function Location() {
       <Layout header={<RegisterButton></RegisterButton>}>
         <div className="map-container">
           <h1 className="title">Location</h1>
+          <div className="location-name">
+            <div>
+              <Pin small={true} color="red"></Pin>
+            </div>
+            <p className="location-name-text">
+              Radisson Blu Royal Hotel, Bergen
+            </p>
+          </div>
           <Map />
         </div>
       </Layout>

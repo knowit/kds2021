@@ -28,7 +28,8 @@
       margin-right: 5%;
       @media screen and (max-width: $break-small) {
         width: 44px;
-        margin-right: 1em;
+        margin-right: auto;
+        margin-left: auto;
       }
     }
     .headline {

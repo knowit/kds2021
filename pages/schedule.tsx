@@ -14,8 +14,7 @@ class Schedule extends Component<any, any> {
       filteredProgram: filteredProgram,
       showOnlyFavorites: false,
       tags: [],
-      currentDayIndex: 0,
-      rooms: filteredProgram.days[0] && this.getRooms(filteredProgram.days[0])
+      currentDayIndex: 0
     };
     this.handleFilterChange = this.handleFilterChange.bind(this);
     this.handleFavoriteChange = this.handleFavoriteChange.bind(this);
@@ -116,7 +115,6 @@ class Schedule extends Component<any, any> {
 
               {this.state.filteredProgram.days.length > 0 && <Day onToggleTag={(val) => this.handleToggleTag(val)}
                 tags={this.state.tags}
-                rooms={this.state.rooms}
                 currDay={this.state.filteredProgram.days[this.state.currentDayIndex]}
                 slots={this.state.filteredProgram.days[this.state.currentDayIndex] && this.state.filteredProgram.days[this.state.currentDayIndex].slots} />}
             </div>

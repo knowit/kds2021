@@ -6,6 +6,9 @@
   .schedule-document {
     width: $break-schedule;
 
+    margin-left: auto; // Only needed for ie supprot
+    margin-right: auto;
+
     @media screen and (max-width: $break-schedule) {
       width: 100vw;
     }
@@ -63,9 +66,13 @@ div.schedule {
     background-color: white;
     margin-bottom: 90px;
     margin-top: $header-bottom-margin;
-    @media screen and (min-width: $break-small) {
+    @media screen and (min-width: $break-schedule) {
       border: 1px solid $border-color;
     }
+    @media screen and (min-width: $break-small) {
+      border-top: 1px solid $border-color;
+    }
+
     > .header {
       display: flex;
       flex-direction: column;
@@ -101,205 +108,6 @@ div.schedule {
           font-weight: bold;
         }
       }
-    }
-  }
-  .slot .room-container:last-child .talk-container:last-child .talk {
-    border-bottom: none;
-  }
-  .rooms {
-    @media screen and (min-width: $break-schedule) {
-      display: flex;
-      flex-direction: row;
-      justify-content: stretch;
-    }
-    .room-container:last-child .room-content {
-      @media screen and (min-width: $break-schedule) {
-        border-right: none;
-      }
-    }
-
-    .talk {
-      padding: 24px 30px;
-      .tags {
-        .filter-tag {
-          padding: 3px 5px;
-          span {
-            font-size: 0.625rem;
-          }
-        }
-      }
-      .title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-align: left;
-        margin-bottom: 8px;
-      }
-      .speaker {
-        font-size: 0.875rem;
-        color: $secondary-color;
-        text-align: left;
-        margin-top: 0px;
-        margin-bottom: 24px;
-      }
-
-      .time {
-        @extend .hide-schedule;
-        img {
-          margin: auto;
-        }
-      }
-
-      .type-info {
-        display: none;
-      }
-
-      .time-info {
-        @extend .show-schedule;
-      }
-
-      .time,
-      .room,
-      .time,
-      .heart {
-        @extend .flex-col;
-        .time-text-day {
-          display: none;
-        }
-        > .wrapper {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          flex-grow: 1;
-        }
-      }
-
-      .day {
-        display: none;
-      }
-      p.info {
-        display: none;
-      }
-      p.time-info {
-        margin-bottom: 0px;
-      }
-    }
-  }
-  .rooms.single-track {
-    @media screen and (min-width: $break-schedule) {
-      .talk-container:nth-child(even) .talk {
-        background-color: $dark-bg-color;
-      }
-    }
-    .talk-container {
-      border-bottom: none;
-    }
-
-    .talk {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      @media screen and (max-width: $break-schedule) {
-        border-bottom: 1px solid $border-color;
-      }
-      .talk-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-
-        .speaker {
-          font-size: 1.125rem;
-        }
-      }
-      .seperator {
-        display: none;
-      }
-      .header {
-        margin-left: 60px; // Stop title from getting to close
-        order: 1;
-        height: 220px; // Cant get this to use full height...
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .time-text,
-        .room-name,
-        .diff-name {
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-    }
-  }
-  .rooms.multi-track {
-    @media screen and (min-width: $break-schedule) {
-      .room-container:nth-child(odd) {
-        background-color: $dark-bg-color;
-        .talk-container:nth-child(even) {
-          .talk {
-            background-color: $darker-bg-color;
-          }
-        }
-      }
-      .room-container:nth-child(even) {
-        background-color: white;
-        .talk-container:nth-child(even) {
-          .talk {
-            background-color: $dark-bg-color;
-          }
-        }
-      }
-    }
-    .talk {
-      padding: 24px 30px;
-      @media screen and (max-width: $break-schedule) {
-        border-bottom: 1px solid $border-color;
-      }
-      .seperator {
-        display: none;
-      }
-      .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-bottom: 30px;
-        .time-text,
-        .room-name,
-        .diff-name {
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .room {
-          @extend .hide-schedule;
-        }
-      }
-    }
-  }
-}
-
-.room-container {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-
-  .room-header {
-    @media screen and (max-width: $break-schedule) {
-      display: none;
-    }
-    border-left: 0px solid transparent;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 12px 0px;
-  }
-
-  .room-content {
-    flex-grow: 1;
-    @media screen and (min-width: $break-schedule) {
-      border-right: 1px solid $border-color;
-    }
-    .talk-container:not(:last-child) {
-      border-bottom: 1px solid $border-color;
     }
   }
 }
