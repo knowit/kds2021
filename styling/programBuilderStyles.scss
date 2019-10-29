@@ -80,3 +80,20 @@
         position: absolute;
     }
 }
+
+.program-builder-container {
+    
+    display: flex;
+    flex-direction: row;
+
+    .talk-container {
+        min-height: 100px;
+    }
+}
+.dragging-talk {
+    cursor: move;
+    pointer-events: none;
+    min-width: 100px;
+    min-height: 100px;
+    border: 1px solid black;
+}

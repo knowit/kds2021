@@ -9,7 +9,6 @@ import Loader from './components/Loader';
 import Day from '../models/Day';
 import Talk from '../models/Talk';
 import _ from 'lodash';
-import programUtils from '../helpers/programUtils';
 import ApiHandler from '../helpers/apiHandler';
 
 interface IState {

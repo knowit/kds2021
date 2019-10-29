@@ -126,7 +126,7 @@ class Schedule extends Component<any, any> {
 
               {this.state.program.days.length > 0 && <Day onToggleTag={(val) => this.handleToggleTag(val)}
                 tags={this.state.tags}
-                currDay={this.state.program.days[this.state.currentDayIndex]}
+                day={this.state.program.days[this.state.currentDayIndex]}
                 slots={this.state.program.days[this.state.currentDayIndex] && this.state.program.days[this.state.currentDayIndex].timeslots} />}
             </div>
           </div>

@@ -15,15 +15,18 @@ const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), 
 class Talk extends React.Component<any, any> {
   render() {
     return (
-      <div className="talk">
+      <div className="talk" onMouseDown={(evt) => {
+        this.props.onStartDrag && evt.preventDefault();
+        this.props.onStartDrag && this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
+      }}>
         <div className="header">
           <div className="time">
             <div className="wrapper">
               <img src="../../static/clock.svg" width="24" height="24" />
             </div>
             <span className="time-text">
-              <span className="time-text-day">{this.props.day.getDay()}<br></br></span>
-              {this.props.timeStart && this.props.timeStart.toTimeString().slice(0,5)} - {this.props.timeEnd && this.props.timeEnd.toTimeString().slice(0,5)}
+              <span className="time-text-day">{this.props.day && this.props.day.getDay()}<br></br></span>
+              {this.props.timeStart && this.props.timeStart.toTimeString().slice(0, 5)} - {this.props.timeEnd && this.props.timeEnd.toTimeString().slice(0, 5)}
             </span>
           </div>
           <div className="room">
@@ -47,8 +50,8 @@ class Talk extends React.Component<any, any> {
           </div>
         </div>
         <div className="talk-content">
-          <p className="day">{this.props.day.getDay()}</p>
-          <p className="time-info">{this.props.timeStart && this.props.timeStart.toTimeString().slice(0,5)} - {this.props.timeEnd && this.props.timeEnd.toTimeString().slice(0,5)}
+          <p className="day">{this.props.day && this.props.day.getDay()}</p>
+          <p className="time-info">{this.props.timeStart && this.props.timeStart.toTimeString().slice(0, 5)} - {this.props.timeEnd && this.props.timeEnd.toTimeString().slice(0, 5)}
             <span className="duration">
               &nbsp;({/*this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)*/} min)
             </span>
@@ -61,7 +64,7 @@ class Talk extends React.Component<any, any> {
           <p className="speaker">{this.props.speaker}</p>
           <p className="info">{this.props.speakerInfo}</p>
           <div className="tags">
-            {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
+            {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag key={tag} name={tag} selected={this.props.selectedTags && this.props.selectedTags.indexOf(tag) > -1} onClick={() => this.props.onToggleTag && this.props.onToggleTag(tag)}></FilterTag>)}
           </div>
           <hr className="seperator" />
         </div>
