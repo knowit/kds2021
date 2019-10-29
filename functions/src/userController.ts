@@ -42,7 +42,10 @@ export async function getSpeakers(data: any, context: functions.https.CallableCo
         throw new functions.https.HttpsError('not-found', 'Could not find talks in collection ' + id);
     }
 
-    return Object.values(users).filter(user => user.speaker);
+    return Object.keys(users).filter(user => users[user].speaker).map(user => ({
+        ...users[user],
+        id: user
+    }));
 }
 
 

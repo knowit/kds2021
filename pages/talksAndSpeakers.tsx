@@ -28,11 +28,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
   }
 
   async componentDidMount() {
-    const program = await ProgramUtils.loadProgram('test');
-
-    const pr = await ApiHandler.getTalks();
-
-    console.log(pr);
+    const program = await ApiHandler.getSchedule();
 
     let selectedTags = Router.query.tags || [];
     if (selectedTags && !Array.isArray(selectedTags)) {
@@ -65,7 +61,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   filterProgram() {
     ProgramUtils.filterProgram(this.state.program, (talk) => {
-      if (this.state.showOnlyFavorites && !localStorage.getItem(talk._id)) {
+      if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
         return false;
       }
       if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
@@ -112,7 +108,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
                             speaker={"hei"}
                             title={talk.title}
                             type={talk.type}
-                            id={talk.talkId}
+                            id={talk.id}
                             room={room.name}
                             language={talk.language}
                             key={i}

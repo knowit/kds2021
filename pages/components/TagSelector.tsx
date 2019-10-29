@@ -1,7 +1,7 @@
 import React, { Ref } from 'react';
 import { firestore } from '../../firebase_utils'
 import Loader from './Loader';
-import FirestoreHandler from '../../helpers/firestoreHandler';
+import ApiHandler from '../../helpers/apiHandler';
 
 interface IProps {
     onChange: (val: Array<string>) => void,
@@ -31,12 +31,6 @@ class TagSelector extends React.Component<IProps, IState> {
         };
     }
 
-    async getTags() {
-        const tags = await FirestoreHandler.getAll('tags');
-        
-        return tags;
-    }
-
     newTag() {
         const tag = this.newTagNameInput.current.value;
 
@@ -50,10 +44,7 @@ class TagSelector extends React.Component<IProps, IState> {
             tags: prev.tags.concat([tag])
         }));
 
-        firestore.collection('tags').add({
-            name: tag
-        }).then(console.log)
-            .catch(console.log)
+        ApiHandler.addTag(tag);
     }
 
     componentDidUpdate() {
@@ -66,9 +57,8 @@ class TagSelector extends React.Component<IProps, IState> {
     }
 
     async componentDidMount() {
-        const tags = await this.getTags();
         this.setState({
-            tags: tags.map(tag => tag.name),
+            tags: await ApiHandler.getTags(),
             loading: false
         });
     }

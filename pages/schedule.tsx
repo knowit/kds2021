@@ -72,7 +72,7 @@ class Schedule extends Component<any, any> {
 
   filterProgram() {
     ProgramUtils.filterProgram(this.state.program, (talk) => {
-      if (this.state.showOnlyFavorites && !localStorage.getItem(talk._id)) {
+      if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
         return false;
       }
       if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {

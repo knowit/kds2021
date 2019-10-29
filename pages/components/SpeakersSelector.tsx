@@ -35,22 +35,20 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     }
 
     async getSpeakers() {
-        const res = (await ApiHandler.getSpeakers()).data;
+        const res = (await ApiHandler.getSpeakers());
+        console.log(res);
         return res;
     }
 
-    async getTalkSpeaker() {
-        const auid = auth.currentUser.uid;
-        const speaker = await FirestoreHandler.get('users', auid);
-        return speaker;
-    }
-
     async componentDidMount() {
-        const talkSpeaker = await this.getTalkSpeaker();
         const speakers = await this.getSpeakers();
+
+        const auid = auth.currentUser.uid;
+        const talkSpeaker = speakers.find(speaker => speaker.id === auid);
+
         this.setState({
-            speakers: speakers,
-            //speaker: talkSpeaker,
+            speakers: speakers.filter(speaker => speaker.id !== auid),
+            speaker: talkSpeaker,
             loading: false
         }, () => {
             this.setDefaultValue();
@@ -64,7 +62,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
 
             this.valueUpdated = true;
             const mappedDefaultValues = this.props.value.map((id) => {
-                return this.state.speakers.filter((speaker) => speaker._id == id)[0] || null
+                return this.state.speakers.filter((speaker) => speaker.id == id)[0] || null
             });
 
             this.setState({
@@ -74,7 +72,8 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     }
 
     onChange() {
-        this.props.onChange([this.state.speaker].concat(this.state.cospeakers.filter(speaker => speaker != null)));
+        const val = [this.state.speaker.id].concat(this.state.cospeakers.filter(speaker => speaker != null).map(speaker => speaker.id));
+        this.props.onChange(val);
     }
 
     componentDidUpdate() {
