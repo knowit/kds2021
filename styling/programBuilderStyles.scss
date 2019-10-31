@@ -88,8 +88,14 @@
     }
 
     .unassigned-talks {
+        margin-top: 50px;
+        margin-bottom: 90px;
+        border-left: 1px solid $primary-color;
+        border-top: 1px solid $primary-color;
+        border-bottom: 1px solid $primary-color;
         .talk {
-            width: 200px;
+            cursor: pointer;
+            width: 250px;
             .time {
                 display: none;
             }
