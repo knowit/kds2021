@@ -8,7 +8,6 @@ interface IProps {
 }
 
 class SpeakerSelector extends React.Component<IProps, any> {
-    private input: any;
     // This uses name as id, for now there is no way to differenciate 2 people with same name, first one will selected and 2nd wont be able to be selected
     handleChange(evt) {
         const val = evt.target.value;
@@ -30,7 +29,7 @@ class SpeakerSelector extends React.Component<IProps, any> {
     render() {
         return (
             <div>
-                <input list="list" ref={this.input} onChange={this.handleChange.bind(this)} defaultValue={this.getDefaultValue()}>
+                <input list="list" onChange={this.handleChange.bind(this)} defaultValue={this.getDefaultValue()}>
                 </input>
                 <datalist id="list">
                     { this.props.speakers.map((speaker, i) => <option key={i} value={speaker.name}></option>)}

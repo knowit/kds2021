@@ -3,12 +3,15 @@ import EventHeader from './EventHeader';
 import ScheduleEntry from './ScheduleEntry';
 import Talk from '../../models/Talk';
 import Timeslot from "../../models/Timeslot";
+import Time from "../../models/Time";
+import Room from "../../models/Room";
 
 interface IProps {
   draggingTalk?: boolean
   day: any
   slots: any[]
   tags: string[]
+  edit?: boolean
   updateIndices?: (slot, room, talk) => void
   onToggleTag?: (val) => void
   onStartDrag?: (talk: Talk, x: number, y: number) => void,
@@ -26,30 +29,30 @@ class Day extends Component<IProps, any> {
     return Math.max(res, 0) + (this.props.draggingTalk ? 1 : 0);
   }
 
-  updateSlots(index: number, timeslot: Timeslot) {
-    console.log(timeslot);
-    this.props.day.timeslots[index] = timeslot;
+  onTimeslotRemoved(timeslotIndex: number) {
+    const removed = this.props.day.timeslots.splice(timeslotIndex, 1)[0];
+    const talks = removed.rooms.map(room => room.talks).flat(Infinity);
     this.props.onChange(this.props.day);
+    this.props.addTalks(talks);
   }
 
-  onTimeslotRemoved(timeslotIndex: number) {
-    //const removed = this.props.day.timeslots.splice(timeslotIndex, 1)[0];
-    //const talks = removed.rooms.map(room => room.talks).flat(Infinity);
-    //this.props.addTalks(talks);
-    //this.props.onChange(this.props.day);
+  timeslotUpdate = (index: number, timeslot) => {
+    this.props.day.timeslots[index] = timeslot;
+    this.props.onChange(this.props.day);
   }
 
   render() {
     return (
       <div className="day">
-        {this.props.slots && this.props.slots.map((slot, i) =>
+        {this.props.slots && this.props.slots.sort((a, b) => Time.compare(a.from, b.from)).map((slot, i) =>
           <div key={i + "slot"} className="slot">
-            <EventHeader key={i + "slot"} timeStart={slot.from} timeEnd={slot.to} type={slot.type} day={this.props.day.day} />
+            <EventHeader edit={this.props.edit} key={i + "slot"} timeStart={slot.from} timeEnd={slot.to} type={slot.type} timeslot={slot} day={this.props.day.day} onTimeslotUpdate={(timeslot) => this.timeslotUpdate(i, timeslot)} onRemove={() => this.onTimeslotRemoved(i)} />
             {slot.rooms && <ScheduleEntry
+              edit={this.props.edit}
               updateIndices={(room, index) => this.props.updateIndices && this.props.updateIndices(i, room, index)}
               addTalks={this.props.addTalks}
               onRemove={this.onTimeslotRemoved && this.onTimeslotRemoved.bind(this, i)}
-              onChange={this.updateSlots && this.updateSlots.bind(this, i)}
+              onChange={this.timeslotUpdate && this.timeslotUpdate.bind(this, i)}
               onStartDrag={this.props.onStartDrag}
               draggingTalk={this.props.draggingTalk}
               day={this.props.day.day}

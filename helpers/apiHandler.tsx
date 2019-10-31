@@ -7,6 +7,7 @@ export default class ApiHandler {
     private static readonly _addTalk = functions.httpsCallable('addTalk');
     private static readonly _getTalks = functions.httpsCallable('getTalks');
     private static readonly _addUser = functions.httpsCallable('addUser');
+    private static readonly _isAdmin = functions.httpsCallable('isAdmin');
     private static readonly _isSpeaker = functions.httpsCallable('isSpeaker');
     private static readonly _getSpeakers = functions.httpsCallable('getSpeakers');
     private static readonly _getSchedule = functions.httpsCallable('getSchedule');
@@ -105,5 +106,10 @@ export default class ApiHandler {
             tag: tag
         }));
         return this.cache('tags', res.data.tags);
+    }
+
+    public static async isAdmin() {
+        const res = (await this._isAdmin());
+        return this.cache('isAdmin', res.data);
     }
 }

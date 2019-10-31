@@ -16,8 +16,8 @@ class Talk extends React.Component<any, any> {
   render() {
     return (
       <div className="talk" onMouseDown={(evt) => {
-        this.props.onStartDrag && evt.preventDefault();
-        this.props.onStartDrag && this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
+        this.props.edit && this.props.onStartDrag && evt.preventDefault();
+        this.props.edit && this.props.onStartDrag && this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
       }}>
         <div className="header">
           <div className="time">

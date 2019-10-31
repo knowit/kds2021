@@ -28,6 +28,15 @@ export async function addUser(data: any, context: functions.https.CallableContex
     return user;
 }
 
+export async function isAdmin(data: any, context: functions.https.CallableContext) {
+    if (!context.auth) {
+        throw new functions.https.HttpsError('unauthenticated', 'You are not signed in');
+    }
+
+    const res = (await db.collection('settings').doc('admins').get()).data();
+    const admins = res && res.admins;
+    return admins.includes(context.auth.uid);
+}
 
 export async function getSpeakers(data: any, context: functions.https.CallableContext) {
     if (!context.auth) {

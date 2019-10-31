@@ -18,6 +18,10 @@ class Time {
         return this;
     }
 
+    public toMinutes() {
+        return this.hours * 60 + this.minutes;
+    }
+
     public copy(): Time {
         const t = new Time();
         t.add(this);
@@ -33,6 +37,10 @@ class Time {
     public static fromString(str: string, del: string = '.') {
         const strs = str.split(del);
         return new Time(strs[0], strs[1]);
+    }
+
+    public static diff(time1: Time, time2: Time) {
+        return Math.abs(time2.hours * 60 + time2.minutes - time1.minutes - time1.hours * 60);    
     }
 }
 
