@@ -104,7 +104,7 @@ class Schedule extends Component<any, any> {
 
     this.setState((prev) => ({
       edit: !prev.edit
-    }));
+    }), () => this.filterProgram(this.state.edit));
   }
 
   startDrag = (talk: Talk, x: number, y: number) => {
@@ -247,8 +247,11 @@ class Schedule extends Component<any, any> {
     }, this.filterProgram);
   }
 
-  filterProgram() {
+  filterProgram(showAll: boolean = false) {
     ProgramUtils.filterProgram(this.state.program, (talk) => {
+      if (showAll) {
+        return true;
+      }
       if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
         return false;
       }
