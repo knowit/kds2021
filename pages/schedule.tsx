@@ -57,7 +57,7 @@ class Schedule extends Component<any, any> {
         .map(timeslot => timeslot.rooms
           .map(room => room.talks))).flat(Infinity);
 
-    const unassignedTalks = res[1].talks.filter(talk => !assignedTalks.find(t => t.id == talk.id));
+    const unassignedTalks = res[1].filter(talk => !assignedTalks.find(t => t.id == talk.id));
 
     let selectedTags = Router.query.tags || [];
     if (selectedTags && !Array.isArray(selectedTags)) {

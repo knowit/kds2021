@@ -15,15 +15,7 @@ export async function addUser(data: any, context: functions.https.CallableContex
         throw new functions.https.HttpsError('invalid-argument', "Missing name");
     }
 
-    const users = (await db.collection('users').doc(id).get()).data();
-
-    if (!users) {
-        throw new functions.https.HttpsError('not-found', 'Could not find talks in collection ' + id);
-    }
-
-    users[context.auth.uid] = user;
-
-    await db.collection('users').doc(id).update(users);
+    await db.collection('program').doc(id).collection('users').doc(context.auth.uid).set(user);
 
     return user;
 }
@@ -55,21 +47,4 @@ export async function getSpeakers(data: any, context: functions.https.CallableCo
         ...users[user],
         id: user
     }));
-}
-
-
-export async function isSpeaker(data: any, context: functions.https.CallableContext) {
-    if (!context.auth) {
-        throw new functions.https.HttpsError('unauthenticated', 'You are not signed in');
-    }
-
-    const { id } = data;
-
-    const users = (await db.collection('users').doc(id).get()).data();
-
-    if (!users) {
-        throw new functions.https.HttpsError('not-found', 'Could not find talks in collection ' + id);
-    }
-
-    return users[context.auth.uid] && users[context.auth.uid].speaker;
 }

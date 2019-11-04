@@ -94,9 +94,9 @@ class Login extends React.Component<any, IState> {
     }
 
     render() {
-        return (<div className="signUp">
+        return (<div className="page signUp">
             <Layout>
-                <div className="content">
+                <div className="document">
                     <div className="form">
                         <label className="form-row-header">Name</label>
                         <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')} />

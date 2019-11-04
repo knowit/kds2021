@@ -37,7 +37,7 @@ export async function addTalk(data: any, context: functions.https.CallableContex
         throw new functions.https.HttpsError('invalid-argument', "Talk object or id is missing");
     }
 
-    const talks = (await db.collection('talks').doc(id).get()).data();
+    const talks = (await db.collection('program').doc(id).collection('talks').doc('talks').get()).data();
 
     if (!talks || !talks.talks) {
         throw new functions.https.HttpsError('not-found', 'Could not find talks in collection ' + id);
@@ -46,9 +46,8 @@ export async function addTalk(data: any, context: functions.https.CallableContex
     talk.id = uuid();
 
     talks.talks.push(talk);
-
-
-    await db.collection('talks').doc(id).update(talks);
+    
+    await db.collection('program').doc(id).collection('talks').doc('talks').update(talks);
 
     return talks;
 }

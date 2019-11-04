@@ -7,7 +7,7 @@ import FirestoreHandler from '../helpers/firestoreHandler';
 import ApiHandler from '../helpers/apiHandler';
 
 interface IState {
-    status: String
+    status: 'LOADING' | 'SIGNED_IN'  | 'SIGNED_OUT'
 }
 
 const withSpeakerAuth = (Component, Redirect?) =>  {
@@ -26,6 +26,7 @@ const withSpeakerAuth = (Component, Redirect?) =>  {
         async authenticate(authUser: User) {
             if (authUser) {
                 const isSpeaker = await this.isSpeaker();
+                console.log(isSpeaker);
                 if (isSpeaker) {
                     this.setState({
                         status: 'SIGNED_IN'
@@ -52,9 +53,6 @@ const withSpeakerAuth = (Component, Redirect?) =>  {
             }
             else if (this.state.status == 'SIGNED_IN') {
                 return (<Component {...this.props } />);
-            }
-            else if (this.state.status == 'SIGNED_OUT' && Redirect) {
-                return (<Redirect {...this.props }/>);
             }
             else {
                 return (<React.Fragment></React.Fragment>);

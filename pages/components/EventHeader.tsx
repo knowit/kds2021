@@ -28,7 +28,6 @@ class EventHeader extends React.Component<any, any> {
     }))
   }
 
-  // FIKS 
   submit = (evt) => {
     if (evt.key == 'Enter') {
       this.props.timeslot.type = this.type.current.value;
@@ -58,11 +57,11 @@ class EventHeader extends React.Component<any, any> {
 
         {!this.state.edit && <span className="time" onClick={this.toggleEdit}>{Time.toString(this.props.timeStart)} - {Time.toString(this.props.timeEnd)}</span>}
         {this.state.edit && <div className="time-pickers">
-          <input type="number" className="time-picker" ref={this.fromHours} defaultValue={this.props.timeslot.from.hours} onKeyPress={this.submit} />
-          <input type="number" className="time-picker" ref={this.fromMinutes} defaultValue={this.props.timeslot.from.minutes} onKeyPress={this.submit} />
+          <input type="number" className="time-picker" ref={this.fromHours} defaultValue={this.props.timeslot && this.props.timeslot.from && this.props.timeslot.from.hours} onKeyPress={this.submit} />
+          <input type="number" className="time-picker" ref={this.fromMinutes} defaultValue={this.props.timeslot && this.props.timeslot.from &&this.props.timeslot.from.minutes} onKeyPress={this.submit} />
           -
-          <input type="number" className="time-picker" ref={this.toHours} defaultValue={this.props.timeslot.to.hours} onKeyPress={this.submit} />
-          <input type="number" className="time-picker" ref={this.toMinutes} defaultValue={this.props.timeslot.to.minutes} onKeyPress={this.submit} />
+          <input type="number" className="time-picker" ref={this.toHours} defaultValue={this.props.timeslot && this.props.timeslot.to && this.props.timeslot.to.hours} onKeyPress={this.submit} />
+          <input type="number" className="time-picker" ref={this.toMinutes} defaultValue={this.props.timeslot && this.props.timeslot.to && this.props.timeslot.to.minutes} onKeyPress={this.submit} />
         </div>
         }
       </div>

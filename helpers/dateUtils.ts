@@ -1,7 +1,7 @@
 export default class DateUtils {
     private static readonly weekdays = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
     public static dayOfWeek(date: Date) {
-        return this.weekdays[date.getDay()];
+        return date && this.weekdays[date.getDay()];
     }
     public static formatDate(date: Date) {
         let str = "";

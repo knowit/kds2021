@@ -32,7 +32,7 @@ class SpeakerSelector extends React.Component<IProps, any> {
                 <input list="list" onChange={this.handleChange.bind(this)} defaultValue={this.getDefaultValue()}>
                 </input>
                 <datalist id="list">
-                    { this.props.speakers.map((speaker, i) => <option key={i} value={speaker.name}></option>)}
+                    { this.props.speakers && this.props.speakers.map((speaker, i) => <option key={i} value={speaker.name}></option>)}
                 </datalist>
             </div>
         );

@@ -3,23 +3,28 @@
     @media screen and (max-width: $break-small) {
         width: 90%;
       }
-    width: 40%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
     display: flex;
     flex-direction: column;
 }
+
 .form .form-row {
     vertical-align: middle;
     margin: 5px;
-    text-align: center;
 }
 
 .form-row-header {
     @extend .form-row;
-    text-align: left !important;
-    margin-bottom: 0px !important;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-error {
+    @extend .form-row;
+    color: red;
 }
 
 .form-row > * {

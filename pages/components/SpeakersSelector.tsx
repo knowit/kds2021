@@ -35,8 +35,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     }
 
     async getSpeakers() {
-        const res = (await ApiHandler.getSpeakers());
-        console.log(res);
+        const res = await ApiHandler.getSpeakers();
         return res;
     }
 

@@ -12,7 +12,7 @@ class Time {
     }
 
     public static toString(time: Time, del: string = ".") : string {
-        return ("0" + time.hours).slice(-2) + del +  ("0" + time.minutes).slice(-2); 
+        return time && ("0" + time.hours).slice(-2) + del +  ("0" + time.minutes).slice(-2); 
     }
 
     public static parse(str: string) {

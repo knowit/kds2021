@@ -8,17 +8,38 @@ import Layout from './components/Layout';
 interface IState {
     username: String,
     password: String,
+    error: String | null
 }
 
 class Login extends React.Component<any, IState> {
     _isMounted: Boolean = false;
-    login = (user, pass) => {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: "",
+            password: "",
+            error: null
+        }
+    }
+    
+    login = async (user, pass) => {
+        await this.setState({
+            error: null
+        });
         auth.signInWithEmailAndPassword(user, pass)
             .then(() => {
                 Router.push('/error', '/'); // Weird bug, see https://github.com/zeit/next.js/issues/5947
             })
-            .catch((err) => console.error(err));
+            .catch((err) => {
+                if (err.code === 'auth/user-not-found') {
+                    this.setState({
+                        error: "Username or password is wrong"
+                    });
+                }
+            });
     }
+
 
     updateUsername = (evt) => {
         if (this._isMounted) {
@@ -45,16 +66,17 @@ class Login extends React.Component<any, IState> {
     }
 
     render() {
-        return (<div className="login">
+        return (<div className="page login">
             <Layout>
-                <div className="content">
+                <div className="document">
                     <div className="form">
-                        <h2 className="form-row">Login</h2>
+                        <h2 className="form-row-header">Login</h2>
                         {/*<label className="form-row">Email</label>*/}
                         <input className="form-row" type="text" name="email" placeholder="Email" onChange={this.updateUsername} />
                         {/*<label className="form-row">Password</label>*/}
                         <input className="form-row" type="password" name="passowrd" placeholder="Password" onChange={this.updatePassword} />
                         <input className="form-row" type="submit" onClick={() => this.login(this.state.username, this.state.password)} value="Sign in" />
+                        {this.state.error && <h4 className="form-error">{this.state.error}</h4>}
                         <div className="form-row">
                             <span>
                                 Not signed up? Sign up &nbsp;
