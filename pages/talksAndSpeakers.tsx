@@ -96,7 +96,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
                     let from = new Time(slot.from.hours, slot.from.minutes); 
                     return room.talks
                       .map((talk, i) => {
-                        const duration = new Time("0", "" + talk.duration) || getDuration(talk.type); 
+                        const duration = talk.duration ? new Time(0, talk.duration) : getDuration(talk.type); 
                         const to = from.copy().add(duration);
                         
                         const talkEl = (<div className="talk-container" key={i}>

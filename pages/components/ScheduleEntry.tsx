@@ -48,17 +48,20 @@ class ScheduleEntry extends Component<IProps, any> {
 
   createRoom(room, index: number) {
 
-    const duration = room.talks.reduce((acc, talk) => acc += getDuration(talk.type).toMinutes(), 0);
+    const duration = room.talks.reduce((acc, talk) => acc += new Time(0, talk.duration).toMinutes(), 0);
 
-    const full = duration > Time.diff(this.props.slot.from, this.props.slot.to);
-
+    
     let from = new Time(this.props.slot.from.hours, this.props.slot.from.minutes);
+    let slotTo = new Time(this.props.slot.to.hours, this.props.slot.to.minutes);
+    
+    const full = duration > Time.diff(from, slotTo);
+    
     let trackIndex = 0;
     const talks = room.talks
       .map((talk) => {
-        const duration = new Time("0", "" + talk.duration) || getDuration(talk.type);
+        const duration = talk.duration ? new Time(0, talk.duration) : getDuration(talk.type);
         const to = from.copy().add(duration);
-
+        
         const style = { // For ie support, ie support is far from good.. but this makes i maybe useable
           msGridRow: trackIndex + 2,
           msGridColumn: index + 1
@@ -67,7 +70,7 @@ class ScheduleEntry extends Component<IProps, any> {
         const talkIndex = trackIndex;
         const roomIndex = index;
 
-        const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'} ${full ? 'full' : ''}`} key={talk.id} style={style as CSSProperties}
+        const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'} ${full && this.props.edit ? 'full' : ''}`} key={talk.id} style={style as CSSProperties}
           onMouseEnter={() => this.props.updateIndices && this.props.updateIndices(roomIndex, talkIndex)}>
           <TalkView title={talk.name}
             edit={this.props.edit}

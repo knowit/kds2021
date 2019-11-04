@@ -2,9 +2,9 @@ class Time {
     public hours: number
     public minutes: number
 
-    public constructor(hours: string = "0", minutes: string = "0") {
-        this.hours = parseInt(hours);
-        this.minutes = parseInt(minutes);
+    public constructor(hours: string | number = "0", minutes: string | number = "0") {
+        this.hours = Number(hours);
+        this.minutes = Number(minutes);
     }
 
     public toString(del: string = ".") : string {
@@ -40,6 +40,7 @@ class Time {
     }
 
     public static diff(time1: Time, time2: Time) {
+        console.log(time1, time2);
         return Math.abs(time2.hours * 60 + time2.minutes - time1.minutes - time1.hours * 60);    
     }
 
