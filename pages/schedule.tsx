@@ -50,10 +50,12 @@ class Schedule extends Component<any, any> {
       ApiHandler.getSchedule(), ApiHandler.getTalks()
     ]);
 
-    const assignedTalks = program.days
-      .map(day => day.timeslots
-        .map(timeslot => timeslot.rooms
-          .map(room => room.talks))).flat(Infinity);
+    const assignedTalks = [];
+    program.days
+      .forEach(day => day.timeslots
+        .forEach(timeslot => timeslot.rooms
+          .forEach(room => room.talks
+            .forEach(talk => assignedTalks.push(talk)))));
 
     const unassignedTalks = talks.filter(talk => !assignedTalks.find(t => t.id == talk.id));
     let selectedTags = Router.query.tags || [];

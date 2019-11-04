@@ -6,8 +6,8 @@ class Difficulty extends React.Component<any, any> {
         return (
             <div className="difficulty">
                 <span className={`first active`}></span>
-                <span className={`second ${(this.props.difficulty == 'Intermediate' || this.props.difficulty == 'Advanced') ? 'active' : ''}`}></span>
-                <span className={`third ${this.props.difficulty == 'Advanced' ? 'active' : ''}`}></span>
+                <span className={`second ${(this.props.difficulty == 'intermediate' || this.props.difficulty == 'advanced') ? 'active' : ''}`}></span>
+                <span className={`third ${this.props.difficulty == 'advanced' ? 'active' : ''}`}></span>
             </div>
         );
     }

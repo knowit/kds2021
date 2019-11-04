@@ -40,7 +40,6 @@ class Time {
     }
 
     public static diff(time1: Time, time2: Time) {
-        console.log(time1, time2);
         return Math.abs(time2.hours * 60 + time2.minutes - time1.minutes - time1.hours * 60);    
     }
 

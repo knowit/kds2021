@@ -18,7 +18,7 @@ const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), 
 class Talk extends React.Component<any, any> {
   isOwner = () => {
     const uid = auth.currentUser && auth.currentUser.uid;
-    return this.props.talk.speaker.id === uid || this.props.talk.cospeakers.any(speaker => speaker.id === uid);
+    return this.props.talk.speaker.id === uid || this.props.talk.cospeakers.some(speaker => speaker.id === uid);
   }
 
   render() {
@@ -27,7 +27,7 @@ class Talk extends React.Component<any, any> {
         this.props.edit && this.props.onStartDrag && evt.preventDefault();
         this.props.edit && this.props.onStartDrag && this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
       }}>
-        {!this.props.edit && this.isOwner() && <div className="talk-owner-info">
+        {!this.props.edit && this.props.talk && this.isOwner() && <div className="talk-owner-info">
           You are a speaker or cospeaker for this talk. You can edit the talk <Link href={"/editTalk?id=" + this.props.talk.id}><a>here</a>
           </Link>
         </div>}
@@ -62,17 +62,17 @@ class Talk extends React.Component<any, any> {
           </div>
         </div>
         <div className="talk-content">
-          <p className="day">{this.props.day && this.props.day.getDay()}</p>
+          <p className="day">{this.props.day && dayOfWeek(this.props.day)}</p>
           <p className="time-info">{this.props.timeStart && this.props.timeStart.toTimeString().slice(0, 5)} - {this.props.timeEnd && this.props.timeEnd.toTimeString().slice(0, 5)}
             <span className="duration">
-              &nbsp;({this.props.talk.duration} min)
+              &nbsp;({this.props.talk && this.props.talk.duration} min)
             </span>
           </p>
           <p className="type-info">{this.props.type}
             <span className="duration">
-              &nbsp;({this.props.talk.duration} min)
+              &nbsp;({this.props.talk && this.props.talk.duration} min)
             </span></p>
-          <h1 className="title">{this.props.talk.name}</h1>
+          <h1 className="title">{this.props.talk && this.props.talk.name}</h1>
           <p className="speaker">{this.props.speaker}</p>
           <p className="info">{this.props.speakerInfo}</p>
           <div className="tags">
