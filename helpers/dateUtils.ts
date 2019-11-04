@@ -1,15 +1,30 @@
-export default class DateUtils {
-    private static readonly weekdays = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
-    public static dayOfWeek(date: Date) {
-        return date && this.weekdays[date.getDay()];
-    }
-    public static formatDate(date: Date) {
-        let str = "";
-        str += date.getFullYear();
-        str += "-";
-        str += ("0" + date.getMonth()).slice(-2);
-        str += "-";
-        str += ("0" + date.getDate()).slice(-2);
-        return str;
-    }
+import { Time } from './time'
+
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function dayOfWeek(date: Date) {
+    return date && weekdays[date.getDay()];
+}
+
+function formatDate(date: Date) {
+    let str = "";
+    str += date.getFullYear();
+    str += "-";
+    str += ("0" + date.getMonth()).slice(-2);
+    str += "-";
+    str += ("0" + date.getDate()).slice(-2);
+    return str;
+}
+
+function createDate(time: Time, date: Date) {
+    const d = new Date(date.getTime())
+    d.setHours(time.hours);
+    d.setMinutes(time.minutes);
+    return d;
+}
+
+export {
+    dayOfWeek,
+    formatDate,
+    createDate
 }

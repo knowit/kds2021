@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import DateUtils from '../../helpers/dateUtils';
+import { dayOfWeek, formatDate } from '../../helpers/dateUtils';
 
 class DaySelect extends Component<any, any> {
 
@@ -35,9 +35,9 @@ class DaySelect extends Component<any, any> {
             <span>
                 {this.props.seperator && <span className="seperator"> | </span>}
                 <span onClick={this.handleSelect} className={`header-day ${this.props.active ? 'selected' : ''}`}>
-                    {DateUtils.dayOfWeek(this.props.day && this.props.day.day)}
+                    {dayOfWeek(this.props.day && this.props.day.day)}
                 </span>
-                {this.state.edit && <input type="date" defaultValue={DateUtils.formatDate(this.props.day && this.props.day.day)} onKeyPress={this.submit}></input>}
+                {this.state.edit && <input type="date" defaultValue={formatDate(this.props.day && this.props.day.day)} onKeyPress={this.submit}></input>}
                 {this.props.edit && <span className="remove-day-button" onClick={() => this.props.onDayRemoved && this.props.onDayRemoved()}>X</span>}
             </span>)
     }

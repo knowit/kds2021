@@ -42,13 +42,20 @@ class Time {
     public static diff(time1: Time, time2: Time) {
         return Math.abs(time2.hours * 60 + time2.minutes - time1.minutes - time1.hours * 60);    
     }
-}
 
-function createDate(time: Time, date: Date) {
-    const d = new Date(date.getTime())
-    d.setHours(time.hours);
-    d.setMinutes(time.minutes);
-    return d;
+    public static parse(str: string) {
+        const splitted = str.split(":");
+        return new Time(splitted[0], splitted[1]);
+    }
+
+    public static compare(time1: Time, time2: Time) {
+        return time1.hours == time2.hours ? (time1.minutes - time2.minutes) : (time1.hours - time2.hours);
+    }
+
+    public static toString(time: Time, del: string = ".") : string {
+        return time && ("0" + time.hours).slice(-2) + del +  ("0" + time.minutes).slice(-2); 
+    }
+
 }
 
 function getDuration(type: string) : Time {
@@ -69,5 +76,4 @@ export {
     Time,
     getDuration,
     getDurationMinutes,
-    createDate
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import Room from '../../models/Room';
-import Time from '../../models/Time';
+import { Time } from '../../helpers/time';
 
 class EventHeader extends React.Component<any, any> {
   type: any;
@@ -50,15 +50,17 @@ class EventHeader extends React.Component<any, any> {
       <div className="event-header">
         {!this.state.edit && <span className="type" onClick={this.toggleEdit}>{this.props.type || 'ingen type'}</span>}
         {this.state.edit && <input type="text" className="edit-type" ref={this.type} defaultValue={this.props.timeslot.type} onKeyPress={this.submit} />}
-        {this.props.edit && [
-          <span className="remove-button" onClick={this.props.onRemove}>remove</span>,
-          <span className="add-room-button" onClick={this.addRoom}>Add room</span>
-        ]}
+        {this.props.edit &&
+          <React.Fragment>
+            <span className="remove-button" onClick={this.props.onRemove}>remove</span>
+            <span className="add-room-button" onClick={this.addRoom}>Add room</span>
+          </React.Fragment>
+        }
 
         {!this.state.edit && <span className="time" onClick={this.toggleEdit}>{Time.toString(this.props.timeStart)} - {Time.toString(this.props.timeEnd)}</span>}
         {this.state.edit && <div className="time-pickers">
           <input type="number" className="time-picker" ref={this.fromHours} defaultValue={this.props.timeslot && this.props.timeslot.from && this.props.timeslot.from.hours} onKeyPress={this.submit} />
-          <input type="number" className="time-picker" ref={this.fromMinutes} defaultValue={this.props.timeslot && this.props.timeslot.from &&this.props.timeslot.from.minutes} onKeyPress={this.submit} />
+          <input type="number" className="time-picker" ref={this.fromMinutes} defaultValue={this.props.timeslot && this.props.timeslot.from && this.props.timeslot.from.minutes} onKeyPress={this.submit} />
           -
           <input type="number" className="time-picker" ref={this.toHours} defaultValue={this.props.timeslot && this.props.timeslot.to && this.props.timeslot.to.hours} onKeyPress={this.submit} />
           <input type="number" className="time-picker" ref={this.toMinutes} defaultValue={this.props.timeslot && this.props.timeslot.to && this.props.timeslot.to.minutes} onKeyPress={this.submit} />

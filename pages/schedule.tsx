@@ -12,7 +12,7 @@ import Filter from './components/Filter';
 import ProgramUtils from '../helpers/programUtils';
 import Router from 'next/router';
 import ApiHandler from '../helpers/apiHandler';
-import DateUtils from "../helpers/dateUtils";
+import { dayOfWeek } from "../helpers/dateUtils";
 import DaySelect from './components/DaySelect';
 import _ from 'lodash';
 import { auth } from "../firebase_utils";
@@ -293,7 +293,7 @@ class Schedule extends Component<any, any> {
                 <span key={day.day}>
                   {i != 0 && <span> | </span>}
                   <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                    {DateUtils.dayOfWeek(day.day)}
+                    {dayOfWeek(day.day)}
                   </span>
                 </span>)}
             </div>
@@ -324,7 +324,7 @@ class Schedule extends Component<any, any> {
                     <h1 className="title">Schedule</h1>
                     <div className="day-selector-header">
                       {this.state.program.days.map((day, i) =>
-                        <DaySelect edit={this.state.edit} day={day} seperator={i !== 0} onDayRemoved={() => this.onDayRemoved(i)} onDayUpdate={(day) => this.updateDay(i, day)} onSelect={() => this.setDay(i)} active={i === this.state.currentDayIndex} />
+                        <DaySelect edit={this.state.edit} key={i} day={day} seperator={i !== 0} onDayRemoved={() => this.onDayRemoved(i)} onDayUpdate={(day) => this.updateDay(i, day)} onSelect={() => this.setDay(i)} active={i === this.state.currentDayIndex} />
                       )}
 
                       {this.state.edit && <span className="add-day-button" onClick={this.addDay}>New day</span>}

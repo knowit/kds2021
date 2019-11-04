@@ -3,7 +3,7 @@ import EventHeader from './EventHeader';
 import ScheduleEntry from './ScheduleEntry';
 import Talk from '../../models/Talk';
 import Timeslot from "../../models/Timeslot";
-import Time from "../../models/Time";
+import { Time } from "../../helpers/time";
 import Room from "../../models/Room";
 
 interface IProps {

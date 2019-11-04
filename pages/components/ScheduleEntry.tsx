@@ -3,7 +3,8 @@ import Talk from "../../models/Talk";
 import { Component, CSSProperties } from "react";
 import dynamic from "next/dynamic";
 import Room from './Room';
-import { getDuration, Time, createDate } from '../../helpers/time';
+import { createDate } from '../../helpers/dateUtils';
+import { getDuration, Time } from '../../helpers/time';
 import Timeslot from "../../models/Timeslot";
 
 interface IProps {
@@ -55,7 +56,8 @@ class ScheduleEntry extends Component<IProps, any> {
     let trackIndex = 0;
     const talks = room.talks
       .map((talk) => {
-        const to = from.copy().add(getDuration(talk.type));
+        const duration = new Time("0", "" + talk.duration) || getDuration(talk.type);
+        const to = from.copy().add(duration);
 
         const style = { // For ie support, ie support is far from good.. but this makes i maybe useable
           msGridRow: trackIndex + 2,
@@ -134,12 +136,12 @@ class ScheduleEntry extends Component<IProps, any> {
         <div className="rooms multi-track" style={style}
           onMouseLeave={() => this.props.updateIndices && this.props.updateIndices(-1, -1)}>
           {
-            this.props.slot && this.props.slot.rooms && this.props.slot.rooms.map((r, i) => 
+            this.props.slot && this.props.slot.rooms && this.props.slot.rooms.map((r, i) =>
               <Room edit={this.props.edit} key={i} index={i} showRoomHeader={this.props.showRoomHeader || this.props.edit} room={r} onRoomUpdate={(talk) => this.updateRoom(i, talk)} onRemove={() => this.removeRoom(i)}>
-              {
-                this.createRoom(r, i)
-              }
-            </Room>)
+                {
+                  this.createRoom(r, i)
+                }
+              </Room>)
           }
         </ div>
       );

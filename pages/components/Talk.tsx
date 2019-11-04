@@ -7,6 +7,7 @@ import React from 'react';
 import Link from 'next/link';
 import { colorClassFromRoomName } from '../../helpers/colors';
 import { auth } from '../../firebase_utils';
+import { dayOfWeek } from '../../helpers/dateUtils';
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
   ssr: false
@@ -36,7 +37,7 @@ class Talk extends React.Component<any, any> {
               <img src="../../static/clock.svg" width="24" height="24" />
             </div>
             <span className="time-text">
-              <span className="time-text-day">{this.props.day && this.props.day.getDay()}<br></br></span>
+              <span className="time-text-day">{this.props.day && dayOfWeek(this.props.day)}<br></br></span>
               {this.props.timeStart && this.props.timeStart.toTimeString().slice(0, 5)} - {this.props.timeEnd && this.props.timeEnd.toTimeString().slice(0, 5)}
             </span>
           </div>

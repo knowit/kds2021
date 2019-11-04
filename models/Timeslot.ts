@@ -1,4 +1,4 @@
-import Time from './Time';
+import { Time } from '../helpers/time';
 
 class Timeslot {
     rooms: Array<any> = []
