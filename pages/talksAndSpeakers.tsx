@@ -116,6 +116,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
                             difficulty={talk.difficulty}
                             tags={talk.tags}
                             selectedTags={this.state.tags}
+                            talk={talk}
                             onToggleTag={(val) => this.handleToggleTag(val)}
                             onFavoriteChange={() => this.filterProgram()} />
                         </div>);

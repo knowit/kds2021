@@ -11,7 +11,6 @@ class Talk {
     tags: Array<string> = []
     speaker: any = null
     cospeakers: Array<any> = []
-    owner: string = ""
 }
 
 export default Talk;

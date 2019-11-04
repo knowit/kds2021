@@ -6,9 +6,9 @@ import * as TagController from './tagController';
 
 export const updateSchedule = functions.region('europe-west1').https.onCall(ScheduleController.updateSchedule);
 
-export const getSchedule = functions.region('europe-west1').https.onCall(ScheduleController.getSchedule);
-
 export const addTalk = functions.region('europe-west1').https.onCall(TalkController.addTalk);
+
+export const updateTalk = functions.region('europe-west1').https.onCall(TalkController.updateTalk);
 
 export const addUser = functions.region('europe-west1').https.onCall(UserController.addUser);
 

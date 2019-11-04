@@ -26,7 +26,6 @@ const withSpeakerAuth = (Component, Redirect?) =>  {
         async authenticate(authUser: User) {
             if (authUser) {
                 const isSpeaker = await this.isSpeaker();
-                console.log(isSpeaker);
                 if (isSpeaker) {
                     this.setState({
                         status: 'SIGNED_IN'

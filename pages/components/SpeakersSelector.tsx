@@ -58,7 +58,6 @@ class SpeakersSelector extends React.Component<IProps, IState> {
     setDefaultValue() {
         // Only set defaut if not been updated before and data is ready
         if (!this.valueUpdated && this.state.speakers && this.state.speakers.length > 0 && this.props.value && this.props.value.length > 0) {
-
             this.valueUpdated = true;
             const mappedDefaultValues = this.props.value.map((id) => {
                 return this.state.speakers.filter((speaker) => speaker.id == id)[0] || null

@@ -4,7 +4,9 @@ import Difficulty from './Difficulty';
 import dynamic from "next/dynamic";
 import Pin from './Pin';
 import React from 'react';
+import Link from 'next/link';
 import { colorClassFromRoomName } from '../../helpers/colors';
+import { auth } from '../../firebase_utils';
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
   ssr: false
@@ -13,12 +15,21 @@ const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), 
 
 
 class Talk extends React.Component<any, any> {
+  isOwner = () => {
+    const uid = auth.currentUser && auth.currentUser.uid;
+    return this.props.talk.speaker.id === uid || this.props.talk.cospeakers.any(speaker => speaker.id === uid);
+  }
+
   render() {
     return (
       <div className="talk" onMouseDown={(evt) => {
         this.props.edit && this.props.onStartDrag && evt.preventDefault();
         this.props.edit && this.props.onStartDrag && this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
       }}>
+        {!this.props.edit && this.isOwner() && <div className="talk-owner-info">
+          You are a speaker or cospeaker for this talk. You can edit the talk <Link href={"/editTalk?id=" + this.props.talk.id}><a>here</a>
+          </Link>
+        </div>}
         <div className="header">
           <div className="time">
             <div className="wrapper">
@@ -53,14 +64,14 @@ class Talk extends React.Component<any, any> {
           <p className="day">{this.props.day && this.props.day.getDay()}</p>
           <p className="time-info">{this.props.timeStart && this.props.timeStart.toTimeString().slice(0, 5)} - {this.props.timeEnd && this.props.timeEnd.toTimeString().slice(0, 5)}
             <span className="duration">
-              &nbsp;({/*this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)*/} min)
+              &nbsp;({this.props.talk.duration} min)
             </span>
           </p>
           <p className="type-info">{this.props.type}
             <span className="duration">
-              &nbsp;({/*this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)*/} min)
+              &nbsp;({this.props.talk.duration} min)
             </span></p>
-          <h1 className="title">{this.props.title}</h1>
+          <h1 className="title">{this.props.talk.name}</h1>
           <p className="speaker">{this.props.speaker}</p>
           <p className="info">{this.props.speakerInfo}</p>
           <div className="tags">

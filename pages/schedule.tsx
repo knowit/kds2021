@@ -46,19 +46,16 @@ class Schedule extends Component<any, any> {
   }
 
   async componentDidMount() {
-    const res = await Promise.all([
+    const [program, talks] = await Promise.all([
       ApiHandler.getSchedule(), ApiHandler.getTalks()
     ]);
-
-    const program = res[0];
 
     const assignedTalks = program.days
       .map(day => day.timeslots
         .map(timeslot => timeslot.rooms
           .map(room => room.talks))).flat(Infinity);
 
-    const unassignedTalks = res[1].filter(talk => !assignedTalks.find(t => t.id == talk.id));
-
+    const unassignedTalks = talks.filter(talk => !assignedTalks.find(t => t.id == talk.id));
     let selectedTags = Router.query.tags || [];
     if (selectedTags && !Array.isArray(selectedTags)) {
       selectedTags = [Router.query.tags as string];

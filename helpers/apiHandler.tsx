@@ -5,6 +5,7 @@ import { firestore, auth } from '../firebase_utils';
 
 export default class ApiHandler {
     private static readonly _addTalk = functions.httpsCallable('addTalk');
+    private static readonly _updateTalk = functions.httpsCallable('updateTalk');
     private static readonly _addUser = functions.httpsCallable('addUser');
     private static readonly _isAdmin = functions.httpsCallable('isAdmin');
     private static readonly _updateSchedule = functions.httpsCallable('updateSchedule');
@@ -18,9 +19,17 @@ export default class ApiHandler {
     }
 
     public static async addTalk(talk: Talk) {
-        return this.cache('talks', (await this._addTalk({
+        this.cache['talks'] = null; // TODO: add to cached array instead
+        return await this._addTalk({
             talk, id: config.id
-        })).data);
+        });
+    }
+
+    public static async updateTalk(talk: Talk) {
+        this.cache['talks'] = null; // TODO: update correct index
+        return await this._updateTalk({
+            talk, id: config.id
+        });
     }
 
     public static async getTalks() {
@@ -45,6 +54,14 @@ export default class ApiHandler {
         });
 
         return this.cache('talks', talks.talks);
+    }
+
+    public static async getTalk(id: string) {
+        const talks = await this.getTalks();
+
+        const talk = talks.find(talk => talk.id == id);
+        console.log(talk.speaker);
+        return talk;
     }
 
     public static async addUser(user: any) {

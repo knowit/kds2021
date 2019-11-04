@@ -61,8 +61,13 @@ function getDuration(type: string) : Time {
     return new Time();
 }
 
+function getDurationMinutes(type: string) : Number {
+    return getDuration(type).toMinutes();
+}
+
 export {
     Time,
     getDuration,
+    getDurationMinutes,
     createDate
 };
