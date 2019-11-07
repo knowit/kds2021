@@ -87,6 +87,16 @@ class SpeakersSelector extends React.Component<IProps, IState> {
         }));
     }
 
+    removeSpeaker(index) {
+        this.setState((prev) => {
+            const cospeakers = prev.cospeakers;
+            cospeakers.splice(index, 1);
+            return {
+                cospeakers
+            };
+        }, () => this.onChange());
+    }
+
     updateSpeakers(index, speaker) {
         this.valueUpdated = true;
 
@@ -107,7 +117,7 @@ class SpeakersSelector extends React.Component<IProps, IState> {
                     <p>{this.state.speaker.name}</p>
                     {
                         this.state.cospeakers && this.state.cospeakers.map((speaker, i) => {
-                            return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => { this.updateSpeakers(i, val) }} value={speaker}></SpeakerSelector>
+                            return <SpeakerSelector key={i} speakers={this.state.speakers} onChange={(val) => { this.updateSpeakers(i, val) }} value={speaker} onRemove={() => this.removeSpeaker(i)}></SpeakerSelector>
                         })
                     }
 

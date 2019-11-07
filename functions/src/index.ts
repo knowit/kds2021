@@ -12,6 +12,4 @@ export const updateTalk = functions.region('europe-west1').https.onCall(TalkCont
 
 export const addUser = functions.region('europe-west1').https.onCall(UserController.addUser);
 
-export const isAdmin = functions.region('europe-west1').https.onCall(UserController.isAdmin);
-
 export const addTag = functions.region('europe-west1').https.onCall(TagController.addTag);

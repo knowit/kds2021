@@ -3,6 +3,7 @@ import React from 'react';
 import FilterTag from './FilterTag';
 import ShowOnlyFavoritesbutton from './ShowOnlyFavoritesButton';
 import ApiHandler from '../../helpers/apiHandler';
+import Languages from '../../models/Languages.json';
 
 interface IState {
     open: boolean
@@ -29,7 +30,7 @@ class Filter extends React.Component<IProps, IState> {
 
     async componentDidMount() {
         this.setState({
-            tags: await ApiHandler.getTags()
+            tags: (await ApiHandler.getTags()).concat(Languages)
         });
     }
 

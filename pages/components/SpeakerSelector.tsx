@@ -4,6 +4,7 @@ import SpeakersSelector from './SpeakersSelector';
 interface IProps {
     speakers: Array<any>,
     value: any,
+    onRemove: () => void
     onChange?: (val) => void
 }
 
@@ -34,6 +35,7 @@ class SpeakerSelector extends React.Component<IProps, any> {
                 <datalist id="list">
                     { this.props.speakers && this.props.speakers.map((speaker, i) => <option key={i} value={speaker.name}></option>)}
                 </datalist>
+                <span className="remove" onClick={this.props.onRemove}>X</span>
             </div>
         );
     }

@@ -21,7 +21,9 @@ interface IProps {
   onChange?: (val: any) => void,
   onRemove?: () => void,
   addTalks?: (talks: Talk[]) => void
+  onFavoriteChange?: () => void
 }
+
 class ScheduleEntry extends Component<IProps, any> {
   constructor(props) {
     super(props);
@@ -88,7 +90,9 @@ class ScheduleEntry extends Component<IProps, any> {
             onStartDrag={(talk, x, y) => this.props.onStartDrag && this.removeTalk(roomIndex, talkIndex) && this.props.onStartDrag(talk, x, y)}
             talk={talk}
             selectedTags={this.props.tags}
-            onToggleTag={this.props.onToggleTag} />
+            onToggleTag={this.props.onToggleTag} 
+            onFavoriteChange={this.props.onFavoriteChange}
+            />
         </div>);
 
         from = to;

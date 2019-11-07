@@ -7,9 +7,12 @@ export default class ApiHandler {
     private static readonly _addTalk = functions.httpsCallable('addTalk');
     private static readonly _updateTalk = functions.httpsCallable('updateTalk');
     private static readonly _addUser = functions.httpsCallable('addUser');
-    private static readonly _isAdmin = functions.httpsCallable('isAdmin');
     private static readonly _updateSchedule = functions.httpsCallable('updateSchedule');
     private static readonly _addTag = functions.httpsCallable('addTag');
+
+    // Only calls that update, create or delete entries are done with cloud funcions for authorizing the requests.
+    // Other calls can be done with firestore calls for less usage of cloud functions and better caching
+
 
     private static _cache = {};
 
@@ -60,7 +63,6 @@ export default class ApiHandler {
         const talks = await this.getTalks();
 
         const talk = talks.find(talk => talk.id == id);
-        console.log(talk.speaker);
         return talk;
     }
 
@@ -140,8 +142,8 @@ export default class ApiHandler {
             return cached;
         }
 
-        const req = await (firestore.collection('tags').doc(config.id).get());
-        const res = await req.data();
+        const req = await (firestore.collection('program').doc(config.id).collection('tags').doc('tags').get());
+        const res = req.data();
 
         return this.cache('tags', res.tags);
     }
@@ -154,8 +156,20 @@ export default class ApiHandler {
         return this.cache('tags', res.data.tags);
     }
 
+    public static async getAdmins() {
+        const cached = this._cache['admins'];
+        if (cached) {
+            return cached;
+        }
+
+        const res = (await firestore.collection('settings').doc('admins').get()).data();
+        return this.cache('admins', res.admins);
+    }
+
     public static async isAdmin() {
-        const res = (await this._isAdmin());
-        return this.cache('isAdmin', res.data);
+        const uid = auth.currentUser && auth.currentUser.uid
+        const admins = await this.getAdmins();
+
+        return admins.indexOf(uid) >= 0;
     }
 }

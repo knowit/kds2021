@@ -62,13 +62,15 @@ class Schedule extends Component<any, any> {
     if (selectedTags && !Array.isArray(selectedTags)) {
       selectedTags = [Router.query.tags as string];
     }
+    let showOnlyFavorites = Router.query.onlyFavorites;
 
     this.setState({
       tags: selectedTags,
       program: program,
       talks: unassignedTalks,
+      showOnlyFavorites: showOnlyFavorites,
       loading: false
-    });
+    }, () => this.filterProgram());
 
     this.mouseMoveCallback = (evt) => this.handleDrag(evt.pageX, evt.pageY);
     this.mouseUpCallback = () => this.stopDrag();
@@ -228,18 +230,27 @@ class Schedule extends Component<any, any> {
     this.talkIndex = talk;
   }
 
-
   handleFilterChange = (newVal) => {
     this.setState({ tags: newVal }, this.filterProgram);
   }
+
   handleFavoriteChange = (newVal) => {
     this.setState({ showOnlyFavorites: newVal }, this.filterProgram);
+  }
+
+  updateQuery = () => {
+    const tags = this.state.tags.join(',');
+    const showOnlyFavorites = this.state.showOnlyFavorites;
+
+    const href = `/?onlyFavorites=${showOnlyFavorites}&tags=${tags}`
+    const as = href;
+    Router.replace(href, as, { shallow: true });
   }
 
   handleToggleTag = (tag) => {
     this.setState((prev) => {
       if (prev.tags.indexOf(tag) > -1) {
-        return { tags: prev.tags.filter(t => t != tag) };
+          return { tags: prev.tags.filter(t => t != tag) };
       }
       return { tags: prev.tags.concat(tag) };
 
@@ -254,7 +265,7 @@ class Schedule extends Component<any, any> {
       if (this.state.showOnlyFavorites && !localStorage.getItem(talk.id)) {
         return false;
       }
-      if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag))) {
+      if (this.state.tags.length > 0 && !talk.tags.some(tag => this.state.tags.includes(tag)) && !this.state.tags.includes(talk.language)) {
         return false;
       }
       return true;
@@ -347,6 +358,7 @@ class Schedule extends Component<any, any> {
                     onRemove={this.onDayRemoved.bind(this)}
                     addTalks={this.addTalks.bind(this)}
                     onChange={this.updateDay.bind(this, this.state.currentDayIndex)}
+                    onFavoriteChange={() => this.filterProgram()}
                     onStartDrag={this.startDrag.bind(this)}
                     draggingTalk={this.state.draggingTalk}
                     tags={this.state.tags}

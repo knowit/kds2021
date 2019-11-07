@@ -17,6 +17,7 @@ interface IProps {
   onStartDrag?: (talk: Talk, x: number, y: number) => void,
   onChange?: (val: any) => void,
   onRemove?: () => void,
+  onFavoriteChange?: () => void
   addTalks?: (talks: Talk[]) => void
 }
 class Day extends Component<IProps, any> {
@@ -54,6 +55,7 @@ class Day extends Component<IProps, any> {
               onRemove={this.onTimeslotRemoved && this.onTimeslotRemoved.bind(this, i)}
               onChange={this.timeslotUpdate && this.timeslotUpdate.bind(this, i)}
               onStartDrag={this.props.onStartDrag}
+              onFavoriteChange={this.props.onFavoriteChange}
               draggingTalk={this.props.draggingTalk}
               day={this.props.day.day}
               onToggleTag={this.props.onToggleTag}

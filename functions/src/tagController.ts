@@ -12,7 +12,7 @@ export async function addTag(data: any, context: functions.https.CallableContext
         throw new functions.https.HttpsError('invalid-argument', "Tag missing");
     }
 
-    const tags = (await db.collection('tags').doc(id).get()).data();
+    const tags = (await  db.collection('program').doc(id).collection('tags').doc('tags').get()).data();
 
     if (!tags) {
         throw new functions.https.HttpsError('not-found', 'Could not find tags in collection ' + id);
@@ -20,7 +20,7 @@ export async function addTag(data: any, context: functions.https.CallableContext
 
     tags.tags.push(tag);
 
-    await db.collection('tags').doc(id).update(tags);
+    await db.collection('program').doc(id).collection('tags').doc('tags').update(tags);
 
     return tags;
 }
