@@ -4,28 +4,32 @@ import React from 'react';
 import Router from 'next/router';
 import Link from 'next/link';
 import Layout from './components/Layout';
+import Loader from './components/Loader';
 
 interface IState {
-    username: String,
-    password: String,
-    error: String | null
+    username: string,
+    password: string,
+    error: string | null
+    loading: boolean
 }
 
 class Login extends React.Component<any, IState> {
     _isMounted: Boolean = false;
-    
+
     constructor(props) {
         super(props);
         this.state = {
             username: "",
             password: "",
-            error: null
+            error: null,
+            loading: false
         }
     }
-    
+
     login = async (user, pass) => {
-        await this.setState({
-            error: null
+        this.setState({
+            error: null,
+            loading: true
         });
         auth.signInWithEmailAndPassword(user, pass)
             .then(() => {
@@ -34,7 +38,8 @@ class Login extends React.Component<any, IState> {
             .catch((err) => {
                 if (err.code === 'auth/user-not-found') {
                     this.setState({
-                        error: "Username or password is wrong"
+                        error: "Username or password is wrong",
+                        loading: false
                     });
                 }
             });
@@ -68,23 +73,26 @@ class Login extends React.Component<any, IState> {
     render() {
         return (<div className="page login">
             <Layout>
+
                 <div className="document">
                     <div className="form">
                         <h2 className="form-row-header">Login</h2>
-                        {/*<label className="form-row">Email</label>*/}
-                        <input className="form-row" type="text" name="email" placeholder="Email" onChange={this.updateUsername} />
-                        {/*<label className="form-row">Password</label>*/}
-                        <input className="form-row" type="password" name="passowrd" placeholder="Password" onChange={this.updatePassword} />
-                        <input className="form-row" type="submit" onClick={() => this.login(this.state.username, this.state.password)} value="Sign in" />
-                        {this.state.error && <h4 className="form-error">{this.state.error}</h4>}
-                        <div className="form-row">
-                            <span>
-                                Not signed up? Sign up &nbsp;
+                        <Loader loading={this.state.loading}>
+                            {/*<label className="form-row">Email</label>*/}
+                            <input className="form-row" type="text" name="email" placeholder="Email" onChange={this.updateUsername} value={this.state.username} />
+                            {/*<label className="form-row">Password</label>*/}
+                            <input className="form-row" type="password" name="passowrd" placeholder="Password" onChange={this.updatePassword} value={this.state.password} />
+                            <input className="form-row" type="submit" onClick={() => this.login(this.state.username, this.state.password)} value="Sign in" />
+                            {this.state.error && <h4 className="form-error">{this.state.error}</h4>}
+                            <div className="form-row">
+                                <span>
+                                    Not signed up? Sign up &nbsp;
                                 <Link href="/signUp">
-                                    <a>here</a>
-                                </Link>
-                            </span>
-                        </div>
+                                        <a>here</a>
+                                    </Link>
+                                </span>
+                            </div>
+                        </Loader>
                     </div>
                 </div>
             </Layout>

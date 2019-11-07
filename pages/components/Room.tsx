@@ -26,7 +26,7 @@ class Room extends React.Component<any, any> {
     }
 
     render() {
-        const color = colorClassFromRoomName(this.props.room);
+        const color = colorClassFromRoomName(this.props.room.name);
 
         const style = {
             msGridColumn: this.props.index + 1,

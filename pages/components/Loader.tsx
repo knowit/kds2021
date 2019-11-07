@@ -12,8 +12,10 @@ class Loader extends React.Component<IProps, any> {
     render() {
         if (this.props.loading) {
             return (
+                <div className="loader-container">
                     <div className={`loader ${this.props.className || ''}`}>
-                    </div>);
+                    </div>
+                </div>);
         }
         else {
             return (<React.Fragment>

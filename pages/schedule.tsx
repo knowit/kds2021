@@ -16,6 +16,7 @@ import { dayOfWeek } from "../helpers/dateUtils";
 import DaySelect from './components/DaySelect';
 import _ from 'lodash';
 import { auth } from "../firebase_utils";
+import Loader from "./components/Loader";
 
 class Schedule extends Component<any, any> {
   private mouseMoveCallback: any;
@@ -250,7 +251,7 @@ class Schedule extends Component<any, any> {
   handleToggleTag = (tag) => {
     this.setState((prev) => {
       if (prev.tags.indexOf(tag) > -1) {
-          return { tags: prev.tags.filter(t => t != tag) };
+        return { tags: prev.tags.filter(t => t != tag) };
       }
       return { tags: prev.tags.concat(tag) };
 
@@ -277,6 +278,9 @@ class Schedule extends Component<any, any> {
   }
 
   async save() {
+    this.setState({
+      loading: true
+    });
     const program = {
       days: this.state.program.days.map(day => {
         const newday = Object.assign({}, day);
@@ -294,84 +298,89 @@ class Schedule extends Component<any, any> {
     }
 
     await ApiHandler.updateSchedule(program);
+    this.setState({
+      loading: false
+    });
   }
 
   render() {
     return (
       <div className="schedule page" ref={this.pageRef} onScroll={() => this.handleDrag(this.state.mouseX, this.state.mouseY)}>
         <Layout title="Schedule" showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} filter={this.state.edit ? false : 'small'} background={true} header={<RegisterButton></RegisterButton>}>
-          <div className="schedule-document negative-margin">
-            <div className="day-selector-top">
-              {this.state.program.days.map((day, i) =>
-                <span key={day.day}>
-                  {i != 0 && <span> | </span>}
-                  <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                    {dayOfWeek(day.day)}
-                  </span>
-                </span>)}
-            </div>
-            <div className="program-builder-container">
-              {this.state.edit && <div className="unassigned-talks">
-                {this.state.talks.map(talk =>
-                  <Talk title={talk.name}
-                    edit={this.state.edit}
-                    speaker={talk.speaker && talk.speaker.name}
-                    type={talk.type}
-                    language={talk.language}
-                    difficulty={talk.difficulty}
-                    id={talk.id}
-                    key={talk.id}
-                    day={this.props.day}
-                    tags={talk.tags}
-                    talk={talk}
-                    onStartDrag={this.startDrag} />
-                )}
-              </div>}
-              <div className="schedule-container">
-                <div className="header">
-                  {!this.state.edit && <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"></Filter>}
-                  {this.state.isAdmin && <div className="edit-button">
-                    <span onClick={this.toggleEdit}>edit</span>
-                  </div>}
-                  <div className="header-title">
-                    <h1 className="title">Schedule</h1>
-                    <div className="day-selector-header">
-                      {this.state.program.days.map((day, i) =>
-                        <DaySelect edit={this.state.edit} key={i} day={day} seperator={i !== 0} onDayRemoved={() => this.onDayRemoved(i)} onDayUpdate={(day) => this.updateDay(i, day)} onSelect={() => this.setDay(i)} active={i === this.state.currentDayIndex} />
-                      )}
-
-                      {this.state.edit && <span className="add-day-button" onClick={this.addDay}>New day</span>}
-                    </div>
-                    {this.state.edit && this.state.program.days.length > 0 && <div>
-                      <span className="add-slot-button" onClick={this.addSlot}>
-                        Add slot
-                      </span>
+          <Loader loading={this.state.loading}>
+            <div className="schedule-document negative-margin">
+              <div className="day-selector-top">
+                {this.state.program.days.map((day, i) =>
+                  <span key={day.day}>
+                    {i != 0 && <span> | </span>}
+                    <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
+                      {dayOfWeek(day.day)}
+                    </span>
+                  </span>)}
+              </div>
+              <div className="program-builder-container">
+                {this.state.edit && <div className="unassigned-talks">
+                  {this.state.talks.map(talk =>
+                    <Talk title={talk.name}
+                      edit={this.state.edit}
+                      speaker={talk.speaker && talk.speaker.name}
+                      type={talk.type}
+                      language={talk.language}
+                      difficulty={talk.difficulty}
+                      id={talk.id}
+                      key={talk.id}
+                      day={this.props.day}
+                      tags={talk.tags}
+                      talk={talk}
+                      onStartDrag={this.startDrag} />
+                  )}
+                </div>}
+                <div className="schedule-container">
+                  <div className="header">
+                    {!this.state.edit && <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"></Filter>}
+                    {this.state.isAdmin && <div className="edit-button">
+                      <span onClick={this.toggleEdit}>edit</span>
                     </div>}
-                  </div>
-                </div>
+                    <div className="header-title">
+                      <h1 className="title">Schedule</h1>
+                      <div className="day-selector-header">
+                        {this.state.program.days.map((day, i) =>
+                          <DaySelect edit={this.state.edit} key={i} day={day} seperator={i !== 0} onDayRemoved={() => this.onDayRemoved(i)} onDayUpdate={(day) => this.updateDay(i, day)} onSelect={() => this.setDay(i)} active={i === this.state.currentDayIndex} />
+                        )}
 
-                {this.state.program.days.length > 0 &&
-                  <DayView
-                    edit={this.state.edit}
-                    onToggleTag={this.handleToggleTag}
-                    updateIndices={(slot, room, talk) => this.updateIndices(this.state.currentDayIndex, slot, room, talk)}
-                    onRemove={this.onDayRemoved.bind(this)}
-                    addTalks={this.addTalks.bind(this)}
-                    onChange={this.updateDay.bind(this, this.state.currentDayIndex)}
-                    onFavoriteChange={() => this.filterProgram()}
-                    onStartDrag={this.startDrag.bind(this)}
-                    draggingTalk={this.state.draggingTalk}
-                    tags={this.state.tags}
-                    day={this.state.program.days[this.state.currentDayIndex]}
-                    slots={this.state.program.days[this.state.currentDayIndex] && this.state.program.days[this.state.currentDayIndex].timeslots} />}
+                        {this.state.edit && <span className="add-day-button" onClick={this.addDay}>New day</span>}
+                      </div>
+                      {this.state.edit && this.state.program.days.length > 0 && <div>
+                        <span className="add-slot-button" onClick={this.addSlot}>
+                          Add slot
+                      </span>
+                      </div>}
+                    </div>
+                  </div>
+
+                  {this.state.program.days.length > 0 &&
+                    <DayView
+                      edit={this.state.edit}
+                      onToggleTag={this.handleToggleTag}
+                      updateIndices={(slot, room, talk) => this.updateIndices(this.state.currentDayIndex, slot, room, talk)}
+                      onRemove={this.onDayRemoved.bind(this)}
+                      addTalks={this.addTalks.bind(this)}
+                      onChange={this.updateDay.bind(this, this.state.currentDayIndex)}
+                      onFavoriteChange={() => this.filterProgram()}
+                      onStartDrag={this.startDrag.bind(this)}
+                      draggingTalk={this.state.draggingTalk}
+                      tags={this.state.tags}
+                      day={this.state.program.days[this.state.currentDayIndex]}
+                      slots={this.state.program.days[this.state.currentDayIndex] && this.state.program.days[this.state.currentDayIndex].timeslots} />}
+                </div>
               </div>
             </div>
-          </div>
-          {this.state.draggingTalk != null &&
-            <div className="talk dragging-talk" style={{ left: this.state.mouseX + "px", top: this.state.mouseY + (this.pageRef && this.pageRef.current.scrollTop || 0) + "px", position: "absolute" }}>
-              <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
-            </div>
-          }
+            {this.state.draggingTalk != null &&
+              <div className="talk dragging-talk" style={{ left: this.state.mouseX + "px", top: this.state.mouseY + (this.pageRef && this.pageRef.current.scrollTop || 0) + "px", position: "absolute" }}>
+                <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
+              </div>
+            }
+          </Loader>
         </Layout>
       </div>
     );

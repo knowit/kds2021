@@ -5,6 +5,7 @@ import React from 'react'
 import Router from 'next/router'
 import Layout from './components/Layout'
 import ApiHandler from '../helpers/apiHandler';
+import Loader from './components/Loader';
 
 class Form {
     name: string
@@ -19,10 +20,11 @@ interface IState {
     form: Form,
     speaker: boolean,
     speakerInfo: string
+    loading: boolean
+    error: string
 }
 
 class Login extends React.Component<any, IState> {
-    signup = false;
     constructor(props) {
         super(props);
 
@@ -35,6 +37,8 @@ class Login extends React.Component<any, IState> {
                 company: "",
                 country: ""
             },
+            error: "",
+            loading: false,
             speaker: false,
             speakerInfo: ""
         }
@@ -54,9 +58,11 @@ class Login extends React.Component<any, IState> {
         });
     }
 
-    signUp() {
-        this.signup = true;
+    async signUp() {
         if (this.validForm(this.state.form)) {
+            this.setState({
+                loading: true
+            });
             auth.createUserWithEmailAndPassword(this.state.form.email, this.state.form.password)
                 .then((val) => {
                     const auid = val.user.uid;
@@ -74,11 +80,19 @@ class Login extends React.Component<any, IState> {
                         });
                         Router.push('/');
                     }
+                    this.setState({
+                        loading: false
+                    });
                 })
-                .catch(console.error);
+                .catch(err => this.setState({
+                    error: err.message,
+                    loading: false
+                }));
         }
         else {
-            console.log("not valid form");
+            this.setState({
+                error: "Form not valid"
+            });
         }
     }
 
@@ -96,38 +110,41 @@ class Login extends React.Component<any, IState> {
     render() {
         return (<div className="page signUp">
             <Layout>
-                <div className="document">
-                    <div className="form">
-                        <label className="form-row-header">Name</label>
-                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')} />
+                <Loader loading={this.state.loading}>
+                    <div className="document">
+                        <div className="form">
+                            <label className="form-row-header">Name</label>
+                            <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'name')} value={this.state.form.name} />
 
-                        <label className="form-row-header">Email</label>
-                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'email')} />
+                            <label className="form-row-header">Email</label>
+                            <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'email')}  value={this.state.form.email} />
 
-                        <label className="form-row-header">Password</label>
-                        <input className="form-row" type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password')} />
+                            <label className="form-row-header">Password</label>
+                            <input className="form-row" type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password')}  value={this.state.form.password} />
 
-                        <label className="form-row-header">Password again</label>
-                        <input className="form-row" type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password2')} />
+                            <label className="form-row-header">Password again</label>
+                            <input className="form-row" type="password" onChange={(evt) => this.updateForm(evt.target.value, 'password2')}  value={this.state.form.password2} />
 
-                        <label className="form-row-header">Knowit company (full name)</label>
-                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'company')} />
+                            <label className="form-row-header">Knowit company (full name)</label>
+                            <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'company')}  value={this.state.form.company} />
 
-                        <label className="form-row-header">Knowit country</label>
-                        <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'country')} />
+                            <label className="form-row-header">Knowit country</label>
+                            <input className="form-row" type="text" onChange={(evt) => this.updateForm(evt.target.value, 'country')}  value={this.state.form.country} />
 
-                        <label className="form-row-header">Speaker?</label>
-                        <input className="form-row" type="checkbox" onChange={(evt) => this.updateState(evt.target.checked, 'speaker')} />
-                        {
-                            this.state.speaker &&
-                            <React.Fragment>
-                                <label className="form-row-header">Info about you</label>
-                                <textarea className="form-row" name="" id="" cols={30} rows={10} onChange={(evt) => this.updateState(evt.target.value, 'speakerInfo')}></textarea>
-                            </React.Fragment>
-                        }
-                        <button onClick={() => this.signUp()}> Sign up!</button>
+                            <label className="form-row-header">Speaker?</label>
+                            <input className="form-row" type="checkbox" onChange={(evt) => this.updateState(evt.target.checked, 'speaker')}  checked={this.state.speaker} />
+                            {
+                                this.state.speaker &&
+                                <React.Fragment>
+                                    <label className="form-row-header">Info about you</label>
+                                    <textarea className="form-row" name="" id="" cols={30} rows={10} onChange={(evt) => this.updateState(evt.target.value, 'speakerInfo')} value={this.state.speakerInfo} ></textarea>
+                                </React.Fragment>
+                            }
+                            <button onClick={() => this.signUp()}> Sign up!</button>
+                            {this.state.error && <h4 className="form-error">{this.state.error}</h4>}
+                        </div>
                     </div>
-                </div>
+                </Loader>
             </Layout>
         </div >);
     }
