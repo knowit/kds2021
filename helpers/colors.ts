@@ -1,16 +1,18 @@
-import { program as Program } from '../models/data.json'; 
-
-const seed = "nice seed!!!!";
-
-
-
 const colorClasses = ['room-header-green', 'room-header-purple', 'room-header-red', 'room-header-yellow'];
 
+const rooms = {};
+
 const colorClassFromRoomName = roomName => {
-    const index = Math.abs(Program.rooms.indexOf(roomName) % colorClasses.length);
+    if (rooms[roomName] === undefined) {
+        rooms[roomName] = Object.keys(rooms).length;
+    }
+    
+    const index = Math.abs(rooms[roomName] % colorClasses.length);
     return colorClasses[index];
 }
 
+
+const seed = "nice seed!!!!";
 // Should be tweaked to create more "nice" colors
 const colorFromRoomName = roomName => {
     const str = roomName + seed + roomName; // Room names tend to be quite short so we put multiple of them togheter

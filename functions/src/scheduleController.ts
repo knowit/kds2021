@@ -8,17 +8,16 @@ export async function updateSchedule(data: any, context: functions.https.Callabl
 
     const { id, program } = data;
 
-    const programRef = (await db.collection('program').doc(id).collection('schedule').doc('schedule').get()).data();
+    const admins = (await db.collection('settings').doc('admins').get()).data();
 
-    if (!programRef || !programRef.contributors || !programRef.contributors.includes(context.auth.uid)) {
-        throw new functions.https.HttpsError('permission-denied', 'You are not a contributor for this program');
+    if (!admins || !admins.admins.includes(context.auth.uid)) {
+        throw new functions.https.HttpsError('permission-denied', 'You dont have permission to update the schedule');
     }
 
     // Day.day is ms so it needs to be converted to date
     program.days.forEach((day: any) => day.day = new Date(day.day));
 
     await db.collection('program').doc(id).collection('schedule').doc('schedule').update({
-        contributors: programRef && programRef.contributors,
         days: program.days
     });
 

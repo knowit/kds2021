@@ -73,10 +73,15 @@ export default class ApiHandler {
     }
 
     public static async isSpeaker() {
-        const user = auth.currentUser;
-        const req = await firestore.collection('program').doc(config.id).collection('users').doc(user && user.uid).get();
-        const res = await req.data();
-        return this.cache('isSpeaker', res.speaker);
+        try {
+            const user = auth.currentUser;
+            const req = await firestore.collection('program').doc(config.id).collection('users').doc(user && user.uid).get();
+            const res = req.data();
+            return this.cache('isSpeaker', res.speaker);
+        }
+        catch (e) {
+            return false; 
+        }
     }
 
     public static async getSpeakers() {
@@ -169,7 +174,7 @@ export default class ApiHandler {
     public static async isAdmin() {
         const uid = auth.currentUser && auth.currentUser.uid
         const admins = await this.getAdmins();
-
+        
         return admins.indexOf(uid) >= 0;
     }
 }
