@@ -1,7 +1,8 @@
 import React from 'react';
 
 interface IProps {
-    loading: boolean,
+    loading: boolean
+    small?: boolean
     className?: string
 }
 
@@ -13,7 +14,7 @@ class Loader extends React.Component<IProps, any> {
         if (this.props.loading) {
             return (
                 <div className="loader-container">
-                    <div className={`loader ${this.props.className || ''}`}>
+                    <div className={`loader ${this.props.className || ''} ${this.props.small ? 'loader-small' : ''}`}>
                     </div>
                 </div>);
         }

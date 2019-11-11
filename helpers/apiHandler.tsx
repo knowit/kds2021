@@ -178,6 +178,10 @@ export default class ApiHandler {
         const req = await (firestore.collection('program').doc(program_id).collection('tags').doc('tags').get());
         const res = req.data();
 
+        if (!res) {
+            return [];
+        }
+
         return this.cache('tags_' + program_id, res.tags);
     }
 

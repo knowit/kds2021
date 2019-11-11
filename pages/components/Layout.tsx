@@ -63,7 +63,7 @@ class Layout extends React.Component<IProps, IState> {
                 By Developers, For Developers
             </h2>
               <h3 className="header-location">
-                <Loader loading={this.state.loadingDates}>
+                <Loader loading={this.state.loadingDates} small={true}>
                   <React.Fragment>
 
                     <img id="location-img" src="../static/location.svg" />

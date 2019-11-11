@@ -49,6 +49,14 @@ h1 {
   animation: spin 2s linear infinite;
 }
 
+.loader-small {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #A0D1CA;
+  width: 30px;
+  height: 30px;
+  
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg)
