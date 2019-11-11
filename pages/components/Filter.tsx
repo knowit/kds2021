@@ -4,6 +4,7 @@ import FilterTag from './FilterTag';
 import ShowOnlyFavoritesbutton from './ShowOnlyFavoritesButton';
 import ApiHandler from '../../helpers/apiHandler';
 import Languages from '../../models/Languages.json';
+import Router from 'next/router';
 
 interface IState {
     open: boolean
@@ -15,7 +16,7 @@ interface IProps {
     onFavoriteChange: (val: boolean) => void
     selectedTags: string[]
     showOnlyFavorites: boolean
-    className?: string,
+    className?: string
     type?: 'dropdown' | 'slide-left'
 }
 
@@ -29,8 +30,9 @@ class Filter extends React.Component<IProps, IState> {
     }
 
     async componentDidMount() {
+        const id = Router.asPath.split('id=')[1]
         this.setState({
-            tags: (await ApiHandler.getTags()).concat(Languages)
+            tags: (await ApiHandler.getTags(id)).concat(Languages)
         });
     }
 

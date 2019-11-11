@@ -6,7 +6,6 @@ import Day from '../models/Day';
 import Timeslot from '../models/Timeslot';
 import Talk from "./components/Talk";
 import { Component, createRef } from "react";
-import { program as Program } from "../models/data.json";
 import RegisterButton from "./components/RegisterButton";
 import Filter from './components/Filter';
 import ProgramUtils from '../helpers/programUtils';
@@ -23,10 +22,10 @@ class Schedule extends Component<any, any> {
   private mouseUpCallback: any;
   private pageRef: any = createRef();
 
-  private dayIndex: number = 0;
-  private slotIndex: number = 0;
-  private roomIndex: number = 0;
-  private talkIndex: number = 0;
+  private dayIndex: number = -1;
+  private slotIndex: number = -1;
+  private roomIndex: number = -1;
+  private talkIndex: number = -1;
 
   constructor(props) {
     super(props);
@@ -34,6 +33,7 @@ class Schedule extends Component<any, any> {
       program: {
         days: []
       },
+      tags: [],
       edit: false,
       talks: [],
       isAdmin: false,
@@ -42,14 +42,23 @@ class Schedule extends Component<any, any> {
       mouseY: 0,
       loading: true,
       showOnlyFavorites: false,
-      currentDayIndex: 0
+      currentDayIndex: 0,
+      notFound: false
     };
   }
 
   async componentDidMount() {
+    const id = Router.asPath.split('id=')[1];
     const [program, talks] = await Promise.all([
-      ApiHandler.getSchedule(), ApiHandler.getTalks()
+      ApiHandler.getSchedule(id), ApiHandler.getTalks(id)
     ]);
+
+    if (!program) {
+      this.setState({
+        notFound: true
+      });
+      return;
+    }
 
     const assignedTalks = [];
     program.days
@@ -59,17 +68,10 @@ class Schedule extends Component<any, any> {
             .forEach(talk => assignedTalks.push(talk)))));
 
     const unassignedTalks = talks.filter(talk => !assignedTalks.find(t => t.id == talk.id));
-    let selectedTags = Router.query.tags || [];
-    if (selectedTags && !Array.isArray(selectedTags)) {
-      selectedTags = [Router.query.tags as string];
-    }
-    let showOnlyFavorites = Router.query.onlyFavorites;
 
     this.setState({
-      tags: selectedTags,
       program: program,
       talks: unassignedTalks,
-      showOnlyFavorites: showOnlyFavorites,
       loading: false
     }, () => this.filterProgram());
 
@@ -239,15 +241,6 @@ class Schedule extends Component<any, any> {
     this.setState({ showOnlyFavorites: newVal }, this.filterProgram);
   }
 
-  updateQuery = () => {
-    const tags = this.state.tags.join(',');
-    const showOnlyFavorites = this.state.showOnlyFavorites;
-
-    const href = `/?onlyFavorites=${showOnlyFavorites}&tags=${tags}`
-    const as = href;
-    Router.replace(href, as, { shallow: true });
-  }
-
   handleToggleTag = (tag) => {
     this.setState((prev) => {
       if (prev.tags.indexOf(tag) > -1) {
@@ -297,7 +290,7 @@ class Schedule extends Component<any, any> {
       })
     }
 
-    await ApiHandler.updateSchedule(program);
+    await ApiHandler.updateSchedule(program, Router.asPath.split('id=')[1]);
     this.setState({
       loading: false
     });
@@ -307,80 +300,82 @@ class Schedule extends Component<any, any> {
     return (
       <div className="schedule page" ref={this.pageRef} onScroll={() => this.handleDrag(this.state.mouseX, this.state.mouseY)}>
         <Layout title="Schedule" showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} filter={this.state.edit ? false : 'small'} background={true} header={<RegisterButton></RegisterButton>}>
-          <Loader loading={this.state.loading}>
-            <div className="schedule-document negative-margin">
-              <div className="day-selector-top">
-                {this.state.program.days.map((day, i) =>
-                  <span key={day.day}>
-                    {i != 0 && <span> | </span>}
-                    <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                      {dayOfWeek(day.day)}
-                    </span>
-                  </span>)}
-              </div>
-              <div className="program-builder-container">
-                {this.state.edit && <div className="unassigned-talks">
-                  {this.state.talks.map(talk =>
-                    <Talk title={talk.name}
-                      edit={this.state.edit}
-                      speaker={talk.speaker && talk.speaker.name}
-                      type={talk.type}
-                      language={talk.language}
-                      difficulty={talk.difficulty}
-                      id={talk.id}
-                      key={talk.id}
-                      day={this.props.day}
-                      tags={talk.tags}
-                      talk={talk}
-                      onStartDrag={this.startDrag} />
-                  )}
-                </div>}
-                <div className="schedule-container">
-                  <div className="header">
-                    {!this.state.edit && <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"></Filter>}
-                    {this.state.isAdmin && <div className="edit-button">
-                      <span onClick={this.toggleEdit}>edit</span>
-                    </div>}
-                    <div className="header-title">
-                      <h1 className="title">Schedule</h1>
-                      <div className="day-selector-header">
-                        {this.state.program.days.map((day, i) =>
-                          <DaySelect edit={this.state.edit} key={i} day={day} seperator={i !== 0} onDayRemoved={() => this.onDayRemoved(i)} onDayUpdate={(day) => this.updateDay(i, day)} onSelect={() => this.setDay(i)} active={i === this.state.currentDayIndex} />
-                        )}
-
-                        {this.state.edit && <span className="add-day-button" onClick={this.addDay}>New day</span>}
-                      </div>
-                      {this.state.edit && this.state.program.days.length > 0 && <div>
-                        <span className="add-slot-button" onClick={this.addSlot}>
-                          Add slot
+          {this.state.notFound ? <p>Program not found</p> :
+            <Loader loading={this.state.loading}>
+              <div className="schedule-document negative-margin">
+                <div className="day-selector-top">
+                  {this.state.program.days.map((day, i) =>
+                    <span key={day.day}>
+                      {i != 0 && <span> | </span>}
+                      <span onClick={() => this.setDay(i)} className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
+                        {dayOfWeek(day.day)}
                       </span>
+                    </span>)}
+                </div>
+                <div className="program-builder-container">
+                  {this.state.edit && <div className="unassigned-talks">
+                    {this.state.talks.map(talk =>
+                      <Talk title={talk.name}
+                        edit={this.state.edit}
+                        speaker={talk.speaker && talk.speaker.name}
+                        type={talk.type}
+                        language={talk.language}
+                        difficulty={talk.difficulty}
+                        id={talk.id}
+                        key={talk.id}
+                        day={this.props.day}
+                        tags={talk.tags}
+                        talk={talk}
+                        onStartDrag={this.startDrag} />
+                    )}
+                  </div>}
+                  <div className="schedule-container">
+                    <div className="header">
+                      {!this.state.edit && <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"></Filter>}
+                      {this.state.isAdmin && <div className="edit-button">
+                        <span onClick={this.toggleEdit}>edit</span>
                       </div>}
-                    </div>
-                  </div>
+                      <div className="header-title">
+                        <h1 className="title">Schedule</h1>
+                        <div className="day-selector-header">
+                          {this.state.program.days.map((day, i) =>
+                            <DaySelect edit={this.state.edit} key={i} day={day} seperator={i !== 0} onDayRemoved={() => this.onDayRemoved(i)} onDayUpdate={(day) => this.updateDay(i, day)} onSelect={() => this.setDay(i)} active={i === this.state.currentDayIndex} />
+                          )}
 
-                  {this.state.program.days.length > 0 &&
-                    <DayView
-                      edit={this.state.edit}
-                      onToggleTag={this.handleToggleTag}
-                      updateIndices={(slot, room, talk) => this.updateIndices(this.state.currentDayIndex, slot, room, talk)}
-                      onRemove={this.onDayRemoved.bind(this)}
-                      addTalks={this.addTalks.bind(this)}
-                      onChange={this.updateDay.bind(this, this.state.currentDayIndex)}
-                      onFavoriteChange={() => this.filterProgram()}
-                      onStartDrag={this.startDrag.bind(this)}
-                      draggingTalk={this.state.draggingTalk}
-                      tags={this.state.tags}
-                      day={this.state.program.days[this.state.currentDayIndex]}
-                      slots={this.state.program.days[this.state.currentDayIndex] && this.state.program.days[this.state.currentDayIndex].timeslots} />}
+                          {this.state.edit && <span className="add-day-button" onClick={this.addDay}>New day</span>}
+                        </div>
+                        {this.state.edit && this.state.program.days.length > 0 && <div>
+                          <span className="add-slot-button" onClick={this.addSlot}>
+                            Add slot
+                      </span>
+                        </div>}
+                      </div>
+                    </div>
+
+                    {this.state.program.days.length > 0 &&
+                      <DayView
+                        edit={this.state.edit}
+                        onToggleTag={this.handleToggleTag}
+                        updateIndices={(slot, room, talk) => this.updateIndices(this.state.currentDayIndex, slot, room, talk)}
+                        onRemove={this.onDayRemoved.bind(this)}
+                        addTalks={this.addTalks.bind(this)}
+                        onChange={this.updateDay.bind(this, this.state.currentDayIndex)}
+                        onFavoriteChange={() => this.filterProgram()}
+                        onStartDrag={this.startDrag.bind(this)}
+                        draggingTalk={this.state.draggingTalk}
+                        tags={this.state.tags}
+                        day={this.state.program.days[this.state.currentDayIndex]}
+                        slots={this.state.program.days[this.state.currentDayIndex] && this.state.program.days[this.state.currentDayIndex].timeslots} />}
+                  </div>
                 </div>
               </div>
-            </div>
-            {this.state.draggingTalk != null &&
-              <div className="talk dragging-talk" style={{ left: this.state.mouseX + "px", top: this.state.mouseY + (this.pageRef && this.pageRef.current.scrollTop || 0) + "px", position: "absolute" }}>
-                <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
-              </div>
-            }
-          </Loader>
+              {this.state.draggingTalk != null &&
+                <div className="talk dragging-talk" style={{ left: this.state.mouseX + "px", top: this.state.mouseY + (this.pageRef && this.pageRef.current.scrollTop || 0) + "px", position: "absolute" }}>
+                  <p>{this.state.draggingTalk.name} - {this.state.draggingTalk.type}</p>
+                </div>
+              }
+            </Loader>
+          }
         </Layout>
       </div>
     );

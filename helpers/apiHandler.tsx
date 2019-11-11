@@ -9,6 +9,8 @@ export default class ApiHandler {
     private static readonly _addUser = functions.httpsCallable('addUser');
     private static readonly _updateSchedule = functions.httpsCallable('updateSchedule');
     private static readonly _addTag = functions.httpsCallable('addTag');
+    private static readonly _createProgram = functions.httpsCallable('createProgram');
+    private static readonly _setActiveProgram = functions.httpsCallable('setActiveProgram');
 
     // Only calls that update, create or delete entries are done with cloud funcions for authorizing the requests.
     // Other calls can be done with firestore calls for less usage of cloud functions and better caching
@@ -21,30 +23,38 @@ export default class ApiHandler {
         return obj;
     }
 
-    public static async addTalk(talk: Talk) {
-        this.cache['talks'] = null; // TODO: add to cached array instead
+    public static async addTalk(talk: Talk, id?: string) {
+        const program_id = id || await this.getDefaultId();
+        this.cache['talks_' + program_id] = null; // TODO: add to cached array instead
         return await this._addTalk({
-            talk, id: config.id
+            talk, id: program_id
         });
     }
 
-    public static async updateTalk(talk: Talk) {
-        this.cache['talks'] = null; // TODO: update correct index
+    public static async updateTalk(talk: Talk, id?: string) {
+        const program_id = id || await this.getDefaultId();
+        this.cache['talks_' + program_id] = null; // TODO: update correct index
         return await this._updateTalk({
-            talk, id: config.id
+            talk, id: program_id
         });
     }
 
-    public static async getTalks() {
-        const cached = this._cache['talks'];
+    public static async getTalks(id?: string) {
+        const program_id = id || await this.getDefaultId();
+
+        const cached = this._cache['talks_' + program_id];
         if (cached) {
             return cached;
         }
 
-        const talksPromise = firestore.collection('program').doc(config.id).collection('talks').doc('talks').get();
+        const talksPromise = firestore.collection('program').doc(program_id).collection('talks').doc('talks').get();
 
-        const [speakers, talksReq] = await Promise.all([this.getSpeakers(), talksPromise]);
-        const talks = await talksReq.data();
+        const [speakers, talksReq] = await Promise.all([this.getSpeakers(program_id), talksPromise]);
+        const talks = talksReq.data();
+
+        if(!talks) {
+            return null;
+        }
 
         const speakersDict = speakers.reduce((acc, speaker) => {
             acc[speaker.id] = speaker;
@@ -56,58 +66,73 @@ export default class ApiHandler {
             talk.cospeakers = talk.cospeakers.map((speaker: string) => speakersDict[speaker]);
         });
 
-        return this.cache('talks', talks.talks);
+        return this.cache('talks_' + program_id, talks.talks);
     }
 
-    public static async getTalk(id: string) {
-        const talks = await this.getTalks();
+    public static async getTalk(talkid: string, id?: string) {
+        const program_id = id || await this.getDefaultId();
 
-        const talk = talks.find(talk => talk.id == id);
+        const talks = await this.getTalks(program_id);
+
+        const talk = talks.find(talk => talk.id == talkid);
         return talk;
     }
 
-    public static async addUser(user: any) {
+    public static async addUser(user: any, id?: string) {
+        const program_id = id || await this.getDefaultId();
         return (await this._addUser({
-            user, id: config.id
+            user, id: program_id
         })).data;
     }
 
-    public static async isSpeaker() {
+    public static async isSpeaker(id?: string) {
+        const program_id = id || await this.getDefaultId();
+        const cached = this._cache['isSpeaker_' + program_id];
+        if (cached) {
+            return cached;
+        }
+
         try {
             const user = auth.currentUser;
-            const req = await firestore.collection('program').doc(config.id).collection('users').doc(user && user.uid).get();
+            const req = await firestore.collection('program').doc(program_id).collection('users').doc(user && user.uid).get();
             const res = req.data();
-            return this.cache('isSpeaker', res.speaker);
+            return this.cache('isSpeaker_' + program_id, res.speaker);
         }
         catch (e) {
             return false; 
         }
     }
 
-    public static async getSpeakers() {
-        const cached = this._cache['speakers'];
+    public static async getSpeakers(id?: string) {
+        const program_id = id || await this.getDefaultId();
+        const cached = this._cache['speakers_' + program_id];
         if (cached) {
             return cached;
         }
 
-        const req = await firestore.collection('program').doc(config.id).collection('users').where('speaker', '==', true).get();
+        const req = await firestore.collection('program').doc(program_id).collection('users').where('speaker', '==', true).get();
         const resData = await Promise.all(req.docs.map(x => x.data()));
         const res = req.docs.map((doc, i) => ({
             ...resData[i],
             id: doc.id
         }));
-        return this.cache('speakers', res);
+        return this.cache('speakers_' + program_id, res);
     }
 
-    public static async getSchedule() {
-        const cached = this._cache['schedule'];
+    public static async getSchedule(id?: string) {
+        const program_id = id || await this.getDefaultId();
+        const cached = this._cache['schedule_' + program_id];
         if (cached) {
             return cached;
         }
 
-        const [scheduleReq, talks] = await Promise.all([firestore.collection('program').doc(config.id).collection('schedule').doc('schedule').get(), this.getTalks()]);
+        const [scheduleReq, talks] = await Promise.all([firestore.collection('program').doc(program_id).collection('schedule').doc('schedule').get(), this.getTalks(id)]);
 
-        const schedule = await scheduleReq.data();
+        const schedule = scheduleReq.data();
+
+        if (!schedule || !talks) {
+            return null;
+        }
 
         const talksDict = talks.reduce((acc, talk) => {
             acc[talk.id] = talk;
@@ -123,10 +148,12 @@ export default class ApiHandler {
                             .map((talk: any) => talksDict[talk] || null)));
         });
 
-        return this.cache('schedule', schedule);
+        return this.cache('schedule_' + program_id, schedule);
     }
 
-    public static async updateSchedule(program: any) {
+    public static async updateSchedule(program: any, id?: string) {
+        const program_id = id || await this.getDefaultId();
+
         // Date object becomes empty {} in the cloud function, pass ms instead
         const programWithMs = {
             days: program.days.map(day => {
@@ -135,30 +162,32 @@ export default class ApiHandler {
             })
         }
         const res = (await this._updateSchedule({
-            id: config.id,
+            id: program_id,
             program: programWithMs
         }));
-        return this.cache('schedule', res.data);
+        return this.cache('schedule_' + program_id, res.data);
     }
 
-    public static async getTags() {
-        const cached = this._cache['tags'];
+    public static async getTags(id?: string) {
+        const program_id = id || await this.getDefaultId();
+        const cached = this._cache['tags_' + program_id];
         if (cached) {
             return cached;
         }
 
-        const req = await (firestore.collection('program').doc(config.id).collection('tags').doc('tags').get());
+        const req = await (firestore.collection('program').doc(program_id).collection('tags').doc('tags').get());
         const res = req.data();
 
-        return this.cache('tags', res.tags);
+        return this.cache('tags_' + program_id, res.tags);
     }
 
-    public static async addTag(tag: string) {
+    public static async addTag(tag: string, id?: string) {
+        const program_id = id || await this.getDefaultId();
         const res = (await this._addTag({
-            id: config.id,
+            id: program_id,
             tag: tag
         }));
-        return this.cache('tags', res.data.tags);
+        return this.cache('tags_' + program_id, res.data.tags);
     }
 
     public static async getAdmins() {
@@ -176,5 +205,50 @@ export default class ApiHandler {
         const admins = await this.getAdmins();
         
         return admins.indexOf(uid) >= 0;
+    }
+
+    public static async createProgram(id: string) {
+        return await this._createProgram({
+            id: id
+        });
+    }
+
+    public static async getPrograms() {
+        const res = (await firestore.collection('program').get());
+        return res.docs.map(doc => doc.id);
+    }
+
+    public static async getProgramDuration(id?: string) {
+        const program_id = id || await this.getDefaultId();
+        const schedule = (await this.getSchedule(program_id));
+
+        if (!schedule || schedule.days.length == 0) {
+            return {
+                from: 'TBA',
+                to: 'TBA'
+            };
+        }
+        const daysSorted = schedule.days.map(day => day.day).sort();
+        const from = daysSorted[0];
+        const to = daysSorted[daysSorted.length - 1];
+        return {
+            from, to
+        };
+    }
+
+    public static async getDefaultId() {
+        const cached = this._cache['activeProgram'];
+        if (cached) {
+            return cached;
+        }
+
+        const res = (await firestore.collection('settings').doc('activeProgram').get()).data();
+        return this.cache('activeProgram', res.activeProgram);
+    }
+
+    public static async setActiveProgram(id: string) {
+        return await this._setActiveProgram({
+            id: id
+        });
     }
 }

@@ -10,7 +10,7 @@ function formatDate(date: Date) {
     let str = "";
     str += date.getFullYear();
     str += "-";
-    str += ("0" + date.getMonth()).slice(-2);
+    str += ("0" + (date.getMonth() + 1)).slice(-2);
     str += "-";
     str += ("0" + date.getDate()).slice(-2);
     return str;

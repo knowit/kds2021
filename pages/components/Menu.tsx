@@ -9,17 +9,20 @@ class Menu extends React.Component<any, any> {
     super(props);
 
     this.state = {
-      isSpeaker: false
+      isSpeaker: false,
+      isAdmin: false,
     }
   }
 
   async componentDidMount() {
-    
+
     auth.onAuthStateChanged(async (val) => {
       if (val) {
-        const res = await ApiHandler.isSpeaker();
+        const [speakerRes, adminRes] = await Promise.all([await ApiHandler.isSpeaker(), await ApiHandler.isAdmin()]);
+
         this.setState({
-          isSpeaker: res
+          isSpeaker: speakerRes,
+          isAdmin: adminRes
         });
       }
     });
@@ -68,7 +71,10 @@ class Menu extends React.Component<any, any> {
             </Link>
             <Link href="/aboutUs">
               <a className="link aboutUs">About us</a>
-            </Link>
+            </Link>{this.state.isAdmin &&
+              <Link href="/settings">
+                <a className="link settigns">Settings</a>
+              </Link>}
           </div>
         </div>
       </nav>

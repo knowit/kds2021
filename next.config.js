@@ -13,7 +13,13 @@ module.exports = withSass({
       '/': { page: '/' },
       '/codeOfConduct': { page: '/codeOfConduct' },
       '/location': { page: '/location' },
-      '/callForPresentations': { page: '/callForPresentations' }
+      '/callForPresentations': { page: '/callForPresentations' },
+      '/login': { page: '/login' },
+      '/signUp': { page: '/signUp' },
+      '/addTalk': { page: '/addTalk' },
+      '/editTalk': { page: '/editTalk' },
+      '/talksAndSpeakers': { page: '/talksAndSpeakers', query: { id: ""}  },
+      '/schedule': { page: '/schedule', query: { id: ""} }
     };
   }
 })
