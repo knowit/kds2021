@@ -1,5 +1,4 @@
 import React from 'react';
-import SpeakersSelector from './SpeakersSelector';
 
 interface IProps {
     speakers: Array<any>,

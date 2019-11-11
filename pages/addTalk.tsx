@@ -2,8 +2,6 @@ import '../styling/addTalkStyles.scss';
 import Layout from "./components/Layout";
 import withSpeakerAuth from '../helpers/withSpeakerAuth';
 import React from 'react';
-import { firestore, auth } from '../firebase_utils';
-import FirestoreHandler from '../helpers/firestoreHandler';
 import ApiHandler from '../helpers/apiHandler';
 import TagSelector from './components/TagSelector';
 import SpeakersSelector from './components/SpeakersSelector';

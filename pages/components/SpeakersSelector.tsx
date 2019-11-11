@@ -1,8 +1,7 @@
 import React from 'react';
 import SpeakerSelector from './SpeakerSelector';
 import Loader from './Loader';
-import { firestore, auth } from '../../firebase_utils';
-import FirestoreHandler from '../../helpers/firestoreHandler';
+import { auth } from '../../firebase_utils';
 import ApiHandler from '../../helpers/apiHandler';
 
 interface IState {

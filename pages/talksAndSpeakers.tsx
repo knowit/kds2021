@@ -31,7 +31,10 @@ class TalksAndSpeakers extends React.Component<any, any> {
   async componentDidMount() {
     // Router.query does not work for prerendered files..
     const id = Router.asPath.split('id=')[1];
-    const [program, defaultId] = await Promise.all([ApiHandler.getSchedule(id), ApiHandler.getDefaultId()]);
+
+    // Same as for schedule, not using Promise.all to improve caching..
+    const program = await ApiHandler.getSchedule(id);
+    const defaultId = await ApiHandler.getDefaultId();
 
     if (!program) {
       this.setState({

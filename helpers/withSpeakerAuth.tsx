@@ -3,7 +3,6 @@ import router from 'next/router'
 import { auth, firestore } from '../firebase_utils';
 import { User } from 'firebase';
 import Loader from '../pages/components/Loader';
-import FirestoreHandler from '../helpers/firestoreHandler';
 import ApiHandler from '../helpers/apiHandler';
 
 interface IState {

@@ -50,9 +50,12 @@ class Schedule extends Component<any, any> {
 
   async componentDidMount() {
     const id = Router.asPath.split('id=')[1];
-    const [program, talks, defaultId] = await Promise.all([
-      ApiHandler.getSchedule(id), ApiHandler.getTalks(id), ApiHandler.getDefaultId()
-    ]);
+    
+    // Called in sequence to improve caching, 
+    // so not using: const [program,...] = Promise.all([..])
+    const program = await ApiHandler.getSchedule(id);
+    const talks = await ApiHandler.getTalks(id);
+    const defaultId = await ApiHandler.getDefaultId();
 
     if (!program) {
       this.setState({

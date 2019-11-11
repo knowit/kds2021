@@ -6,6 +6,7 @@ function dayOfWeek(date: Date) {
     return date && weekdays[date.getDay()];
 }
 
+// Used to format date for date inputs when edting the schedule
 function formatDate(date: Date) {
     let str = "";
     str += date.getFullYear();

@@ -25,15 +25,17 @@ export default class ApiHandler {
 
     public static async addTalk(talk: Talk, id?: string) {
         const program_id = id || await this.getDefaultId();
-        this.cache['talks_' + program_id] = null; // TODO: add to cached array instead
-        return await this._addTalk({
+        // Add talks returns updates array of talks so cache can just be updated with res
+        return this.cache('talks_' + program_id, await this._addTalk({ 
             talk, id: program_id
-        });
+        }));
     }
 
     public static async updateTalk(talk: Talk, id?: string) {
         const program_id = id || await this.getDefaultId();
-        this.cache['talks_' + program_id] = null; // TODO: update correct index
+
+        this._cache['talks_' + program_id] = null; // invalidate cache, probably better to update..
+        
         return await this._updateTalk({
             talk, id: program_id
         });
@@ -41,7 +43,7 @@ export default class ApiHandler {
 
     public static async getTalks(id?: string) {
         const program_id = id || await this.getDefaultId();
-
+        
         const cached = this._cache['talks_' + program_id];
         if (cached) {
             return cached;
@@ -65,6 +67,7 @@ export default class ApiHandler {
             talk.speaker = speakersDict[talk.speaker];
             talk.cospeakers = talk.cospeakers.map((speaker: string) => speakersDict[speaker]);
         });
+
 
         return this.cache('talks_' + program_id, talks.talks);
     }

@@ -39,6 +39,8 @@ class Time {
         return new Time(strs[0], strs[1]);
     }
 
+    // When getting objects back from firestore and casting them to Time they will not inherit the prototype...
+    // Static methods are used instead
     public static diff(time1: Time, time2: Time) {
         return Math.abs(time2.hours * 60 + time2.minutes - time1.minutes - time1.hours * 60);    
     }
