@@ -15,6 +15,7 @@ interface IProps {
   tags: string[],
   trackLength: number,
   edit?: boolean
+  editable: boolean
   onToggleTag: (val) => void,
   updateIndices?: (roomIndex: number, talkIndex: number) => void
   onStartDrag?: (talk: Talk, x: number, y: number) => void,
@@ -75,6 +76,7 @@ class ScheduleEntry extends Component<IProps, any> {
         const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'} ${full && this.props.edit ? 'full' : ''}`} key={talk.id} style={style as CSSProperties}
           onMouseEnter={() => this.props.updateIndices && this.props.updateIndices(roomIndex, talkIndex)}>
           <TalkView title={talk.name}
+            editable={this.props.editable}
             edit={this.props.edit}
             speaker={talk.speaker && talk.speaker.name}
             room={room.name}

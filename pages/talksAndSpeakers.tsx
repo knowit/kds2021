@@ -21,7 +21,8 @@ class TalksAndSpeakers extends React.Component<any, any> {
       loading: true,
       showOnlyFavorites: false,
       tags: [],
-      notFound: false
+      notFound: false,
+      editable: false
     }
     this.handleFilterChange = this.handleFilterChange.bind(this);
     this.handleFavoriteChange = this.handleFavoriteChange.bind(this);
@@ -29,10 +30,8 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   async componentDidMount() {
     // Router.query does not work for prerendered files..
-    const id = Router.asPath.split('id=')[1]; // undefined is not set
-
-    const program = await ApiHandler.getSchedule(id);
-
+    const id = Router.asPath.split('id=')[1];
+    const [program, defaultId] = await Promise.all([ApiHandler.getSchedule(id), ApiHandler.getDefaultId()]);
 
     if (!program) {
       this.setState({
@@ -43,7 +42,8 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
     this.setState({
       program: program,
-      loading: false
+      loading: false,
+      editable: !id || defaultId == id // Past programs should not be editable
     })
   }
 
@@ -108,6 +108,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
                             const talkEl = (<div className="talk-container" key={i}>
                               <Talk
+                                editable={this.state.editable}
                                 day={day.day}
                                 timeStart={createDate(from, day.day)}
                                 timeEnd={createDate(to, day.day)}

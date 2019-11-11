@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { colorClassFromRoomName } from '../../helpers/colors';
 import { auth } from '../../firebase_utils';
 import { dayOfWeek } from '../../helpers/dateUtils';
+import Router from 'next/router';
+import ApiHandler from '../../helpers/apiHandler';
 
 const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), {
   ssr: false
@@ -27,8 +29,8 @@ class Talk extends React.Component<any, any> {
         this.props.edit && this.props.onStartDrag && evt.preventDefault();
         this.props.edit && this.props.onStartDrag && this.props.onStartDrag(this.props.talk, evt.clientX, evt.clientY);
       }}>
-        {!this.props.edit && this.props.talk && this.isOwner() && <div className="talk-owner-info">
-          You are a speaker or cospeaker for this talk. You can edit the talk <Link href={"/editTalk?id=" + this.props.talk.id}><a>here</a>
+        {this.props.editable && !this.props.edit && this.props.talk && this.isOwner() && <div className="talk-owner-info">
+          You are a speaker or cospeaker for this talk. You can edit the talk <Link href={"/editTalk?talk=" + this.props.talk.id}><a>here</a>
           </Link>
         </div>}
         <div className="header">

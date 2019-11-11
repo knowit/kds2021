@@ -35,6 +35,7 @@ class Schedule extends Component<any, any> {
       },
       tags: [],
       edit: false,
+      editableTalks: false,
       talks: [],
       isAdmin: false,
       draggingTalk: null,
@@ -49,8 +50,8 @@ class Schedule extends Component<any, any> {
 
   async componentDidMount() {
     const id = Router.asPath.split('id=')[1];
-    const [program, talks] = await Promise.all([
-      ApiHandler.getSchedule(id), ApiHandler.getTalks(id)
+    const [program, talks, defaultId] = await Promise.all([
+      ApiHandler.getSchedule(id), ApiHandler.getTalks(id), ApiHandler.getDefaultId()
     ]);
 
     if (!program) {
@@ -72,7 +73,8 @@ class Schedule extends Component<any, any> {
     this.setState({
       program: program,
       talks: unassignedTalks,
-      loading: false
+      loading: false,
+      editable: !id || defaultId == id
     }, () => this.filterProgram());
 
     this.mouseMoveCallback = (evt) => this.handleDrag(evt.pageX, evt.pageY);
@@ -354,6 +356,7 @@ class Schedule extends Component<any, any> {
 
                     {this.state.program.days.length > 0 &&
                       <DayView
+                        editable={this.state.editable}
                         edit={this.state.edit}
                         onToggleTag={this.handleToggleTag}
                         updateIndices={(slot, room, talk) => this.updateIndices(this.state.currentDayIndex, slot, room, talk)}

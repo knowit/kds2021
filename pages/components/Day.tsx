@@ -12,6 +12,7 @@ interface IProps {
   slots: any[]
   tags: string[]
   edit?: boolean
+  editable: boolean
   updateIndices?: (slot, room, talk) => void
   onToggleTag?: (val) => void
   onStartDrag?: (talk: Talk, x: number, y: number) => void,
@@ -49,6 +50,7 @@ class Day extends Component<IProps, any> {
           <div key={i + "slot"} className="slot">
             <EventHeader edit={this.props.edit} key={i + "slot"} timeStart={slot.from} timeEnd={slot.to} type={slot.type} timeslot={slot} day={this.props.day.day} onTimeslotUpdate={(timeslot) => this.timeslotUpdate(i, timeslot)} onRemove={() => this.onTimeslotRemoved(i)} />
             {slot.rooms && <ScheduleEntry
+              editable={this.props.editable}
               edit={this.props.edit}
               updateIndices={(room, index) => this.props.updateIndices && this.props.updateIndices(i, room, index)}
               addTalks={this.props.addTalks}
