@@ -19,7 +19,8 @@ module.exports = withSass({
       '/addTalk': { page: '/addTalk' },
       '/editTalk': { page: '/editTalk' },
       '/talksAndSpeakers': { page: '/talksAndSpeakers', query: { id: ""}  },
-      '/schedule': { page: '/schedule', query: { id: ""} }
+      '/schedule': { page: '/schedule', query: { id: ""} },
+      '/stats': { page: '/stats' }
     };
   }
 })

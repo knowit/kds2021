@@ -80,6 +80,8 @@ class Login extends React.Component<any, IState> {
                 if (this.state.speaker) {
                     await ApiHandler.addUser({
                         speaker: true,
+                        country: this.state.form.country,
+                        company: this.state.form.company,
                         name: this.state.form.name,
                         info: this.state.speakerInfo
                     });
@@ -87,6 +89,8 @@ class Login extends React.Component<any, IState> {
                 }
                 else {
                     await ApiHandler.addUser({
+                        country: this.state.form.country,
+                        company: this.state.form.company,
                         name: this.state.form.name
                     });
                     Router.push('/');
@@ -99,6 +103,8 @@ class Login extends React.Component<any, IState> {
                         if (this.state.speaker) {
                             await ApiHandler.addUser({
                                 speaker: true,
+                                country: this.state.form.country,
+                                company: this.state.form.company,
                                 name: this.state.form.name,
                                 info: this.state.speakerInfo
                             });
@@ -106,6 +112,8 @@ class Login extends React.Component<any, IState> {
                         }
                         else {
                             await ApiHandler.addUser({
+                                country: this.state.form.country,
+                                company: this.state.form.company,
                                 name: this.state.form.name
                             });
                             Router.push('/');

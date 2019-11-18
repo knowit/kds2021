@@ -26,7 +26,7 @@ class AddTalk extends React.Component<any, IState> {
     }
 
     async componentDidMount() {
-        if (Router.query.id) {
+        if (Router.query.talk) {
             const cachedTalk = await ApiHandler.getTalk(Router.query.talk as string);
 
             const talk = {...cachedTalk};

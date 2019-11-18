@@ -258,4 +258,20 @@ export default class ApiHandler {
             id: id
         });
     }
+
+    public static async getParticipants(id?: string) {
+        const program_id = id || await this.getDefaultId();
+        const cached = this._cache['participants_' + program_id];
+        if (cached) {
+            return cached;
+        }
+
+        const req = await firestore.collection('program').doc(program_id).collection('users').get();
+        const resData = await Promise.all(req.docs.map(x => x.data()));
+        const res = req.docs.map((doc, i) => ({
+            ...resData[i],
+            id: doc.id
+        }));
+        return this.cache('participants_' + program_id, res);
+    }
 }
