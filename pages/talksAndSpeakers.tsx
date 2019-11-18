@@ -4,7 +4,6 @@ import "../styling/talksAndSpeakersStyles.scss";
 import React from "react";
 import { program as Program } from "../models/data.json";
 import { Time, getDuration } from "../helpers/time";
-import RegisterButton from "./components/RegisterButton";
 import Filter from './components/Filter';
 
 class TalksAndSpeakers extends React.Component<any, any> {
@@ -63,7 +62,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   render() {
     return (<div className="talksAndSpeakers page">
-      <Layout title="Talks & Speakers" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} header={<RegisterButton></RegisterButton>} background={true}>
+      <Layout title="Talks & Speakers" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} background={true}>
         <div className="talks-container document">
 
           <div className="title-filter">

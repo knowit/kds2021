@@ -5,7 +5,7 @@ module.exports = withSass({
       '/': { page: '/' },
       '/codeOfConduct': { page: '/codeOfConduct' },
       '/location': { page: '/location' },
-      '/callForPresentations': { page: '/callForPresentations' }
+      '/practicalities': { page: '/practicalities' }
     };
   }
 })
