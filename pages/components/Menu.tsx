@@ -19,12 +19,13 @@ class Menu extends React.Component<any, any> {
           </div>
           <div id="menu">
             <h1 className="menuHeader">Menu</h1>
-            <Link href="/callForPresentations">
+            {/* <Link href="/callForPresentations">
               <a className="link callForPresentations">Call for presentations</a>
-            </Link>
-            {/*<Link href="/practicalities">
+            </Link> */}
+            <Link href="/practicalities">
             <a className="link practicalities">Practicalities</a>
           </Link>
+          {/*
           <Link href="/schedule" >
             <a className="link schedule">Schedule</a>
           </Link>

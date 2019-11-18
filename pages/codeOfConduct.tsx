@@ -1,10 +1,10 @@
 import Layout from "./components/Layout";
-import RegisterButton from './components/RegisterButton';
+import "../styling/styling.scss";
 
 export default function CodeOfConduct() {
   return (
     <div className="codeOfConduct page">
-      <Layout title="Code of conduct" header={<RegisterButton></RegisterButton>} background={true}>
+      <Layout title="Code of conduct" background={true}>
         <div className="document coc">
           <h1 className="title">Conference Code of Conduct</h1>
           <p className="paragraph">

@@ -3,7 +3,6 @@ import Layout from "./components/Layout";
 import Day from "./components/Day";
 import { Component } from "react";
 import { program as Program } from "../models/data.json";
-import RegisterButton from "./components/RegisterButton";
 import Filter from './components/Filter';
 
 class Schedule extends Component<any, any> {
@@ -84,7 +83,7 @@ class Schedule extends Component<any, any> {
   render() {
     return (
       <div className="schedule page">
-        <Layout title="Schedule" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} background={true} header={<RegisterButton></RegisterButton>}>
+        <Layout title="Schedule" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} background={true}>
           <div className="schedule-document negative-margin">
             <div className="day-selector-top">
               {this.state.filteredProgram.days.map((day, i) =>
