@@ -18,3 +18,10 @@ open `localhost:3000`
 `npm run build` \
 `npm run export`
 
+### Deploy
+`/out` is part of git history.
+run: `npm install && npm run deploy`
+push to gh-pages branch using git subtree: `git subtree push --prefix out origin gh-pages`
+
+
+
