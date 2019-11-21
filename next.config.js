@@ -20,7 +20,8 @@ module.exports = withSass({
       '/editTalk': { page: '/editTalk' },
       '/talksAndSpeakers': { page: '/talksAndSpeakers', query: { id: ""}  },
       '/schedule': { page: '/schedule', query: { id: ""} },
-      '/stats': { page: '/stats' }
+      '/stats': { page: '/stats' },
+      '/practicalities': { page: '/practicalities' }
     };
   }
 })

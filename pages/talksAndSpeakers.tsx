@@ -85,7 +85,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
 
   render() {
     return (<div className="talksAndSpeakers page">
-      <Layout title="Talks & Speakers" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} header={<RegisterButton></RegisterButton>} background={true}>
+      <Layout title="Talks & Speakers" filter={'small'} onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} header={<RegisterButton url="https://forms.gle/cZuDfEkh5aiCVB926" name="Register your presentation"></RegisterButton>} background={true}>
         {this.state.notFound ? <p>Program not found</p> :
           <Loader loading={this.state.loading}>
             <div className="talks-container document">

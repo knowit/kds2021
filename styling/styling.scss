@@ -92,19 +92,19 @@ h1 {
   background-color: white;
 }
 
-.title {
+.title h1{
   display: block;
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
   font-size: 2rem;
 }
-.subtitle {
+.subtitle h2{
   font-size: 1rem;
   font-weight: bold;
   margin: 0px;
 }
-.paragraph {
+.paragraph p {
   font-size: 1rem;
   margin: 0px 0px 10px 0px;
 }

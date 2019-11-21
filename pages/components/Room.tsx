@@ -1,9 +1,10 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties, Component, Fragment } from 'react';
 import { colorClassFromRoomName } from '../../helpers/colors';
 import Pin from './Pin';
+import '../../styling/roomStyles.scss';
 
 
-class Room extends React.Component<any, any> {
+class Room extends Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +34,7 @@ class Room extends React.Component<any, any> {
             msGridRow: 1
         };
         return (
-            <React.Fragment>
+            <Fragment>
                 {this.props.showRoomHeader && <div className={`room-header ${this.props.index % 2 == 0 ? 'room-even' : 'room-odd'}`} style={style as CSSProperties}>
                     <Pin className={color} small={true}></Pin> 
                     {!this.state.edit && <div className="room-header-text" onClick={this.toggleEdit}>Room {this.props.room.name}</div>}
@@ -42,7 +43,7 @@ class Room extends React.Component<any, any> {
                 </div>}
 
                 {this.props.children}
-            </React.Fragment>
+            </Fragment>
         );
     }
 }

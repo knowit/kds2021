@@ -3,5 +3,5 @@ import Practicalities from './practicalities';
 import CallForPresentations from "./callForPresentations";
 
 export default function Home() {
-  return <CallForPresentations />;
+  return <Practicalities />;
 }

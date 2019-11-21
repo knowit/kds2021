@@ -304,7 +304,7 @@ class Schedule extends Component<any, any> {
   render() {
     return (
       <div className="schedule page" ref={this.pageRef} onScroll={() => this.handleDrag(this.state.mouseX, this.state.mouseY)}>
-        <Layout title="Schedule" showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} filter={this.state.edit ? false : 'small'} background={true} header={<RegisterButton></RegisterButton>}>
+        <Layout title="Schedule" showOnlyFavorites={this.state.showOnlyFavorites} selectedTags={this.state.tags} hideLogo={'small'} filter={this.state.edit ? false : 'small'} background={true} header={<RegisterButton url="https://forms.gle/cZuDfEkh5aiCVB926" name="Register your presentation"></RegisterButton>}>
           {this.state.notFound ? <p>Program not found</p> :
             <Loader loading={this.state.loading}>
               <div className="schedule-document negative-margin">
