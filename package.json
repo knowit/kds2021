@@ -24,7 +24,7 @@
   "homepage": "https://github.com/knowit/program.kds.knowit.no",
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
-    "next": "^9.0.3",
+    "next": "^9.1.6",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
