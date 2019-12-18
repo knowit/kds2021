@@ -21,17 +21,17 @@ class Talk extends React.Component<any, any> {
                             <img src="../../static/clock.svg" width="24" height="24"/>
                         </div>
                         <span className="time-text">
-              <span className="time-text-day">{this.props.day}<br/></span>
+                        <span className="time-text-day">{this.props.day}<br/></span>
                             {this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}
-            </span>
+                        </span>
                     </div>
                     <div className="room">
                         <div className="wrapper">
                             <Pin className={colorClassFromRoomName(this.props.room)}/>
                         </div>
                         <span className="text room-name">
-              Room {this.props.room}
-            </span>
+                            {this.props.room}
+                        </span>
                     </div>
                     <div className="diff">
                         <div className="wrapper">
@@ -64,9 +64,10 @@ class Talk extends React.Component<any, any> {
                         </div>)
                     })}
                     <div className="tags">
-                        {(this.props.tags && this.props.language) && this.props.tags.concat([this.props.language]).map(tag => <FilterTag
-                            key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1}
-                            onClick={() => this.props.onToggleTag(tag)}/>)}
+                        {(this.props.tags && this.props.language) && this.props.tags.concat([this.props.language]).map(tag =>
+                            <FilterTag
+                                key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1}
+                                onClick={() => this.props.onToggleTag(tag)}/>)}
                     </div>
                     <hr className="seperator"/>
                 </div>
