@@ -5,8 +5,7 @@ import "../styling/styling.scss"
 export default function Practicalities() {
     return (
         <div className="practicalities page">
-            <Layout title="Practical information" header={<RegisterButton url="https://forms.gle/Ect1unFNYMcGhL8g7"
-                                                                          name="Register your participation"></RegisterButton>}
+            <Layout title="Practical information"
                     background={true}>
                 <div className="document content">
                     <h1>Practical information</h1>

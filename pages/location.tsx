@@ -6,7 +6,7 @@ import Pin from './components/Pin';
 export default function Location() {
   return (
     <div className="location page">
-      <Layout header={<RegisterButton url="https://forms.gle/Ect1unFNYMcGhL8g7" name="Register your participation"></RegisterButton>}>
+      <Layout>
         <div className="map-container">
           <h1 className="title">Location</h1>
           <div className="location-name">

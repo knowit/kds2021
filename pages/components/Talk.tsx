@@ -57,16 +57,16 @@ class Talk extends React.Component<any, any> {
               &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
             </span></p>
                     <h1 className="title">{this.props.title}</h1>
-                    {this.props.speaker.map(speaker => {
+                    {this.props.speaker && this.props.speaker.map(speaker => {
                         return (<div>
                             <p className="speaker">{speaker.name}</p>
                             <p className="info">{speaker.info}</p>
                         </div>)
                     })}
                     <div className="tags">
-                        {this.props.tags && this.props.tags.concat([this.props.language]).map(tag => <FilterTag
+                        {(this.props.tags && this.props.language) && this.props.tags.concat([this.props.language]).map(tag => <FilterTag
                             key={tag} name={tag} selected={this.props.selectedTags.indexOf(tag) > -1}
-                            onClick={() => this.props.onToggleTag(tag)}></FilterTag>)}
+                            onClick={() => this.props.onToggleTag(tag)}/>)}
                     </div>
                     <hr className="seperator"/>
                 </div>
