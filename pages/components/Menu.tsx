@@ -25,10 +25,10 @@ class Menu extends React.Component<any, any> {
             <Link href="/practicalities">
             <a className="link practicalities">Practicalities</a>
           </Link>
-          {/*
           <Link href="/schedule" >
             <a className="link schedule">Schedule</a>
           </Link>
+          {/*
           <Link href="/aboutUs">
             <a className="link aboutUs">About us</a>
           </Link>

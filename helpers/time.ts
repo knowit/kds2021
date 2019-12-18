@@ -34,6 +34,12 @@ class Time {
         const strs = str.split(del);
         return new Time(strs[0], strs[1]);
     }
+
+    public static fromNumber(int: number) {
+        var tt = int.toString().substring(0, int.toString().length-2)
+        var mm = int.toString().substring(int.toString().length-2, int.toString().length)
+        return new Time(tt, mm);
+    }
 }
 
 
@@ -44,13 +50,10 @@ interface Talk {
 
 function getDuration(talk: Talk): Time {
     switch (talk.type) {
-        case "Lightning talk": return new Time("00", "10");
-        case "Short-talk": return new Time("00", "30");
-        case "Long-talk": return new Time("01", "00");
-        case "Workshop":
-            if (!talk.duration) break;
-            const time = talk.duration.split(':');
-            return new Time(time[0], time[1]);
+        case "Lightning talk (10 minutes)": return new Time("00", "10");
+        case "Short presentation (30 minutes)": return new Time("00", "30");
+        case "Long presentation (60 minutes)": return new Time("01", "00");
+        case "Workshop (90 minutes)":return new Time("01", "30");
     }
     return new Time();
 }

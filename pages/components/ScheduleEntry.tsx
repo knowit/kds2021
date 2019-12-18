@@ -1,6 +1,5 @@
 import Talk from "./Talk";
 import { Component, CSSProperties } from "react";
-import dynamic from "next/dynamic";
 import Room from './Room';
 import { getDuration, Time } from '../../helpers/time';
 
@@ -18,11 +17,10 @@ class ScheduleEntry extends Component<IProps, any> {
   }
 
   createRoom(room, index: number) {
-    let from = Time.fromString(this.props.slot.timeStart);
+    let from = Time.fromNumber(this.props.slot.timeStart);
     let trackIndex = 0;
     const talks = room.talks
-      .map((talk) => talk.speakers
-        .map(speaker => {
+      .map((talk) =>  {
           const to = from.copy().add(getDuration(talk));
 
 
@@ -33,7 +31,7 @@ class ScheduleEntry extends Component<IProps, any> {
 
           const talkEl = (<div className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={trackIndex} style={style as CSSProperties}>
             <Talk title={talk.title}
-              speaker={speaker.name}
+              speaker={talk.speakers}
               room={room.name}
               type={talk.type}
               language={talk.language}
@@ -56,13 +54,13 @@ class ScheduleEntry extends Component<IProps, any> {
 
           return !talk.hide ? talkEl : '';
         }
-        ));
+        );
 
 
     const numHidden = room.talks.filter(talk => !talk.hide).length;
     for (let i = 0; i < this.props.trackLength - numHidden; i++) {
       const talkIndex = trackIndex + i;
-      talks.push(<div className={`talk-container empty ${talkIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={i}></div>);
+      talks.push(<div className={`talk-container empty ${talkIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`} key={i}/>);
     }
 
     return talks;
