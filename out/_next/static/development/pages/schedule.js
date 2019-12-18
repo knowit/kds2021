@@ -11596,7 +11596,7 @@ function (_Component) {
         style: style,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 19
         },
         __self: this
       }, __jsx(_Pin__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -11604,14 +11604,14 @@ function (_Component) {
         small: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 21
         },
         __self: this
-      }), " ", __jsx("div", {
+      }), __jsx("div", {
         className: "room-header-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 22
         },
         __self: this
       }, this.props.room)), this.props.children);
@@ -12030,7 +12030,7 @@ function (_React$Component) {
           lineNumber: 32
         },
         __self: this
-      }, "Room ", this.props.room)), __jsx("div", {
+      }, this.props.room)), __jsx("div", {
         className: "diff",
         __source: {
           fileName: _jsxFileName,
@@ -12161,7 +12161,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 68
           },
           __self: this
         });
@@ -12169,7 +12169,7 @@ function (_React$Component) {
         className: "seperator",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 72
         },
         __self: this
       })));
