@@ -488,7 +488,7 @@
             "timeStart": 1510,
             "timeEnd": 1540,
             "type": [
-              "Short presentation & Lightning Talks"
+              "Short Presentations & Lightning Talks"
             ],
             "rooms": [
               {
@@ -500,7 +500,7 @@
                     "difficulty": "Beginner",
                     "title": "Jamsession - An introduction to the JAMstack",
                     "type": "Short presentation (30 minutes)",
-                    "description": "The static websites makes a return, this time disguised as mushy fruit. The JAMstack, or Javascript, APIs and Markup-stack is a promising new way to create fast and secure webapps. This talk will introduce the audience to how a website built on this stack is put together.",
+                    "description": "The static websites makes a return, this time disguised as mushy fruit.\n\nThe JAMstack, or Javascript, APIs and Markup-stack is a promising new way to create fast and secure webapps.\nThis talk will introduce the audience to how a website built on this stack is put together. We will also be looking at a case study: The complete rewrite of Smashing Magazine, when they switched from Wordpress and PHP to the JAMstack, resulting in a 10x speed increase in page load time!",
                     "speakers": [
                       {
                         "name": "Ole Eskild Steensen",
@@ -786,7 +786,7 @@
             "timeStart": 900,
             "timeEnd": 1000,
             "type": [
-              "Workshops & Long Presentations & Short Presentations"
+              "Workshop & Long Presentations & Short Presentations"
             ],
             "rooms": [
               {
@@ -839,7 +839,7 @@
                   },
                   {
                     "talkId": 23,
-                    "language": "Norwegian",
+                    "language": "English",
                     "difficulty": "Intermediate",
                     "title": "Inclusive design - for developers",
                     "type": "Short presentation (30 minutes)",
@@ -851,7 +851,8 @@
                       }
                     ],
                     "tags": [
-                      "inclusive design accessibility meaningful"
+                      "inclusive design accessibility meaningful",
+                      "UX"
                     ]
                   }
                 ]
@@ -929,7 +930,7 @@
             "timeStart": 1015,
             "timeEnd": 1045,
             "type": [
-              "Workshops & Short Presentations"
+              "Workshop & Long Presentations & Short Presentations"
             ],
             "rooms": [
               {
@@ -985,22 +986,25 @@
                 "name": "Room 3",
                 "talks": [
                   {
-                    "talkId": 10,
+                    "talkId": 22,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Edge Cases or Dead Angles?",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "What are we basing our decisions on when declaring something an «edge case»?\nAnd how does this fit with our understanding of risk and quality?\n\nWhether were scoping an MVP or reimagining user journeys for a legacy system, our work of finding solutions may easily lead to a centering of the product in the stories we tell ourselves about our users. This narrowing of focus can implicitly idealize our view of peoples needs and circumstance, in ways that are not always helpful.\n\nWe take pride in relieving pain points - but dont as easily envision the pain our products might introduce or amplify in peoples lives. There are some edge cases that cannot be ignored, because the consequences are too great. And there are some things that simply arent as far to the edge as wed like to imagine.\n\nWe can roll back the code, or iterate the product  but we cannot roll back the consequences we cause in peoples lives along the way. By combining a risk based approach with compassion, we can learn how to make products and experiments that are safe to fail in the environment of real life.",
+                    "title": "Identity and access management with OAuth 2.0 and OpenID Connect",
+                    "type": "Long presentation (60 minutes)",
+                    "description": "Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.",
                     "speakers": [
                       {
-                        "name": "Jorunn Mjøs",
-                        "info": "Jorunn Mjøs is a sociologist turned Software Tester, and is on a quest to make technology play nice with people. She is passionate about security, usability and inclusivity, in a broad and human sense. "
+                        "name": "Andreas Garmannslund",
+                        "info": "Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group."
                       }
                     ],
                     "tags": [
+                      "authentication",
+                      "authorization",
+                      "oauth 2.0",
+                      "openid connect (oidc)",
                       "security",
-                      "usability",
-                      "risk based testing"
+                      "identity"
                     ]
                   }
                 ]
@@ -1048,7 +1052,7 @@
             "timeStart": 1100,
             "timeEnd": 1130,
             "type": [
-              "Short Presentations & Lightning Talks"
+              "Long Presentations & Short Presentations"
             ],
             "rooms": [
               {
@@ -1095,6 +1099,250 @@
                     "tags": [
                       "architecture",
                       "cloud"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Room 3",
+                "talks": [
+                  {
+                    "talkId": 22,
+                    "language": "English",
+                    "difficulty": "Beginner",
+                    "title": "Identity and access management with OAuth 2.0 and OpenID Connect Cont.",
+                    "type": "Long presentation (60 minutes)",
+                    "description": "Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.",
+                    "speakers": [
+                      {
+                        "name": "Andreas Garmannslund",
+                        "info": "Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group."
+                      }
+                    ],
+                    "tags": [
+                      "authentication",
+                      "authorization",
+                      "oauth 2.0",
+                      "openid connect (oidc)",
+                      "security",
+                      "identity"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Room 4",
+                "talks": [
+                  {
+                    "talkId": 18,
+                    "language": "English",
+                    "difficulty": "Beginner",
+                    "title": "How do I quantum?",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Have you wondered what all the buzz about quantum computing is? What is motivating large companies to pour money into it? Is it possible to do anything with it yet? How would you go about doing it today?\n\nThese questions are covered in this talk, where we'll go through the basics of quantum computing. We'll some basic terminology and expressions, a short history of the field, some alternative applications of similar quantum technology and finally concrete examples on a simulated quantum machine running on the JVM.",
+                    "speakers": [
+                      {
+                        "name": "Erik Lund",
+                        "info": "Erik has worked for Knowit for just over 4 years and has spent most of his time being a backend developer for Oslo county. He likes to consider new and interesting architectures for microservice systems, but also likes to keep an eye on technologies running through hype cycles to see what ends up maturing in the end."
+                      }
+                    ],
+                    "tags": [
+                      "quantum computing",
+                      "qubit",
+                      "entanglement",
+                      "superposition"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "timeStart": 1130,
+            "timeEnd": 1230,
+            "type": [
+              "Lunch"
+            ],
+            "rooms": [
+              {
+                "name": "Room ",
+                "talks": []
+              }
+            ]
+          },
+          {
+            "timeStart": 1230,
+            "timeEnd": 1300,
+            "type": [
+              "Short Presentations"
+            ],
+            "rooms": [
+              {
+                "name": "Room 1",
+                "talks": [
+                  {
+                    "talkId": 37,
+                    "language": "Norwegian",
+                    "difficulty": "Beginner",
+                    "title": "Svelte  the next small thing in Javascript",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Svelte is a promising, novel approach to Javascript, designed for speed, short source files and tiny bundles. Among its many selling points are ease of learning and quick re-renders without a virtual DOM. Current big-name users include The New York Times and Godaddy.\n\nIn this presentation, Eirik takes you on a quick tour of the why and how of Svelte: Why is Svelte different and how is it able to be so much smaller and faster than the others? This will amongst other things involve a quick introduction to Svelte's syntax and a short history of the DOM. The talk is suitable for developers and designers who code  of all skill levels.",
+                    "speakers": [
+                      {
+                        "name": "Eirik Vågeskar",
+                        "info": "Eirik has worked at Knowit Objectnet for two years. Before that, he studied computer science at NTNU in Trondheim. In addition to programming, he has also dabbled in playwriting, acting, journalism and music. "
+                      }
+                    ],
+                    "tags": [
+                      "svelte"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Room 2",
+                "talks": [
+                  {
+                    "talkId": 8,
+                    "language": "English",
+                    "difficulty": "Beginner",
+                    "title": "Conversational design",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Building a voice controlled assistant for Google Assistant with DialogFlow, Firebase, Actions On Google and JavaScript. The talk will briefly cover the concepts of conversational design before walking through how you can set up your own virtual assistant in less than an hour.",
+                    "speakers": [
+                      {
+                        "name": "Joel Gustafsson",
+                        "info": "Joel Gustafsson is a front-end developer at Knowit Development Stockholm. He has a burning passion for creating visually appealing digital experiences that works for both visitors and businesses. Previously Joel designed and developed a virtual assistant for \"flygresor.se\", the insights from that project have shaped this talk."
+                      }
+                    ],
+                    "tags": [
+                      "conversational design",
+                      "dialogflow",
+                      "actions on google",
+                      "javascript",
+                      "firebase",
+                      "google assistant",
+                      "google home",
+                      "virtual assistants"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Room 3",
+                "talks": [
+                  {
+                    "talkId": 10,
+                    "language": "English",
+                    "difficulty": "Beginner",
+                    "title": "Edge Cases or Dead Angles?",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "What are we basing our decisions on when declaring something an «edge case»?\nAnd how does this fit with our understanding of risk and quality?\n\nWhether were scoping an MVP or reimagining user journeys for a legacy system, our work of finding solutions may easily lead to a centering of the product in the stories we tell ourselves about our users. This narrowing of focus can implicitly idealize our view of peoples needs and circumstance, in ways that are not always helpful.\n\nWe take pride in relieving pain points - but dont as easily envision the pain our products might introduce or amplify in peoples lives. There are some edge cases that cannot be ignored, because the consequences are too great. And there are some things that simply arent as far to the edge as wed like to imagine.\n\nWe can roll back the code, or iterate the product  but we cannot roll back the consequences we cause in peoples lives along the way. By combining a risk based approach with compassion, we can learn how to make products and experiments that are safe to fail in the environment of real life.",
+                    "speakers": [
+                      {
+                        "name": "Jorunn Mjøs",
+                        "info": "Jorunn Mjøs is a sociologist turned Software Tester, and is on a quest to make technology play nice with people. She is passionate about security, usability and inclusivity, in a broad and human sense. "
+                      }
+                    ],
+                    "tags": [
+                      "security",
+                      "usability",
+                      "risk based testing"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Room 4",
+                "talks": [
+                  {
+                    "talkId": 20,
+                    "language": "English",
+                    "difficulty": "Intermediate",
+                    "title": "How to write code worth reading",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Regardless of skill level, some programmers write code that is performant, bug free and works great, but is very difficult to read and understand, and thus difficult to maintain. So in this talk I would like to share my experience and explain how you can write code that is easier to maintain. Code that is enjoyable to read and not just to write.",
+                    "speakers": [
+                      {
+                        "name": "Christoffer Eliesen",
+                        "info": "I am programmer with over 10 years of full time experience currently working as frontend developer at Knowit ???????"
+                      }
+                    ],
+                    "tags": [
+                      "quality code",
+                      "tech culture"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "timeStart": 1300,
+            "timeEnd": 1310,
+            "type": [
+              "Pause"
+            ],
+            "rooms": [
+              {
+                "name": "Room ",
+                "talks": []
+              }
+            ]
+          },
+          {
+            "timeStart": 1310,
+            "timeEnd": 1340,
+            "type": [
+              "Short Presentations & Lightning Talks"
+            ],
+            "rooms": [
+              {
+                "name": "Room 1",
+                "talks": [
+                  {
+                    "talkId": 27,
+                    "language": "Norwegian",
+                    "difficulty": "Beginner",
+                    "title": "Moderne webtypografi med variable fonter",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Variable fonter ble introdusert i 2016, og muliggjør bortimot uendelig med muligheter for typografien på en nettside. I dette foredraget skal vi se på hvordan de virker, og hvilke kreative muligheter de gir.",
+                    "speakers": [
+                      {
+                        "name": "Sverre Johan Bjørke",
+                        "info": "Sverre has been working at Knowit for two years. When he has the time he loves to tinker with new tech."
+                      }
+                    ],
+                    "tags": [
+                      "web",
+                      "typography",
+                      "ux",
+                      "design"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Room 2",
+                "talks": [
+                  {
+                    "talkId": 47,
+                    "language": "English",
+                    "difficulty": "Intermediate",
+                    "title": "Your friend the Milestone",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Short talk on traditional ways to organize projects and their impact on our ability to handle and reduce risk, followed by an outline of how creating meaningful milestones and using these for customer interaction is a simple and effective way to reduce risk in projects.",
+                    "speakers": [
+                      {
+                        "name": "Espen Vindegg",
+                        "info": "Business developer and tech lead with experience from the trenches of scale agile in decidedly non-agile organizations"
+                      }
+                    ],
+                    "tags": [
+                      "agile",
+                      "risk management",
+                      "project management",
+                      "customer involvement"
                     ]
                   }
                 ]
@@ -1181,9 +1429,9 @@
                     "talkId": 42,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "To be decided",
+                    "title": "Basic concepts in functional programming and how they correspond in OOP",
                     "type": "Lightning talk (10 minutes)",
-                    "description": "To be decided",
+                    "description": "Basic concepts in functional programming and how they correspond in OOP",
                     "speakers": [
                       {
                         "name": "Alexandra Dobrescu",
@@ -1197,228 +1445,10 @@
             ]
           },
           {
-            "timeStart": 1130,
-            "timeEnd": 1230,
-            "type": [
-              "Lunsj"
-            ],
-            "rooms": [
-              {
-                "name": "Room ",
-                "talks": []
-              }
-            ]
-          },
-          {
-            "timeStart": 1230,
-            "timeEnd": 1300,
-            "type": [
-              "Long Presentations & Short Presentations"
-            ],
-            "rooms": [
-              {
-                "name": "Room 1",
-                "talks": [
-                  {
-                    "talkId": 37,
-                    "language": "Norwegian",
-                    "difficulty": "Beginner",
-                    "title": "Svelte -- the next small thing in Javascript",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Svelte is a promising, novel approach to Javascript, designed for speed, short source files and tiny bundles. Among its many selling points are ease of learning and quick re-renders without a virtual DOM. Current big-name users include The New York Times and Godaddy.\n\nIn this presentation, Eirik takes you on a quick tour of the why and how of Svelte: Why is Svelte different and how is it able to be so much smaller and faster than the others? This will amongst other things involve a quick introduction to Svelte's syntax and a short history of the DOM. The talk is suitable for developers and designers who code  of all skill levels.",
-                    "speakers": [
-                      {
-                        "name": "Eirik Vågeskar",
-                        "info": "Eirik has worked at Knowit Objectnet for two years. Before that, he studied computer science at NTNU in Trondheim. In addition to programming, he has also dabbled in playwriting, acting, journalism and music. "
-                      }
-                    ],
-                    "tags": [
-                      "svelte"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Room 2",
-                "talks": [
-                  {
-                    "talkId": 21,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Machine Learning as a design material: What you should learn today to design for ML tomorrow",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "We often hear news about ML solving new tasks. Its easy to start thinking that more and more different problems can be solved by ML. What is the future like when the machines get smarter and smarter? And what is our role in it? Instead of fearing this future, we should focus on shaping it and defining our roles ourselves. The first step is to get curious on what ML can do. Understanding its potential and limitations will help us make better design decisions. In this talk we will walk through the types of problems that ML is good at. This basic understanding will get you more attentive to the daily tasks that can be solved by ML and to consider how it should be done with a human user in mind.",
-                    "speakers": [
-                      {
-                        "name": "Sofija Ivanova",
-                        "info": "Front-end developer, UX and service designer."
-                      }
-                    ],
-                    "tags": [
-                      "design",
-                      "development",
-                      "collaboration"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Room 3",
-                "talks": [
-                  {
-                    "talkId": 22,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Identity and access management with OAuth 2.0 and OpenID Connect",
-                    "type": "Long presentation (60 minutes)",
-                    "description": "Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.",
-                    "speakers": [
-                      {
-                        "name": "Andreas Garmannslund",
-                        "info": "Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group."
-                      }
-                    ],
-                    "tags": [
-                      "authentication",
-                      "authorization",
-                      "oauth 2.0",
-                      "openid connect (oidc)",
-                      "security",
-                      "identity"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Room 4",
-                "talks": [
-                  {
-                    "talkId": 18,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "How do I quantum?",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Have you wondered what all the buzz about quantum computing is? What is motivating large companies to pour money into it? Is it possible to do anything with it yet? How would you go about doing it today?\n\nThese questions are covered in this talk, where we'll go through the basics of quantum computing. We'll some basic terminology and expressions, a short history of the field, some alternative applications of similar quantum technology and finally concrete examples on a simulated quantum machine running on the JVM.",
-                    "speakers": [
-                      {
-                        "name": "Erik Lund",
-                        "info": "Erik has worked for Knowit for just over 4 years and has spent most of his time being a backend developer for Oslo county. He likes to consider new and interesting architectures for microservice systems, but also likes to keep an eye on technologies running through hype cycles to see what ends up maturing in the end."
-                      }
-                    ],
-                    "tags": [
-                      "quantum computing",
-                      "qubit",
-                      "entanglement",
-                      "superposition"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "timeStart": 1300,
-            "timeEnd": 1310,
-            "type": [
-              "Pause"
-            ],
-            "rooms": [
-              {
-                "name": "Room ",
-                "talks": []
-              }
-            ]
-          },
-          {
-            "timeStart": 1310,
-            "timeEnd": 1340,
-            "type": [
-              "Long Presentations & Short Presentations"
-            ],
-            "rooms": [
-              {
-                "name": "Room 1",
-                "talks": [
-                  {
-                    "talkId": 26,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Lottie.js - Realtime SVG animations.",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Lottie is an Web, iOS, Android, and React Native library that renders After Effects animations in real time, allowing apps to use animations as easily as they use static images.\n\nIn the past, building complex animations for Web, Android, iOS, and React Native apps was a difficult and lengthy process. You either had to add bulky image files for each screen size or write a thousand lines of brittle, hard-to-maintain code. Because of this, most apps werent using animation  despite it being a powerful tool for communicating ideas and creating compelling user experiences.\n\nLottie uses animation data exported as JSON files from an open-source After Effects extension called Bodymovin. The extension is bundled with a JavaScript player that can render the animations realtime on the web.\n\nLottie allows engineers to build richer animations without the painstaking overhead of re-writing them.\n\nJoin this talk and learn how you can utilize Lottie for your projects.\n",
-                    "speakers": [
-                      {
-                        "name": "Steffen Andre Hagen",
-                        "info": "Steffen Andre Hagen is a film director, UX designer and front end developer at Knowit Experience Bergen."
-                      }
-                    ],
-                    "tags": [
-                      "animation",
-                      "lottie",
-                      "lottie.js",
-                      "svg",
-                      "realtime",
-                      "motion graphics",
-                      "front end",
-                      "javascript"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Room 3",
-                "talks": [
-                  {
-                    "talkId": 22,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Identity and access management with OAuth 2.0 and OpenID Connect cont.",
-                    "type": "Long presentation (60 minutes)",
-                    "description": "Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.",
-                    "speakers": [
-                      {
-                        "name": "Andreas Garmannslund",
-                        "info": "Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group."
-                      }
-                    ],
-                    "tags": [
-                      "authentication",
-                      "authorization",
-                      "oauth 2.0",
-                      "openid connect (oidc)",
-                      "security",
-                      "identity"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Room 4",
-                "talks": [
-                  {
-                    "talkId": 38,
-                    "language": "Norwegian",
-                    "difficulty": "Beginner",
-                    "title": "Intro til blazor",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "blazor",
-                    "speakers": [
-                      {
-                        "name": "Endre Vestbø",
-                        "info": "Developer "
-                      }
-                    ],
-                    "tags": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
             "timeStart": 1340,
             "timeEnd": 1400,
             "type": [
-              "Pause - Fika?"
+              "Pause + Fika"
             ],
             "rooms": [
               {
@@ -1430,102 +1460,6 @@
           {
             "timeStart": 1400,
             "timeEnd": 1430,
-            "type": [
-              "Short Presentations"
-            ],
-            "rooms": [
-              {
-                "name": "Room 1",
-                "talks": [
-                  {
-                    "talkId": 27,
-                    "language": "Norwegian",
-                    "difficulty": "Beginner",
-                    "title": "Moderne webtypografi med variable fonter",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Variable fonter ble introdusert i 2016, og muliggjør bortimot uendelig med muligheter for typografien på en nettside. I dette foredraget skal vi se på hvordan de virker, og hvilke kreative muligheter de gir.",
-                    "speakers": [
-                      {
-                        "name": "Sverre Johan Bjørke",
-                        "info": "Sverre has been working at Knowit for two years. When he has the time he loves to tinker with new tech."
-                      }
-                    ],
-                    "tags": [
-                      "web",
-                      "typography",
-                      "ux",
-                      "design"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Room 2",
-                "talks": [
-                  {
-                    "talkId": 8,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Conversational design",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Building a voice controlled assistant for Google Assistant with DialogFlow, Firebase, Actions On Google and JavaScript. The talk will briefly cover the concepts of conversational design before walking through how you can set up your own virtual assistant in less than an hour.",
-                    "speakers": [
-                      {
-                        "name": "Joel Gustafsson",
-                        "info": "Joel Gustafsson is a front-end developer at Knowit Development Stockholm. He has a burning passion for creating visually appealing digital experiences that works for both visitors and businesses. Previously Joel designed and developed a virtual assistant for \"flygresor.se\", the insights from that project have shaped this talk."
-                      }
-                    ],
-                    "tags": [
-                      "conversational design",
-                      "dialogflow",
-                      "actions on google",
-                      "javascript",
-                      "firebase",
-                      "google assistant",
-                      "google home",
-                      "virtual assistants"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Room 3",
-                "talks": [
-                  {
-                    "talkId": 24,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "GDPR - Privacy by Design - What, why and how?",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Personopplysningsloven/GDPR trådte i kraft i 2018 og legger føringer for all behandling av personopplysninger i EU/EØS. Men hva er egentlig personopplysninger, og tar vi ikke godt nok vare på dem i våre datasystemer allerede?\nPresentasjonen definerer begrepene som brukes i personopplysningsloven, gir en del eksempler på tilfeller hvor det har gått riktig galt med personopplysninger i den digitale verden og hvorfor alle må tenke personvern alltid. Aina. Jämt. Always. ",
-                    "speakers": [
-                      {
-                        "name": "Nina Kvalsvik",
-                        "info": "Konsulent med bred erfaring fra finans og helse som har jobbet både teknisk og organisatorisk. Spesielt opptatt av informasjonssikkerhet og personvern."
-                      }
-                    ],
-                    "tags": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "timeStart": 1430,
-            "timeEnd": 1440,
-            "type": [
-              "Pause"
-            ],
-            "rooms": [
-              {
-                "name": "Room ",
-                "talks": []
-              }
-            ]
-          },
-          {
-            "timeStart": 1440,
-            "timeEnd": 1510,
             "type": [
               "Short Presentations"
             ],
@@ -1560,23 +1494,24 @@
                 "name": "Room 2",
                 "talks": [
                   {
-                    "talkId": 47,
-                    "language": "English",
-                    "difficulty": "Intermediate",
-                    "title": "Your friend the Milestone",
+                    "talkId": 31,
+                    "language": "Swedish",
+                    "difficulty": "Beginner",
+                    "title": "React eller Vue?",
                     "type": "Short presentation (30 minutes)",
-                    "description": "Short talk on traditional ways to organize projects and their impact on our ability to handle and reduce risk, followed by an outline of how creating meaningful milestones and using these for customer interaction is a simple and effective way to reduce risk in projects.",
+                    "description": "Under 2019 deltog ca 90 000 utvecklare i en omröstning kring vilket webb-ramverk de gillade bäst. React.js hamnade på plats 1 med Vue.js hack i häl efter sig på plats 2 (Stack Overflow Developer Survey 2019).\n\nVad är React och Vue? Vad är de främsta egenskaperna som skiljer dem åt? Vilket av dem lämpar sig bäst för ditt teams nästa frontend-projekt? Häng med på en jämförande upptäcktsfärd där vi söker efter svaren!",
                     "speakers": [
                       {
-                        "name": "Espen Vindegg",
-                        "info": "Business developer and tech lead with experience from the trenches of scale agile in decidedly non-agile organizations"
+                        "name": "Viktor Sandström Romild",
+                        "info": "Viktor Sandström Romild is a developer working for Knowit Uppsala, Sweden. "
                       }
                     ],
                     "tags": [
-                      "agile",
-                      "risk management",
-                      "project management",
-                      "customer involvement"
+                      "react",
+                      "vue",
+                      "frontend",
+                      "web frameworks",
+                      "javascript"
                     ]
                   }
                 ]
@@ -1606,27 +1541,99 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "timeStart": 1430,
+            "timeEnd": 1440,
+            "type": [
+              "Pause"
+            ],
+            "rooms": [
+              {
+                "name": "Room ",
+                "talks": []
+              }
+            ]
+          },
+          {
+            "timeStart": 1440,
+            "timeEnd": 1510,
+            "type": [
+              "Short Presentations"
+            ],
+            "rooms": [
+              {
+                "name": "Room 1",
+                "talks": [
+                  {
+                    "talkId": 26,
+                    "language": "English",
+                    "difficulty": "Beginner",
+                    "title": "Lottie.js - Realtime SVG animations.",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Lottie is an Web, iOS, Android, and React Native library that renders After Effects animations in real time, allowing apps to use animations as easily as they use static images.\n\nIn the past, building complex animations for Web, Android, iOS, and React Native apps was a difficult and lengthy process. You either had to add bulky image files for each screen size or write a thousand lines of brittle, hard-to-maintain code. Because of this, most apps werent using animation  despite it being a powerful tool for communicating ideas and creating compelling user experiences.\n\nLottie uses animation data exported as JSON files from an open-source After Effects extension called Bodymovin. The extension is bundled with a JavaScript player that can render the animations realtime on the web.\n\nLottie allows engineers to build richer animations without the painstaking overhead of re-writing them.\n\nJoin this talk and learn how you can utilize Lottie for your projects.\n",
+                    "speakers": [
+                      {
+                        "name": "Steffen Andre Hagen",
+                        "info": "Steffen Andre Hagen is a film director, UX designer and front end developer at Knowit Experience Bergen."
+                      }
+                    ],
+                    "tags": [
+                      "animation",
+                      "lottie",
+                      "lottie.js",
+                      "svg",
+                      "realtime",
+                      "motion graphics",
+                      "front end",
+                      "javascript"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Room 2",
+                "talks": [
+                  {
+                    "talkId": 21,
+                    "language": "English",
+                    "difficulty": "Beginner",
+                    "title": "Machine Learning as a design material: What you should learn today to design for ML tomorrow",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "We often hear news about ML solving new tasks. Its easy to start thinking that more and more different problems can be solved by ML. What is the future like when the machines get smarter and smarter? And what is our role in it? Instead of fearing this future, we should focus on shaping it and defining our roles ourselves. The first step is to get curious on what ML can do. Understanding its potential and limitations will help us make better design decisions. In this talk we will walk through the types of problems that ML is good at. This basic understanding will get you more attentive to the daily tasks that can be solved by ML and to consider how it should be done with a human user in mind.",
+                    "speakers": [
+                      {
+                        "name": "Sofija Ivanova",
+                        "info": "Front-end developer, UX and service designer."
+                      }
+                    ],
+                    "tags": [
+                      "design",
+                      "development",
+                      "collaboration"
+                    ]
+                  }
+                ]
               },
               {
                 "name": "Room 4",
                 "talks": [
                   {
-                    "talkId": 20,
-                    "language": "English",
-                    "difficulty": "Intermediate",
-                    "title": "How to write code worth reading",
+                    "talkId": 38,
+                    "language": "Norwegian",
+                    "difficulty": "Beginner",
+                    "title": "Intro to Blazor",
                     "type": "Short presentation (30 minutes)",
-                    "description": "Regardless of skill level, some programmers write code that is performant, bug free and works great, but is very difficult to read and understand, and thus difficult to maintain. So in this talk I would like to share my experience and explain how you can write code that is easier to maintain. Code that is enjoyable to read and not just to write.",
+                    "description": "Intro to Blazor",
                     "speakers": [
                       {
-                        "name": "Christoffer Eliesen",
-                        "info": "I am programmer with over 10 years of full time experience currently working as frontend developer at Knowit ???????"
+                        "name": "Endre Vestbø",
+                        "info": "Developer"
                       }
                     ],
-                    "tags": [
-                      "quality code",
-                      "tech culture"
-                    ]
+                    "tags": []
                   }
                 ]
               }

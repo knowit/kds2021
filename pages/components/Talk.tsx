@@ -38,8 +38,8 @@ class Talk extends React.Component<any, any> {
                             <Difficulty difficulty={this.props.difficulty}/>
                         </div>
                         <span className="text diff-name">
-              {this.props.difficulty}
-            </span>
+                          {this.props.difficulty}
+                        </span>
                     </div>
                     <div className="heart">
                         <FavouriteTalkButtonNoSSR talkId={this.props.id} onClick={this.props.onFavoriteChange}/>
@@ -49,13 +49,14 @@ class Talk extends React.Component<any, any> {
                     <p className="day">{this.props.day}</p>
                     <p className="time-info">{this.props.timeStart && this.props.timeStart.toString()} - {this.props.timeEnd && this.props.timeEnd.toString()}
                         <span className="duration">
-              &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
-            </span>
+                          &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
+                        </span>
                     </p>
                     <p className="type-info">{this.props.type}
                         <span className="duration">
-              &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
-            </span></p>
+                          &nbsp;({this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd)} min)
+                        </span>
+                    </p>
                     <h1 className="title">{this.props.title}</h1>
                     {this.props.speaker && this.props.speaker.map(speaker => {
                         return (<div>
