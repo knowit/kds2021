@@ -817,42 +817,25 @@
                 "name": "Room 2",
                 "talks": [
                   {
-                    "talkId": 2,
+                    "talkId": 22,
                     "language": "English",
-                    "difficulty": "Intermediate",
-                    "title": "A Model for Technology Governance at Entur",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "How do you scale a technology engineering organisation with high cohesion and alignment, while following agile principles and striving for autonomous teams? At Entur we try to achieve this with 14 parallell development teams, transforming the Norwegian Public Transport Sector. This talk is about how that work is going.",
+                    "difficulty": "Beginner",
+                    "title": "Identity and access management with OAuth 2.0 and OpenID Connect",
+                    "type": "Long presentation (60 minutes)",
+                    "description": "Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.",
                     "speakers": [
                       {
-                        "name": "Thomas Malt",
-                        "info": "Part of the Principal Engineer team at Knowit Objectnet. Experience as CTO, Technology Director, Full Stack Developer and Solutions Architect.\n\nPreviously he as been Director of Technology and Development at NRK, CTO at Fronter AS, and Head of the Development department at Linpro AS"
+                        "name": "Andreas Garmannslund",
+                        "info": "Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group."
                       }
                     ],
                     "tags": [
-                      "leadership",
-                      "technology governance",
-                      "agile methodology",
-                      "architecture governance",
-                      "organisational transformation"
-                    ]
-                  },
-                  {
-                    "talkId": 23,
-                    "language": "English",
-                    "difficulty": "Intermediate",
-                    "title": "Inclusive design - for developers",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Your code can mean a lot more for a lot more people if you think inclusive. ",
-                    "speakers": [
-                      {
-                        "name": "Øyvind Brande-Lien",
-                        "info": "Øyvind Brande-Lien used to be a developer but reconsidered his career when he discovered the horrendous interfaces people had to put up with. He has been a consultant since 1997 and still works in different industries as a designer of user experiences. "
-                      }
-                    ],
-                    "tags": [
-                      "inclusive design accessibility meaningful",
-                      "UX"
+                      "authentication",
+                      "authorization",
+                      "oauth 2.0",
+                      "openid connect (oidc)",
+                      "security",
+                      "identity"
                     ]
                   }
                 ]
@@ -986,25 +969,24 @@
                 "name": "Room 3",
                 "talks": [
                   {
-                    "talkId": 22,
+                    "talkId": 2,
                     "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Identity and access management with OAuth 2.0 and OpenID Connect",
-                    "type": "Long presentation (60 minutes)",
-                    "description": "Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.",
+                    "difficulty": "Intermediate",
+                    "title": "A Model for Technology Governance at Entur",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "How do you scale a technology engineering organisation with high cohesion and alignment, while following agile principles and striving for autonomous teams? At Entur we try to achieve this with 14 parallell development teams, transforming the Norwegian Public Transport Sector. This talk is about how that work is going.",
                     "speakers": [
                       {
-                        "name": "Andreas Garmannslund",
-                        "info": "Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group."
+                        "name": "Thomas Malt",
+                        "info": "Part of the Principal Engineer team at Knowit Objectnet. Experience as CTO, Technology Director, Full Stack Developer and Solutions Architect.\n\nPreviously he as been Director of Technology and Development at NRK, CTO at Fronter AS, and Head of the Development department at Linpro AS"
                       }
                     ],
                     "tags": [
-                      "authentication",
-                      "authorization",
-                      "oauth 2.0",
-                      "openid connect (oidc)",
-                      "security",
-                      "identity"
+                      "leadership",
+                      "technology governance",
+                      "agile methodology",
+                      "architecture governance",
+                      "organisational transformation"
                     ]
                   }
                 ]
@@ -1107,25 +1089,21 @@
                 "name": "Room 3",
                 "talks": [
                   {
-                    "talkId": 22,
+                    "talkId": 23,
                     "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Identity and access management with OAuth 2.0 and OpenID Connect Cont.",
-                    "type": "Long presentation (60 minutes)",
-                    "description": "Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.",
+                    "difficulty": "Intermediate",
+                    "title": "Inclusive design - for developers",
+                    "type": "Short presentation (30 minutes)",
+                    "description": "Your code can mean a lot more for a lot more people if you think inclusive. ",
                     "speakers": [
                       {
-                        "name": "Andreas Garmannslund",
-                        "info": "Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group."
+                        "name": "Øyvind Brande-Lien",
+                        "info": "Øyvind Brande-Lien used to be a developer but reconsidered his career when he discovered the horrendous interfaces people had to put up with. He has been a consultant since 1997 and still works in different industries as a designer of user experiences. "
                       }
                     ],
                     "tags": [
-                      "authentication",
-                      "authorization",
-                      "oauth 2.0",
-                      "openid connect (oidc)",
-                      "security",
-                      "identity"
+                      "inclusive design accessibility meaningful",
+                      "UX"
                     ]
                   }
                 ]
@@ -1184,7 +1162,7 @@
                     "talkId": 37,
                     "language": "Norwegian",
                     "difficulty": "Beginner",
-                    "title": "Svelte  the next small thing in Javascript",
+                    "title": "Svelte - the next small thing in Javascript",
                     "type": "Short presentation (30 minutes)",
                     "description": "Svelte is a promising, novel approach to Javascript, designed for speed, short source files and tiny bundles. Among its many selling points are ease of learning and quick re-renders without a virtual DOM. Current big-name users include The New York Times and Godaddy.\n\nIn this presentation, Eirik takes you on a quick tour of the why and how of Svelte: Why is Svelte different and how is it able to be so much smaller and faster than the others? This will amongst other things involve a quick introduction to Svelte's syntax and a short history of the DOM. The talk is suitable for developers and designers who code  of all skill levels.",
                     "speakers": [
@@ -1323,31 +1301,6 @@
                 ]
               },
               {
-                "name": "Room 2",
-                "talks": [
-                  {
-                    "talkId": 47,
-                    "language": "English",
-                    "difficulty": "Intermediate",
-                    "title": "Your friend the Milestone",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "Short talk on traditional ways to organize projects and their impact on our ability to handle and reduce risk, followed by an outline of how creating meaningful milestones and using these for customer interaction is a simple and effective way to reduce risk in projects.",
-                    "speakers": [
-                      {
-                        "name": "Espen Vindegg",
-                        "info": "Business developer and tech lead with experience from the trenches of scale agile in decidedly non-agile organizations"
-                      }
-                    ],
-                    "tags": [
-                      "agile",
-                      "risk management",
-                      "project management",
-                      "customer involvement"
-                    ]
-                  }
-                ]
-              },
-              {
                 "name": "Room 3",
                 "talks": [
                   {
@@ -1376,7 +1329,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Room 3",
                 "talks": [
                   {
                     "talkId": 12,
@@ -1594,30 +1547,6 @@
                 ]
               },
               {
-                "name": "Room 2",
-                "talks": [
-                  {
-                    "talkId": 21,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Machine Learning as a design material: What you should learn today to design for ML tomorrow",
-                    "type": "Short presentation (30 minutes)",
-                    "description": "We often hear news about ML solving new tasks. Its easy to start thinking that more and more different problems can be solved by ML. What is the future like when the machines get smarter and smarter? And what is our role in it? Instead of fearing this future, we should focus on shaping it and defining our roles ourselves. The first step is to get curious on what ML can do. Understanding its potential and limitations will help us make better design decisions. In this talk we will walk through the types of problems that ML is good at. This basic understanding will get you more attentive to the daily tasks that can be solved by ML and to consider how it should be done with a human user in mind.",
-                    "speakers": [
-                      {
-                        "name": "Sofija Ivanova",
-                        "info": "Front-end developer, UX and service designer."
-                      }
-                    ],
-                    "tags": [
-                      "design",
-                      "development",
-                      "collaboration"
-                    ]
-                  }
-                ]
-              },
-              {
                 "name": "Room 4",
                 "talks": [
                   {
@@ -1669,7 +1598,7 @@
             "timeStart": 1550,
             "timeEnd": 1600,
             "type": [
-              "Takk for oss! Hvem ble kåret til beste talk?"
+              "Who had the best talk? See you next year!"
             ],
             "rooms": [
               {
