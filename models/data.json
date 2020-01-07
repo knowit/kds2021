@@ -232,11 +232,11 @@
                     "speakers": [
                       {
                         "name": "Maja Jaakson",
-                        "info": "Maja is a front-end developer by day and a sophist by night. She enjoys candlelight pair programming, long walks to the powerlifting gym, and annoying innocent bystanders with questions about what makes something a programming language.\nHad Christian lived in the Middle Ages, he would probably have been a bard singing about how great React is. He loves pixels, pianos that light up when he plays, and drinks that are either hot or make him feel funny. He also co-produced his son, Adam."
+                        "info": "Maja is a front-end developer by day and a sophist by night. She enjoys candlelight pair programming, long walks to the powerlifting gym, and annoying innocent bystanders with questions about what makes something a programming language.\n"
                       },
                       {
                         "name": "Christian Arnesen Grimsgaard",
-                        "info": ""
+                        "info": "Had Christian lived in the Middle Ages, he would probably have been a bard singing about how great React is. He loves pixels, pianos that light up when he plays, and drinks that are either hot or make him feel funny. He also co-produced his son, Adam.\n\n "
                       }
                     ],
                     "tags": [
