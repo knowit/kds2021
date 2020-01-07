@@ -58,6 +58,9 @@ class Talk extends React.Component<any, any> {
                         </span>
                     </p>
                     <h1 className="title">{this.props.title}</h1>
+                    {this.props.description && <p>
+                        {this.props.description}
+                    </p>}
                     {this.props.speaker && this.props.speaker.map(speaker => {
                         return (<div>
                             <p className="speaker">{speaker.name}</p>
