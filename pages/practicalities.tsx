@@ -1,5 +1,4 @@
 import Layout from "./components/Layout";
-import RegisterButton from "./components/RegisterButton"
 import "../styling/styling.scss"
 
 export default function Practicalities() {

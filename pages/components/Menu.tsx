@@ -43,6 +43,9 @@ class Menu extends React.Component<any, any> {
                         <Link href="/codeOfConduct">
                             <a className="link codeOfConduct">Code of conduct</a>
                         </Link>
+                        <Link href="/logo">
+                            <a className="link logo">Logo</a>
+                        </Link>
                         <Link href="/static/old/index_2019.html">
                             <a className="link">Last years program</a>
                         </Link>
