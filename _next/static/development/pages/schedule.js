@@ -11527,27 +11527,27 @@ function (_React$Component) {
         className: "pin ".concat(this.props.small ? 'small' : '', " ").concat(this.props.className),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 7
+          lineNumber: 8
         },
         __self: this
       }, __jsx("div", {
         className: "top",
         style: {
-          borderColor: this.props.color
+          borderColor: '#FF00FF'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 9
         },
         __self: this
       }), __jsx("div", {
         className: "bottom",
         style: {
-          borderColor: "".concat(this.props.color, " transparent transparent  transparent")
+          borderColor: "#FF00FF transparent transparent  transparent"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 10
         },
         __self: this
       }));
@@ -12523,7 +12523,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 1:
 /*!********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fschedule&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Fschedule.tsx ***!
   \********************************************************************************************************************************************************/
@@ -12546,5 +12546,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js","styles"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=schedule.js.map
