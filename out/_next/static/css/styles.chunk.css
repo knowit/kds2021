@@ -1,19 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
 .content {
   overflow-y: visible;
   margin-left: auto;
   margin-right: auto; }
   .content .paragraphLink {
-    color: #009681;
+    color: #FF00FF;
     font-weight: bold; }
 
 body {
   padding: 0;
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
-  color: #1d2e46; }
+  color: #333333; }
 
 h1 {
   text-align: center;
@@ -34,7 +35,7 @@ h1 {
   width: 562px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #1d2e46;
+  border: 1px solid #333333;
   padding: 50px 90px;
   background-color: white; }
   @media screen and (max-width: 742px) {
@@ -138,10 +139,11 @@ h1 {
     font-weight: bold; }
 
 .schedule .slot:nth-child(odd) .event-header {
-  background-color: #A0D1CA; }
+  background-color: #333333;
+  color: #F1F0ED; }
 
 .schedule .slot:nth-child(even) .event-header {
-  background-color: #b6b8dc; }
+  background-color: #F1F0ED; }
 
 .schedule .event-header {
   width: 100%;
@@ -170,10 +172,10 @@ div.schedule {
     margin-top: 50px; }
     @media screen and (min-width: 1086px) {
       div.schedule .schedule-container {
-        border: 1px solid #1d2e46; } }
+        border: 1px solid #333333; } }
     @media screen and (min-width: 742px) {
       div.schedule .schedule-container {
-        border-top: 1px solid #1d2e46; } }
+        border-top: 1px solid #333333; } }
     div.schedule .schedule-container > .header {
       display: flex;
       flex-direction: column;
@@ -256,7 +258,7 @@ div.schedule {
     font-weight: normal; }
     .menuAndHeader .header .header-subheadline .subheadline-link {
       text-decoration: none;
-      color: #009681; }
+      color: #FF00FF; }
     @media screen and (max-width: 742px) {
       .menuAndHeader .header .header-subheadline {
         font-size: 0.7em; } }
@@ -284,14 +286,14 @@ div.schedule {
   margin-left: auto;
   margin-right: auto; }
   .content .paragraphLink {
-    color: #009681;
+    color: #FF00FF;
     font-weight: bold; }
 
 body {
   padding: 0;
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
-  color: #1d2e46; }
+  color: #333333; }
 
 h1 {
   text-align: center;
@@ -312,7 +314,7 @@ h1 {
   width: 562px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #1d2e46;
+  border: 1px solid #333333;
   padding: 50px 90px;
   background-color: white; }
   @media screen and (max-width: 742px) {
@@ -420,7 +422,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: 100; }
   #menu .link {
-    color: #1d2e46;
+    color: #333333;
     text-decoration: none;
     padding: 1em 1em 1em 1em;
     font-size: 1.5rem;
@@ -450,7 +452,7 @@ h1 {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  color: #1d2e46;
+  color: #333333;
   background: currentColor;
   border-radius: 3px;
   z-index: 2; }
@@ -499,7 +501,7 @@ h1 {
   width: 100%;
   padding: 15px 0px;
   background-color: #A0D1CA;
-  color: #1d2e46;
+  color: #333333;
   text-decoration: none;
   font-size: 1.125rem;
   white-space: nowrap;
@@ -516,7 +518,7 @@ div.callForPresentations div#menu a.callForPresentations,
 div.aboutUs div#menu a.aboutUs,
 div.location div#menu a.location,
 div.codeOfConduct div#menu a.codeOfConduct {
-  color: #1d2e46; }
+  color: #333333; }
 
 .filter-button {
   margin-top: 32px;
@@ -538,7 +540,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
     margin-left: auto;
     margin-right: auto;
     z-index: 4;
-    color: #1d2e46;
+    color: #333333;
     position: relative;
     background: currentColor;
     border-radius: 3px; }
@@ -573,7 +575,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
 .filter-container.dropdown .filter {
   position: absolute;
   width: 600px;
-  border: 1px solid #1d2e46;
+  border: 1px solid #333333;
   z-index: 2;
   transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 0.5);
   left: calc(50vw - 300px - 1px);
@@ -605,8 +607,8 @@ div.codeOfConduct div#menu a.codeOfConduct {
 
 .filter {
   position: relative;
-  border-bottom: 1px solid #1d2e46;
-  border-right: 1px solid #1d2e46;
+  border-bottom: 1px solid #333333;
+  border-right: 1px solid #333333;
   padding-bottom: 30px;
   z-index: 1;
   background: white;
@@ -616,7 +618,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
     font-size: 1rem; }
   .filter .close {
     display: block;
-    color: #1d2e46;
+    color: #333333;
     position: absolute;
     top: 20px;
     left: 30px;
@@ -648,18 +650,18 @@ div.codeOfConduct div#menu a.codeOfConduct {
 
 .filter-tag {
   border-radius: 20px;
-  border: 1px solid #1d2e46;
+  border: 1px solid #333333;
   padding: 5px 7px;
   margin-right: 15px;
   margin-bottom: 20px;
-  color: #1d2e46;
+  color: #333333;
   display: inline-block;
   font-size: 0.75rem;
   cursor: pointer; }
 
 .filter-tag.selected {
   color: white;
-  background-color: #1d2e46; }
+  background-color: #333333; }
 
 .switch {
   width: 54px;
@@ -676,14 +678,14 @@ div.codeOfConduct div#menu a.codeOfConduct {
     height: 27px;
     border-radius: 50%;
     background-color: white;
-    border: 2px solid #1d2e46;
+    border: 2px solid #333333;
     transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 0.5); }
 
 .switch.on {
   background-color: #A0D1CA; }
   .switch.on .ball {
     left: calc(100% - 27px + 2px);
-    background-color: #1d2e46; }
+    background-color: #333333; }
 
 #favourite-talk-button {
   background-color: Transparent;
@@ -725,7 +727,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
     margin-left: 75%;
     height: 100%; }
   .difficulty span.active {
-    background-color: #1d2e46; }
+    background-color: #333333; }
 
 .pin-container {
   top: 0;
@@ -741,7 +743,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border-radius: 50%;
-    border: 8px solid #1d2e46;
+    border: 8px solid #333333;
     width: 24px;
     height: 24px; }
   .pin .bottom {
@@ -751,7 +753,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
     margin-left: 1px;
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
-    border-top: 15px solid #1d2e46; }
+    border-top: 15px solid #333333; }
 
 .pin.small {
   height: 20px;
@@ -763,7 +765,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border-radius: 50%;
-    border: 6px solid #1d2e46;
+    border: 6px solid #333333;
     width: 18px;
     height: 18px; }
   .pin.small .bottom {
@@ -773,21 +775,21 @@ div.codeOfConduct div#menu a.codeOfConduct {
     margin-left: 1px;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 12px solid #1d2e46; }
+    border-top: 12px solid #333333; }
 
 .content {
   overflow-y: visible;
   margin-left: auto;
   margin-right: auto; }
   .content .paragraphLink {
-    color: #009681;
+    color: #FF00FF;
     font-weight: bold; }
 
 body {
   padding: 0;
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
-  color: #1d2e46; }
+  color: #333333; }
 
 h1 {
   text-align: center;
@@ -808,7 +810,202 @@ h1 {
   width: 562px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #1d2e46;
+  border: 1px solid #333333;
+  padding: 50px 90px;
+  background-color: white; }
+  @media screen and (max-width: 742px) {
+    .document {
+      margin-top: 30px;
+      padding: 0px 30px;
+      width: calc(100vw - 60px);
+      border: none; } }
+
+.title h1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 2rem; }
+
+.subtitle h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0px; }
+
+.paragraph p {
+  font-size: 1rem;
+  margin: 0px 0px 10px 0px; }
+
+@media screen and (max-width: 742px) {
+  .negative-margin {
+    margin-top: -50px; } }
+
+.background {
+  z-index: -1;
+  margin-left: -50%;
+  width: 200%;
+  height: 100%;
+  position: absolute; }
+  @media screen and (max-width: 742px) {
+    .background {
+      display: none; } }
+
+.flex-row, div.talksAndSpeakers .talk-container .talk .time,
+div.talksAndSpeakers .talk-container .talk .room,
+div.talksAndSpeakers .talk-container .talk .diff {
+  display: flex;
+  flex-direction: row; }
+
+.flex-col {
+  display: flex;
+  flex-direction: column; }
+
+@media screen and (max-width: 742px) {
+  .hide-small, #KDSheader *, div.talksAndSpeakers .talk-container .talk .time {
+    display: none !important; } }
+
+@media screen and (min-width: 1350px) {
+  .hide-large {
+    display: none !important; } }
+
+.show-small, div.talksAndSpeakers .talk-container .talk .day, div.talksAndSpeakers .talk-container .talk .time-info {
+  display: none !important; }
+  @media screen and (max-width: 742px) {
+    .show-small, div.talksAndSpeakers .talk-container .talk .day, div.talksAndSpeakers .talk-container .talk .time-info {
+      display: inherit !important; } }
+
+.show-large {
+  display: none !important; }
+  @media screen and (min-width: 1350px) {
+    .show-large {
+      display: inherit !important; } }
+
+.hide-schedule {
+  display: none !important; }
+  @media screen and (max-width: 1086px) {
+    .hide-schedule {
+      display: inherit !important; } }
+
+.show-schedule {
+  display: none !important; }
+  @media screen and (min-width: 1086px) {
+    .show-schedule {
+      display: inherit !important; } }
+
+div.talksAndSpeakers .talks-container {
+  margin-bottom: 90px;
+  margin-top: 50px; }
+  @media screen and (min-width: 742px) {
+    div.talksAndSpeakers .talks-container {
+      border: 1px solid black; } }
+  div.talksAndSpeakers .talks-container .title-filter {
+    margin-top: 0px; }
+    div.talksAndSpeakers .talks-container .title-filter > .title {
+      margin-top: 0px;
+      font-size: 2.25rem; }
+    div.talksAndSpeakers .talks-container .title-filter .talks-filter {
+      height: 0;
+      margin-left: -10px;
+      float: left; }
+      div.talksAndSpeakers .talks-container .title-filter .talks-filter .filter-button {
+        margin-left: -50px;
+        margin-top: -30px; }
+
+div.talksAndSpeakers .talk-container:last-child .talk .seperator {
+  display: none; }
+
+div.talksAndSpeakers .talk-container .talk .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px; }
+  div.talksAndSpeakers .talk-container .talk .header .room-name,
+  div.talksAndSpeakers .talk-container .talk .header .diff-name,
+  div.talksAndSpeakers .talk-container .talk .header .time-text {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 16px;
+    height: 100%; }
+
+div.talksAndSpeakers .talk-container .talk .day {
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-bottom: 0px; }
+
+div.talksAndSpeakers .talk-container .talk .type-info {
+  margin-top: 6px;
+  margin-bottom: 0px;
+  font-size: 0.75rem; }
+
+div.talksAndSpeakers .talk-container .talk .time-info {
+  margin-top: 6px;
+  margin-bottom: 0px;
+  font-size: 0.75rem;
+  font-weight: bold; }
+  div.talksAndSpeakers .talk-container .talk .time-info .duration {
+    display: none; }
+
+div.talksAndSpeakers .talk-container .talk .title {
+  margin-top: 6px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 7px; }
+
+div.talksAndSpeakers .talk-container .talk .speaker {
+  font-size: 1.125rem;
+  text-align: left;
+  margin-bottom: 20px; }
+
+div.talksAndSpeakers .talk-container .talk .info {
+  font-size: 1rem;
+  margin-bottom: 30px; }
+
+div.talksAndSpeakers .talk-container .talk .seperator {
+  margin-top: 10px;
+  margin-bottom: 30px; }
+  @media screen and (max-width: 742px) {
+    div.talksAndSpeakers .talk-container .talk .seperator {
+      margin-left: -100vw;
+      width: 200vw; } }
+
+div.talksAndSpeakers .talk-container .talk .filter-tag {
+  font-size: 0.875rem; }
+
+.content {
+  overflow-y: visible;
+  margin-left: auto;
+  margin-right: auto; }
+  .content .paragraphLink {
+    color: #FF00FF;
+    font-weight: bold; }
+
+body {
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
+  color: #333333; }
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em; }
+
+.page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow-x: hidden; }
+
+.document {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 562px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #333333;
   padding: 50px 90px;
   background-color: white; }
   @media screen and (max-width: 742px) {
@@ -905,7 +1102,7 @@ h1 {
     justify-content: space-between; }
     @media screen and (max-width: 1086px) {
       .rooms .talk-container .talk {
-        border-bottom: 1px solid #1d2e46; } }
+        border-bottom: 1px solid #333333; } }
     .rooms .talk-container .talk .time .time-text-day,
     .rooms .talk-container .talk .room .time-text-day,
     .rooms .talk-container .talk .time .time-text-day,
@@ -933,7 +1130,7 @@ h1 {
           font-size: 0.625rem; }
       .rooms .talk-container .talk .talk-content .speaker {
         font-size: 0.875rem;
-        color: #A0D1CA;
+        color: #333333;
         text-align: left;
         margin-top: 0px;
         margin-bottom: 24px; }
