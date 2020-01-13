@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/talksAndSpeakers.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/schedule.js"],{
 
 /***/ "./helpers/colors.ts":
 /*!***************************!*\
@@ -547,6 +547,31 @@ module.exports = _createClass;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
+
+function _arrayWithoutHoles(arr) {
+  if (_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js ***!
@@ -705,6 +730,44 @@ function _inherits(subClass, superClass) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
+/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
+/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_from__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/is-iterable */ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js");
+/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function _iterableToArray(iter) {
+  if (_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default()(Object(iter)) || Object.prototype.toString.call(iter) === "[object Arguments]") return _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default()(iter);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js":
 /*!**************************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js ***!
@@ -749,6 +812,28 @@ function _setPrototypeOf(o, p) {
   };
 
   return _setPrototypeOf(o, p);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
+/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js");
+/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js");
+
+
+
+function _toConsumableArray(arr) {
+  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -5427,21 +5512,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx!./":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fschedule&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Fschedule.tsx!./":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fschedule&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Fschedule.tsx ***!
+  \****************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/talksAndSpeakers", function() {
-      var mod = __webpack_require__(/*! ./pages/talksAndSpeakers.tsx */ "./pages/talksAndSpeakers.tsx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/schedule", function() {
+      var mod = __webpack_require__(/*! ./pages/schedule.tsx */ "./pages/schedule.tsx")
       if(true) {
-        module.hot.accept(/*! ./pages/talksAndSpeakers.tsx */ "./pages/talksAndSpeakers.tsx", function() {
-          if(!next.router.components["/talksAndSpeakers"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/talksAndSpeakers.tsx */ "./pages/talksAndSpeakers.tsx")
-          next.router.update("/talksAndSpeakers", updatedPage)
+        module.hot.accept(/*! ./pages/schedule.tsx */ "./pages/schedule.tsx", function() {
+          if(!next.router.components["/schedule"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/schedule.tsx */ "./pages/schedule.tsx")
+          next.router.update("/schedule", updatedPage)
         })
       }
       return mod
@@ -10413,6 +10498,113 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./pages/components/Day.tsx":
+/*!**********************************!*\
+  !*** ./pages/components/Day.tsx ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _EventHeader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./EventHeader */ "./pages/components/EventHeader.tsx");
+/* harmony import */ var _ScheduleEntry__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ScheduleEntry */ "./pages/components/ScheduleEntry.tsx");
+
+
+
+
+
+
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/Day.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+
+
+
+var Day =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Day, _Component);
+
+  function Day() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Day);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Day).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Day, [{
+    key: "longestTrack",
+    value: function longestTrack(slot) {
+      return Math.max.apply(Math, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(slot.rooms && slot.rooms.map(function (room) {
+        return room.talks && room.talks.filter(function (talk) {
+          return !talk.hide;
+        }).length;
+      })));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return __jsx("div", {
+        className: "day",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }, this.props.slots && this.props.slots.map(function (slot, i) {
+        return __jsx("div", {
+          key: i + "slot",
+          className: "slot",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        }, __jsx(_EventHeader__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          key: i + "slot",
+          timeStart: slot.timeStart,
+          timeEnd: slot.timeEnd,
+          type: slot.type,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: this
+        }), slot.rooms && __jsx(_ScheduleEntry__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          day: _this.props.currDay.day,
+          onToggleTag: _this.props.onToggleTag,
+          tags: _this.props.tags,
+          slot: slot,
+          showRoomHeader: true,
+          trackLength: _this.longestTrack(slot),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }));
+      }));
+    }
+  }]);
+
+  return Day;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Day);
+
+/***/ }),
+
 /***/ "./pages/components/Difficulty.tsx":
 /*!*****************************************!*\
   !*** ./pages/components/Difficulty.tsx ***!
@@ -10491,6 +10683,77 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Difficulty);
+
+/***/ }),
+
+/***/ "./pages/components/EventHeader.tsx":
+/*!******************************************!*\
+  !*** ./pages/components/EventHeader.tsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/EventHeader.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+
+var EventHeader =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(EventHeader, _React$Component);
+
+  function EventHeader() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, EventHeader);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(EventHeader).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(EventHeader, [{
+    key: "render",
+    value: function render() {
+      return __jsx("div", {
+        className: "event-header",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "type",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        },
+        __self: this
+      }, this.props.type), __jsx("span", {
+        className: "time",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        },
+        __self: this
+      }, this.props.timeStart, " - ", this.props.timeEnd));
+    }
+  }]);
+
+  return EventHeader;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (EventHeader);
 
 /***/ }),
 
@@ -11298,6 +11561,273 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./pages/components/Room.tsx":
+/*!***********************************!*\
+  !*** ./pages/components/Room.tsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _helpers_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers/colors */ "./helpers/colors.ts");
+/* harmony import */ var _Pin__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pin */ "./pages/components/Pin.tsx");
+/* harmony import */ var _styling_roomStyles_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../styling/roomStyles.scss */ "./styling/roomStyles.scss");
+/* harmony import */ var _styling_roomStyles_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styling_roomStyles_scss__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/Room.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+
+
+
+
+var Room =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Room, _Component);
+
+  function Room() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Room);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Room).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Room, [{
+    key: "render",
+    value: function render() {
+      var color = Object(_helpers_colors__WEBPACK_IMPORTED_MODULE_6__["colorClassFromRoomName"])(this.props.room);
+      var style = {
+        msGridColumn: this.props.index + 1,
+        msGridRow: 1
+      };
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_5__["Fragment"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, this.props.showRoomHeader && __jsx("div", {
+        className: "room-header ".concat(this.props.index % 2 == 0 ? 'room-even' : 'room-odd'),
+        style: style,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }, __jsx(_Pin__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        className: color,
+        small: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }), __jsx("div", {
+        className: "room-header-text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, this.props.room)), this.props.children);
+    }
+  }]);
+
+  return Room;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Room);
+
+/***/ }),
+
+/***/ "./pages/components/ScheduleEntry.tsx":
+/*!********************************************!*\
+  !*** ./pages/components/ScheduleEntry.tsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Talk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Talk */ "./pages/components/Talk.tsx");
+/* harmony import */ var _Room__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Room */ "./pages/components/Room.tsx");
+/* harmony import */ var _helpers_time__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../helpers/time */ "./helpers/time.ts");
+
+
+
+
+
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/ScheduleEntry.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+
+
+
+
+var ScheduleEntry =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(ScheduleEntry, _Component);
+
+  function ScheduleEntry(props) {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ScheduleEntry);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ScheduleEntry).call(this, props));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ScheduleEntry, [{
+    key: "createRoom",
+    value: function createRoom(room, index) {
+      var _this = this;
+
+      var from = _helpers_time__WEBPACK_IMPORTED_MODULE_8__["Time"].fromNumber(this.props.slot.timeStart);
+      var trackIndex = 0;
+      var talks = room.talks.map(function (talk) {
+        var to = from.copy().add(Object(_helpers_time__WEBPACK_IMPORTED_MODULE_8__["getDuration"])(talk));
+
+        var talkEl = __jsx("div", {
+          className: "talk-container ".concat(trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd', " ").concat(index % 2 == 0 ? 'room-even' : 'room-odd'),
+          key: trackIndex,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
+          },
+          __self: this
+        }, __jsx(_Talk__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          title: talk.title,
+          speaker: talk.speakers,
+          room: room.name,
+          type: talk.type,
+          language: talk.language,
+          difficulty: talk.difficulty,
+          id: talk.talkId,
+          key: trackIndex,
+          day: _this.props.day,
+          tags: talk.tags,
+          timeStart: from,
+          timeEnd: to,
+          selectedTags: _this.props.tags,
+          onToggleTag: _this.props.onToggleTag,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29
+          },
+          __self: this
+        }));
+
+        from = to;
+
+        if (!talk.hide) {
+          trackIndex++;
+        }
+
+        return !talk.hide ? talkEl : '';
+      });
+      var numHidden = room.talks.filter(function (talk) {
+        return !talk.hide;
+      }).length;
+
+      for (var i = 0; i < this.props.trackLength - numHidden; i++) {
+        var talkIndex = trackIndex + i;
+        talks.push(__jsx("div", {
+          className: "talk-container empty ".concat(talkIndex % 2 == 0 ? 'talk-even' : 'talk-odd', " ").concat(index % 2 == 0 ? 'room-even' : 'room-odd'),
+          key: i,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59
+          },
+          __self: this
+        }));
+      }
+
+      return talks;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      if (this.props.slot && this.props.slot.rooms && this.props.slot.rooms.length == 1) {
+        var room = this.props.slot.rooms[0];
+        return __jsx("div", {
+          className: "rooms single-track",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71
+          },
+          __self: this
+        }, this.props.slot.rooms && __jsx(_Room__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          key: room.name,
+          showRoomHeader: false,
+          room: room,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72
+          },
+          __self: this
+        }, this.createRoom(room, 0)));
+      } else {
+        // Need to update dimensions of the grid
+        var style = {
+          gridTemplateColumns: "repeat(".concat(this.props.slot && this.props.slot.rooms && this.props.slot.rooms.length, ", 1fr)"),
+          gridTemplateRows: "60px ".concat(this.props.trackLength > 0 ? "repeat(".concat(this.props.trackLength, ", 1fr)") : ''),
+          msGridRows: "60px  ".concat(this.props.trackLength > 0 ? "(1fr)[".concat(this.props.trackLength, "]") : ''),
+          msGridColumns: "(1fr) [".concat(this.props.slot && this.props.slot.rooms && this.props.slot.rooms.length, "]")
+        };
+        return __jsx("div", {
+          className: "rooms multi-track",
+          style: style,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86
+          },
+          __self: this
+        }, this.props.slot && this.props.slot.rooms && this.props.slot.rooms.map(function (r, i) {
+          return __jsx(_Room__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            key: r.name,
+            index: i,
+            showRoomHeader: _this2.props.showRoomHeader,
+            room: r.name,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 87
+            },
+            __self: this
+          }, _this2.createRoom(r, i));
+        }));
+      }
+    }
+  }]);
+
+  return ScheduleEntry;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (ScheduleEntry);
+
+/***/ }),
+
 /***/ "./pages/components/ShowOnlyFavoritesButton.tsx":
 /*!******************************************************!*\
   !*** ./pages/components/ShowOnlyFavoritesButton.tsx ***!
@@ -11681,32 +12211,33 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./pages/talksAndSpeakers.tsx":
-/*!************************************!*\
-  !*** ./pages/talksAndSpeakers.tsx ***!
-  \************************************/
+/***/ "./pages/schedule.tsx":
+/*!****************************!*\
+  !*** ./pages/schedule.tsx ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Layout */ "./pages/components/Layout.tsx");
-/* harmony import */ var _components_Talk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Talk */ "./pages/components/Talk.tsx");
-/* harmony import */ var _styling_talksAndSpeakersStyles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../styling/talksAndSpeakersStyles.scss */ "./styling/talksAndSpeakersStyles.scss");
-/* harmony import */ var _styling_talksAndSpeakersStyles_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styling_talksAndSpeakersStyles_scss__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _models_data_json__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/data.json */ "./models/data.json");
-var _models_data_json__WEBPACK_IMPORTED_MODULE_11___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../models/data.json */ "./models/data.json", 1);
-/* harmony import */ var _helpers_time__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../helpers/time */ "./helpers/time.ts");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _styling_scheduleStyles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../styling/scheduleStyles.scss */ "./styling/scheduleStyles.scss");
+/* harmony import */ var _styling_scheduleStyles_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styling_scheduleStyles_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Layout */ "./pages/components/Layout.tsx");
+/* harmony import */ var _components_Day__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/Day */ "./pages/components/Day.tsx");
+/* harmony import */ var _models_data_json__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../models/data.json */ "./models/data.json");
+var _models_data_json__WEBPACK_IMPORTED_MODULE_12___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../models/data.json */ "./models/data.json", 1);
 /* harmony import */ var _components_Filter__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Filter */ "./pages/components/Filter.tsx");
 
 
@@ -11715,8 +12246,10 @@ var _models_data_json__WEBPACK_IMPORTED_MODULE_11___namespace = /*#__PURE__*/__w
 
 
 
-var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/talksAndSpeakers.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
+
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/schedule.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 
 
@@ -11724,30 +12257,45 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
 
 
 
-
-var TalksAndSpeakers =
+var Schedule =
 /*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(TalksAndSpeakers, _React$Component);
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(Schedule, _Component);
 
-  function TalksAndSpeakers(props) {
+  function Schedule(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, TalksAndSpeakers);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Schedule);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(TalksAndSpeakers).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Schedule).call(this, props));
+    var filteredProgram = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(_models_data_json__WEBPACK_IMPORTED_MODULE_12__["program"])); // Need a deep copy
+
     _this.state = {
-      filteredProgram: JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(_models_data_json__WEBPACK_IMPORTED_MODULE_11__["program"])),
-      // Need a deep copy
+      filteredProgram: filteredProgram,
       showOnlyFavorites: false,
-      tags: []
+      tags: [],
+      currentDayIndex: 0
     };
-    _this.handleFilterChange = _this.handleFilterChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
-    _this.handleFavoriteChange = _this.handleFavoriteChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
+    _this.handleFilterChange = _this.handleFilterChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.handleFavoriteChange = _this.handleFavoriteChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(TalksAndSpeakers, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Schedule, [{
+    key: "getRooms",
+    value: function getRooms(day) {
+      var roomDict = {};
+      var rooms = day.slots.reduce(function (acc, slot) {
+        return acc.concat(slot.rooms);
+      }, []);
+      rooms.forEach(function (room) {
+        if (room) {
+          roomDict[room.name] = true;
+        }
+      });
+      return _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(roomDict);
+    }
+  }, {
     key: "handleFilterChange",
     value: function handleFilterChange(newVal) {
       this.setState({
@@ -11783,7 +12331,7 @@ function (_React$Component) {
     value: function filterProgram() {
       var _this2 = this;
 
-      var filteredProgram = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(_models_data_json__WEBPACK_IMPORTED_MODULE_11__["program"]));
+      var filteredProgram = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(_models_data_json__WEBPACK_IMPORTED_MODULE_12__["program"]));
       filteredProgram.days.forEach(function (day) {
         return day.slots.forEach(function (slot) {
           return slot.rooms && slot.rooms.forEach(function (room) {
@@ -11808,139 +12356,181 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "setDay",
+    value: function setDay(index) {
+      this.setState({
+        currentDayIndex: index
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
 
       return __jsx("div", {
-        className: "talksAndSpeakers page",
+        className: "schedule page",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 85
         },
         __self: this
-      }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        title: "Talks & Speakers",
+      }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        title: "Schedule",
         filter: 'small',
         onTagChange: this.handleFilterChange,
         onFavoriteChange: this.handleFavoriteChange,
-        selectedTags: this.state.tags,
         showOnlyFavorites: this.state.showOnlyFavorites,
+        selectedTags: this.state.tags,
+        hideLogo: 'small',
         background: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 86
         },
         __self: this
       }, __jsx("div", {
-        className: "talks-container document",
+        className: "schedule-document negative-margin",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 87
         },
         __self: this
       }, __jsx("div", {
-        className: "title-filter",
+        className: "day-selector-top",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 88
+        },
+        __self: this
+      }, this.state.filteredProgram.days.map(function (day, i) {
+        return __jsx("span", {
+          key: day.day,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90
+          },
+          __self: this
+        }, i != 0 && __jsx("span", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91
+          },
+          __self: this
+        }, " | "), __jsx("span", {
+          onClick: function onClick() {
+            return _this3.setDay(i);
+          },
+          className: "header-day ".concat(_this3.state.currentDayIndex == i ? 'selected' : ''),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92
+          },
+          __self: this
+        }, day.day));
+      })), __jsx("div", {
+        className: "schedule-container",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "header",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
         },
         __self: this
       }, __jsx(_components_Filter__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        onFavoriteChange: this.handleFavoriteChange,
         onTagChange: this.handleFilterChange,
+        onFavoriteChange: this.handleFavoriteChange,
         selectedTags: this.state.tags,
         showOnlyFavorites: this.state.showOnlyFavorites,
-        className: "hide-small talks-filter",
+        className: "hide-small schedule-filter",
         type: "dropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 99
         },
         __self: this
-      }), __jsx("h1", {
+      }), __jsx("div", {
+        className: "header-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }, __jsx("h1", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 102
         },
         __self: this
-      }, " Talks & speakers")), __jsx("div", {
-        className: "talks",
+      }, "Schedule"), __jsx("div", {
+        className: "day-selector-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 103
         },
         __self: this
-      }, this.state.filteredProgram.days.map(function (day) {
-        return day.slots.filter(function (slot) {
-          return slot.rooms !== undefined;
-        }).map(function (slot) {
-          return slot.rooms.map(function (room) {
-            var from = _helpers_time__WEBPACK_IMPORTED_MODULE_12__["Time"].fromNumber(slot.timeStart);
-            return room.talks.map(function (talk, i) {
-              var to = from.copy().add(Object(_helpers_time__WEBPACK_IMPORTED_MODULE_12__["getDuration"])(talk));
-
-              var talkEl = __jsx("div", {
-                className: "talk-container",
-                key: i,
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 90
-                },
-                __self: this
-              }, __jsx(_components_Talk__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                day: day.day,
-                timeStart: from,
-                timeEnd: to,
-                description: talk.description,
-                speaker: talk.speakers,
-                title: talk.title,
-                type: talk.type,
-                id: talk.talkId,
-                room: room.name,
-                language: talk.language,
-                key: i,
-                difficulty: talk.difficulty,
-                tags: talk.tags,
-                selectedTags: _this3.state.tags,
-                onToggleTag: function onToggleTag(val) {
-                  return _this3.handleToggleTag(val);
-                },
-                onFavoriteChange: function onFavoriteChange() {
-                  return _this3.filterProgram();
-                },
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 91
-                },
-                __self: this
-              }));
-
-              from = to;
-              return !talk.hide ? talkEl : '';
-            });
-          });
-        });
+      }, this.state.filteredProgram.days.map(function (day, i) {
+        return __jsx("span", {
+          key: day.day,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 105
+          },
+          __self: this
+        }, i != 0 && __jsx("span", {
+          className: "seperator",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106
+          },
+          __self: this
+        }, " | "), __jsx("span", {
+          onClick: function onClick() {
+            return _this3.setDay(i);
+          },
+          className: "header-day ".concat(_this3.state.currentDayIndex == i ? 'selected' : ''),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107
+          },
+          __self: this
+        }, day.day));
+      })))), this.state.filteredProgram.days.length > 0 && __jsx(_components_Day__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        onToggleTag: function onToggleTag(val) {
+          return _this3.handleToggleTag(val);
+        },
+        tags: this.state.tags,
+        currDay: this.state.filteredProgram.days[this.state.currentDayIndex],
+        slots: this.state.filteredProgram.days[this.state.currentDayIndex] && this.state.filteredProgram.days[this.state.currentDayIndex].slots,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
       })))));
     }
   }]);
 
-  return TalksAndSpeakers;
-}(react__WEBPACK_IMPORTED_MODULE_10___default.a.Component);
+  return Schedule;
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (TalksAndSpeakers);
+/* harmony default export */ __webpack_exports__["default"] = (Schedule);
 
 /***/ }),
 
-/***/ 15:
-/*!************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx ***!
-  \************************************************************************************************************************************************************************/
+/***/ 7:
+/*!********************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fschedule&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Fschedule.tsx ***!
+  \********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fschedule&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Fschedule.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fschedule&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Fschedule.tsx!./");
 
 
 /***/ }),
@@ -11956,5 +12546,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[15,"static/runtime/webpack.js","styles"]]]);
-//# sourceMappingURL=talksAndSpeakers.js.map
+},[[7,"static/runtime/webpack.js","styles"]]]);
+//# sourceMappingURL=schedule.js.map
