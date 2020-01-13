@@ -1,169 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/talksAndSpeakers.js"],{
-
-/***/ "./helpers/colors.ts":
-/*!***************************!*\
-  !*** ./helpers/colors.ts ***!
-  \***************************/
-/*! exports provided: colorFromRoomName, colorClassFromRoomName */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "colorFromRoomName", function() { return colorFromRoomName; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "colorClassFromRoomName", function() { return colorClassFromRoomName; });
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _models_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/data.json */ "./models/data.json");
-var _models_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../models/data.json */ "./models/data.json", 1);
-
-
-var seed = "nice seed!!!!";
-var colorClasses = ['room-header-green', 'room-header-purple', 'room-header-red', 'room-header-yellow'];
-
-var colorClassFromRoomName = function colorClassFromRoomName(roomName) {
-  var index = Math.abs(_models_data_json__WEBPACK_IMPORTED_MODULE_1__["program"].rooms.indexOf(roomName) % colorClasses.length);
-  return colorClasses[index];
-}; // Should be tweaked to create more "nice" colors
-
-
-var colorFromRoomName = function colorFromRoomName(roomName) {
-  var str = roomName + seed + roomName; // Room names tend to be quite short so we put multiple of them togheter
-
-  var hash = 0;
-
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-
-  var c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
-  return colorMinumum("#" + "00000".substring(0, 6 - c.length) + c, [130, 120, 90]);
-}; // Makes r, g and b has atleast a minimum value
-
-
-var colorMinumum = function colorMinumum(color, min) {
-  var c = color.substring(1, color.length);
-  var rgb = c.match(/.{1,2}/g).map(function (i) {
-    return _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(i, 16);
-  }).map(function (i, j) {
-    return Math.max(i, min[j]);
-  }).map(function (i) {
-    return i.toString(16).toUpperCase();
-  });
-  return "#" + rgb.map(function (i) {
-    return ("0" + i).substr(-2);
-  }).join('');
-};
-
-
-
-/***/ }),
-
-/***/ "./helpers/time.ts":
-/*!*************************!*\
-  !*** ./helpers/time.ts ***!
-  \*************************/
-/*! exports provided: Time, getDuration */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Time", function() { return Time; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDuration", function() { return getDuration; });
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-
-
-
-
-
-var Time =
-/*#__PURE__*/
-function () {
-  function Time() {
-    var hours = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "0";
-    var minutes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "0";
-
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Time);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "hours", void 0);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "minutes", void 0);
-
-    this.hours = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(hours);
-    this.minutes = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(minutes);
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Time, [{
-    key: "toString",
-    value: function toString() {
-      var del = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ".";
-      return ("0" + this.hours).slice(-2) + del + ("0" + this.minutes).slice(-2);
-    }
-  }, {
-    key: "add",
-    value: function add(time) {
-      this.hours += time.hours + Math.floor((this.minutes + time.minutes) / 60);
-      this.minutes = (this.minutes + time.minutes) % 60;
-      return this;
-    }
-  }, {
-    key: "copy",
-    value: function copy() {
-      var t = new Time();
-      t.add(this);
-      return t;
-    } // Returns diff in minutes
-
-  }, {
-    key: "diff",
-    value: function diff(time) {
-      return Math.abs(this.hours * 60 + this.minutes - time.minutes - time.hours * 60);
-    }
-  }], [{
-    key: "fromString",
-    value: function fromString(str) {
-      var del = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '.';
-      var strs = str.split(del);
-      return new Time(strs[0], strs[1]);
-    }
-  }, {
-    key: "fromNumber",
-    value: function fromNumber(_int) {
-      var tt = _int.toString().substring(0, _int.toString().length - 2);
-
-      var mm = _int.toString().substring(_int.toString().length - 2, _int.toString().length);
-
-      return new Time(tt, mm);
-    }
-  }]);
-
-  return Time;
-}();
-
-function getDuration(talk) {
-  switch (talk.type) {
-    case "Lightning talk (10 minutes)":
-      return new Time("00", "10");
-
-    case "Short presentation (30 minutes)":
-      return new Time("00", "30");
-
-    case "Long presentation (60 minutes)":
-      return new Time("01", "00");
-
-    case "Workshop (90 minutes)":
-      return new Time("01", "30");
-  }
-
-  return new Time();
-}
-
-
-
-/***/ }),
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
 /***/ "./models/data.json":
 /*!**************************!*\
@@ -172,7 +7,7 @@ function getDuration(talk) {
 /*! exports provided: program, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"program\":{\"tags\":[\"architecture\",\"cloud\",\"leadership\",\"technology governance\",\"agile methodology\",\"architecture governance\",\"organisational transformation\",\"front-end\",\"ux\",\"ux design\",\"best practices\",\"development methodology\",\"azure\",\"devops\",\"testing\",\"unit testing\",\"database testing\",\"api testing\",\"consumer driven contracts\",\"backend\",\"java\",\"business intelligence\",\"bi\",\"data warehouse\",\"develop.\",\"computervision\",\"tensorflow\",\"machinelearning\",\"conversational design\",\"dialogflow\",\"actions on google\",\"javascript\",\"firebase\",\"google assistant\",\"google home\",\"virtual assistants\",\"labyrinth\",\"virtual reality\",\"arduino\",\"esp32\",\"3d-design\",\"laserkutting\",\"3d-utskrift\",\"mikrokontrollerprogrammering\",\"computer vision\",\"node.js\",\"c++\",\"security\",\"usability\",\"risk based testing\",\"electron.js\",\"asynchronicity\",\"event driven programming\",\"cyber security\",\"android\",\"flutter\",\"ios\",\"mobile\",\"web development\",\"passwordmanagers\",\"users\",\"gitops\",\"infrastructure as code\",\"goto\",\"magic\",\"python\",\"open source\",\"design\",\"web\",\"graph\",\"quantum computing\",\"qubit\",\"entanglement\",\"superposition\",\"api design\",\"openapi\",\"swagger code generation\",\"quality code\",\"tech culture\",\"development\",\"collaboration\",\"authentication\",\"authorization\",\"oauth 2.0\",\"openid connect (oidc)\",\"identity\",\"inclusive design accessibility meaningful\",\"jam\",\"api\",\"static\",\"animation\",\"lottie\",\"lottie.js\",\"svg\",\"realtime\",\"motion graphics\",\"front end\",\"typography\",\"crypto\",\"database\",\"information security\",\"privacy\",\"data engineering\",\"iot\",\"streaming\",\"storage\",\"edge\",\"aggregation\",\"performance\",\"scaling\",\"industrial\",\"quality of life\",\"agile\",\"development process\",\"react\",\"vue\",\"frontend\",\"web frameworks\",\"system design\",\"microsoft\",\"rust\",\"webassembly\",\"server side rendering\",\"ssr\",\"client side rendering\",\"csr\",\"lighthouse\",\"isomorphic\",\"serverless\",\"universal\",\"seo\",\"http status codes\",\"sos alarm\",\"112app\",\"azure devops\",\"cosmos db\",\"svelte\",\"messaging\",\"kafka\",\"pub/sub\",\"event based\",\"data synchronization\",\"saas\",\"business\",\"government\",\"software engineering\",\"equal opportunity\",\"digital divide\",\"code quality\",\"design patterns\",\"maintainability\",\"deep learning\",\"neural networks\",\"dcnn\",\"cuda\",\"image scaling\",\"caffe\",\"waifux2\",\"dataplatform\",\"analytics\",\"big data\",\"episerver\",\"fractal.build\",\"handlebars\",\".net\",\"asp.net\",\"risk management\",\"project management\",\"customer involvement\"],\"rooms\":[1,2,3,4],\"languages\":[\"Norwegian\",\"English\",\"Swedish\"],\"days\":[{\"day\":\"Friday\",\"slots\":[{\"timeStart\":1110,\"timeEnd\":1130,\"type\":[\"Welcome\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1130,\"timeEnd\":1230,\"type\":[\"Lunch\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1230,\"timeEnd\":1330,\"type\":[\"Long Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":3,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"A quick-draw designer and a cowboy developer walk into a saloon...\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Frontiers is a Bergen-based group of developers and designers with a passion for great UX, cross-functional collaboration, and taking front-end development to the next level. In this short talk, well introduce our groups ambitions and initiatives, with a special focus on the creation of the interdisciplinary Frontiers forum and a living front-end guidelines template you can start using today. Well tell you why we wrote the guidelines, how we found them useful them in a recent project, what we believe to be their current shortcomings, and how you can get involved and help us improve them, to everyones benefit. Our goal is to develop a useful, internal tool that will help you spend less time solving the same, old problems and more time blazing trails and addressing the unique and exciting challenges posed by your particular project. Join us at the frontier!\",\"speakers\":[{\"name\":\"Maja Jaakson\",\"info\":\"Maja is a front-end developer by day and a sophist by night. She enjoys candlelight pair programming, long walks to the powerlifting gym, and annoying innocent bystanders with questions about what makes something a programming language.\\n\"},{\"name\":\"Christian Arnesen Grimsgaard\",\"info\":\"Had Christian lived in the Middle Ages, he would probably have been a bard singing about how great React is. He loves pixels, pianos that light up when he plays, and drinks that are either hot or make him feel funny. He also co-produced his son, Adam.\\n\\n \"}],\"tags\":[\"front-end\",\"ux\",\"ux design\",\"best practices\",\"development methodology\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":9,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Datastyrt labyrint\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Knowit Hardware Guild har bygget videre på det klassiske BRIO labyrintspillet ved å montere motorer og sensorer og bruke forskjellige teknologier (bl.a. 3D-design og produksjon, mikrokontrollere, computer vision m.m.) slik at spillet styres ved hjelp av en joystick.\\n\\nPresentasjonen bygger på innholdet i artikkel på Knowit Labs: https://knowitlabs.no/datastyrt-labyrint-68ac225f8acb \\n\",\"speakers\":[{\"name\":\"Andreas Bade\",\"info\":\"Andreas er en omgjengelig, samlende utvikler og teknisk leder som siden 1998 har opparbeidet seg en utstrakt erfaringsbase for gjennomføring av IT-prosjekter gjennom en rekke konsulentoppdrag.\\n\\nHan har mye teknisk erfaring og god kjennskap til mange ulike rammeverk og metoder.\\n\\nAndreas har lang erfaring med smidig utvikling og har brukt smidige teknikker i hovedvekten av sin arbeidstid. Han trives godt i grenseflaten mellom forretning og fag, funksjonalitet og teknologi.\\n\\nAndreas stortrives når han får nytte av sine samlende, kommunikative og motiverende egenskaper. og motiveres av samfunnsnyttige oppgaver som bidrar til bedre ressursbruk eller forbedrer folks hverdag.\"},{\"name\":\"Iver Egge\",\"info\":\"\"}],\"tags\":[\"labyrinth\",\"virtual reality\",\"arduino\",\"esp32\",\"3d-design\",\"laserkutting\",\"3d-utskrift\",\"mikrokontrollerprogrammering\",\"computer vision\",\"node.js\",\"c++\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":40,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"The dangers of closed source and software as a service\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"SAAS and governments influence over companies in a direct and indirect way are actually hurting people and businesses in various countries around the world and increasing the digital divide.\\n\\nThis talk will take a look at why SAAS, especially around closed source software and services might actually be a really bad idea.\\n\\nImagine the US introducing an embargo or sanctions against Sweden or any of the other Nordic countries, Microsoft and other large corporations will be forced to follow this. What will you do without access to GitHub, Office365, Azure and other cloud based software and SAAS solutions? \",\"speakers\":[{\"name\":\"Marcus Grenängen\",\"info\":\"Marcus is a long time software engineer that has worked around the world in various technical roles.\\n\\nMarcus has worked at Microsoft, written core infrastructures in AAA games such as Battlefield and Starwars as well as worked on open source technologies to name a few things.\\n\\nMarcus has a deep passion for software and open source and tries his best to try to make the world a little bit better, through software and services. \"}],\"tags\":[\"open source\",\"saas\",\"business\",\"government\",\"software engineering\",\"development\",\"equal opportunity\",\"digital divide\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":4,\"language\":\"Swedish\",\"difficulty\":\"Beginner\",\"title\":\"Azure Devops\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"An overview of Azure Devops focused on explaining the different parts and how they are used in an agile team.\",\"speakers\":[{\"name\":\"Stefan Sonesson\",\"info\":\"Senior developer/architect working with integrations and solutions for web services.\"}],\"tags\":[\"azure\",\"devops\"]}]}]},{\"timeStart\":1330,\"timeEnd\":1340,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1340,\"timeEnd\":1340,\"type\":[\"Long Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":46,\"language\":\"English\",\"difficulty\":\"Advanced\",\"title\":\"WebComponents in EPiServer using Handlebars and Fractal.build\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Providing better cooperation and tools for backend and frontend development in EPiServer project using modern techniques and open source products.\\nFrontend development is done outside of EPiServer allowing faster iterations and better tools allthough the end product is still usable in the episerver project.\",\"speakers\":[{\"name\":\"Fredrik Högberg\",\"info\":\".NET Developer, Certified Lead Developer\"}],\"tags\":[\"episerver\",\"fractal.build\",\"handlebars\",\".net\",\"asp.net\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":29,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Processing of Industrial IoT data streams\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"About how to utilize rapidly streaming sensor values for more than just trivial value limit alerts. Parts architecture, temporary storage, precalculation, aggregation, performance and scaling. Based on real world project experience during the last couple of years.\",\"speakers\":[{\"name\":\"Christian Egeberg\",\"info\":\"Christian is proficient in .Net technology, cloud architecture, object-oriented software development, agile methodologies, mobile devices, Azure, web 2.0, databases, data integration and query optimization. He has extensive experience in the development of cloud services, web applications, mobile apps, three-layer applications, visualization of data, map integration, and SMS / MMS services. He also loves tinkering with gadgets like HoloLens, Oculus Rift, Oculus Touch, Leap Motion, wearables, and other connected or mobile devices. Some of Christian's photographs can be viewed at http://500px.com/nerdcissus\"}],\"tags\":[\"data engineering\",\"iot\",\"streaming\",\"storage\",\"architecture\",\"cloud\",\"edge\",\"aggregation\",\"performance\",\"scaling\",\"industrial\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":32,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Retrospective - Designing 112 emergency application with focus on performance and security\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"During 2019 we developed and deployed Swedens 112 mobile app with huge success. We hoped for 300k users within 6 month. We ended up with 1+ million users in a few weeks. Azures scalability were tested at its max with mixed result. The security constraints together with azure limitations gave us big insights how to design systems. This is a retrospective about our journey from idea to production. \",\"speakers\":[{\"name\":\"Magnus Backeus\",\"info\":\"Magnus Backeus is a solution and cloud architect at Knowit Development Stockholm. Working since 1998 and knowit employee since 2013. He has passion for system engineering and try always to be reflective about what could have been done better? What did we do well? Never satisfied. Always chashing that Graal\"}],\"tags\":[\"azure\",\"system design\",\"microsoft\",\"security\",\"architecture\",\"devops\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":15,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"GitOps in action\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"GitOps, the way to create and update infrastructure through pull-requests. Making Git the single source of truth.\",\"speakers\":[{\"name\":\"Jimmy Dahlqvist\",\"info\":\"I'm a developer and architect with a great passion for cloud and new ways of working. I love to share my knowledge with others and to be able to help them grow is really rewarding. Every moment of spare time I get i spend coding, testing new things, learning, and blogging (https://blog.dqvist.com/). I'm a notorious coffee drinker and please don't talk to me before my first cup in the morning.\"}],\"tags\":[\"devops\",\"gitops\",\"infrastructure as code\",\"cloud\"]}]}]},{\"timeStart\":1440,\"timeEnd\":1510,\"type\":[\"Pause + fika\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1510,\"timeEnd\":1540,\"type\":[\"Short Presentations & Lightning Talks\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":25,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Jamsession - An introduction to the JAMstack\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"The static websites makes a return, this time disguised as mushy fruit.\\n\\nThe JAMstack, or Javascript, APIs and Markup-stack is a promising new way to create fast and secure webapps.\\nThis talk will introduce the audience to how a website built on this stack is put together. We will also be looking at a case study: The complete rewrite of Smashing Magazine, when they switched from Wordpress and PHP to the JAMstack, resulting in a 10x speed increase in page load time!\",\"speakers\":[{\"name\":\"Ole Eskild Steensen\",\"info\":\"Software developer working in Knowit Experience Bergen. \"}],\"tags\":[\"web\",\"jam\",\"javascript\",\"api\",\"static\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":7,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Computer Vision and Image Segmentation with TensorFlow 2\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"A look into whats new in TensorFlow 2 and a basic run down of how TensorFlow and machine learning can be used to do image segmentation for computer vision.\",\"speakers\":[{\"name\":\"Jens Kristoffer Markussen\",\"info\":\"Code monkey with a passion for computer graphics and real time software. Has over three years of experience as a graphics programmer and currenly spends much of his free time working with VR\"}],\"tags\":[\"computervision\",\"tensorflow\",\"machinelearning\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":35,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"What to expect from Azure API Management\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"The best way to learn any tool or framework is to get hands-on experience. The second best way is to hear from someone who has that experience. Azure API Management is Microsofts take on an API-gateway. In this talk, you'll learn what works well, and what doesn't. I'll also go through some of the hurdles/challenges I faced while working with it.\",\"speakers\":[{\"name\":\"Håvard Olsen\",\"info\":\"My name is Håvard, I've worked @ the Knowit office in Bergen for almost 5 years doing mostly webdevelopment.\"}],\"tags\":[]},{\"talkId\":36,\"language\":\"Swedish\",\"difficulty\":\"Beginner\",\"title\":\"SOS Alarm\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"We will talk about the 112 SOS Alarm App with focus on backend development\",\"speakers\":[{\"name\":\"Johan Brunlöf\",\"info\":\"Studied together with Johan Wilander at Luleå Technical University for 3 years. Entered the traineeprogram together and has been working here at Knowit for 2+ years.\"},{\"name\":\"Johan Wilander\",\"info\":\"\"}],\"tags\":[\"sos alarm\",\"backend\",\"112app\",\"azure devops\",\"cosmos db\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":16,\"language\":\"Norwegian\",\"difficulty\":\"Intermediate\",\"title\":\"goto is good again\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Goto is a magic tool that takes you were you want to be, now.\",\"speakers\":[{\"name\":\"Robin Aaberg\",\"info\":\"Hollistic minded developer\"}],\"tags\":[\"goto\",\"magic\",\"python\",\"open source\"]}]}]},{\"timeStart\":1540,\"timeEnd\":1550,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1550,\"timeEnd\":1620,\"type\":[\"Short Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":11,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Electron and The Battle of Async Dependencies\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"As part of a larger eco-system we are developing a sales application for our customer. The first few versions were limited to being a web application, but as the project progressed we soon needed to communicate with hardware. Adapting the application to Electron.js was the chosen path. And so it began.\\n\\nNot knowing exactly what we had bargained for. We found ourselves battling concurrency more each passing day. Trying to make sense of how to juggle BrowserWindows, dependencies on detached servers, V8's garbage collection, and where and when to utilise this new wonderful thing called async-await  except. The promise wasn't always kept.\\n\\nI needed a new weapon to win this war. I begun crafting, what I call, an Electron Bootstrap Sequence. Albeit my dragon is currently dormant, and my work incomplete, maybe my scars can be of help to others.\",\"speakers\":[{\"name\":\"René Räisänen\",\"info\":\"René is a frontend developer with a diverse background. He is relatively new to large scale projects and his forte is JavaScript, yet flexible enough to not shy away from work like DevOps, API-design and Team Coordination. Magic the Gathering is his drug and he enjoys, like most people, a proper coffee in the morning.\"}],\"tags\":[\"electron.js\",\"javascript\",\"asynchronicity\",\"event driven programming\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":44,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Using DCNN (magic!) for upscaling images\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"A practical approach to scaling images using deep convolutional neural networks\",\"speakers\":[{\"name\":\"Simon Østrem\",\"info\":\"Web-developer with Knowit Experience Bergen since mid 2018, likes tinkering. I'm in no way associated with the software used here.\"}],\"tags\":[\"deep learning\",\"neural networks\",\"dcnn\",\"cuda\",\"image scaling\",\"magic\",\"caffe\",\"waifux2\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":14,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Getting the grip on Passwordmanagers\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Knowit have decided to get 1password as a supported solution. The talk is about why did we choose 1password, and what are the benefits of using this both as a team and as a private user. Last but not least;  How do you get started and why should your parents and kids use passwordmanagers?  Bring your laptop or mobile if you want help to set it up. \",\"speakers\":[{\"name\":\"Cecilie Wian\",\"info\":\"Tester, Consultant. \"}],\"tags\":[\"security\",\"passwordmanagers\",\"users\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":6,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Business Intelligence from a developer's perspective\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"I believe that every developer should have at least a basic idea on what Business Intelligence is about. We go through BI as a performance solution and an architecture choise.\\nWhy BI exists, when to chose it, how to develop it, and what we develop. Everything from a developer's perspective.\",\"speakers\":[{\"name\":\"Wille Esteche\",\"info\":\"Generally I'm a full stack system developer. I mostly work with Microsoft platforms and have been developing .Net Solutions, Integrations, Microsoft BI, and even IoT solutions.\"}],\"tags\":[\"business intelligence\",\"bi\",\"data warehouse\",\"develop.\"]}]}]},{\"timeStart\":1620,\"timeEnd\":1630,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1640,\"timeEnd\":1710,\"type\":[\"Open Space\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1900,\"timeEnd\":2300,\"type\":[\"Dinner - Drinks\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]}]},{\"day\":\"Saturday\",\"slots\":[{\"timeStart\":900,\"timeEnd\":1000,\"type\":[\"Workshop & Long Presentations & Short Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":33,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Rust in the front end\",\"type\":\"Workshop (90 minutes)\",\"description\":\"WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.\",\"speakers\":[{\"name\":\"Sebastian Ljunggren\",\"info\":\"Developer with focus on front end. Currently at Boeing, working with crew facing web applications.\"}],\"tags\":[\"rust\",\"webassembly\",\"javascript\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":22,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Identity and access management with OAuth 2.0 and OpenID Connect\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.\",\"speakers\":[{\"name\":\"Andreas Garmannslund\",\"info\":\"Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group.\"}],\"tags\":[\"authentication\",\"authorization\",\"oauth 2.0\",\"openid connect (oidc)\",\"security\",\"identity\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":5,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Beyond JUnit: Writing automated tests for every layer of your application\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Unit testing is a well known and widely followed practice these days. But how do you go about testing the functionality that spans the borders of your application? How do you test your database constraints, your database access code, your API endpoints, and the interoperability between your different independently deployed services?\\n\\nThis talk presents a compilation of different methods you can use to write tests for every aspect of your application:\\n* dependencies to your application,\\n* all the layers within your application, and\\n* your application's dependencies to other services (with a special focus on databases).\\nIt will be structured somewhat like a cookbook, with concrete examples provided.\\n\\nThis talk will be useful to anyone who would like to learn more about the non-trivial parts of writing automated tests for backend services. It represents half a decade's worth of hard-earned knowledge from real test use cases. The talk may be particularly enlightening to junior developers, but more experienced developers will likely also stand to learn a thing or two. The examples will be in Java, but the approaches should be applicable in other backend languages as well. \",\"speakers\":[{\"name\":\"Anders Rabo Thorbeck\",\"info\":\"Anders Thorbeck is a software engineer with seven years of experience, the last six for the consultancy Knowit. In his time with Knowit, he has worked primarily with backend and DevOps, and has over the course of these years piece-by-piece learned methods for writing tests for the more finicky parts of the code. This talk is an attempt to collate the sum of this knowledge.\"}],\"tags\":[\"testing\",\"unit testing\",\"database testing\",\"api testing\",\"consumer driven contracts\",\"backend\",\"java\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":39,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"The danger of order on the event message bus\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Loosely coupled systems and microservices are becoming more and more popular. Event messaging over Kafka, RabbitMQ or Pub/Sub becomes a standard architectural principle for most architectures.\\n\\nSome systems promise that events are delivered in the same order as they are published. It is quite tempting to use them to synchronize data-sources in an asynchronous way.\\n\\nIn this talk, I will classify three different classes of messages, when to use them and why a-synchronous data synchronization is error prone and hard to scale.\",\"speakers\":[{\"name\":\"Vincent Nikkelen\",\"info\":\"After studying Parallel Computing in Eindhoven and Budapest, Vincent worked for Ericsson in Hungary where he held key architectural positions including TSP-Dicos; a scalable high-availability platform with a distributed database. In 2008, he moved with his family to Sweden where he lead projects developing new platforms for Ericsson Mobile Platforms. He worked for Verisure Securitas Direct where he was leading the activities to break down their monolith into microservices. He is currently employed at Knowit Cloud and on assignment with IKEA in their Cloud Enablement team. \"}],\"tags\":[\"messaging\",\"kafka\",\"pub/sub\",\"event based\",\"data synchronization\"]}]}]},{\"timeStart\":1000,\"timeEnd\":1015,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1015,\"timeEnd\":1045,\"type\":[\"Workshop & Long Presentations & Short Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":33,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Rust in the front end cont.\",\"type\":\"Workshop (90 minutes)\",\"description\":\"WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.\",\"speakers\":[{\"name\":\"Sebastian Ljunggren\",\"info\":\"Developer with focus on front end. Currently at Boeing, working with crew facing web applications.\"}],\"tags\":[\"rust\",\"webassembly\",\"javascript\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":45,\"language\":\"Norwegian\",\"difficulty\":\"Intermediate\",\"title\":\"Vi tar pulsen på Knowit Objectnet - vår interne dataplattform\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Hvorfor har vi en intern dataplattform, hvordan gjør vi det, hvem og hvordan kan du bidra. Også blir det litt faktiske resultater fra data som er samlet inn og satt sammen.\",\"speakers\":[{\"name\":\"Jan Henrik Gundelsby\",\"info\":\"Jan Henrik er en glad speidergutt som liker alt mulig rundt teknologi. Er for tiden Principal Engineer og CTO i Knowit Objectnet. \"}],\"tags\":[\"dataplatform\",\"architecture\",\"analytics\",\"big data\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":2,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"A Model for Technology Governance at Entur\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"How do you scale a technology engineering organisation with high cohesion and alignment, while following agile principles and striving for autonomous teams? At Entur we try to achieve this with 14 parallell development teams, transforming the Norwegian Public Transport Sector. This talk is about how that work is going.\",\"speakers\":[{\"name\":\"Thomas Malt\",\"info\":\"Part of the Principal Engineer team at Knowit Objectnet. Experience as CTO, Technology Director, Full Stack Developer and Solutions Architect.\\n\\nPreviously he as been Director of Technology and Development at NRK, CTO at Fronter AS, and Head of the Development department at Linpro AS\"}],\"tags\":[\"leadership\",\"technology governance\",\"agile methodology\",\"architecture governance\",\"organisational transformation\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":19,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"How to design APIs worth using\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"You have all seen them. API's with a wonderfull... documentation. You have begged, cursed and cried, but that API won't give away it's secrets and inner workings. \\\"How can you create something this shitty?\\\" you asked rethorically. And then you went and created API documentation with the same quality.\\n\\nHere you will learn how to start not being that person. How to create something worth using. What tools you can use to create an API documentation you can both understand and work with next year.\\n\\nKey learning points:\\n\\n- How to properly use Swagger and OpenAPI\\n\\n- How to do API first development\\n\\n- Proper use of Rest\\n\\n- Proper URI design\",\"speakers\":[{\"name\":\"Anders Rønning Dahlen\",\"info\":\"Backend-developer working for Entur, with tech-lead experience from a previous costumer. Anders is passionate about code quality and creating user friendly solutions that makes sense to the costumer. \"}],\"tags\":[\"api design\",\"openapi\",\"swagger code generation\"]}]}]},{\"timeStart\":1045,\"timeEnd\":1100,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1100,\"timeEnd\":1130,\"type\":[\"Long Presentations & Short Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":43,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Untangling frontend spaggetti\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Complexity in frontend has steadily increased and with it components and views have become large and ugly beasts who I know have kept a lot of us up at night.\\n\\nIn this presentation we will go through design patterns and ways we can structure code to make the monsters a little less scary. Examples are based on app-development with a team of 10 for Storebrand Helse and will be shown in React Native, but the principles are universally applicable regardless of framework.\",\"speakers\":[{\"name\":\"Patrick Monslaup\",\"info\":\"Patrick is a fullstack developer who currently works with app development for Storebrand Helse. A big focus for him is using design-patterns and experiences from backend to improve code frontend and vice versa.\"}],\"tags\":[\"code quality\",\"architecture\",\"design patterns\",\"maintainability\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":1,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"20 years of Architecture. What challenges did we solve in the past? How will Cloud Computing change the future?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"What did architects need to worry about 10 and 20 years ago? This will be a short nostalgic summary of challenges we were facing in the past, then we will shift gears and look ahead. How will the Cloud help us solve scalability, governance and security? How do you choose a migration strategy? What are the areas you will need to consider as a Cloud Architect when helping our customers on their cloud journey?\",\"speakers\":[{\"name\":\"Øyvind Eikeland\",\"info\":\"Øyvind is CTO in Knowit Amende and is responsible for the technology, innovation and competence development strategy. He works closely with our partners Microsoft, Google and Amazon and he is actively driving our investments within their cloud platforms. Øyvind has strategic focus in development of advisory and delivery methodology, and is engaging in customer projects.\"}],\"tags\":[\"architecture\",\"cloud\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":23,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Inclusive design - for developers\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Your code can mean a lot more for a lot more people if you think inclusive. \",\"speakers\":[{\"name\":\"Øyvind Brande-Lien\",\"info\":\"Øyvind Brande-Lien used to be a developer but reconsidered his career when he discovered the horrendous interfaces people had to put up with. He has been a consultant since 1997 and still works in different industries as a designer of user experiences. \"}],\"tags\":[\"inclusive design accessibility meaningful\",\"UX\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":18,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"How do I quantum?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Have you wondered what all the buzz about quantum computing is? What is motivating large companies to pour money into it? Is it possible to do anything with it yet? How would you go about doing it today?\\n\\nThese questions are covered in this talk, where we'll go through the basics of quantum computing. We'll some basic terminology and expressions, a short history of the field, some alternative applications of similar quantum technology and finally concrete examples on a simulated quantum machine running on the JVM.\",\"speakers\":[{\"name\":\"Erik Lund\",\"info\":\"Erik has worked for Knowit for just over 4 years and has spent most of his time being a backend developer for Oslo county. He likes to consider new and interesting architectures for microservice systems, but also likes to keep an eye on technologies running through hype cycles to see what ends up maturing in the end.\"}],\"tags\":[\"quantum computing\",\"qubit\",\"entanglement\",\"superposition\"]}]}]},{\"timeStart\":1130,\"timeEnd\":1230,\"type\":[\"Lunch\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1230,\"timeEnd\":1300,\"type\":[\"Short Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":37,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Svelte - the next small thing in Javascript\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Svelte is a promising, novel approach to Javascript, designed for speed, short source files and tiny bundles. Among its many selling points are ease of learning and quick re-renders without a virtual DOM. Current big-name users include The New York Times and Godaddy.\\n\\nIn this presentation, Eirik takes you on a quick tour of the why and how of Svelte: Why is Svelte different and how is it able to be so much smaller and faster than the others? This will amongst other things involve a quick introduction to Svelte's syntax and a short history of the DOM. The talk is suitable for developers and designers who code  of all skill levels.\",\"speakers\":[{\"name\":\"Eirik Vågeskar\",\"info\":\"Eirik has worked at Knowit Objectnet for two years. Before that, he studied computer science at NTNU in Trondheim. In addition to programming, he has also dabbled in playwriting, acting, journalism and music. \"}],\"tags\":[\"svelte\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":8,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Hey google - Building your own action for google assistant\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"During this half an hour speak I will guide you through the process of building an action for google assistant. You will learn the different building blocks of an action and the most fundamental do’s and don’ts. The talk contains some programming in node.js on a basic level, but it’s easy to follow along without prior knowledge in programming or javascript.\",\"speakers\":[{\"name\":\"Joel Gustafsson\",\"info\":\"Joel Gustafsson is a front-end developer at Knowit Development Stockholm. He has a burning passion for creating visually appealing digital experiences that works for both visitors and businesses. Previously Joel designed and developed a virtual assistant for \\\"flygresor.se\\\", the insights from that project have shaped this talk.\"}],\"tags\":[\"conversational design\",\"dialogflow\",\"actions on google\",\"javascript\",\"firebase\",\"google assistant\",\"google home\",\"virtual assistants\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":10,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Edge Cases or Dead Angles?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"What are we basing our decisions on when declaring something an «edge case»?\\nAnd how does this fit with our understanding of risk and quality?\\n\\nWhether were scoping an MVP or reimagining user journeys for a legacy system, our work of finding solutions may easily lead to a centering of the product in the stories we tell ourselves about our users. This narrowing of focus can implicitly idealize our view of peoples needs and circumstance, in ways that are not always helpful.\\n\\nWe take pride in relieving pain points - but dont as easily envision the pain our products might introduce or amplify in peoples lives. There are some edge cases that cannot be ignored, because the consequences are too great. And there are some things that simply arent as far to the edge as wed like to imagine.\\n\\nWe can roll back the code, or iterate the product  but we cannot roll back the consequences we cause in peoples lives along the way. By combining a risk based approach with compassion, we can learn how to make products and experiments that are safe to fail in the environment of real life.\",\"speakers\":[{\"name\":\"Jorunn Mjøs\",\"info\":\"Jorunn Mjøs is a sociologist turned Software Tester, and is on a quest to make technology play nice with people. She is passionate about security, usability and inclusivity, in a broad and human sense. \"}],\"tags\":[\"security\",\"usability\",\"risk based testing\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":20,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"How to write code worth reading\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Regardless of skill level, some programmers write code that is performant, bug free and works great, but is very difficult to read and understand, and thus difficult to maintain. So in this talk I would like to share my experience and explain how you can write code that is easier to maintain. Code that is enjoyable to read and not just to write.\",\"speakers\":[{\"name\":\"Christoffer Eliesen\",\"info\":\"I am programmer with over 10 years of full time experience currently working as frontend developer at Knowit ???????\"}],\"tags\":[\"quality code\",\"tech culture\"]}]}]},{\"timeStart\":1300,\"timeEnd\":1310,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1310,\"timeEnd\":1340,\"type\":[\"Short Presentations & Lightning Talks\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":27,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Moderne webtypografi med variable fonter\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Variable fonter ble introdusert i 2016, og muliggjør bortimot uendelig med muligheter for typografien på en nettside. I dette foredraget skal vi se på hvordan de virker, og hvilke kreative muligheter de gir.\",\"speakers\":[{\"name\":\"Sverre Johan Bjørke\",\"info\":\"Sverre has been working at Knowit for two years. When he has the time he loves to tinker with new tech.\"}],\"tags\":[\"web\",\"typography\",\"ux\",\"design\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":28,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Private Information Retrieval\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"How do we privately retrieve information from a database without the database learning what information we retrieved? (Information theoretically secure approach)\",\"speakers\":[{\"name\":\"Tarald Riise\",\"info\":\"New Knowit hire (aug 19'). MSc, specialty in Information Security.\"}],\"tags\":[\"crypto\",\"security\",\"database\",\"information security\",\"privacy\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":30,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Productionland\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"I walk through some of my experiences working with hopeless test and QA environments leading to the practice of testing in production, and how this made my life a lot better\",\"speakers\":[{\"name\":\"Andreas Kristiansen\",\"info\":\"https://www.linkedin.com/in/andreas-kristiansen-a6482254/\"},{\"name\":\"Henning Kvalheim\",\"info\":null}],\"tags\":[\"quality of life\",\"agile\",\"development process\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":12,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Exfiltrating data from an airgapped system using magnetic fields\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"A quick rundown of one of the ways you could exfiltrate data from an airgapped system without the use of convential means.\",\"speakers\":[{\"name\":\"Alexander Grahn\",\"info\":\"Alexander Grahn works in the defense industry for Knowit Dataunit.\"}],\"tags\":[\"cyber security\",\"c++\",\"android\"]},{\"talkId\":34,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Should you render your React on the server?\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"Server-side rendering (SSR) and client-side rendering (CSR) isn't some brand new marketing buzzword, but it's something that's not understood by everybody, especially with the spread of client-side rendered apps. Why should you delve deeper into server-side rendering and what are the drawbacks?\\n\\nIn this talk Im going to go through the different approaches and share my opinion on whether its worth implementing server-side rendering in a React App.\",\"speakers\":[{\"name\":\"Tommy Barvåg\",\"info\":\"6 years of experience in developing and managing web solutions. High level of expertise in .NET applications with extensive experience from JavaScript and related frameworks such as React, Angular and Redux. \"}],\"tags\":[\"server side rendering\",\"ssr\",\"client side rendering\",\"csr\",\"lighthouse\",\"react\",\"isomorphic\",\"serverless\",\"universal\",\"seo\",\"http status codes\",\"performance\"]},{\"talkId\":42,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Basic concepts in functional programming and how they correspond in OOP\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"Basic concepts in functional programming and how they correspond in OOP\",\"speakers\":[{\"name\":\"Alexandra Dobrescu\",\"info\":\"Back-end developer \"}],\"tags\":[]}]}]},{\"timeStart\":1340,\"timeEnd\":1400,\"type\":[\"Pause + Fika\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1400,\"timeEnd\":1430,\"type\":[\"Short Presentations\"],\"rooms\":[{\"name\":\"Room 1\",\"talks\":[{\"talkId\":13,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Flutter here, Flutter there, Flutter [Almost!] everywhere\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Flutter is Google's SDK for developing high-quality, fast and beautiful multi-platform applications in record time with a single codebase.\\nStarted as one of Google's side-projects, Flutter is now a stable, open-source platform with a huge community built around it, actively contributing to the project.\\nFlutter also utilized declarative syntax for building the UI, enabling the developers to create beautiful user interfaces with minimal effort that works seamlessly on both Android and iOS. A successful concept that inspired SwiftUI and JetpackCompose.\\nIn this talk, we will go through a quick brief introduction of Flutter and what makes it a powerful multi-platform framework. Afterward, as Flutter is now officially supporting web, I will demonstrate creating a responsive application that exports to Andoird, iOS, and Web, interacting with one another; all using one single codebase.\",\"speakers\":[{\"name\":\"Amir Roosta\",\"info\":\"Amir Roosta is an Android and .net developer who is passionate about new technologies that actually work! He's been working with Flutter since when it was at its beta stage and has been utilizing the framework for his side projects and enjoyed it ever since. He was a speaker at last year's KDS as well.\"}],\"tags\":[\"flutter\",\"android\",\"ios\",\"mobile\",\"web development\"]}]},{\"name\":\"Room 2\",\"talks\":[{\"talkId\":26,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Lottie.js - Realtime SVG animations.\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Lottie is an Web, iOS, Android, and React Native library that renders After Effects animations in real time, allowing apps to use animations as easily as they use static images.\\n\\nIn the past, building complex animations for Web, Android, iOS, and React Native apps was a difficult and lengthy process. You either had to add bulky image files for each screen size or write a thousand lines of brittle, hard-to-maintain code. Because of this, most apps werent using animation  despite it being a powerful tool for communicating ideas and creating compelling user experiences.\\n\\nLottie uses animation data exported as JSON files from an open-source After Effects extension called Bodymovin. The extension is bundled with a JavaScript player that can render the animations realtime on the web.\\n\\nLottie allows engineers to build richer animations without the painstaking overhead of re-writing them.\\n\\nJoin this talk and learn how you can utilize Lottie for your projects.\\n\",\"speakers\":[{\"name\":\"Steffen Andre Hagen\",\"info\":\"Steffen Andre Hagen is a film director, UX designer and front end developer at Knowit Experience Bergen.\"}],\"tags\":[\"animation\",\"lottie\",\"lottie.js\",\"svg\",\"realtime\",\"motion graphics\",\"front end\",\"javascript\"]}]},{\"name\":\"Room 3\",\"talks\":[{\"talkId\":31,\"language\":\"Swedish\",\"difficulty\":\"Beginner\",\"title\":\"React eller Vue?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Under 2019 deltog ca 90 000 utvecklare i en omröstning kring vilket webb-ramverk de gillade bäst. React.js hamnade på plats 1 med Vue.js hack i häl efter sig på plats 2 (Stack Overflow Developer Survey 2019).\\n\\nVad är React och Vue? Vad är de främsta egenskaperna som skiljer dem åt? Vilket av dem lämpar sig bäst för ditt teams nästa frontend-projekt? Häng med på en jämförande upptäcktsfärd där vi söker efter svaren!\",\"speakers\":[{\"name\":\"Viktor Sandström Romild\",\"info\":\"Viktor Sandström Romild is a developer working for Knowit Uppsala, Sweden. \"}],\"tags\":[\"react\",\"vue\",\"frontend\",\"web frameworks\",\"javascript\"]}]},{\"name\":\"Room 4\",\"talks\":[{\"talkId\":38,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Intro to Blazor\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Intro to Blazor\",\"speakers\":[{\"name\":\"Endre Vestbø\",\"info\":\"Developer\"}],\"tags\":[]}]}]},{\"timeStart\":1430,\"timeEnd\":1440,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1440,\"timeEnd\":1510,\"type\":[\"KEYNOTE - Fredrik Ekerhovd\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1510,\"timeEnd\":1520,\"type\":[\"Who had the best talk? See you next year!\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]}]}]}}");
+module.exports = JSON.parse("{\"program\":{\"tags\":[\"architecture\",\"cloud\",\"leadership\",\"technology governance\",\"agile methodology\",\"architecture governance\",\"organisational transformation\",\"front-end\",\"ux\",\"ux design\",\"best practices\",\"development methodology\",\"azure\",\"devops\",\"testing\",\"unit testing\",\"database testing\",\"api testing\",\"consumer driven contracts\",\"backend\",\"java\",\"business intelligence\",\"bi\",\"data warehouse\",\"develop.\",\"computervision\",\"tensorflow\",\"machinelearning\",\"conversational design\",\"dialogflow\",\"actions on google\",\"javascript\",\"firebase\",\"google assistant\",\"google home\",\"virtual assistants\",\"labyrinth\",\"virtual reality\",\"arduino\",\"esp32\",\"3d-design\",\"laserkutting\",\"3d-utskrift\",\"mikrokontrollerprogrammering\",\"computer vision\",\"node.js\",\"c++\",\"security\",\"usability\",\"risk based testing\",\"electron.js\",\"asynchronicity\",\"event driven programming\",\"cyber security\",\"android\",\"flutter\",\"ios\",\"mobile\",\"web development\",\"passwordmanagers\",\"users\",\"gitops\",\"infrastructure as code\",\"goto\",\"magic\",\"python\",\"open source\",\"design\",\"web\",\"graph\",\"quantum computing\",\"qubit\",\"entanglement\",\"superposition\",\"api design\",\"openapi\",\"swagger code generation\",\"quality code\",\"tech culture\",\"development\",\"collaboration\",\"authentication\",\"authorization\",\"oauth 2.0\",\"openid connect (oidc)\",\"identity\",\"inclusive design accessibility meaningful\",\"jam\",\"api\",\"static\",\"animation\",\"lottie\",\"lottie.js\",\"svg\",\"realtime\",\"motion graphics\",\"front end\",\"typography\",\"crypto\",\"database\",\"information security\",\"privacy\",\"data engineering\",\"iot\",\"streaming\",\"storage\",\"edge\",\"aggregation\",\"performance\",\"scaling\",\"industrial\",\"quality of life\",\"agile\",\"development process\",\"react\",\"vue\",\"frontend\",\"web frameworks\",\"system design\",\"microsoft\",\"rust\",\"webassembly\",\"server side rendering\",\"ssr\",\"client side rendering\",\"csr\",\"lighthouse\",\"isomorphic\",\"serverless\",\"universal\",\"seo\",\"http status codes\",\"sos alarm\",\"112app\",\"azure devops\",\"cosmos db\",\"svelte\",\"messaging\",\"kafka\",\"pub/sub\",\"event based\",\"data synchronization\",\"saas\",\"business\",\"government\",\"software engineering\",\"equal opportunity\",\"digital divide\",\"code quality\",\"design patterns\",\"maintainability\",\"deep learning\",\"neural networks\",\"dcnn\",\"cuda\",\"image scaling\",\"caffe\",\"waifux2\",\"dataplatform\",\"analytics\",\"big data\",\"episerver\",\"fractal.build\",\"handlebars\",\".net\",\"asp.net\",\"risk management\",\"project management\",\"customer involvement\"],\"rooms\":[1,2,3,4],\"languages\":[\"Norwegian\",\"English\",\"Swedish\"],\"days\":[{\"day\":\"Friday\",\"slots\":[{\"timeStart\":1110,\"timeEnd\":1130,\"type\":[\"Welcome\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1130,\"timeEnd\":1230,\"type\":[\"Lunch\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1230,\"timeEnd\":1330,\"type\":[\"Long Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":3,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"A quick-draw designer and a cowboy developer walk into a saloon...\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Frontiers is a Bergen-based group of developers and designers with a passion for great UX, cross-functional collaboration, and taking front-end development to the next level. In this short talk, well introduce our groups ambitions and initiatives, with a special focus on the creation of the interdisciplinary Frontiers forum and a living front-end guidelines template you can start using today. Well tell you why we wrote the guidelines, how we found them useful them in a recent project, what we believe to be their current shortcomings, and how you can get involved and help us improve them, to everyones benefit. Our goal is to develop a useful, internal tool that will help you spend less time solving the same, old problems and more time blazing trails and addressing the unique and exciting challenges posed by your particular project. Join us at the frontier!\",\"speakers\":[{\"name\":\"Maja Jaakson\",\"info\":\"Maja is a front-end developer by day and a sophist by night. She enjoys candlelight pair programming, long walks to the powerlifting gym, and annoying innocent bystanders with questions about what makes something a programming language.\\n\"},{\"name\":\"Christian Arnesen Grimsgaard\",\"info\":\"Had Christian lived in the Middle Ages, he would probably have been a bard singing about how great React is. He loves pixels, pianos that light up when he plays, and drinks that are either hot or make him feel funny. He also co-produced his son, Adam.\\n\\n \"}],\"tags\":[\"front-end\",\"ux\",\"ux design\",\"best practices\",\"development methodology\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":9,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Datastyrt labyrint\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Knowit Hardware Guild har bygget videre på det klassiske BRIO labyrintspillet ved å montere motorer og sensorer og bruke forskjellige teknologier (bl.a. 3D-design og produksjon, mikrokontrollere, computer vision m.m.) slik at spillet styres ved hjelp av en joystick.\\n\\nPresentasjonen bygger på innholdet i artikkel på Knowit Labs: https://knowitlabs.no/datastyrt-labyrint-68ac225f8acb \\n\",\"speakers\":[{\"name\":\"Andreas Bade\",\"info\":\"Andreas er en omgjengelig, samlende utvikler og teknisk leder som siden 1998 har opparbeidet seg en utstrakt erfaringsbase for gjennomføring av IT-prosjekter gjennom en rekke konsulentoppdrag.\\n\\nHan har mye teknisk erfaring og god kjennskap til mange ulike rammeverk og metoder.\\n\\nAndreas har lang erfaring med smidig utvikling og har brukt smidige teknikker i hovedvekten av sin arbeidstid. Han trives godt i grenseflaten mellom forretning og fag, funksjonalitet og teknologi.\\n\\nAndreas stortrives når han får nytte av sine samlende, kommunikative og motiverende egenskaper. og motiveres av samfunnsnyttige oppgaver som bidrar til bedre ressursbruk eller forbedrer folks hverdag.\"},{\"name\":\"Iver Egge\",\"info\":\"\"}],\"tags\":[\"labyrinth\",\"virtual reality\",\"arduino\",\"esp32\",\"3d-design\",\"laserkutting\",\"3d-utskrift\",\"mikrokontrollerprogrammering\",\"computer vision\",\"node.js\",\"c++\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":40,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"The dangers of closed source and software as a service\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"SAAS and governments influence over companies in a direct and indirect way are actually hurting people and businesses in various countries around the world and increasing the digital divide.\\n\\nThis talk will take a look at why SAAS, especially around closed source software and services might actually be a really bad idea.\\n\\nImagine the US introducing an embargo or sanctions against Sweden or any of the other Nordic countries, Microsoft and other large corporations will be forced to follow this. What will you do without access to GitHub, Office365, Azure and other cloud based software and SAAS solutions? \",\"speakers\":[{\"name\":\"Marcus Grenängen\",\"info\":\"Marcus is a long time software engineer that has worked around the world in various technical roles.\\n\\nMarcus has worked at Microsoft, written core infrastructures in AAA games such as Battlefield and Starwars as well as worked on open source technologies to name a few things.\\n\\nMarcus has a deep passion for software and open source and tries his best to try to make the world a little bit better, through software and services. \"}],\"tags\":[\"open source\",\"saas\",\"business\",\"government\",\"software engineering\",\"development\",\"equal opportunity\",\"digital divide\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":4,\"language\":\"Swedish\",\"difficulty\":\"Beginner\",\"title\":\"Azure Devops\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"An overview of Azure Devops focused on explaining the different parts and how they are used in an agile team.\",\"speakers\":[{\"name\":\"Stefan Sonesson\",\"info\":\"Senior developer/architect working with integrations and solutions for web services.\"}],\"tags\":[\"azure\",\"devops\"]}]}]},{\"timeStart\":1330,\"timeEnd\":1340,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1340,\"timeEnd\":1340,\"type\":[\"Long Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":46,\"language\":\"English\",\"difficulty\":\"Advanced\",\"title\":\"WebComponents in EPiServer using Handlebars and Fractal.build\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Providing better cooperation and tools for backend and frontend development in EPiServer project using modern techniques and open source products.\\nFrontend development is done outside of EPiServer allowing faster iterations and better tools allthough the end product is still usable in the episerver project.\",\"speakers\":[{\"name\":\"Fredrik Högberg\",\"info\":\".NET Developer, Certified Lead Developer\"}],\"tags\":[\"episerver\",\"fractal.build\",\"handlebars\",\".net\",\"asp.net\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":29,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Processing of Industrial IoT data streams\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"About how to utilize rapidly streaming sensor values for more than just trivial value limit alerts. Parts architecture, temporary storage, precalculation, aggregation, performance and scaling. Based on real world project experience during the last couple of years.\",\"speakers\":[{\"name\":\"Christian Egeberg\",\"info\":\"Christian is proficient in .Net technology, cloud architecture, object-oriented software development, agile methodologies, mobile devices, Azure, web 2.0, databases, data integration and query optimization. He has extensive experience in the development of cloud services, web applications, mobile apps, three-layer applications, visualization of data, map integration, and SMS / MMS services. He also loves tinkering with gadgets like HoloLens, Oculus Rift, Oculus Touch, Leap Motion, wearables, and other connected or mobile devices. Some of Christian's photographs can be viewed at http://500px.com/nerdcissus\"}],\"tags\":[\"data engineering\",\"iot\",\"streaming\",\"storage\",\"architecture\",\"cloud\",\"edge\",\"aggregation\",\"performance\",\"scaling\",\"industrial\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":32,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Retrospective - Designing 112 emergency application with focus on performance and security\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"During 2019 we developed and deployed Swedens 112 mobile app with huge success. We hoped for 300k users within 6 month. We ended up with 1+ million users in a few weeks. Azures scalability were tested at its max with mixed result. The security constraints together with azure limitations gave us big insights how to design systems. This is a retrospective about our journey from idea to production. \",\"speakers\":[{\"name\":\"Magnus Backeus\",\"info\":\"Magnus Backeus is a solution and cloud architect at Knowit Development Stockholm. Working since 1998 and knowit employee since 2013. He has passion for system engineering and try always to be reflective about what could have been done better? What did we do well? Never satisfied. Always chashing that Graal\"}],\"tags\":[\"azure\",\"system design\",\"microsoft\",\"security\",\"architecture\",\"devops\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":15,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"GitOps in action\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"GitOps, the way to create and update infrastructure through pull-requests. Making Git the single source of truth.\",\"speakers\":[{\"name\":\"Jimmy Dahlqvist\",\"info\":\"I'm a developer and architect with a great passion for cloud and new ways of working. I love to share my knowledge with others and to be able to help them grow is really rewarding. Every moment of spare time I get i spend coding, testing new things, learning, and blogging (https://blog.dqvist.com/). I'm a notorious coffee drinker and please don't talk to me before my first cup in the morning.\"}],\"tags\":[\"devops\",\"gitops\",\"infrastructure as code\",\"cloud\"]}]}]},{\"timeStart\":1440,\"timeEnd\":1510,\"type\":[\"Pause + fika\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1510,\"timeEnd\":1540,\"type\":[\"Short Presentations & Lightning Talks\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":25,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Jamsession - An introduction to the JAMstack\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"The static websites makes a return, this time disguised as mushy fruit.\\n\\nThe JAMstack, or Javascript, APIs and Markup-stack is a promising new way to create fast and secure webapps.\\nThis talk will introduce the audience to how a website built on this stack is put together. We will also be looking at a case study: The complete rewrite of Smashing Magazine, when they switched from Wordpress and PHP to the JAMstack, resulting in a 10x speed increase in page load time!\",\"speakers\":[{\"name\":\"Ole Eskild Steensen\",\"info\":\"Software developer working in Knowit Experience Bergen. \"}],\"tags\":[\"web\",\"jam\",\"javascript\",\"api\",\"static\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":7,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Computer Vision and Image Segmentation with TensorFlow 2\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"A look into whats new in TensorFlow 2 and a basic run down of how TensorFlow and machine learning can be used to do image segmentation for computer vision.\",\"speakers\":[{\"name\":\"Jens Kristoffer Markussen\",\"info\":\"Code monkey with a passion for computer graphics and real time software. Has over three years of experience as a graphics programmer and currenly spends much of his free time working with VR\"}],\"tags\":[\"computervision\",\"tensorflow\",\"machinelearning\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":35,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"What to expect from Azure API Management\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"The best way to learn any tool or framework is to get hands-on experience. The second best way is to hear from someone who has that experience. Azure API Management is Microsofts take on an API-gateway. In this talk, you'll learn what works well, and what doesn't. I'll also go through some of the hurdles/challenges I faced while working with it.\",\"speakers\":[{\"name\":\"Håvard Olsen\",\"info\":\"My name is Håvard, I've worked @ the Knowit office in Bergen for almost 5 years doing mostly webdevelopment.\"}],\"tags\":[]},{\"talkId\":36,\"language\":\"Swedish\",\"difficulty\":\"Beginner\",\"title\":\"SOS Alarm\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"We will talk about the 112 SOS Alarm App with focus on backend development\",\"speakers\":[{\"name\":\"Johan Brunlöf\",\"info\":\"Studied together with Johan Wilander at Luleå Technical University for 3 years. Entered the traineeprogram together and has been working here at Knowit for 2+ years.\"},{\"name\":\"Johan Wilander\",\"info\":\"\"}],\"tags\":[\"sos alarm\",\"backend\",\"112app\",\"azure devops\",\"cosmos db\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":16,\"language\":\"Norwegian\",\"difficulty\":\"Intermediate\",\"title\":\"goto is good again\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Goto is a magic tool that takes you were you want to be, now.\",\"speakers\":[{\"name\":\"Robin Aaberg\",\"info\":\"Hollistic minded developer\"}],\"tags\":[\"goto\",\"magic\",\"python\",\"open source\"]}]}]},{\"timeStart\":1540,\"timeEnd\":1550,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1550,\"timeEnd\":1620,\"type\":[\"Short Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":11,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Electron and The Battle of Async Dependencies\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"As part of a larger eco-system we are developing a sales application for our customer. The first few versions were limited to being a web application, but as the project progressed we soon needed to communicate with hardware. Adapting the application to Electron.js was the chosen path. And so it began.\\n\\nNot knowing exactly what we had bargained for. We found ourselves battling concurrency more each passing day. Trying to make sense of how to juggle BrowserWindows, dependencies on detached servers, V8's garbage collection, and where and when to utilise this new wonderful thing called async-await  except. The promise wasn't always kept.\\n\\nI needed a new weapon to win this war. I begun crafting, what I call, an Electron Bootstrap Sequence. Albeit my dragon is currently dormant, and my work incomplete, maybe my scars can be of help to others.\",\"speakers\":[{\"name\":\"René Räisänen\",\"info\":\"René is a frontend developer with a diverse background. He is relatively new to large scale projects and his forte is JavaScript, yet flexible enough to not shy away from work like DevOps, API-design and Team Coordination. Magic the Gathering is his drug and he enjoys, like most people, a proper coffee in the morning.\"}],\"tags\":[\"electron.js\",\"javascript\",\"asynchronicity\",\"event driven programming\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":44,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Using DCNN (magic!) for upscaling images\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"A practical approach to scaling images using deep convolutional neural networks\",\"speakers\":[{\"name\":\"Simon Østrem\",\"info\":\"Web-developer with Knowit Experience Bergen since mid 2018, likes tinkering. I'm in no way associated with the software used here.\"}],\"tags\":[\"deep learning\",\"neural networks\",\"dcnn\",\"cuda\",\"image scaling\",\"magic\",\"caffe\",\"waifux2\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":14,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Getting the grip on Passwordmanagers\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Knowit have decided to get 1password as a supported solution. The talk is about why did we choose 1password, and what are the benefits of using this both as a team and as a private user. Last but not least;  How do you get started and why should your parents and kids use passwordmanagers?  Bring your laptop or mobile if you want help to set it up. \",\"speakers\":[{\"name\":\"Cecilie Wian\",\"info\":\"Tester, Consultant. \"}],\"tags\":[\"security\",\"passwordmanagers\",\"users\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":6,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Business Intelligence from a developer's perspective\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"I believe that every developer should have at least a basic idea on what Business Intelligence is about. We go through BI as a performance solution and an architecture choise.\\nWhy BI exists, when to chose it, how to develop it, and what we develop. Everything from a developer's perspective.\",\"speakers\":[{\"name\":\"Wille Esteche\",\"info\":\"Generally I'm a full stack system developer. I mostly work with Microsoft platforms and have been developing .Net Solutions, Integrations, Microsoft BI, and even IoT solutions.\"}],\"tags\":[\"business intelligence\",\"bi\",\"data warehouse\",\"develop.\"]}]}]},{\"timeStart\":1620,\"timeEnd\":1630,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1640,\"timeEnd\":1710,\"type\":[\"Open Space\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1900,\"timeEnd\":2300,\"type\":[\"Dinner - Drinks\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]}]},{\"day\":\"Saturday\",\"slots\":[{\"timeStart\":900,\"timeEnd\":1000,\"type\":[\"Workshop & Long Presentations & Short Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":33,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Rust in the front end\",\"type\":\"Workshop (90 minutes)\",\"description\":\"WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.\",\"speakers\":[{\"name\":\"Sebastian Ljunggren\",\"info\":\"Developer with focus on front end. Currently at Boeing, working with crew facing web applications.\"}],\"tags\":[\"rust\",\"webassembly\",\"javascript\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":22,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Identity and access management with OAuth 2.0 and OpenID Connect\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Identity and access management can be overwhelming for developers who are unfamiliar with the field due to the amount of domain-specific vocabulary. In this talk, we will focus on the OAuth 2.0 framework and the OpenID Connect protocol. Hopefully, at the end of this talk you will have a basic understanding and foundation to build upon in this field.\",\"speakers\":[{\"name\":\"Andreas Garmannslund\",\"info\":\"Andreas graduated as a nanotechnology engineer in 2016 and has been working at Knowit Experience Bergen ever since. He is currently a member of the BankID OIDC team (Vipps). When he is not working, he is planning the next session of the Bergen Dungeons & Dragons group.\"}],\"tags\":[\"authentication\",\"authorization\",\"oauth 2.0\",\"openid connect (oidc)\",\"security\",\"identity\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":5,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Beyond JUnit: Writing automated tests for every layer of your application\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Unit testing is a well known and widely followed practice these days. But how do you go about testing the functionality that spans the borders of your application? How do you test your database constraints, your database access code, your API endpoints, and the interoperability between your different independently deployed services?\\n\\nThis talk presents a compilation of different methods you can use to write tests for every aspect of your application:\\n* dependencies to your application,\\n* all the layers within your application, and\\n* your application's dependencies to other services (with a special focus on databases).\\nIt will be structured somewhat like a cookbook, with concrete examples provided.\\n\\nThis talk will be useful to anyone who would like to learn more about the non-trivial parts of writing automated tests for backend services. It represents half a decade's worth of hard-earned knowledge from real test use cases. The talk may be particularly enlightening to junior developers, but more experienced developers will likely also stand to learn a thing or two. The examples will be in Java, but the approaches should be applicable in other backend languages as well. \",\"speakers\":[{\"name\":\"Anders Rabo Thorbeck\",\"info\":\"Anders Thorbeck is a software engineer with seven years of experience, the last six for the consultancy Knowit. In his time with Knowit, he has worked primarily with backend and DevOps, and has over the course of these years piece-by-piece learned methods for writing tests for the more finicky parts of the code. This talk is an attempt to collate the sum of this knowledge.\"}],\"tags\":[\"testing\",\"unit testing\",\"database testing\",\"api testing\",\"consumer driven contracts\",\"backend\",\"java\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":39,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"The danger of order on the event message bus\",\"type\":\"Long presentation (60 minutes)\",\"description\":\"Loosely coupled systems and microservices are becoming more and more popular. Event messaging over Kafka, RabbitMQ or Pub/Sub becomes a standard architectural principle for most architectures.\\n\\nSome systems promise that events are delivered in the same order as they are published. It is quite tempting to use them to synchronize data-sources in an asynchronous way.\\n\\nIn this talk, I will classify three different classes of messages, when to use them and why a-synchronous data synchronization is error prone and hard to scale.\",\"speakers\":[{\"name\":\"Vincent Nikkelen\",\"info\":\"After studying Parallel Computing in Eindhoven and Budapest, Vincent worked for Ericsson in Hungary where he held key architectural positions including TSP-Dicos; a scalable high-availability platform with a distributed database. In 2008, he moved with his family to Sweden where he lead projects developing new platforms for Ericsson Mobile Platforms. He worked for Verisure Securitas Direct where he was leading the activities to break down their monolith into microservices. He is currently employed at Knowit Cloud and on assignment with IKEA in their Cloud Enablement team. \"}],\"tags\":[\"messaging\",\"kafka\",\"pub/sub\",\"event based\",\"data synchronization\"]}]}]},{\"timeStart\":1000,\"timeEnd\":1015,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1015,\"timeEnd\":1045,\"type\":[\"Workshop & Long Presentations & Short Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":33,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Rust in the front end cont.\",\"type\":\"Workshop (90 minutes)\",\"description\":\"WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.\",\"speakers\":[{\"name\":\"Sebastian Ljunggren\",\"info\":\"Developer with focus on front end. Currently at Boeing, working with crew facing web applications.\"}],\"tags\":[\"rust\",\"webassembly\",\"javascript\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":45,\"language\":\"Norwegian\",\"difficulty\":\"Intermediate\",\"title\":\"Vi tar pulsen på Knowit Objectnet - vår interne dataplattform\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Hvorfor har vi en intern dataplattform, hvordan gjør vi det, hvem og hvordan kan du bidra. Også blir det litt faktiske resultater fra data som er samlet inn og satt sammen.\",\"speakers\":[{\"name\":\"Jan Henrik Gundelsby\",\"info\":\"Jan Henrik er en glad speidergutt som liker alt mulig rundt teknologi. Er for tiden Principal Engineer og CTO i Knowit Objectnet. \"}],\"tags\":[\"dataplatform\",\"architecture\",\"analytics\",\"big data\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":2,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"A Model for Technology Governance at Entur\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"How do you scale a technology engineering organisation with high cohesion and alignment, while following agile principles and striving for autonomous teams? At Entur we try to achieve this with 14 parallell development teams, transforming the Norwegian Public Transport Sector. This talk is about how that work is going.\",\"speakers\":[{\"name\":\"Thomas Malt\",\"info\":\"Part of the Principal Engineer team at Knowit Objectnet. Experience as CTO, Technology Director, Full Stack Developer and Solutions Architect.\\n\\nPreviously he as been Director of Technology and Development at NRK, CTO at Fronter AS, and Head of the Development department at Linpro AS\"}],\"tags\":[\"leadership\",\"technology governance\",\"agile methodology\",\"architecture governance\",\"organisational transformation\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":19,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"How to design APIs worth using\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"You have all seen them. API's with a wonderfull... documentation. You have begged, cursed and cried, but that API won't give away it's secrets and inner workings. \\\"How can you create something this shitty?\\\" you asked rethorically. And then you went and created API documentation with the same quality.\\n\\nHere you will learn how to start not being that person. How to create something worth using. What tools you can use to create an API documentation you can both understand and work with next year.\\n\\nKey learning points:\\n\\n- How to properly use Swagger and OpenAPI\\n\\n- How to do API first development\\n\\n- Proper use of Rest\\n\\n- Proper URI design\",\"speakers\":[{\"name\":\"Anders Rønning Dahlen\",\"info\":\"Backend-developer working for Entur, with tech-lead experience from a previous costumer. Anders is passionate about code quality and creating user friendly solutions that makes sense to the costumer. \"}],\"tags\":[\"api design\",\"openapi\",\"swagger code generation\"]}]}]},{\"timeStart\":1045,\"timeEnd\":1100,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1100,\"timeEnd\":1130,\"type\":[\"Long Presentations & Short Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":43,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Untangling frontend spaggetti\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Complexity in frontend has steadily increased and with it components and views have become large and ugly beasts who I know have kept a lot of us up at night.\\n\\nIn this presentation we will go through design patterns and ways we can structure code to make the monsters a little less scary. Examples are based on app-development with a team of 10 for Storebrand Helse and will be shown in React Native, but the principles are universally applicable regardless of framework.\",\"speakers\":[{\"name\":\"Patrick Monslaup\",\"info\":\"Patrick is a fullstack developer who currently works with app development for Storebrand Helse. A big focus for him is using design-patterns and experiences from backend to improve code frontend and vice versa.\"}],\"tags\":[\"code quality\",\"architecture\",\"design patterns\",\"maintainability\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":1,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"20 years of Architecture. What challenges did we solve in the past? How will Cloud Computing change the future?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"What did architects need to worry about 10 and 20 years ago? This will be a short nostalgic summary of challenges we were facing in the past, then we will shift gears and look ahead. How will the Cloud help us solve scalability, governance and security? How do you choose a migration strategy? What are the areas you will need to consider as a Cloud Architect when helping our customers on their cloud journey?\",\"speakers\":[{\"name\":\"Øyvind Eikeland\",\"info\":\"Øyvind is CTO in Knowit Amende and is responsible for the technology, innovation and competence development strategy. He works closely with our partners Microsoft, Google and Amazon and he is actively driving our investments within their cloud platforms. Øyvind has strategic focus in development of advisory and delivery methodology, and is engaging in customer projects.\"}],\"tags\":[\"architecture\",\"cloud\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":23,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Inclusive design - for developers\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Your code can mean a lot more for a lot more people if you think inclusive. \",\"speakers\":[{\"name\":\"Øyvind Brande-Lien\",\"info\":\"Øyvind Brande-Lien used to be a developer but reconsidered his career when he discovered the horrendous interfaces people had to put up with. He has been a consultant since 1997 and still works in different industries as a designer of user experiences. \"}],\"tags\":[\"inclusive design accessibility meaningful\",\"UX\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":18,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"How do I quantum?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Have you wondered what all the buzz about quantum computing is? What is motivating large companies to pour money into it? Is it possible to do anything with it yet? How would you go about doing it today?\\n\\nThese questions are covered in this talk, where we'll go through the basics of quantum computing. We'll some basic terminology and expressions, a short history of the field, some alternative applications of similar quantum technology and finally concrete examples on a simulated quantum machine running on the JVM.\",\"speakers\":[{\"name\":\"Erik Lund\",\"info\":\"Erik has worked for Knowit for just over 4 years and has spent most of his time being a backend developer for Oslo county. He likes to consider new and interesting architectures for microservice systems, but also likes to keep an eye on technologies running through hype cycles to see what ends up maturing in the end.\"}],\"tags\":[\"quantum computing\",\"qubit\",\"entanglement\",\"superposition\"]}]}]},{\"timeStart\":1130,\"timeEnd\":1230,\"type\":[\"Lunch\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1230,\"timeEnd\":1300,\"type\":[\"Short Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":37,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Svelte - the next small thing in Javascript\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Svelte is a promising, novel approach to Javascript, designed for speed, short source files and tiny bundles. Among its many selling points are ease of learning and quick re-renders without a virtual DOM. Current big-name users include The New York Times and Godaddy.\\n\\nIn this presentation, Eirik takes you on a quick tour of the why and how of Svelte: Why is Svelte different and how is it able to be so much smaller and faster than the others? This will amongst other things involve a quick introduction to Svelte's syntax and a short history of the DOM. The talk is suitable for developers and designers who code  of all skill levels.\",\"speakers\":[{\"name\":\"Eirik Vågeskar\",\"info\":\"Eirik has worked at Knowit Objectnet for two years. Before that, he studied computer science at NTNU in Trondheim. In addition to programming, he has also dabbled in playwriting, acting, journalism and music. \"}],\"tags\":[\"svelte\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":8,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Hey google - Building your own action for google assistant\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"During this half an hour speak I will guide you through the process of building an action for google assistant. You will learn the different building blocks of an action and the most fundamental do’s and don’ts. The talk contains some programming in node.js on a basic level, but it’s easy to follow along without prior knowledge in programming or javascript.\",\"speakers\":[{\"name\":\"Joel Gustafsson\",\"info\":\"Joel Gustafsson is a front-end developer at Knowit Development Stockholm. He has a burning passion for creating visually appealing digital experiences that works for both visitors and businesses. Previously Joel designed and developed a virtual assistant for \\\"flygresor.se\\\", the insights from that project have shaped this talk.\"}],\"tags\":[\"conversational design\",\"dialogflow\",\"actions on google\",\"javascript\",\"firebase\",\"google assistant\",\"google home\",\"virtual assistants\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":10,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Edge Cases or Dead Angles?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"What are we basing our decisions on when declaring something an «edge case»?\\nAnd how does this fit with our understanding of risk and quality?\\n\\nWhether were scoping an MVP or reimagining user journeys for a legacy system, our work of finding solutions may easily lead to a centering of the product in the stories we tell ourselves about our users. This narrowing of focus can implicitly idealize our view of peoples needs and circumstance, in ways that are not always helpful.\\n\\nWe take pride in relieving pain points - but dont as easily envision the pain our products might introduce or amplify in peoples lives. There are some edge cases that cannot be ignored, because the consequences are too great. And there are some things that simply arent as far to the edge as wed like to imagine.\\n\\nWe can roll back the code, or iterate the product  but we cannot roll back the consequences we cause in peoples lives along the way. By combining a risk based approach with compassion, we can learn how to make products and experiments that are safe to fail in the environment of real life.\",\"speakers\":[{\"name\":\"Jorunn Mjøs\",\"info\":\"Jorunn Mjøs is a sociologist turned Software Tester, and is on a quest to make technology play nice with people. She is passionate about security, usability and inclusivity, in a broad and human sense. \"}],\"tags\":[\"security\",\"usability\",\"risk based testing\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":20,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"How to write code worth reading\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Regardless of skill level, some programmers write code that is performant, bug free and works great, but is very difficult to read and understand, and thus difficult to maintain. So in this talk I would like to share my experience and explain how you can write code that is easier to maintain. Code that is enjoyable to read and not just to write.\",\"speakers\":[{\"name\":\"Christoffer Eliesen\",\"info\":\"I am programmer with over 10 years of full time experience currently working as frontend developer at Knowit ???????\"}],\"tags\":[\"quality code\",\"tech culture\"]}]}]},{\"timeStart\":1300,\"timeEnd\":1310,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1310,\"timeEnd\":1340,\"type\":[\"Short Presentations & Lightning Talks\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":27,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Moderne webtypografi med variable fonter\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Variable fonter ble introdusert i 2016, og muliggjør bortimot uendelig med muligheter for typografien på en nettside. I dette foredraget skal vi se på hvordan de virker, og hvilke kreative muligheter de gir.\",\"speakers\":[{\"name\":\"Sverre Johan Bjørke\",\"info\":\"Sverre has been working at Knowit for two years. When he has the time he loves to tinker with new tech.\"}],\"tags\":[\"web\",\"typography\",\"ux\",\"design\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":28,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Private Information Retrieval\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"How do we privately retrieve information from a database without the database learning what information we retrieved? (Information theoretically secure approach)\",\"speakers\":[{\"name\":\"Tarald Riise\",\"info\":\"New Knowit hire (aug 19'). MSc, specialty in Information Security.\"}],\"tags\":[\"crypto\",\"security\",\"database\",\"information security\",\"privacy\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":30,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Productionland\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"I walk through some of my experiences working with hopeless test and QA environments leading to the practice of testing in production, and how this made my life a lot better\",\"speakers\":[{\"name\":\"Andreas Kristiansen\",\"info\":\"https://www.linkedin.com/in/andreas-kristiansen-a6482254/\"},{\"name\":\"Henning Kvalheim\",\"info\":null}],\"tags\":[\"quality of life\",\"agile\",\"development process\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":12,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Exfiltrating data from an airgapped system using magnetic fields\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"A quick rundown of one of the ways you could exfiltrate data from an airgapped system without the use of convential means.\",\"speakers\":[{\"name\":\"Alexander Grahn\",\"info\":\"Alexander Grahn works in the defense industry for Knowit Dataunit.\"}],\"tags\":[\"cyber security\",\"c++\",\"android\"]},{\"talkId\":34,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Should you render your React on the server?\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"Server-side rendering (SSR) and client-side rendering (CSR) isn't some brand new marketing buzzword, but it's something that's not understood by everybody, especially with the spread of client-side rendered apps. Why should you delve deeper into server-side rendering and what are the drawbacks?\\n\\nIn this talk Im going to go through the different approaches and share my opinion on whether its worth implementing server-side rendering in a React App.\",\"speakers\":[{\"name\":\"Tommy Barvåg\",\"info\":\"6 years of experience in developing and managing web solutions. High level of expertise in .NET applications with extensive experience from JavaScript and related frameworks such as React, Angular and Redux. \"}],\"tags\":[\"server side rendering\",\"ssr\",\"client side rendering\",\"csr\",\"lighthouse\",\"react\",\"isomorphic\",\"serverless\",\"universal\",\"seo\",\"http status codes\",\"performance\"]},{\"talkId\":42,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Basic concepts in functional programming and how they correspond in OOP\",\"type\":\"Lightning talk (10 minutes)\",\"description\":\"Basic concepts in functional programming and how they correspond in OOP\",\"speakers\":[{\"name\":\"Alexandra Dobrescu\",\"info\":\"Back-end developer \"}],\"tags\":[]}]}]},{\"timeStart\":1340,\"timeEnd\":1400,\"type\":[\"Pause + Fika\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1400,\"timeEnd\":1430,\"type\":[\"Short Presentations\"],\"rooms\":[{\"name\":\"Kongesalen\",\"talks\":[{\"talkId\":13,\"language\":\"English\",\"difficulty\":\"Intermediate\",\"title\":\"Flutter here, Flutter there, Flutter [Almost!] everywhere\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Flutter is Google's SDK for developing high-quality, fast and beautiful multi-platform applications in record time with a single codebase.\\nStarted as one of Google's side-projects, Flutter is now a stable, open-source platform with a huge community built around it, actively contributing to the project.\\nFlutter also utilized declarative syntax for building the UI, enabling the developers to create beautiful user interfaces with minimal effort that works seamlessly on both Android and iOS. A successful concept that inspired SwiftUI and JetpackCompose.\\nIn this talk, we will go through a quick brief introduction of Flutter and what makes it a powerful multi-platform framework. Afterward, as Flutter is now officially supporting web, I will demonstrate creating a responsive application that exports to Andoird, iOS, and Web, interacting with one another; all using one single codebase.\",\"speakers\":[{\"name\":\"Amir Roosta\",\"info\":\"Amir Roosta is an Android and .net developer who is passionate about new technologies that actually work! He's been working with Flutter since when it was at its beta stage and has been utilizing the framework for his side projects and enjoyed it ever since. He was a speaker at last year's KDS as well.\"}],\"tags\":[\"flutter\",\"android\",\"ios\",\"mobile\",\"web development\"]}]},{\"name\":\"Dræggen 7\",\"talks\":[{\"talkId\":26,\"language\":\"English\",\"difficulty\":\"Beginner\",\"title\":\"Lottie.js - Realtime SVG animations.\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Lottie is an Web, iOS, Android, and React Native library that renders After Effects animations in real time, allowing apps to use animations as easily as they use static images.\\n\\nIn the past, building complex animations for Web, Android, iOS, and React Native apps was a difficult and lengthy process. You either had to add bulky image files for each screen size or write a thousand lines of brittle, hard-to-maintain code. Because of this, most apps werent using animation  despite it being a powerful tool for communicating ideas and creating compelling user experiences.\\n\\nLottie uses animation data exported as JSON files from an open-source After Effects extension called Bodymovin. The extension is bundled with a JavaScript player that can render the animations realtime on the web.\\n\\nLottie allows engineers to build richer animations without the painstaking overhead of re-writing them.\\n\\nJoin this talk and learn how you can utilize Lottie for your projects.\\n\",\"speakers\":[{\"name\":\"Steffen Andre Hagen\",\"info\":\"Steffen Andre Hagen is a film director, UX designer and front end developer at Knowit Experience Bergen.\"}],\"tags\":[\"animation\",\"lottie\",\"lottie.js\",\"svg\",\"realtime\",\"motion graphics\",\"front end\",\"javascript\"]}]},{\"name\":\"Dræggen 8\",\"talks\":[{\"talkId\":31,\"language\":\"Swedish\",\"difficulty\":\"Beginner\",\"title\":\"React eller Vue?\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Under 2019 deltog ca 90 000 utvecklare i en omröstning kring vilket webb-ramverk de gillade bäst. React.js hamnade på plats 1 med Vue.js hack i häl efter sig på plats 2 (Stack Overflow Developer Survey 2019).\\n\\nVad är React och Vue? Vad är de främsta egenskaperna som skiljer dem åt? Vilket av dem lämpar sig bäst för ditt teams nästa frontend-projekt? Häng med på en jämförande upptäcktsfärd där vi söker efter svaren!\",\"speakers\":[{\"name\":\"Viktor Sandström Romild\",\"info\":\"Viktor Sandström Romild is a developer working for Knowit Uppsala, Sweden. \"}],\"tags\":[\"react\",\"vue\",\"frontend\",\"web frameworks\",\"javascript\"]}]},{\"name\":\"Dræggen 4\",\"talks\":[{\"talkId\":38,\"language\":\"Norwegian\",\"difficulty\":\"Beginner\",\"title\":\"Intro to Blazor\",\"type\":\"Short presentation (30 minutes)\",\"description\":\"Intro to Blazor\",\"speakers\":[{\"name\":\"Endre Vestbø\",\"info\":\"Developer\"}],\"tags\":[]}]}]},{\"timeStart\":1430,\"timeEnd\":1440,\"type\":[\"Pause\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1440,\"timeEnd\":1510,\"type\":[\"KEYNOTE - Fredrik Ekerhovd\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]},{\"timeStart\":1510,\"timeEnd\":1520,\"type\":[\"Who had the best talk? See you next year!\"],\"rooms\":[{\"name\":\"Room \",\"talks\":[]}]}]}]}}");
 
 /***/ }),
 
@@ -217,17 +52,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./n
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "./node_modules/core-js/library/fn/is-iterable.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "./node_modules/core-js/library/fn/json/stringify.js");
 
 /***/ }),
 
@@ -316,17 +140,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "./no
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "./node_modules/core-js/library/fn/object/set-prototype-of.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "./node_modules/core-js/library/fn/parse-int.js");
 
 /***/ }),
 
@@ -614,36 +427,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
   return Constructor;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
-  \***************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
 }
 
 /***/ }),
@@ -1238,22 +1021,6 @@ module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ "./node_
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/fn/json/stringify.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/library/fn/json/stringify.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var core = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js");
-var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
-module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
-  return $JSON.stringify.apply($JSON, arguments);
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/fn/map.js":
 /*!************************************************!*\
   !*** ./node_modules/core-js/library/fn/map.js ***!
@@ -1369,19 +1136,6 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/fn/parse-int.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/library/fn/parse-int.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../modules/es6.parse-int */ "./node_modules/core-js/library/modules/es6.parse-int.js");
-module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").parseInt;
 
 
 /***/ }),
@@ -3293,26 +3047,6 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/modules/_parse-int.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_parse-int.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $parseInt = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").parseInt;
-var $trim = __webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/library/modules/_string-trim.js").trim;
-var ws = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
-var hex = /^[-+]?0[xX]/;
-
-module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
-  var string = $trim(String(str), 3);
-  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
-} : $parseInt;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -3630,60 +3364,6 @@ module.exports = function (TO_STRING) {
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_string-trim.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_string-trim.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-var defined = __webpack_require__(/*! ./_defined */ "./node_modules/core-js/library/modules/_defined.js");
-var fails = __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js");
-var spaces = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
-var space = '[' + spaces + ']';
-var non = '\u200b\u0085';
-var ltrim = RegExp('^' + space + space + '*');
-var rtrim = RegExp(space + space + '*$');
-
-var exporter = function (KEY, exec, ALIAS) {
-  var exp = {};
-  var FORCE = fails(function () {
-    return !!spaces[KEY]() || non[KEY]() != non;
-  });
-  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
-  if (ALIAS) exp[ALIAS] = fn;
-  $export($export.P + $export.F * FORCE, 'String', exp);
-};
-
-// 1 -> String#trimLeft
-// 2 -> String#trimRight
-// 3 -> String#trim
-var trim = exporter.trim = function (string, TYPE) {
-  string = String(defined(string));
-  if (TYPE & 1) string = string.replace(ltrim, '');
-  if (TYPE & 2) string = string.replace(rtrim, '');
-  return string;
-};
-
-module.exports = exporter;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_string-ws.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_string-ws.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
-  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -4315,21 +3995,6 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es6.parse-int.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es6.parse-int.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-var $parseInt = __webpack_require__(/*! ./_parse-int */ "./node_modules/core-js/library/modules/_parse-int.js");
-// 18.2.5 parseInt(string, radix)
-$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
@@ -5427,21 +5092,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx!./":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Findex.tsx!./":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Findex.tsx ***!
+  \*****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/talksAndSpeakers", function() {
-      var mod = __webpack_require__(/*! ./pages/talksAndSpeakers.tsx */ "./pages/talksAndSpeakers.tsx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
+      var mod = __webpack_require__(/*! ./pages/index.tsx */ "./pages/index.tsx")
       if(true) {
-        module.hot.accept(/*! ./pages/talksAndSpeakers.tsx */ "./pages/talksAndSpeakers.tsx", function() {
-          if(!next.router.components["/talksAndSpeakers"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/talksAndSpeakers.tsx */ "./pages/talksAndSpeakers.tsx")
-          next.router.update("/talksAndSpeakers", updatedPage)
+        module.hot.accept(/*! ./pages/index.tsx */ "./pages/index.tsx", function() {
+          if(!next.router.components["/"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/index.tsx */ "./pages/index.tsx")
+          next.router.update("/", updatedPage)
         })
       }
       return mod
@@ -6089,168 +5754,6 @@ exports.useAmp = useAmp;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/next-server/lib/dynamic.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/dynamic.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _Object$keys = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-
-var _Object$assign = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/next/dist/build/polyfills/object-assign.js");
-
-var _Promise = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var loadable_1 = __importDefault(__webpack_require__(/*! ./loadable */ "./node_modules/next/dist/next-server/lib/loadable.js"));
-
-var isServerSide = false;
-
-function noSSR(LoadableInitializer, loadableOptions) {
-  // Removing webpack and modules means react-loadable won't try preloading
-  delete loadableOptions.webpack;
-  delete loadableOptions.modules; // This check is neccesary to prevent react-loadable from initializing on the server
-
-  if (!isServerSide) {
-    return LoadableInitializer(loadableOptions);
-  }
-
-  var Loading = loadableOptions.loading; // This will only be rendered on the server side
-
-  return function () {
-    return react_1["default"].createElement(Loading, {
-      error: null,
-      isLoading: true,
-      pastDelay: false,
-      timedOut: false
-    });
-  };
-}
-
-exports.noSSR = noSSR; // function dynamic<P = {}, O extends DynamicOptions>(options: O):
-
-function dynamic(dynamicOptions, options) {
-  var loadableFn = loadable_1["default"];
-  var loadableOptions = {
-    // A loading component is not required, so we default it
-    loading: function loading(_ref) {
-      var error = _ref.error,
-          isLoading = _ref.isLoading,
-          pastDelay = _ref.pastDelay;
-      if (!pastDelay) return null;
-
-      if (true) {
-        if (isLoading) {
-          return null;
-        }
-
-        if (error) {
-          return react_1["default"].createElement("p", null, error.message, react_1["default"].createElement("br", null), error.stack);
-        }
-      }
-
-      return null;
-    }
-  }; // Support for direct import(), eg: dynamic(import('../hello-world'))
-  // Note that this is only kept for the edge case where someone is passing in a promise as first argument
-  // The react-loadable babel plugin will turn dynamic(import('../hello-world')) into dynamic(() => import('../hello-world'))
-  // To make sure we don't execute the import without rendering first
-
-  if (dynamicOptions instanceof _Promise) {
-    loadableOptions.loader = function () {
-      return dynamicOptions;
-    }; // Support for having import as a function, eg: dynamic(() => import('../hello-world'))
-
-  } else if (typeof dynamicOptions === 'function') {
-    loadableOptions.loader = dynamicOptions; // Support for having first argument being options, eg: dynamic({loader: import('../hello-world')})
-  } else if (typeof dynamicOptions === 'object') {
-    loadableOptions = _Object$assign(_Object$assign({}, loadableOptions), dynamicOptions);
-  } // Support for passing options, eg: dynamic(import('../hello-world'), {loading: () => <p>Loading something</p>})
-
-
-  loadableOptions = _Object$assign(_Object$assign({}, loadableOptions), options);
-
-  if (typeof dynamicOptions === 'object' && !(dynamicOptions instanceof _Promise)) {
-    // show deprecation warning for `modules` key in development
-    if (true) {
-      if (dynamicOptions.modules) {
-        console.warn('The modules option for next/dynamic has been deprecated. See here for more info https://err.sh/zeit/next.js/next-dynamic-modules');
-      }
-    } // Support for `render` when using a mapping, eg: `dynamic({ modules: () => {return {HelloWorld: import('../hello-world')}, render(props, loaded) {} } })
-
-
-    if (dynamicOptions.render) {
-      loadableOptions.render = function (loaded, props) {
-        return dynamicOptions.render(props, loaded);
-      };
-    } // Support for `modules` when using a mapping, eg: `dynamic({ modules: () => {return {HelloWorld: import('../hello-world')}, render(props, loaded) {} } })
-
-
-    if (dynamicOptions.modules) {
-      loadableFn = loadable_1["default"].Map;
-      var loadModules = {};
-      var modules = dynamicOptions.modules();
-
-      _Object$keys(modules).forEach(function (key) {
-        var value = modules[key];
-
-        if (typeof value.then === 'function') {
-          loadModules[key] = function () {
-            return value.then(function (mod) {
-              return mod["default"] || mod;
-            });
-          };
-
-          return;
-        }
-
-        loadModules[key] = value;
-      });
-
-      loadableOptions.loader = loadModules;
-    }
-  } // coming from build/babel/plugins/react-loadable-plugin.js
-
-
-  if (loadableOptions.loadableGenerated) {
-    loadableOptions = _Object$assign(_Object$assign({}, loadableOptions), loadableOptions.loadableGenerated);
-    delete loadableOptions.loadableGenerated;
-  } // support for disabling server side rendering, eg: dynamic(import('../hello-world'), {ssr: false})
-
-
-  if (typeof loadableOptions.ssr === 'boolean') {
-    if (!loadableOptions.ssr) {
-      delete loadableOptions.ssr;
-      return noSSR(loadableFn, loadableOptions);
-    }
-
-    delete loadableOptions.ssr;
-  }
-
-  return loadableFn(loadableOptions);
-}
-
-exports["default"] = dynamic;
-
-/***/ }),
-
 /***/ "./node_modules/next/dist/next-server/lib/head-manager-context.js":
 /*!************************************************************************!*\
   !*** ./node_modules/next/dist/next-server/lib/head-manager-context.js ***!
@@ -6461,443 +5964,6 @@ function Head(_ref) {
 
 Head.rewind = Effect.rewind;
 exports["default"] = Head;
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/lib/loadable-context.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/loadable-context.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  }
-  result["default"] = mod;
-  return result;
-};
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js")); // @ts-ignore for some reason the React types don't like this, but it's correct.
-
-
-exports.LoadableContext = React.createContext(null);
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/lib/loadable.js":
-/*!************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/loadable.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/**
-@copyright (c) 2017-present James Kyle <me@thejameskyle.com>
- MIT License
- Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
- The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
-*/
-// https://github.com/jamiebuilds/react-loadable/blob/v5.5.0/src/index.js
-// Modified to be compatible with webpack 4 / Next.js
-
-var _Set = __webpack_require__(/*! @babel/runtime-corejs2/core-js/set */ "./node_modules/@babel/runtime-corejs2/core-js/set.js");
-
-var _classCallCheck = __webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js");
-
-var _createClass = __webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/createClass.js");
-
-var _Array$isArray = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
-
-var _getIterator = __webpack_require__(/*! @babel/runtime-corejs2/core-js/get-iterator */ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
-
-var _Object$assign = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/next/dist/build/polyfills/object-assign.js");
-
-var _Promise = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
-
-var _Object$keys = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var use_subscription_1 = __webpack_require__(/*! use-subscription */ "./node_modules/use-subscription/index.js");
-
-var loadable_context_1 = __webpack_require__(/*! ./loadable-context */ "./node_modules/next/dist/next-server/lib/loadable-context.js");
-
-var ALL_INITIALIZERS = [];
-var READY_INITIALIZERS = [];
-var initialized = false;
-
-function load(loader) {
-  var promise = loader();
-  var state = {
-    loading: true,
-    loaded: null,
-    error: null
-  };
-  state.promise = promise.then(function (loaded) {
-    state.loading = false;
-    state.loaded = loaded;
-    return loaded;
-  })["catch"](function (err) {
-    state.loading = false;
-    state.error = err;
-    throw err;
-  });
-  return state;
-}
-
-function loadMap(obj) {
-  var state = {
-    loading: false,
-    loaded: {},
-    error: null
-  };
-  var promises = [];
-
-  try {
-    _Object$keys(obj).forEach(function (key) {
-      var result = load(obj[key]);
-
-      if (!result.loading) {
-        state.loaded[key] = result.loaded;
-        state.error = result.error;
-      } else {
-        state.loading = true;
-      }
-
-      promises.push(result.promise);
-      result.promise.then(function (res) {
-        state.loaded[key] = res;
-      })["catch"](function (err) {
-        state.error = err;
-      });
-    });
-  } catch (err) {
-    state.error = err;
-  }
-
-  state.promise = _Promise.all(promises).then(function (res) {
-    state.loading = false;
-    return res;
-  })["catch"](function (err) {
-    state.loading = false;
-    throw err;
-  });
-  return state;
-}
-
-function resolve(obj) {
-  return obj && obj.__esModule ? obj["default"] : obj;
-}
-
-function render(loaded, props) {
-  return react_1["default"].createElement(resolve(loaded), props);
-}
-
-function createLoadableComponent(loadFn, options) {
-  var opts = _Object$assign({
-    loader: null,
-    loading: null,
-    delay: 200,
-    timeout: null,
-    render: render,
-    webpack: null,
-    modules: null
-  }, options);
-
-  var subscription = null;
-
-  function init() {
-    if (!subscription) {
-      var sub = new LoadableSubscription(loadFn, opts);
-      subscription = {
-        getCurrentValue: sub.getCurrentValue.bind(sub),
-        subscribe: sub.subscribe.bind(sub),
-        retry: sub.retry.bind(sub),
-        promise: sub.promise.bind(sub)
-      };
-    }
-
-    return subscription.promise();
-  } // Server only
-
-
-  if (false) {} // Client only
-
-
-  if (!initialized && true && typeof opts.webpack === 'function') {
-    var moduleIds = opts.webpack();
-    READY_INITIALIZERS.push(function (ids) {
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = _getIterator(moduleIds), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var moduleId = _step.value;
-
-          if (ids.indexOf(moduleId) !== -1) {
-            return init();
-          }
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-            _iterator["return"]();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
-    });
-  }
-
-  var LoadableComponent = function LoadableComponent(props, ref) {
-    init();
-    var context = react_1["default"].useContext(loadable_context_1.LoadableContext);
-    var state = use_subscription_1.useSubscription(subscription);
-    react_1["default"].useImperativeHandle(ref, function () {
-      return {
-        retry: subscription.retry
-      };
-    });
-
-    if (context && _Array$isArray(opts.modules)) {
-      opts.modules.forEach(function (moduleName) {
-        context(moduleName);
-      });
-    }
-
-    if (state.loading || state.error) {
-      return react_1["default"].createElement(opts.loading, {
-        isLoading: state.loading,
-        pastDelay: state.pastDelay,
-        timedOut: state.timedOut,
-        error: state.error,
-        retry: subscription.retry
-      });
-    } else if (state.loaded) {
-      return opts.render(state.loaded, props);
-    } else {
-      return null;
-    }
-  };
-
-  LoadableComponent.preload = function () {
-    return init();
-  };
-
-  LoadableComponent.displayName = 'LoadableComponent';
-  return react_1["default"].forwardRef(LoadableComponent);
-}
-
-var LoadableSubscription =
-/*#__PURE__*/
-function () {
-  function LoadableSubscription(loadFn, opts) {
-    _classCallCheck(this, LoadableSubscription);
-
-    this._loadFn = loadFn;
-    this._opts = opts;
-    this._callbacks = new _Set();
-    this._delay = null;
-    this._timeout = null;
-    this.retry();
-  }
-
-  _createClass(LoadableSubscription, [{
-    key: "promise",
-    value: function promise() {
-      return this._res.promise;
-    }
-  }, {
-    key: "retry",
-    value: function retry() {
-      var _this = this;
-
-      this._clearTimeouts();
-
-      this._res = this._loadFn(this._opts.loader);
-      this._state = {
-        pastDelay: false,
-        timedOut: false
-      };
-      var res = this._res,
-          opts = this._opts;
-
-      if (res.loading) {
-        if (typeof opts.delay === 'number') {
-          if (opts.delay === 0) {
-            this._state.pastDelay = true;
-          } else {
-            this._delay = setTimeout(function () {
-              _this._update({
-                pastDelay: true
-              });
-            }, opts.delay);
-          }
-        }
-
-        if (typeof opts.timeout === 'number') {
-          this._timeout = setTimeout(function () {
-            _this._update({
-              timedOut: true
-            });
-          }, opts.timeout);
-        }
-      }
-
-      this._res.promise.then(function () {
-        _this._update();
-
-        _this._clearTimeouts();
-      }) // eslint-disable-next-line handle-callback-err
-      ["catch"](function (err) {
-        _this._update();
-
-        _this._clearTimeouts();
-      });
-
-      this._update({});
-    }
-  }, {
-    key: "_update",
-    value: function _update(partial) {
-      this._state = _Object$assign(_Object$assign({}, this._state), partial);
-
-      this._callbacks.forEach(function (callback) {
-        return callback();
-      });
-    }
-  }, {
-    key: "_clearTimeouts",
-    value: function _clearTimeouts() {
-      clearTimeout(this._delay);
-      clearTimeout(this._timeout);
-    }
-  }, {
-    key: "getCurrentValue",
-    value: function getCurrentValue() {
-      return _Object$assign(_Object$assign({}, this._state), {
-        error: this._res.error,
-        loaded: this._res.loaded,
-        loading: this._res.loading
-      });
-    }
-  }, {
-    key: "subscribe",
-    value: function subscribe(callback) {
-      var _this2 = this;
-
-      this._callbacks.add(callback);
-
-      return function () {
-        _this2._callbacks["delete"](callback);
-      };
-    }
-  }]);
-
-  return LoadableSubscription;
-}();
-
-function Loadable(opts) {
-  return createLoadableComponent(load, opts);
-}
-
-function LoadableMap(opts) {
-  if (typeof opts.render !== 'function') {
-    throw new Error('LoadableMap requires a `render(loaded, props)` function');
-  }
-
-  return createLoadableComponent(loadMap, opts);
-}
-
-Loadable.Map = LoadableMap;
-
-function flushInitializers(initializers, ids) {
-  var promises = [];
-
-  while (initializers.length) {
-    var init = initializers.pop();
-    promises.push(init(ids));
-  }
-
-  return _Promise.all(promises).then(function () {
-    if (initializers.length) {
-      return flushInitializers(initializers, ids);
-    }
-  });
-}
-
-Loadable.preloadAll = function () {
-  return new _Promise(function (resolve, reject) {
-    flushInitializers(ALL_INITIALIZERS).then(resolve, reject);
-  });
-};
-
-Loadable.preloadReady = function () {
-  var ids = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  return new _Promise(function (resolve) {
-    var res = function res() {
-      initialized = true;
-      return resolve();
-    }; // We always will resolve, errors should be handled within loading UIs.
-
-
-    flushInitializers(READY_INITIALIZERS, ids).then(res, res);
-  });
-};
-
-if (true) {
-  window.__NEXT_PRELOADREADY = Loadable.preloadReady;
-}
-
-exports["default"] = Loadable;
 
 /***/ }),
 
@@ -10167,333 +9233,6 @@ try {
 
 /***/ }),
 
-/***/ "./node_modules/use-subscription/cjs/use-subscription.development.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/use-subscription/cjs/use-subscription.development.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/** @license React v1.1.1
- * use-subscription.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-if (true) {
-  (function() {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-
-/* eslint-disable no-unused-vars */
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-function toObject(val) {
-	if (val === null || val === undefined) {
-		throw new TypeError('Object.assign cannot be called with null or undefined');
-	}
-
-	return Object(val);
-}
-
-function shouldUseNative() {
-	try {
-		if (!Object.assign) {
-			return false;
-		}
-
-		// Detect buggy property enumeration order in older V8 versions.
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
-		test1[5] = 'de';
-		if (Object.getOwnPropertyNames(test1)[0] === '5') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test2 = {};
-		for (var i = 0; i < 10; i++) {
-			test2['_' + String.fromCharCode(i)] = i;
-		}
-		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-			return test2[n];
-		});
-		if (order2.join('') !== '0123456789') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test3 = {};
-		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-			test3[letter] = letter;
-		});
-		if (Object.keys(Object.assign({}, test3)).join('') !==
-				'abcdefghijklmnopqrst') {
-			return false;
-		}
-
-		return true;
-	} catch (err) {
-		// We don't expect any of the above to throw, but better to be safe.
-		return false;
-	}
-}
-
-var objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
-	var from;
-	var to = toObject(target);
-	var symbols;
-
-	for (var s = 1; s < arguments.length; s++) {
-		from = Object(arguments[s]);
-
-		for (var key in from) {
-			if (hasOwnProperty.call(from, key)) {
-				to[key] = from[key];
-			}
-		}
-
-		if (getOwnPropertySymbols) {
-			symbols = getOwnPropertySymbols(from);
-			for (var i = 0; i < symbols.length; i++) {
-				if (propIsEnumerable.call(from, symbols[i])) {
-					to[symbols[i]] = from[symbols[i]];
-				}
-			}
-		}
-	}
-
-	return to;
-};
-
-//
-// In order to avoid removing and re-adding subscriptions each time this hook is called,
-// the parameters passed to this hook should be memoized in some way–
-// either by wrapping the entire params object with useMemo()
-// or by wrapping the individual callbacks with useCallback().
-
-function useSubscription(_ref) {
-  var getCurrentValue = _ref.getCurrentValue,
-      subscribe = _ref.subscribe;
-
-  // Read the current value from our subscription.
-  // When this value changes, we'll schedule an update with React.
-  // It's important to also store the hook params so that we can check for staleness.
-  // (See the comment in checkForUpdates() below for more info.)
-  var _useState = react.useState(function () {
-    return {
-      getCurrentValue: getCurrentValue,
-      subscribe: subscribe,
-      value: getCurrentValue()
-    };
-  }),
-      state = _useState[0],
-      setState = _useState[1];
-
-  var valueToReturn = state.value; // If parameters have changed since our last render, schedule an update with its current value.
-
-  if (state.getCurrentValue !== getCurrentValue || state.subscribe !== subscribe) {
-    // If the subscription has been updated, we'll schedule another update with React.
-    // React will process this update immediately, so the old subscription value won't be committed.
-    // It is still nice to avoid returning a mismatched value though, so let's override the return value.
-    valueToReturn = getCurrentValue();
-    setState({
-      getCurrentValue: getCurrentValue,
-      subscribe: subscribe,
-      value: valueToReturn
-    });
-  } // Display the current value for this hook in React DevTools.
-
-
-  react.useDebugValue(valueToReturn); // It is important not to subscribe while rendering because this can lead to memory leaks.
-  // (Learn more at reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects)
-  // Instead, we wait until the commit phase to attach our handler.
-  //
-  // We intentionally use a passive effect (useEffect) rather than a synchronous one (useLayoutEffect)
-  // so that we don't stretch the commit phase.
-  // This also has an added benefit when multiple components are subscribed to the same source:
-  // It allows each of the event handlers to safely schedule work without potentially removing an another handler.
-  // (Learn more at https://codesandbox.io/s/k0yvr5970o)
-
-  react.useEffect(function () {
-    var didUnsubscribe = false;
-
-    var checkForUpdates = function () {
-      // It's possible that this callback will be invoked even after being unsubscribed,
-      // if it's removed as a result of a subscription event/update.
-      // In this case, React will log a DEV warning about an update from an unmounted component.
-      // We can avoid triggering that warning with this check.
-      if (didUnsubscribe) {
-        return;
-      } // We use a state updater function to avoid scheduling work for a stale source.
-      // However it's important to eagerly read the currently value,
-      // so that all scheduled work shares the same value (in the event of multiple subscriptions).
-      // This avoids visual "tearing" when a mutation happens during a (concurrent) render.
-
-
-      var value = getCurrentValue();
-      setState(function (prevState) {
-        // Ignore values from stale sources!
-        // Since we subscribe an unsubscribe in a passive effect,
-        // it's possible that this callback will be invoked for a stale (previous) subscription.
-        // This check avoids scheduling an update for that stale subscription.
-        if (prevState.getCurrentValue !== getCurrentValue || prevState.subscribe !== subscribe) {
-          return prevState;
-        } // Some subscriptions will auto-invoke the handler, even if the value hasn't changed.
-        // If the value hasn't changed, no update is needed.
-        // Return state as-is so React can bail out and avoid an unnecessary render.
-
-
-        if (prevState.value === value) {
-          return prevState;
-        }
-
-        return objectAssign({}, prevState, {
-          value: value
-        });
-      });
-    };
-
-    var unsubscribe = subscribe(checkForUpdates); // Because we're subscribing in a passive effect,
-    // it's possible that an update has occurred between render and our effect handler.
-    // Check for this and schedule an update if work has occurred.
-
-    checkForUpdates();
-    return function () {
-      didUnsubscribe = true;
-      unsubscribe();
-    };
-  }, [getCurrentValue, subscribe]); // Return the current value for our caller to use while rendering.
-
-  return valueToReturn;
-}
-
-exports.useSubscription = useSubscription;
-  })();
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/use-subscription/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/use-subscription/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/use-subscription.development.js */ "./node_modules/use-subscription/cjs/use-subscription.development.js");
-}
-
-
-/***/ }),
-
-/***/ "./pages/components/Difficulty.tsx":
-/*!*****************************************!*\
-  !*** ./pages/components/Difficulty.tsx ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _styling_difficultyStyles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../styling/difficultyStyles.scss */ "./styling/difficultyStyles.scss");
-/* harmony import */ var _styling_difficultyStyles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styling_difficultyStyles_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-
-
-
-
-
-var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/Difficulty.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
-
-
-
-var Difficulty =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Difficulty, _React$Component);
-
-  function Difficulty() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Difficulty);
-
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Difficulty).apply(this, arguments));
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Difficulty, [{
-    key: "render",
-    value: function render() {
-      return __jsx("div", {
-        className: "difficulty",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        },
-        __self: this
-      }, __jsx("span", {
-        className: "first active",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        },
-        __self: this
-      }), __jsx("span", {
-        className: "second ".concat(this.props.difficulty == 'Intermediate' || this.props.difficulty == 'Advanced' ? 'active' : ''),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        },
-        __self: this
-      }), __jsx("span", {
-        className: "third ".concat(this.props.difficulty == 'Advanced' ? 'active' : ''),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10
-        },
-        __self: this
-      }));
-    }
-  }]);
-
-  return Difficulty;
-}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Difficulty);
-
-/***/ }),
-
 /***/ "./pages/components/Filter.tsx":
 /*!*************************************!*\
   !*** ./pages/components/Filter.tsx ***!
@@ -11218,86 +9957,6 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./pages/components/Pin.tsx":
-/*!**********************************!*\
-  !*** ./pages/components/Pin.tsx ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _styling_pinStyles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../styling/pinStyles.scss */ "./styling/pinStyles.scss");
-/* harmony import */ var _styling_pinStyles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styling_pinStyles_scss__WEBPACK_IMPORTED_MODULE_6__);
-
-
-
-
-
-var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/Pin.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
-
-
-
-var Pin =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Pin, _React$Component);
-
-  function Pin() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Pin);
-
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Pin).apply(this, arguments));
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Pin, [{
-    key: "render",
-    value: function render() {
-      return __jsx("div", {
-        className: "pin ".concat(this.props.small ? 'small' : '', " ").concat(this.props.className),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "top",
-        style: {
-          borderColor: this.props.color
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        },
-        __self: this
-      }), __jsx("div", {
-        className: "bottom",
-        style: {
-          borderColor: "".concat(this.props.color, " transparent transparent  transparent")
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        },
-        __self: this
-      }));
-    }
-  }]);
-
-  return Pin;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Pin);
-
-/***/ }),
-
 /***/ "./pages/components/ShowOnlyFavoritesButton.tsx":
 /*!******************************************************!*\
   !*** ./pages/components/ShowOnlyFavoritesButton.tsx ***!
@@ -11371,576 +10030,235 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./pages/components/Talk.tsx":
-/*!***********************************!*\
-  !*** ./pages/components/Talk.tsx ***!
-  \***********************************/
+/***/ "./pages/index.tsx":
+/*!*************************!*\
+  !*** ./pages/index.tsx ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _styling_talkStyles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../styling/talkStyles.scss */ "./styling/talkStyles.scss");
-/* harmony import */ var _styling_talkStyles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styling_talkStyles_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _FilterTag__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FilterTag */ "./pages/components/FilterTag.tsx");
-/* harmony import */ var _Difficulty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Difficulty */ "./pages/components/Difficulty.tsx");
-/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/dynamic */ "./node_modules/next/dist/next-server/lib/dynamic.js");
-/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _Pin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pin */ "./pages/components/Pin.tsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _helpers_colors__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../helpers/colors */ "./helpers/colors.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Home; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _practicalities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./practicalities */ "./pages/practicalities.tsx");
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/index.tsx";
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-
-
-
-var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/Talk.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
-
-
-
-
-
-
-
-var FavouriteTalkButtonNoSSR = next_dynamic__WEBPACK_IMPORTED_MODULE_8___default()(function () {
-  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./FavouriteTalkButton */ "./pages/components/FavouriteTalkButton.tsx"));
-}, {
-  ssr: false,
-  loadableGenerated: {
-    webpack: function webpack() {
-      return [/*require.resolve*/(/*! ./FavouriteTalkButton */ "./pages/components/FavouriteTalkButton.tsx")];
+function Home() {
+  return __jsx(_practicalities__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
     },
-    modules: ["./FavouriteTalkButton"]
-  }
-});
-
-var Talk =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Talk, _React$Component);
-
-  function Talk() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Talk);
-
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Talk).apply(this, arguments));
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Talk, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      return __jsx("div", {
-        className: "talk",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "header",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "time",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        },
-        __self: this
-      }, __jsx("img", {
-        src: "../../static/clock.svg",
-        width: "24",
-        height: "24",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        },
-        __self: this
-      })), __jsx("span", {
-        className: "time-text",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, __jsx("span", {
-        className: "time-text-day",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }, this.props.day, __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      })), this.props.timeStart && this.props.timeStart.toString(), " - ", this.props.timeEnd && this.props.timeEnd.toString())), __jsx("div", {
-        className: "room",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, __jsx(_Pin__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        className: Object(_helpers_colors__WEBPACK_IMPORTED_MODULE_11__["colorClassFromRoomName"])(this.props.room),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      })), __jsx("span", {
-        className: "text room-name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, this.props.room)), __jsx("div", {
-        className: "diff",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, __jsx(_Difficulty__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        difficulty: this.props.difficulty,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      })), __jsx("span", {
-        className: "text diff-name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }, this.props.difficulty)), __jsx("div", {
-        className: "heart",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, __jsx(FavouriteTalkButtonNoSSR, {
-        talkId: this.props.id,
-        onClick: this.props.onFavoriteChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }))), __jsx("div", {
-        className: "talk-content",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, __jsx("p", {
-        className: "day",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
-      }, this.props.day), __jsx("p", {
-        className: "time-info",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
-      }, this.props.timeStart && this.props.timeStart.toString(), " - ", this.props.timeEnd && this.props.timeEnd.toString(), __jsx("span", {
-        className: "duration",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, "\xA0(", this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd), " min)")), __jsx("p", {
-        className: "type-info",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
-        },
-        __self: this
-      }, this.props.type, __jsx("span", {
-        className: "duration",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56
-        },
-        __self: this
-      }, "\xA0(", this.props.timeEnd && this.props.timeStart && this.props.timeStart.diff(this.props.timeEnd), " min)")), __jsx("h1", {
-        className: "title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        },
-        __self: this
-      }, this.props.title), this.props.description && __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 61
-        },
-        __self: this
-      }, this.props.description), this.props.speaker && this.props.speaker.map(function (speaker) {
-        return __jsx("div", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 65
-          },
-          __self: this
-        }, __jsx("p", {
-          className: "speaker",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 66
-          },
-          __self: this
-        }, speaker.name), __jsx("p", {
-          className: "info",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 67
-          },
-          __self: this
-        }, speaker.info));
-      }), __jsx("div", {
-        className: "tags",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: this
-      }, this.props.tags && this.props.language && this.props.tags.concat([this.props.language]).map(function (tag) {
-        return __jsx(_FilterTag__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          key: tag,
-          name: tag,
-          selected: _this.props.selectedTags.indexOf(tag) > -1,
-          onClick: function onClick() {
-            return _this.props.onToggleTag(tag);
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 72
-          },
-          __self: this
-        });
-      })), __jsx("hr", {
-        className: "seperator",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76
-        },
-        __self: this
-      })));
-    }
-  }]);
-
-  return Talk;
-}(react__WEBPACK_IMPORTED_MODULE_10___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Talk);
+    __self: this
+  });
+}
 
 /***/ }),
 
-/***/ "./pages/talksAndSpeakers.tsx":
-/*!************************************!*\
-  !*** ./pages/talksAndSpeakers.tsx ***!
-  \************************************/
+/***/ "./pages/practicalities.tsx":
+/*!**********************************!*\
+  !*** ./pages/practicalities.tsx ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Layout */ "./pages/components/Layout.tsx");
-/* harmony import */ var _components_Talk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Talk */ "./pages/components/Talk.tsx");
-/* harmony import */ var _styling_talksAndSpeakersStyles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../styling/talksAndSpeakersStyles.scss */ "./styling/talksAndSpeakersStyles.scss");
-/* harmony import */ var _styling_talksAndSpeakersStyles_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styling_talksAndSpeakersStyles_scss__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _models_data_json__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/data.json */ "./models/data.json");
-var _models_data_json__WEBPACK_IMPORTED_MODULE_11___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../models/data.json */ "./models/data.json", 1);
-/* harmony import */ var _helpers_time__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../helpers/time */ "./helpers/time.ts");
-/* harmony import */ var _components_Filter__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Filter */ "./pages/components/Filter.tsx");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Practicalities; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Layout */ "./pages/components/Layout.tsx");
+/* harmony import */ var _styling_styling_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styling/styling.scss */ "./styling/styling.scss");
+/* harmony import */ var _styling_styling_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styling_styling_scss__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/practicalities.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
-
-
-
-
-var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/talksAndSpeakers.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
-
-
-
-
-
-
-
-
-var TalksAndSpeakers =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(TalksAndSpeakers, _React$Component);
-
-  function TalksAndSpeakers(props) {
-    var _this;
-
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, TalksAndSpeakers);
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(TalksAndSpeakers).call(this, props));
-    _this.state = {
-      filteredProgram: JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(_models_data_json__WEBPACK_IMPORTED_MODULE_11__["program"])),
-      // Need a deep copy
-      showOnlyFavorites: false,
-      tags: []
-    };
-    _this.handleFilterChange = _this.handleFilterChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
-    _this.handleFavoriteChange = _this.handleFavoriteChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
-    return _this;
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(TalksAndSpeakers, [{
-    key: "handleFilterChange",
-    value: function handleFilterChange(newVal) {
-      this.setState({
-        tags: newVal
-      }, this.filterProgram);
-    }
-  }, {
-    key: "handleFavoriteChange",
-    value: function handleFavoriteChange(newVal) {
-      this.setState({
-        showOnlyFavorites: newVal
-      }, this.filterProgram);
-    }
-  }, {
-    key: "handleToggleTag",
-    value: function handleToggleTag(tag) {
-      this.setState(function (prev) {
-        if (prev.tags.indexOf(tag) > -1) {
-          return {
-            tags: prev.tags.filter(function (t) {
-              return t != tag;
-            })
-          };
-        }
-
-        return {
-          tags: prev.tags.concat(tag)
-        };
-      }, this.filterProgram);
-    }
-  }, {
-    key: "filterProgram",
-    value: function filterProgram() {
-      var _this2 = this;
-
-      var filteredProgram = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(_models_data_json__WEBPACK_IMPORTED_MODULE_11__["program"]));
-      filteredProgram.days.forEach(function (day) {
-        return day.slots.forEach(function (slot) {
-          return slot.rooms && slot.rooms.forEach(function (room) {
-            room.talks.forEach(function (talk) {
-              var tags = talk.tags.concat([talk.language]);
-
-              if (_this2.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
-                talk.hide = true;
-              } else if (_this2.state.tags.length > 0 && !tags.some(function (tag) {
-                return _this2.state.tags.indexOf(tag) > -1;
-              })) {
-                talk.hide = true;
-              } else {
-                talk.hide = false;
-              }
-            });
-          });
-        });
-      });
-      this.setState({
-        filteredProgram: filteredProgram
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this3 = this;
-
-      return __jsx("div", {
-        className: "talksAndSpeakers page",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 63
-        },
-        __self: this
-      }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        title: "Talks & Speakers",
-        filter: 'small',
-        onTagChange: this.handleFilterChange,
-        onFavoriteChange: this.handleFavoriteChange,
-        selectedTags: this.state.tags,
-        showOnlyFavorites: this.state.showOnlyFavorites,
-        background: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 65
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "talks-container document",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "title-filter",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: this
-      }, __jsx(_components_Filter__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        onFavoriteChange: this.handleFavoriteChange,
-        onTagChange: this.handleFilterChange,
-        selectedTags: this.state.tags,
-        showOnlyFavorites: this.state.showOnlyFavorites,
-        className: "hide-small talks-filter",
-        type: "dropdown",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71
-        },
-        __self: this
-      }), __jsx("h1", {
-        className: "title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        },
-        __self: this
-      }, " Talks & speakers")), __jsx("div", {
-        className: "talks",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 77
-        },
-        __self: this
-      }, this.state.filteredProgram.days.map(function (day) {
-        return day.slots.filter(function (slot) {
-          return slot.rooms !== undefined;
-        }).map(function (slot) {
-          return slot.rooms.map(function (room) {
-            var from = _helpers_time__WEBPACK_IMPORTED_MODULE_12__["Time"].fromNumber(slot.timeStart);
-            return room.talks.map(function (talk, i) {
-              var to = from.copy().add(Object(_helpers_time__WEBPACK_IMPORTED_MODULE_12__["getDuration"])(talk));
-
-              var talkEl = __jsx("div", {
-                className: "talk-container",
-                key: i,
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 90
-                },
-                __self: this
-              }, __jsx(_components_Talk__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                day: day.day,
-                timeStart: from,
-                timeEnd: to,
-                description: talk.description,
-                speaker: talk.speakers,
-                title: talk.title,
-                type: talk.type,
-                id: talk.talkId,
-                room: room.name,
-                language: talk.language,
-                key: i,
-                difficulty: talk.difficulty,
-                tags: talk.tags,
-                selectedTags: _this3.state.tags,
-                onToggleTag: function onToggleTag(val) {
-                  return _this3.handleToggleTag(val);
-                },
-                onFavoriteChange: function onFavoriteChange() {
-                  return _this3.filterProgram();
-                },
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 91
-                },
-                __self: this
-              }));
-
-              from = to;
-              return !talk.hide ? talkEl : '';
-            });
-          });
-        });
-      })))));
-    }
-  }]);
-
-  return TalksAndSpeakers;
-}(react__WEBPACK_IMPORTED_MODULE_10___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (TalksAndSpeakers);
+function Practicalities() {
+  return __jsx("div", {
+    className: "practicalities page",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    title: "Practical information",
+    background: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "document content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, "Practical information"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, "The registration is now closed."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "Knowit Developer Summit will be held 17th - 18th of January 2020 in Bergen."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "If you have questions during or before the conference, please feel free to contact us on Slack. We have created a slack-channel,", " ", __jsx("a", {
+    className: "paragraphLink",
+    href: "https://knowit.slack.com/archives/kds2020",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, "#kds2020"), ", for everything regarding the conference, join us and get the latest news! No account on slack? Then", " ", __jsx("a", {
+    className: "paragraphLink",
+    href: "https://knowit.slack.com/signup",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, "sign up"), " ", "first."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  }, __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, "Dinner."), " We will eat dinner together on Friday evening. More information later."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }, __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: this
+  }, "Name badges"), " will be handed out in order to make it easier with names and companies."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, "Hotel check inn"), ". Information will follow."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: this
+  }, __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: this
+  }, "Hotel check out"), ". Information will follow."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  }, "Please stay until the end on Saturday.", " ", __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }, "All speakers deserve an audience.")), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }, "We have, once again, made a cool ", __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, "KDS t-shirt"), ". Even though they\xB4re awesome, there is only one per person. As such it would be great if you only took the size you ordered at signup."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }, "Share!"), " Use hashtag ", __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }, "#kds2020"), " on twitter, blog on your company blogs and make this conference visible to everyone! There is lots of great content to be shared. But, please be careful not to share something that is marked as confidential or is customer related."), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: this
+  }, "We want everybody to have an awesome time. If something happens that you are not comfortable with, please tell us! For more information, check out our Code of Conduct ", " ", __jsx("a", {
+    className: "paragraphLink",
+    href: "/codeOfConduct",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  }, "here"), " ", "."))));
+}
 
 /***/ }),
 
-/***/ 15:
-/*!************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx ***!
-  \************************************************************************************************************************************************************************/
+/***/ 0:
+/*!*********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Findex.tsx ***!
+  \*********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FtalksAndSpeakers&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2FtalksAndSpeakers.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Findex.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjobb%2FProjects%2FKDS%2Fprogram.kds.knowit.no%2Fpages%2Findex.tsx!./");
 
 
 /***/ }),
@@ -11956,5 +10274,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[15,"static/runtime/webpack.js","styles"]]]);
-//# sourceMappingURL=talksAndSpeakers.js.map
+},[[0,"static/runtime/webpack.js","styles"]]]);
+//# sourceMappingURL=index.js.map
