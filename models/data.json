@@ -220,7 +220,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 3,
@@ -250,7 +250,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 9,
@@ -286,7 +286,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 40,
@@ -315,7 +315,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 4,
@@ -360,7 +360,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 46,
@@ -386,7 +386,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 29,
@@ -418,7 +418,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 32,
@@ -445,7 +445,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 15,
@@ -492,7 +492,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 25,
@@ -518,7 +518,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 7,
@@ -542,7 +542,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 35,
@@ -587,7 +587,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 16,
@@ -634,7 +634,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 11,
@@ -659,7 +659,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 44,
@@ -688,7 +688,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 14,
@@ -712,7 +712,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 6,
@@ -790,7 +790,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 33,
@@ -814,7 +814,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 22,
@@ -841,7 +841,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 5,
@@ -869,7 +869,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 39,
@@ -917,7 +917,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 33,
@@ -941,7 +941,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 45,
@@ -966,7 +966,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 2,
@@ -992,7 +992,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 19,
@@ -1038,7 +1038,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 43,
@@ -1063,7 +1063,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 1,
@@ -1086,7 +1086,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 23,
@@ -1109,7 +1109,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 18,
@@ -1156,7 +1156,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 37,
@@ -1178,7 +1178,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 8,
@@ -1207,7 +1207,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 10,
@@ -1231,7 +1231,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 20,
@@ -1276,7 +1276,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 27,
@@ -1301,7 +1301,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 28,
@@ -1327,7 +1327,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 30,
@@ -1355,7 +1355,7 @@
                 ]
               },
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 12,
@@ -1444,7 +1444,7 @@
             ],
             "rooms": [
               {
-                "name": "Room 1",
+                "name": "Kongesalen",
                 "talks": [
                   {
                     "talkId": 13,
@@ -1470,7 +1470,7 @@
                 ]
               },
               {
-                "name": "Room 2",
+                "name": "Dræggen 7",
                 "talks": [
                   {
                     "talkId": 26,
@@ -1499,7 +1499,7 @@
                 ]
               },
               {
-                "name": "Room 3",
+                "name": "Dræggen 8",
                 "talks": [
                   {
                     "talkId": 31,
@@ -1526,7 +1526,7 @@
               },
 
               {
-                "name": "Room 4",
+                "name": "Dræggen 4",
                 "talks": [
                   {
                     "talkId": 38,
