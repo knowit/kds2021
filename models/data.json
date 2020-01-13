@@ -847,7 +847,7 @@
                     "talkId": 5,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Beyond unit testing: Writing automated tests for every layer of your application",
+                    "title": "Beyond JUnit: Writing automated tests for every layer of your application",
                     "type": "Long presentation (60 minutes)",
                     "description": "Unit testing is a well known and widely followed practice these days. But how do you go about testing the functionality that spans the borders of your application? How do you test your database constraints, your database access code, your API endpoints, and the interoperability between your different independently deployed services?\n\nThis talk presents a compilation of different methods you can use to write tests for every aspect of your application:\n* dependencies to your application,\n* all the layers within your application, and\n* your application's dependencies to other services (with a special focus on databases).\nIt will be structured somewhat like a cookbook, with concrete examples provided.\n\nThis talk will be useful to anyone who would like to learn more about the non-trivial parts of writing automated tests for backend services. It represents half a decade's worth of hard-earned knowledge from real test use cases. The talk may be particularly enlightening to junior developers, but more experienced developers will likely also stand to learn a thing or two. The examples will be in Java, but the approaches should be applicable in other backend languages as well. ",
                     "speakers": [
@@ -1069,13 +1069,13 @@
                     "talkId": 1,
                     "language": "Norwegian",
                     "difficulty": "Beginner",
-                    "title": "20 år med arkitektur. Hvilke problemer var jeg opptatt av å løse før og hva kommer fremover?",
+                    "title": "20 years of Architecture. What challenges did we solve in the past? How will Cloud Computing change the future?",
                     "type": "Short presentation (30 minutes)",
-                    "description": "Hva var arkitekter opptatt av å løse for 10 og 20 år siden? Hva løser vi i dag, og hva kommer vi til å måtte forholde oss til fremover? I denne presentasjonen vil jeg se på trender som har påvirket valgene våre og også se inn i spåkula om hva som kommer fremover",
+                    "description": "What did architects need to worry about 10 and 20 years ago? This will be a short nostalgic summary of challenges we were facing in the past, then we will shift gears and look ahead. How will the Cloud help us solve scalability, governance and security? How do you choose a migration strategy? What are the areas you will need to consider as a Cloud Architect when helping our customers on their cloud journey?",
                     "speakers": [
                       {
                         "name": "Øyvind Eikeland",
-                        "info": "Øyvind har jobbet med utvikling av programvare i over tjue år. Han startet med Java og kundeportaler og fortsatte som utvikler av søkemotorer og distribuerte systemer både på Java og .NET. De siste årene har han jobbet med skyteknologi på flere av de større plattformene. Øyvind er opptatt av kontinuerlig læring og jobber i dag som CTO i Knowit Amende."
+                        "info": "Øyvind is CTO in Knowit Amende and is responsible for the technology, innovation and competence development strategy. He works closely with our partners Microsoft, Google and Amazon and he is actively driving our investments within their cloud platforms. Øyvind has strategic focus in development of advisory and delivery methodology, and is engaging in customer projects."
                       }
                     ],
                     "tags": [
@@ -1160,7 +1160,7 @@
                 "talks": [
                   {
                     "talkId": 37,
-                    "language": "Norwegian",
+                    "language": "English",
                     "difficulty": "Beginner",
                     "title": "Svelte - the next small thing in Javascript",
                     "type": "Short presentation (30 minutes)",
@@ -1184,9 +1184,9 @@
                     "talkId": 8,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Conversational design",
+                    "title": "Hey google - Building your own action for google assistant",
                     "type": "Short presentation (30 minutes)",
-                    "description": "Building a voice controlled assistant for Google Assistant with DialogFlow, Firebase, Actions On Google and JavaScript. The talk will briefly cover the concepts of conversational design before walking through how you can set up your own virtual assistant in less than an hour.",
+                    "description": "During this half an hour speak I will guide you through the process of building an action for google assistant. You will learn the different building blocks of an action and the most fundamental do’s and don’ts. The talk contains some programming in node.js on a basic level, but it’s easy to follow along without prior knowledge in programming or javascript.",
                     "speakers": [
                       {
                         "name": "Joel Gustafsson",
