@@ -22,24 +22,33 @@ class ScheduleEntry extends Component<IProps, any> {
         let trackIndex = 0;
         const talks = room.talks
             .map((talk) => {
+                    const style = {
+                        msGridRow: trackIndex + 2,
+                        msGridColumn: index + 1
+                    };
                     const to = from.copy().add(getDuration(talk));
+                    console.log(talk.hide)
                     const talkEl = (<div
                         className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`}
-                        key={trackIndex}>
-                        <Talk title={talk.title}
-                              speaker={talk.speakers}
-                              room={room.name}
-                              type={talk.type}
-                              language={talk.language}
-                              difficulty={talk.difficulty}
-                              id={talk.talkId}
-                              key={trackIndex}
-                              day={this.props.day}
-                              tags={talk.tags}
-                              timeStart={from}
-                              timeEnd={to}
-                              selectedTags={this.props.tags}
-                              onToggleTag={this.props.onToggleTag}/>
+                        key={trackIndex}
+                        style={style as CSSProperties}>
+                        <Talk
+                            visibility={!talk.hide}
+                            day={this.props.day}
+                            timeStart={from}
+                            timeEnd={to}
+                            room={room.name}
+                            difficulty={talk.difficulty}
+                            id={talk.talkId}
+                            type={talk.type}
+                            title={talk.title}
+                            speaker={talk.speakers}
+                            tags={talk.tags}
+                            selectedTags={this.props.tags}
+                            language={talk.language}
+                            onToggleTag={this.props.onToggleTag}
+                            key={trackIndex}
+                        />
                     </div>);
 
                     from = to;
@@ -48,12 +57,13 @@ class ScheduleEntry extends Component<IProps, any> {
                         trackIndex++;
                     }
 
-                    return !talk.hide ? talkEl : '';
+                    return talkEl;
                 }
             );
 
 
         const numHidden = room.talks.filter(talk => !talk.hide).length;
+        //to popultate in the case where there are more talks in a given room than the other rooms.
         for (let i = 0; i < this.props.trackLength - numHidden; i++) {
             const talkIndex = trackIndex + i;
             talks.push(<div
@@ -84,14 +94,16 @@ class ScheduleEntry extends Component<IProps, any> {
 
             return (
                 <div className="rooms multi-track" style={style}>
-                    {this.props.slot && this.props.slot.rooms && this.props.slot.rooms.map((r, i) => <Room key={r.name}
-                                                                                                           index={i}
-                                                                                                           showRoomHeader={this.props.showRoomHeader}
-                                                                                                           room={r.name}>
-                        {
-                            this.createRoom(r, i)
-                        }
-                    </Room>)}
+                    {this.props.slot && this.props.slot.rooms && this.props.slot.rooms.map((r, i) =>
+                        <Room key={r.name}
+                              index={i}
+                              showRoomHeader={this.props.showRoomHeader}
+                              room={r.name}>
+                            {
+                                this.createRoom(r, i)
+                            }
+                            {console.log(r)}
+                        </Room>)}
                 </div>
             );
         }

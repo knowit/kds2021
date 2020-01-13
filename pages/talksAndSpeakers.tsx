@@ -89,6 +89,7 @@ class TalksAndSpeakers extends React.Component<any, any> {
                                                     const to = from.copy().add(getDuration(talk));
                                                     const talkEl = (<div className="talk-container" key={i}>
                                                         <Talk
+                                                            visibility={talk.hide}
                                                             day={day.day}
                                                             timeStart={from}
                                                             timeEnd={to}

@@ -9,6 +9,7 @@
 .talk {
   .header {
     height: 100%;
+
     .diff,
     .room,
     .time,
@@ -24,5 +25,12 @@
       font-size: 0.75rem;
       height: 100%;
     }
+  }
+}
+
+.talk-hidden {
+  visibility: hidden;
+  @media only screen and (max-width: $break-schedule) {
+    display: none !important;
   }
 }

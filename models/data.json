@@ -568,12 +568,8 @@
                     "description": "We will talk about the 112 SOS Alarm App with focus on backend development",
                     "speakers": [
                       {
-                        "name": "Johan Brunlöf",
-                        "info": "Studied together with Johan Wilander at Luleå Technical University for 3 years. Entered the traineeprogram together and has been working here at Knowit for 2+ years."
-                      },
-                      {
-                        "name": "Johan Wilander",
-                        "info": ""
+                        "name": "Johan Brunlöf & Johan Wilander",
+                        "info": "Johan and Johan first met during their time in Luleå where they both were studying for their Bachelors degree in systems science. Not only did they study together, they did all the assignments together, wrote the bachelors thesis together and ended up at Knowit together. At Knowit, they both ended up working as backend developers on the SOS project.\n\nJust like in any healthy relationship, it’s important to let each member get their own free time. Which is why when they are not working together, they workout together, grab a beer together or hang out with their common friends from Luleå…together. \n\nJohan (not to be confused with Johan) is currently still on the SOS project where he keeps improving the functionality of the application and is currently in the process of adding new features to increase usability and performance.\nJohan is no longer a part of the SOS team (on paper, but in spirit) and is currently a part of a team as a backend developer at TELE2 which is one of the biggest telecom companies in Sweden."
                       }
                     ],
                     "tags": [

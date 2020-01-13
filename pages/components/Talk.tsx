@@ -10,11 +10,32 @@ const FavouriteTalkButtonNoSSR = dynamic(() => import("./FavouriteTalkButton"), 
     ssr: false
 });
 
+interface IProps {
+    visibility: boolean,
+    day: any,
+    timeStart: any,
+    timeEnd: any,
+    room: any,
+    difficulty: any,
+    onFavoriteChange?: (val) => void,
+    id: any,
+    type: any,
+    title: any,
+    speaker: any,
+    description?: any,
+    tags: any,
+    selectedTags: any,
+    language: any,
+    onToggleTag: any
+}
 
-class Talk extends React.Component<any, any> {
+class Talk extends React.Component<IProps, any> {
+    static defaultProps = {
+        visibility: true
+    }
     render() {
-        return (
-            <div className="talk">
+        return(
+            <div className={`talk ${!this.props.visibility ? 'talk-hidden' : ''}`}>
                 <div className="header">
                     <div className="time">
                         <div className="wrapper">
