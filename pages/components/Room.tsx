@@ -18,7 +18,7 @@ class Room extends Component<any, any> {
                 {this.props.showRoomHeader &&
                 <div className={`room-header ${this.props.index % 2 == 0 ? 'room-even' : 'room-odd'}`}
                      style={style as CSSProperties}>
-                    <Pin className={color} small={true}></Pin>
+                    <Pin className={color} small={true}/>
                     <div className="room-header-text">{this.props.room}</div>
                 </div>}
 

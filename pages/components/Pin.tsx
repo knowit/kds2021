@@ -1,12 +1,13 @@
 import React from 'react';
 import '../../styling/pinStyles.scss';
 
+
 class Pin extends React.Component<any, any> {
     render() {
         return (
             <div className={`pin ${this.props.small ? 'small' : ''} ${this.props.className}`}>
-                <div className="top" style={{borderColor: this.props.color}}/>
-                <div className="bottom" style={{borderColor: `${this.props.color} transparent transparent  transparent`}}/>
+                <div className="top" style={{borderColor: '#FF00FF'}}/>
+                <div className="bottom" style={{borderColor: `#FF00FF transparent transparent  transparent`}}/>
             </div>
         );
     }

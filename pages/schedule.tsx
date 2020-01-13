@@ -96,7 +96,7 @@ class Schedule extends Component<any, any> {
             </div>
             <div className="schedule-container">
               <div className="header">
-                <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"></Filter>
+                <Filter onTagChange={this.handleFilterChange} onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags} showOnlyFavorites={this.state.showOnlyFavorites} className="hide-small schedule-filter" type="dropdown"/>
 
                 <div className="header-title">
                   <h1 className="title">Schedule</h1>

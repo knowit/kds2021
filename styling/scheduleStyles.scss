@@ -32,10 +32,11 @@
     }
   }
   .slot:nth-child(odd) .event-header {
-    background-color: $event-header-green-color;
+    background-color: $primary-color;
+    color: $digital-white;
   }
   .slot:nth-child(even) .event-header {
-    background-color: $event-header-purple-color;
+    background-color: $digital-white;
   }
 
   .event-header {
