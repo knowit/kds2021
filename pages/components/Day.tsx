@@ -21,7 +21,6 @@ class Day extends Component<IProps, any> {
             <div className="day">
                 {this.props.slots && this.props.slots.map((slot, i) =>
                     <div key={i + "slot"} className="slot">
-                        {console.log(slot)}
                         <EventHeader key={i + "slot"} timeStart={slot.timeStart} timeEnd={slot.timeEnd}
                                      type={slot.type}/>
                         {slot.rooms && <ScheduleEntry day={this.props.currDay.day} onToggleTag={this.props.onToggleTag}

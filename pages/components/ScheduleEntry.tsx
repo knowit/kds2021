@@ -27,7 +27,6 @@ class ScheduleEntry extends Component<IProps, any> {
                         msGridColumn: index + 1
                     };
                     const to = from.copy().add(getDuration(talk));
-                    console.log(talk.hide)
                     const talkEl = (<div
                         className={`talk-container ${trackIndex % 2 == 0 ? 'talk-even' : 'talk-odd'} ${index % 2 == 0 ? 'room-even' : 'room-odd'}`}
                         key={trackIndex}
@@ -102,7 +101,6 @@ class ScheduleEntry extends Component<IProps, any> {
                             {
                                 this.createRoom(r, i)
                             }
-                            {console.log(r)}
                         </Room>)}
                 </div>
             );

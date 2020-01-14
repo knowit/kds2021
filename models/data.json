@@ -1329,17 +1329,17 @@
                     "talkId": 30,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Productionland",
+                    "title": "Testing in production",
                     "type": "Short presentation (30 minutes)",
-                    "description": "I walk through some of my experiences working with hopeless test and QA environments leading to the practice of testing in production, and how this made my life a lot better",
+                    "description": "When your architecture, test and QA environments fail you, how can you deliver working code to production?\nDeveloping software in a banking architecture won't always allow you to test what you develop before going to production, but is that a bad thing?\nWe share our experience in overcoming these obstacles and how we got comfortable with testing in production!",
                     "speakers": [
                       {
                         "name": "Andreas Kristiansen",
-                        "info": "https://www.linkedin.com/in/andreas-kristiansen-a6482254/"
+                        "info": "Andreas is a developer at Knowit Amende. Loves to work in small agile teams and non-seremonial development processes. Currently working to modernize Eika Kredittbank, with Henning.\nhttps://www.linkedin.com/in/andreas-kristiansen-a6482254/"
                       },
                       {
                         "name": "Henning Kvalheim",
-                        "info": null
+                        "info": "Henning is a Senior Consultant at Knowit Amende. He is modernizing Eika Kredittbank, going from monolith to microservices architecture. He has been developing software since then 90's and love creating software for real users.\nhttps://www.linkedin.com/in/henningkvalheim/"
                       }
                     ],
                     "tags": [
