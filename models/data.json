@@ -521,22 +521,27 @@
                 "name": "Dræggen 7",
                 "talks": [
                   {
-                    "talkId": 7,
+                    "talkId": 44,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Computer Vision and Image Segmentation with TensorFlow 2",
+                    "title": "Using DCNN (magic!) for upscaling images",
                     "type": "Short presentation (30 minutes)",
-                    "description": "A look into whats new in TensorFlow 2 and a basic run down of how TensorFlow and machine learning can be used to do image segmentation for computer vision.",
+                    "description": "A practical approach to scaling images using deep convolutional neural networks",
                     "speakers": [
                       {
-                        "name": "Jens Kristoffer Markussen",
-                        "info": "Code monkey with a passion for computer graphics and real time software. Has over three years of experience as a graphics programmer and currenly spends much of his free time working with VR"
+                        "name": "Simon Østrem",
+                        "info": "Web-developer with Knowit Experience Bergen since mid 2018, likes tinkering. I'm in no way associated with the software used here."
                       }
                     ],
                     "tags": [
-                      "computervision",
-                      "tensorflow",
-                      "machinelearning"
+                      "deep learning",
+                      "neural networks",
+                      "dcnn",
+                      "cuda",
+                      "image scaling",
+                      "magic",
+                      "caffe",
+                      "waifux2"
                     ]
                   }
                 ]
@@ -661,28 +666,23 @@
               {
                 "name": "Dræggen 7",
                 "talks": [
-                  {
-                    "talkId": 44,
+                   {
+                    "talkId": 7,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Using DCNN (magic!) for upscaling images",
+                    "title": "Computer Vision and Image Segmentation with TensorFlow 2",
                     "type": "Short presentation (30 minutes)",
-                    "description": "A practical approach to scaling images using deep convolutional neural networks",
+                    "description": "A look into whats new in TensorFlow 2 and a basic run down of how TensorFlow and machine learning can be used to do image segmentation for computer vision.",
                     "speakers": [
                       {
-                        "name": "Simon Østrem",
-                        "info": "Web-developer with Knowit Experience Bergen since mid 2018, likes tinkering. I'm in no way associated with the software used here."
+                        "name": "Jens Kristoffer Markussen",
+                        "info": "Code monkey with a passion for computer graphics and real time software. Has over three years of experience as a graphics programmer and currenly spends much of his free time working with VR"
                       }
                     ],
                     "tags": [
-                      "deep learning",
-                      "neural networks",
-                      "dcnn",
-                      "cuda",
-                      "image scaling",
-                      "magic",
-                      "caffe",
-                      "waifux2"
+                      "computervision",
+                      "tensorflow",
+                      "machinelearning"
                     ]
                   }
                 ]
@@ -1358,25 +1358,6 @@
                 "name": "Dræggen 4",
                 "talks": [
                   {
-                    "talkId": 12,
-                    "language": "English",
-                    "difficulty": "Beginner",
-                    "title": "Exfiltrating data from an airgapped system using magnetic fields",
-                    "type": "Lightning talk (10 minutes)",
-                    "description": "A quick rundown of one of the ways you could exfiltrate data from an airgapped system without the use of convential means.",
-                    "speakers": [
-                      {
-                        "name": "Alexander Grahn",
-                        "info": "Alexander Grahn works in the defense industry for Knowit Dataunit."
-                      }
-                    ],
-                    "tags": [
-                      "cyber security",
-                      "c++",
-                      "android"
-                    ]
-                  },
-                  {
                     "talkId": 34,
                     "language": "Norwegian",
                     "difficulty": "Beginner",
@@ -1418,6 +1399,25 @@
                       }
                     ],
                     "tags": []
+                  },
+                  {
+                    "talkId": 12,
+                    "language": "English",
+                    "difficulty": "Beginner",
+                    "title": "Exfiltrating data from an airgapped system using magnetic fields",
+                    "type": "Lightning talk (10 minutes)",
+                    "description": "A quick rundown of one of the ways you could exfiltrate data from an airgapped system without the use of convential means.",
+                    "speakers": [
+                      {
+                        "name": "Alexander Grahn",
+                        "info": "Alexander Grahn works in the defense industry for Knowit Dataunit."
+                      }
+                    ],
+                    "tags": [
+                      "cyber security",
+                      "c++",
+                      "android"
+                    ]
                   }
                 ]
               }
