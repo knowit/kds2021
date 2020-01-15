@@ -130,3 +130,8 @@ stribe to accept 1 talk from all speakers that have submitted something.
 We've arranged the conference dinner in different ways. Some ups and downs with both arrangements. One model is to have a 
 conference dinner where all participants have a table seat in a big restaurant. A different is to spread all the participants
 out to different restaurants. 
+
+## Where to find stuff
+We have documents/assets all over. Some is in Sharepoint, some is in Drive,
+some live in Trello and some lives in this repo. Something you don't have access to? Talk with somebody 
+in slack and it should be fixed AS
