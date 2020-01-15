@@ -286,7 +286,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 40,
@@ -418,7 +418,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 32,
@@ -547,7 +547,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 35,
@@ -684,7 +684,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 14,
@@ -792,7 +792,7 @@
                     "talkId": 33,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Rust in the front end",
+                    "title": "Rust and WebAssembly - try a system language in the browser",
                     "type": "Workshop (90 minutes)",
                     "description": "WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.",
                     "speakers": [
@@ -837,7 +837,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 5,
@@ -962,7 +962,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 2,
@@ -1082,7 +1082,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 23,
@@ -1133,9 +1133,9 @@
           },
           {
             "timeStart": 1130,
-            "timeEnd": 1230,
+            "timeEnd": 1140,
             "type": [
-              "Lunch"
+              "Pause"
             ],
             "rooms": [
               {
@@ -1145,8 +1145,8 @@
             ]
           },
           {
-            "timeStart": 1230,
-            "timeEnd": 1300,
+            "timeStart": 1140,
+            "timeEnd": 1210,
             "type": [
               "Short Presentations"
             ],
@@ -1203,7 +1203,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 10,
@@ -1252,10 +1252,10 @@
             ]
           },
           {
-            "timeStart": 1300,
+            "timeStart": 1210,
             "timeEnd": 1310,
             "type": [
-              "Pause"
+              "Lunch"
             ],
             "rooms": [
               {
@@ -1323,7 +1323,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 30,
@@ -1495,7 +1495,7 @@
                 ]
               },
               {
-                "name": "Dræggen 8",
+                "name": "Dræggen 3",
                 "talks": [
                   {
                     "talkId": 31,

@@ -499,7 +499,7 @@ h1 {
   text-align: center;
   width: 100%;
   padding: 15px 0px;
-  background-color: #A0D1CA;
+  background-color: #FF00FF;
   color: #333333;
   text-decoration: none;
   font-size: 1.125rem;
@@ -681,7 +681,7 @@ div.codeOfConduct div#menu a.codeOfConduct {
     transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 0.5); }
 
 .switch.on {
-  background-color: #A0D1CA; }
+  background-color: #FF00FF; }
   .switch.on .ball {
     left: calc(100% - 27px + 2px);
     background-color: #333333; }
@@ -704,6 +704,12 @@ div.codeOfConduct div#menu a.codeOfConduct {
     display: block;
     font-size: 0.75rem;
     height: 100%; }
+
+.talk-hidden {
+  visibility: hidden; }
+  @media only screen and (max-width: 1086px) {
+    .talk-hidden {
+      display: none !important; } }
 
 .difficulty {
   margin-left: auto;
@@ -986,16 +992,16 @@ h1 {
     margin-left: 15px; }
 
 .rooms .pin.room-header-green .top {
-  border-color: #A0D1CA; }
+  border-color: #FF00FF; }
 
 .rooms .pin.room-header-green .bottom {
-  border-top-color: #A0D1CA; }
+  border-top-color: #FF00FF; }
 
 .rooms .pin.small.room-header-green .top {
-  border-color: #A0D1CA; }
+  border-color: #FF00FF; }
 
 .rooms .pin.small.room-header-green .bottom {
-  border-top-color: #A0D1CA; }
+  border-top-color: #FF00FF; }
 
 .rooms .pin.room-header-purple .top {
   border-color: #b6b8dc; }
