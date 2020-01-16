@@ -919,7 +919,7 @@
                     "talkId": 33,
                     "language": "English",
                     "difficulty": "Beginner",
-                    "title": "Rust in the front end cont.",
+                    "title": "Rust and WebAssembly - try a system language in the browser cont.",
                     "type": "Workshop (90 minutes)",
                     "description": "WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.",
                     "speakers": [

@@ -31,18 +31,19 @@ export default function Practicalities() {
                         first.
                     </p>
                     <p>
-                        <strong>Dinner.</strong> We will eat dinner together on Friday
-                        evening. More information later.
+                        <strong>Dinner.</strong> We will eat dinner in different groups on Friday. All who have said yes to
+                        dinner when they signed up should have gotten an email about when and where they are having dinner.
+                        After dinner we will gather at a local bar called Salong, where you can use your drink tickets.
                     </p>
                     <p>
                         <strong>Name badges</strong> will be handed out in order to make it
                         easier with names and companies.
                     </p>
                     <p>
-                        <strong>Hotel check inn</strong>. Information will follow.
+                        <strong>Hotel check inn</strong>. 15.00, though there might be some rooms ready before if you arrive early.
                     </p>
                     <p>
-                        <strong>Hotel check out</strong>. Information will follow.
+                        <strong>Hotel check out</strong>. 12.00
                     </p>
                     <p>
                         Please stay until the end on Saturday.{" "}
