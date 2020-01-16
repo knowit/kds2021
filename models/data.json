@@ -793,8 +793,8 @@
                     "language": "English",
                     "difficulty": "Beginner",
                     "title": "Rust and WebAssembly - try a system language in the browser",
-                    "type": "Workshop (90 minutes)",
-                    "description": "WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.",
+                    "type": "Workshop (60 minutes)",
+                    "description": "WebAssembly allows you to write performant code in your language of choice that runs in the browser. In this workshop, you will translate JS implementations of some algorithms to Rust, and see how the implementations run in the browser.\n\nThe goals are to provide an intro to Rust and show how to work with WebAssembly in a web app. Bring a laptop!",
                     "speakers": [
                       {
                         "name": "Sebastian Ljunggren",
@@ -920,8 +920,8 @@
                     "language": "English",
                     "difficulty": "Beginner",
                     "title": "Rust and WebAssembly - try a system language in the browser cont.",
-                    "type": "Workshop (90 minutes)",
-                    "description": "WebAssembly allows you two write performant code in your language of choice that runs in the browser. In this workshop, you will translate a JS implementation of an algorithm to Rust and see how it performs.",
+                    "type": "Workshop (30 minutes)",
+                    "description": "WebAssembly allows you to write performant code in your language of choice that runs in the browser. In this workshop, you will translate JS implementations of some algorithms to Rust, and see how the implementations run in the browser.\n\nThe goals are to provide an intro to Rust and show how to work with WebAssembly in a web app. Bring a laptop!",
                     "speakers": [
                       {
                         "name": "Sebastian Ljunggren",

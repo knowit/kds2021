@@ -54,6 +54,8 @@ function getDuration(talk: Talk): Time {
         case "Short presentation (30 minutes)": return new Time("00", "30");
         case "Long presentation (60 minutes)": return new Time("01", "00");
         case "Workshop (90 minutes)":return new Time("01", "30");
+        case "Workshop (60 minutes)":return new Time("01", "00");
+        case "Workshop (30 minutes)":return new Time("00", "30");
     }
     return new Time();
 }
