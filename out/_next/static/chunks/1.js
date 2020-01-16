@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/aulon/git/program.kds.knowit.no/pages/components/FavouriteTalkButton.tsx";
+var _jsxFileName = "/Users/jobb/Projects/KDS/program.kds.knowit.no/pages/components/FavouriteTalkButton.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
