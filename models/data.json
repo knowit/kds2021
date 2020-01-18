@@ -1063,7 +1063,7 @@
                 "talks": [
                   {
                     "talkId": 1,
-                    "language": "Norwegian",
+                    "language": "English",
                     "difficulty": "Beginner",
                     "title": "20 years of Architecture. What challenges did we solve in the past? How will Cloud Computing change the future?",
                     "type": "Short presentation (30 minutes)",
