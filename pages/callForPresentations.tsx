@@ -10,7 +10,7 @@ const CallForPresentations = () => {
         title="Call for presentations"
         header={
           <RegisterButton
-            url="https://forms.gle/cZuDfEkh5aiCVB926"
+            url="https://docs.google.com/forms/d/1-0n_08zyFXJGEHRJ2RM-sFxZZYepEbhxwQigECMXqfs"
             name="Register your presentation"
           ></RegisterButton>
         }
@@ -19,6 +19,9 @@ const CallForPresentations = () => {
         <div className="document cfp">
           <h1 className="title">Call for presentations</h1>
           <div className="info">
+
+            <p>Knowit Developer Summit (KDS) is Knowit's annual internal software developer conference. 
+              The 2021 conference will be held on 12 - 13 November at the Scandic Continental in Stockholm, Sweden. </p>
             <p>
               We are now looking for speakers for the conference, the basic idea
               is to share knowledge and experiences with other developers within
@@ -26,7 +29,7 @@ const CallForPresentations = () => {
               minutes. You decide!{" "}
             </p>
             <p>
-              Submission deadline is <strong>November 1st</strong>.
+              Submission deadline is <strong>15th June 2021</strong>.
             </p>
             <p>
               If you have any questions feel free to contact us at&nbsp;
@@ -39,7 +42,7 @@ const CallForPresentations = () => {
             <p>
               The subject for a talk can vary widely, you can check out last
               years program&nbsp;
-              <Link href="/static/old/index_2019.html">
+              <Link href="/static/old/index_2019.html"> 
                 <a className="link">here</a>
               </Link>
               &nbsp;for inspiration. If that is not inspiring enough, here are a
@@ -127,7 +130,7 @@ const CallForPresentations = () => {
             </li>
           </ul>
           <RegisterButton
-            url="https://forms.gle/cZuDfEkh5aiCVB926"
+            url="https://docs.google.com/forms/d/1-0n_08zyFXJGEHRJ2RM-sFxZZYepEbhxwQigECMXqfs"
             name="Register your presentation"
           ></RegisterButton>
         </div>

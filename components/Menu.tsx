@@ -23,24 +23,24 @@ const Menu = () => {
           <Link href="/practicalities">
             <a className="link practicalities">Practicalities</a>
           </Link>
-          <Link href="/schedule">
+          {/*<Link href="/schedule">
             <a className="link schedule">Schedule</a>
-          </Link>
+  </Link> */}
 
           {/*  <Link href="/aboutUs">
             <a className="link aboutUs">About us</a>
           </Link> */}
 
-          <Link href="/talksAndSpeakers">
+          {/*<Link href="/talksAndSpeakers">
             <a className="link talksAndSpeakers">Talks and speakers</a>
-          </Link>
+        </Link> */}
           <Link href="/location">
             <a className="link location">Location</a>
-          </Link>
+      </Link>
           <Link href="/codeOfConduct">
             <a className="link codeOfConduct">Code of conduct</a>
           </Link>
-          {/*   <Link href="/logo">
+             {/*<Link href="/logo">
             <a className="link logo">Logo</a>
           </Link> */}
           <Link href="/static/old/index_2019.html">

@@ -10,15 +10,15 @@ const Practicalities = () => {
           <h1>Practical information</h1>
           <p>The registration is now open.</p>
           <p>
-            Knowit Developer Summit will be held 17th - 18th of January 2020 in
-            Bergen.
+            Knowit Developer Summit will be held 12th - 13th of November 2021 in
+            Stockholm.
           </p>
           <p>
             If you have questions during or before the conference, please feel
             free to contact us on Slack. We have created a slack-channel,{" "}
             <a
               className="paragraphLink"
-              href="https://knowit.slack.com/archives/kds2020"
+              href="https://knowit.slack.com/archives/kds2021"
             >
               #kds2020
             </a>
@@ -29,7 +29,8 @@ const Practicalities = () => {
             </a>{" "}
             first.
           </p>
-          <p>
+          <p><strong>More information to come...</strong></p>
+          {/*<p>
             <strong>Dinner.</strong> We will eat dinner in different groups on
             Friday. All who have said yes to dinner when they signed up should
             have gotten an email about when and where they are having dinner.
@@ -71,7 +72,7 @@ const Practicalities = () => {
               here
             </a>{" "}
             .
-          </p>
+          </p> */}
         </div>
       </Layout>
     </div>

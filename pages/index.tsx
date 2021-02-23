@@ -3,7 +3,7 @@ import Practicalities from "./practicalities";
 import CallForPresentations from "./callForPresentations";
 
 const Home = () => {
-  return <Practicalities />;
+  return <CallForPresentations />;
 };
 
 export default Home;
