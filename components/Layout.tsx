@@ -51,7 +51,7 @@ const Layout = ({
             <h2 className="headline">By Developers, For Developers</h2>
             <h3 className="header-location">
               <img id="location-img" src="../static/location.svg" />
-              Stocholm, Sweden 12 - 13 November 2021
+              Stockholm, Sweden 12 - 13 November 2021
               <hr />
             </h3>
             {header}
