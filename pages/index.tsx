@@ -1,7 +1,9 @@
-import Layout from "./components/Layout";
-import Practicalities from './practicalities';
+import { Layout } from "../components";
+import Practicalities from "./practicalities";
 import CallForPresentations from "./callForPresentations";
 
-export default function Home() {
+const Home = () => {
   return <Practicalities />;
-}
+};
+
+export default Home;

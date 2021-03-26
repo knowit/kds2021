@@ -171,17 +171,8 @@
       "project management",
       "customer involvement"
     ],
-    "rooms": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "languages": [
-      "Norwegian",
-      "English",
-      "Swedish"
-    ],
+    "rooms": [1, 2, 3, 4],
+    "languages": ["Norwegian", "English", "Swedish"],
     "days": [
       {
         "day": "Friday",
@@ -189,9 +180,7 @@
           {
             "timeStart": 1110,
             "timeEnd": 1130,
-            "type": [
-              "Welcome"
-            ],
+            "type": ["Welcome"],
             "rooms": [
               {
                 "name": "Room ",
@@ -202,9 +191,7 @@
           {
             "timeStart": 1130,
             "timeEnd": 1230,
-            "type": [
-              "Lunch"
-            ],
+            "type": ["Lunch"],
             "rooms": [
               {
                 "name": "Room ",
@@ -215,9 +202,7 @@
           {
             "timeStart": 1230,
             "timeEnd": 1330,
-            "type": [
-              "Long Presentations"
-            ],
+            "type": ["Long Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -330,10 +315,7 @@
                         "info": "Senior developer/architect working with integrations and solutions for web services."
                       }
                     ],
-                    "tags": [
-                      "azure",
-                      "devops"
-                    ]
+                    "tags": ["azure", "devops"]
                   }
                 ]
               }
@@ -342,9 +324,7 @@
           {
             "timeStart": 1330,
             "timeEnd": 1340,
-            "type": [
-              "Pause"
-            ],
+            "type": ["Pause"],
             "rooms": [
               {
                 "name": "Room ",
@@ -355,9 +335,7 @@
           {
             "timeStart": 1340,
             "timeEnd": 1340,
-            "type": [
-              "Long Presentations"
-            ],
+            "type": ["Long Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -474,9 +452,7 @@
           {
             "timeStart": 1440,
             "timeEnd": 1510,
-            "type": [
-              "Pause + fika"
-            ],
+            "type": ["Pause + fika"],
             "rooms": [
               {
                 "name": "Room ",
@@ -487,9 +463,7 @@
           {
             "timeStart": 1510,
             "timeEnd": 1540,
-            "type": [
-              "Short Presentations & Lightning Talks"
-            ],
+            "type": ["Short Presentations & Lightning Talks"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -507,13 +481,7 @@
                         "info": "Software developer working in Knowit Experience Bergen. "
                       }
                     ],
-                    "tags": [
-                      "web",
-                      "jam",
-                      "javascript",
-                      "api",
-                      "static"
-                    ]
+                    "tags": ["web", "jam", "javascript", "api", "static"]
                   }
                 ]
               },
@@ -603,12 +571,7 @@
                         "info": "Hollistic minded developer"
                       }
                     ],
-                    "tags": [
-                      "goto",
-                      "magic",
-                      "python",
-                      "open source"
-                    ]
+                    "tags": ["goto", "magic", "python", "open source"]
                   }
                 ]
               }
@@ -617,9 +580,7 @@
           {
             "timeStart": 1540,
             "timeEnd": 1550,
-            "type": [
-              "Pause"
-            ],
+            "type": ["Pause"],
             "rooms": [
               {
                 "name": "Room ",
@@ -630,9 +591,7 @@
           {
             "timeStart": 1550,
             "timeEnd": 1620,
-            "type": [
-              "Short Presentations"
-            ],
+            "type": ["Short Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -662,7 +621,7 @@
               {
                 "name": "Dræggen 7",
                 "talks": [
-                   {
+                  {
                     "talkId": 7,
                     "language": "English",
                     "difficulty": "Beginner",
@@ -675,11 +634,7 @@
                         "info": "Code monkey with a passion for computer graphics and real time software. Has over three years of experience as a graphics programmer and currenly spends much of his free time working with VR"
                       }
                     ],
-                    "tags": [
-                      "computervision",
-                      "tensorflow",
-                      "machinelearning"
-                    ]
+                    "tags": ["computervision", "tensorflow", "machinelearning"]
                   }
                 ]
               },
@@ -699,11 +654,7 @@
                         "info": "Tester, Consultant. "
                       }
                     ],
-                    "tags": [
-                      "security",
-                      "passwordmanagers",
-                      "users"
-                    ]
+                    "tags": ["security", "passwordmanagers", "users"]
                   }
                 ]
               },
@@ -737,9 +688,7 @@
           {
             "timeStart": 1620,
             "timeEnd": 1630,
-            "type": [
-              "Pause + Fika"
-            ],
+            "type": ["Pause + Fika"],
             "rooms": [
               {
                 "name": "Room ",
@@ -750,9 +699,7 @@
           {
             "timeStart": 1640,
             "timeEnd": 1710,
-            "type": [
-              "Open Space"
-            ],
+            "type": ["Open Space"],
             "rooms": [
               {
                 "name": "Room ",
@@ -763,9 +710,7 @@
           {
             "timeStart": 1900,
             "timeEnd": 2300,
-            "type": [
-              "Dinner - Drinks"
-            ],
+            "type": ["Dinner - Drinks"],
             "rooms": [
               {
                 "name": "Room ",
@@ -781,9 +726,7 @@
           {
             "timeStart": 900,
             "timeEnd": 1000,
-            "type": [
-              "Workshop & Long Presentations & Short Presentations"
-            ],
+            "type": ["Workshop & Long Presentations & Short Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -801,11 +744,7 @@
                         "info": "Developer with focus on front end. Currently at Boeing, working with crew facing web applications."
                       }
                     ],
-                    "tags": [
-                      "rust",
-                      "webassembly",
-                      "javascript"
-                    ]
+                    "tags": ["rust", "webassembly", "javascript"]
                   }
                 ]
               },
@@ -895,9 +834,7 @@
           {
             "timeStart": 1000,
             "timeEnd": 1015,
-            "type": [
-              "Pause"
-            ],
+            "type": ["Pause"],
             "rooms": [
               {
                 "name": "Room ",
@@ -908,9 +845,7 @@
           {
             "timeStart": 1015,
             "timeEnd": 1045,
-            "type": [
-              "Workshop & Long Presentations & Short Presentations"
-            ],
+            "type": ["Workshop & Long Presentations & Short Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -928,11 +863,7 @@
                         "info": "Developer with focus on front end. Currently at Boeing, working with crew facing web applications."
                       }
                     ],
-                    "tags": [
-                      "rust",
-                      "webassembly",
-                      "javascript"
-                    ]
+                    "tags": ["rust", "webassembly", "javascript"]
                   }
                 ]
               },
@@ -1003,11 +934,7 @@
                         "info": "Backend-developer working for Entur, with tech-lead experience from a previous costumer. Anders is passionate about code quality and creating user friendly solutions that makes sense to the costumer. "
                       }
                     ],
-                    "tags": [
-                      "api design",
-                      "openapi",
-                      "swagger code generation"
-                    ]
+                    "tags": ["api design", "openapi", "swagger code generation"]
                   }
                 ]
               }
@@ -1016,9 +943,7 @@
           {
             "timeStart": 1045,
             "timeEnd": 1100,
-            "type": [
-              "Pause + Fika"
-            ],
+            "type": ["Pause + Fika"],
             "rooms": [
               {
                 "name": "Room ",
@@ -1029,9 +954,7 @@
           {
             "timeStart": 1100,
             "timeEnd": 1130,
-            "type": [
-              "Long Presentations & Short Presentations"
-            ],
+            "type": ["Long Presentations & Short Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -1074,10 +997,7 @@
                         "info": "Øyvind is CTO in Knowit Amende and is responsible for the technology, innovation and competence development strategy. He works closely with our partners Microsoft, Google and Amazon and he is actively driving our investments within their cloud platforms. Øyvind has strategic focus in development of advisory and delivery methodology, and is engaging in customer projects."
                       }
                     ],
-                    "tags": [
-                      "architecture",
-                      "cloud"
-                    ]
+                    "tags": ["architecture", "cloud"]
                   }
                 ]
               },
@@ -1097,10 +1017,7 @@
                         "info": "Øyvind Brande-Lien used to be a developer but reconsidered his career when he discovered the horrendous interfaces people had to put up with. He has been a consultant since 1997 and still works in different industries as a designer of user experiences. "
                       }
                     ],
-                    "tags": [
-                      "inclusive design accessibility meaningful",
-                      "UX"
-                    ]
+                    "tags": ["inclusive design accessibility meaningful", "UX"]
                   }
                 ]
               },
@@ -1134,9 +1051,7 @@
           {
             "timeStart": 1130,
             "timeEnd": 1140,
-            "type": [
-              "Pause"
-            ],
+            "type": ["Pause"],
             "rooms": [
               {
                 "name": "Room ",
@@ -1147,9 +1062,7 @@
           {
             "timeStart": 1140,
             "timeEnd": 1210,
-            "type": [
-              "Short Presentations"
-            ],
+            "type": ["Short Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -1167,9 +1080,7 @@
                         "info": "Eirik has worked at Knowit Objectnet for two years. Before that, he studied computer science at NTNU in Trondheim. In addition to programming, he has also dabbled in playwriting, acting, journalism and music. "
                       }
                     ],
-                    "tags": [
-                      "svelte"
-                    ]
+                    "tags": ["svelte"]
                   }
                 ]
               },
@@ -1218,11 +1129,7 @@
                         "info": "Jorunn Mjøs is a sociologist turned Software Tester, and is on a quest to make technology play nice with people. She is passionate about security, usability and inclusivity, in a broad and human sense. "
                       }
                     ],
-                    "tags": [
-                      "security",
-                      "usability",
-                      "risk based testing"
-                    ]
+                    "tags": ["security", "usability", "risk based testing"]
                   }
                 ]
               },
@@ -1242,10 +1149,7 @@
                         "info": "I am programmer with over 10 years of full time experience currently working as frontend developer at Knowit ???????"
                       }
                     ],
-                    "tags": [
-                      "quality code",
-                      "tech culture"
-                    ]
+                    "tags": ["quality code", "tech culture"]
                   }
                 ]
               }
@@ -1254,9 +1158,7 @@
           {
             "timeStart": 1210,
             "timeEnd": 1310,
-            "type": [
-              "Lunch"
-            ],
+            "type": ["Lunch"],
             "rooms": [
               {
                 "name": "Room ",
@@ -1267,9 +1169,7 @@
           {
             "timeStart": 1310,
             "timeEnd": 1340,
-            "type": [
-              "Short Presentations & Lightning Talks"
-            ],
+            "type": ["Short Presentations & Lightning Talks"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -1287,12 +1187,7 @@
                         "info": "Sverre has been working at Knowit for two years. When he has the time he loves to tinker with new tech."
                       }
                     ],
-                    "tags": [
-                      "web",
-                      "typography",
-                      "ux",
-                      "design"
-                    ]
+                    "tags": ["web", "typography", "ux", "design"]
                   }
                 ]
               },
@@ -1342,11 +1237,7 @@
                         "info": "Henning is a Senior Consultant at Knowit Amende. He is modernizing Eika Kredittbank, going from monolith to microservices architecture. He has been developing software since then 90's and love creating software for real users.\nhttps://www.linkedin.com/in/henningkvalheim/"
                       }
                     ],
-                    "tags": [
-                      "quality of life",
-                      "agile",
-                      "development process"
-                    ]
+                    "tags": ["quality of life", "agile", "development process"]
                   }
                 ]
               },
@@ -1409,11 +1300,7 @@
                         "info": "Alexander Grahn works in the defense industry for Knowit Dataunit."
                       }
                     ],
-                    "tags": [
-                      "cyber security",
-                      "c++",
-                      "android"
-                    ]
+                    "tags": ["cyber security", "c++", "android"]
                   }
                 ]
               }
@@ -1422,9 +1309,7 @@
           {
             "timeStart": 1340,
             "timeEnd": 1400,
-            "type": [
-              "Pause + Fika"
-            ],
+            "type": ["Pause + Fika"],
             "rooms": [
               {
                 "name": "Room ",
@@ -1435,9 +1320,7 @@
           {
             "timeStart": 1400,
             "timeEnd": 1430,
-            "type": [
-              "Short Presentations"
-            ],
+            "type": ["Short Presentations"],
             "rooms": [
               {
                 "name": "Kongesalen",
@@ -1546,9 +1429,7 @@
           {
             "timeStart": 1430,
             "timeEnd": 1440,
-            "type": [
-              "Pause"
-            ],
+            "type": ["Pause"],
             "rooms": [
               {
                 "name": "Room ",
@@ -1572,9 +1453,7 @@
           {
             "timeStart": 1510,
             "timeEnd": 1520,
-            "type": [
-              "Who had the best talk? See you next year!"
-            ],
+            "type": ["Who had the best talk? See you next year!"],
             "rooms": [
               {
                 "name": "Room ",

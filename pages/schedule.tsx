@@ -1,132 +1,171 @@
+import React, { useState, useEffect } from "react";
+import { Day, Filter, Layout } from "../components";
+
+import { program as Program } from "../models/data.json";
+
 import "../styling/scheduleStyles.scss";
-import Layout from "./components/Layout";
-import Day from "./components/Day";
-import React, {Component} from "react";
-import {program as Program} from "../models/data.json";
-import Filter from './components/Filter';
 
-class Schedule extends Component<any, any> {
-    constructor(props) {
-        super(props);
-        const filteredProgram = JSON.parse(JSON.stringify(Program)); // Need a deep copy
-        this.state = {
-            filteredProgram: filteredProgram,
-            showOnlyFavorites: false,
-            tags: [],
-            currentDayIndex: 0
-        };
-        this.handleFilterChange = this.handleFilterChange.bind(this);
-        this.handleFavoriteChange = this.handleFavoriteChange.bind(this);
+const Schedule = () => {
+  const [filteredProgram, setFilteredProgram] = useState(
+    JSON.parse(JSON.stringify(Program))
+  );
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
+  const [tags, setTags] = useState([]);
+  const [currentDayIndex, setCurrentDatIndex] = useState(0);
+
+  const getRooms = (day) => {
+    const roomDict = {};
+
+    const rooms = day.slots.reduce((acc, slot) => acc.concat(slot.rooms), []);
+    rooms.forEach((room) => {
+      if (room) {
+        roomDict[room.name] = true;
+      }
+    });
+    return Object.keys(roomDict);
+  };
+
+  useEffect(() => {
+    filterProgram();
+  }, [tags, showOnlyFavorites]);
+
+  const handleFilterChange = (newVal) => {
+    setTags(newVal);
+  };
+
+  const handleFavoriteChange = (newVal) => {
+    setShowOnlyFavorites(newVal);
+  };
+
+  const handleToggleTag = (tag) => {
+    filterProgram();
+
+    if (tags.indexOf(tag) > -1) {
+      setTags(tags.filter((t) => t != tag));
+    } else {
+      setTags(tags.concat(tag));
     }
+  };
 
-    getRooms(day) {
-        const roomDict = {};
+  const filterProgram = () => {
+    let newProgram = JSON.parse(JSON.stringify(Program));
 
-        const rooms = day.slots.reduce((acc, slot) => acc.concat(slot.rooms), []);
-        rooms.forEach(room => {
-            if (room) {
-                roomDict[room.name] = true;
+    newProgram.days.forEach((day) => {
+      day.slots.forEach((slot) => {
+        slot.rooms = slot.rooms.filter((room) => {
+          room.talks = room.talks.filter((talk) => {
+            const talkTags = talk.tags.concat();
+            const talkFavorited = localStorage.getItem(talk.talkId) != null;
+
+            if (showOnlyFavorites && !talkFavorited) {
+              return false;
             }
-        });
-        return Object.keys(roomDict);
-    }
 
-    handleFilterChange(newVal) {
-        this.setState({tags: newVal}, this.filterProgram);
-    }
-
-    handleFavoriteChange(newVal) {
-        this.setState({showOnlyFavorites: newVal}, this.filterProgram);
-    }
-
-    handleToggleTag(tag) {
-        this.setState((prev) => {
-            if (prev.tags.indexOf(tag) > -1) {
-                return {tags: prev.tags.filter(t => t != tag)};
-            }
-            return {tags: prev.tags.concat(tag)};
-
-        }, this.filterProgram);
-    }
-
-    filterProgram() {
-        let filteredProgram = JSON.parse(JSON.stringify(Program));
-        filteredProgram.days
-            .forEach(day => day.slots
-                .forEach(slot => slot.rooms && slot.rooms
-                    .forEach(room => {
-                        room.talks
-                            .forEach(talk => {
-                                const tags = talk.tags.concat([talk.language])
-
-                                if (this.state.showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
-                                    talk.hide = true;
-                                } else talk.hide = this.state.tags.length > 0 && !tags.some(tag => this.state.tags.indexOf(tag) > -1);
-                            })
-                    }))
+            console.log(
+              JSON.stringify({
+                tags: tags,
+                talkTags: talkTags,
+              })
             );
 
-        this.setState({filteredProgram: filteredProgram});
-    }
+            if (tags.length == 0) {
+              return true;
+            }
 
-    setDay(index) {
-        this.setState({
-            currentDayIndex: index
+            return tags.some((tag) => {
+              return talkTags.some((talkTag) => talkTag == tag);
+            });
+          });
+
+          return room.talks.length > 0;
         });
-    }
+      });
+    });
 
-    render() {
-        return (
-            <div className="schedule page">
-                <Layout title="Schedule" filter={'small'} onTagChange={this.handleFilterChange}
-                        onFavoriteChange={this.handleFavoriteChange} showOnlyFavorites={this.state.showOnlyFavorites}
-                        selectedTags={this.state.tags} hideLogo={'small'} background={true}>
-                    <div className="schedule-document negative-margin">
-                        <div className="day-selector-top">
-                            {this.state.filteredProgram.days.map((day, i) =>
-                                <span key={day.day}>
-                                  {i != 0 && <span> | </span>}
-                                    <span onClick={() => this.setDay(i)}
-                                          className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                                      {day.day}
-                                  </span>
-                                </span>)
-                            }
-                        </div>
-                        <div className="schedule-container">
-                            <div className="header">
-                                <Filter onTagChange={this.handleFilterChange}
-                                        onFavoriteChange={this.handleFavoriteChange} selectedTags={this.state.tags}
-                                        showOnlyFavorites={this.state.showOnlyFavorites}
-                                        className="hide-small schedule-filter" type="dropdown"/>
+    //alert(JSON.stringify(newProgram.days));
 
-                                <div className="header-title">
-                                    <h1 className="title">Schedule</h1>
-                                    <div className="day-selector-header">
-                                        {this.state.filteredProgram.days.map((day, i) =>
-                                            <span key={day.day}>
-                                        {i != 0 && <span className="seperator"> | </span>}
-                                                <span onClick={() => this.setDay(i)}
-                                                      className={`header-day ${this.state.currentDayIndex == i ? 'selected' : ''}`}>
-                                                  {day.day}
-                                                </span>
-                                              </span>)
-                                        }
-                                    </div>
-                                </div>
-                            </div>
+    setFilteredProgram(newProgram);
+  };
 
-                            {this.state.filteredProgram.days.length > 0 &&
-                            <Day onToggleTag={(val) => this.handleToggleTag(val)}
-                                 tags={this.state.tags}
-                                 currDay={this.state.filteredProgram.days[this.state.currentDayIndex]}
-                                 slots={this.state.filteredProgram.days[this.state.currentDayIndex] && this.state.filteredProgram.days[this.state.currentDayIndex].slots}/>}
-                        </div>
-                    </div>
-                </Layout>
+  const setDay = (index) => {
+    setCurrentDatIndex(index);
+  };
+
+  return (
+    <div className="schedule page">
+      <Layout
+        title="Schedule"
+        filter={"small"}
+        onTagChange={handleFilterChange}
+        onFavoriteChange={handleFavoriteChange}
+        showOnlyFavorites={showOnlyFavorites}
+        selectedTags={tags}
+        hideLogo={"small"}
+        background={true}
+      >
+        <div className="schedule-document negative-margin">
+          <div className="day-selector-top">
+            {filteredProgram.days.map((day, i) => (
+              <span key={day.day}>
+                {i != 0 && <span> | </span>}
+                <span
+                  onClick={() => setDay(i)}
+                  className={`header-day ${
+                    currentDayIndex == i ? "selected" : ""
+                  }`}
+                >
+                  {day.day}
+                </span>
+              </span>
+            ))}
+          </div>
+          <div className="schedule-container">
+            <div className="header">
+              <Filter
+                onTagChange={handleFilterChange}
+                onFavoriteChange={handleFavoriteChange}
+                selectedTags={tags}
+                showOnlyFavorites={showOnlyFavorites}
+                className="hide-small schedule-filter"
+                type="dropdown"
+              />
+
+              <div className="header-title">
+                <h1 className="title">Schedule</h1>
+                <div className="day-selector-header">
+                  {filteredProgram.days.map((day, i) => (
+                    <span key={day.day}>
+                      {i != 0 && <span className="seperator"> | </span>}
+                      <span
+                        onClick={() => setDay(i)}
+                        className={`header-day ${
+                          currentDayIndex == i ? "selected" : ""
+                        }`}
+                      >
+                        {day.day}
+                      </span>
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-        );
-    }
-}
 
-export default Schedule
+            {filteredProgram.days.length > 0 && (
+              <Day
+                onToggleTag={(val) => handleToggleTag(val)}
+                tags={tags}
+                currDay={filteredProgram.days[currentDayIndex]}
+                slots={
+                  filteredProgram.days[currentDayIndex] &&
+                  filteredProgram.days[currentDayIndex].slots
+                }
+              />
+            )}
+          </div>
+        </div>
+      </Layout>
+    </div>
+  );
+};
+
+export default Schedule;

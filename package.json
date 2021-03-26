@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "export": "next export",
     "deploy": "next build && next export -o \"out\" && echo \"\" >> out/.nojekyll && cp CNAME out/CNAME",
@@ -24,8 +24,8 @@
   "homepage": "https://github.com/knowit/program.kds.knowit.no",
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "airtable": "^0.10.1",
     "next": "^9.1.6",
-    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.4.1"
@@ -34,6 +34,7 @@
     "@types/node": "^12.6.2",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
+    "node-sass": "^5.0.0",
     "typescript": "^3.5.3"
   }
 }

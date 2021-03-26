@@ -1,6 +1,6 @@
-import Layout from "./components/Layout";
+import { Layout } from "../components";
 
-export default function AboutUs() {
+const AboutUs = () => {
   return (
     <div className="aboutUs page">
       <Layout background={true}>
@@ -11,4 +11,6 @@ export default function AboutUs() {
       </Layout>
     </div>
   );
-}
+};
+
+export default AboutUs;
