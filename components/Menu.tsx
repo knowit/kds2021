@@ -36,14 +36,14 @@ const Menu = () => {
         </Link> */}
           <Link href="/location">
             <a className="link location">Location</a>
-      </Link>
+          </Link>
           <Link href="/codeOfConduct">
             <a className="link codeOfConduct">Code of conduct</a>
           </Link>
-             {/*<Link href="/logo">
+          {/*<Link href="/logo">
             <a className="link logo">Logo</a>
           </Link> */}
-          <Link href="/static/old/index_2019.html">
+          <Link href="https://kds-archive.knowit.no/">
             <a className="link">Last years program</a>
           </Link>
         </div>

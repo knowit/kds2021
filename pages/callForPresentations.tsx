@@ -19,9 +19,11 @@ const CallForPresentations = () => {
         <div className="document cfp">
           <h1 className="title">Call for presentations</h1>
           <div className="info">
-
-            <p>Knowit Developer Summit (KDS) is Knowit's annual internal software developer conference. 
-              The 2021 conference will be held on 12 - 13 November at the Scandic Continental in Stockholm, Sweden. </p>
+            <p>
+              Knowit Developer Summit (KDS) is Knowit's annual internal software
+              developer conference. The 2021 conference will be held on 12 - 13
+              November at the Scandic Continental in Stockholm, Sweden.{" "}
+            </p>
             <p>
               We are now looking for speakers for the conference, the basic idea
               is to share knowledge and experiences with other developers within
@@ -42,7 +44,7 @@ const CallForPresentations = () => {
             <p>
               The subject for a talk can vary widely, you can check out last
               years program&nbsp;
-              <Link href="/static/old/index_2019.html"> 
+              <Link href="https://kds-archive.knowit.no/">
                 <a className="link">here</a>
               </Link>
               &nbsp;for inspiration. If that is not inspiring enough, here are a
