@@ -20,7 +20,7 @@ const Practicalities = () => {
               className="paragraphLink"
               href="https://knowit.slack.com/archives/kds2021"
             >
-              #kds2020
+              #kds2021
             </a>
             , for everything regarding the conference, join us and get the
             latest news! No account on slack? Then{" "}
@@ -29,7 +29,9 @@ const Practicalities = () => {
             </a>{" "}
             first.
           </p>
-          <p><strong>More information to come...</strong></p>
+          <p>
+            <strong>More information to come...</strong>
+          </p>
           {/*<p>
             <strong>Dinner.</strong> We will eat dinner in different groups on
             Friday. All who have said yes to dinner when they signed up should
