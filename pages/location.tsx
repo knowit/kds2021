@@ -13,7 +13,12 @@ const Location = () => {
               <Pin small={true} color="red"></Pin>
             </div>
             <p className="location-name-text">
-            Scandic Continental in Stockholm, Sweden.
+              Scandic Continental in Stockholm, Sweden.
+            </p>
+          </div>
+          <div className="location-name">
+            <p className="location-name-text">
+              Knowit har sitt kontor i bygget rett nord for hotellet.
             </p>
           </div>
           <iframe
