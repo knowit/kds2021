@@ -7,7 +7,7 @@ const CallForPresentations = () => {
   return (
     <div className="callForPresentations page">
       <Layout
-        title="Call for presentations"
+        title="Call For Presentations"
         header={
           <RegisterButton
             url="https://docs.google.com/forms/d/1-0n_08zyFXJGEHRJ2RM-sFxZZYepEbhxwQigECMXqfs"
@@ -17,7 +17,7 @@ const CallForPresentations = () => {
         background={true}
       >
         <div className="document cfp">
-          <h1 className="title">Call for presentations</h1>
+          <h1 className="title">Call For Presentations</h1>
           <div className="info">
             <p>
               Knowit Developer Summit (KDS) is Knowit's annual internal software
