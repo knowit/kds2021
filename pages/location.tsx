@@ -18,7 +18,7 @@ const Location = () => {
           </div>
           <div className="location-name">
             <p className="location-name-text">
-              Knowit har sitt kontor i bygget rett nord for hotellet.
+              Knowit has its main offices directly north of the hotel.
             </p>
           </div>
           <iframe
