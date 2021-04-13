@@ -7,7 +7,7 @@ const CallForPresentations = () => {
   return (
     <div className="callForPresentations page">
       <Layout
-        title="Call for presentations"
+        title="Call For Presentations"
         header={
           <RegisterButton
             url="https://docs.google.com/forms/d/1-0n_08zyFXJGEHRJ2RM-sFxZZYepEbhxwQigECMXqfs"
