@@ -7,7 +7,7 @@ const CallForPresentations = () => {
   return (
     <div className="callForPresentations page">
       <Layout
-        title="Call For Presentations"
+        title="Call for Presentations"
         header={
           <RegisterButton
             url="https://docs.google.com/forms/d/1-0n_08zyFXJGEHRJ2RM-sFxZZYepEbhxwQigECMXqfs"
@@ -17,7 +17,7 @@ const CallForPresentations = () => {
         background={true}
       >
         <div className="document cfp">
-          <h1 className="title">Call For Presentations</h1>
+          <h1 className="title">Call for Presentations</h1>
           <div className="info">
             <p>
               Knowit Developer Summit (KDS) is Knowit's annual internal software
@@ -50,6 +50,7 @@ const CallForPresentations = () => {
               &nbsp;for inspiration. If that is not inspiring enough, here are a
               few more ideas:
             </p>
+            <img className="wordcloud" src="../static/images/WordCloud2021.png" alt="Wordcloud"></img>
           </div>
           <ul className="list">
             <li>

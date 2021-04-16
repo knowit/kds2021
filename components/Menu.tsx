@@ -18,7 +18,7 @@ const Menu = () => {
         <div id="menu">
           <h1 className="menuHeader">Menu</h1>
           <Link href="/callForPresentations">
-            <a className="link callForPresentations">Call For Presentations</a>
+            <a className="link callForPresentations">Call for Presentations</a>
           </Link>
           <Link href="/practicalities">
             <a className="link practicalities">Practicalities</a>
@@ -43,7 +43,7 @@ const Menu = () => {
           {/*<Link href="/logo">
             <a className="link logo">Logo</a>
           </Link> */}
-          <Link href="https://kds-archive.knowit.no/">
+          <Link href="https://kds-archive.knowit.no/schedule">
             <a className="link">Last year's program</a>
           </Link>
         </div>
