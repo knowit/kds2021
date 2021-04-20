@@ -3,6 +3,7 @@ module.exports = withSass({
     exportPathMap: function () {
         return {
             '/': {page: '/'},
+            '/callForPresentations': {page: '/callforPresentations'},
             '/codeOfConduct': {page: '/codeOfConduct'},
             '/location': {page: '/location'},
             '/practicalities': {page: '/practicalities'},
