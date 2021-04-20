@@ -5,7 +5,7 @@ import "../styling/styling.scss";
 const CodeOfConduct = () => {
   return (
     <div className="codeOfConduct page">
-      <Layout title="Code of conduct" background={true}>
+      <Layout title="Code of conduct" >
         <div className="document coc">
           <h1 className="title">Conference Code of Conduct</h1>
           <p className="paragraph">

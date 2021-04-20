@@ -5,7 +5,7 @@ import "../styling/styling.scss";
 const Practicalities = () => {
   return (
     <div className="practicalities page">
-      <Layout title="Practical information" background={true}>
+      <Layout title="Practical information">
         <div className="document content">
           <h1>Practical information</h1>
           <p>The registration is now open.</p>
