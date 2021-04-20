@@ -39,14 +39,12 @@ const Layout = ({
       <div className="menuAndHeader">
         <div className="header">
           {hideLogo !== true && (
-            <Link href="/">
-              <a>
-                <img
-                  id="KDSlogo"
-                  className={hideLogo ? `hide-${hideLogo}` : ""}
-                  src="../static/KDSsymbol.svg"
-                />
-              </a>
+            <Link href="/" as="https://kds.knowit.no">
+              <img
+                id="KDSlogo"
+                className={hideLogo ? `hide-${hideLogo}` : ""}
+                src="../static/KDSsymbol.svg"
+              />
             </Link>
           )}
           <div id="KDSheader">
