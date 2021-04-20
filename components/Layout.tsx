@@ -40,11 +40,13 @@ const Layout = ({
         <div className="header">
           {hideLogo !== true && (
             <Link href="/">
-              <img
-                id="KDSlogo"
-                className={hideLogo ? `hide-${hideLogo}` : ""}
-                src="../static/KDSsymbol.svg"
-              />
+              <a>
+                <img
+                  id="KDSlogo"
+                  className={hideLogo ? `hide-${hideLogo}` : ""}
+                  src="../static/KDSsymbol.svg"
+                />
+              </a>
             </Link>
           )}
           <div id="KDSheader">
