@@ -44,7 +44,7 @@ const CallForPresentations = () => {
             <p>
               The subject for a talk can vary widely, you can check out last
               years program&nbsp;
-              <Link href="https://kds-archive.knowit.no/">
+              <Link href="https://kds-archive.knowit.no/schedule">
                 <a className="link">here</a>
               </Link>
               &nbsp;for inspiration. If that is not inspiring enough, here are a
