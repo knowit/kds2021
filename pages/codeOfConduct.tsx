@@ -1,5 +1,7 @@
 import { Layout } from "../components";
 
+import "../styling/callForPresentationsStyles.scss";
+
 const CodeOfConduct = () => {
   return (
     <div className="codeOfConduct page">
