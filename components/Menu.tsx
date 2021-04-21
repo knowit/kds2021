@@ -40,9 +40,9 @@ const Menu = () => {
           <Link href="/codeOfConduct">
             <a className="link codeOfConduct">Code of Conduct</a>
           </Link>
-          {/*<Link href="/logo">
+          <Link href="/logo">
             <a className="link logo">Logo</a>
-          </Link> */}
+          </Link>
           <Link href="https://kds-archive.knowit.no/schedule">
             <a className="link">Last year's program</a>
           </Link>

@@ -4,7 +4,10 @@
   .info {
     font-size: 1.125rem;    
     .link {
-      color: $link-color;
+      color: $text-color;
+      text-decoration: none;
+      border-bottom: solid 2px;
+      border-bottom-color: $link-color;
     }
     .wordcloud {
       max-width: 100%;

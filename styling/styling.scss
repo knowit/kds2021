@@ -4,8 +4,10 @@
 .content {
   overflow-y: visible;
   .paragraphLink {
-    color: $link-color;
-    font-weight: bold;
+    color: $text-color;
+    text-decoration: none;
+    border-bottom: solid 2px;
+    border-bottom-color: $link-color;
   }
   margin-left: auto;
   margin-right: auto;

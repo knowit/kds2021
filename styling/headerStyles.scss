@@ -15,8 +15,10 @@
   .header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    max-width: $break-small;
     font-family: $font-family;
+    margin: 0 auto ;
     margin-top: 15px;
 
     @media screen and (max-width: $break-small) {
