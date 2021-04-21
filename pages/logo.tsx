@@ -1,7 +1,7 @@
 import { Layout } from "../components";
 import styled from "styled-components";
 
-import "../styling/styling.scss";
+import "../styling/callForPresentationsStyles.scss";
 
 const Logo = () => {
   const Container = styled.div`
@@ -25,7 +25,7 @@ const Logo = () => {
         <div className="document content">
           <Container>
             <Header>Logo in .png format</Header>
-            <Image src="../static/KDS_Logo.png" />
+            <Image src="../static/KDS_Logo_2021.png" />
             <Header>Logo in .svg format</Header>
             <Image src="../static/KDSsymbol.svg" />
           </Container>
