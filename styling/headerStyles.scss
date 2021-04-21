@@ -27,7 +27,7 @@
     }
 
     #KDSlogo {
-      width: 14em;
+      width: 15em;
       margin-right: 5%;
       //margin-top: 15px;
       padding: 5px;
@@ -38,7 +38,8 @@
     }
     .headline {
       float: right;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.2em;
+      margin-top:0;
       font-weight: normal;
       @media screen and (max-width: $break-small) {
         float: right;
