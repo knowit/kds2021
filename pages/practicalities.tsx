@@ -1,5 +1,6 @@
 import { Layout } from "../components";
 import "../styling/callForPresentationsStyles.scss";
+import Link from "next/link";
 const Practicalities = () => {
   return (
     <div className="practicalities page">
@@ -26,6 +27,42 @@ const Practicalities = () => {
               sign up
             </a>{" "}
             first.
+          </p>
+          <p>
+            <strong>COVID-19 and vaccines.</strong> Regarding the ongoing 
+            pandemic, we will continue to monitor the situation as it develops, 
+            and we will update our event policy accordingly. As the conference 
+            will be held in Stockholm, we will follow Sweden’s national 
+            guidelines in addition to Knowit’s internal COVID-19 guidelines. 
+            We will also take the situation in participants’ home countries into 
+            consideration. In the event that the vaccine rollout is delayed, we 
+            might be forced to postpone the event.
+          </p>
+          <p>
+            <strong>Payment.</strong> As in previous years, we embrace 
+            solidarity at Knowit, which means that we all pay the same amount 
+            for the conference, regardless of whether we are a speaker or not, 
+            where we live, or whether we might need a hotel room. This also 
+            applies if you are interested in just holding a presentation and not
+            attending the rest of the conference. The fee for the conference 
+            will be 3900 SEK, excluding moms (Norwegian VAT). In addition to the 
+            conference, this includes lunch and dinner on Friday, and lunch on 
+            Saturday. For those travelling to Stockholm, an overnight stay in a 
+            shared double room and breakfast at the hotel on Saturday is also 
+            included. If you prefer, you can pay 600 SEK extra to get a single 
+            room. Travel costs for those who need to travel to Stockholm are not 
+            included.
+          </p>
+          <p>
+            <strong>Location</strong> We have booked the Scandic Continental 
+            Hotel for accommodation and as our conference venue. It is located 
+            in the city center and is very easy to get to either by bus or 
+            Arlanda Express from the airport. The train station is also close 
+            by; we encourage taking an environmental approach to travelling!
+            You can view the location of the venue 
+            <Link href="/location">
+            <a className="paragraphLink"> here</a>
+          </Link>.
           </p>
           <p>
             <strong>More information to come...</strong>

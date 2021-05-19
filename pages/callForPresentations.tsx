@@ -31,7 +31,12 @@ const CallForPresentations = () => {
               minutes. You decide!{" "}
             </p>
             <p>
-              Submission deadline is <strong>15th June 2021</strong>.
+              Submission deadline is <strong>15th June 2021</strong>. You may add 
+              just a brief abstract and complete it later; the most important 
+              thing right now is to get all the presentations registered. You may 
+              submit more than one presentation if you wish. You can also hold a 
+              joint presentation; maybe you and a colleague are working on 
+              something interesting and would like to present it together?
             </p>
             <p>
               If you have any questions feel free to contact us at&nbsp;
