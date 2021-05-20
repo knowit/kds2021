@@ -45,7 +45,7 @@ const Practicalities = () => {
             where we live, or whether we might need a hotel room. This also 
             applies if you are interested in just holding a presentation and not
             attending the rest of the conference. The fee for the conference 
-            will be 3900 SEK, excluding moms (Norwegian VAT). In addition to the 
+            will be 3900 SEK, excluding VAT. In addition to the 
             conference, this includes lunch and dinner on Friday, and lunch on 
             Saturday. For those travelling to Stockholm, an overnight stay in a 
             shared double room and breakfast at the hotel on Saturday is also 
