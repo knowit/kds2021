@@ -43,8 +43,13 @@ const Practicalities = () => {
             solidarity at Knowit, which means that we all pay the same amount 
             for the conference, regardless of whether we are a speaker or not, 
             where we live, or whether we might need a hotel room. This also 
-            applies if you are interested in just holding a presentation and not
-            attending the rest of the conference. The fee for the conference 
+            applies if you are interested in just holding a presentation and 
+            not attending the rest of the conference. Our ambition is that 
+            everyone attends the entire conference to meet and learn from 
+            fellow colleagues at other Knowit companies.
+          </p>
+          <p>
+            <strong>Payment.</strong> The fee for the conference 
             will be 3900 SEK, excluding VAT. In addition to the 
             conference, this includes lunch and dinner on Friday, and lunch on 
             Saturday. For those travelling to Stockholm, an overnight stay in a 
