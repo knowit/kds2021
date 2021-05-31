@@ -7,7 +7,7 @@ const Practicalities = () => {
       <Layout title="Practical information" background={true}>
         <div className="document content">
           <h1>Practical information</h1>
-          <p>The registration is now open.</p>
+          <p>The Call for Presentations is now open</p>
           <p>
             Knowit Developer Summit will be held 12th - 13th of November 2021 in
             Stockholm.
