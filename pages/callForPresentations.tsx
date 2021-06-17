@@ -31,7 +31,7 @@ const CallForPresentations = () => {
               minutes. You decide!{" "}
             </p>
             <p>
-              Submission deadline is <strong>15th June 2021</strong>. You may add 
+              Submission deadline is extended to the <strong>1st of September 2021</strong>. You may add 
               just a brief abstract and complete it later; the most important 
               thing right now is to get all the presentations registered. You may 
               submit more than one presentation if you wish. You can also hold a 
