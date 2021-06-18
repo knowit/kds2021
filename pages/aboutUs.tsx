@@ -39,10 +39,7 @@ const AboutUs = () => {
             where you live, whether you are a speaker, audience member, or a 
             member of the committee. Travel to and from the conference is handled 
             by the participant.
-
-          <h1>About us</h1>
-          <p>More info will come at a later time</p>
-
+          </p>
       
           <h1>History</h1>
           <p>
