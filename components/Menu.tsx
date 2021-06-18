@@ -28,7 +28,7 @@ const Menu = () => {
   </Link> */}
 
           <Link href="/aboutUs">
-            <a className="link aboutUs">About us</a>
+            <a className="link aboutUs">About KDS</a>
           </Link>
 
           {/*<Link href="/talksAndSpeakers">

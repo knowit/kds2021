@@ -7,7 +7,7 @@ const AboutUs = () => {
       <Layout background={true}>
         <div className="document">
 
-          <h1>About Us</h1>
+          <h1>About KDS</h1>
           <p>
             Knowit Developer Summit (KDS) is Knowit's internal software development 
             conference. The conference is put on by, and for, our passionate 
