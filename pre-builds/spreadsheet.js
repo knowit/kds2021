@@ -25,6 +25,11 @@ export async function accessSpeakers(){
     return speakers; 
 }
 
+export async function accessOtherEvents(){
+    return accessSpreadsheet("otherEvents"); 
+}
+
+
 async function accessSpreadsheet(sheetName) {
     const doc = new GoogleSpreadsheet(docId);
 
