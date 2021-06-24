@@ -8,10 +8,10 @@ async function accessSpreadsheet() {
     const doc = new GoogleSpreadsheet(docId);
 
     // TODO: uncomment and fix this
-    // await doc.useServiceAccountAuth({
-    //     client_email: process.env.CLIENT_EMAIL,
-    //     private_key: process.env.PRIVATE_KEY
-    // });
+    await doc.useServiceAccountAuth({
+        client_email: process.env.CLIENT_EMAIL,
+        private_key: process.env.PRIVATE_KEY.toString().split('\\n').join('\n')   
+    });
     
     await doc.loadInfo();
     await doc.updateProperties({title: 'renamed doc'});

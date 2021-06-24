@@ -1,5 +1,5 @@
-import ScheduleMaker from './scheduleMaker.js'
-import accessSpreadsheet from './spreadsheet.js'
+import ScheduleMaker from './scheduleMaker.js';
+import accessSpreadsheet from './spreadsheet.js'; 
 
 //const { ScheduleMaker } = require('./scheduleMaker.js');
 
