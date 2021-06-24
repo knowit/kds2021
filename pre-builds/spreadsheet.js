@@ -65,4 +65,3 @@ async function accessSpreadsheet(sheetName) {
     }
     return dict;
 }
-//export default accessSpreadsheet; 

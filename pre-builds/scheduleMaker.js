@@ -53,12 +53,9 @@ class ScheduleMaker {
         var roomName = "Room ";
         
         // Not all events have a specific room. This makes sure events without room is given a generic room name
-        try {
+        if (sheetDict["room"] != undefined) {
             roomName = sheetDict["room"][index];
-        } catch(err) {
-            console.error(err.name + ": " + err.message);
         }
-        
 
         // make sure day value is all lower case BEFORE synonym search
         // WARNING use proper try catch instead
