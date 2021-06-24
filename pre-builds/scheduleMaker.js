@@ -12,11 +12,6 @@ function capitalizeFirstLetter(string) {
 class ScheduleMaker {
 
     constructor() { 
-        // data structures containing the spreadsheet
-        // key is headers, vals is lists of column values 
-        // this.spreadsheetDict = spreadsheetTalkDict;
-        // this.spreadsheetSpeakerDict = spreadsheetSpeakerDict;
-
         // main data structure representing the entire schedule
         this.schedule = {"program": {} };
         this.schedule["program"]["days"] = [];
@@ -36,9 +31,8 @@ class ScheduleMaker {
     };
 
     getScheduleCopy() {
-        return this.schedule;
-        // var copy = {...this.schedule}
-        // return copy
+        var copy = {...this.schedule}
+        return copy
     }
 
     /**
@@ -153,6 +147,8 @@ class ScheduleMaker {
      * Used exclusively for talks
      * 
      * @param {*} index row index of the spreadsheet
+     * @param {*} sheetTalkDict dictionary representing Google sheets data, with
+     *                          key = headers and val = list of column vals
      */
     #addTalkRow(index, sheetTalkDict) {
         // first, create the event slot and extract the room dict
@@ -186,9 +182,11 @@ class ScheduleMaker {
     }
 
     /**
-     * Adds a row from the speaker spreadsheet to the schedule
+     * Adds a row from the spreadsheet of speakers to the schedule
      * 
-     * @param {*} index
+     * @param {*} index 
+     * @param {*} sheetSpeakerDict dictionary representing Google sheets data, with
+     *                             key = headers and val = list of column vals
      */
     #addSpeakerRow(index, sheetSpeakerDict) {
         const name = sheetSpeakerDict["name"][index];
@@ -205,23 +203,34 @@ class ScheduleMaker {
         }
     }
         
-
-    buildSchedule(sheetTalkDict, sheetSpeakerDict) {
+    /**
+     * Takes all the data from the spreadsheets and constructs the entire schedule
+     * The spreadsheet data is given as dictionaries with keys = headers and vals = list of column vals
+     * 
+     * @param {*} sheetTalkDict dict representing the talks
+     * @param {*} sheetSpeakerDict dict representing the speakers
+     * @param {*} sheetOtherEventDict dict representing other, non-talk events, like Pause, Lunch etc.
+     */
+    buildSchedule(sheetTalkDict, sheetSpeakerDict, sheetOtherEventDict) {
         // adding talks
         const numTalks = sheetTalkDict["day"].length;  // WARNING: should definitely be error checked
         for (var i = 0; i < numTalks; i++) {
             this.#addTalkRow(i, sheetTalkDict);
         }
-
-        // adding speakers to talks
-        if (sheetSpeakerDict != undefined) {   // TODO: remove this check once speakers are supported
-            const numSpeakers = sheetSpeakerDict["name"].length;   // WARNING: should definitely be error checked
+        // adding speakers to talks if data structure is defined
+        if (sheetSpeakerDict != undefined) {
+            const numSpeakers = sheetSpeakerDict["name"].length;
             for (var i = 0; i < numSpeakers; i++) {
                 this.#addSpeakerRow(i, sheetSpeakerDict);
             }
         }
-        // TODO: add other non-talk slots (lunch, pause etc.)
-
+        // adding other non-talk slots (lunch, pause etc.)
+        if (sheetOtherEventDict != undefined) {
+            const numOtherEvents = sheetOtherEventDict["day"].length;
+            for (var i = 0; i < numOtherEvents; i++) {
+                this.#addEventRow(i, sheetOtherEventDict);
+            }
+        }
         // we've created the schedule structure in a quite arbitrary order. Let's sort the inside of the structure
         sortByDay(this.schedule);
         sortByTimeStart(this.schedule);
