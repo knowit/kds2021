@@ -11,14 +11,17 @@ function capitalizeFirstLetter(string) {
  */
 class ScheduleMaker {
 
-
     /**
-     * @param {*} spreadsheetDict data structure representing the spreadsheet of talks
+     * @param {*} spreadsheetTalkDict data structure representing the spreadsheet of talks
      *                            should be a dict with keys = headers and vals = columns
      */
-    constructor(spreadsheetDict) {
-        // main data structures representing the entire schedule
-        this.spreadsheetDict = spreadsheetDict;
+    constructor(spreadsheetTalkDict, spreadsheetSpeakerDict) { 
+        // data structures containing the spreadsheet
+        // key is headers, vals is lists of column values 
+        this.spreadsheetTalkDict = spreadsheetTalkDict;
+        this.spreadsheetSpeakerDict = spreadsheetSpeakerDict;
+
+        // main data structure representing the entire schedule
         this.schedule = {"program": {} };
         this.schedule["program"]["days"] = [];
 
@@ -44,17 +47,17 @@ class ScheduleMaker {
 
     /**
      * Adds a row from the spreadsheet to the schedule
+     * Used for non-talk events, like Lunch, Pause etc.
      * 
-     * @param {*} index row index of the spreadsheet
+     * @param {*} index 
      */
-    #addTalkSpreadsheetRow(index) {
+    #addSpreadsheetRow(index) {
         // first, extract the information from spreadsheet to be put into the schedule upon building it
-        const dayPossibleUpper = this.spreadsheetDict["day"][index];
-        const timeStart = this.spreadsheetDict["timeStart"][index];
-        const timeEnd = this.spreadsheetDict["timeEnd"][index];
-        const presentationType = this.spreadsheetDict["type"][index];
-        const roomName = this.spreadsheetDict["room"][index];
-        const talkId = index;     // WARNING: this is fine as long as the spreadsheet contains only talks, and not pause, lunsh etc.
+        const dayPossibleUpper = this.spreadsheetTalkDict["day"][index];
+        const timeStart = this.spreadsheetTalkDict["timeStart"][index];
+        const timeEnd = this.spreadsheetTalkDict["timeEnd"][index];
+        const slotType = this.spreadsheetTalkDict["type"][index];       // Welcome, Lunch, Presentation etc
+        const roomName = this.spreadsheetTalkDict["room"][index];
 
         // make sure day value is all lower case BEFORE synonym search
         // WARNING use proper try catch instead
@@ -103,7 +106,7 @@ class ScheduleMaker {
         // WARNING: assumes a slot is uniquely identified by time and presentation type
         for (var i = 0; i < slotListShortcut.length; i++) {
             var slotDict = slotListShortcut[i];
-            if (slotDict["timeStart"] == timeStart && slotDict["timeEnd"] == timeEnd && slotDict["type"] == presentationType) {
+            if (slotDict["timeStart"] == timeStart && slotDict["timeEnd"] == timeEnd && slotDict["type"] == slotType) {
                 currentSlotDict = slotDict;
                 break;
             }
@@ -112,7 +115,7 @@ class ScheduleMaker {
             currentSlotDict = {
                 "timeStart": timeStart,
                 "timeEnd": timeEnd,
-                "type": presentationType,
+                "type": slotType,
                 "rooms": []
             };
             slotListShortcut.push(currentSlotDict);
@@ -135,11 +138,20 @@ class ScheduleMaker {
             };
             roomListShortcut.push(currentRoomDict);
         }
+        return currentRoomDict;   // to be used for adding talks
+    }
 
-        // WARNING: slots that don't represent talks, like Pause, should actually stop/return here.
-        // THIS HAS TO BE DELT WITH IT SOME WAY
-
+    /**
+     * Adds a row from the spreadsheet of talks to the schedule
+     * Used exclusively for talks
+     * 
+     * @param {*} index row index of the spreadsheet
+     */
+    #addTalkRow(index) {
+        const talkId = index + 2;       // TODO CHANGE THE WAY TALKID IS ASSIGNED
+        var currentRoomDict = this.#addSpreadsheetRow(index);
         var talkListShortcut = currentRoomDict["talks"];    // "shortcut" to talk list
+        
         for (var i = 0; i < talkListShortcut.length; i++) {
             var talkDict = talkListShortcut[i];
             if (talkDict["talkId"] == talkId) {
@@ -151,27 +163,54 @@ class ScheduleMaker {
         // we've reached the "top" of the nested structure, and may add our talk
         const talkDictNew = {
             "talkId": talkId,
-            "language": this.spreadsheetDict["language"][index],
-            "difficulty": this.spreadsheetDict["difficulty"][index],
-            "title": this.spreadsheetDict["title"][index],
-            "type": this.spreadsheetDict["type"][index],    // WARNING: this type is actually different from the slot type
-            "description": this.spreadsheetDict["description"][index],
+            "language": this.spreadsheetTalkDict["language"][index],
+            "difficulty": this.spreadsheetTalkDict["difficulty"][index],
+            "title": this.spreadsheetTalkDict["title"][index],
+            "type": this.spreadsheetTalkDict["type"][index],    // WARNING: this type is actually different from the slot type
+            "description": this.spreadsheetTalkDict["description"][index],
             "speakers": [],
             "tags": []
         }
         talkListShortcut.push(talkDictNew)
-        this.talksShortcut["talkId"] = talkDictNew;
+        this.talksShortcut[talkId] = talkDictNew;
+    }
+
+    /**
+     * Adds a row from the speaker spreadsheet to the schedule
+     * 
+     * @param {*} index
+     */
+    #addSpeakerRow(index) {
+        const name = this.spreadsheetSpeakerDict["name"][index];
+        const info = this.spreadsheetSpeakerDict["info"][index];
+        const talkIdList = this.spreadsheetSpeakerDict["talkId"][index];
+
+        for (var i = 0; i < talkIdList.length; i++) {
+            const talkId = talkIdList[i];
+            var speakerList = this.talksShortcut[talkId]["speakers"];
+            speakerList.push({
+                "name": name,
+                "info": info
+            });
+        }
     }
         
 
     buildSchedule() {
-        const numTalks = this.spreadsheetDict["day"].length;  // WARNING: should definitely be error checked
+        // adding talks
+        const numTalks = this.spreadsheetTalkDict["day"].length;  // WARNING: should definitely be error checked
         for (var i = 0; i < numTalks; i++) {
-            //console.log("Adding new row...");
-            this.#addTalkSpreadsheetRow(i);
+            this.#addTalkRow(i);
         }
 
-        // IF YOU'RE ADDING SOME OTHER SLOTS THAN TALKS (LIKE PAUSES) TO THE SCHEDULE, DO IT HERE
+        // adding speakers to talks
+        if (this.spreadsheetSpeakerDict != null) {   // TODO: remove this check once speakers are supported
+            const numSpeakers = this.spreadsheetSpeakerDict["name"].length;   // WARNING: should definitely be error checked
+            for (var i = 0; i < numSpeakers; i++) {
+                this.#addSpeakerRow(i);
+            }
+        }
+        // TODO: add other non-talk slots (lunch, pause etc.)
 
         // we've created the schedule structure in a quite arbitrary order. Let's sort the inside of the structure
         sortByDay(this.schedule);
