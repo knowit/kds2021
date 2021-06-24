@@ -4,10 +4,31 @@ import dotenv from 'dotenv';
 const docId = '1its1GjbFAVOTOhqGR6KZJ2kPkgrfBbqqPzWnbMyiBP4';   // found in google sheets URL
 const env = dotenv.config();
 
-async function accessSpreadsheet() {
+export async function accessTalks() {
+    return accessSpreadsheet("talks"); 
+}
+
+export async function accessSpeakers(){
+    var speakers = await accessSpreadsheet("speakers"); 
+    var talkId = speakers["talkId"]; // [ '2', '4', '3 | 5', '3' ]
+    console.log(talkId);
+    var listify = []; 
+    for (var i = 0; i < talkId.length; i++){
+        var nums = talkId[i].trim().split(" | "); 
+        var num = []; 
+        for (var j = 0; j < nums.length; j++){
+            num.push(parseInt(nums[j]));
+        }
+        listify.push(num); 
+    }
+
+    speakers["talkId"] = listify; 
+    return speakers; 
+}
+
+async function accessSpreadsheet(sheetName) {
     const doc = new GoogleSpreadsheet(docId);
 
-    // TODO: uncomment and fix this
     await doc.useServiceAccountAuth({
         client_email: process.env.CLIENT_EMAIL,
         private_key: process.env.PRIVATE_KEY.toString().split('\\n').join('\n')   
@@ -16,14 +37,14 @@ async function accessSpreadsheet() {
     await doc.loadInfo();
     await doc.updateProperties({title: 'renamed doc'});
 
-    var dict = {}   //THE DICTIONARY
+    var dict = {}   //THE dict1IONARY
     
-    const sheet = doc.sheetsByIndex[0];   // can use sheetsById[id] and sheetsByTitle[title]
+    const sheet = doc.sheetsByTitle[sheetName];   // can use sheetsById[id] and sheetsByTitle[title] and sheetsByIndex[index]
     const rows = await sheet.getRows();
-    const headers = sheet.headerValues;   
-
+    const headers = sheet.headerValues;
     
     var i = 0; 
+    // Breaks on empty row
     while (rows[i] != undefined){
         for (var j = 0; j < headers.length; j++){
             const header = headers[j]; 
@@ -40,4 +61,4 @@ async function accessSpreadsheet() {
     }
     return dict;
 }
-export default accessSpreadsheet; 
+//export default accessSpreadsheet; 

@@ -1,10 +1,14 @@
 import ScheduleMaker from './scheduleMaker.js';
-import accessSpreadsheet from './spreadsheet.js'; 
+import { accessTalks, accessSpeakers } from './spreadsheet.js'; 
 
 //const { ScheduleMaker } = require('./scheduleMaker.js');
 
-var spreadSheetDict = await accessSpreadsheet();
-var scheduleMaker = new ScheduleMaker(spreadSheetDict);
+var talkDic = await accessTalks(); 
+var speakerDic = await accessSpeakers(); 
+console.log("\n", talkDic); 
+console.log("\n", speakerDic); 
+
+var scheduleMaker = new ScheduleMaker(talkDic);
 scheduleMaker.buildSchedule();
 var schedule = scheduleMaker.getScheduleCopy();
-console.log(JSON.stringify(schedule), "\t");
+console.log(JSON.stringify(schedule), "\t"); 
