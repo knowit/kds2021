@@ -11,7 +11,6 @@ export async function accessTalks() {
 export async function accessSpeakers(){
     var speakers = await accessSpreadsheet("speakers"); 
     var talkId = speakers["talkId"]; // [ '2', '4', '3 | 5', '3' ]
-    console.log(talkId);
     var listify = []; 
     for (var i = 0; i < talkId.length; i++){
         var nums = talkId[i].trim().split(" | "); 
