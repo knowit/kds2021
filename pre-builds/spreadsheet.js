@@ -14,7 +14,7 @@ async function accessSpreadsheet() {
     // });
     
     await doc.loadInfo();
-    await doc.updateProperties({title: 'renamed doc'});
+    await doc.updateProperties({title: 'kds talks test'});
 
     var dict = {}   //THE DICTIONARY
     
