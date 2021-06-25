@@ -1,5 +1,6 @@
 // import sortMethods from "./scheduleSort.js";
 import { sortByDay, sortByTimeStart } from "./scheduleSort.js";
+import * as fs from'fs';
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -231,6 +232,16 @@ class ScheduleMaker {
         // we've created the schedule structure in a quite arbitrary order. Let's sort the inside of the structure
         sortByDay(this.schedule);
         sortByTimeStart(this.schedule);
+    }
+
+    writeToJSON(filename) {
+        // Stringify object with table array
+        var json = JSON.stringify(this.schedule); 
+        
+        // Write file
+        fs.writeFile(filename, json, function (err) {
+            if (err) return console.log(err);
+        });
     }
 }
 export default ScheduleMaker

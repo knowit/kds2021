@@ -1,61 +1,29 @@
 import ScheduleMaker from './scheduleMaker.js';
-import { accessTalks, accessSpeakers, accessOtherEvents } from './spreadsheet.js'; 
-import * as fs from'fs';
+import SpreadsheetHandler from "./spreadsheetHandler.js";
 
 
+const docId = '1its1GjbFAVOTOhqGR6KZJ2kPkgrfBbqqPzWnbMyiBP4';   // string from Google docs, TODO: put inside .env
+const jsonPath = '../models/hello.json';
 
-var talkDict = await accessTalks(); 
-var speakerDict = await accessSpeakers(); 
-var otherDict = await accessOtherEvents();
+// connect to the Google sheet
+var sheetHandler = new SpreadsheetHandler(docId);
+var hasEstablishedConnection = await sheetHandler.establishConnection();
 
-var scheduleMaker = new ScheduleMaker();
-scheduleMaker.buildSchedule(talkDict, speakerDict, otherDict);
+if (hasEstablishedConnection) {
+    // first, retrieve the spreadsheets
+    var talkDict = await sheetHandler.accessTalks();
+    var speakerDict = await sheetHandler.accessSpeakers();
+    var otherEventDict = await sheetHandler.accessOtherEvents();
 
-var schedule = scheduleMaker.getScheduleCopy();
-console.log(JSON.stringify(schedule), "\t"); 
-
-
-
-
-
-
-
-function writeToJSON(filename){
-
-    // Object with table array 
-    var obj = {
-        table: []
-    };
-
-    // Stringify object with table array
-    var json = JSON.stringify(obj); 
-
-    // Read file
-    fs.readFile(filename, 'utf8', function readFileCallback(err, data){
-        if (err){
-            console.log(err);
-        } else {
-            obj = JSON.parse(data); //now it an object
-            obj.table.push({id: 2, square:3}); //add some data
-            json = JSON.stringify(obj); //convert it back to json
-        }   
-    });
-
-    // Push JSON data to table array 
-    obj.table.push({
-        balloon: 99, 
-        foo: 42, 
-        bar: 10000, 
-        banana: "Hello, World!", 
-        "Node": "JS"
-    }); 
-
-    // Stringify object with table array
-    json = JSON.stringify(obj); 
+    // then, create the schedule
+    var scheduleMaker = new ScheduleMaker();
+    scheduleMaker.buildSchedule(talkDict, speakerDict, otherEventDict);
     
-    // Write file
-    fs.writeFile(filename, json, function (err) {
-        if (err) return console.log(err);
-    });
+    var schedule = scheduleMaker.getScheduleCopy();
+    console.log(JSON.stringify(schedule), "\t"); 
+    scheduleMaker.writeToJSON(jsonPath);
+} else {
+    console.error("Couldn't establish connetion to the Google spreadsheet.")
 }
-writeToJSON('../models/hello.json'); 
+
+// writeToJSON('../models/hello.json');
