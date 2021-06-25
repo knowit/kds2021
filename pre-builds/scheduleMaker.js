@@ -15,6 +15,8 @@ class ScheduleMaker {
     constructor() { 
         // main data structure representing the entire schedule
         this.schedule = {"program": {} };
+        this.schedule["program"]["rooms"] = [1,2,3,4];                                       // this is just to recreate the exact structure
+        this.schedule["program"]["languages"] = ['Norwegian', 'English', 'Swedish'];       // this is just to recreate the exact structure
         this.schedule["program"]["days"] = [];
 
         // auxiliary data structures
