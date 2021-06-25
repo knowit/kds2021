@@ -20,17 +20,12 @@ class SpeadsheetHandler {
      * @returns true if connection to Google spreadsheet is successfully established, else false 
      */
     async establishConnection() {
-        try {
-            this.doc = new GoogleSpreadsheet(this.docId);
-            await this.doc.useServiceAccountAuth({
-                client_email: process.env.CLIENT_EMAIL,
-                private_key: process.env.PRIVATE_KEY.toString().split('\\n').join('\n')   
-            });
-            await this.doc.loadInfo();
-            return true;
-        } catch(err) {
-            return false;
-        }
+        this.doc = new GoogleSpreadsheet(this.docId);
+        await this.doc.useServiceAccountAuth({
+            client_email: process.env.CLIENT_EMAIL,
+            private_key: process.env.PRIVATE_KEY.toString().split('\\n').join('\n')   
+        });
+        await this.doc.loadInfo();
     } 
 
     /**
