@@ -6,17 +6,10 @@ import * as fs from'fs';
 
 var talkDict = await accessTalks(); 
 var speakerDict = await accessSpeakers(); 
-var otherDict = await accessOtherEvents(); 
-
-console.log("\n", talkDict); 
-console.log("\n", speakerDict); 
-console.log("\n", otherDict); 
-
-
-
+var otherDict = await accessOtherEvents();
 
 var scheduleMaker = new ScheduleMaker();
-scheduleMaker.buildSchedule(talkDict, speakerDict);
+scheduleMaker.buildSchedule(talkDict, speakerDict, otherDict);
 
 var schedule = scheduleMaker.getScheduleCopy();
 console.log(JSON.stringify(schedule), "\t"); 
