@@ -22,7 +22,8 @@ class SheetPreprocesser {
             "room": [],
             "day": [],
             "timeStart": [],
-            "timeEnd": []
+            "timeEnd": [],
+            "tags": []
         }
         this.sheetSpeakerDict = {
             "name": [],
@@ -75,6 +76,7 @@ class SheetPreprocesser {
                             // register this talk
                             const talkId = talkDict["talkId"];                       
                             this.sheetTalkDict["talkId"].push(talkId);
+                            this.sheetTalkDict["language"].push(talkDict["language"]);
                             this.sheetTalkDict["difficulty"].push(talkDict["difficulty"]);
                             this.sheetTalkDict["title"].push(talkDict["title"]);
                             this.sheetTalkDict["type"].push(talkDict["type"]);                // TODO: find out what you shoud do with slotType vs talkType
@@ -83,6 +85,7 @@ class SheetPreprocesser {
                             this.sheetTalkDict["day"].push(day);
                             this.sheetTalkDict["timeStart"].push(timeStart);
                             this.sheetTalkDict["timeEnd"].push(timeEnd);
+                            this.sheetTalkDict["tags"].push(talkDict["tags"]);
                             
                             // register speakers of this talk
                             const speakerList = talkDict["speakers"];
@@ -116,6 +119,6 @@ class SheetPreprocesser {
     }
 }
 
-var sheetPreprocesser = new SheetPreprocesser("../models/data.json");
+var sheetPreprocesser = new SheetPreprocesser("../models/hello.json");
 sheetPreprocesser.buildSheetStructures();
-console.log(sheetPreprocesser.getOtherEventsSheet());
+console.log(sheetPreprocesser.getTalkSheet());
