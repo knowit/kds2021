@@ -104,10 +104,10 @@ class ScheduleMaker {
         var currentSlotDict = null;
         
         // make sure there is a dictionary of this slot in the schedule's list of slots
-        // WARNING: assumes a slot is uniquely identified by time and presentation type
+        // WARNING: assumes a slot is uniquely identified by start- and end time
         for (var i = 0; i < slotListShortcut.length; i++) {
             var slotDict = slotListShortcut[i];
-            if (slotDict["timeStart"] == timeStart && slotDict["timeEnd"] == timeEnd && slotDict["type"] == slotType) {
+            if (slotDict["timeStart"] == timeStart && slotDict["timeEnd"] == timeEnd) {
                 currentSlotDict = slotDict;
                 break;
             }
@@ -116,7 +116,7 @@ class ScheduleMaker {
             currentSlotDict = {
                 "timeStart": timeStart,
                 "timeEnd": timeEnd,
-                "type": slotType,
+                "type": slotType,     // this is strictly speaking wrong for talks, where this field should be summary of talk types. Issue handled by #fixSlotTypeForTalks()
                 "rooms": []
             };
             slotListShortcut.push(currentSlotDict);
@@ -147,24 +147,19 @@ class ScheduleMaker {
      * Used exclusively for talks
      * 
      * @param {*} index row index of the spreadsheet
-     * @param {*} sheetTalkDict dictionary representing Google sheets data, with
+     * @param {*} sheetTalkDict dictionary representing Google sheets data of talks, with
      *                          key = headers and val = list of column vals
      */
     #addTalkRow(index, sheetTalkDict) {
-        // first, create the event slot and extract the room dict
+        // create the event slot and extract the room dict
         var currentRoomDict = this.#addEventRow(index, sheetTalkDict);
-
-        // then, add the talk info to it
-        const talkId = index + 2;       // TODO CHANGE THE WAY TALKID IS ASSIGNED
         var talkListShortcut = currentRoomDict["talks"];    // "shortcut" to talk list
+        const talkId = sheetTalkDict["talkId"][index];
 
+        // first check that this talk isn't registered yet
         for (var i = 0; i < talkListShortcut.length; i++) {
             var talkDict = talkListShortcut[i];
-            if (talkDict["talkId"] == talkId) {
-                // WARNING: the talk we are trying to add already exists! Should not happen. Handle this properly!
-                console.log("WARNING: The talk you're trying to add already exists.")
-                return
-            }
+            if (talkDict["talkId"] == talkId) throw Error("Trying to add a talk with talkId=" + talkId + ", but this already exists! Please make sure all talks have unique ID.");
         }
         // we've reached the "top" of the nested structure, and may add our talk
         const talkDictNew = {
@@ -202,6 +197,50 @@ class ScheduleMaker {
             });
         }
     }
+
+    /**
+     * When building the schedule, it's impossible in advance to know what the slot type for the talks is going to be
+     * This funtion defines the slot type to be a summary of the types of talks that are present
+     * Different presentation types are for instance Long presentations, Short presentations and Lightning talks
+     * 
+     * WARNING: assumes that the schedule data structure is already made
+     */
+    #fixSlotTypeForTalks() {
+        this.schedule["program"]["days"].forEach((dayDict) => {
+            var slotList = dayDict["slots"];
+            slotList.forEach((slotDict) => {
+                // it is at this level we need to set the slot type 
+                var roomList = slotDict["rooms"];
+
+                if (!roomList) throw Error("Room list is empty, this should NOT happen. Something went wrong when building the schedule.");
+                if (roomList[0]["talks"] == undefined) throw Error("Room dict has undefined key='talks', this should NOT happen. Something went wrong when building the schedule.");
+                if (roomList[0]["talks"].length == 0) return;    // non-talk event, so we can skip this
+
+                // now we're sure we've hit a talk slot
+                // let's enter all talks in this slot and extract their types
+                var talkTypes = new Set();
+
+                roomList.forEach((roomDict) => {
+                    var talkList = roomDict["talks"];
+                    talkList.forEach((talkDict) => {
+                        const talkType = talkDict["type"];
+
+                        // a typical talk type is something like "Long presentation (60 minutes)"
+                        // here, we extract the text before the paranthesis only
+                        const talkTypeTrimmed = talkType.split("(")[0].trim();
+                        talkTypes.add(talkTypeTrimmed);
+                    });
+                });
+                // now that all different talk types are extracted for this slot, let's insert the summary slot type
+                var talkTypesList = [];
+                talkTypes.forEach((talkType) => {
+                    talkTypesList.push(talkType + "s");   // make talk type plural
+                });
+                const slotType = talkTypesList.join(" & ");
+                slotDict["type"] = [slotType];    // finally, set the new slot type
+            });
+        });
+    }
         
     /**
      * Takes all the data from the spreadsheets and constructs the entire schedule
@@ -234,8 +273,14 @@ class ScheduleMaker {
         // we've created the schedule structure in a quite arbitrary order. Let's sort the inside of the structure
         sortByDay(this.schedule);
         sortByTimeStart(this.schedule);
+
+        // fix the talk slot types now that the schedule is built
+        this.#fixSlotTypeForTalks();
     }
 
+    /**
+     * @param {*} filename relative path + file name
+     */
     writeToJSON(filename) {
         // Stringify object with table array
         var json = JSON.stringify(this.schedule); 

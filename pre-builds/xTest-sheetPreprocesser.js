@@ -44,7 +44,7 @@ class SheetPreprocesser {
 
     buildSheetStructures() {
         // utilitary dict to avoid speaker duplicates (one speaker can be on multiple talks)
-        var speakerDictBuildup = {}    // key is name is val is a dict with info and talkid(s) 
+        var speakerDictBuildup = {}    // key is name and val is a dict with info and talkid(s) 
 
         const dayList = this.schedule["program"]["days"];
         // for (var i in days.length)
@@ -119,9 +119,3 @@ class SheetPreprocesser {
 var sheetPreprocesser = new SheetPreprocesser("../models/data.json");
 sheetPreprocesser.buildSheetStructures();
 console.log(sheetPreprocesser.getOtherEventsSheet());
-
-/**
- * TODO
- * Both slots and talks has a type. The type of the slot seems to be a summary of the types of talks there is
- * Add functionality for this in scheduleMaker
- */
