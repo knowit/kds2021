@@ -1,12 +1,14 @@
 import ScheduleMaker from './scheduleMaker.js';
-import SpreadsheetHandler from "./spreadsheetHandler.js";
+import SpreadsheetHandler from "./spreadsheetHandler.js"; 
+// import SreadsheetUpdater from "./xTestWriteToSheet.js"; 
 
 
-const docId = '1its1GjbFAVOTOhqGR6KZJ2kPkgrfBbqqPzWnbMyiBP4';   // string from Google docs, TODO: put inside .env
+const docId = '1its1GjbFAVOTOhqGR6KZJ2kPkgrfBbqqPzWnbMyiBP4';   // string from Google docs, TODO: put inside .env 
+const docId2 = '1B8sdJBfb3ercx_kPMfq0j5kCItxuSp6-7SXveW7UL7s'; // xTest SHEET
 const jsonPath = '../models/hello.json';
 
 async function prebuild() {
-    // connect to the Google sheet
+    // connect to The Googles, and authenticate. 
     try {
         var sheetHandler = new SpreadsheetHandler(docId);
         await sheetHandler.establishConnection();
@@ -17,6 +19,10 @@ async function prebuild() {
         return;
     }
     // if we're here, we successfully established connection
+
+
+
+    // READ SPREADSHEET, fetch sheets as dictionaries. 
     try {
         // first, get the spreadsheet data
         var talkDict = await sheetHandler.accessTalks();
@@ -28,8 +34,9 @@ async function prebuild() {
         console.error(err);
         return;
     }
+
+    // CREATE Schedule variable from dictionaries.  
     try {
-        // then, create the schedule
         var scheduleMaker = new ScheduleMaker();
         scheduleMaker.buildSchedule(talkDict, speakerDict, otherEventDict);
     } catch(err) {
@@ -38,6 +45,8 @@ async function prebuild() {
         console.error(err);
         return;
     }
+
+    // Convert schedule to JSON format, and write schedule to JSON-file. 
     try {
         var schedule = scheduleMaker.getScheduleCopy();
         console.log(JSON.stringify(schedule), "\t"); 
@@ -48,7 +57,9 @@ async function prebuild() {
         console.error("Error message: " + error);
         return;
     }
+
+
+    // Update spreadsheet to new schedule from JSON-file. 
+    
 }
 await prebuild();
-
-

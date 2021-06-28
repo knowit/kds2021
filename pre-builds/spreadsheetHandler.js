@@ -1,4 +1,4 @@
-import  { GoogleSpreadsheet } from 'google-spreadsheet';
+import  { GoogleSpreadsheet } from 'google-spreadsheet'; 
 import dotenv from 'dotenv';
 
 class SpeadsheetHandler {
@@ -58,6 +58,7 @@ class SpeadsheetHandler {
             }
             i++;   // go to next row
         }
+        //console.log(sheetDict);
         return sheetDict;
     }
 
