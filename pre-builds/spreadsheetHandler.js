@@ -72,10 +72,15 @@ class SpeadsheetHandler {
 
         for (var i = 0; i < tagsRaw.length ; i++) {
             var tagString = tagsRaw[i];
-            var tagsListUntrimmed = tagString.split("|");
-            tagsList.push(tagsListUntrimmed.map((tag) => {
-                return tag.toLowerCase().trim();
-            }));
+
+            if (tagString == undefined) {
+                tagsListUntrimmed.push([]);    // if tag field is empty, push an empty tag list
+            } else {
+                var tagsListUntrimmed = tagString.split("|");
+                tagsList.push(tagsListUntrimmed.map((tag) => {
+                    return tag.toLowerCase().trim();
+                }));
+            }
         }
         talks["tags"] = tagsList;
         return talks;

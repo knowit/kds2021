@@ -3,10 +3,8 @@ import SpreadsheetHandler from "./spreadsheetHandler.js";
 // import SreadsheetUpdater from "./xTestWriteToSheet.js"; 
 
 
-const docId = '1its1GjbFAVOTOhqGR6KZJ2kPkgrfBbqqPzWnbMyiBP4';   // string from Google docs, TODO: put inside .env 
-const docId2 = '1B8sdJBfb3ercx_kPMfq0j5kCItxuSp6-7SXveW7UL7s'; // xTest SHEET
-const jsonPath = '../models/hello.json';
-
+const docId = '1B8sdJBfb3ercx_kPMfq0j5kCItxuSp6-7SXveW7UL7s'; // string from Google docs, TODO: put inside .env
+const jsonPath = '../models/data-replicate.json';
 
 async function prebuild(path) {
     // connect to the Google sheet
