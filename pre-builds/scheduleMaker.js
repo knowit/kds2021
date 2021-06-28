@@ -15,12 +15,16 @@ class ScheduleMaker {
     constructor() { 
         // main data structure representing the entire schedule
         this.schedule = {"program": {} };
-        this.schedule["program"]["rooms"] = [1,2,3,4];                                       // this is just to recreate the exact structure
-        this.schedule["program"]["languages"] = ['Norwegian', 'English', 'Swedish'];       // this is just to recreate the exact structure
+        this.schedule["program"]["tags"] = [];
         this.schedule["program"]["days"] = [];
 
+        // this is just to recreate the exact structure
+        this.schedule["program"]["rooms"] = [1,2,3,4];                                     
+        this.schedule["program"]["languages"] = ['Norwegian', 'English', 'Swedish'];
+
         // auxiliary data structures
-        this.talksShortcut = {}  // "shortcut" from talkId to "its" dictionary, to be able to add several speakers
+        this.talksShortcut = {}        // "shortcut" from talkId to "its" dictionary, to be able to add several speakers
+        this.tagsGlobal = new Set();   // to keep score of all talk tags
     }
 
     static #dayOfWeekSynonyms = {
@@ -161,6 +165,13 @@ class ScheduleMaker {
             var talkDict = talkListShortcut[i];
             if (talkDict["talkId"] == talkId) throw Error("Trying to add a talk with talkId=" + talkId + ", but this already exists! Please make sure all talks have unique ID.");
         }
+
+        // register the tags of the talk to the global list of tags
+        const tags = sheetTalkDict["tags"][index];
+        tags.forEach((tag) => {
+            this.tagsGlobal.add(tag);
+        });
+
         // we've reached the "top" of the nested structure, and may add our talk
         const talkDictNew = {
             "talkId": talkId,
@@ -170,7 +181,7 @@ class ScheduleMaker {
             "type": sheetTalkDict["type"][index],    // WARNING: this type is actually different from the slot type
             "description": sheetTalkDict["description"][index],
             "speakers": [],
-            "tags": []
+            "tags": tags
         }
         talkListShortcut.push(talkDictNew)
         this.talksShortcut[talkId] = talkDictNew;
@@ -199,6 +210,8 @@ class ScheduleMaker {
     }
 
     /**
+     * A hacky method for setting slot type correctly.
+     * 
      * When building the schedule, it's impossible in advance to know what the slot type for the talks is going to be
      * This funtion defines the slot type to be a summary of the types of talks that are present
      * Different presentation types are for instance Long presentations, Short presentations and Lightning talks
@@ -270,6 +283,9 @@ class ScheduleMaker {
                 this.#addEventRow(i, sheetOtherEventDict);
             }
         }
+        // adding the global set of tags
+        this.schedule["program"]["tags"] = Array.from(this.tagsGlobal);
+
         // we've created the schedule structure in a quite arbitrary order. Let's sort the inside of the structure
         sortByDay(this.schedule);
         sortByTimeStart(this.schedule);
