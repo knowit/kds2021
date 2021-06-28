@@ -1,4 +1,4 @@
-import * as fs from'fs';
+import * as fs from 'fs';
 // import { program } from "../models/hello.json"; 
 // const data = require("../models/hello.json");
 
@@ -85,7 +85,7 @@ class SheetPreprocesser {
                             this.sheetTalkDict["day"].push(day);
                             this.sheetTalkDict["timeStart"].push(timeStart);
                             this.sheetTalkDict["timeEnd"].push(timeEnd);
-                            this.sheetTalkDict["tags"].push(talkDict["tags"]);
+                            this.sheetTalkDict["tags"].push(talkDict["tags"].join(" | "));
                             
                             // register speakers of this talk
                             const speakerList = talkDict["speakers"];
@@ -114,11 +114,11 @@ class SheetPreprocesser {
         for (let speakerName in speakerDictBuildup) {
             this.sheetSpeakerDict["name"].push(speakerName);
             this.sheetSpeakerDict["info"].push(speakerDictBuildup[speakerName]["info"]);
-            this.sheetSpeakerDict["talkId"].push(speakerDictBuildup[speakerName]["talkId"]);
+            this.sheetSpeakerDict["talkId"].push(speakerDictBuildup[speakerName]["talkId"].join(" | "));
         }
     }
 }
-
-var sheetPreprocesser = new SheetPreprocesser("../models/hello.json");
-sheetPreprocesser.buildSheetStructures();
-console.log(sheetPreprocesser.getTalkSheet());
+export default SheetPreprocesser;
+// var sheetPreprocesser = new SheetPreprocesser("../models/hello.json");
+// sheetPreprocesser.buildSheetStructures();
+// console.log(sheetPreprocesser.getTalkSheet());

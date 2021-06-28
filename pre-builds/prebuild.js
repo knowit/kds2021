@@ -7,8 +7,9 @@ const docId = '1its1GjbFAVOTOhqGR6KZJ2kPkgrfBbqqPzWnbMyiBP4';   // string from G
 const docId2 = '1B8sdJBfb3ercx_kPMfq0j5kCItxuSp6-7SXveW7UL7s'; // xTest SHEET
 const jsonPath = '../models/hello.json';
 
-async function prebuild() {
-    // connect to The Googles, and authenticate. 
+
+async function prebuild(path) {
+    // connect to the Google sheet
     try {
         var sheetHandler = new SpreadsheetHandler(docId);
         await sheetHandler.establishConnection();
@@ -50,16 +51,12 @@ async function prebuild() {
     try {
         var schedule = scheduleMaker.getScheduleCopy();
         console.log(JSON.stringify(schedule), "\t"); 
-        scheduleMaker.writeToJSON(jsonPath);
+        scheduleMaker.writeToJSON(path);
     } catch(err) {
         console.error("Error occured when attempting to write schedule as a json file.");
         console.error("Schedule not created.");
         console.error(err);
         return;
     }
-
-
-    // Update spreadsheet to new schedule from JSON-file. 
-    
 }
-await prebuild();
+await prebuild(jsonPath);    // Update spreadsheet to new schedule from JSON-file. 
