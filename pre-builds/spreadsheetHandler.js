@@ -63,7 +63,22 @@ class SpeadsheetHandler {
     }
 
     async accessTalks() {
-        return this.#accessSpreadsheet(SpeadsheetHandler.sheetNames["talks"]); 
+        var talks = await this.#accessSpreadsheet(SpeadsheetHandler.sheetNames["talks"]);
+
+        // currently, all tags are a single long string with multiple words seperated by a |
+        // let's store them as a list of tag words instead
+        var tagsRaw = talks["tags"];
+        var tagsList = [];                // list of list of trimmed tag strings
+
+        for (var i = 0; i < tagsRaw.length ; i++) {
+            var tagString = tagsRaw[i];
+            var tagsListUntrimmed = tagString.split("|");
+            tagsList.push(tagsListUntrimmed.map((tag) => {
+                return tag.toLowerCase().trim();
+            }));
+        }
+        talks["tags"] = tagsList;
+        return talks;
     }
     
     async accessSpeakers(){

@@ -54,7 +54,7 @@ async function prebuild() {
     } catch(err) {
         console.error("Error occured when attempting to write schedule as a json file.");
         console.error("Schedule not created.");
-        console.error("Error message: " + error);
+        console.error(err);
         return;
     }
 
