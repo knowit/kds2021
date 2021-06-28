@@ -112,13 +112,11 @@ class SheetPreprocesser {
         // at this point we have build the data structures, but speakers are still a little fishy
         // we need put it proper into it's belonging list
         for (let speakerName in speakerDictBuildup) {
+            const talkIdsString = speakerDictBuildup[speakerName]["talkId"].join(" | ");    // converts all talks to a single string compatible with Google sheets
             this.sheetSpeakerDict["name"].push(speakerName);
             this.sheetSpeakerDict["info"].push(speakerDictBuildup[speakerName]["info"]);
-            this.sheetSpeakerDict["talkId"].push(speakerDictBuildup[speakerName]["talkId"].join(" | "));
+            this.sheetSpeakerDict["talkId"].push(talkIdsString);
         }
     }
 }
 export default SheetPreprocesser;
-// var sheetPreprocesser = new SheetPreprocesser("../models/hello.json");
-// sheetPreprocesser.buildSheetStructures();
-// console.log(sheetPreprocesser.getTalkSheet());

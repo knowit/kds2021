@@ -167,10 +167,13 @@ class ScheduleMaker {
         }
 
         // register the tags of the talk to the global list of tags
-        const tags = sheetTalkDict["tags"][index];
+        var tags = sheetTalkDict["tags"][index];
+
+        if (tags == undefined) tags = [];    // WARNING: if now tags are listed under a talk, it comes out as undefined. This is a hacky workaround
         tags.forEach((tag) => {
             this.tagsGlobal.add(tag);
         });
+
 
         // we've reached the "top" of the nested structure, and may add our talk
         const talkDictNew = {
