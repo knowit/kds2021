@@ -1,15 +1,12 @@
 import ScheduleMaker from './scheduleMaker.js';
 import SpreadsheetHandler from "./spreadsheetHandler.js"; 
-// import SreadsheetUpdater from "./xTestWriteToSheet.js"; 
+import dotenv from 'dotenv';
 
-
-const docId = '1B8sdJBfb3ercx_kPMfq0j5kCItxuSp6-7SXveW7UL7s'; // string from Google docs, TODO: put inside .env
-const jsonPath = '../models/data-replicate.json';
-
-async function prebuild(path) {
+async function prebuild() {
     // connect to the Google sheet
     try {
-        var sheetHandler = new SpreadsheetHandler(docId);
+        dotenv.config();
+        var sheetHandler = new SpreadsheetHandler(process.env.DOC_ID);
         await sheetHandler.establishConnection();
     } catch(err) {
         console.error("Couldn't establish connection to Google sheets.");
@@ -18,8 +15,6 @@ async function prebuild(path) {
         return;
     }
     // if we're here, we successfully established connection
-
-
 
     // READ SPREADSHEET, fetch sheets as dictionaries. 
     try {
@@ -48,8 +43,8 @@ async function prebuild(path) {
     // Convert schedule to JSON format, and write schedule to JSON-file. 
     try {
         var schedule = scheduleMaker.getScheduleCopy();
-        console.log(JSON.stringify(schedule), "\t"); 
-        scheduleMaker.writeToJSON(path);
+        // console.log(JSON.stringify(schedule), "\t"); 
+        scheduleMaker.writeToJSON(process.env.WRITE_PATH);
     } catch(err) {
         console.error("Error occured when attempting to write schedule as a json file.");
         console.error("Schedule not created.");
@@ -57,4 +52,4 @@ async function prebuild(path) {
         return;
     }
 }
-await prebuild(jsonPath);    // Update spreadsheet to new schedule from JSON-file. 
+await prebuild();    // Update spreadsheet to new schedule from JSON-file. 

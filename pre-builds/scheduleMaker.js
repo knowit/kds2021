@@ -12,7 +12,7 @@ function capitalizeFirstLetter(string) {
  */
 class ScheduleMaker {
 
-    constructor() { 
+    constructor() {
         // main data structure representing the entire schedule
         this.schedule = {"program": {} };
         this.schedule["program"]["tags"] = [];
@@ -37,6 +37,10 @@ class ScheduleMaker {
         "sunday": ["sunday", "søndag"]
     };
 
+    static #missingValPlaceholder = {
+        "title": "Missing value error: no title provided."
+    }
+
     getScheduleCopy() {
         var copy = {...this.schedule}
         return copy
@@ -54,8 +58,8 @@ class ScheduleMaker {
     #addEventRow(index, sheetDict) {
         // first, extract the information from spreadsheet to be put into the schedule upon building it
         const dayPossibleUpper = sheetDict["day"][index];
-        const timeStart = sheetDict["timeStart"][index];
-        const timeEnd = sheetDict["timeEnd"][index];
+        const timeStart = sheetDict["timeStart"][index].replace(":", "").replace(";", "");
+        const timeEnd = sheetDict["timeEnd"][index].replace(":", "").replace(";", "");
         const slotType = sheetDict["type"][index];       // Welcome, Lunch, Presentation etc
         var roomName = "Room ";
         
@@ -118,9 +122,9 @@ class ScheduleMaker {
         }
         if (!currentSlotDict) {    // create new slot dict in shedule if not present
             currentSlotDict = {
-                "timeStart": timeStart,
-                "timeEnd": timeEnd,
-                "type": slotType,     // this is strictly speaking wrong for talks, where this field should be summary of talk types. Issue handled by #fixSlotTypeForTalks()
+                "timeStart": parseInt(timeStart),
+                "timeEnd": parseInt(timeEnd),
+                "type": [slotType],     // this is strictly speaking wrong for talks, where this field should be summary of talk types. Issue handled by #fixSlotTypeForTalks()
                 "rooms": []
             };
             slotListShortcut.push(currentSlotDict);
@@ -163,7 +167,8 @@ class ScheduleMaker {
         // first check that this talk isn't registered yet
         for (var i = 0; i < talkListShortcut.length; i++) {
             var talkDict = talkListShortcut[i];
-            if (talkDict["talkId"] == talkId) throw Error("Trying to add a talk with talkId=" + talkId + ", but this already exists! Please make sure all talks have unique ID.");
+            if (talkDict["talkId"] == talkId) throw Error("Trying to add a talk with talkId=" + talkId + ", but this \
+                                                           already exists at the same timeslot! Please make sure all talks have unique ID.");
         }
 
         // register the tags of the talk to the global list of tags
@@ -174,10 +179,9 @@ class ScheduleMaker {
             this.tagsGlobal.add(tag);
         });
 
-
         // we've reached the "top" of the nested structure, and may add our talk
         const talkDictNew = {
-            "talkId": talkId,
+            "talkId": parseInt(talkId),
             "language": sheetTalkDict["language"][index],
             "difficulty": sheetTalkDict["difficulty"][index],
             "title": sheetTalkDict["title"][index],
