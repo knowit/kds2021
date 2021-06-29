@@ -16,9 +16,6 @@ class SpeadsheetHandler {
         "otherEvents": "otherEvents"
     }
 
-    /**
-     * @returns true if connection to Google spreadsheet is successfully established, else false 
-     */
     async establishConnection() {
         this.doc = new GoogleSpreadsheet(this.docId);
         await this.doc.useServiceAccountAuth({
@@ -70,14 +67,14 @@ class SpeadsheetHandler {
         var tagsRaw = talks["tags"];
         var tagsList = [];                // list of list of trimmed tag strings
 
-        for (var i = 0; i < tagsRaw.length ; i++) {
+        for (var i = 0; i < tagsRaw.length; i++) {
             var tagString = tagsRaw[i];
 
             if (tagString == undefined) {
-                tagsListUntrimmed.push([]);    // if tag field is empty, push an empty tag list
+                tagsList.push([]);    // if tag field is empty, push an empty tag list
             } else {
                 var tagsListUntrimmed = tagString.split("|");
-                tagsList.push(tagsListUntrimmed.map((tag) => {
+                tagsList.push(tagsListUntrimmed.map((tag) => {     // append list of trimmed, lower case tags
                     return tag.toLowerCase().trim();
                 }));
             }
