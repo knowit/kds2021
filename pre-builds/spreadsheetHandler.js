@@ -91,7 +91,7 @@ class SpeadsheetHandler {
             var nums = talkId[i].replace(/\s/g, "").split("|");   // remove all whitespace and seperate on |
             var num = []; 
             for (var j = 0; j < nums.length; j++){
-                num.push(parseInt(nums[j]));
+                num.push(nums[j]);
             }
             listify.push(num); 
         }
