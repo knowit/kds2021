@@ -1,7 +1,7 @@
 import  { GoogleSpreadsheet } from 'google-spreadsheet'; 
 import dotenv from 'dotenv';
 
-class SpeadsheetHandler {
+class SpreadsheetHandler {
 
     constructor(docId) {
         this.docId = docId;
@@ -11,9 +11,39 @@ class SpeadsheetHandler {
 
     // if name of Google sheets changes, chance the values accordingly
     static sheetNames = {
-        "talks": "talks",
-        "speakers": "speakers",
-        "otherEvents": "otherEvents"
+        talks: "talks",
+        speakers: "speakers",
+        otherEvents: "otherEvents"
+    };
+
+    // if talk sheet headers changes, change the values accordingly
+    static talkHeaders = {
+        talkId: "talkId",
+        title: "title",
+        language: "language",
+        difficulty: "difficulty",
+        type: "type",
+        description: "description",
+        room: "room",
+        day: "day",
+        timeStart: "timeStart",
+        timeEnd: "timeEnd",
+        tags: "tags"
+    };
+
+    // if speaker sheet headers change, change the values accordingly
+    static speakerHeaders = {
+        name: "name",
+        info: "info",
+        talkId: "talkId"
+    }
+
+    // if otherEvents sheet headers change, change the values accordingly
+    static otherEventHeaders = {
+        type: "type",
+        day: "day",
+        timeStart: "timeStart",
+        timeEnd: "timeEnd"
     }
 
     async establishConnection() {
@@ -55,12 +85,11 @@ class SpeadsheetHandler {
             }
             i++;   // go to next row
         }
-        //console.log(sheetDict);
         return sheetDict;
     }
 
     async accessTalks() {
-        var talks = await this.#accessSpreadsheet(SpeadsheetHandler.sheetNames["talks"]);
+        var talks = await this.#accessSpreadsheet(SpreadsheetHandler.sheetNames.talks);
 
         // currently, all tags are a single long string with multiple words seperated by a |
         // let's store them as a list of tag words instead
@@ -84,7 +113,7 @@ class SpeadsheetHandler {
     }
     
     async accessSpeakers(){
-        var speakers = await this.#accessSpreadsheet(SpeadsheetHandler.sheetNames["speakers"]); 
+        var speakers = await this.#accessSpreadsheet(SpreadsheetHandler.sheetNames.speakers); 
         var talkId = speakers["talkId"];
         var listify = []; 
         for (var i = 0; i < talkId.length; i++) {
@@ -102,7 +131,7 @@ class SpeadsheetHandler {
     }
     
     async accessOtherEvents(){
-        return this.#accessSpreadsheet(SpeadsheetHandler.sheetNames["otherEvents"]); 
+        return this.#accessSpreadsheet(SpreadsheetHandler.sheetNames.otherEvents); 
     }
 }
-export default SpeadsheetHandler;
+export default SpreadsheetHandler;

@@ -1,7 +1,7 @@
 // import sortMethods from "./scheduleSort.js";
 import { sortByDay, sortByTimeStart } from "./scheduleSort.js";
 import { FieldHandler, SheetValueParsingError, CriticalSheetValueMissingError, DuplicateTalkIdError, UnknownTalkIdError } from "./scheduleFieldHandler.js";
-import * as fs from'fs';
+import * as fs from 'fs';
 
 /**
  * A class responsible for building a dictionary representing the schedule.
@@ -231,22 +231,22 @@ class ScheduleMaker {
                 switch(true) {
                     case (error instanceof SheetValueParsingError):
                         console.error("Skips adding a talk.");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     case (error instanceof CriticalSheetValueMissingError):
                         console.error("Skips adding a talk.");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     case (error instanceof DuplicateTalkIdError):
                         console.error("Skips adding a talk.");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     default:
                         throw error;   // If a regular error is thrown, something else has gone wrong, and error should be handled elsewhere
                 }
             }
         }
-        // adding speakers to talks if data structure is defined
+        // adding speakers to talks
         const numSpeakers = sheetSpeakerDict["name"].length;
         for (var i = 0; i < numSpeakers; i++) {
             try {
@@ -257,15 +257,15 @@ class ScheduleMaker {
                 switch(true) {
                     case (error instanceof CriticalSheetValueMissingError):
                         console.error("Skips adding a speaker");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     case (error instanceof SheetValueParsingError):
                         console.error("Skips adding a speaker");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     case (error instanceof UnknownTalkIdError):
                         console.error("Skips adding a speaker");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     default:
                         throw error;   // If a regular error is thrown, something else has gone wrong, and error should be handled elsewhere
@@ -284,15 +284,15 @@ class ScheduleMaker {
                 switch(true) {
                     case (error instanceof SheetValueParsingError):
                         console.error("Skips adding an otherEvent");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     case (error instanceof CriticalSheetValueMissingError):
                         console.error("Skips adding an otherEvent");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     case (error instanceof DuplicateTalkIdError):
                         console.error("Skips adding an otherEvent");
-                        console.error(error);
+                        console.error(`${error.name}: ${error.message}`);
                         break;
                     default:
                         throw error;   // If a regular error is thrown, something else has gone wrong, and error should be handled elsewhere

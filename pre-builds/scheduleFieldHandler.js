@@ -1,3 +1,5 @@
+import SpreadsheetHandler from "./spreadsheetHandler.js";
+
 export class SheetValueParsingError extends Error {
     constructor(...params) {
         super(...params);
@@ -41,7 +43,7 @@ export class FieldHandler {
         this.talkIds = new Set();   // set of all talk ids to validate that talkIds are unique
     }
 
-    static #dayOfWeekSynonyms = {
+    static #dayOfWeekSynonyms = {    // to support both norwegian/english
         "Monday": ["monday", "mandag"],
         "Tuesday": ["tuesday", "tirsdag"],
         "Wednesday": ["wednesday", "onsdag"],
@@ -62,10 +64,16 @@ export class FieldHandler {
 
     /**
      * Used to access a list within a dictionary without crashing the program if key is not found
+     * WARNING: This depends on the header names of the Google sheet, so headerName must match the actual headers
+     * 
+     * @param {*} index 
+     * @param {*} sheetDict 
+     * @param {*} headerName 
+     * @returns 
      */
-    #accessSheetDictSafely(index, sheetDict, entryName) {
+    #accessSheetDictSafely(index, sheetDict, headerName) {
         try {
-            return sheetDict[entryName][index];
+            return sheetDict[headerName][index];
         } catch(error) {
             return undefined;
         }
@@ -73,15 +81,15 @@ export class FieldHandler {
 
     /**
      * Validates that the time entry is written as an integer, possibly containing : or ;
-     * Apropriate errors are thrown if entry doesn't meet the conditions.
+     * Appropriate errors are thrown if entry doesn't meet the conditions.
      * 
      * @param {*} index
      * @param {*} sheetDict 
-     * @param {*} entryName, header name of sheetDict, should be "timeStart" or "timeEnd"
+     * @param {*} headerName, header name of sheetDict, should be "timeStart" or "timeEnd"
      * @returns modified time field, an integer
      */
-    #validateAndStandardizeTime(index, sheetDict, entryName) {
-        let time = this.#accessSheetDictSafely(index, sheetDict, entryName);
+    #validateAndStandardizeTime(index, sheetDict, headerName) {
+        let time = this.#accessSheetDictSafely(index, sheetDict, headerName);
         if (time == undefined) {
             throw new CriticalSheetValueMissingError("Time field is empty");
         }
@@ -95,14 +103,14 @@ export class FieldHandler {
     /**
      * Validates that the day entry is actually a valid day
      * Norwegian and english is allowed, also upper- and lower case.
-     * Apropriate errors are thrown if entry doesn't meet the conditions 
+     * Appropriate errors are thrown if entry doesn't meet the conditions 
      * 
      * @param {*} index 
      * @param {*} sheetDict 
      * @returns Standardized day field
      */
     #validateAndStandardizeDay(index, sheetDict) {
-        let day = this.#accessSheetDictSafely(index, sheetDict, "day");
+        let day = this.#accessSheetDictSafely(index, sheetDict, SpreadsheetHandler.talkHeaders.day);
         if (day == undefined) {
             throw new CriticalSheetValueMissingError("Day field is empty");
         }
@@ -124,14 +132,14 @@ export class FieldHandler {
 
     /**
      * Validates that the talkId entry is actually a number and unique.
-     * Apropriate errors are thrown if entry doesn't meet the conditions 
+     * Appropriate errors are thrown if entry doesn't meet the conditions 
      * 
      * @param {*} index 
      * @param {*} sheetDict 
      * @returns talkId
      */
     #validateAndStandardizeTalkId(index, sheetDict) {
-        let talkId = this.#accessSheetDictSafely(index, sheetDict, "talkId");
+        let talkId = this.#accessSheetDictSafely(index, sheetDict, SpreadsheetHandler.talkHeaders.talkId);
         if (talkId == undefined) {
             throw new CriticalSheetValueMissingError("TalkId field is empty");
         }
@@ -154,7 +162,7 @@ export class FieldHandler {
      * @returns talkIdList
      */
     #validateAndStandardizeSpeakerTalkIdList(index, sheetDict) {
-        let talkIdList = this.#accessSheetDictSafely(index, sheetDict, "talkId");   // the passed spreadsheet dict should have this saved as a list 
+        let talkIdList = this.#accessSheetDictSafely(index, sheetDict, SpreadsheetHandler.speakerHeaders.talkId);   // the passed spreadsheet dict should have this saved as a list 
         
         if (!talkIdList) {
             throw new CriticalSheetValueMissingError("TalkId field is empty");
@@ -179,7 +187,7 @@ export class FieldHandler {
      * @returns 
      */
     #validateAndStandardizeTags(index, sheetDict) {
-        let tags = this.#accessSheetDictSafely(index, sheetDict, "tags");
+        let tags = this.#accessSheetDictSafely(index, sheetDict, SpreadsheetHandler.talkHeaders.tags);
         if (tags == undefined) return []    // if no tags are listed under a talk, it comes out as undefined
         return tags;
     }
@@ -190,12 +198,12 @@ export class FieldHandler {
      * 
      * @param {*} sheetDict 
      * @param {*} index 
-     * @param {*} entryName 
+     * @param {*} headerName 
      */
-    #makeDefaultIfEmpty(index, sheetDict, entryName) {
-        let field = this.#accessSheetDictSafely(index, sheetDict, entryName);
+    #makeDefaultIfEmpty(index, sheetDict, headerName) {
+        let field = this.#accessSheetDictSafely(index, sheetDict, headerName);
         if (!field) {
-            return `Missing value error: No ${entryName} provided.`;
+            return `ERROR! No ${headerName} provided.`;
         }
         return field;
     }
@@ -210,26 +218,29 @@ export class FieldHandler {
      * @param {*} isTalk boolean, true if event is a talk, otherwise false
      */
     getValidatedEventData(index, sheetDict, isTalk) {
-        // extract raw data from the Google sheet and performs validation and cleaning
-        var eventData = {
-            day: this.#validateAndStandardizeDay(index, sheetDict),
-            timeStart: this.#validateAndStandardizeTime(index, sheetDict, "timeStart"),
-            timeEnd: this.#validateAndStandardizeTime(index, sheetDict, "timeEnd"),
-            type: this.#makeDefaultIfEmpty(index, sheetDict, "type"),
-            roomName: this.#makeDefaultIfEmpty(index, sheetDict, "room")
-        }
-        if (isTalk) {   // we need to extract more data from the sheet
-            eventData = {
-                ...eventData,
+        if (isTalk) {
+            return {
+                day: this.#validateAndStandardizeDay(index, sheetDict),
+                timeStart: this.#validateAndStandardizeTime(index, sheetDict, SpreadsheetHandler.talkHeaders.timeStart),
+                timeEnd: this.#validateAndStandardizeTime(index, sheetDict, SpreadsheetHandler.talkHeaders.timeEnd),
+                type: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.talkHeaders.type),
+                roomName: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.talkHeaders.room),
                 talkId: this.#validateAndStandardizeTalkId(index, sheetDict),
-                title: this.#makeDefaultIfEmpty(index, sheetDict, "title"),
-                language: this.#makeDefaultIfEmpty(index, sheetDict, "language"),
-                difficulty: this.#makeDefaultIfEmpty(index, sheetDict, "difficulty"),
-                description: this.#makeDefaultIfEmpty(index, sheetDict, "description"),
+                title: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.talkHeaders.title),
+                language: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.talkHeaders.language),
+                difficulty: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.talkHeaders.difficulty),
+                description: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.talkHeaders.description),
                 tags: this.#validateAndStandardizeTags(index, sheetDict),
             }
-        } 
-        return eventData;
+        } else {     // other non-talk event, like Pause, Lunch
+            return {
+                day: this.#validateAndStandardizeDay(index, sheetDict),
+                timeStart: this.#validateAndStandardizeTime(index, sheetDict, SpreadsheetHandler.otherEventHeaders.timeStart),
+                timeEnd: this.#validateAndStandardizeTime(index, sheetDict, SpreadsheetHandler.otherEventHeaders.timeEnd),
+                type: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.otherEventHeaders.type),
+                roomName: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.otherEventHeaders.room)
+            }
+        }
     }
 
     /**
@@ -240,8 +251,8 @@ export class FieldHandler {
      */
     getValidatedSpeakerData(index, sheetDict) {
         return {
-            name: this.#makeDefaultIfEmpty(index, sheetDict, "name"),
-            info: this.#makeDefaultIfEmpty(index, sheetDict, "info"),
+            name: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.speakerHeaders.name),
+            info: this.#makeDefaultIfEmpty(index, sheetDict, SpreadsheetHandler.speakerHeaders.info),
             talkIdList: this.#validateAndStandardizeSpeakerTalkIdList(index, sheetDict),
         }
     }
