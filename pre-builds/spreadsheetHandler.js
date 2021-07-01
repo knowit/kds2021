@@ -87,13 +87,14 @@ class SpeadsheetHandler {
         var speakers = await this.#accessSpreadsheet(SpeadsheetHandler.sheetNames["speakers"]); 
         var talkId = speakers["talkId"];
         var listify = []; 
-        for (var i = 0; i < talkId.length; i++){
-            var nums = talkId[i].replace(/\s/g, "").split("|");   // remove all whitespace and seperate on |
-            var num = []; 
-            for (var j = 0; j < nums.length; j++){
-                num.push(nums[j]);
+        for (var i = 0; i < talkId.length; i++) {
+            var talkIdsRaw = talkId[i];
+            if (talkIdsRaw == undefined) {
+                listify.push(talkIdsRaw);                // push undefined is shaky, but it's handled at later point
+                continue;
             }
-            listify.push(num); 
+            var talkIds = talkIdsRaw.replace(/\s/g, "").split("|");   // remove all whitespace and seperate on |
+            listify.push(talkIds);
         }
     
         speakers["talkId"] = listify; 

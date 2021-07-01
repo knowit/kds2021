@@ -242,7 +242,7 @@ class ScheduleMaker {
                         console.error(error);
                         break;
                     default:
-                        throw error;   // If a regular error is thrown, something else has gone wrong, program should crash
+                        throw error;   // If a regular error is thrown, something else has gone wrong, and error should be handled elsewhere
                 }
             }
         }
@@ -268,7 +268,7 @@ class ScheduleMaker {
                         console.error(error);
                         break;
                     default:
-                        throw error;   // If a regular error is thrown, something else has gone wrong, program should crash
+                        throw error;   // If a regular error is thrown, something else has gone wrong, and error should be handled elsewhere
                 }
             }
         }
@@ -295,7 +295,7 @@ class ScheduleMaker {
                         console.error(error);
                         break;
                     default:
-                        throw error;   // If a regular error is thrown, something else has gone wrong, program should crash
+                        throw error;   // If a regular error is thrown, something else has gone wrong, and error should be handled elsewhere
                 }
             }
         }
@@ -315,12 +315,9 @@ class ScheduleMaker {
      * @param {*} filename relative path + file name
      */
     writeToJSON(filename) {
-        // Stringify object with table array
         var json = JSON.stringify(this.schedule); 
-        
-        // Write file
         fs.writeFile(filename, json, function (err) {
-            if (err) return console.log(err);
+            if (err) throw err;
         });
     }
 }

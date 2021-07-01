@@ -42,8 +42,6 @@ async function prebuild() {
 
     // Convert schedule to JSON format, and write schedule to JSON-file. 
     try {
-        var schedule = scheduleMaker.getScheduleCopy();
-        // console.log(JSON.stringify(schedule), "\t"); 
         scheduleMaker.writeToJSON(process.env.WRITE_PATH);
     } catch(err) {
         console.error("Error occured when attempting to write schedule as a json file.");

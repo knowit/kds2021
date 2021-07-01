@@ -83,7 +83,6 @@ export class FieldHandler {
     #validateAndStandardizeTime(index, sheetDict, entryName) {
         let time = this.#accessSheetDictSafely(index, sheetDict, entryName);
         if (time == undefined) {
-            console.log(sheetDict);
             throw new CriticalSheetValueMissingError("Time field is empty");
         }
         time = parseInt(time.replace(":", "").replace(";", ""));
@@ -154,9 +153,10 @@ export class FieldHandler {
      * @param {*} sheetDict dict of lists representing speakers, where multiple talkIds are allowed per speaker
      * @returns talkIdList
      */
-    #validateAndStandardizeTalkIdList(index, sheetDict) {
+    #validateAndStandardizeSpeakerTalkIdList(index, sheetDict) {
         let talkIdList = this.#accessSheetDictSafely(index, sheetDict, "talkId");   // the passed spreadsheet dict should have this saved as a list 
-        if (talkIdList == undefined) {
+        
+        if (!talkIdList) {
             throw new CriticalSheetValueMissingError("TalkId field is empty");
         }
         for (var i = 0; i < talkIdList.length; i++) {
@@ -242,7 +242,7 @@ export class FieldHandler {
         return {
             name: this.#makeDefaultIfEmpty(index, sheetDict, "name"),
             info: this.#makeDefaultIfEmpty(index, sheetDict, "info"),
-            talkIdList: this.#validateAndStandardizeTalkIdList(index, sheetDict),
+            talkIdList: this.#validateAndStandardizeSpeakerTalkIdList(index, sheetDict),
         }
     }
 }
