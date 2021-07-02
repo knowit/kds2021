@@ -1,7 +1,8 @@
 import SheetPreprocesser from "./sheetPreprocesser.js";
 import { writeTalksToSpreadsheet, writeSpeakersToSpreadsheet, writeOtherEventsToSpreadsheet} from "./writeToSheet.js";
+import dotenv from "dotenv";
 
-const jsonPath = '../models/data.json';
+dotenv.config();
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -22,4 +23,4 @@ async function writeToGoogleSheets(path) {
     await sleep(60000);
     writeOtherEventsToSpreadsheet(sheetOtherEventsDict);
 }
-await writeToGoogleSheets(jsonPath);
+await writeToGoogleSheets(process.env.WRITE_PATH);
