@@ -1,6 +1,4 @@
 import * as fs from 'fs';
-// import { program } from "../models/hello.json"; 
-// const data = require("../models/hello.json");
 
 /**
  * Class that read a json object and 
