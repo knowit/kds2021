@@ -2,11 +2,11 @@
     "name": "pre-build",
     "version": "1.0.0",
     "description": "",
-    "main": "prebuild.js",
+    "main": "read/prebuild.js",
     "type": "module",
     "scripts": {
-        "start": "node --experimental-json-modules prebuild.js",
-        "write": "node --experimental-json-modules xTestWriteToSheet.js"
+        "start": "node --experimental-json-modules read/prebuild.js",
+        "write": "node --experimental-json-modules write/main.js"
     },
     "dependencies": {
         "dotenv": "^10.0.0",
