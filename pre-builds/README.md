@@ -1,7 +1,3 @@
-Great success. 
-You just read a README. 
-
-
 # Knowit Developer Summit 
 
 # What do you need? 
