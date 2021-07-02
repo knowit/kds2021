@@ -20,7 +20,20 @@
 5. Create the following headers in otherEvents: [type, day, timeStart, timeEnd].
 6. Invite service account (CLIENT_EMAIL) to edit spreadsheet, in Google Sheets by clicking SHARE. 
 
-## DOTENV-file: paths and keys 
-1. PRIVATE_KEY => dotenv 
-2. CLIENT_EMAIL => dotenv 
-3. DOC_ID => dotenv 
+## DOTENV-file: paths and keys
+At bare minimum, your .env file need to contain the following:
+1. PRIVATE_KEY (found in your downloaded key)
+2. CLIENT_EMAIL (found in your downloaded key)
+3. DOC_ID (found in your sheet url)
+4. WRITE_PATH (relative path, including file name, of the written json file with Sheets data)
+
+## Run
+The two folders, "read" and "write", contains the files necessary to read data from and write data to Google spreadsheets, respectively.    
+- To read from Google sheets and save as a json, run <b>npm start</b>. prebuild.js is the run script   
+- To write an existing json file of talks to Google sheets, run <b>npm write</b>. mainWrite.js is the run script   
+
+## Options
+- constants.js contains global variables of settings that might change. If the number of rooms or languages change,    
+edit this file.
+- If the Google sheet names or headers changes, change the values of the objects in read/spreadsheetHandler.js accordingly.
+
