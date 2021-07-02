@@ -47,4 +47,3 @@ export function sortByTimeStart(schedule) {
         })
     }
 }
-// export default sortMethods = { sortByDay, sortByTimeStart };

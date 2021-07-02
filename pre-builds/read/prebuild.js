@@ -14,7 +14,6 @@ async function prebuild() {
         console.error(err);
         return;
     }
-    // if we're here, we successfully established connection
 
     // READ SPREADSHEET, fetch sheets as dictionaries. 
     try {

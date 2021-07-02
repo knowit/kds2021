@@ -180,7 +180,6 @@ class ScheduleMaker {
                 if (roomList[0]["talks"] == undefined) throw Error("Room dict has undefined key='talks', this should NOT happen. Something went wrong when building the schedule.");
                 if (roomList[0]["talks"].length == 0) return;    // non-talk event, so we can skip this
 
-                // now we're sure we've hit a talk slot
                 // let's enter all talks in this slot and extract their types
                 var talkTypes = new Set();
 
