@@ -1,7 +1,7 @@
-// import sortMethods from "./scheduleSort.js";
 import { sortByDay, sortByTimeStart } from "./scheduleSort.js";
 import { FieldHandler, SheetValueParsingError, CriticalSheetValueMissingError, DuplicateTalkIdError, UnknownTalkIdError } from "./scheduleFieldHandler.js";
 import * as fs from 'fs';
+import { NUMBER_OF_ROOMS, LANGUAGES } from "../constants.js";
 
 /**
  * A class responsible for building a dictionary representing the schedule.
@@ -16,8 +16,8 @@ class ScheduleMaker {
         this.schedule["program"]["days"] = [];
 
         // this is just to recreate the exact structure
-        this.schedule["program"]["rooms"] = [1,2,3,4];                                     
-        this.schedule["program"]["languages"] = ['Norwegian', 'English', 'Swedish'];
+        this.schedule["program"]["rooms"] = [...Array(NUMBER_OF_ROOMS).keys()];                                     
+        this.schedule["program"]["languages"] = LANGUAGES;
 
         // auxiliary data structures
         this.talksShortcut = {}        // "shortcut" from talkId to "its" dictionary, to be able to add several speakers
@@ -25,11 +25,6 @@ class ScheduleMaker {
         
         // to perform cell value validation and manipulation
         this.fieldHandler = new FieldHandler();
-    }
-
-    getScheduleCopy() {
-        var copy = {...this.schedule}
-        return copy
     }
 
     /**
@@ -185,7 +180,6 @@ class ScheduleMaker {
                 if (roomList[0]["talks"] == undefined) throw Error("Room dict has undefined key='talks', this should NOT happen. Something went wrong when building the schedule.");
                 if (roomList[0]["talks"].length == 0) return;    // non-talk event, so we can skip this
 
-                // now we're sure we've hit a talk slot
                 // let's enter all talks in this slot and extract their types
                 var talkTypes = new Set();
 
@@ -252,7 +246,7 @@ class ScheduleMaker {
             try {
                 this.#addSpeakerRow(i, sheetSpeakerDict);
             } catch(error) {
-                // try to add a other events row. If a custom error is thrown, something is wrong with the values in the Google sheet
+                // try to add a speaker row. If a custom error is thrown, something is wrong with the values in the Google sheet
                 // just skip the row in this case
                 switch(true) {
                     case (error instanceof CriticalSheetValueMissingError):
@@ -279,7 +273,7 @@ class ScheduleMaker {
             try {
                 this.#addEventRow(i, sheetOtherEventDict);
             } catch(error) {
-                // try to add a other events row. If a custom error is thrown, something is wrong with the values in the Google sheet
+                // try to add an other events row. If a custom error is thrown, something is wrong with the values in the Google sheet
                 // just skip the row in this case
                 switch(true) {
                     case (error instanceof SheetValueParsingError):
