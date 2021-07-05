@@ -38,7 +38,7 @@ const ScheduleEntry = ({
           style={style as CSSProperties}
         >
           <Talk
-            visibility={!talk.hide}
+            hidden={talk.hide}
             day={day}
             timeStart={from}
             timeEnd={to}

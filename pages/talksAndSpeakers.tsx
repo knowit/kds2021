@@ -22,16 +22,32 @@ const TalksAndSpeakers = () => {
 
   // TODO
   const handleToggleTag = (tag) => {
-    /*
-        setState((prev) => {
-            if (prev.tags.indexOf(tag) > -1) {
-                return {tags: prev.tags.filter(t => t != tag)};
-            }
-            return {tags: prev.tags.concat(tag)};
+        // setState((prev) => {
+        //     if (prev.tags.includes(tag)) {
+        //         return {tags: prev.tags.filter(t => t != tag)};
+        //     }
+        //     return {tags: prev.tags.concat(tag)};
 
-        }, filterProgram);
-        */
+        // }, filterProgram);
   };
+
+  const handleHideTalk = (talk) => {
+    const tags = talk.tags.concat([talk.language]);
+
+    if (showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
+      talk.hide = true;
+      console.log("Here filter 1");
+    } else if (
+      tags.length > 0 &&
+      !tags.some((tag) => tags.includes(tag))
+    ) {
+      talk.hide = true;
+      console.log("Here filter 2")
+    } else {
+      talk.hide = false;
+      console.log("Here filter 3")
+    }
+  }
 
   const filterProgram = () => {
     let filteredProgram = JSON.parse(JSON.stringify(Program));
@@ -41,18 +57,7 @@ const TalksAndSpeakers = () => {
           slot.rooms &&
           slot.rooms.forEach((room) => {
             room.talks.forEach((talk) => {
-              const tags = talk.tags.concat([talk.language]);
-
-              if (showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
-                talk.hide = true;
-              } else if (
-                tags.length > 0 &&
-                !tags.some((tag) => tags.indexOf(tag) > -1)
-              ) {
-                talk.hide = true;
-              } else {
-                talk.hide = false;
-              }
+              handleHideTalk(talk);
             });
           })
       )
@@ -100,7 +105,7 @@ const TalksAndSpeakers = () => {
                       const talkEl = (
                         <div className="talk-container" key={i}>
                           <Talk
-                            visibility={talk.hide}
+                            hidden={talk.hide}
                             day={day.day}
                             timeStart={from}
                             timeEnd={to}
@@ -123,7 +128,7 @@ const TalksAndSpeakers = () => {
 
                       from = to;
 
-                      return !talk.hide ? talkEl : "";
+                      return talk.hide ? "" : talkEl;
                     });
                   })
                 )
