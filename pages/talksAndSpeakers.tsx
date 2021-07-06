@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Filter, Layout, Talk } from "../components";
 import { program as Program } from "../models/data.json";
 import { Time, getDuration } from "../helpers";
@@ -31,38 +31,44 @@ const TalksAndSpeakers = () => {
         // }, filterProgram);
   };
 
-  const handleHideTalk = (talk) => {
-    const tags = talk.tags.concat([talk.language]);
+  useEffect(() => {
+    filterProgram();
+  }, [tags, showOnlyFavorites]);
 
-    if (showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
-      talk.hide = true;
-      console.log("Here filter 1");
-    } else if (
-      tags.length > 0 &&
-      !tags.some((tag) => tags.includes(tag))
-    ) {
-      talk.hide = true;
-      console.log("Here filter 2")
-    } else {
-      talk.hide = false;
-      console.log("Here filter 3")
-    }
+  /**
+   * Sets the hide-property of talks to a fitting boolean 
+   * 
+   * @param talks list of talk objects
+   */
+  const handleHideTalks = (talks) => {
+    talks.forEach((talk) => {
+      const tags = talk.tags.concat([talk.language]);
+
+      if (showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
+        talk.hide = true;
+        console.log("Hidden 1");
+      } else if (tags.length > 0 && !tags.some((tag) => tags.includes(tag))) {
+        talk.hide = true;
+        console.log("Hidden 2")
+      } else {
+        talk.hide = false;
+        console.log("Visible")
+      }
+    })
   }
 
   const filterProgram = () => {
+    console.log("Program is filtered");
     let filteredProgram = JSON.parse(JSON.stringify(Program));
     filteredProgram.days.forEach((day) =>
       day.slots.forEach(
         (slot) =>
           slot.rooms &&
           slot.rooms.forEach((room) => {
-            room.talks.forEach((talk) => {
-              handleHideTalk(talk);
-            });
+            handleHideTalks(room.talks);
           })
       )
     );
-
     setFilteredProgram(filteredProgram);
   };
 
@@ -70,11 +76,6 @@ const TalksAndSpeakers = () => {
     <div className="talksAndSpeakers page">
       <Layout
         title="Talks & Speakers"
-        filter={"small"}
-        onTagChange={handleFilterChange}
-        onFavoriteChange={handleFavoriteChange}
-        selectedTags={tags}
-        showOnlyFavorites={showOnlyFavorites}
         background={true}
       >
         <div className="talks-container document">
@@ -121,7 +122,7 @@ const TalksAndSpeakers = () => {
                             tags={talk.tags}
                             selectedTags={tags}
                             onToggleTag={(val) => handleToggleTag(val)}
-                            onFavoriteChange={() => filterProgram()}
+                            onFavoriteChange={ () => {} } //() => filterProgram() }
                           />
                         </div>
                       );

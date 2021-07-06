@@ -61,13 +61,6 @@ const Schedule = () => {
               return false;
             }
 
-            console.log(
-              JSON.stringify({
-                tags: tags,
-                talkTags: talkTags,
-              })
-            );
-
             if (tags.length == 0) {
               return true;
             }
@@ -95,11 +88,6 @@ const Schedule = () => {
     <div className="schedule page">
       <Layout
         title="Schedule"
-        filter={"small"}
-        onTagChange={handleFilterChange}
-        onFavoriteChange={handleFavoriteChange}
-        showOnlyFavorites={showOnlyFavorites}
-        selectedTags={tags}
         hideLogo={"small"}
         background={true}
       >
