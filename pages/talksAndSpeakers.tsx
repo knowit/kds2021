@@ -10,30 +10,27 @@ const TalksAndSpeakers = () => {
     JSON.parse(JSON.stringify(Program))
   );
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
-  const [tags, setTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
 
   const handleFilterChange = (newVal) => {
-    setTags(newVal);
+    setSelectedTags(newVal);
   };
 
   const handleFavoriteChange = (newVal) => {
     setShowOnlyFavorites(newVal);
   };
 
-  // TODO
   const handleToggleTag = (tag) => {
-        // setState((prev) => {
-        //     if (prev.tags.includes(tag)) {
-        //         return {tags: prev.tags.filter(t => t != tag)};
-        //     }
-        //     return {tags: prev.tags.concat(tag)};
-
-        // }, filterProgram);
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(selectedTags.filter(t => t != tag)); 
+    } else {
+      setSelectedTags(selectedTags.concat(tag));
+    }
   };
 
   useEffect(() => {
     filterProgram();
-  }, [tags, showOnlyFavorites]);
+  }, [selectedTags, showOnlyFavorites]);
 
   /**
    * Sets the hide-property of talks to a fitting boolean 
@@ -42,23 +39,23 @@ const TalksAndSpeakers = () => {
    */
   const handleHideTalks = (talks) => {
     talks.forEach((talk) => {
-      const tags = talk.tags.concat([talk.language]);
+      const tagsInCurrentTalk = talk.tags.concat([talk.language]);
 
-      if (showOnlyFavorites && !localStorage.getItem(talk.talkId)) {
+      if (showOnlyFavorites && !localStorage.getItem(talk.talkId)) {    // hide not-favorited talks
         talk.hide = true;
-        console.log("Hidden 1");
-      } else if (tags.length > 0 && !tags.some((tag) => tags.includes(tag))) {
+      } else if                                                         // hide talks which doesn't contain a selected tag
+      (
+        selectedTags.length > 0 &&
+        !selectedTags.some((tag) => tagsInCurrentTalk.includes(tag))
+      ) {
         talk.hide = true;
-        console.log("Hidden 2")
       } else {
         talk.hide = false;
-        console.log("Visible")
       }
     })
   }
 
   const filterProgram = () => {
-    console.log("Program is filtered");
     let filteredProgram = JSON.parse(JSON.stringify(Program));
     filteredProgram.days.forEach((day) =>
       day.slots.forEach(
@@ -83,7 +80,7 @@ const TalksAndSpeakers = () => {
             <Filter
               onFavoriteChange={handleFavoriteChange}
               onTagChange={handleFilterChange}
-              selectedTags={tags}
+              selectedTags={selectedTags}
               showOnlyFavorites={showOnlyFavorites}
               className="hide-small talks-filter"
               type="dropdown"
@@ -120,9 +117,9 @@ const TalksAndSpeakers = () => {
                             key={i}
                             difficulty={talk.difficulty}
                             tags={talk.tags}
-                            selectedTags={tags}
-                            onToggleTag={(val) => handleToggleTag(val)}
-                            onFavoriteChange={ () => {} } //() => filterProgram() }
+                            selectedTags={selectedTags}
+                            onToggleTag={(tag) => handleToggleTag(tag)}
+                            onFavoriteChange={ () => filterProgram() }
                           />
                         </div>
                       );

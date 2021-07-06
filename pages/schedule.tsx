@@ -74,9 +74,6 @@ const Schedule = () => {
         });
       });
     });
-
-    //alert(JSON.stringify(newProgram.days));
-
     setFilteredProgram(newProgram);
   };
 
