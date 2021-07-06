@@ -37,7 +37,7 @@ const ScheduleTitle = ({title, clamped}:props) => {
                     ellipsis='...'
                     trimRight
                     basedOn='letters'
-                    isClamped='false'
+                    isClamped='true'
                 />
             </div>
 
