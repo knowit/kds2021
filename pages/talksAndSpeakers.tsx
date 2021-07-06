@@ -10,6 +10,7 @@ const TalksAndSpeakers = () => {
     JSON.parse(JSON.stringify(Program))
   );
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
+  const [atLeastOneTalkVisible, setAtLeastOneTalkVisible] = useState(false);
   const [selectedTags, setSelectedTags] = useState([]);
 
   const handleFilterChange = (newVal) => {
@@ -36,8 +37,10 @@ const TalksAndSpeakers = () => {
    * Sets the hide-property of talks to a fitting boolean 
    * 
    * @param talks list of talk objects
+   * @returns true if at least one talk is visible, otherwise false
    */
   const handleHideTalks = (talks) => {
+    let visible = false;
     talks.forEach((talk) => {
       const tagsInCurrentTalk = talk.tags.concat([talk.language]);
 
@@ -51,23 +54,77 @@ const TalksAndSpeakers = () => {
         talk.hide = true;
       } else {
         talk.hide = false;
+        visible = true;
       }
     })
+    return visible;
   }
 
   const filterProgram = () => {
+    let visibleTotal = false;     // changed to true if at least one talk is visible
     let filteredProgram = JSON.parse(JSON.stringify(Program));
     filteredProgram.days.forEach((day) =>
       day.slots.forEach(
         (slot) =>
           slot.rooms &&
           slot.rooms.forEach((room) => {
-            handleHideTalks(room.talks);
+            let visible = handleHideTalks(room.talks)
+            visibleTotal = visibleTotal || visible;
           })
       )
     );
+    setAtLeastOneTalkVisible(visibleTotal);
     setFilteredProgram(filteredProgram);
   };
+
+  // conditional rendering
+  let talksDOM;
+  if (showOnlyFavorites && !atLeastOneTalkVisible) {
+    talksDOM = <h1>No favorites selected</h1>;
+  } else {
+    talksDOM = filteredProgram.days.map((day) =>
+      day.slots
+        .filter(function (slot) {
+          return slot.rooms !== undefined;
+        })
+        .map((slot) =>
+          slot.rooms.map((room) => {
+            let from = Time.fromNumber(slot.timeStart);
+
+            return room.talks.map((talk, i) => {
+              const to = from.copy().add(getDuration(talk));
+              const talkEl = (
+                <div className="talk-container" key={i}>
+                  <Talk
+                    hidden={talk.hide}
+                    day={day.day}
+                    timeStart={from}
+                    timeEnd={to}
+                    description={talk.description}
+                    speaker={talk.speakers}
+                    title={talk.title}
+                    type={talk.type}
+                    id={talk.talkId}
+                    room={room.name}
+                    language={talk.language}
+                    key={i}
+                    difficulty={talk.difficulty}
+                    tags={talk.tags}
+                    selectedTags={selectedTags}
+                    onToggleTag={(tag) => handleToggleTag(tag)}
+                    onFavoriteChange={ () => filterProgram() }
+                  />
+                </div>
+              );
+
+              from = to;
+
+              return talk.hide ? "" : talkEl;
+            });
+          })
+        )
+      )
+  }
 
   return (
     <div className="talksAndSpeakers page">
@@ -87,50 +144,8 @@ const TalksAndSpeakers = () => {
             />
             <h1 className="title"> Talks & speakers</h1>
           </div>
-
           <div className="talks">
-            {filteredProgram.days.map((day) =>
-              day.slots
-                .filter(function (slot) {
-                  return slot.rooms !== undefined;
-                })
-                .map((slot) =>
-                  slot.rooms.map((room) => {
-                    let from = Time.fromNumber(slot.timeStart);
-
-                    return room.talks.map((talk, i) => {
-                      const to = from.copy().add(getDuration(talk));
-                      const talkEl = (
-                        <div className="talk-container" key={i}>
-                          <Talk
-                            hidden={talk.hide}
-                            day={day.day}
-                            timeStart={from}
-                            timeEnd={to}
-                            description={talk.description}
-                            speaker={talk.speakers}
-                            title={talk.title}
-                            type={talk.type}
-                            id={talk.talkId}
-                            room={room.name}
-                            language={talk.language}
-                            key={i}
-                            difficulty={talk.difficulty}
-                            tags={talk.tags}
-                            selectedTags={selectedTags}
-                            onToggleTag={(tag) => handleToggleTag(tag)}
-                            onFavoriteChange={ () => filterProgram() }
-                          />
-                        </div>
-                      );
-
-                      from = to;
-
-                      return talk.hide ? "" : talkEl;
-                    });
-                  })
-                )
-            )}
+            {talksDOM}
           </div>
         </div>
       </Layout>
