@@ -1,7 +1,7 @@
 import { NONAME } from 'dns';
 import React from 'react';
 import LinesEllipsis from 'react-lines-ellipsis'; 
-import { Transition } from 'react-transition-group'; 
+import { Transition, CSSTransition } from 'react-transition-group'; 
 
 
 
