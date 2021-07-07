@@ -127,5 +127,4 @@ const Talk = ({
     </div>
   );
 };
-
 export default Talk;

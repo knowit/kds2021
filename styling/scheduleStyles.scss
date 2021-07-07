@@ -2,14 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import "styling";
 
-// Make presentation titles take up a maximum of two lines. 
-// TODO: add "..." to the end of each title. 
 h1 {
   text-align: center;
   margin-bottom: 1em;
-  //word-wrap: break-word;
 }
-
 
 .schedule {
   .schedule-document {
