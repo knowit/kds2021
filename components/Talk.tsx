@@ -49,7 +49,7 @@ const Talk = ({
   onToggleTag,
 }: TalkProps) => {
   return (
-    <div className={`talk ${!visibility ? "talk-hidden" : ""}`}>
+    <div id={id} className={`talk ${!visibility ? "talk-hidden" : ""}`}>
       <div className="header">
         <div className="time">
           <div className="wrapper">
@@ -96,7 +96,7 @@ const Talk = ({
             {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
           </span>
         </p>
-        <ScheduleTitle title={title} />
+        <ScheduleTitle id={id} title={title} />
         {description && <p>{description}</p>}
         {speaker &&
           speaker.map((speaker, index) => {
