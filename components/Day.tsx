@@ -6,9 +6,10 @@ interface DayProps {
   slots: any[];
   tags: string[];
   onToggleTag: (val) => void;
+  onFavoriteChange: (val) => void;
 }
 
-const Day = ({ currDay, slots, tags, onToggleTag }: DayProps) => {
+const Day = ({ currDay, slots, tags, onToggleTag, onFavoriteChange }: DayProps) => {
   const longestTrack = (slot) => {
     return Math.max(
       ...(slot.rooms &&
@@ -42,6 +43,7 @@ const Day = ({ currDay, slots, tags, onToggleTag }: DayProps) => {
               <ScheduleEntry
                 day={currDay.day}
                 onToggleTag={onToggleTag}
+                onFavoriteChange={onFavoriteChange}
                 tags={tags}
                 slot={slot}
                 showRoomHeader={true}
