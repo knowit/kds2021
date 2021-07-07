@@ -29,10 +29,9 @@ const ScheduleTitle = ({title, id, clamped}:props) => {
                     ellipsis='...'
                     trimRight
                     basedOn='letters'
-                    isClamped='true'
                 />
             </div>
-            
+
             <Link href={`./talksAndSpeakers/#${encodeURIComponent(id)}`}>
                 <a>
                     <h1 className="title" style={{display: over? 'block' : 'none'}}>
