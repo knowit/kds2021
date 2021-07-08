@@ -13,7 +13,7 @@ const FavouriteTalkButtonNoSSR = dynamic(
 );
 
 interface TalkProps {
-  visibility: boolean;
+  hidden: boolean;
   day: any;
   timeStart: any;
   timeEnd: any;
@@ -32,7 +32,7 @@ interface TalkProps {
 }
 
 const Talk = ({
-  visibility,
+  hidden,
   day,
   timeStart,
   timeEnd,
@@ -50,7 +50,7 @@ const Talk = ({
   onToggleTag,
 }: TalkProps) => {
   return (
-    <div className={`talk ${!visibility ? "talk-hidden" : ""}`}>
+    <div className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
         <div className="time">
           <div className="wrapper">
@@ -118,7 +118,7 @@ const Talk = ({
                 <FilterTag
                   key={tag}
                   name={tag}
-                  selected={selectedTags.indexOf(tag) > -1}
+                  selected={selectedTags.includes(tag)}
                   onClick={() => onToggleTag(tag)}
                 />
               ))}

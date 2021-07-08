@@ -8,17 +8,21 @@ interface FavoriteTalkButtonProps {
 const FavouriteTalkButton = ({ talkId, onClick }: FavoriteTalkButtonProps) => {
   const [clicked, setClicked] = useState(false);
 
-  const favouriteButtonClick = () => {
-    setClicked(!clicked);
-
-    if (onClick !== undefined) {
-      onClick(clicked);
-    }
-
+  const updateLocalStorage = () => {
     if (typeof localStorage != "undefined" && !localStorage.getItem(talkId)) {
       localStorage.setItem(talkId, talkId);
     } else if (typeof localStorage != "undefined") {
       localStorage.removeItem(talkId);
+    }
+  }
+
+  const favouriteButtonClick = () => {
+    setClicked(!clicked);
+
+    updateLocalStorage();
+
+    if (onClick !== undefined) {
+      onClick(clicked);
     }
   };
 
