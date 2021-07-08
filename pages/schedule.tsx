@@ -13,18 +13,6 @@ const Schedule = () => {
   const [selectedTags, setSelectedTags] = useState([]);
   const [currentDayIndex, setCurrentDayIndex] = useState(0);
 
-  const getRooms = (day) => {
-    const roomDict = {};
-
-    const rooms = day.slots.reduce((acc, slot) => acc.concat(slot.rooms), []);
-    rooms.forEach((room) => {
-      if (room) {
-        roomDict[room.name] = true;
-      }
-    });
-    return Object.keys(roomDict);
-  };
-
   useEffect(() => {
     filterProgram();
   }, [selectedTags, showOnlyFavorites]);
@@ -46,7 +34,6 @@ const Schedule = () => {
   };
 
   const filterProgram = () => {
-    console.log("Program filtered");
     let filteredProgram = JSON.parse(JSON.stringify(Program));
 
     filteredProgram.days.forEach((day) => {

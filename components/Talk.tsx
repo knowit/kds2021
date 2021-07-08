@@ -18,7 +18,6 @@ interface TalkProps {
   timeStart: any;
   timeEnd: any;
   room: any;
-  difficulty: any;
   onFavoriteChange?: (val) => void;
   id: any;
   type: any;
@@ -29,6 +28,7 @@ interface TalkProps {
   selectedTags: any;
   language: any;
   onToggleTag: any;
+  isInSchedule: boolean;
 }
 
 const Talk = ({
@@ -37,7 +37,6 @@ const Talk = ({
   timeStart,
   timeEnd,
   room,
-  difficulty,
   onFavoriteChange,
   id,
   type,
@@ -48,7 +47,12 @@ const Talk = ({
   selectedTags,
   language,
   onToggleTag,
+  isInSchedule,
 }: TalkProps) => {
+
+  // link to flag images: https://www.gosquared.com/resources/flag-icons/
+  const filePath = `../static/images/${language}-flag.png`;
+
   return (
     <div className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
@@ -71,25 +75,30 @@ const Talk = ({
           </div>
           <span className="text room-name">{room}</span>
         </div>
-        <div className="diff">
-          <div className="wrapper">
-            <Difficulty difficulty={difficulty} />
-          </div>
-          <span className="text diff-name">{difficulty}</span>
-        </div>
+        {!isInSchedule &&
+        <div className="language-flag">
+          <img className="flag-image" src={filePath}></img>
+          <p>Spoken language</p>
+        </div>}
         <div className="heart">
           <FavouriteTalkButtonNoSSR talkId={id} onClick={onFavoriteChange} />
         </div>
       </div>
       <div className="talk-content">
         <p className="day">{day}</p>
-        <p className="time-info">
-          {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
-          <span className="duration">
-            &nbsp;(
-            {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
-          </span>
-        </p>
+        {isInSchedule &&
+          <div className="time-and-flag">
+            <p>
+              {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
+              <span className="duration">
+                &nbsp;(
+                {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
+              </span>
+            </p>
+            <img className="flag-image" src={filePath}></img>
+          </div>
+        }
+        {isInSchedule}
         <p className="type-info">
           {type}
           <span className="duration">

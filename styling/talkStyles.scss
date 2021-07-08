@@ -6,18 +6,32 @@
   border: none;
 }
 
+.time-and-flag {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-flag {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
 .talk {
   .header {
     height: 100%;
-
-    .diff,
-    .room,
     .time,
+    .room,
     .heart {
       margin-top: auto;
       margin-bottom: auto;
     }
-
     .diff .diff-name,
     .room .room-name,
     .time .time-text {
