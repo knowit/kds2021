@@ -112,7 +112,7 @@ const TalksAndSpeakers = () => {
                     selectedTags={selectedTags}
                     onToggleTag={(tag) => handleToggleTag(tag)}
                     onFavoriteChange={ () => filterProgram() }
-                    isSchedule={false}
+                    isInSchedule={false}
                   />
                 </div>
               );
