@@ -14,26 +14,18 @@
   align-items: center;
 }
 
-.language-flag {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 0.75rem;
-}
-
 .talk {
   .header {
     height: 100%;
     .time,
     .room,
+    .language,
     .heart {
       margin-top: auto;
       margin-bottom: auto;
     }
-    .diff .diff-name,
     .room .room-name,
+    .language .language-name,
     .time .time-text {
       display: block;
       font-size: 0.75rem;

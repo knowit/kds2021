@@ -37,6 +37,7 @@ div.talksAndSpeakers {
         margin-bottom: 30px;
         .room-name,
         .diff-name,
+        .language-name,
         .time-text {
           margin-top: auto;
           margin-bottom: auto;
@@ -97,7 +98,7 @@ div.talksAndSpeakers {
       }
       .time,
       .room,
-      .diff {
+      .language {
         @extend .flex-row;
       }
       .filter-tag {

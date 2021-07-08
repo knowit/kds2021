@@ -76,9 +76,9 @@ const Talk = ({
           <span className="text room-name">{room}</span>
         </div>
         {!isInSchedule &&
-        <div className="language-flag">
+        <div className="language">
           <img className="flag-image" src={filePath}></img>
-          <p>Spoken language</p>
+          <span className="text language-name">Spoken language</span>
         </div>}
         <div className="heart">
           <FavouriteTalkButtonNoSSR talkId={id} onClick={onFavoriteChange} />
