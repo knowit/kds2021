@@ -1,0 +1,16 @@
+@import "variables";
+
+#Container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#Header {
+  text-align: left;
+}
+
+#Image {
+  width: 200px; 
+}
