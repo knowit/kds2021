@@ -52,7 +52,7 @@ const Filter = ({
         ></img>
         <h1 className="header">Filter by tag</h1>
         <div className="favorite">
-          <p className="subheader">Show only favorites: </p>
+          <p className="subheader">Show only your favorites: </p>
           <ShowOnlyFavouritesButton
             showOnlyFavorites={showOnlyFavorites}
             onClick={() => onFavoriteChange(!showOnlyFavorites)}

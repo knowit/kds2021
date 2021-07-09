@@ -9,11 +9,6 @@ import "../styling/styling.scss";
 interface LayoutProps {
   hideLogo?: "small" | "large" | boolean;
   header?: any;
-  filter?: "small" | "large" | boolean;
-  onTagChange?: (tags: string[]) => void;
-  onFavoriteChange?: (val: boolean) => void;
-  selectedTags?: string[];
-  showOnlyFavorites?: boolean;
   background?: boolean;
   title?: string;
   children: any;
@@ -22,11 +17,6 @@ interface LayoutProps {
 const Layout = ({
   hideLogo,
   header,
-  filter,
-  onTagChange,
-  onFavoriteChange,
-  selectedTags,
-  showOnlyFavorites,
   background,
   title,
   children,
@@ -59,18 +49,6 @@ const Layout = ({
             {header}
           </div>
         </div>
-        <div className="filter-pos">
-          {filter && (
-            <Filter
-              onTagChange={onTagChange}
-              onFavoriteChange={onFavoriteChange}
-              showOnlyFavorites={showOnlyFavorites}
-              selectedTags={selectedTags}
-              className={typeof filter === "string" ? `show-${filter}` : ""}
-            />
-          )}
-        </div>
-
         <Menu />
       </div>
       {background && <img src="../static/code.svg" className="background" />}

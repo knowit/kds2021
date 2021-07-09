@@ -6,9 +6,10 @@ interface DayProps {
   slots: any[];
   tags: string[];
   onToggleTag: (val) => void;
+  onFavoriteChange: (val) => void;
 }
 
-const Day = ({ currDay, slots, tags, onToggleTag }: DayProps) => {
+const Day = ({ currDay, slots, tags, onToggleTag, onFavoriteChange }: DayProps) => {
   const longestTrack = (slot) => {
     return Math.max(
       ...(slot.rooms &&
@@ -17,6 +18,15 @@ const Day = ({ currDay, slots, tags, onToggleTag }: DayProps) => {
         ))
     );
   };
+
+  /**
+   * Only talk-events need schedule entries. Used as a check
+   */
+  const needForScheduleEntry = ((slot) => {
+    return slot.rooms && slot.rooms.some((room) => {
+      return room.talks != undefined && room.talks.length > 0;
+    });
+  });
 
   return (
     <div className="day">
@@ -29,10 +39,11 @@ const Day = ({ currDay, slots, tags, onToggleTag }: DayProps) => {
               timeEnd={slot.timeEnd}
               type={slot.type}
             />
-            {slot.rooms && (
+            {needForScheduleEntry(slot) && (
               <ScheduleEntry
                 day={currDay.day}
                 onToggleTag={onToggleTag}
+                onFavoriteChange={onFavoriteChange}
                 tags={tags}
                 slot={slot}
                 showRoomHeader={true}
