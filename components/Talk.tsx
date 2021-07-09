@@ -49,7 +49,7 @@ const Talk = ({
   onToggleTag,
 }: TalkProps) => {
   return (
-    <div id={id} className={`talk ${!visibility ? "talk-hidden" : ""}`}>
+    <div id={id} className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
         <div className="time">
           <div className="wrapper">
