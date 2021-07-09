@@ -1,7 +1,8 @@
 import { Layout } from "../components";
 import styled from "styled-components";
 
-import "../styling/callForPresentationsStyles.scss";
+import "../styling/callForPresentationsStyles.scss"; // This line must be included, or else main menu will break. 
+import "../styling/logoStyles.scss";
 
 const Logo = () => {
   const Container = styled.div`
@@ -34,5 +35,4 @@ const Logo = () => {
     </div>
   );
 };
-
 export default Logo;
