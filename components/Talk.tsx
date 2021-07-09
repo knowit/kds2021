@@ -51,7 +51,7 @@ const Talk = ({
 }: TalkProps) => {
 
   // link to flag images: https://www.gosquared.com/resources/flag-icons/
-  const filePath = `../static/images/${language}-flag.png`;
+  const flagPath = `../static/images/${language}-flag.png`;
 
   return (
     <div className={`talk ${hidden ? "talk-hidden" : ""}`}>
@@ -76,29 +76,33 @@ const Talk = ({
           <span className="text room-name">{room}</span>
         </div>
         {!isInSchedule &&
-        <div className="language">
-          <img className="flag-image" src={filePath}></img>
-          <span className="text language-name">Spoken language</span>
-        </div>}
+          <div className="language">
+            <img className="flag-image" src={flagPath}></img>
+            <span className="text language-name">Talk language</span>
+          </div>
+        }
         <div className="heart">
           <FavouriteTalkButtonNoSSR talkId={id} onClick={onFavoriteChange} />
         </div>
       </div>
       <div className="talk-content">
-        <p className="day">{day}</p>
-        {isInSchedule &&
-          <div className="time-and-flag">
-            <p>
+        <h1 className="title">{title}</h1>
+        {!isInSchedule &&
+          <div className="day-and-time">
+            <p className="day">{day}:</p>
+            <p className="time-info">
               {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
-              <span className="duration">
-                &nbsp;(
-                {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
-              </span>
             </p>
-            <img className="flag-image" src={filePath}></img>
           </div>
         }
-        {isInSchedule}
+        {isInSchedule &&
+          <div className="time-and-flag">
+            <p className="time-info">
+              {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
+            </p>
+            <img className="flag-image" src={flagPath}></img>
+          </div>
+        }
         <p className="type-info">
           {type}
           <span className="duration">
@@ -106,7 +110,6 @@ const Talk = ({
             {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
           </span>
         </p>
-        <h1 className="title">{title}</h1>
         {description && <p>{description}</p>}
         {speaker &&
           speaker.map((speaker, index) => {
