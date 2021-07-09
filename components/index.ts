@@ -13,3 +13,4 @@ export { default as Room } from "./Room";
 export { default as ScheduleEntry } from "./ScheduleEntry";
 export { default as ShowOnlyFavouritesButton } from "./ShowOnlyFavouritesButton";
 export { default as Talk } from "./Talk";
+export { default as ScheduleTitle} from "./ScheduleTitle";
