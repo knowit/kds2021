@@ -5,7 +5,7 @@ import Schedule from "./schedule";
 import Logo from "./logo";
 
 const Home = () => {
-  return <Logo />;
+  return <CallForPresentations />;
 };
 
 export default Home;
