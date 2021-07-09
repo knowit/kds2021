@@ -4,7 +4,7 @@ import CallForPresentations from "./callForPresentations";
 import Schedule from "./schedule"
 
 const Home = () => {
-  return <Schedule />;
+  return <CallForPresentations />;
 };
 
 export default Home;
