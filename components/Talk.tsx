@@ -94,12 +94,9 @@ const Talk = ({
           </div>
         }
         {isInSchedule &&
-          <div className="time-and-flag">
-            <p className="time-info">
-              {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
-            </p>
-            <img className="flag-image" src={flagPath}></img>
-          </div>
+          <p className="time-info">
+            {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
+          </p>
         }
         <p className="type-info">
           {type}
