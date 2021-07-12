@@ -21,7 +21,6 @@
 
       .time,
       .room,
-      .time,
       .heart {
         @extend .flex-col;
         .time-text-day {
@@ -46,6 +45,12 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+
+        .flag-image {
+          @media screen and (max-width: $break-schedule) {
+            display: none;
+          }
+        }
 
         .tags {
           .filter-tag {
@@ -97,7 +102,7 @@
         justify-content: space-between;
         .time-text,
         .room-name,
-        .diff-name {
+        .language-text {
           text-align: center;
           margin-left: auto;
           margin-right: auto;
@@ -199,9 +204,6 @@
       .seperator {
         display: none;
       }
-      .diff-name {
-        display: none;
-      }
       .header {
         height: fit-content;
         display: flex;
@@ -210,11 +212,12 @@
         margin-left: 0px;
         .time-text,
         .room-name,
-        .diff-name {
+        .language-text {
           text-align: center;
           margin-left: auto;
           margin-right: auto;
         }
+        .language,
         .room {
           display: none;
         }

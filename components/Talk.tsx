@@ -75,12 +75,10 @@ const Talk = ({
           </div>
           <span className="text room-name">{room}</span>
         </div>
-        {!isInSchedule &&
-          <div className="language">
-            <img className="flag-image" src={flagPath}></img>
-            <span className="text language-name">Talk language</span>
-          </div>
-        }
+        <div className="language">
+          <img className="flag-image" src={flagPath}></img>
+          <span className="text language-text">Talk language</span>
+        </div>
         <div className="heart">
           <FavouriteTalkButtonNoSSR talkId={id} onClick={onFavoriteChange} />
         </div>
