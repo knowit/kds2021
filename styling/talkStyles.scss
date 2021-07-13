@@ -2,6 +2,9 @@
 
 
 #favourite-talk-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: Transparent;
   border: none;
 }
@@ -14,11 +17,21 @@
   align-items: center;
 }
 
+.language {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .talk {
   .header {
     height: 100%;
-    .time,
+    .time {
+      .wrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
     .room,
     .language,
     .heart {
@@ -33,12 +46,6 @@
       height: 100%;
     }
   }
-}
-
-.language {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .talk-hidden {
