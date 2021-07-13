@@ -22,6 +22,10 @@
       .time,
       .room,
       .heart {
+        margin-top: 0;
+        @media screen and (max-width: $break-schedule) {
+          margin-top: auto;
+        }
         @extend .flex-col;
         .time-text-day {
           display: none;
@@ -88,7 +92,13 @@
         display: none;
       }
       .header {
-        margin-left: 60px; // Stop title from getting to close
+        margin-left: 30px; // Stop title from getting to close
+        min-width: none;
+        max-width: none;
+        @media screen and (max-width: $break-schedule) {
+          min-width: 70px;
+          max-width: 70px;
+        }
         order: 1;
         height: 220px; // Cant get this to use full height...
         display: flex;
@@ -199,7 +209,7 @@
         display: none;
       }
       .header {
-        height: fit-content;
+        height: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
