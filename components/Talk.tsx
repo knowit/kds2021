@@ -48,10 +48,10 @@ const Talk = ({
   onToggleTag,
   isInSchedule,
 }: TalkProps) => {
-
+  
   // link to flag images: https://www.gosquared.com/resources/flag-icons/
   const flagPath = `../static/images/${language}-flag.png`;
-
+  
   return (
     <div id={id} className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
@@ -83,7 +83,7 @@ const Talk = ({
         </div>
       </div>
       <div className="talk-content">
-        <h1 className="title">{title}</h1>
+        <ScheduleTitle id={id} title={title} isInSchedule={isInSchedule} />
         {!isInSchedule &&
           <div className="day-and-time">
             <p className="day">{day}:</p>
@@ -104,7 +104,6 @@ const Talk = ({
             {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
           </span>
         </p>
-        <ScheduleTitle id={id} title={title} />
         {description && <p>{description}</p>}
         {speaker &&
           speaker.map((speaker, index) => {
