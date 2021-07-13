@@ -1,8 +1,5 @@
-import { NONAME } from 'dns';
 import React, { Component, useRef, useEffect } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis'; 
-import { Transition, CSSTransition } from 'react-transition-group'; 
-import { render } from "react-dom"; 
 import Link from "next/link";
 import "../styling/styling.scss";
 
