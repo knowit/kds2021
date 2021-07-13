@@ -30,6 +30,12 @@ const CallForPresentations = () => {
               Knowit. The length of a presentation can be 10, 30, 60 or 90
               minutes. You decide!{" "}
             </p>
+            <p>For more information about the conference, see the&nbsp;
+              <Link href="/practicalities">
+                <a className="link">practical information</a>
+              </Link>
+              &nbsp;page.
+            </p>
             <p>
               Submission deadline is extended to the <strong>1st of September 2021</strong>. You may add 
               just a brief abstract and complete it later; the most important 

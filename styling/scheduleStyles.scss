@@ -2,18 +2,23 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import "styling";
 
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 .schedule {
   .schedule-document {
     width: $break-schedule;
-
+    
     margin-left: auto; // Only needed for ie supprot
     margin-right: auto;
-
+    
     @media screen and (max-width: $break-schedule) {
       width: 100vw;
     }
   }
-
+  
   .day-selector-top {
     cursor: pointer;
     position: absolute;
@@ -95,7 +100,7 @@ div.schedule {
         align-items: center;
       }
       .title {
-        margin-bottom: 16px;
+        margin-bottom: 16px; 
       }
       .day-selector-header {
         word-spacing: 12px;

@@ -1,8 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { Difficulty, FilterTag, Pin } from "../components";
+import { Difficulty, FilterTag, Pin, ScheduleTitle } from "../components";
 import { colorClassFromRoomName } from "../helpers";
-
 import "../styling/talkStyles.scss";
 
 const FavouriteTalkButtonNoSSR = dynamic(
@@ -54,7 +53,7 @@ const Talk = ({
   const flagPath = `../static/images/${language}-flag.png`;
 
   return (
-    <div className={`talk ${hidden ? "talk-hidden" : ""}`}>
+    <div id={id} className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
         <div className="time">
           <div className="wrapper">
@@ -105,6 +104,7 @@ const Talk = ({
             {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
           </span>
         </p>
+        <ScheduleTitle id={id} title={title} />
         {description && <p>{description}</p>}
         {speaker &&
           speaker.map((speaker, index) => {
@@ -135,5 +135,4 @@ const Talk = ({
     </div>
   );
 };
-
 export default Talk;
