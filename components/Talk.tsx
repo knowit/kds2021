@@ -17,7 +17,6 @@ interface TalkProps {
   timeStart: any;
   timeEnd: any;
   room: any;
-  difficulty: any;
   onFavoriteChange?: (val) => void;
   id: any;
   type: any;
@@ -28,6 +27,7 @@ interface TalkProps {
   selectedTags: any;
   language: any;
   onToggleTag: any;
+  isInSchedule: boolean;
 }
 
 const Talk = ({
@@ -36,7 +36,6 @@ const Talk = ({
   timeStart,
   timeEnd,
   room,
-  difficulty,
   onFavoriteChange,
   id,
   type,
@@ -47,7 +46,12 @@ const Talk = ({
   selectedTags,
   language,
   onToggleTag,
+  isInSchedule,
 }: TalkProps) => {
+
+  // link to flag images: https://www.gosquared.com/resources/flag-icons/
+  const flagPath = `../static/images/${language}-flag.png`;
+
   return (
     <div id={id} className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
@@ -70,25 +74,29 @@ const Talk = ({
           </div>
           <span className="text room-name">{room}</span>
         </div>
-        <div className="diff">
-          <div className="wrapper">
-            <Difficulty difficulty={difficulty} />
-          </div>
-          <span className="text diff-name">{difficulty}</span>
+        <div className="language">
+          <img className="flag-image" src={flagPath}></img>
+          <span className="text language-text">Talk language</span>
         </div>
         <div className="heart">
           <FavouriteTalkButtonNoSSR talkId={id} onClick={onFavoriteChange} />
         </div>
       </div>
       <div className="talk-content">
-        <p className="day">{day}</p>
-        <p className="time-info">
-          {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
-          <span className="duration">
-            &nbsp;(
-            {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
-          </span>
-        </p>
+        <h1 className="title">{title}</h1>
+        {!isInSchedule &&
+          <div className="day-and-time">
+            <p className="day">{day}:</p>
+            <p className="time-info">
+              {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
+            </p>
+          </div>
+        }
+        {isInSchedule &&
+          <p className="time-info">
+            {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
+          </p>
+        }
         <p className="type-info">
           {type}
           <span className="duration">

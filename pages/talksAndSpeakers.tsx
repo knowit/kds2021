@@ -108,11 +108,11 @@ const TalksAndSpeakers = () => {
                     room={room.name}
                     language={talk.language}
                     key={i}
-                    difficulty={talk.difficulty}
                     tags={talk.tags}
                     selectedTags={selectedTags}
                     onToggleTag={(tag) => handleToggleTag(tag)}
                     onFavoriteChange={ () => filterProgram() }
+                    isInSchedule={false}
                   />
                 </div>
               );

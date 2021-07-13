@@ -21,8 +21,11 @@
 
       .time,
       .room,
-      .time,
       .heart {
+        margin-top: 0;
+        @media screen and (max-width: $break-schedule) {
+          margin-top: auto;
+        }
         @extend .flex-col;
         .time-text-day {
           display: none;
@@ -73,9 +76,6 @@
         p.info {
           display: none;
         }
-        p.time-info {
-          margin-bottom: 0px;
-        }
 
         .title {
           display: inline-block;
@@ -92,7 +92,13 @@
         display: none;
       }
       .header {
-        margin-left: 60px; // Stop title from getting to close
+        margin-left: 30px; // Stop title from getting to close
+        min-width: none;
+        max-width: none;
+        @media screen and (max-width: $break-schedule) {
+          min-width: 70px;
+          max-width: 70px;
+        }
         order: 1;
         height: 220px; // Cant get this to use full height...
         display: flex;
@@ -100,7 +106,7 @@
         justify-content: space-between;
         .time-text,
         .room-name,
-        .diff-name {
+        .language-text {
           text-align: center;
           margin-left: auto;
           margin-right: auto;
@@ -202,18 +208,15 @@
       .seperator {
         display: none;
       }
-      .diff-name {
-        display: none;
-      }
       .header {
-        height: fit-content;
+        height: auto;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-between;
         margin-left: 0px;
         .time-text,
         .room-name,
-        .diff-name {
+        .language-text {
           text-align: center;
           margin-left: auto;
           margin-right: auto;

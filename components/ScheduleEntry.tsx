@@ -45,7 +45,6 @@ const ScheduleEntry = ({
             timeStart={from}
             timeEnd={to}
             room={room.name}
-            difficulty={talk.difficulty}
             id={talk.talkId}
             type={talk.type}
             title={talk.title}
@@ -56,6 +55,7 @@ const ScheduleEntry = ({
             onToggleTag={onToggleTag}
             onFavoriteChange={onFavoriteChange}
             key={trackIndex}
+            isInSchedule={true}
           />
         </div>
       );
