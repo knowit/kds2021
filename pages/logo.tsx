@@ -10,7 +10,7 @@ const Logo = () => {
     align-items: center;
     justify-content: center;
   `;
-
+ 
   const Header = styled.h1`
     text-align: left;
   `;
