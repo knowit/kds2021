@@ -1,6 +1,6 @@
 import { Layout, Pin } from "../components";
 
-import "../styling/locationStyles.scss";
+
 
 const Location = () => {
   return (

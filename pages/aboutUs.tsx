@@ -1,5 +1,4 @@
 import { Layout } from "../components";
-import "../styling/callForPresentationsStyles.scss";
 
 const AboutUs = () => {
   return (

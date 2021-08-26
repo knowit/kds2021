@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import "../styling/menuStyles.scss";
+
 
 const Menu = () => {
   return (

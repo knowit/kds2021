@@ -2,10 +2,11 @@
   "name": "kds",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "_app.tsx",
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
+    "sass": "node-sass --output-style compressed --include-path scss oldStyling/globalStyles.scss styling/styling.css",
     "start": "next start",
     "export": "next export",
     "deploy": "next build && next export -o \"out\" && echo \"\" >> out/.nojekyll && cp CNAME out/CNAME",
@@ -26,17 +27,16 @@
     "@zeit/next-sass": "^1.0.1",
     "airtable": "^0.10.1",
     "next": "^9.5.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-lines-ellipsis": "^0.15.0",
-    "react-transition-group": "^4.4.2",
-    "styled-components": "^4.4.1"
+    "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
-    "@types/node": "^12.6.2",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
+    "@types/node": "^12.20.21",
+    "@types/react": "^16.14.14",
+    "@types/react-dom": "^16.9.14",
     "node-sass": "^5.0.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.9.10"
   }
 }

@@ -3,7 +3,7 @@ import { Filter, Layout, Talk } from "../components";
 import { program as Program } from "../models/data.json";
 import { Time, getDuration } from "../helpers";
 
-import "../styling/talksAndSpeakersStyles.scss";
+
 
 const TalksAndSpeakers = () => {
   const [filteredProgram, setFilteredProgram] = useState(

@@ -1,7 +1,7 @@
 import React, { Component, useRef, useEffect } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis'; 
 import Link from "next/link";
-import "../styling/styling.scss";
+
 
 interface props {
     title: string;

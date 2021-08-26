@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styling/difficultyStyles.scss";
+
 
 interface DifficultyProps {
   difficulty: any;

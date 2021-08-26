@@ -3,7 +3,6 @@ import { Day, Filter, Layout } from "../components";
 
 import { program as Program } from "../models/data.json";
 
-import "../styling/scheduleStyles.scss";
 
 const Schedule = () => {
   const [filteredProgram, setFilteredProgram] = useState(
