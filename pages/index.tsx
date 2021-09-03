@@ -1,9 +1,9 @@
 import { Layout } from "../components";
 import Practicalities from "./practicalities";
-import CallForPresentations from "./callForPresentations";
+import ParticipantRegistration from "./participantRegistration";
 
 const Home = () => {
-  return <CallForPresentations />;
+  return <ParticipantRegistration />;
 };
 
 export default Home;

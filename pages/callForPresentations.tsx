@@ -8,12 +8,7 @@ const CallForPresentations = () => {
     <div className="callForPresentations page">
       <Layout
         title="Call for Presentations"
-        header={
-          <RegisterButton
-            url="https://docs.google.com/forms/d/1-0n_08zyFXJGEHRJ2RM-sFxZZYepEbhxwQigECMXqfs"
-            name="Register your presentation"
-          ></RegisterButton>
-        }
+        
         background={true}
       >
         <div className="document cfp">
@@ -23,26 +18,21 @@ const CallForPresentations = () => {
               Knowit Developer Summit (KDS) is Knowit's annual internal software
               developer conference. The 2021 conference will be held on 12 - 13
               November at the Scandic Continental in Stockholm, Sweden.{" "}
-            </p>
-            <p>
-              We are now looking for speakers for the conference, the basic idea
-              is to share knowledge and experiences with other developers within
-              Knowit. The length of a presentation can be 10, 30, 60 or 90
-              minutes. You decide!{" "}
-            </p>
-            <p>For more information about the conference, see the&nbsp;
+              For more information about the conference, see the&nbsp;
               <Link href="/practicalities">
                 <a className="link">practical information</a>
               </Link>
               &nbsp;page.
             </p>
             <p>
-              Submission deadline is extended to the <strong>1st of September 2021</strong>. You may add 
-              just a brief abstract and complete it later; the most important 
-              thing right now is to get all the presentations registered. You may 
-              submit more than one presentation if you wish. You can also hold a 
-              joint presentation; maybe you and a colleague are working on 
-              something interesting and would like to present it together?
+              While the submision deadline was on <strong>1st of September 2021</strong>, we are 
+              currently still accepting new presentations. You may add just a brief 
+              abstract and complete it later; the most important thing right now is 
+              to get all the presentations registered. You may submit more than one 
+              presentation if you wish. You can also hold a joint presentation; maybe 
+              you and a colleague are working on something interesting and would like 
+              to present it together? The length of a presentation can be 10, 30, 60 
+              or 90 minutes. You decide! Click the button at the bottom of the page to register.
             </p>
             <p>
               If you have any questions feel free to contact us at&nbsp;
