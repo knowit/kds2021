@@ -36,11 +36,11 @@ const ParticipantRegistration = () => {
             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdrjECzitSMyHgff-daChQnXsfb3Ulph1uauXgt-STzi1xUdA/viewform">
               <a className="link">Registration</a> 
             </Link>
-            &nbsp;is open from now until October 7, 2021. 
+            &nbsp;is open from now until the <strong>7th of October 2021</strong>. 
             . Note that if you have proposed a presentation (in the form Call for Presentation) you 
             do not need to register. There are still some open slots for presentations, 
             and presentations can be submitted&nbsp; 
-            <Link href="https://docs.google.com/forms/d/1-0n_08zyFXJGEHRJ2RM-sFxZZYepEbhxwQigECMXqfs/viewform?edit_requested=true">
+            <Link href="/callForPresentations">
                <a className="link">here</a>
              </Link>.
             {" "}
