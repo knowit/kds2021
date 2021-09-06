@@ -65,7 +65,7 @@ const Practicalities = () => {
             included.
           </p>
           <p>
-            <strong>Location</strong> We have booked the 
+            <strong>Location.</strong> We have booked the 
             <Link href="https://www.scandichotels.com/hotels/sweden/stockholm/scandic-continental">
               <a className="paragraphLink"> Scandic Continental Hotel </a>
               </Link> 
