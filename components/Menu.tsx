@@ -30,8 +30,8 @@ const Menu = () => {
             <a className="link schedule">Schedule</a>
   </Link> */}
 
-          <Link href="/aboutUs">
-            <a className="link aboutUs">About KDS</a>
+          <Link href="/aboutKds">
+            <a className="link aboutKds">About KDS</a>
           </Link>
 
           {/*<Link href="/talksAndSpeakers">
