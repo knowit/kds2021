@@ -27,7 +27,7 @@ const ParticipantRegistration = () => {
             As before, the motto for the conference is “By Developers, For Developers!” {" "}
             </p>
             <p>For more information about the conference, see the&nbsp;
-              <Link href="/practicalities">
+              <Link href="/Practicalities">
                 <a className="link">practical information</a>
               </Link>
               &nbsp;page.
@@ -40,7 +40,7 @@ const ParticipantRegistration = () => {
             . Note that if you have proposed a presentation (in the form Call for Presentation) you 
             do not need to register. There are still some open slots for presentations, 
             and presentations can be submitted&nbsp; 
-            <Link href="/callForPresentations">
+            <Link href="/CallForPresentations">
                <a className="link">here</a>
              </Link>.
             {" "}
