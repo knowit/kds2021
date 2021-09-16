@@ -7,7 +7,6 @@ const Practicalities = () => {
       <Layout title="Practical information" background={true}>
         <div className="document content">
           <h1>Practical information</h1>
-          <p>The Call for Presentations is now open</p>
           <p>
             Knowit Developer Summit will be held 12th - 13th of November 2021 in
             Stockholm.
@@ -29,14 +28,14 @@ const Practicalities = () => {
             first.
           </p>
           <p>
-            <strong>COVID-19 and vaccines.</strong> Regarding the ongoing 
-            pandemic, we will continue to monitor the situation as it develops, 
-            and we will update our event policy accordingly. As the conference 
-            will be held in Stockholm, we will follow Sweden’s national 
-            guidelines in addition to Knowit’s internal COVID-19 guidelines. 
-            We will also take the situation in participants’ home countries into 
-            consideration. In the event that the vaccine rollout is delayed, we 
-            might be forced to postpone the event.
+            <strong>COVID-19 and vaccines.</strong> Regarding the ongoing pandemic, 
+            we will continue to monitor the situation as it develops, and we will 
+            update our event policy accordingly. As the conference will be held in 
+            Stockholm, we will follow Sweden’s national guidelines in addition to 
+            Knowit’s internal COVID-19 guidelines. We will also take the situation 
+            in participants’ home countries into consideration. In the event that 
+            the vaccine rollout is delayed or if new variants of COVID-19 spread 
+            across countries, we might be forced to postpone the event. 
           </p>
           <p>
             <strong>Solidarity.</strong> As in previous years, we embrace 
@@ -49,6 +48,13 @@ const Practicalities = () => {
             fellow colleagues at other Knowit companies.
           </p>
           <p>
+            <strong>Great opportunity.</strong> We believe that this conference 
+            is a great opportunity to get better acquainted with others engaged 
+            in system development at Knowit. We think it’s important to participate 
+            in these kinds of events in order to create a good climate for cooperation 
+            across the company, in addition to the great program. 
+          </p>
+          <p>
             <strong>Payment.</strong> The fee for the conference 
             will be 3900 SEK, excluding VAT. In addition to the 
             conference, this includes lunch and dinner on Friday, and lunch on 
@@ -59,18 +65,38 @@ const Practicalities = () => {
             included.
           </p>
           <p>
-            <strong>Location</strong> We have booked the Scandic Continental 
-            Hotel for accommodation and as our conference venue. It is located 
-            in the city center and is very easy to get to either by bus or 
-            Arlanda Express from the airport. The train station is also close 
-            by; we encourage taking an environmental approach to travelling!
+            <strong>Location.</strong> We have booked the 
+            <Link href="https://www.scandichotels.com/hotels/sweden/stockholm/scandic-continental">
+              <a className="paragraphLink"> Scandic Continental Hotel </a>
+              </Link> 
+            for accommodation and as our conference venue. It is located 
+            in the city center and is very easy to get to either by 
+            <Link href="https://www.flygbussarna.se/en/arlanda">
+              <a className="paragraphLink"> bus </a>
+              </Link>
+            or 
+            <Link href="https://www.arlandaexpress.com/">
+              <a className="paragraphLink"> Arlanda Express </a>
+              </Link>
+            from the 
+            <Link href="https://www.swedavia.com/arlanda/">
+              <a className="paragraphLink"> airport</a>
+              </Link>
+            . The 
+            <Link href="https://www.dinstation.com/stockholm-centralstation/">
+              <a className="paragraphLink"> train station </a>
+              </Link>
+            is also close by; we encourage taking an environmental approach to travelling!
             You can view the location of the venue 
-            <Link href="/location">
+            <Link href="/Location">
             <a className="paragraphLink"> here</a>
           </Link>.
           </p>
           <p>
-            <strong>More information to come...</strong>
+            <strong>If you have questions or suggestions, send an email to 
+            <Link href="mailto:kds@knowit.no">
+            <a className="paragraphLink"> kds@knowit.no </a>
+          </Link>.</strong>
           </p>
           {/*<p>
             <strong>Dinner.</strong> We will eat dinner in different groups on

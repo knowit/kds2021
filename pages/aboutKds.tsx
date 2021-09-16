@@ -1,9 +1,9 @@
 import { Layout } from "../components";
 import "../styling/callForPresentationsStyles.scss";
 
-const AboutUs = () => {
+const AboutKds = () => {
   return (
-    <div className="aboutUs page">
+    <div className="aboutKds page">
       <Layout background={true}>
         <div className="document">
 
@@ -59,4 +59,4 @@ const AboutUs = () => {
 
 
 
-export default AboutUs;
+export default AboutKds;

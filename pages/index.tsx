@@ -1,11 +1,9 @@
 import { Layout } from "../components";
 import Practicalities from "./practicalities";
-import CallForPresentations from "./callForPresentations"; 
-import Schedule from "./schedule"; 
-import Logo from "./logo";
+import ParticipantRegistration from "./participantRegistration";
 
 const Home = () => {
-  return <CallForPresentations />;
+  return <ParticipantRegistration />;
 };
 
 export default Home;

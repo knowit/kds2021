@@ -3,13 +3,15 @@ module.exports = withSass({
     exportPathMap: function () {
         return {
             '/': {page: '/'},
-            '/callForPresentations': {page: '/callForPresentations'},
-            '/codeOfConduct': {page: '/codeOfConduct'},
-            '/location': {page: '/location'},
-            '/practicalities': {page: '/practicalities'},
-            '/schedule': {page: '/schedule'},
-            '/talksAndSpeakers': {page: '/talksAndSpeakers'},
-            '/logo': {page: '/logo'}
+            '/CallForPresentations': {page: '/callForPresentations'},
+            '/ParticipantRegistration': {page: '/participantRegistration'},
+            '/CodeOfConduct': {page: '/codeOfConduct'},
+            '/Location': {page: '/location'},
+            '/Practicalities': {page: '/practicalities'},
+            '/AboutKds': {page: '/aboutKds'},
+            '/Schedule': {page: '/schedule'},
+            '/TalksAndSpeakers': {page: '/talksAndSpeakers'},
+            '/Logo': {page: '/logo'}
         };
     }
 })
