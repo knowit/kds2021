@@ -2,7 +2,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { Difficulty, FilterTag, Pin, ScheduleTitle } from "../components";
 import { colorClassFromRoomName } from "../helpers";
-import "../styling/talkStyles.scss";
 
 const FavouriteTalkButtonNoSSR = dynamic(
   () => import("./FavouriteTalkButton"),
@@ -12,12 +11,11 @@ const FavouriteTalkButtonNoSSR = dynamic(
 );
 
 interface TalkProps {
-  visibility: boolean;
+  hidden: boolean;
   day: any;
   timeStart: any;
   timeEnd: any;
   room: any;
-  difficulty: any;
   onFavoriteChange?: (val) => void;
   id: any;
   type: any;
@@ -28,15 +26,15 @@ interface TalkProps {
   selectedTags: any;
   language: any;
   onToggleTag: any;
+  isInSchedule: boolean;
 }
 
 const Talk = ({
-  visibility,
+  hidden,
   day,
   timeStart,
   timeEnd,
   room,
-  difficulty,
   onFavoriteChange,
   id,
   type,
@@ -47,9 +45,14 @@ const Talk = ({
   selectedTags,
   language,
   onToggleTag,
+  isInSchedule,
 }: TalkProps) => {
+  
+  // link to flag images: https://www.gosquared.com/resources/flag-icons/
+  const flagPath = `../static/images/${language}-flag.png`;
+  
   return (
-    <div className={`talk ${!visibility ? "talk-hidden" : ""}`}>
+    <div id={id} className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
         <div className="time">
           <div className="wrapper">
@@ -70,25 +73,29 @@ const Talk = ({
           </div>
           <span className="text room-name">{room}</span>
         </div>
-        <div className="diff">
-          <div className="wrapper">
-            <Difficulty difficulty={difficulty} />
-          </div>
-          <span className="text diff-name">{difficulty}</span>
+        <div className="language">
+          <img className="flag-image" src={flagPath}></img>
+          <span className="text language-text">Talk language</span>
         </div>
         <div className="heart">
           <FavouriteTalkButtonNoSSR talkId={id} onClick={onFavoriteChange} />
         </div>
       </div>
       <div className="talk-content">
-        <p className="day">{day}</p>
-        <p className="time-info">
-          {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
-          <span className="duration">
-            &nbsp;(
-            {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
-          </span>
-        </p>
+        <ScheduleTitle id={id} title={title} isInSchedule={isInSchedule} />
+        {!isInSchedule &&
+          <div className="day-and-time">
+            <p className="day">{day}:</p>
+            <p className="time-info">
+              {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
+            </p>
+          </div>
+        }
+        {isInSchedule &&
+          <p className="time-info">
+            {timeStart && timeStart.toString()} - {timeEnd && timeEnd.toString()}
+          </p>
+        }
         <p className="type-info">
           {type}
           <span className="duration">
@@ -96,7 +103,6 @@ const Talk = ({
             {timeEnd && timeStart && timeStart.diff(timeEnd)} min)
           </span>
         </p>
-        <ScheduleTitle title={title} />
         {description && <p>{description}</p>}
         {speaker &&
           speaker.map((speaker, index) => {
@@ -117,7 +123,7 @@ const Talk = ({
                 <FilterTag
                   key={tag}
                   name={tag}
-                  selected={selectedTags.indexOf(tag) > -1}
+                  selected={selectedTags.includes(tag)}
                   onClick={() => onToggleTag(tag)}
                 />
               ))}
@@ -127,5 +133,4 @@ const Talk = ({
     </div>
   );
 };
-
 export default Talk;

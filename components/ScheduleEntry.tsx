@@ -9,6 +9,7 @@ interface ScheduleEntryProps {
   tags: string[];
   trackLength: number;
   onToggleTag: (val) => void;
+  onFavoriteChange: (val) => void;
 }
 
 const ScheduleEntry = ({
@@ -18,6 +19,7 @@ const ScheduleEntry = ({
   tags,
   trackLength,
   onToggleTag,
+  onFavoriteChange,
 }: ScheduleEntryProps) => {
   const createRoom = (room, index) => {
     let from = Time.fromNumber(slot.timeStart);
@@ -38,12 +40,11 @@ const ScheduleEntry = ({
           style={style as CSSProperties}
         >
           <Talk
-            visibility={!talk.hide}
+            hidden={talk.hide}
             day={day}
             timeStart={from}
             timeEnd={to}
             room={room.name}
-            difficulty={talk.difficulty}
             id={talk.talkId}
             type={talk.type}
             title={talk.title}
@@ -52,7 +53,9 @@ const ScheduleEntry = ({
             selectedTags={tags}
             language={talk.language}
             onToggleTag={onToggleTag}
+            onFavoriteChange={onFavoriteChange}
             key={trackIndex}
+            isInSchedule={true}
           />
         </div>
       );

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Program from "../models/data.json";
 import { FilterTag, ShowOnlyFavouritesButton } from "../components";
 
-import "../styling/filterStyles.scss";
-
 interface FilterProps {
   onTagChange: (tags: string[]) => void;
   onFavoriteChange: (val: boolean) => void;
@@ -52,7 +50,7 @@ const Filter = ({
         ></img>
         <h1 className="header">Filter by tag</h1>
         <div className="favorite">
-          <p className="subheader">Show only favorites: </p>
+          <p className="subheader">Show only your favorites: </p>
           <ShowOnlyFavouritesButton
             showOnlyFavorites={showOnlyFavorites}
             onClick={() => onFavoriteChange(!showOnlyFavorites)}

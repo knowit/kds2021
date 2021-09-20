@@ -3,34 +3,22 @@ import { Day, Filter, Layout } from "../components";
 
 import { program as Program } from "../models/data.json";
 
-import "../styling/scheduleStyles.scss";
+import "../styling/globalStyles.scss";
 
 const Schedule = () => {
   const [filteredProgram, setFilteredProgram] = useState(
     JSON.parse(JSON.stringify(Program))
   );
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
-  const [tags, setTags] = useState([]);
-  const [currentDayIndex, setCurrentDatIndex] = useState(0);
-
-  const getRooms = (day) => {
-    const roomDict = {};
-
-    const rooms = day.slots.reduce((acc, slot) => acc.concat(slot.rooms), []);
-    rooms.forEach((room) => {
-      if (room) {
-        roomDict[room.name] = true;
-      }
-    });
-    return Object.keys(roomDict);
-  };
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [currentDayIndex, setCurrentDayIndex] = useState(0);
 
   useEffect(() => {
     filterProgram();
-  }, [tags, showOnlyFavorites]);
+  }, [selectedTags, showOnlyFavorites]);
 
   const handleFilterChange = (newVal) => {
-    setTags(newVal);
+    setSelectedTags(newVal);
   };
 
   const handleFavoriteChange = (newVal) => {
@@ -38,41 +26,32 @@ const Schedule = () => {
   };
 
   const handleToggleTag = (tag) => {
-    filterProgram();
-
-    if (tags.indexOf(tag) > -1) {
-      setTags(tags.filter((t) => t != tag));
+    if (selectedTags.indexOf(tag) > -1) {
+      setSelectedTags(selectedTags.filter((t) => t != tag));
     } else {
-      setTags(tags.concat(tag));
+      setSelectedTags(selectedTags.concat(tag));
     }
   };
 
   const filterProgram = () => {
-    let newProgram = JSON.parse(JSON.stringify(Program));
+    let filteredProgram = JSON.parse(JSON.stringify(Program));
 
-    newProgram.days.forEach((day) => {
+    filteredProgram.days.forEach((day) => {
       day.slots.forEach((slot) => {
         slot.rooms = slot.rooms.filter((room) => {
           room.talks = room.talks.filter((talk) => {
-            const talkTags = talk.tags.concat();
+            const talkTags = talk.tags.concat([talk.language]);
             const talkFavorited = localStorage.getItem(talk.talkId) != null;
 
             if (showOnlyFavorites && !talkFavorited) {
               return false;
             }
 
-            console.log(
-              JSON.stringify({
-                tags: tags,
-                talkTags: talkTags,
-              })
-            );
-
-            if (tags.length == 0) {
+            if (selectedTags.length == 0) {
               return true;
             }
 
-            return tags.some((tag) => {
+            return selectedTags.some((tag) => {
               return talkTags.some((talkTag) => talkTag == tag);
             });
           });
@@ -81,25 +60,17 @@ const Schedule = () => {
         });
       });
     });
-
-    //alert(JSON.stringify(newProgram.days));
-
-    setFilteredProgram(newProgram);
+    setFilteredProgram(filteredProgram);
   };
 
   const setDay = (index) => {
-    setCurrentDatIndex(index);
+    setCurrentDayIndex(index);
   };
 
   return (
     <div className="schedule page">
       <Layout
         title="Schedule"
-        filter={"small"}
-        onTagChange={handleFilterChange}
-        onFavoriteChange={handleFavoriteChange}
-        showOnlyFavorites={showOnlyFavorites}
-        selectedTags={tags}
         hideLogo={"small"}
         background={true}
       >
@@ -124,7 +95,7 @@ const Schedule = () => {
               <Filter
                 onTagChange={handleFilterChange}
                 onFavoriteChange={handleFavoriteChange}
-                selectedTags={tags}
+                selectedTags={selectedTags}
                 showOnlyFavorites={showOnlyFavorites}
                 className="hide-small schedule-filter"
                 type="dropdown"
@@ -132,6 +103,17 @@ const Schedule = () => {
 
               <div className="header-title">
                 <h1 className="title">Schedule</h1>
+                <div className="warningInfo">
+                <p><strong>NB!</strong> The conference program is still a work in progress, presentation times and 
+              description are still subject to changes. Are you a presenter and want something changed related 
+              to your presentation? Please contact &nbsp;
+              <span>
+                <a className="mailLink" href="mailto:kds@knowit.no">
+                  kds@knowit.no
+                </a>
+              </span> 
+            </p> 
+            </div>
                 <div className="day-selector-header">
                   {filteredProgram.days.map((day, i) => (
                     <span key={day.day}>
@@ -152,8 +134,9 @@ const Schedule = () => {
 
             {filteredProgram.days.length > 0 && (
               <Day
-                onToggleTag={(val) => handleToggleTag(val)}
-                tags={tags}
+                onToggleTag={(tag) => handleToggleTag(tag)}
+                onFavoriteChange={() => filterProgram() }
+                tags={selectedTags}
                 currDay={filteredProgram.days[currentDayIndex]}
                 slots={
                   filteredProgram.days[currentDayIndex] &&

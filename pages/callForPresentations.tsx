@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Layout, RegisterButton } from "../components";
-
-import "../styling/callForPresentationsStyles.scss";
+import "../styling/globalStyles.scss";
 
 const CallForPresentations = () => {
   return (

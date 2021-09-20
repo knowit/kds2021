@@ -1,51 +1,57 @@
-import { NONAME } from 'dns';
-import React from 'react';
+import React, { Component, useRef, useEffect } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis'; 
-import { Transition, CSSTransition } from 'react-transition-group'; 
-
-
-
+import Link from "next/link";
 
 interface props {
     title: string;
+    id: any;
     clamped?: boolean;
+    isInSchedule: boolean; 
 }
 
-const ScheduleTitle = ({title, clamped}:props) => {
-    
-    
-    const [inProp, setInProp] = React.useState(false); 
-
+const ScheduleTitle = ({title, id, isInSchedule, clamped}:props) => {
 
     let [over, setOver] = React.useState(false);
 
-    let visibility = {
-        visibility: 'hidden'
-    }
-
     return (
-        <div 
-            onMouseOver={()=>setOver(true)} 
-            onMouseOut={()=>setOver(false)}>
+        <div>
+            {isInSchedule && 
+                <div 
+                onMouseOver={()=>setOver(true)} 
+                onMouseOut={()=>setOver(false)}>
 
-            <div>
+                <div>
                 <LinesEllipsis
-                    style={{display: over? 'none' : 'block'}}
-                    className='title'
-                    text={title}
-                    maxLine='3'
-                    ellipsis='...'
-                    trimRight
-                    basedOn='letters'
-                    isClamped='true'
-                />
-            </div>
+                    style={{wordBreak: 'break-word',display: over? 'none' : 'block'}}
+                            className='title'
+                            text={title}
+                            maxLine='3'
+                            ellipsis='...'
+                            trimRight
+                            basedOn='letters'
+                        />
+                    </div>
+        
+                    <Link href={`./talksAndSpeakers/#${encodeURIComponent(id)}`}>
+                        <a className="title-link">
+                            <h1 className="title" style={{display: over? 'block' : 'none'}}>
+                                {title} 
+                            </h1>
+                        </a>
+                    </Link>
+                </div>
+            }
 
-            <h1 className="title" style={{display: over? 'block' : 'none'}}>
-                {title}
-            </h1>
-
+            {!isInSchedule &&   
+                <Link href={`./schedule/#${encodeURIComponent(id)}`}>
+                    <a className="title-link">
+                        <h1 className="title" style={{display: over? 'none' : 'block'}}>
+                            {title}
+                        </h1>
+                    </a>
+                </Link>
+            }
         </div>
     );
 }
-export default ScheduleTitle
+export default ScheduleTitle;

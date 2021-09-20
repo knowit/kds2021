@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Layout, RegisterButton } from "../components";
 
-import "../styling/callForPresentationsStyles.scss";
+import "../styling/globalStyles.scss";
 
 const ParticipantRegistration = () => {
   return (
@@ -62,6 +62,10 @@ const ParticipantRegistration = () => {
               &nbsp;as an appetizer.
             </p>
           </div>
+          <RegisterButton
+            url="https://docs.google.com/forms/d/e/1FAIpQLSdrjECzitSMyHgff-daChQnXsfb3Ulph1uauXgt-STzi1xUdA/viewform"
+            name="Participant Registration"
+          ></RegisterButton>
         </div>
       </Layout>
     </div>

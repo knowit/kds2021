@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../styling/pinStyles.scss";
-
 interface PinProps {
   className?: string;
   small?: boolean;

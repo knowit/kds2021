@@ -11,6 +11,7 @@ div.talksAndSpeakers {
     .title-filter {
       margin-top: 0px;
       > .title {
+        text-decoration: none;
         margin-top: 0px;
         font-size: 2.25rem;
       }
@@ -36,11 +37,16 @@ div.talksAndSpeakers {
         justify-content: space-between;
         margin-bottom: 30px;
         .room-name,
-        .diff-name,
         .time-text {
           margin-top: auto;
           margin-bottom: auto;
           margin-left: 16px;
+          height: 100%;
+        }
+        .language-text {
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-left: 7px;
           height: 100%;
         }
       }
@@ -61,7 +67,7 @@ div.talksAndSpeakers {
       }
 
       .time-info {
-        margin-top: 6px;
+        margin-left: 6px;
         margin-bottom: 0px;
         font-size: 0.75rem;
         font-weight: bold;
@@ -97,7 +103,7 @@ div.talksAndSpeakers {
       }
       .time,
       .room,
-      .diff {
+      .language {
         @extend .flex-row;
       }
       .filter-tag {
