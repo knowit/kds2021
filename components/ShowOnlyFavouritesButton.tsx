@@ -1,4 +1,4 @@
-import "../styling/onlyFavoritesButtonStyles.scss";
+
 
 interface ShowOnlyFavouritesButtonProps {
   showOnlyFavorites: any;

@@ -1,5 +1,5 @@
 import { Layout } from "../components";
-import "../styling/callForPresentationsStyles.scss";
+import "../styling/globalStyles.scss";
 
 const AboutKds = () => {
   return (

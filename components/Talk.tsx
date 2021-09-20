@@ -2,7 +2,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { Difficulty, FilterTag, Pin, ScheduleTitle } from "../components";
 import { colorClassFromRoomName } from "../helpers";
-import "../styling/talkStyles.scss";
 
 const FavouriteTalkButtonNoSSR = dynamic(
   () => import("./FavouriteTalkButton"),

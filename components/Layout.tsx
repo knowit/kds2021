@@ -3,9 +3,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { Filter, Menu } from "../components";
 
-import "../styling/headerStyles.scss";
-import "../styling/styling.scss";
-
 interface LayoutProps {
   hideLogo?: "small" | "large" | boolean;
   header?: any;

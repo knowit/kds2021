@@ -1,0 +1,1174 @@
+@import "variables";
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import "styling";
+
+//Call For Presentation
+.mailLink {
+  color: $text-color;
+  text-decoration: none;
+  border-bottom: solid 2px;
+  border-bottom-color: $link-color;
+}
+.warningInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px
+}
+.cfp {
+  .info {
+    font-size: 1.125rem;    
+    .link {
+      color: $text-color;
+      text-decoration: none;
+      border-bottom: solid 2px;
+      border-bottom-color: $link-color;
+    }
+    .wordcloud {
+      max-width: 100%;
+    }
+  }
+
+  .list {
+    li {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      span {
+        font-size: 1rem;
+      }
+    }
+    margin-bottom: 40px;
+  }
+}
+
+//Difficulty
+.difficulty {
+    margin-left: auto;
+    margin-right: auto;
+    width: 24px;
+    height: 28px;    
+    position: relative;
+
+
+    span.first, span.second, span.third {
+        display: block;
+        background-color: $diff-color-empty;
+        position: absolute;
+        bottom: 0;
+        width: 25%;
+    }
+
+    span.first {
+        height: 33.3%;
+    }
+
+    span.second {
+        margin-left: 37.5%;
+        height: 66.6%;
+    }
+
+    span.third {
+        margin-left: 75%;
+        height: 100%;
+    }
+
+    span.active {
+        background-color: $diff-color-filled;
+    }
+}
+//Filter
+.filter-button {
+    margin-top: 32px;
+    margin-left: 30px;
+    width: 33px;
+    display: block;
+    cursor: pointer;
+  
+    .filter-button-container {
+      position: relative;
+      z-index: 4;
+    }
+    span.top,
+    span.middle,
+    span.bottom {
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, width 0.5s ease-in-out;
+      display: block;
+      height: 4px;
+      margin-top: 4px;
+      margin-bottom: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 4;
+      color: $text-color;
+      position: relative;
+      background: currentColor;
+      border-radius: 3px;
+    }
+    span.top {
+      width: 100%;
+    }
+    span.middle {
+      width: 70%;
+    }
+    span.bottom {
+      width: 40%;
+    }
+  }
+  
+  .filter-button.open {
+    .filter-button-container {
+      z-index: 5;
+    }
+  
+    span.top {
+      -webkit-transform: translateY(6px) rotateZ(45deg);
+      -moz-transform: translateY(6px) rotateZ(45deg);
+      -ms-transform: translateY(6px) rotateZ(45deg);
+      -o-transform: translateY(6px) rotateZ(45deg);
+      transform: translateY(6px) rotateZ(45deg);
+    }
+  
+    span.middle {
+      opacity: 0;
+    }
+  
+    span.bottom {
+      -webkit-transform: translateY(-12px) rotateZ(-45deg);
+      -moz-transform: translateY(-12px) rotateZ(-45deg);
+      -ms-transform: translateY(-12px) rotateZ(-45deg);
+      -o-transform: translateY(-12px) rotateZ(-45deg);
+      transform: translateY(-12px) rotateZ(-45deg);
+      width: 100%;
+    }
+  }
+  
+  .filter-container.dropdown {
+    .filter {
+      position: absolute;
+      width: 600px;
+      border: 1px solid $border-color;
+      z-index: 2;
+      transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 0.5);
+      left: calc(50vw - 300px - 1px); // 50vw
+      top: 0px;
+      transform-origin: 0 0;
+      transform: translateY(-100%)
+    }
+  
+    .filter.open {
+      transform: translateY(200px);
+      z-index: 4;
+    }
+  }
+  
+  .filter-container.slide-left {
+    .filter {
+      transform: translateX(-100%);
+      width: 100vw;
+      @media screen and (min-width: $break-small) {
+        width: 25vw;
+      }
+      overflow-x: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: 0 0;
+      .close {
+        display: none;
+      }
+    }
+    .filter.open {
+      z-index: 4;
+  
+      transform: none;
+    }
+  }
+  
+  .filter {
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    padding-bottom: 30px;
+    z-index: 1;
+    background: white;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 0.5);
+    .subheader {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .close {
+      display: block;
+      color: $text-color;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      width: 31px;
+      height: 31px;
+      cursor: pointer;
+    }
+    .header {
+      font-weight: 100;
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+    .favorite {
+      margin-left: 40px;
+      margin-right: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      justify-items: center;
+      align-items: center;
+      .subheader {
+        display: block;
+      }
+    }
+    .active {
+      margin-left: 40px;
+      margin-top: 56px;
+    }
+    .nonActive {
+      margin-top: 50px;
+      margin-left: 40px;
+    }
+    .filter-tag {
+      font-size: 0.875rem;
+    }
+  }
+  
+  .filter-tag {
+    border-radius: 20px;
+    border: 1px solid $border-color;
+    padding: 5px 7px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    color: $text-color;
+    display: inline-block;
+    font-size: 0.75rem;
+  
+    cursor: pointer;
+  }
+  .filter-tag.selected {
+    color: white;
+    background-color: $border-color;
+  }
+//Header Style
+.layout {
+    min-height: 100%;
+    height: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .layout .content {
+    flex-grow: 1;
+  }
+  .menuAndHeader {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      max-width: $break-small;
+      font-family: $font-family;
+      margin: 0 auto ;
+      margin-top: 15px;
+  
+      @media screen and (max-width: $break-small) {
+        flex-direction: column;
+        width: 100%;
+      }
+  
+      #KDSlogo {
+        width: 15em;
+        margin-right: 5%;
+        //margin-top: 15px;
+        padding: 5px;
+        @media screen and (max-width: $break-small) {
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+      .headline {
+        float: right;
+        margin-bottom: 0.2em;
+        margin-top:0;
+        font-weight: normal;
+        @media screen and (max-width: $break-small) {
+          float: right;
+          font-size: 1.1em;
+        }
+      }
+      .header-location {
+        margin: 0em;
+        font-size: 1em;
+        font-weight: normal;
+        color: $header-text-color;
+        @media screen and (max-width: $break-small) {
+          font-size: 0.8em;
+        }
+  
+        #location-img {
+          width: 1em;
+          margin-right: 0.5em;
+        }
+      }
+  
+      .header-subheadline {
+        margin-top: 0em;
+        font-size: 0.8em;
+        font-weight: normal;
+        .subheadline-link {
+          text-decoration: none;
+          color: $link-color;
+        }
+        @media screen and (max-width: $break-small) {
+          font-size: 0.7em;
+        }
+      }
+    }
+  
+    #KDSheader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .menuAndHeader {
+    min-height: $min-header-height;
+    @media screen and (max-width: $break-small) {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .filter-pos {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  //Location
+  .location {
+  
+    .title {
+      margin-top: $header-bottom-margin;
+      @media screen and (max-width: $break-small) {
+        margin-top: 40px;
+      }
+      margin-bottom: 20px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  .map-container {
+    flex-grow: 1;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  
+    .location-name {
+      @extend .hide-small;
+      border-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      .location-name-text {
+        margin-left: 10px;
+        margin-top: 3px;
+        font-size: 1.125rem;
+      }
+    }
+  }
+  
+  #map {
+    border: none;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+  }
+  //Logo
+  /*div, #Container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }*/
+
+  .logoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logoImage {
+      width: 200px;
+  }
+  
+  h1, #Header {
+    text-align: left;
+  }
+  
+//Menu
+
+#menu {
+    width: 100%;
+    transform: translate(0, 0);
+    @media screen and (min-width: $break-large) {
+      width: 25%;
+      transform: translate(0, 0);
+    }
+  
+    display: flex;
+    justify-content: center;
+    font-family: $font-family;
+    z-index: 1;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    background-color: white;
+    margin: 0;
+    padding-bottom: 40px;
+  
+    /* to stop flickering of text in safari */
+    transform-origin: 0 0;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 0.5);
+  
+    .menuHeader {
+      margin-top: 32px;
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+  
+    .link {
+      color: $primary-color;
+      text-decoration: none;
+      padding: 1em 1em 1em 1em;
+      font-size: 1.5rem;
+      margin-left: 40px;
+      font-weight: bold;
+  
+      &:hover {
+        transition: 0.4s linear all;
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  #menuToggle {
+    input:checked ~ #menu {
+      z-index: 4;
+      transform: translate(-100%, 0);
+    }
+    input:checked {
+      z-index: 6;
+    }
+  
+    input:checked ~ .menuButton {
+      z-index: 5;
+    }
+  
+    span.top,
+    span.middle,
+    span.bottom {
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      display: block;
+      width: 100%;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+  
+      color: $text-color;
+      background: currentColor;
+      border-radius: 3px;
+  
+      z-index: 2;
+    }
+  
+    input:checked ~ .menuButton span.top {
+      -webkit-transform: translateY(6px) rotateZ(45deg);
+      -moz-transform: translateY(6px) rotateZ(45deg);
+      -ms-transform: translateY(6px) rotateZ(45deg);
+      -o-transform: translateY(6px) rotateZ(45deg);
+      transform: translateY(6px) rotateZ(45deg);
+    }
+  
+    input:checked ~ .menuButton span.middle {
+      opacity: 0;
+    }
+  
+    input:checked ~ .menuButton span.bottom {
+      -webkit-transform: translateY(-12px) rotateZ(-45deg);
+      -moz-transform: translateY(-12px) rotateZ(-45deg);
+      -ms-transform: translateY(-12px) rotateZ(-45deg);
+      -o-transform: translateY(-12px) rotateZ(-45deg);
+      transform: translateY(-12px) rotateZ(-45deg);
+    }
+    input {
+      display: block;
+      position: absolute;
+      top: 32px;
+      right: 26px;
+      width: 34px;
+      height: 34px;
+  
+      cursor: pointer;
+  
+      opacity: 0; /* hide this */
+      z-index: 3; /* and place it over the hamburger */
+  
+      -webkit-touch-callout: none;
+    }
+  
+    .menuButton {
+      position: absolute;
+      top: 32px;
+      right: 30px;
+      width: 33px;
+      display: block;
+    }
+  }
+  
+  
+  .register-button {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0px;
+    background-color: $button-color;
+    color: $text-color;
+    text-decoration: none;
+    font-size: 1.125rem;
+    white-space: nowrap;
+    font-weight: bold;
+    z-index: 2;
+  }
+  
+  .header {
+    .register-button {
+      width: 85%;
+    }
+  }
+  
+  div.schedule div#menu a.schedule,
+  div.talksAndSpeakers div#menu a.talksAndSpeakers,
+  div.practicalities div#menu a.practicalities,
+  div.callForPresentations div#menu a.callForPresentations,
+  div.aboutKds div#menu a.aboutKds,
+  div.location div#menu a.location,
+  div.codeOfConduct div#menu a.codeOfConduct {
+    color: $text-color;
+  }
+//OnlyFavorites
+.switch {
+    width: 54px;
+    height: 26px;
+    border-radius: 12px;
+    background-color: $only-favorites-bg-color;
+    position: relative;
+    
+    transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 0.5);
+    .ball {
+        position: absolute;
+        left: -1px;
+        top: -2px;
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid $border-color;
+        transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 0.5);
+    }
+}
+
+.switch.on {
+    background-color: $only-favorites-on-bg-color;
+    .ball {
+        left: calc(100% - 27px + 2px);
+        background-color: $border-color;
+    }
+}
+//Pin Styles
+.pin-container {
+    top: 0;
+    left: 0;
+  }
+  
+  .pin {
+    height: 30px;
+    width: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    .top {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      border-radius: 50%;
+      border: 8px solid $border-color;
+      width: 24px;
+      height: 24px;
+    }
+    .bottom {
+      width: 0;
+      height: 0;
+      margin-top: -7px;
+      margin-left: 1px;
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-top: 15px solid $border-color;
+    }
+  }
+  
+  .pin.small {
+    height: 20px;
+    width: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    .top {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      border-radius: 50%;
+      border: 6px solid $border-color;
+      width: 18px;
+      height: 18px;
+    }
+    .bottom {
+      width: 0;
+      height: 0;
+      margin-top: -5px;
+      margin-left: 1px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 12px solid $border-color;
+    }
+  }
+//Room 
+.rooms {
+    @media screen and (min-width: $break-schedule) {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+    }
+  
+    .talk-container {
+      border-bottom: none;
+      .talk {
+        padding: 24px 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @media screen and (max-width: $break-schedule) {
+          border-bottom: 1px solid $border-color;
+        }
+  
+        .time,
+        .room,
+        .heart {
+          margin-top: 0;
+          @media screen and (max-width: $break-schedule) {
+            margin-top: auto;
+          }
+          @extend .flex-col;
+          .time-text-day {
+            display: none;
+          }
+          > .wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-grow: 1;
+          }
+        }
+  
+        .time {
+          display: none;
+          img {
+            margin: auto;
+          }
+        }
+  
+        .talk-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+  
+          .tags {
+            .filter-tag {
+              padding: 3px 5px;
+              span {
+                font-size: 0.625rem;
+              }
+            }
+          }
+          .speaker {
+            font-size: 0.875rem;
+            color: $primary-color;
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 24px;
+          }
+  
+          .type-info {
+            display: none;
+          }
+  
+          .day {
+            display: none;
+          }
+          p.info {
+            display: none;
+          }
+  
+          .title {
+            display: inline-block;
+            max-width: 90%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 0px;
+            margin-top: 4px;
+            margin-bottom: 8px;
+          }
+        }
+        .seperator {
+          display: none;
+        }
+        .header {
+          margin-left: 30px; // Stop title from getting to close
+          min-width: none;
+          max-width: none;
+          @media screen and (max-width: $break-schedule) {
+            min-width: 70px;
+            max-width: 70px;
+          }
+          order: 1;
+          height: 220px; // Cant get this to use full height...
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .time-text,
+          .room-name,
+          .language-text {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+    .room-header {
+      @media screen and (max-width: $break-schedule) {
+        display: none;
+      }
+      border-left: 0px solid transparent;
+      font-size: 0.875rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px 0px;
+      > * {
+        display: inline-block;
+      }
+      .room-header-text {
+        margin-left: 15px;
+      }
+    }
+  
+    @mixin colored-pin($color) {
+      .top {
+        border-color: $color;
+      }
+      .bottom {
+        border-top-color: $color;
+      }
+    }
+  
+    // Have to use .pin.small.room-... to override pin.smalls default color
+    .pin.room-header-green {
+      @include colored-pin($event-header-green-color);
+    }
+    .pin.small.room-header-green {
+      @include colored-pin($event-header-green-color);
+    }
+    .pin.room-header-purple {
+      @include colored-pin($event-header-purple-color);
+    }
+    .pin.small.room-header-purple {
+      @include colored-pin($event-header-purple-color);
+    }
+    .pin.room-header-red {
+      @include colored-pin($event-header-red-color);
+    }
+    .pin.small.room-header-red {
+      @include colored-pin($event-header-red-color);
+    }
+    .pin.room-header-yellow {
+      @include colored-pin($event-header-yellow-color);
+    }
+    .pin.small.room-header-yellow {
+      @include colored-pin($event-header-yellow-color);
+    }
+  }
+  
+  .rooms.single-track {
+    @media screen and (min-width: $break-schedule) {
+      .talk-container:nth-child(even) .talk {
+        background-color: $dark-bg-color;
+      }
+    }
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .rooms.multi-track {
+    @media screen and (min-width: $break-schedule) {
+      display: -ms-grid;
+      display: grid;
+      grid-auto-flow: column;
+  
+      .room-even {
+        background-color: $darker-bg-color;
+      }
+      .room-odd {
+        background-color: $dark-bg-color;
+      }
+      .room-even.talk-even {
+        background-color: $dark-bg-color;
+      }
+      .room-odd.talk-even {
+        background-color: white;
+      }
+      .room-odd.talk-odd {
+        background-color: $dark-bg-color;
+      }
+  
+      .talk {
+        height: calc(100% - 40px); // 100% - padding top and padding bottom
+        padding: 24px 10px 12px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .seperator {
+          display: none;
+        }
+        .header {
+          height: auto;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-left: 0px;
+          .time-text,
+          .room-name,
+          .language-text {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .room {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  //schedule
+  
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .schedule {
+    .schedule-document {
+      width: $break-schedule;
+      
+      margin-left: auto; // Only needed for ie supprot
+      margin-right: auto;
+      
+      @media screen and (max-width: $break-schedule) {
+        width: 100vw;
+      }
+    }
+    
+    .day-selector-top {
+      cursor: pointer;
+      position: absolute;
+      top: 32px;
+      left: 0px;
+      width: 100%;
+      @media screen and (min-width: $break-small) {
+        display: none;
+      }
+      text-align: center;
+      .header-day {
+        font-size: 1rem;
+      }
+      .header-day.selected {
+        font-weight: bold;
+      }
+    }
+    .slot:nth-child(odd) .event-header {
+      background-color: $primary-color;
+      color: $digital-white;
+    }
+    .slot:nth-child(even) .event-header {
+      background-color: $digital-white;
+    }
+  
+    .event-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .type {
+        float: left;
+        margin-left: 30px;
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .time {
+        float: right;
+        margin-right: 30px;
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  div.schedule {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    .schedule-container {
+      background-color: white;
+      margin-bottom: 90px;
+      margin-top: $header-bottom-margin;
+      @media screen and (min-width: $break-schedule) {
+        border: 1px solid $border-color;
+      }
+      @media screen and (min-width: $break-small) {
+        border-top: 1px solid $border-color;
+      }
+  
+      > .header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        @media screen and (max-width: $break-small) {
+          display: none;
+        }
+        .schedule-filter {
+          height: 0;
+          float: left;
+        }
+        .header-title {
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          justify-items: center;
+          align-items: center;
+        }
+        .title {
+          margin-bottom: 16px; 
+        }
+        .day-selector-header {
+          word-spacing: 12px;
+          .seperator {
+            font-size: 1.5rem;
+          }
+          .header-day {
+            cursor: pointer;
+            font-size: 1.125rem;
+          }
+          .header-day.selected {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  //talksAndSpeakers
+  div.talksAndSpeakers {
+    .talks-container {
+      @media screen and (min-width: $break-small) {
+        border: 1px solid black;
+      }
+      margin-bottom: 90px;
+      margin-top: $header-bottom-margin;
+      .title-filter {
+        margin-top: 0px;
+        > .title {
+          text-decoration: none;
+          margin-top: 0px;
+          font-size: 2.25rem;
+        }
+        .talks-filter {
+          height: 0;
+          margin-left: -10px;
+          float: left;
+          .filter-button {
+            margin-left: -50px;
+            margin-top: -30px;
+          }
+        }
+      }
+    }
+    .talk-container:last-child .talk .seperator {
+      display: none;
+    }
+    .talk-container {
+      .talk {
+        .header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          .room-name,
+          .time-text {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 16px;
+            height: 100%;
+          }
+          .language-text {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 7px;
+            height: 100%;
+          }
+        }
+        .day {
+          font-weight: bold;
+          font-size: 0.75rem;
+          margin-bottom: 0px;
+          @extend .show-small;
+        }
+        .type-info {
+          margin-top: 6px;
+          margin-bottom: 0px;
+          font-size: 0.75rem;
+        }
+  
+        .time {
+          @extend .hide-small;
+        }
+  
+        .time-info {
+          margin-left: 6px;
+          margin-bottom: 0px;
+          font-size: 0.75rem;
+          font-weight: bold;
+          @extend .show-small;
+          .duration {
+            display: none;
+          }
+        }
+        .title {
+          margin-top: 6px;
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-align: left;
+          margin-bottom: 7px;
+        }
+        .speaker {
+          font-size: 1.125rem;
+          text-align: left;
+          margin-bottom: 20px;
+        }
+        .info {
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+        .seperator {
+          // Not the prettiest way.. overflow is hidden so it works..
+          @media screen and (max-width: $break-small) {
+            margin-left: -100vw;
+            width: 200vw;
+          }
+          margin-top: 10px;
+          margin-bottom: 30px;
+        }
+        .time,
+        .room,
+        .language {
+          @extend .flex-row;
+        }
+        .filter-tag {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+//talks
+#favourite-talk-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: Transparent;
+    border: none;
+  }
+  
+  .day-and-time {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .talk {
+    .header {
+      height: 100%;
+      .time {
+        .wrapper {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .room,
+      .language,
+      .heart {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .room .room-name,
+      .language .language-text,
+      .time .time-text {
+        display: block;
+        font-size: 0.75rem;
+        height: 100%;
+      }
+    }
+  }
+  
+  .talk-hidden {
+    visibility: hidden;
+    @media only screen and (max-width: $break-schedule) {
+      display: none !important;
+    }
+  }
+
+  
+  

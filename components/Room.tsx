@@ -2,7 +2,6 @@ import { CSSProperties } from "react";
 import { colorClassFromRoomName } from "../helpers";
 import { Pin } from "../components";
 
-import "../styling/roomStyles.scss";
 
 interface RoomProps {
   index?: any;

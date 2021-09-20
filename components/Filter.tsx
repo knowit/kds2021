@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Program from "../models/data.json";
 import { FilterTag, ShowOnlyFavouritesButton } from "../components";
 
-import "../styling/filterStyles.scss";
-
 interface FilterProps {
   onTagChange: (tags: string[]) => void;
   onFavoriteChange: (val: boolean) => void;

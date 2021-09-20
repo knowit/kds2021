@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-import "../styling/menuStyles.scss";
-
 const Menu = () => {
   return (
     <nav role="navigation">
@@ -26,17 +24,17 @@ const Menu = () => {
           <Link href="/Practicalities">
             <a className="link practicalities">Practicalities</a>
           </Link>
-          {/*<Link href="/Schedule">
+          <Link href="/Schedule">
             <a className="link schedule">Schedule</a>
-  </Link> */}
+          </Link>
 
           <Link href="/AboutKds">
             <a className="link aboutKds">About KDS</a>
           </Link>
 
-          {/*<Link href="/TalksAndSpeakers">
+          <Link href="/TalksAndSpeakers">
             <a className="link talksAndSpeakers">Talks and speakers</a>
-        </Link>  */}
+          </Link>
           <Link href="/Location">
             <a className="link location">Location</a>
           </Link>
