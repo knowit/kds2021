@@ -5,7 +5,7 @@ const Practicalities = () => {
   return (
     <div className="practicalities page">
       <Layout title="Practical information" background={true}>
-        <div className="document content">
+        <div className="document content"> 
           <h1>Practical information</h1>
           <p>
             Knowit Developer Summit will be held 12th - 13th of November 2021 in
