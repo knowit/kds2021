@@ -55,7 +55,8 @@ const ParticipantRegistration = () => {
             <p>
             We are still working dilingently on the program. Please note that the presentations and schedule are at the current time not set in stone and subject to changes.
             With that in mind, please take a look at our upcoming exciting <Link href="/TalksAndSpeakers">
-               <a className="link">talks</a></Link> for the conference!
+               <a className="link">talks</a></Link> and temporary <Link href="/Schedule">
+               <a className="link">schedule</a></Link> for the conference!
             </p>
           </div>
           <RegisterButton
