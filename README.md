@@ -2,7 +2,7 @@
 
 ## Getting started
 
-Development requirements: node.js.
+Development requirements: node.js
 
 ### Get code and install dependencies
 
