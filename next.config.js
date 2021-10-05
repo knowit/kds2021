@@ -11,7 +11,8 @@ module.exports = withSass({
             '/AboutKds': {page: '/aboutKds'},
             '/Schedule': {page: '/schedule'},
             '/TalksAndSpeakers': {page: '/talksAndSpeakers'},
-            '/Logo': {page: '/logo'}
+            '/Logo': {page: '/logo'},
+            '/Stats': {page: '/stats'}
         };
     }
 })
