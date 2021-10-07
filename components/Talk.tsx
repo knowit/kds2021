@@ -47,16 +47,16 @@ const Talk = ({
   onToggleTag,
   isInSchedule,
 }: TalkProps) => {
-  
+
   // link to flag images: https://www.gosquared.com/resources/flag-icons/
-  const flagPath = `../static/images/${language}-flag.png`;
-  
+  const flagPath = `/images/${language}-flag.png`;
+
   return (
     <div id={id} className={`talk ${hidden ? "talk-hidden" : ""}`}>
       <div className="header">
         <div className="time">
           <div className="wrapper">
-            <img src="../../static/clock.svg" width="24" height="24" />
+            <img src="/clock.svg" width="24" height="24" />
           </div>
           <span className="time-text">
             <span className="time-text-day">

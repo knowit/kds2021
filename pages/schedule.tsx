@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Day, Filter, Layout } from "../components";
 
-import { program as Program } from "../models/data.json";
+import Program from "../models/data";
 
-import "../styling/globalStyles.scss";
-
-const Schedule = () => {
+const schedule = () => {
   const [filteredProgram, setFilteredProgram] = useState(
-    JSON.parse(JSON.stringify(Program))
+    Program.program
   );
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
   const [selectedTags, setSelectedTags] = useState([]);
@@ -34,7 +32,7 @@ const Schedule = () => {
   };
 
   const filterProgram = () => {
-    let filteredProgram = JSON.parse(JSON.stringify(Program));
+    let filteredProgram = Program.program;
 
     filteredProgram.days.forEach((day) => {
       day.slots.forEach((slot) => {
@@ -70,7 +68,7 @@ const Schedule = () => {
   return (
     <div className="schedule page">
       <Layout
-        title="Schedule"
+        title="schedule"
         hideLogo={"small"}
         background={true}
       >
@@ -102,17 +100,17 @@ const Schedule = () => {
               />
 
               <div className="header-title">
-                <h1 className="title">Schedule</h1>
+                <h1 className="title">schedule</h1>
                 <div className="warningInfo">
-                <p><strong>NB!</strong> The conference program is still a work in progress, presentation times and 
-              description are still subject to changes. Are you a presenter and want something changed related 
+                <p><strong>NB!</strong> The conference program is still a work in progress, presentation times and
+              description are still subject to changes. Are you a presenter and want something changed related
               to your presentation? Please contact &nbsp;
               <span>
                 <a className="mailLink" href="mailto:kds@knowit.no">
                   kds@knowit.no
                 </a>
-              </span> 
-            </p> 
+              </span>
+            </p>
             </div>
                 <div className="day-selector-header">
                   {filteredProgram.days.map((day, i) => (
@@ -151,4 +149,4 @@ const Schedule = () => {
   );
 };
 
-export default Schedule;
+export default schedule;

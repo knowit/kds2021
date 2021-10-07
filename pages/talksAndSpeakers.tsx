@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Filter, Layout, Talk } from "../components";
-import { program as Program } from "../models/data.json";
+import Program from "../models/data";
 import { Time, getDuration } from "../helpers";
-import "../styling/globalStyles.scss";
 
-const TalksAndSpeakers = () => {
+const talksAndSpeakers = () => {
   const [filteredProgram, setFilteredProgram] = useState(
-    JSON.parse(JSON.stringify(Program))
+    Program.program
   );
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
   const [atLeastOneTalkVisible, setAtLeastOneTalkVisible] = useState(false);
@@ -22,7 +21,7 @@ const TalksAndSpeakers = () => {
 
   const handleToggleTag = (tag) => {
     if (selectedTags.includes(tag)) {
-      setSelectedTags(selectedTags.filter(t => t != tag)); 
+      setSelectedTags(selectedTags.filter(t => t != tag));
     } else {
       setSelectedTags(selectedTags.concat(tag));
     }
@@ -33,8 +32,8 @@ const TalksAndSpeakers = () => {
   }, [selectedTags, showOnlyFavorites]);
 
   /**
-   * Sets the hide-property of talks to a fitting boolean 
-   * 
+   * Sets the hide-property of talks to a fitting boolean
+   *
    * @param talks list of talk objects
    * @returns true if at least one talk is visible, otherwise false
    */
@@ -61,7 +60,7 @@ const TalksAndSpeakers = () => {
 
   const filterProgram = () => {
     let visibleTotal = false;     // changed to true if at least one talk is visible
-    let filteredProgram = JSON.parse(JSON.stringify(Program));
+    let filteredProgram = Program.program;
     filteredProgram.days.forEach((day) =>
       day.slots.forEach(
         (slot) =>
@@ -143,15 +142,15 @@ const TalksAndSpeakers = () => {
             />
             <h1 className="title"> Talks & speakers</h1>
             <div className="warningInfo">
-            <p><strong>NB!</strong> The conference program is still a work in progress, presentation times and 
-              description are still subject to changes. Are you a presenter and want something changed related 
+            <p><strong>NB!</strong> The conference program is still a work in progress, presentation times and
+              description are still subject to changes. Are you a presenter and want something changed related
               to your presentation? Please contact &nbsp;
               <span>
                 <a className="mailLink" href="mailto:kds@knowit.no">
                   kds@knowit.no
                 </a>
-              </span> 
-            </p> 
+              </span>
+            </p>
             </div>
           </div>
           <div className="talks">
@@ -163,4 +162,4 @@ const TalksAndSpeakers = () => {
   );
 };
 
-export default TalksAndSpeakers;
+export default talksAndSpeakers;

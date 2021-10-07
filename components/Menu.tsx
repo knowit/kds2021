@@ -15,33 +15,33 @@ const Menu = () => {
         <div id="filter"></div>
         <div id="menu">
           <h1 className="menuHeader">Menu</h1>
-          <Link href="/ParticipantRegistration">
+          <Link href="/participantRegistration">
             <a className="link participantRegistration">Participant Registration</a>
           </Link>
-          <Link href="/CallForPresentations">
+          <Link href="/callForPresentations">
             <a className="link callForPresentations">Call for Presentations</a>
           </Link>
-          <Link href="/Practicalities">
+          <Link href="/practicalities">
             <a className="link practicalities">Practicalities</a>
           </Link>
-          <Link href="/Schedule">
+          <Link href="/schedule">
             <a className="link schedule">Schedule</a>
           </Link>
 
-          <Link href="/AboutKds">
+          <Link href="/aboutKds">
             <a className="link aboutKds">About KDS</a>
           </Link>
 
-          <Link href="/TalksAndSpeakers">
+          <Link href="/talksAndSpeakers">
             <a className="link talksAndSpeakers">Talks and speakers</a>
           </Link>
-          <Link href="/Location">
+          <Link href="/location">
             <a className="link location">Location</a>
           </Link>
-          <Link href="/CodeOfConduct">
+          <Link href="/codeOfConduct">
             <a className="link codeOfConduct">Code of Conduct</a>
           </Link>
-          <Link href="/Logo">
+          <Link href="/logo">
             <a className="link logo">Logo</a>
           </Link>
           <Link href="https://kds-archive.knowit.no/schedule">

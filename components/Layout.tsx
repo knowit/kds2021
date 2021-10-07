@@ -31,7 +31,7 @@ const Layout = ({
                 <img
                   id="KDSlogo"
                   className={hideLogo ? `hide-${hideLogo}` : ""}
-                  src="../static/KDSsymbol.svg"
+                  src="/KDSsymbol.svg"
                 />
               </a>
             </Link>
@@ -39,7 +39,7 @@ const Layout = ({
           <div id="KDSheader">
             <h2 className="headline">By Developers, For Developers</h2>
             <h3 className="header-location">
-              <img id="location-img" src="../static/location.svg" />
+              <img id="location-img" src="/location.svg" />
               Stockholm, Sweden 12 - 13 November 2021
               <hr />
             </h3>
@@ -48,7 +48,7 @@ const Layout = ({
         </div>
         <Menu />
       </div>
-      {background && <img src="../static/code.svg" className="background" />}
+      {background && <img src="/code.svg" className="background" />}
       <div className="content">{children}</div>
     </div>
   );

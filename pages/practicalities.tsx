@@ -1,11 +1,11 @@
 import { Layout } from "../components";
-import "../styling/globalStyles.scss";
 import Link from "next/link";
-const Practicalities = () => {
+
+const practicalities = () => {
   return (
     <div className="practicalities page">
       <Layout title="Practical information" background={true}>
-        <div className="document content"> 
+        <div className="document content">
           <h1>Practical information</h1>
           <p>
             Knowit Developer Summit will be held 12th - 13th of November 2021 in
@@ -28,72 +28,72 @@ const Practicalities = () => {
             first.
           </p>
           <p>
-            <strong>COVID-19 and vaccines.</strong> Regarding the ongoing pandemic, 
-            we will continue to monitor the situation as it develops, and we will 
-            update our event policy accordingly. As the conference will be held in 
-            Stockholm, we will follow Sweden’s national guidelines in addition to 
-            Knowit’s internal COVID-19 guidelines. We will also take the situation 
-            in participants’ home countries into consideration. In the event that 
-            the vaccine rollout is delayed or if new variants of COVID-19 spread 
-            across countries, we might be forced to postpone the event. 
+            <strong>COVID-19 and vaccines.</strong> Regarding the ongoing pandemic,
+            we will continue to monitor the situation as it develops, and we will
+            update our event policy accordingly. As the conference will be held in
+            Stockholm, we will follow Sweden’s national guidelines in addition to
+            Knowit’s internal COVID-19 guidelines. We will also take the situation
+            in participants’ home countries into consideration. In the event that
+            the vaccine rollout is delayed or if new variants of COVID-19 spread
+            across countries, we might be forced to postpone the event.
           </p>
           <p>
-            <strong>Solidarity.</strong> As in previous years, we embrace 
-            solidarity at Knowit, which means that we all pay the same amount 
-            for the conference, regardless of whether we are a speaker or not, 
-            where we live, or whether we might need a hotel room. This also 
-            applies if you are interested in just holding a presentation and 
-            not attending the rest of the conference. Our ambition is that 
-            everyone attends the entire conference to meet and learn from 
+            <strong>Solidarity.</strong> As in previous years, we embrace
+            solidarity at Knowit, which means that we all pay the same amount
+            for the conference, regardless of whether we are a speaker or not,
+            where we live, or whether we might need a hotel room. This also
+            applies if you are interested in just holding a presentation and
+            not attending the rest of the conference. Our ambition is that
+            everyone attends the entire conference to meet and learn from
             fellow colleagues at other Knowit companies.
           </p>
           <p>
-            <strong>Great opportunity.</strong> We believe that this conference 
-            is a great opportunity to get better acquainted with others engaged 
-            in system development at Knowit. We think it’s important to participate 
-            in these kinds of events in order to create a good climate for cooperation 
-            across the company, in addition to the great program. 
+            <strong>Great opportunity.</strong> We believe that this conference
+            is a great opportunity to get better acquainted with others engaged
+            in system development at Knowit. We think it’s important to participate
+            in these kinds of events in order to create a good climate for cooperation
+            across the company, in addition to the great program.
           </p>
           <p>
-            <strong>Payment.</strong> The fee for the conference 
-            will be 3900 SEK, excluding VAT. In addition to the 
-            conference, this includes lunch and dinner on Friday, and lunch on 
-            Saturday. For those travelling to Stockholm, an overnight stay in a 
-            shared double room and breakfast at the hotel on Saturday is also 
-            included. If you prefer, you can pay 600 SEK extra to get a single 
-            room. Travel costs for those who need to travel to Stockholm are not 
+            <strong>Payment.</strong> The fee for the conference
+            will be 3900 SEK, excluding VAT. In addition to the
+            conference, this includes lunch and dinner on Friday, and lunch on
+            Saturday. For those travelling to Stockholm, an overnight stay in a
+            shared double room and breakfast at the hotel on Saturday is also
+            included. If you prefer, you can pay 600 SEK extra to get a single
+            room. Travel costs for those who need to travel to Stockholm are not
             included.
           </p>
           <p>
-            <strong>Location.</strong> We have booked the 
+            <strong>Location.</strong> We have booked the
             <Link href="https://www.scandichotels.com/hotels/sweden/stockholm/scandic-continental">
               <a className="paragraphLink"> Scandic Continental Hotel </a>
-              </Link> 
-            for accommodation and as our conference venue. It is located 
-            in the city center and is very easy to get to either by 
+              </Link>
+            for accommodation and as our conference venue. It is located
+            in the city center and is very easy to get to either by
             <Link href="https://www.flygbussarna.se/en/arlanda">
               <a className="paragraphLink"> bus </a>
               </Link>
-            or 
+            or
             <Link href="https://www.arlandaexpress.com/">
               <a className="paragraphLink"> Arlanda Express </a>
               </Link>
-            from the 
+            from the
             <Link href="https://www.swedavia.com/arlanda/">
               <a className="paragraphLink"> airport</a>
               </Link>
-            . The 
+            . The
             <Link href="https://www.dinstation.com/stockholm-centralstation/">
               <a className="paragraphLink"> train station </a>
               </Link>
             is also close by; we encourage taking an environmental approach to travelling!
-            You can view the location of the venue 
-            <Link href="/Location">
+            You can view the location of the venue
+            <Link href="/location">
             <a className="paragraphLink"> here</a>
           </Link>.
           </p>
           <p>
-            <strong>If you have questions or suggestions, send an email to 
+            <strong>If you have questions or suggestions, send an email to
             <Link href="mailto:kds@knowit.no">
             <a className="paragraphLink"> kds@knowit.no </a>
           </Link>.</strong>
@@ -147,4 +147,4 @@ const Practicalities = () => {
   );
 };
 
-export default Practicalities;
+export default practicalities;

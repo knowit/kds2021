@@ -1,8 +1,7 @@
 import { Layout } from "../components";
 
-import "../styling/globalStyles.scss";
 
-const CodeOfConduct = () => {
+const codeOfConduct = () => {
   return (
     <div className="codeOfConduct page">
       <Layout title="Code of conduct" background={true}>
@@ -86,4 +85,4 @@ const CodeOfConduct = () => {
   );
 };
 
-export default CodeOfConduct;
+export default codeOfConduct;

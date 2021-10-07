@@ -1,4 +1,4 @@
-import { program as Program } from "../models/data.json";
+import Program from "../models/data";
 
 const seed = "nice seed!!!!";
 
@@ -10,7 +10,7 @@ const colorClasses = [
 ];
 
 const colorClassFromRoomName = (roomName) => {
-  const index = Math.abs(Program.rooms.indexOf(roomName) % colorClasses.length);
+  const index = Math.abs(Program.program.rooms.indexOf(roomName) % colorClasses.length);
   return colorClasses[index];
 };
 

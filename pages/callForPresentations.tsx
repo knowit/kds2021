@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Layout, RegisterButton } from "../components";
-import "../styling/globalStyles.scss";
 
-const CallForPresentations = () => {
+const callForPresentations = () => {
   return (
     <div className="callForPresentations page">
       <Layout
         title="Call for Presentations"
-        
+
         background={true}
       >
         <div className="document cfp">
@@ -18,7 +17,7 @@ const CallForPresentations = () => {
               developer conference. The 2021 conference will be held on 12 - 13
               November at the Scandic Continental in Stockholm, Sweden.{" "}
               For more information about the conference, see the&nbsp;
-              <Link href="/Practicalities">
+              <Link href="/practicalities">
                 <a className="link">practical information</a>
               </Link>
               &nbsp;page.
@@ -41,4 +40,4 @@ const CallForPresentations = () => {
   );
 };
 
-export default CallForPresentations;
+export default callForPresentations;
