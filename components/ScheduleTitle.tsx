@@ -32,7 +32,7 @@ const ScheduleTitle = ({title, id, isInSchedule, clamped}:props) => {
                         />
                     </div>
         
-                    <Link href={`./talksAndSpeakers/#${encodeURIComponent(id)}`}>
+                    <Link href={`./TalksAndSpeakers/#${encodeURIComponent(id)}`}>
                         <a className="title-link">
                             <h1 className="title" style={{display: over? 'block' : 'none'}}>
                                 {title} 
@@ -43,7 +43,7 @@ const ScheduleTitle = ({title, id, isInSchedule, clamped}:props) => {
             }
 
             {!isInSchedule &&   
-                <Link href={`./schedule/#${encodeURIComponent(id)}`}>
+                <Link href={`./Schedule/#${encodeURIComponent(id)}`}>
                     <a className="title-link">
                         <h1 className="title" style={{display: over? 'none' : 'block'}}>
                             {title}

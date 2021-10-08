@@ -33,31 +33,11 @@ const ParticipantRegistration = () => {
               &nbsp;page.
             </p>
             <p>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdrjECzitSMyHgff-daChQnXsfb3Ulph1uauXgt-STzi1xUdA/viewform">
-              <a className="link">Registration</a>
-            </Link>
-            &nbsp;is open from now until the <strong>7th of October 2021</strong>.Note that if you have proposed a presentation (in the form Call for Presentation) you
-            do not need to register. If you have questions about Call for Presentations, you can read about it <Link href="/CallForPresentations"><a className="link">here</a></Link>.
-            {" "}
-            </p>
-
-            <p>
-
-            </p>
-            <p>
-              If you have any questions feel free to contact us at kds@knowit.no
-            </p>
-            <p>
-            We are still working dilingently on the program. Please note that the presentations and schedule are at the current time not set in stone and subject to changes.
-            With that in mind, please take a look at our upcoming exciting <Link href="/TalksAndSpeakers">
-               <a className="link">talks</a></Link> and temporary <Link href="/Schedule">
-               <a className="link">schedule</a></Link> for the conference!
+          Registration Closed on the <strong>7th of October 2021</strong>. Note that no participant registration was necessary if presenting. 
+            We may still be able to accept late registration, but contact kds@knowit.no for further inquries on this.
+            
             </p>
           </div>
-          <RegisterButton
-            url="https://docs.google.com/forms/d/e/1FAIpQLSdrjECzitSMyHgff-daChQnXsfb3Ulph1uauXgt-STzi1xUdA/viewform"
-            name="Participant Registration"
-          ></RegisterButton>
         </div>
       </Layout>
     </div>
