@@ -3,7 +3,7 @@ import practicalities from "./practicalities";
 import ParticipantRegistration from "./participantRegistration";
 
 const Home = () => {
-  return <ParticipantRegistration />;
+  return <Practicalities />;
 };
 
 export default Home;
