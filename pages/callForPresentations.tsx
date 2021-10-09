@@ -17,7 +17,7 @@ const callForPresentations = () => {
               developer conference. The 2021 conference will be held on 12 - 13
               November at the Scandic Continental in Stockholm, Sweden.{" "}
               For more information about the conference, see the&nbsp;
-              <Link href="/practicalities">
+              <Link href="/Practicalities">
                 <a className="link">practical information</a>
               </Link>
               &nbsp;page.
