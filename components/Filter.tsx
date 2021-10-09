@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Program from "../models/data.json";
+import Program from "../models/data";
 import { FilterTag, ShowOnlyFavouritesButton } from "../components";
 
 interface FilterProps {
@@ -44,7 +44,7 @@ const Filter = ({
       </div>
       <div className={`filter ${open ? "open" : ""}`}>
         <img
-          src="../static/close-24px.svg"
+          src="/close-24px.svg"
           className="close"
           onClick={toggle}
         ></img>

@@ -1,5 +1,5 @@
 import { Layout } from "../components";
-import Practicalities from "./practicalities";
+import practicalities from "./practicalities";
 import ParticipantRegistration from "./participantRegistration";
 
 const Home = () => {

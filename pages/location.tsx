@@ -1,8 +1,6 @@
 import { Layout, Pin } from "../components";
 
-import "../styling/globalStyles.scss";
-
-const Location = () => {
+const location = () => {
   return (
     <div className="location page">
       <Layout>
@@ -30,4 +28,4 @@ const Location = () => {
     </div>
   );
 };
-export default Location;
+export default location;

@@ -31,8 +31,8 @@ const FavouriteTalkButton = ({ talkId, onClick }: FavoriteTalkButtonProps) => {
   };
 
   var icon = isFavorited(talkId)
-    ? "../static/heart-filled.png"
-    : "../static/heart.png";
+    ? "/heart-filled.png"
+    : "/heart.png";
 
   return (
     <button onClick={() => favouriteButtonClick()} id="favourite-talk-button">

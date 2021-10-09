@@ -1,12 +1,12 @@
 import React, { Component, useRef, useEffect } from 'react';
-import LinesEllipsis from 'react-lines-ellipsis'; 
+import LinesEllipsis from 'react-lines-ellipsis';
 import Link from "next/link";
 
 interface props {
     title: string;
     id: any;
     clamped?: boolean;
-    isInSchedule: boolean; 
+    isInSchedule: boolean;
 }
 
 const ScheduleTitle = ({title, id, isInSchedule, clamped}:props) => {
@@ -15,9 +15,9 @@ const ScheduleTitle = ({title, id, isInSchedule, clamped}:props) => {
 
     return (
         <div>
-            {isInSchedule && 
-                <div 
-                onMouseOver={()=>setOver(true)} 
+            {isInSchedule &&
+                <div
+                onMouseOver={()=>setOver(true)}
                 onMouseOut={()=>setOver(false)}>
 
                 <div>
@@ -31,19 +31,18 @@ const ScheduleTitle = ({title, id, isInSchedule, clamped}:props) => {
                             basedOn='letters'
                         />
                     </div>
-        
-                    <Link href={`./TalksAndSpeakers/#${encodeURIComponent(id)}`}>
+                    <Link href={`/TalksAndSpeakers/#${encodeURIComponent(id)}`}>
                         <a className="title-link">
                             <h1 className="title" style={{display: over? 'block' : 'none'}}>
-                                {title} 
+                                {title}
                             </h1>
                         </a>
                     </Link>
                 </div>
             }
 
-            {!isInSchedule &&   
-                <Link href={`./Schedule/#${encodeURIComponent(id)}`}>
+            {!isInSchedule &&
+                <Link href={`/Schedule/#${encodeURIComponent(id)}`}>
                     <a className="title-link">
                         <h1 className="title" style={{display: over? 'none' : 'block'}}>
                             {title}

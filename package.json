@@ -23,20 +23,21 @@
   },
   "homepage": "https://github.com/knowit/program.kds.knowit.no",
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "airtable": "^0.10.1",
-    "next": "^9.5.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@nivo/bar": "^0.73.1",
+    "@nivo/core": "^0.73.0",
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-lines-ellipsis": "^0.15.0",
     "react-transition-group": "^4.4.2",
-    "styled-components": "^4.4.1"
+    "sass": "^1.42.1",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
-    "@types/node": "^12.6.2",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "node-sass": "^5.0.0",
-    "typescript": "^3.5.3"
+    "@types/node": "^14.17.21",
+    "@types/react": "^17.0.27",
+    "@types/react-dom": "^17.0.9",
+    "postcss": "^8.3.9",
+    "typescript": "^4.4.3"
   }
 }

@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Layout, RegisterButton } from "../components";
 
-import "../styling/globalStyles.scss";
-
-const ParticipantRegistration = () => {
+const participantRegistration = () => {
   return (
     <div className="callForPresentations page">
       <Layout
@@ -27,7 +25,7 @@ const ParticipantRegistration = () => {
             As before, the motto for the conference is “By Developers, For Developers!” {" "}
             </p>
             <p>For more information about the conference, see the&nbsp;
-              <Link href="/Practicalities">
+              <Link href="/practicalities">
                 <a className="link">practical information</a>
               </Link>
               &nbsp;page.
@@ -44,4 +42,4 @@ const ParticipantRegistration = () => {
   );
 };
 
-export default ParticipantRegistration;
+export default participantRegistration;
