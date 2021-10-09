@@ -88,7 +88,7 @@ const practicalities = () => {
               </Link>
             is also close by; we encourage taking an environmental approach to travelling!
             You can view the location of the venue
-            <Link href="/location">
+            <Link href="/Location">
             <a className="paragraphLink"> here</a>
           </Link>.
           </p>

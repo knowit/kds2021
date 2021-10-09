@@ -25,15 +25,15 @@ const participantRegistration = () => {
             As before, the motto for the conference is “By Developers, For Developers!” {" "}
             </p>
             <p>For more information about the conference, see the&nbsp;
-              <Link href="/practicalities">
+              <Link href="/Practicalities">
                 <a className="link">practical information</a>
               </Link>
               &nbsp;page.
             </p>
             <p>
-          Registration Closed on the <strong>7th of October 2021</strong>. Note that no participant registration was necessary if presenting. 
+          Registration Closed on the <strong>7th of October 2021</strong>. Note that no participant registration was necessary if presenting.
             We may still be able to accept late registration, but contact kds@knowit.no for further inquries on this.
-            
+
             </p>
           </div>
         </div>
