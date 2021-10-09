@@ -68,7 +68,7 @@ const schedule = () => {
   return (
     <div className="schedule page">
       <Layout
-        title="schedule"
+        title="Schedule"
         hideLogo={"small"}
         background={true}
       >
