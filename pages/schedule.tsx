@@ -39,7 +39,7 @@ const schedule = () => {
         slot.rooms = slot.rooms.filter((room) => {
           room.talks = room.talks.filter((talk) => {
             const talkTags = talk.tags.concat([talk.language]);
-            const talkFavorited = localStorage.getItem(talk.talkId) != null;
+            const talkFavorited = localStorage.getItem(`${talk.talkId}`) != null;
 
             if (showOnlyFavorites && !talkFavorited) {
               return false;
