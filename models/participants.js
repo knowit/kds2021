@@ -128,7 +128,7 @@ export const participants =  [
     {
         "company": "Knowit Connectivity Kista",
         "country": "Sweden",
-        "city": "stockholm",
+        "city": "Stockholm",
         "count_country": 2,
         "count_city": 2
     },
@@ -212,7 +212,7 @@ export const participants =  [
     {
         "company": "Knowit Invativa",
         "country": "Sweden",
-        "city": "Göteborg",
+        "city": "Gothenburg",
         "count_country": 1,
         "count_city": 1
     },

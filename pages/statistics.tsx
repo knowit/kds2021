@@ -22,7 +22,7 @@ const statistics: FunctionComponent = () => {
                     </div>
                     <h3>By city</h3>
                     <div style={{height: 500}}>
-                        <BarChart data={countByCity} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 70 }}/>
+                        <BarChart data={countByCity} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 80 }}/>
                     </div>
                     <h3>By country</h3>
                     <div style={{height: 500}}>
