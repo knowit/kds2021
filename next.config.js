@@ -11,7 +11,7 @@ module.exports = {
             '/Schedule': {page: '/schedule'},
             '/TalksAndSpeakers': {page: '/talksAndSpeakers'},
             '/Logo': {page: '/logo'},
-            '/Stats': {page: '/stats'}
+            '/Statistics': {page: '/statistics'}
         }
     }
 }
