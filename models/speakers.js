@@ -5,11 +5,7 @@ export default [
     },
     {
         "company": "Knowit Amende",
-        "count": 2
-    },
-    {
-        "company": "Knowit Amende AS",
-        "count": 3
+        "count": 5
     },
     {
         "company": "Knowit Architecture",
