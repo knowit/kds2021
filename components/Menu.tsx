@@ -41,6 +41,9 @@ const Menu = () => {
           <Link href="/CodeOfConduct">
             <a className="link codeOfConduct">Code of Conduct</a>
           </Link>
+          <Link href="/Statistics">
+            <a className="link statistics">Statistics</a>
+          </Link>
           <Link href="/Logo">
             <a className="link logo">Logo</a>
           </Link>
