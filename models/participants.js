@@ -1,20 +1,13 @@
-export const participants =  [
+export const participants = [
     {
-        "company": "Aden Nur",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Cybercom",
+        "company": "Cybercom Group AB",
         "country": "Finland",
         "city": "Tampere",
         "count_country": 1,
         "count_city": 1
     },
     {
-        "company": "Cybercom",
+        "company": "Cybercom Group AB",
         "country": "Sweden",
         "city": "Lidingö",
         "count_country": 1,
@@ -70,6 +63,13 @@ export const participants =  [
         "count_city": 3
     },
     {
+        "company": "Knowit Cloud Partnership",
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 1,
+        "count_city": 1
+    },
+    {
         "company": "Knowit Cloud Partnerships",
         "country": "Sweden",
         "city": "Stockholm",
@@ -84,28 +84,35 @@ export const participants =  [
         "count_city": 4
     },
     {
-        "company": "Knowit Connectivity",
+        "company": "Knowit Connectivity AB",
         "country": "Sweden",
         "city": "Gothenburg",
         "count_country": 1,
         "count_city": 1
     },
     {
-        "company": "Knowit Connectivity",
+        "company": "Knowit Connectivity AB",
         "country": "Sweden",
         "city": "Linköping",
         "count_country": 4,
         "count_city": 4
     },
     {
-        "company": "Knowit Connectivity",
+        "company": "Knowit Connectivity AB",
         "country": "Sweden",
         "city": "Norrköping",
         "count_country": 1,
         "count_city": 1
     },
     {
-        "company": "Knowit Connectivity",
+        "company": "Knowit Connectivity AB",
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 1,
+        "count_city": 1
+    },
+    {
+        "company": "Knowit Connectivity AB",
         "country": "Sweden",
         "city": "Umeå",
         "count_country": 1,
@@ -161,7 +168,7 @@ export const participants =  [
         "count_city": 14
     },
     {
-        "company": "Knowit Experience",
+        "company": "Knowit Experience Aarhus",
         "country": "Denmark",
         "city": "Aarhus",
         "count_country": 4,
@@ -185,8 +192,8 @@ export const participants =  [
         "company": "Knowit Experience",
         "country": "Ukraine",
         "city": "Kharkiv",
-        "count_country": 2,
-        "count_city": 2
+        "count_country": 3,
+        "count_city": 3
     },
     {
         "company": "Knowit Experience Bergen",
@@ -203,18 +210,18 @@ export const participants =  [
         "count_city": 3
     },
     {
+        "company": "Knowit Experience Aarhus",
+        "country": "Denmark",
+        "city": "Aarhus",
+        "count_country": 1,
+        "count_city": 1
+    },
+    {
         "company": "Knowit Gävleborg AB",
         "country": "Sweden",
         "city": "Gävle",
         "count_country": 3,
         "count_city": 3
-    },
-    {
-        "company": "Knowit Invativa",
-        "country": "Sweden",
-        "city": "Gothenburg",
-        "count_country": 1,
-        "count_city": 1
     },
     {
         "company": "Knowit Karlstad AB",
@@ -262,27 +269,13 @@ export const participants =  [
         "company": "Knowit Solutions",
         "country": "Sweden",
         "city": "Stockholm",
-        "count_country": 2,
-        "count_city": 2
+        "count_country": 3,
+        "count_city": 3
     },
     {
         "company": "Knowit Solutions Oy",
         "country": "Finland",
         "city": "Helsinki",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Knowit Experience",
-        "country": "Ukraine",
-        "city": "Kharkiv",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Knowit experience Denmark",
-        "country": "Denmark",
-        "city": "Aarhus",
         "count_country": 1,
         "count_city": 1
     },
@@ -306,6 +299,33 @@ export const participants =  [
         "city": "Stockholm",
         "count_country": 1,
         "count_city": 1
+    }
+]
+
+export const participantsCountry = [
+    {
+        "country": "Denmark",
+        "count_country": 10
+    },
+    {
+        "country": "Finland",
+        "count_country": 6
+    },
+    {
+        "country": "Norway",
+        "count_country": 11
+    },
+    {
+        "country": "Poland",
+        "count_country": 2
+    },
+    {
+        "country": "Sweden",
+        "count_country": 59
+    },
+    {
+        "country": "Ukraine",
+        "count_country": 3
     }
 ]
 

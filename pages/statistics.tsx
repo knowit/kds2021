@@ -2,8 +2,9 @@ import React, {useState, useRef, FunctionComponent, useEffect, RefObject} from '
 import { Layout } from "../components";
 import BarChart from '../components/BarChart';
 
-import speakers from '../models/speakers';
-import { countByCity, countByCountry, countByCompany, participants } from '../models/participants';
+import { speakersCountry, speakers } from '../models/speakers';
+import { countByCity, countByCountry, countByCompany, participants, participantsCountry } from '../models/participants';
+import { countByCountryTotal, countByCompanyTotal } from '../models/speakersAndParticipants';
 
 const statistics: FunctionComponent = () => {
     return (
@@ -11,6 +12,13 @@ const statistics: FunctionComponent = () => {
             <Layout title="Statistics" background={true}>'
                 <div className="document content">
                     <h1>Statistics</h1>
+                    <h2>Speakers and Participants</h2>
+                    <div style={{height: 500}}>
+                    <BarChart data={countByCountryTotal} layout="vertical" margin={{ top: 20, right: 20, bottom: 20, left: 40 }}/>
+                    </div>
+                    <div style={{height: 800}}>
+                        <BarChart data={countByCompanyTotal} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>
+                    </div>
                     <h2>Speakers</h2>
                     <div style={{height: 500}}>
                     <BarChart data={speakers} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>

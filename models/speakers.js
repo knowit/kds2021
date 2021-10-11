@@ -1,4 +1,4 @@
-export default [
+export const speakers = [
     {
         "company": "Cybercom Group AB",
         "count": 1
@@ -53,7 +53,7 @@ export default [
     },
     {
         "company": "Knowit Objectnet AS",
-        "count": 7
+        "count": 6
     },
     {
         "company": "Knowit Poland Sp. z o.o.",
@@ -82,5 +82,28 @@ export default [
     {
         "company": "SINTEF Digital",
         "count": 1
+    }
+]
+
+export const speakersCountry = [
+    {
+        "country": "Denmark",
+        "count_country": 3
+    },
+    {
+        "country": "Finland",
+        "count_country": 4
+    },
+    {
+        "country": "Norway",
+        "count_country": 20
+    },
+    {
+        "country": "Poland",
+        "count_country": 2
+    },
+    {
+        "country": "Sweden",
+        "count_country": 13
     }
 ]
