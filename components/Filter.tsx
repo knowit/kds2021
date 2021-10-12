@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Program from "../models/data";
+import Program from "../models/data.json";
 import { FilterTag, ShowOnlyFavouritesButton } from "../components";
 
 interface FilterProps {

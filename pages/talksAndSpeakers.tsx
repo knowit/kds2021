@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Filter, Layout, Talk } from "../components";
-import Program from "../models/data";
+import { program as Program } from "../models/data.json";
 import { Time, getDuration } from "../helpers";
 
 const talksAndSpeakers = () => {
   const [filteredProgram, setFilteredProgram] = useState(
-    Program.program
+    Program
   );
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
   const [atLeastOneTalkVisible, setAtLeastOneTalkVisible] = useState(false);
@@ -60,7 +60,7 @@ const talksAndSpeakers = () => {
 
   const filterProgram = () => {
     let visibleTotal = false;     // changed to true if at least one talk is visible
-    let filteredProgram = Program.program;
+    let filteredProgram = JSON.parse(JSON.stringify(Program));
     filteredProgram.days.forEach((day) =>
       day.slots.forEach(
         (slot) =>

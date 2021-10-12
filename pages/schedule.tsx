@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Day, Filter, Layout } from "../components";
 
-import Program from "../models/data";
+import { program as Program } from "../models/data.json";
 
 const schedule = () => {
   const [filteredProgram, setFilteredProgram] = useState(
-    Program.program
+    Program
   );
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
   const [selectedTags, setSelectedTags] = useState([]);
@@ -32,7 +32,7 @@ const schedule = () => {
   };
 
   const filterProgram = () => {
-    let filteredProgram = Program.program;
+    let filteredProgram = Program;
 
     filteredProgram.days.forEach((day) => {
       day.slots.forEach((slot) => {
