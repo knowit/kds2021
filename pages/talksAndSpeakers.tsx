@@ -94,7 +94,7 @@ const talksAndSpeakers = () => {
               const talkEl = (
                 <div className="talk-container" key={i}>
                   <Talk
-                    hidden={talk.hide}
+                    hidden={(talk as any).hide}
                     day={day.day}
                     timeStart={from}
                     timeEnd={to}
@@ -117,7 +117,7 @@ const talksAndSpeakers = () => {
 
               from = to;
 
-              return talk.hide ? "" : talkEl;
+              return (talk as any).hide ? "" : talkEl;
             });
           })
         )
