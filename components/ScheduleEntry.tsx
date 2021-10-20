@@ -31,7 +31,7 @@ const ScheduleEntry = ({
         msGridColumn: index + 1,
       };
       const to = from.copy().add(getDuration(talk));
-      const talkEl = (
+      const talkEl = ( 
         <div
           className={`talk-container ${
             trackIndex % 2 == 0 ? "talk-even" : "talk-odd"
@@ -61,11 +61,12 @@ const ScheduleEntry = ({
       );
 
       from = to;
-
       if (!talk.hide) {
         trackIndex++;
       }
-
+      if(talk.title === 'Break'){
+        return
+      }
       return talkEl;
     });
 

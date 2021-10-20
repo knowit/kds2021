@@ -657,6 +657,16 @@
     }
   }
 //Room 
+.schedule-title-wide {
+  @media screen and (max-width: $break-schedule) {
+    display: none
+  }
+}
+.schedule-title-small{
+  @media screen and (min-width: $break-schedule) {
+    display: none
+  }
+}
 .rooms {
     @media screen and (min-width: $break-schedule) {
       display: flex;
@@ -736,7 +746,11 @@
           .title {
             display: inline-block;
             max-width: 90%;
-            font-size: 1.5rem;
+            font-size: 1.125rem;
+            @media screen and (min-width: $break-schedule) {
+              font-size: 1.5rem;
+              min-height: 100px;
+            }
             font-weight: bold;
             text-align: left;
             margin-left: 0px;

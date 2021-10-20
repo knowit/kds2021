@@ -15,12 +15,12 @@ const Menu = () => {
         <div id="filter"></div>
         <div id="menu">
           <h1 className="menuHeader">Menu</h1>
-          <Link href="/ParticipantRegistration">
+          {/*<Link href="/ParticipantRegistration">
             <a className="link participantRegistration">Participant Registration</a>
           </Link>
           <Link href="/CallForPresentations">
             <a className="link callForPresentations">Call for Presentations</a>
-          </Link>
+  </Link>*/}
           <Link href="/Practicalities">
             <a className="link practicalities">Practicalities</a>
           </Link>

@@ -27,6 +27,15 @@ const practicalities = () => {
             </a>{" "}
             first.
           </p>
+          <p>The registration for KDS 2021 is now closed. 
+              If you wish to be registered to the waiting list for late speakers, as a participant,
+               or have any questions, feel free to contact us at&nbsp;
+              <span>
+                <a className="link" href="mailto:kds@knowit.no">
+                  kds@knowit.no
+                </a>
+              </span>
+            </p>
           <p>
             <strong>COVID-19 and vaccines.</strong> Regarding the ongoing pandemic,
             we will continue to monitor the situation as it develops, and we will

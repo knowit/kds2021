@@ -14,7 +14,7 @@ const Day = ({ currDay, slots, tags, onToggleTag, onFavoriteChange }: DayProps) 
     return Math.max(
       ...(slot.rooms &&
         slot.rooms.map(
-          (room) => room.talks && room.talks.filter((talk) => !talk.hide).length
+          (room) => room.talks && room.talks.filter((talk) => !talk.hide && talk.title !== 'Break').length
         ))
     );
   };

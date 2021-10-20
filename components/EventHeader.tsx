@@ -1,4 +1,5 @@
 import React from "react";
+import { Time } from "../helpers";
 
 interface EventHeaderProps {
   type: any;
@@ -11,7 +12,7 @@ const EventHeader = ({ type, timeStart, timeEnd }: EventHeaderProps) => {
     <div className="event-header">
       <span className="type">{type}</span>
       <span className="time">
-        {timeStart} - {timeEnd}
+        {Time.fromNumber(timeStart).toString()} - {Time.fromNumber(timeEnd).toString()}
       </span>
     </div>
   );

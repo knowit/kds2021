@@ -93,6 +93,7 @@ const talksAndSpeakers = () => {
               const to = from.copy().add(getDuration(talk));
               const talkEl = (
                 <div className="talk-container" key={i}>
+                  {talk.title != "Break" && 
                   <Talk
                     hidden={(talk as any).hide}
                     day={day.day}
@@ -111,7 +112,7 @@ const talksAndSpeakers = () => {
                     onToggleTag={(tag) => handleToggleTag(tag)}
                     onFavoriteChange={ () => filterProgram() }
                     isInSchedule={false}
-                  />
+                  />}
                 </div>
               );
 
