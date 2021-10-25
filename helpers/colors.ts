@@ -1,4 +1,4 @@
-import { program as Program } from "../models/data.json";
+import Program from "../models/data.json";
 
 const seed = "nice seed!!!!";
 
@@ -10,7 +10,7 @@ const colorClasses = [
 ];
 
 const colorClassFromRoomName = (roomName) => {
-  const index = Math.abs(Program.rooms.indexOf(roomName) % colorClasses.length);
+  const index = Math.abs(Program.program.rooms.indexOf(roomName) % colorClasses.length);
   return colorClasses[index];
 };
 
@@ -18,11 +18,11 @@ const colorClassFromRoomName = (roomName) => {
 const colorFromRoomName = (roomName) => {
   const str = roomName + seed + roomName; // Room names tend to be quite short so we put multiple of them togheter
   let hash = 0;
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
 
-  var c = (hash & 0x00ffffff).toString(16).toUpperCase();
+  let c = (hash & 0x00ffffff).toString(16).toUpperCase();
 
   return colorMinumum("#" + "00000".substring(0, 6 - c.length) + c, [
     130,

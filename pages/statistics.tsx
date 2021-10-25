@@ -2,9 +2,17 @@ import React, {useState, useRef, FunctionComponent, useEffect, RefObject} from '
 import { Layout } from "../components";
 import BarChart from '../components/BarChart';
 
-import { speakersCountry, speakers } from '../models/speakers';
-import { countByCity, countByCountry, countByCompany, participants, participantsCountry } from '../models/participants';
-import { countByCountryTotal, countByCompanyTotal } from '../models/speakersAndParticipants';
+import {
+    speakersAncParticipantsCountries,
+    speakersAndParticipantsCities,
+    speakersAndParticipantsCompanies,
+    speakersCities,
+    speakersCompanies,
+    speakersCountries,
+    participantsCities,
+    participantsCompanies,
+    participantsCountries
+} from '../models/speakersAndParticipants';
 
 const statistics: FunctionComponent = () => {
     return (
@@ -13,28 +21,43 @@ const statistics: FunctionComponent = () => {
                 <div className="document content">
                     <h1>Statistics</h1>
                     <h2>Speakers and Participants</h2>
+                    <h3>By country</h3>
                     <div style={{height: 500}}>
-                    <BarChart data={countByCountryTotal} layout="vertical" margin={{ top: 20, right: 20, bottom: 20, left: 40 }}/>
-                    </div>
-                    <div style={{height: 800}}>
-                        <BarChart data={countByCompanyTotal} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>
-                    </div>
-                    <h2>Speakers</h2>
-                    <div style={{height: 500}}>
-                    <BarChart data={speakers} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>
-                    </div>
-                    <h2>Participants</h2>
-                    <h3>By company</h3>
-                    <div style={{height: 500}}>
-                    <BarChart data={countByCompany} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>
+                        <BarChart data={speakersAncParticipantsCountries} layout="vertical" margin={{ top: 20, right: 20, bottom: 20, left: 40 }}/>
                     </div>
                     <h3>By city</h3>
                     <div style={{height: 500}}>
-                        <BarChart data={countByCity} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 80 }}/>
+                        <BarChart data={speakersAndParticipantsCities} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 80 }}/>
                     </div>
+                    <h3>By company</h3>
+                    <div style={{height: 800}}>
+                        <BarChart data={speakersAndParticipantsCompanies} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>
+                    </div>
+                    <h2>Speakers</h2>
                     <h3>By country</h3>
                     <div style={{height: 500}}>
-                        <BarChart data={countByCountry} layout="vertical" margin={{ top: 20, right: 20, bottom: 20, left: 40 }}/>
+                        <BarChart data={speakersCountries} layout="vertical" margin={{ top: 20, right: 20, bottom: 20, left: 40 }}/>
+                    </div>
+                    <h3>By city</h3>
+                    <div style={{height: 500}}>
+                        <BarChart data={speakersCities} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 80 }}/>
+                    </div>
+                    <h3>By company</h3>
+                    <div style={{height: 500}}>
+                        <BarChart data={speakersCompanies} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>
+                    </div>
+                    <h2>Participants</h2>
+                    <h3>By country</h3>
+                    <div style={{height: 500}}>
+                        <BarChart data={participantsCountries} layout="vertical" margin={{ top: 20, right: 20, bottom: 20, left: 40 }}/>
+                    </div>
+                    <h3>By city</h3>
+                    <div style={{height: 500}}>
+                        <BarChart data={participantsCities} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 80 }}/>
+                    </div>
+                    <h3>By company</h3>
+                    <div style={{height: 500}}>
+                        <BarChart data={participantsCompanies} layout="horizontal" margin={{ top: 20, right: 20, bottom: 20, left: 170 }}/>
                     </div>
                 </div>
             </Layout>

@@ -75,7 +75,6 @@ const Talk = ({
         </div>
         <div className="language">
           <img className="flag-image" src={flagPath}></img>
-          <span className="text language-text">Talk language</span>
         </div>
         <div className="heart">
           <FavouriteTalkButtonNoSSR talkId={id} onClick={onFavoriteChange} />

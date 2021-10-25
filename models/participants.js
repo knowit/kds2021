@@ -1,53 +1,4 @@
-export const participants = [
-    {
-        "company": "Cybercom Group AB",
-        "country": "Finland",
-        "city": "Tampere",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Cybercom Group AB",
-        "country": "Sweden",
-        "city": "Lidingö",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Cybercom Group AB",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Hasmik Martirosyan",
-        "country": "Poland",
-        "city": "Warsaw",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Know It Inc",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Knowit",
-        "country": "Denmark",
-        "city": "Aarhus",
-        "count_country": 1,
-        "count_city": 1
-    },
-    {
-        "company": "Knowit",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
-    },
+export const participants =[
     {
         "company": "Knowit AB",
         "country": "Sweden",
@@ -59,15 +10,8 @@ export const participants = [
         "company": "Knowit Architecture",
         "country": "Sweden",
         "city": "Stockholm",
-        "count_country": 3,
-        "count_city": 3
-    },
-    {
-        "company": "Knowit Cloud Partnership",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
+        "count_country": 4,
+        "count_city": 4
     },
     {
         "company": "Knowit Cloud Partnerships",
@@ -86,9 +30,16 @@ export const participants = [
     {
         "company": "Knowit Connectivity AB",
         "country": "Sweden",
-        "city": "Gothenburg",
-        "count_country": 1,
-        "count_city": 1
+        "city": "Jönköping",
+        "count_country": 2,
+        "count_city": 2
+    },
+    {
+        "company": "Knowit Connectivity AB",
+        "country": "Sweden",
+        "city": "Kista",
+        "count_country": 3,
+        "count_city": 3
     },
     {
         "company": "Knowit Connectivity AB",
@@ -108,8 +59,8 @@ export const participants = [
         "company": "Knowit Connectivity AB",
         "country": "Sweden",
         "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
+        "count_country": 4,
+        "count_city": 4
     },
     {
         "company": "Knowit Connectivity AB",
@@ -119,30 +70,16 @@ export const participants = [
         "count_city": 1
     },
     {
-        "company": "Knowit Connectivity AB",
-        "country": "Sweden",
-        "city": "Jönköping",
-        "count_country": 2,
-        "count_city": 2
-    },
-    {
-        "company": "Knowit Connectivity AB",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 5,
-        "count_city": 5
-    },
-    {
-        "company": "Knowit Connectivity Kista",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 2,
-        "count_city": 2
-    },
-    {
         "company": "Knowit Core Syd AB",
         "country": "Sweden",
         "city": "Malmö",
+        "count_country": 1,
+        "count_city": 1
+    },
+    {
+        "company": "Knowit Creuna AS",
+        "country": "Denmark",
+        "city": "Aarhus",
         "count_country": 1,
         "count_city": 1
     },
@@ -164,15 +101,15 @@ export const participants = [
         "company": "Knowit Development AB",
         "country": "Sweden",
         "city": "Stockholm",
-        "count_country": 14,
-        "count_city": 14
+        "count_country": 18,
+        "count_city": 18
     },
     {
-        "company": "Knowit Experience Aarhus",
+        "company": "Knowit Experience",
         "country": "Denmark",
         "city": "Aarhus",
-        "count_country": 4,
-        "count_city": 4
+        "count_country": 5,
+        "count_city": 5
     },
     {
         "company": "Knowit Experience",
@@ -180,13 +117,6 @@ export const participants = [
         "city": "Kyiv",
         "count_country": 1,
         "count_city": 1
-    },
-    {
-        "company": "Knowit Experience",
-        "country": "Norway",
-        "city": "Bergen",
-        "count_country": 2,
-        "count_city": 2
     },
     {
         "company": "Knowit Experience",
@@ -199,8 +129,8 @@ export const participants = [
         "company": "Knowit Experience Bergen",
         "country": "Norway",
         "city": "Bergen",
-        "count_country": 3,
-        "count_city": 3
+        "count_country": 6,
+        "count_city": 6
     },
     {
         "company": "Knowit Experience Copenhagen",
@@ -210,7 +140,7 @@ export const participants = [
         "count_city": 3
     },
     {
-        "company": "Knowit Experience Aarhus",
+        "company": "Knowit Experience Denmark",
         "country": "Denmark",
         "city": "Aarhus",
         "count_country": 1,
@@ -222,6 +152,13 @@ export const participants = [
         "city": "Gävle",
         "count_country": 3,
         "count_city": 3
+    },
+    {
+        "company": "Knowit Insight Sourcing",
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Karlstad AB",
@@ -248,29 +185,43 @@ export const participants = [
         "company": "Knowit Objectnet AS",
         "country": "Norway",
         "city": "Oslo",
-        "count_country": 5,
-        "count_city": 5
+        "count_country": 4,
+        "count_city": 4
+    },
+    {
+        "company": "Knowit Poland",
+        "country": "Poland",
+        "city": "Warsaw",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Poland Sp. z o.o.",
         "country": "Poland",
         "city": "Łódź",
-        "count_country": 1,
-        "count_city": 1
+        "count_country": 2,
+        "count_city": 2
     },
     {
         "company": "Knowit Secure",
         "country": "Sweden",
         "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
+        "count_country": 2,
+        "count_city": 2
     },
     {
-        "company": "Knowit Solutions",
+        "company": "Knowit Solutions Denmark",
+        "country": "Denmark",
+        "city": "Copenhagen",
+        "count_country": 5,
+        "count_city": 5
+    },
+    {
+        "company": "Knowit Solutions Linköping",
         "country": "Sweden",
         "city": "Stockholm",
-        "count_country": 3,
-        "count_city": 3
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Solutions Oy",
@@ -280,9 +231,9 @@ export const participants = [
         "count_city": 1
     },
     {
-        "company": "Knowit sweden",
-        "country": "Sweden",
-        "city": "Stockholm",
+        "company": "Knowit Solutions Oy",
+        "country": "Finland",
+        "city": "Tampere",
         "count_country": 1,
         "count_city": 1
     },
@@ -292,20 +243,13 @@ export const participants = [
         "city": "Örebro",
         "count_country": 1,
         "count_city": 1
-    },
-    {
-        "company": "Kommer inte ihåg",
-        "country": "Sweden",
-        "city": "Stockholm",
-        "count_country": 1,
-        "count_city": 1
     }
 ]
 
 export const participantsCountry = [
     {
         "country": "Denmark",
-        "count_country": 10
+        "count_country": 16
     },
     {
         "country": "Finland",
@@ -317,50 +261,14 @@ export const participantsCountry = [
     },
     {
         "country": "Poland",
-        "count_country": 2
+        "count_country": 3
     },
     {
         "country": "Sweden",
-        "count_country": 59
+        "count_country": 55
     },
     {
         "country": "Ukraine",
         "count_country": 3
     }
 ]
-
-const countries = participants.reduce((acc, value) => {
-    if (!acc[value.country]) {
-        acc[value.country] = value.count_country;
-    } else {
-        acc[value.country] += value.count_country;
-    }
-
-    return acc;
-}, {});
-
-const cities = participants.reduce((acc, value) => {
-    if (!acc[value.city]) {
-        acc[value.city] = value.count_country;
-    } else {
-        acc[value.city] += value.count_country;
-    }
-
-    return acc;
-}, {});
-
-const companies = participants.reduce((acc, value) => {
-    if (!acc[value.company]) {
-        acc[value.company] = value.count_country;
-    } else {
-        acc[value.company] += value.count_country;
-    }
-
-    return acc;
-}, {})
-
-export const countByCompany = Object.entries(companies).map((key) => ({company: key[0], count: key[1]}));
-
-export const countByCountry = Object.entries(countries).map((key) => ({company: key[0], count: key[1]}));
-
-export const countByCity = Object.entries(cities).map((key) => ({company: key[0], count: key[1]}));

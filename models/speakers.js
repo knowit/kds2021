@@ -1,87 +1,157 @@
 export const speakers = [
     {
-        "company": "Cybercom Group AB",
-        "count": 1
-    },
-    {
         "company": "Knowit Amende",
-        "count": 5
+        "country": "Norway",
+        "city": "Oslo",
+        "count_country": 5,
+        "count_city": 5
     },
     {
         "company": "Knowit Architecture",
-        "count": 1
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 1,
+        "count_city": 1
     },
     {
-        "company": "Knowit Cloud Partnerships",
-        "count": 2
+        "company": "Knowit Cloud Partnerships Oy",
+        "country": "Finland",
+        "city": "Helsinki",
+        "count_country": 1,
+        "count_city": 1
+    },
+    {
+        "company": "Knowit Cloud Partnerships Oy",
+        "country": "Finland",
+        "city": "Tampere",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Connectivity AB",
-        "count": 1
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Decision Stockholm",
-        "count": 1
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Defence Technology",
-        "count": 2
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 2,
+        "count_city": 2
     },
     {
         "company": "Knowit Development AB",
-        "count": 2
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 2,
+        "count_city": 2
     },
     {
         "company": "Knowit Experience",
-        "count": 3
+        "country": "Denmark",
+        "city": "Aarhus",
+        "count_country": 3,
+        "count_city": 3
     },
     {
         "company": "Knowit Experience Bergen",
-        "count": 4
+        "country": "Norway",
+        "city": "Bergen",
+        "count_country": 5,
+        "count_city": 5
     },
     {
         "company": "Knowit Experience Malmö AB",
-        "count": 2
+        "country": "Sweden",
+        "city": "Malmö",
+        "count_country": 2,
+        "count_city": 2
     },
     {
         "company": "Knowit Experience Oslo",
-        "count": 2
+        "country": "Norway",
+        "city": "Oslo",
+        "count_country": 2,
+        "count_city": 2
     },
     {
         "company": "Knowit Invativa",
-        "count": 1
+        "country": "Sweden",
+        "city": "Göteborg",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Objectnet AS",
-        "count": 6
+        "country": "Norway",
+        "city": "Oslo",
+        "count_country": 6,
+        "count_city": 6
     },
     {
         "company": "Knowit Poland Sp. z o.o.",
-        "count": 2
+        "country": "Poland",
+        "city": "Bydgoszcz",
+        "count_country": 1,
+        "count_city": 1
+    },
+    {
+        "company": "Knowit Poland Sp. z o.o.",
+        "country": "Poland",
+        "city": "Lodz",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Reaktor Solutions",
-        "count": 1
+        "country": "Norway",
+        "city": "Bergen",
+        "count_country": 1,
+        "count_city": 1
     },
     {
-        "company": "Knowit Solutions Norway",
-        "count": 1
+        "company": "Knowit Solutions Norway AS",
+        "country": "Norway",
+        "city": "Oslo",
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Solutions Oy",
-        "count": 2
+        "country": "Finland",
+        "city": "Helsinki",
+        "count_country": 2,
+        "count_city": 2
     },
     {
-        "company": "Knowit Technology",
-        "count": 1
+        "company": "Knowit Stockholm Group",
+        "country": "Sweden",
+        "city": "Stockholm",
+        "count_country": 1,
+        "count_city": 1
     },
     {
-        "company": "Knowit Technology Göteborg AB",
-        "count": 1
+        "company": "Knowit Technology AB",
+        "country": "Sweden",
+        "city": "Göteborg",
+        "count_country": 2,
+        "count_city": 2
     },
     {
         "company": "SINTEF Digital",
-        "count": 1
+        "country": "Norway",
+        "city": "Trondheim",
+        "count_country": 1,
+        "count_city": 1
     }
 ]
 
@@ -96,7 +166,7 @@ export const speakersCountry = [
     },
     {
         "country": "Norway",
-        "count_country": 20
+        "count_country": 21
     },
     {
         "country": "Poland",
