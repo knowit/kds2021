@@ -3,8 +3,8 @@ export const speakers = [
         "company": "Knowit Amende",
         "country": "Norway",
         "city": "Oslo",
-        "count_country": 5,
-        "count_city": 5
+        "count_country": 4,
+        "count_city": 4
     },
     {
         "company": "Knowit Architecture",
@@ -59,8 +59,8 @@ export const speakers = [
         "company": "Knowit Experience",
         "country": "Denmark",
         "city": "Aarhus",
-        "count_country": 3,
-        "count_city": 3
+        "count_country": 2,
+        "count_city": 2
     },
     {
         "company": "Knowit Experience Bergen",
@@ -73,8 +73,8 @@ export const speakers = [
         "company": "Knowit Experience Malmö AB",
         "country": "Sweden",
         "city": "Malmö",
-        "count_country": 2,
-        "count_city": 2
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Experience Oslo",
@@ -94,8 +94,8 @@ export const speakers = [
         "company": "Knowit Objectnet AS",
         "country": "Norway",
         "city": "Oslo",
-        "count_country": 6,
-        "count_city": 6
+        "count_country": 5,
+        "count_city": 5
     },
     {
         "company": "Knowit Poland Sp. z o.o.",
@@ -129,8 +129,8 @@ export const speakers = [
         "company": "Knowit Solutions Oy",
         "country": "Finland",
         "city": "Helsinki",
-        "count_country": 2,
-        "count_city": 2
+        "count_country": 1,
+        "count_city": 1
     },
     {
         "company": "Knowit Stockholm Group",
@@ -158,15 +158,15 @@ export const speakers = [
 export const speakersCountry = [
     {
         "country": "Denmark",
-        "count_country": 3
+        "count_country": 2
     },
     {
         "country": "Finland",
-        "count_country": 4
+        "count_country": 3
     },
     {
         "country": "Norway",
-        "count_country": 21
+        "count_country": 19
     },
     {
         "country": "Poland",
@@ -174,6 +174,6 @@ export const speakersCountry = [
     },
     {
         "country": "Sweden",
-        "count_country": 13
+        "count_country": 12
     }
 ]
