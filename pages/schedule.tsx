@@ -101,17 +101,6 @@ const schedule = () => {
 
               <div className="header-title">
                 <h1 className="title">schedule</h1>
-                <div className="warningInfo">
-                <p><strong>NB!</strong> The conference program is still a work in progress, presentation times and
-              description are still subject to changes. Are you a presenter and want something changed related
-              to your presentation? Please contact &nbsp;
-              <span>
-                <a className="mailLink" href="mailto:kds@knowit.no">
-                  kds@knowit.no
-                </a>
-              </span>
-            </p>
-            </div>
                 <div className="day-selector-header">
                   {filteredProgram.days.map((day, i) => (
                     <span key={day.day}>
