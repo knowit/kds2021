@@ -27,7 +27,9 @@ const Menu = () => {
           <Link href="/Schedule">
             <a className="link schedule">Schedule</a>
           </Link>
-
+          <Link href="/ConventionMap">
+            <a className="link conventionMap">Convention Map</a>
+          </Link>
           <Link href="/AboutKds">
             <a className="link aboutKds">About KDS</a>
           </Link>
