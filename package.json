@@ -26,6 +26,7 @@
     "@nivo/bar": "^0.74.0",
     "@nivo/core": "^0.74.0",
     "next": "^11.1.2",
+    "node-sass": "^4.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-lines-ellipsis": "^0.15.0",
