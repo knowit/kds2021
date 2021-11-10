@@ -13,6 +13,7 @@ module.exports = {
             '/Logo': {page: '/logo'},
             '/Statistics': {page: '/statistics'},
             '/ConventionMap' : {page: '/conventionMap'},
+            '/JustInTimeInfo' : {page: '/justInTimeInfo'},
         }
     }
 }
