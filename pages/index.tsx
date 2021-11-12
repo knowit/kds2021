@@ -1,8 +1,8 @@
 import { Layout } from "../components";
-import Practicalities from "./practicalities";
+import JustInTimeInfo from "./justInTimeInfo";
 
 const Home = () => {
-  return <Practicalities />;
+  return <JustInTimeInfo />;
 };
 
 export default Home;
