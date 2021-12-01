@@ -20,19 +20,27 @@ const Menu = () => {
           </Link>
           <Link href="/CallForPresentations">
             <a className="link callForPresentations">Call for Presentations</a>
-  </Link>*/}
+  </Link>
           <Link href="/JustInTimeInfo">
             <a className="link justInTimeInfo">Just In Time Info</a>
           </Link>
           <Link href="/Practicalities">
             <a className="link practicalities">Practicalities</a>
           </Link>
+                    <Link href="/ConventionMap">
+            <a className="link conventionMap">Convention Map</a>
+          </Link>
+                   <Link href="/Location">
+            <a className="link location">Location</a>
+          </Link>
+                    <Link href="/CodeOfConduct">
+            <a className="link codeOfConduct">Code of Conduct</a>
+          </Link>
+          */}
           <Link href="/Schedule">
             <a className="link schedule">Schedule</a>
           </Link>
-          <Link href="/ConventionMap">
-            <a className="link conventionMap">Convention Map</a>
-          </Link>
+
           <Link href="/AboutKds">
             <a className="link aboutKds">About KDS</a>
           </Link>
@@ -40,12 +48,8 @@ const Menu = () => {
           <Link href="/TalksAndSpeakers">
             <a className="link talksAndSpeakers">Talks and speakers</a>
           </Link>
-          <Link href="/Location">
-            <a className="link location">Location</a>
-          </Link>
-          <Link href="/CodeOfConduct">
-            <a className="link codeOfConduct">Code of Conduct</a>
-          </Link>
+ 
+
           <Link href="/Statistics">
             <a className="link statistics">Statistics</a>
           </Link>

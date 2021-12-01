@@ -14,6 +14,7 @@ module.exports = {
             '/Statistics': {page: '/statistics'},
             '/ConventionMap' : {page: '/conventionMap'},
             '/JustInTimeInfo' : {page: '/justInTimeInfo'},
+            '/ThankYou': {page: '/thankYou'}
         }
     }
 }

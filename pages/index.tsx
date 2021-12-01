@@ -1,8 +1,8 @@
 import { Layout } from "../components";
-import JustInTimeInfo from "./justInTimeInfo";
+import ThankYou from "./thankYou";
 
 const Home = () => {
-  return <JustInTimeInfo />;
+  return <ThankYou />;
 };
 
 export default Home;
