@@ -36,7 +36,7 @@ const Layout = ({
               </a>
             </Link>
           )}
-          <div id="KDSheader">
+          {/*<div id="KDSheader">
             <h2 className="headline">By Developers, For Developers</h2>
             <h3 className="header-location">
               <img id="location-img" src="/location.svg" />
@@ -44,7 +44,7 @@ const Layout = ({
               <hr />
             </h3>
             {header}
-          </div>
+          </div> */}
         </div>
         <Menu />
       </div>

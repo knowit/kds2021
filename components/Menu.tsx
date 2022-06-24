@@ -38,7 +38,7 @@ const Menu = () => {
           </Link>
           */}
           <Link href="/Schedule">
-            <a className="link schedule">Schedule</a>
+            <a className="link schedule">Schedule 2021</a>
           </Link>
 
           <Link href="/AboutKds">
@@ -46,7 +46,7 @@ const Menu = () => {
           </Link>
 
           <Link href="/TalksAndSpeakers">
-            <a className="link talksAndSpeakers">Talks and speakers</a>
+            <a className="link talksAndSpeakers">Talks and speakers 2021</a>
           </Link>
  
 
@@ -57,7 +57,7 @@ const Menu = () => {
             <a className="link logo">Logo</a>
           </Link>
           <Link href="https://kds-archive.knowit.no/schedule">
-            <a className="link">Last year's program</a>
+            <a className="link">KDS 2020</a>
           </Link>
         </div>
       </div>
