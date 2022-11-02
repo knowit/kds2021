@@ -27,7 +27,7 @@ const ThankYou = () => {
           </p>
           <p className="paragraph">
             In the meantime, you can start to hype yourself by checking out{" "}
-            <a className="paragraphLink" href="/talksAndSpeakers">
+            <a className="paragraphLink" href="/TalksAndSpeakers">
               KDS 2021 great program.
             </a>
           </p>
